@@ -1,0 +1,46 @@
+name: Deployment
+
+# Run this workflow every time a new commit pushed to your repository
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+    inputs:
+      isConfirmed:
+        description: '오피스콘 웹퍼블리싱의 s3배포'
+        required: true
+        type: boolean
+
+env:
+  GIT_COMMIT: ${{ github.sha }}
+  IS_CONFIRMED: ${{ github.event.inputs.isConfirmed }}
+
+jobs:
+  deployment:
+    name: S3에 배포
+    runs-on: ubuntu-latest
+    steps:
+      - name: Input Validation
+        if: env.IS_CONFIRMED == 'false'
+        run: |
+          exit 1
+
+      - uses: actions/checkout@v3
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '22.x'
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ap-northeast-2
+
+      # main branch only
+      - if: github.ref == 'refs/heads/main'
+        name: 's3에 정적파일 배포(master branch only)'
+        run: |
+          aws s3 sync ./ s3://officecon-pub --acl public-read
