@@ -41,6 +41,6 @@ jobs:
 
       # main branch only
       - if: github.ref == 'refs/heads/main'
-        name: 's3에 정적파일 배포(master branch only)'
+        name: 's3에 정적파일 배포(main branch only)'
         run: |
           aws s3 sync ./ s3://officecon-pub
