@@ -70,18 +70,21 @@
   font-family: Pretendard;
   font-style: normal;
   font-weight: 400;
+  font-display: swap;
   src: url('../fonts/Pretendard-Regular.subset.woff2') format('woff2');
 }
 @font-face {
   font-family: Pretendard;
   font-style: normal;
   font-weight: 600;
+  font-display: swap;
   src: url('../fonts/Pretendard-SemiBold.subset.woff2') format('woff2');
 }
 @font-face {
   font-family: Pretendard;
   font-style: normal;
   font-weight: 700;
+  font-display: swap;
   src: url('../fonts/Pretendard-Bold.subset.woff2') format('woff2');
 }
 html,
@@ -94,8 +97,8 @@ table,
 td,
 th,
 pre {
-  font-family: Pretendard, -apple-system, BlinkMacSystemFont, Roboto,
-    Malgun Gothic, '맑은 고딕', sans-serif;
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, 'Malgun Gothic',
+    '맑은 고딕', 'Segoe UI', Roboto, sans-serif;
   color: var(--color-gray-900);
 }
 body {
