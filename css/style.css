@@ -1,69 +1,11 @@
 @charset "UTF-8";
 
-/* 시작: css 변수 */
+/* 시작: css 공통 변수 */
 :root {
-  --color-primary-15: #fff8f9;
-  --color-primary-25: #fff5f7;
-  --color-primary-35: #fff2f4;
-  --color-primary-50: #ffeaed;
-  --color-primary-100: #ffcbce;
-  --color-primary-200: #ef9693;
-  --color-primary-300: #e46d69;
-  --color-primary-400: #ed4c43;
-  --color-primary-500: #f03b26;
-  --color-primary-600: #e22f26;
-  --color-primary-620: #db412f;
-  --color-primary-700: #d02421;
-  --color-primary-800: #c41c19;
-  --color-primary-900: #b5090b;
-  --color-gray-25: #fafafa;
-  --color-gray-50: #f7f8fa;
-  --color-gray-100: #f2f3f6;
-  --color-gray-200: #eaebee;
-  --color-gray-300: #dcdee3;
-  --color-gray-400: #d1d3d8;
-  --color-gray-500: #adb1ba;
-  --color-gray-600: #868b94;
-  --color-gray-650: #7a7e85;
-  --color-gray-690: #616161;
-  --color-gray-700: #4d5159;
-  --color-gray-800: #393a40;
-  --color-gray-900: #212124;
-  --color-mint-400: #00d1b8;
-  --color-green-300: #51ad58;
-  --color-green-350: #00a000;
-  --color-green-400: #008c72;
-  --color-common-white: #fff;
-  --color-common-black: #000;
-  --color-alpha-4: rgba(33, 33, 36, 0.04);
-  --color-alpha-12: rgba(33, 33, 36, 0.12);
-  --color-alpha-40: rgba(33, 33, 36, 0.4);
-  --color-alpha-60: rgba(33, 33, 36, 0.6);
-  --color-white-alpha-60: rgba(255, 255, 255, 0.6);
-  --color-white-alpha-80: rgba(255, 255, 255, 0.8);
-  --color-kakao-bg: #fae300;
-  --color-kakao-content: #391b1b;
-  --color-naver-bg: #09aa5c;
-  --color-alert: #fa2314;
-  --color-tarot: #5d37af;
-  --color-saju: #c97f27;
-  --color-sinjeom: #b12c30;
-  --color-link-100: #4295f6;
-  --layout-max-width: 720px;
-  --layout-max-width-half: 360px;
-  --layout-header-height: 45px;
-  --layout-home-header-height: 54px;
-  --layout-navBar-height: 50px;
-  --layout-tabs-height: 52px;
-  --layout-side-padding: 16px;
-  --masterList-gap-row: 8px;
-  --masterList-gap-row-half: 4px;
-  --masterList-gap-column: 24px;
-  --form-radio-paddingLeft: 28px;
-  --topLineBanner-height: 40px;
-  --rolling-counter-lineHeight: 18px;
+  --color-blue-officecon: ##202b9c;
+  --color-blue-40: #fff8f9;
 }
-/* 종료: css 변수 */
+/* 종료: css 공통 변수 */
 
 /* 시작: reset */
 @font-face {
@@ -102,7 +44,8 @@ pre {
   color: var(--color-gray-900);
 }
 body {
-  line-height: 1.4;
+  line-height: 1.43;
+  letter-spacing: -0.03em;
   /* bootstrap의 모달 팝업 노출 시 스크롤바 width 확보하는 padding 제거 */
   padding-right: 0 !important;
 }
@@ -125,8 +68,9 @@ p,
 pre {
   margin: 0;
   padding: 0;
-  line-height: 1.4;
+  line-height: 1.43;
   color: var(--color-gray-900);
+  letter-spacing: -0.03em;
 }
 li {
   list-style: none;
