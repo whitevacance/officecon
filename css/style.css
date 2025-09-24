@@ -2,8 +2,76 @@
 
 /* 시작: css 공통 변수 */
 :root {
-  --color-blue-officecon: ##202b9c;
-  --color-blue-40: #fff8f9;
+  --color-blue-officecon: #202b9c;
+  --color-blue-40: #4165f8;
+  --color-blue-20: #c3e1ff;
+  --color-blue-10: #f0f6ff;
+  --color-blue-grayish: #778198;
+  --color-blue-grayish-light: #c3c7d0;
+  --color-purple-40: #6943d2;
+  --color-purple-30: #8871ea;
+  --color-orange-officecon: #ec6c23;
+  --color-orange-20: #fedfb7;
+  --color-red-40: #da3030;
+  --color-red-30: #eb6161;
+  --color-level-silver: #8b95ac;
+  --color-level-gold: #b58e57;
+  --color-level-diamond: #25a3b2;
+  --color-natural-0: #000000;
+  --color-natural-10: #3b3b3b;
+  --color-natural-20: #4d4d4d;
+  --color-natural-30: #7e7e7e;
+  --color-natural-40: #949494;
+  --color-natural-50: #aaaaaa;
+  --color-natural-60: #d2d2d2;
+  --color-natural-70: #dddddd;
+  --color-natural-80: #e6e6e6;
+  --color-natural-90: #efefef;
+  --color-natural-95: #f5f5f5;
+  --color-natural-98: #fafafa;
+  --color-natural-100: #ffffff;
+  --color-opacity-black-70: rgba(0, 0, 0, 0.7);
+  --color-opacity-black-50: rgba(0, 0, 0, 0.5);
+  --color-opacity-black-30: rgba(0, 0, 0, 0.3);
+  --color-opacity-black-20: rgba(0, 0, 0, 0.2);
+  --color-opacity-black-8: rgba(0, 0, 0, 0.08);
+  --color-opacity-black-3: rgba(0, 0, 0, 0.03);
+  --color-opacity-white-70: rgba(255, 255, 255, 0.7);
+  --color-opacity-white-50: rgba(255, 255, 255, 0.5);
+  --color-background-gradient-white: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 1)
+  );
+  --color-background-gradient-gray: linear-gradient(
+    to right,
+    rgba(245, 245, 245, 0),
+    rgba(245, 245, 245, 1)
+  );
+  --color-background-gradient-black: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.55)
+  );
+  --color-background-gradient-soft: linear-gradient(
+    to right,
+    rgba(255, 231, 231, 1),
+    rgba(255, 243, 236, 1),
+    rgba(235, 233, 255, 1)
+  );
+  --color-background-gradient-orangeRed: linear-gradient(
+    to right,
+    rgba(236, 108, 35, 1),
+    rgba(241, 66, 53, 1)
+  );
+  --color-background-gradient-colorful: linear-gradient(
+    to right,
+    rgba(230, 97, 99, 1),
+    rgba(243, 123, 85, 1),
+    rgba(105, 100, 200, 1)
+  );
+  --color-boxShadow-1: 0px 0px 50px 0px rgba(0, 0, 0, 0.3); /* popup */
+  --color-boxShadow-2: 0px 0px 30px 0px rgba(0, 0, 0, 0.1); /* 이벤트 카드 배너 */
 }
 /* 종료: css 공통 변수 */
 
