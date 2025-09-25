@@ -35,17 +35,27 @@
     ></script>
   </head>
   <body>
-    <oc-test class="d-block container text-center">Hello World!!</oc-test>
-    <oc-swiper
-      class="d-block container"
-      style="box-shadow: var(--color-boxShadow-1)"
-    >
-      <swiper-container>
-        <swiper-slide>Slide 1</swiper-slide>
-        <swiper-slide>Slide 2</swiper-slide>
-        <swiper-slide>Slide 3</swiper-slide>
-      </swiper-container>
-    </oc-swiper>
+    <el-wrapper>
+      <el-top-banner>
+        <el-top-banner-content>상단 띠배너 컨텐츠</el-top-banner-content>
+      </el-top-banner>
+      <el-header>
+        <el-header-content>Hello World!!</el-header-content>
+      </el-header>
+      <el-container>
+        컨텐츠 영역
+        <el-swiper-wrapper style="box-shadow: var(--color-boxShadow-5)">
+          <swiper-container>
+            <swiper-slide>Slide 1</swiper-slide>
+            <swiper-slide>Slide 2</swiper-slide>
+            <swiper-slide>Slide 3</swiper-slide>
+          </swiper-container>
+        </el-swiper-wrapper>
+      </el-container>
+      <el-footer>
+        <el-footer-content>footer</el-footer-content>
+      </el-footer>
+    </el-wrapper>
 
     <!-- 공통js: bootstrap boot -->
     <script src="./js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
