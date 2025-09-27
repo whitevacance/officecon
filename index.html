@@ -40,17 +40,28 @@
         <el-top-banner-content>상단 띠배너 컨텐츠</el-top-banner-content>
       </el-top-banner>
       <el-header>
-        <el-header-content>Hello World!!</el-header-content>
+        <el-header-content class="">
+          <el-header-top>유틸 bar</el-header-top>
+          <el-header-sticky>헤더 영역</el-header-sticky>
+          <el-header-gnb>gnb</el-header-gnb>
+        </el-header-content>
       </el-header>
       <el-container>
-        컨텐츠 영역
-        <el-swiper-wrapper style="box-shadow: var(--color-boxShadow-5)">
-          <swiper-container>
-            <swiper-slide>Slide 1</swiper-slide>
-            <swiper-slide>Slide 2</swiper-slide>
-            <swiper-slide>Slide 3</swiper-slide>
-          </swiper-container>
-        </el-swiper-wrapper>
+        <!-- <el-container-header style="background: #eeeef5">
+          <el-container-header-content>
+            컨텐츠 헤더 영역
+          </el-container-header-content>
+        </el-container-header> -->
+        <el-content>
+          컨텐츠 영역
+          <el-swiper-wrapper style="box-shadow: var(--color-boxShadow-5)">
+            <swiper-container>
+              <swiper-slide>Slide 1</swiper-slide>
+              <swiper-slide>Slide 2</swiper-slide>
+              <swiper-slide>Slide 3</swiper-slide>
+            </swiper-container>
+          </el-swiper-wrapper>
+        </el-content>
       </el-container>
       <el-footer>
         <el-footer-content>footer</el-footer-content>

@@ -3,7 +3,7 @@
 ## 환경
 
 - ![Code style](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)
-- bootstrap : version 5.3.3
+- ![Bootstrap](https://img.shields.io/badge/bootstrap-5.3.8-7952b3.svg)
 - 호스팅 : aws s3 (https://ap-northeast-2.console.aws.amazon.com/s3/buckets/officecon-pub?region=ap-northeast-2&tab=objects&bucketType=general)
 - 이미지 스토리지 : aws s3 (추가 예정)
 
