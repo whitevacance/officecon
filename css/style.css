@@ -223,6 +223,24 @@ input::-webkit-inner-spin-button {
   line-height: 1.5;
   letter-spacing: -0.48px;
 }
+.typo-label-sm {
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: -0.33px;
+}
+.typo-label-md {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: -0.36px;
+}
+.typo-label-lg {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: -0.39px;
+}
 .typo-weight-default {
   font-weight: 400;
 }
