@@ -13,6 +13,8 @@ const initTopBanner = () => {
         topBannerEl.classList.add('hide');
       }
     });
+  } else {
+    console.error('el-top-banner 요소를 찾을 수 없습니다.');
   }
 };
 initTopBanner();
@@ -27,6 +29,8 @@ const initHeaderSticky = () => {
       { threshold: [1] }
     );
     observer.observe(headerStickyEl);
+  } else {
+    console.error('el-header-sticky 요소를 찾을 수 없습니다.');
   }
 };
 initHeaderSticky();

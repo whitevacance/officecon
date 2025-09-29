@@ -84,7 +84,10 @@
   --layout-top-banner-height: 40px;
   --layout-header-top-height: 32px;
   --layout-header-sticky-height: 84px;
+  --layout-gnb-height: 60px;
   --layout-footer-height: 352px;
+  --layout-home-content-width: 886px;
+  --layout-home-aside-width: 322px;
   --zindex-fixed: 1030;
 }
 /* 종료: css 공통 변수 */
@@ -309,9 +312,9 @@ el-header-sticky {
   position: sticky;
   top: -1px;
   background-color: var(--color-natural-100);
-  z-index: var(--zindex-fixed);
   &.is-stuck {
     box-shadow: var(--color-boxShadow-4);
+    z-index: var(--zindex-fixed);
   }
   el-header-content {
     display: block;
@@ -323,6 +326,8 @@ el-header-sticky {
 el-header-gnb {
   display: block;
   width: 100%;
+  height: var(--layout-gnb-height);
+  /* padding: 14px 0 23px; */
   border-bottom: 1px solid var(--color-natural-90);
   el-gnb-container {
     display: block;
@@ -333,7 +338,7 @@ el-header-gnb {
 }
 /* 종료: 레이아웃 > 헤더 */
 
-/* 시작: 레이아웃 > 메인(컨텐츠) */
+/* 시작: 레이아웃 > 컨텐츠 */
 el-main-header {
   display: block;
   width: 100%;
@@ -348,10 +353,11 @@ el-content {
   display: block;
   width: var(--layout-width);
   padding: var(--layout-padding);
+  padding-bottom: 100px;
   min-height: 200px;
   margin: 0 auto;
 }
-/* 종료: 레이아웃 > 메인(컨텐츠) */
+/* 종료: 레이아웃 > 컨텐츠 */
 
 /* 시작: 레이아웃 > footer */
 el-footer {
@@ -367,4 +373,33 @@ el-footer {
     padding: var(--layout-padding);
   }
 }
+
 /* 종료: 레이아웃 > footer */
+
+/* 시작: 홈(home) > 레이아웃 */
+el-home {
+  display: flex;
+  align-items: flex-start;
+  gap: 32px;
+  width: 100%;
+  el-home-content {
+    flex-shrink: 0;
+    display: block;
+    width: var(--layout-home-content-width);
+    min-height: 1500px;
+    background-color: mediumpurple;
+  }
+  el-home-aside {
+    flex-shrink: 0;
+    display: block;
+    width: var(--layout-home-aside-width);
+    padding-top: 10px;
+    position: sticky;
+    top: calc(var(--layout-header-sticky-height) + 10px);
+    & > div {
+      min-height: 500px;
+      background-color: lightcoral;
+    }
+  }
+}
+/* 종료: 홈(home) > 레이아웃 */
