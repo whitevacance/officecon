@@ -42,7 +42,13 @@
         </el-top-banner>
 
         <!-- 헤더 -->
-        <el-header-top>유틸 bar</el-header-top>
+        <el-header-top>
+          <el-header-top-left>
+            <div class="typo-subtitle-sm typo-weight-em">유틸 bar</div>
+            <div>유틸 bar</div>
+          </el-header-top-left>
+          <el-header-top-right>유틸 bar</el-header-top-right>
+        </el-header-top>
         <el-header-sticky>
           <el-header-content>헤더 영역</el-header-content>
         </el-header-sticky>
@@ -60,6 +66,7 @@
           </el-main-header> -->
           <el-content>
             컨텐츠 영역
+            <!-- <img src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/product/20230524/20230524140555_0316baa8-e9e4-46d8-82b3-435b49b6a210.jpg" /> -->
             <el-swiper-wrapper style="box-shadow: var(--color-boxShadow-5)">
               <swiper-container>
                 <swiper-slide>Slide 1</swiper-slide>
