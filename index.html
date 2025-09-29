@@ -37,8 +37,12 @@
   <body>
     <el-wrapper>
       <el-container>
-        <el-top-banner>
-          <el-top-banner-content>상단 띠배너 컨텐츠</el-top-banner-content>
+        <!-- [DEV] 상단 띠배너(el-top-banner) 숨김 className: 'hide' -->
+        <el-top-banner style="background-color: rgba(0, 70, 196, 1)">
+          <el-top-banner-content>
+            상단 띠배너 컨텐츠
+            <button type="button">닫기</button>
+          </el-top-banner-content>
         </el-top-banner>
 
         <!-- 헤더 -->
@@ -88,10 +92,10 @@
     <!--// 공통js: bootstrap boot -->
 
     <!-- 공통js: common.js -->
-    <!-- <script src="./js/common.js" crossorigin="anonymous"></script> -->
+    <script src="./js/pub-common.js" crossorigin="anonymous"></script>
     <!--// 공통js: common.js -->
 
-    <script type="text/javascript">
+    <script>
       //
     </script>
   </body>
