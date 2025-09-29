@@ -4,17 +4,10 @@
     <title>오피스콘</title>
     <meta charset="UTF-8" />
     <meta name="format-detection" content="telephone=no" />
-    <!-- <link rel="icon" href="./images/favicon.svg" />
+    <link rel="icon" href="./images/favicon.svg" />
     <link
       rel="preload"
       href="./fonts/Pretendard-Regular.subset.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="preload"
-      href="./fonts/Pretendard-Medium.subset.woff2"
       as="font"
       type="font/woff2"
       crossorigin="anonymous"
@@ -39,12 +32,59 @@
     <script
       src="./js/swiper-element-bundleswiper.min.js"
       crossorigin="anonymous"
-    ></script> -->
+    ></script>
   </head>
   <body>
-    Hello World!!
+    <el-wrapper>
+      <el-container>
+        <el-top-banner>
+          <el-top-banner-content>상단 띠배너 컨텐츠</el-top-banner-content>
+        </el-top-banner>
+
+        <!-- 헤더 -->
+        <el-header-top>
+          <el-header-top-left>
+            <div class="typo-subtitle-sm typo-weight-em">유틸 bar</div>
+            <div>유틸 bar</div>
+          </el-header-top-left>
+          <el-header-top-right>유틸 bar</el-header-top-right>
+        </el-header-top>
+        <el-header-sticky>
+          <el-header-content>헤더 영역</el-header-content>
+        </el-header-sticky>
+        <el-header-gnb>
+          <el-gnb-container>gnb</el-gnb-container>
+        </el-header-gnb>
+        <!--// 헤더 -->
+
+        <!-- 컨텐츠 -->
+        <main>
+          <!-- <el-main-header style="background: #eeeef5">
+            <el-main-header-container>
+              컨텐츠 헤더 영역
+            </el-main-header-container>
+          </el-main-header> -->
+          <el-content>
+            컨텐츠 영역
+            <!-- <img src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/product/20230524/20230524140555_0316baa8-e9e4-46d8-82b3-435b49b6a210.jpg" /> -->
+            <el-swiper-wrapper style="box-shadow: var(--color-boxShadow-5)">
+              <swiper-container>
+                <swiper-slide>Slide 1</swiper-slide>
+                <swiper-slide>Slide 2</swiper-slide>
+                <swiper-slide>Slide 3</swiper-slide>
+              </swiper-container>
+            </el-swiper-wrapper>
+          </el-content>
+        </main>
+        <!--// 컨텐츠 -->
+      </el-container>
+      <el-footer>
+        <el-footer-content>footer</el-footer-content>
+      </el-footer>
+    </el-wrapper>
+
     <!-- 공통js: bootstrap boot -->
-    <!-- <script src="./js/bootstrap.bundle.min.js" crossorigin="anonymous"></script> -->
+    <script src="./js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <!--// 공통js: bootstrap boot -->
 
     <!-- 공통js: common.js -->
