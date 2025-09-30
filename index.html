@@ -37,15 +37,55 @@
   <body>
     <el-wrapper>
       <el-container>
-        <!-- [DEV] 상단 띠배너(el-top-banner) 숨김 className: 'hide' -->
-        <el-top-banner style="background-color: rgba(0, 70, 196, 1)">
+        <!-- [DEV] 상단 띠배너 숨김 className: 'hide' -->
+        <el-top-banner>
+          <!-- [DEV] 상단 띠배너 컬러 커스텀 -->
+          <style>
+            el-top-banner {
+              background-color: rgba(0, 70, 196, 1); /* bg */
+              button {
+                svg {
+                  path {
+                    stroke: #a0681e; /* 닫기 버튼 */
+                  }
+                }
+              }
+            }
+          </style>
           <el-top-banner-content>
-            상단 띠배너 컨텐츠
-            <button type="button">닫기</button>
+            <a href="#">
+              <img
+                src="./images/temp/top-banner.png"
+                alt="한번 더! 다이아몬드 이벤트"
+              />
+            </a>
+            <button type="button">
+              <span>닫기</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+              >
+                <path
+                  d="M15 5L5 15"
+                  stroke="white"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M5 5L15 15"
+                  stroke="white"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
           </el-top-banner-content>
         </el-top-banner>
 
-        <!-- 헤더 -->
+        <!-- 시작: 헤더 -->
         <el-header-top>
           <el-header-top-left>
             <div class="typo-subtitle-sm typo-weight-em">유틸 bar</div>
@@ -59,9 +99,9 @@
         <el-header-gnb>
           <el-gnb-container>gnb</el-gnb-container>
         </el-header-gnb>
-        <!--// 헤더 -->
+        <!-- 종료: 헤더 -->
 
-        <!-- 컨텐츠 -->
+        <!-- 시작: 컨텐츠 -->
         <main>
           <!-- <el-main-header style="background: #eeeef5">
             <el-main-header-container>
@@ -86,7 +126,7 @@
             </el-home>
           </el-content>
         </main>
-        <!--// 컨텐츠 -->
+        <!-- 종료: 컨텐츠 -->
       </el-container>
 
       <el-footer>
