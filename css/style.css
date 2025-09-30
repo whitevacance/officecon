@@ -88,6 +88,7 @@
   --layout-footer-height: 352px;
   --layout-home-content-width: 886px;
   --layout-home-aside-width: 322px;
+  --zindex-dropdown: 1000;
   --zindex-fixed: 1030;
 }
 /* 종료: css 공통 변수 */
@@ -138,7 +139,7 @@ body {
 }
 a {
   text-decoration: none;
-  color: var(--color-gray-900);
+  color: var(--color-natural-0);
 }
 h1,
 h2,
@@ -183,7 +184,7 @@ button {
 }
 /* 종료: reset */
 
-/* 시작: 공통 - typography */
+/* 시작: 공통 > typography */
 .typo-heading-sm {
   font-size: 24px;
   font-weight: 700;
@@ -265,7 +266,88 @@ button {
 .typo-weight-bold {
   font-weight: 700;
 }
-/* 종료: 공통 - typography */
+/* 종료: 공통 > typography */
+
+/* 시작: 공통 > icon */
+el-icon {
+  display: inline-block;
+  width: 0px;
+  height: 0px;
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  background-size: cover;
+  pointer-events: none; /* 클릭 이벤트를 부모 요소로 전달 */
+  overflow: hidden;
+  text-indent: -9999px;
+  background-color: var(--color-natural-100);
+  &.natural-40 {
+    background-color: var(--color-natural-40);
+  }
+  &.natural-100 {
+    background-color: var(--color-natural-100);
+  }
+  &.h20-closed {
+    width: 20px;
+    height: 20px;
+    -webkit-mask-image: url('../images/icon-h20-closed.svg');
+    mask-image: url('../images/icon-h20-closed.svg');
+  }
+  &.h16-arrow-down {
+    width: 16px;
+    height: 16px;
+    -webkit-mask-image: url('../images/icon-h16-arrow-down.svg');
+    mask-image: url('../images/icon-h16-arrow-down.svg');
+  }
+}
+/* 종료: 공통 > icon */
+
+/* 시작: 공통 > el-layer-dropdown */
+el-layer-dropdown {
+  display: block;
+  width: 147px;
+  position: absolute;
+  top: calc(100% + 14px);
+  right: -10px;
+  z-index: var(--zindex-dropdown);
+  background-color: var(--color-natural-100);
+  border-radius: 20px;
+  box-shadow: var(--color-boxShadow-3);
+  padding: 14px;
+  text-align: center;
+  ul {
+    display: flex;
+    flex-direction: column;
+    li {
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 10px 8px;
+        color: var(--color-natural-30);
+        &:hover {
+          color: var(--color-natural-0);
+          overflow: hidden;
+          border-radius: 9999px;
+          background-color: var(--color-natural-90);
+        }
+      }
+    }
+  }
+  &.small {
+    width: 100px;
+    border-radius: 10px;
+    padding: 10px;
+    ul {
+      li {
+        a {
+          padding: 8px 6px;
+        }
+      }
+    }
+  }
+}
+/* 종료: 공통 > el-layer-dropdown */
 
 /* 시작: 레이아웃 > wrapper, container */
 el-wrapper {
@@ -281,7 +363,7 @@ el-container {
 }
 /* 종료: 레이아웃 > wrapper, container */
 
-/* 시작: 공통 - 상단 띠배너 */
+/* 시작: 레이아웃 > 상단 띠배너 */
 el-top-banner {
   display: flex;
   align-items: center;
@@ -317,15 +399,12 @@ el-top-banner {
       position: absolute;
       top: 0;
       right: 0;
-      span {
-        display: none;
-      }
     }
   }
 }
-/* 종료: 공통 - 상단 띠배너 */
+/* 종료: 레이아웃 > 상단 띠배너 */
 
-/* 시작: 레이아웃 > 헤더 */
+/* 시작: 레이아웃 > 헤더 > el-header-top */
 el-header-top {
   display: flex;
   align-items: flex-end;
@@ -334,10 +413,69 @@ el-header-top {
   height: var(--layout-header-top-height);
   padding: var(--layout-padding);
   margin: 0 auto;
+  .menu {
+    display: flex;
+    gap: 8px;
+    color: var(--color-natural-30);
+    & > li {
+      display: flex;
+      align-items: center;
+      position: relative;
+      &:before {
+        content: '';
+        display: inline-block;
+        width: 1px;
+        height: 10px;
+        margin-right: 8px;
+        background-color: var(--color-natural-80);
+      }
+      &:first-of-type {
+        &:before {
+          display: none;
+        }
+      }
+      & > a {
+        color: var(--color-natural-30);
+        &:hover {
+          color: var(--color-natural-0);
+        }
+      }
+      details {
+        position: relative;
+        summary {
+          display: flex;
+          align-items: center;
+          color: var(--color-natural-30);
+          &:hover {
+            color: var(--color-natural-0);
+            el-icon {
+              background-color: var(--color-natural-0);
+            }
+          }
+          &::marker {
+            content: '';
+          }
+        }
+        &:open {
+          summary {
+            color: var(--color-natural-0);
+            el-icon {
+              background-color: var(--color-natural-0);
+              -webkit-transform: rotate(180deg);
+              transform: rotate(180deg);
+            }
+          }
+        }
+      }
+    }
+  }
   el-header-top-left {
     display: flex;
   }
 }
+/* 종료: 레이아웃 > 헤더 > el-header-top */
+
+/* 시작: 레이아웃 > 헤더 > el-header-sticky */
 el-header-sticky {
   display: block;
   width: 100%;
@@ -357,6 +495,9 @@ el-header-sticky {
     margin: 0 auto;
   }
 }
+/* 종료: 레이아웃 > 헤더 > el-header-sticky */
+
+/* 시작: 레이아웃 > 헤더 > el-header-gnb */
 el-header-gnb {
   display: block;
   width: 100%;
@@ -370,7 +511,7 @@ el-header-gnb {
     margin: 0 auto;
   }
 }
-/* 종료: 레이아웃 > 헤더 */
+/* 종료: 레이아웃 > 헤더 > el-header-gnb */
 
 /* 시작: 레이아웃 > 컨텐츠 */
 el-main-header {

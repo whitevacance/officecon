@@ -43,12 +43,8 @@
           <style>
             el-top-banner {
               background-color: rgba(0, 70, 196, 1); /* bg */
-              button {
-                svg {
-                  path {
-                    stroke: #a0681e; /* 닫기 버튼 */
-                  }
-                }
+              el-icon {
+                background-color: #a0681e; /* 닫기 버튼 */
               }
             }
           </style>
@@ -60,38 +56,70 @@
               />
             </a>
             <button type="button">
-              <span>닫기</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-              >
-                <path
-                  d="M15 5L5 15"
-                  stroke="white"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M5 5L15 15"
-                  stroke="white"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
+              <el-icon class="h20-closed">닫기</el-icon>
             </button>
           </el-top-banner-content>
         </el-top-banner>
 
         <!-- 시작: 헤더 -->
-        <el-header-top>
+        <el-header-top class="typo-label-lg">
           <el-header-top-left>
-            <div class="typo-subtitle-sm typo-weight-em">유틸 bar</div>
-            <div>유틸 bar</div>
+            <ul class="menu">
+              <li>
+                <a href="#">대량발송 양식 다운로드</a>
+              </li>
+              <li>
+                <a href="#">판매상품 다운로드</a>
+              </li>
+              <li>
+                <a href="#">오피스콘 특장점</a>
+              </li>
+            </ul>
           </el-header-top-left>
-          <el-header-top-right>유틸 bar</el-header-top-right>
+          <el-header-top-right>
+            <ul class="menu">
+              <li>
+                <a href="#">로그인</a>
+              </li>
+              <li>
+                <a href="#">로그아웃</a>
+              </li>
+              <li>
+                <a href="#">회원가입</a>
+              </li>
+              <li>
+                <details>
+                  <summary>
+                    고객센터
+                    <el-icon class="h16-arrow-down natural-40"></el-icon>
+                  </summary>
+                  <!-- <el-layer-dropdown>
+                    <ul class="typo-body-sm typo-weight-em">
+                      <li>
+                        <a href="#">드롭다운1</a>
+                      </li>
+                      <li>
+                        <a href="#">드롭다운2</a>
+                      </li>
+                    </ul>
+                  </el-layer-dropdown> -->
+                  <el-layer-dropdown class="small typo-label-lg typo-weight-em">
+                    <ul>
+                      <li>
+                        <a href="#">공지사항</a>
+                      </li>
+                      <li>
+                        <a href="#">FAQ</a>
+                      </li>
+                      <li>
+                        <a href="#">1:1문의</a>
+                      </li>
+                    </ul>
+                  </el-layer-dropdown>
+                </details>
+              </li>
+            </ul>
+          </el-header-top-right>
         </el-header-top>
         <el-header-sticky>
           <el-header-content>헤더 영역</el-header-content>

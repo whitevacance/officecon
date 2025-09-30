@@ -8,9 +8,13 @@ const initTopBanner = () => {
   const topBannerEl = document.querySelector('el-top-banner');
   if (topBannerEl) {
     topBannerEl.addEventListener('click', (e) => {
-      if (e.target.tagName === 'BUTTON') {
-        // 상단 띠배너 숨기기
-        topBannerEl.classList.add('hide');
+      // 닫기 버튼이나 그 자식 요소가 클릭된 경우 처리
+      const buttonEl = e.target.closest('button');
+      if (buttonEl) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        topBannerEl.classList.add('hide'); // 상단 띠배너 숨기기
       }
     });
   } else {
