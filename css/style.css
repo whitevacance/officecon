@@ -152,12 +152,13 @@ dl,
 dt,
 dd,
 p,
-pre {
+pre,
+address {
   margin: 0;
   padding: 0;
-  letter-spacing: -0.48px;
-  color: var(--color-natural-0);
-  line-height: 1.5;
+  letter-spacing: inherit;
+  color: inherit;
+  line-height: inherit;
 }
 li {
   list-style: none;
@@ -169,6 +170,16 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   appearance: none;
   -webkit-appearance: none;
+}
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  letter-spacing: inherit;
+  color: inherit;
+  line-height: inherit;
 }
 /* 종료: reset */
 
@@ -366,7 +377,7 @@ el-footer {
   align-items: center;
   width: 100%;
   background-color: var(--color-natural-95);
-  el-footer-content {
+  footer {
     display: flex;
     flex-direction: column;
     gap: 24px;
@@ -374,6 +385,28 @@ el-footer {
     height: var(--layout-footer-height);
     padding: var(--layout-padding);
     padding: 48px 0 80px;
+    color: var(--color-natural-30);
+    ul {
+      display: flex;
+      gap: 8px;
+      li {
+        display: flex;
+        align-items: center;
+        &:before {
+          content: '';
+          display: inline-block;
+          width: 1px;
+          height: 12px;
+          margin-right: 8px;
+          background-color: var(--color-natural-70);
+        }
+        &:first-of-type {
+          &:before {
+            display: none;
+          }
+        }
+      }
+    }
     address {
       display: flex;
       flex-direction: column;
@@ -381,11 +414,40 @@ el-footer {
       el-footer-logo {
         display: block;
         width: 130px;
-        height: 33px;
-        overflow: hidden;
-        text-indent: -9999px;
-        background: url('../images/logo-footer.svg');
-        background-size: cover;
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+      el-address-content {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+    }
+    .privacy-policy {
+      color: var(--color-natural-0);
+    }
+    el-footer-cert-list {
+      ul {
+        display: flex;
+        gap: 24px;
+        li {
+          position: relative;
+          &:before {
+            display: none;
+          }
+          button {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            & > el-label {
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+            }
+          }
+        }
       }
     }
   }
