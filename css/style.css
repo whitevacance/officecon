@@ -288,7 +288,7 @@ el-top-banner {
   justify-content: center;
   width: 100%;
   height: var(--layout-top-banner-height);
-  background-color: rgba(0, 70, 196, 1);
+  background-color: #fff;
   overflow: hidden;
   &.hide {
     display: none;
@@ -384,7 +384,7 @@ el-footer {
     width: var(--layout-width);
     height: var(--layout-footer-height);
     padding: var(--layout-padding);
-    padding: 48px 0 80px;
+    padding: 48px 20px 80px;
     color: var(--color-natural-30);
     ul {
       display: flex;
@@ -433,6 +433,7 @@ el-footer {
         display: flex;
         gap: 24px;
         li {
+          height: 46px;
           position: relative;
           &:before {
             display: none;
@@ -445,6 +446,25 @@ el-footer {
               display: flex;
               flex-direction: column;
               align-items: flex-start;
+            }
+            &:hover + el-cert-layer {
+              display: block;
+            }
+          }
+          el-cert-layer {
+            display: none;
+            width: 310px;
+            height: auto;
+            position: absolute;
+            bottom: calc(46px + 16px);
+            left: -10px;
+            overflow: hidden;
+            background-color: var(--color-natural-100);
+            box-shadow: var(--color-boxShadow-1);
+            border-radius: 5px;
+            img {
+              width: 100%;
+              height: auto;
             }
           }
         }
