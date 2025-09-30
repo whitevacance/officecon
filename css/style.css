@@ -456,7 +456,7 @@ el-header-top {
             content: '';
           }
         }
-        &:open {
+        &[open] {
           summary {
             color: var(--color-natural-0);
             el-icon {
@@ -568,6 +568,9 @@ el-footer {
           &:before {
             display: none;
           }
+        }
+        a {
+          color: var(--color-natural-30);
         }
       }
     }
