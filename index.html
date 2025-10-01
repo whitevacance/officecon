@@ -29,6 +29,7 @@
     <link type="text/css" rel="stylesheet" href="./css/bootstrap.min.css" />
     <link type="text/css" rel="stylesheet" href="./css/swiper.min.css" />
     <link type="text/css" rel="stylesheet" href="./css/style.css" />
+    <script src="./js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script
       src="./js/swiper-element-bundleswiper.min.js"
       crossorigin="anonymous"
@@ -82,47 +83,72 @@
                 <a href="#">로그인</a>
               </li>
               <li>
-                <a href="#">로그아웃</a>
-              </li>
-              <li>
                 <a href="#">회원가입</a>
               </li>
               <li>
-                <details>
-                  <summary>
-                    고객센터
-                    <el-icon class="h16-arrow-down natural-40"></el-icon>
-                  </summary>
-                  <!-- <el-layer-dropdown>
-                    <ul class="typo-body-sm typo-weight-em">
-                      <li>
-                        <a href="#">드롭다운1</a>
-                      </li>
-                      <li>
-                        <a href="#">드롭다운2</a>
-                      </li>
-                    </ul>
-                  </el-layer-dropdown> -->
-                  <el-layer-dropdown class="small typo-label-lg typo-weight-em">
-                    <ul>
-                      <li>
-                        <a href="#">공지사항</a>
-                      </li>
-                      <li>
-                        <a href="#">FAQ</a>
-                      </li>
-                      <li>
-                        <a href="#">1:1문의</a>
-                      </li>
-                    </ul>
-                  </el-layer-dropdown>
-                </details>
+                <a href="#">로그아웃</a>
+              </li>
+              <li>
+                <el-dropdown-menu>
+                  <details>
+                    <summary>
+                      고객센터
+                      <el-icon class="h16-arrow-down natural-40"></el-icon>
+                    </summary>
+                    <!-- <el-layer-dropdown>
+                      <ul class="typo-body-sm typo-weight-em">
+                        <li>
+                          <a href="#">드롭다운1</a>
+                        </li>
+                        <li>
+                          <a href="#">드롭다운2</a>
+                        </li>
+                      </ul>
+                    </el-layer-dropdown> -->
+                    <el-layer-dropdown
+                      class="small typo-label-lg typo-weight-em"
+                    >
+                      <ul>
+                        <li>
+                          <a href="#">공지사항</a>
+                        </li>
+                        <li>
+                          <a href="#">FAQ</a>
+                        </li>
+                        <li>
+                          <a href="#">1:1문의</a>
+                        </li>
+                      </ul>
+                    </el-layer-dropdown>
+                  </details>
+                </el-dropdown-menu>
               </li>
             </ul>
           </el-header-top-right>
         </el-header-top>
         <el-header-sticky>
-          <el-header-content>헤더 영역</el-header-content>
+          <el-header-content>
+            <el-header-content-left>
+              <el-logo>
+                <a href="#">
+                  <img src="./images/logo.svg" alt="오피스콘" />
+                  <el-logo-text>
+                    <div>
+                      <img
+                        src="./images/logo-text-2.svg"
+                        alt="이용자수 4년 연속 1위"
+                      />
+                    </div>
+                    <div>
+                      <img src="./images/logo-text-1.svg" alt="OFFICECON" />
+                    </div>
+                  </el-logo-text>
+                </a>
+              </el-logo>
+              나머지
+            </el-header-content-left>
+            <el-header-content-right>오른쪽</el-header-content-right>
+          </el-header-content>
         </el-header-sticky>
         <el-header-gnb>
           <el-gnb-container>gnb</el-gnb-container>
@@ -244,10 +270,6 @@
         </footer>
       </el-footer>
     </el-wrapper>
-
-    <!-- 공통js: bootstrap boot -->
-    <script src="./js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-    <!--// 공통js: bootstrap boot -->
 
     <!-- 공통js: common.js -->
     <script src="./js/pub-common.js" crossorigin="anonymous"></script>
