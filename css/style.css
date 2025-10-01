@@ -476,6 +476,19 @@ el-header-top {
 /* 종료: 레이아웃 > 헤더 > el-header-top */
 
 /* 시작: 레이아웃 > 헤더 > el-header-sticky */
+@keyframes logoTextFade {
+  0%,
+  45% {
+    opacity: 1;
+  }
+  50%,
+  95% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 el-header-sticky {
   display: block;
   width: 100%;
@@ -489,10 +502,63 @@ el-header-sticky {
     z-index: var(--zindex-fixed);
   }
   el-header-content {
-    display: block;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: var(--layout-width);
+    height: 100%;
     padding: var(--layout-padding);
     margin: 0 auto;
+    el-header-content-left {
+      display: flex;
+      align-items: center;
+      gap: 82px;
+      height: 100%;
+      el-logo {
+        display: flex;
+        height: 100%;
+        a {
+          display: flex;
+          align-items: center;
+          gap: 10.623px;
+          height: 100%;
+          padding: 4px 0 0.606px;
+          img {
+            width: auto;
+            height: 100%;
+          }
+          el-logo-text {
+            display: block;
+            width: 149px;
+            height: 100%;
+            position: relative;
+            & > div {
+              display: flex;
+              align-items: center;
+              justify-content: flex-start;
+              width: 100%;
+              height: 100%;
+              background-color: var(--color-natural-100);
+              position: absolute;
+              left: 0;
+              top: 50%;
+              transform: translateY(-50%);
+              animation: logoTextFade 6s ease-out infinite;
+              &:first-child {
+                animation-delay: 0s;
+              }
+              &:last-child {
+                animation-delay: 3s;
+              }
+            }
+            img {
+              width: 100%;
+              height: auto;
+            }
+          }
+        }
+      }
+    }
   }
 }
 /* 종료: 레이아웃 > 헤더 > el-header-sticky */
