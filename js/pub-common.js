@@ -3,7 +3,7 @@ const pubHtmlEl = document.querySelector('html');
 const pubBodyEl = document.querySelector('body');
 // 종료: 공통 변수
 
-// 시작: 상단 띠배너
+// 시작: 상단 띠배너 숨기기
 const initTopBanner = () => {
   const topBannerEl = document.querySelector('el-top-banner');
   if (topBannerEl) {
@@ -14,15 +14,15 @@ const initTopBanner = () => {
         e.preventDefault();
         e.stopPropagation();
 
-        topBannerEl.classList.add('hide'); // 상단 띠배너 숨기기
+        topBannerEl.classList.add('hide');
       }
     });
   } else {
-    console.error('el-top-banner 요소를 찾을 수 없습니다.');
+    // console.error('el-top-banner 요소를 찾을 수 없습니다.');
   }
 };
 initTopBanner();
-// 종료: 상단 띠배너
+// 종료: 상단 띠배너 숨기기
 
 // 시작: header sticky 시 box-shadow 처리
 const initHeaderSticky = () => {
@@ -39,3 +39,28 @@ const initHeaderSticky = () => {
 };
 initHeaderSticky();
 // 종료: header sticky 시 box-shadow 처리
+
+// 시작: el-dropdown-menu 외부 클릭 시 닫기
+const initDropdownMenu = () => {
+  const dropdownEls = document.querySelectorAll('el-dropdown-menu');
+
+  if (dropdownEls.length) {
+    document.addEventListener('click', (e) => {
+      const detailsEl = e.target.closest('details');
+      const summaryEl = e.target.closest('summary');
+
+      [...dropdownEls].map((el) => {
+        const targetDetailsEl = el.querySelector('details');
+
+        if (!summaryEl || targetDetailsEl !== detailsEl) {
+          targetDetailsEl.removeAttribute('open');
+        }
+        return () => {};
+      });
+    });
+  } else {
+    console.error('el-dropdown-menu 요소를 찾을 수 없습니다.');
+  }
+};
+initDropdownMenu();
+// 종료: el-dropdown-menu  외부 클릭 시 닫기

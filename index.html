@@ -88,35 +88,39 @@
                 <a href="#">회원가입</a>
               </li>
               <li>
-                <details>
-                  <summary>
-                    고객센터
-                    <el-icon class="h16-arrow-down natural-40"></el-icon>
-                  </summary>
-                  <!-- <el-layer-dropdown>
-                    <ul class="typo-body-sm typo-weight-em">
-                      <li>
-                        <a href="#">드롭다운1</a>
-                      </li>
-                      <li>
-                        <a href="#">드롭다운2</a>
-                      </li>
-                    </ul>
-                  </el-layer-dropdown> -->
-                  <el-layer-dropdown class="small typo-label-lg typo-weight-em">
-                    <ul>
-                      <li>
-                        <a href="#">공지사항</a>
-                      </li>
-                      <li>
-                        <a href="#">FAQ</a>
-                      </li>
-                      <li>
-                        <a href="#">1:1문의</a>
-                      </li>
-                    </ul>
-                  </el-layer-dropdown>
-                </details>
+                <el-dropdown-menu>
+                  <details>
+                    <summary>
+                      고객센터
+                      <el-icon class="h16-arrow-down natural-40"></el-icon>
+                    </summary>
+                    <!-- <el-layer-dropdown>
+                      <ul class="typo-body-sm typo-weight-em">
+                        <li>
+                          <a href="#">드롭다운1</a>
+                        </li>
+                        <li>
+                          <a href="#">드롭다운2</a>
+                        </li>
+                      </ul>
+                    </el-layer-dropdown> -->
+                    <el-layer-dropdown
+                      class="small typo-label-lg typo-weight-em"
+                    >
+                      <ul>
+                        <li>
+                          <a href="#">공지사항</a>
+                        </li>
+                        <li>
+                          <a href="#">FAQ</a>
+                        </li>
+                        <li>
+                          <a href="#">1:1문의</a>
+                        </li>
+                      </ul>
+                    </el-layer-dropdown>
+                  </details>
+                </el-dropdown-menu>
               </li>
             </ul>
           </el-header-top-right>
