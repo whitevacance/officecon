@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
   <head>
-    <title>오피스콘</title>
+    <title>예시 | 오피스콘</title>
     <meta charset="UTF-8" />
     <meta name="format-detection" content="telephone=no" />
     <link rel="icon" href="./images/favicon.svg" />
@@ -166,27 +166,35 @@
 
         <!-- 시작: 컨텐츠 -->
         <main>
-          <!-- <el-main-header style="background: #eeeef5">
+          <el-main-header style="background: #eeeef5">
             <el-main-header-container>
               컨텐츠 헤더 영역
             </el-main-header-container>
-          </el-main-header> -->
+          </el-main-header>
           <el-content>
-            <!-- 컨텐츠 영역
-            <el-swiper-wrapper style="box-shadow: var(--color-boxShadow-5)">
-              <swiper-container>
-                <swiper-slide>Slide 1</swiper-slide>
-                <swiper-slide>Slide 2</swiper-slide>
-                <swiper-slide>Slide 3</swiper-slide>
-              </swiper-container>
-            </el-swiper-wrapper> -->
-
-            <el-home>
-              <el-home-content>홈 컨텐츠</el-home-content>
-              <el-home-aside>
-                <aside>홈 aside</aside>
-              </el-home-aside>
-            </el-home>
+            <el-examples-article>
+              <h2>colors</h2>
+              <el-examples-stack>예시 컨텐츠</el-examples-stack>
+            </el-examples-article>
+            <el-examples-article>
+              <h2>icons</h2>
+              <h5>h5</h5>
+              <el-examples-stack
+                style="background-color: var(--color-natural-80)"
+              >
+                <el-icon class="h20-closed">닫기</el-icon>
+                <el-icon class="h20-closed">닫기</el-icon>
+                <el-icon class="h16-arrow-down natural-40"></el-icon>
+              </el-examples-stack>
+              <h5>h16</h5>
+              <el-examples-stack
+                style="background-color: var(--color-natural-80)"
+              >
+                <el-icon class="h20-closed">닫기</el-icon>
+                <el-icon class="h20-closed">닫기</el-icon>
+                <el-icon class="h16-arrow-down natural-40"></el-icon>
+              </el-examples-stack>
+            </el-examples-article>
           </el-content>
         </main>
         <!-- 종료: 컨텐츠 -->
