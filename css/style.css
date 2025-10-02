@@ -40,35 +40,35 @@
   --color-opacity-white-50: rgba(255, 255, 255, 0.5);
   --color-background-gradient-white: linear-gradient(
     to right,
-    rgba(255, 255, 255, 0),
-    rgba(255, 255, 255, 1)
+    rgba(255, 255, 255, 0) -25.49%,
+    rgba(255, 255, 255, 1) 68.87%
   );
   --color-background-gradient-gray: linear-gradient(
     to right,
-    rgba(245, 245, 245, 0),
-    rgba(245, 245, 245, 1)
+    rgba(245, 245, 245, 0) -25.49%,
+    rgba(245, 245, 245, 1) 68.87%
   );
   --color-background-gradient-black: linear-gradient(
-    to right,
-    rgba(0, 0, 0, 0),
-    rgba(0, 0, 0, 0.55)
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.03) 100%
   );
   --color-background-gradient-soft: linear-gradient(
     to right,
-    rgba(255, 231, 231, 1),
-    rgba(255, 243, 236, 1),
-    rgba(235, 233, 255, 1)
+    rgba(255, 231, 231, 1) 0%,
+    rgba(255, 243, 236, 1) 54.33%,
+    rgba(235, 233, 255, 1) 100%
   );
   --color-background-gradient-orangeRed: linear-gradient(
-    to right,
-    rgba(236, 108, 35, 1),
-    rgba(241, 66, 53, 1)
+    112deg,
+    rgba(236, 108, 35, 1) 16.32%,
+    rgba(241, 66, 53, 1) 92.38%
   );
   --color-background-gradient-colorful: linear-gradient(
     to right,
-    rgba(230, 97, 99, 1),
-    rgba(243, 123, 85, 1),
-    rgba(105, 100, 200, 1)
+    rgba(230, 97, 99, 1) 0%,
+    rgba(243, 123, 85, 1) 52.88%,
+    rgba(105, 100, 200, 1) 100%
   );
   --color-boxShadow-1: 0px 0px 50px 0px rgba(0, 0, 0, 0.3); /* popup */
   --color-boxShadow-2: 0px 0px 30px 0px rgba(0, 0, 0, 0.1); /* 이벤트 카드 배너 */
@@ -283,8 +283,38 @@ el-icon {
   &.natural-0 {
     background-color: var(--color-natural-0);
   }
+  &.natural-10 {
+    background-color: var(--color-natural-10);
+  }
+  &.natural-20 {
+    background-color: var(--color-natural-20);
+  }
+  &.natural-30 {
+    background-color: var(--color-natural-30);
+  }
   &.natural-40 {
     background-color: var(--color-natural-40);
+  }
+  &.natural-50 {
+    background-color: var(--color-natural-50);
+  }
+  &.natural-60 {
+    background-color: var(--color-natural-60);
+  }
+  &.natural-70 {
+    background-color: var(--color-natural-70);
+  }
+  &.natural-80 {
+    background-color: var(--color-natural-80);
+  }
+  &.natural-90 {
+    background-color: var(--color-natural-90);
+  }
+  &.natural-95 {
+    background-color: var(--color-natural-95);
+  }
+  &.natural-98 {
+    background-color: var(--color-natural-98);
   }
   &.natural-100 {
     background-color: var(--color-natural-100);
@@ -306,8 +336,11 @@ el-icon {
 
 /* 시작: 공통 > el-layer-dropdown */
 el-layer-dropdown {
+  flex-grow: 0;
+  flex-shrink: 0;
   display: block;
   width: 147px;
+  height: fit-content;
   position: absolute;
   top: calc(100% + 14px);
   right: -10px;
@@ -771,8 +804,30 @@ el-examples-article {
   border-bottom: 2px solid var(--color-blue-20);
   el-examples-stack {
     display: flex;
+    flex-wrap: wrap;
     gap: 16px;
     width: 100%;
+    padding: 16px;
+    &.bg {
+      background-color: #ebedf3;
+    }
+  }
+  el-color-chip {
+    flex-grow: 0;
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    height: fit-content;
+    padding: 8px;
+    color: rgb(129, 216, 42);
+  }
+  el-layer-dropdown {
+    position: relative;
+    top: 0;
+    right: 0;
+    z-index: 0;
   }
 }
 /* 종료: 예시(example) */
