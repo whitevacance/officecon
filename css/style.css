@@ -2,6 +2,7 @@
 
 /* 시작: css 공통 변수 */
 :root {
+  --color-primary: var(--color-blue-40);
   --color-blue-officecon: #202b9c;
   --color-blue-40: #4165f8;
   --color-blue-20: #c3e1ff;
@@ -91,6 +92,9 @@
   --zindex-dropdown: 1000;
   --zindex-fixed: 1030;
 }
+el-wrapper.personal-member {
+  --color-primary: var(--color-orange-officecon);
+}
 /* 종료: css 공통 변수 */
 
 /* 시작: reset */
@@ -166,6 +170,7 @@ li {
 }
 input[type='number'] {
   -moz-appearance: textfield;
+  appearance: textfield;
 }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -236,7 +241,7 @@ button {
 .typo-body-lg {
   font-size: 16px;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 24px;
   letter-spacing: -0.48px;
 }
 .typo-label-sm {
@@ -330,6 +335,12 @@ el-icon {
     height: 16px;
     -webkit-mask-image: url('../images/icon-h16-arrow-down.svg');
     mask-image: url('../images/icon-h16-arrow-down.svg');
+  }
+  &.h32-search {
+    width: 32px;
+    height: 32px;
+    -webkit-mask-image: url('../images/icon-h32-search.svg');
+    mask-image: url('../images/icon-h32-search.svg');
   }
 }
 /* 종료: 공통 > icon */
@@ -594,26 +605,58 @@ el-header-sticky {
           }
         }
       }
-      el-search-bar {
+      el-center {
         display: flex;
         align-items: center;
         height: 100%;
         gap: 16px;
-        el-search {
-          display: flex;
-          align-items: center;
+        el-search-area {
+          display: block;
           width: 506px;
           height: 100%;
           position: relative;
-          /* & > div {
-            display: flex;
-            width: 100%;
-            height: 400px;
+          el-search-layer {
             position: absolute;
-            top: 52px;
+            top: 0;
             left: 0;
-            background-color: #25a3b2;
-          } */
+            display: block;
+            width: 100%;
+            height: 100%;
+            border: 1px solid var(--color-primary);
+            border-radius: 999px;
+            overflow: hidden;
+            el-search {
+              display: flex;
+              align-items: center;
+              width: 100%;
+              height: 50px;
+              padding: 0 14px 0 0;
+              button {
+                flex-grow: 0;
+                flex-shrink: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 6px;
+              }
+              .form-control {
+                box-shadow: none !important;
+                border: none !important;
+                caret-color: var(--color-natural-20);
+                height: 100%;
+                padding-left: 28px;
+                color: var(--color-natural-0);
+                &::placeholder {
+                  color: var(--color-natural-50);
+                  font-weight: 400;
+                }
+              }
+            }
+            el-search-addon {
+              display: flex;
+              width: 100%;
+            }
+          }
         }
       }
     }

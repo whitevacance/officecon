@@ -36,6 +36,7 @@
     ></script>
   </head>
   <body>
+    <!-- [DEV] 일반회원일 때 className: 'personal-member' -->
     <el-wrapper>
       <el-container>
         <!-- [DEV] 상단 띠배너 숨김 className: 'hide' -->
@@ -135,16 +136,26 @@
                   </el-logo-text>
                 </a>
               </el-logo>
-              <el-search-bar>
-                <el-search>
-                  <input
-                    type="text"
-                    placeholder="기업회원에게만 신세계 백화점 상품권 최대 10%할인"
-                  />
-                  <!-- <div>레이어</div> -->
-                </el-search>
+              <el-center>
+                <el-search-area>
+                  <el-search-layer>
+                    <el-search>
+                      <input
+                        class="form-control typo-body-lg typo-weight-bold"
+                        type="text"
+                        name="search"
+                        placeholder="기업회원에게만 신세계 백화점 상품권 최대 10%할인"
+                        maxlength="30"
+                      />
+                      <button type="button" aria-label="검색">
+                        <el-icon class="h32-search natural-0"></el-icon>
+                      </button>
+                    </el-search>
+                    <el-search-addon>레이어</el-search-addon>
+                  </el-search-layer>
+                </el-search-area>
                 <el-toggle-button>토글</el-toggle-button>
-              </el-search-bar>
+              </el-center>
             </el-header-content-left>
             <el-header-content-right>오른쪽</el-header-content-right>
           </el-header-content>
