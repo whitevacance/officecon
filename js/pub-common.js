@@ -4,8 +4,10 @@ const pubBodyEl = document.querySelector('body');
 // 종료: 공통 변수
 
 // 시작: 상단 띠배너 숨기기
-const initTopBanner = () => {
-  const topBannerEl = document.querySelector('el-top-banner');
+const initTopBanner = (context = null) => {
+  const queryContext = context || document;
+  const topBannerEl = queryContext.querySelector('el-top-banner');
+
   if (topBannerEl) {
     topBannerEl.addEventListener('click', (e) => {
       // 닫기 버튼이나 그 자식 요소가 클릭된 경우 처리
@@ -21,12 +23,18 @@ const initTopBanner = () => {
     // console.error('el-top-banner 요소를 찾을 수 없습니다.');
   }
 };
+
+// 전역 함수로 등록 (웹컴포넌트에서 호출 가능)
+window.initTopBanner = initTopBanner;
+
 initTopBanner();
 // 종료: 상단 띠배너 숨기기
 
 // 시작: header sticky 시 box-shadow 처리
-const initHeaderSticky = () => {
-  const headerStickyEl = document.querySelector('el-header-sticky');
+const initHeaderSticky = (context = null) => {
+  const queryContext = context || document;
+  const headerStickyEl = queryContext.querySelector('el-header-sticky');
+
   if (headerStickyEl) {
     const observer = new IntersectionObserver(
       ([e]) => e.target.classList.toggle('is-stuck', e.intersectionRatio < 1),
@@ -34,33 +42,57 @@ const initHeaderSticky = () => {
     );
     observer.observe(headerStickyEl);
   } else {
-    console.error('el-header-sticky 요소를 찾을 수 없습니다.');
+    // console.error('el-header-sticky 요소를 찾을 수 없습니다.');
   }
 };
+
+// 전역 함수로 등록 (웹컴포넌트에서 호출 가능)
+window.initHeaderSticky = initHeaderSticky;
+
 initHeaderSticky();
 // 종료: header sticky 시 box-shadow 처리
 
-// 시작: el-dropdown-menu 외부 클릭 시 닫기
-const initDropdownMenu = () => {
-  const dropdownEls = document.querySelectorAll('el-dropdown-menu');
+// 시작: el-search-layer 토글
+let bsSearchLayerToggleButton = null;
+const initSearchLayer = (context = null) => {
+  const queryContext = context || document;
+  const searchLayer = queryContext.querySelector('el-search-layer');
+  const searchLayerToggleButton = queryContext.querySelector(
+    '#searchLayerToggleButton'
+  );
+  const searchLayerInput = queryContext.querySelector(
+    'el-search-layer el-search input'
+  );
 
-  if (dropdownEls.length) {
-    document.addEventListener('click', (e) => {
-      const detailsEl = e.target.closest('details');
-      const summaryEl = e.target.closest('summary');
-
-      [...dropdownEls].map((el) => {
-        const targetDetailsEl = el.querySelector('details');
-
-        if (!summaryEl || targetDetailsEl !== detailsEl) {
-          targetDetailsEl.removeAttribute('open');
-        }
-        return () => {};
-      });
-    });
+  // 부트스트랩 dropdown 인스턴스 생성
+  if (searchLayerToggleButton) {
+    bsSearchLayerToggleButton = new bootstrap.Dropdown(searchLayerToggleButton);
   } else {
-    console.error('el-dropdown-menu 요소를 찾을 수 없습니다.');
+    // console.error('searchLayerEl 요소를 찾을 수 없습니다.');
+  }
+
+  // searchLayerInput에 focus 시 레이어 show
+  if (searchLayerInput && bsSearchLayerToggleButton) {
+    searchLayerInput.addEventListener('focus', () => {
+      bsSearchLayerToggleButton.show();
+    });
+  }
+
+  // 닫기 버튼 클릭
+  if (searchLayer && bsSearchLayerToggleButton) {
+    searchLayer.addEventListener('click', (e) => {
+      const buttonEl = e.target.closest('el-addon-close button');
+      if (buttonEl) {
+        e.preventDefault();
+        e.stopPropagation();
+        bsSearchLayerToggleButton.hide();
+      }
+    });
   }
 };
-initDropdownMenu();
-// 종료: el-dropdown-menu  외부 클릭 시 닫기
+
+// 전역 함수로 등록 (웹컴포넌트에서 호출 가능)
+window.initSearchLayer = initSearchLayer;
+
+initSearchLayer();
+// 종료: el-search-layer 토글
