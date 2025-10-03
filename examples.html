@@ -154,7 +154,22 @@
                         <el-icon class="h32-search natural-0"></el-icon>
                       </button>
                     </el-search>
-                    <el-search-addon>레이어</el-search-addon>
+                    <el-search-addon>
+                      <el-search-addon-content>
+                        <el-search-recent>
+                          <div>최근</div>
+                          <div>최근</div>
+                          <div>최근</div>
+                          <div>최근</div>
+                        </el-search-recent>
+                        <el-search-popular>인기</el-search-popular>
+                      </el-search-addon-content>
+                      <el-search-addon-close>
+                        <button type="button" class="typo-label-lg">
+                          닫기
+                        </button>
+                      </el-search-addon-close>
+                    </el-search-addon>
                   </el-search-layer>
                 </el-search-area>
                 <el-toggle-button>토글</el-toggle-button>
@@ -558,10 +573,5 @@
 
     <!-- 공통js: common.js -->
     <script src="./js/pub-common.js" crossorigin="anonymous"></script>
-    <!--// 공통js: common.js -->
-
-    <script>
-      //
-    </script>
   </body>
 </html>

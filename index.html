@@ -39,31 +39,24 @@
     <!-- [DEV] 일반회원일 때 className: 'personal-member' -->
     <el-wrapper>
       <el-container>
-        <!-- [DEV] 상단 띠배너(el-top-banner):
-          1. 퍼블리싱용 웹컴포넌트입니다(component-top-banner).
+        <!-- 시작: [DEV] 웹컴포넌트
+          1. 퍼블리싱용 웹컴포넌트입니다(el-top-banner).
           2. 개발 시 examples.html 참고해 주세요.
          -->
         <component-top-banner></component-top-banner>
+        <!-- 종료: [DEV] 웹컴포넌트 -->
 
         <!-- 시작: 헤더 -->
 
-        <!-- [DEV] el-header-top:
-          1. 퍼블리싱용 웹컴포넌트입니다(component-header-top).
+        <!-- 시작: [DEV] 웹컴포넌트
+          1. 퍼블리싱용 웹컴포넌트입니다(el-header-top, el-header-sticky, el-header-gnb).
           2. 개발 시 examples.html 참고해 주세요.
          -->
         <component-header-top></component-header-top>
-
-        <!-- [DEV] el-header-sticky:
-          1. 퍼블리싱용 웹컴포넌트입니다(component-header-sticky).
-          2. 개발 시 examples.html 참고해 주세요.
-         -->
         <component-header-sticky></component-header-sticky>
-
-        <!-- [DEV] el-header-gnb:
-          1. 퍼블리싱용 웹컴포넌트입니다(component-header-gnb).
-          2. 개발 시 examples.html 참고해 주세요.
-         -->
         <component-header-gnb></component-header-gnb>
+        <!-- 종료: [DEV] 웹컴포넌트 -->
+
         <!-- 종료: 헤더 -->
 
         <!-- 시작: 컨텐츠 -->
@@ -92,17 +85,18 @@
         <!-- 종료: 컨텐츠 -->
       </el-container>
 
-      <!-- [DEV] el-footer:
-        1. 퍼블리싱용 웹컴포넌트입니다(component-footer).
+      <!-- 시작: [DEV] 웹컴포넌트
+        1. 퍼블리싱용 웹컴포넌트입니다(el-footer).
         2. 개발 시 examples.html 참고해 주세요.
       -->
       <component-footer></component-footer>
+      <!-- 종료: [DEV] 웹컴포넌트 -->
     </el-wrapper>
 
-    <!-- [DEV] 공통js: common.js -->
+    <!-- 공통js: common.js -->
     <script src="./js/pub-common.js" crossorigin="anonymous"></script>
 
-    <!-- [DEV] 웹 컴포넌트js: 개발 시 필요에 따라 삭제해 주세요 -->
+    <!-- [DEV] 웹 컴포넌트js: 개발 시 삭제해 주세요 -->
     <script src="./js/web-components.js" crossorigin="anonymous"></script>
   </body>
 </html>
