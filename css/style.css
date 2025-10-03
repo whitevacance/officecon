@@ -530,6 +530,15 @@ el-header-top {
     opacity: 1;
   }
 }
+component-header-sticky {
+  display: block;
+  width: 100%;
+  position: sticky;
+  top: -1px;
+  &:has(.is-stuck) {
+    z-index: var(--zindex-fixed);
+  }
+}
 el-header-sticky {
   display: block;
   width: 100%;

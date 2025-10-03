@@ -95,15 +95,6 @@ class ComponentHeaderTop extends HTMLElement {
 
   connectedCallback() {
     this.render();
-    this.loadExternalScript();
-  }
-
-  loadExternalScript() {
-    // loadScript(this, 'initHeaderSticky');
-  }
-
-  async loadScriptDynamically() {
-    // loadDynamically(this, 'initHeaderSticky');
   }
 
   render() {
@@ -169,6 +160,76 @@ class ComponentHeaderTop extends HTMLElement {
 }
 customElements.define('component-header-top', ComponentHeaderTop);
 // 종료: el-header-top
+
+// 시작: el-header-sticky
+class ComponentHeaderSticky extends HTMLElement {
+  constructor() {
+    super();
+  }
+
+  connectedCallback() {
+    this.render();
+    this.loadExternalScript();
+  }
+
+  loadExternalScript() {
+    loadScript(this, 'initHeaderSticky');
+  }
+
+  async loadScriptDynamically() {
+    loadDynamically(this, 'initHeaderSticky');
+  }
+
+  render() {
+    this.innerHTML = `
+      <el-header-sticky>
+        <el-header-content>
+          <el-header-content-left>
+            <el-logo>
+              <a href="#">
+                <img src="./images/logo.svg" alt="오피스콘" />
+                <el-logo-text>
+                  <div>
+                    <img
+                      src="./images/logo-text-2.svg"
+                      alt="이용자수 4년 연속 1위"
+                    />
+                  </div>
+                  <div>
+                    <img src="./images/logo-text-1.svg" alt="OFFICECON" />
+                  </div>
+                </el-logo-text>
+              </a>
+            </el-logo>
+            <el-center>
+              <el-search-area>
+                <el-search-layer>
+                  <el-search>
+                    <input
+                      class="form-control typo-body-lg typo-weight-bold"
+                      type="text"
+                      name="search"
+                      placeholder="기업회원에게만 신세계 백화점 상품권 최대 10%할인"
+                      maxlength="30"
+                    />
+                    <button type="button" aria-label="검색">
+                      <el-icon class="h32-search natural-0"></el-icon>
+                    </button>
+                  </el-search>
+                  <el-search-addon>레이어</el-search-addon>
+                </el-search-layer>
+              </el-search-area>
+              <el-toggle-button>토글</el-toggle-button>
+            </el-center>
+          </el-header-content-left>
+          <el-header-content-right>오른쪽</el-header-content-right>
+        </el-header-content>
+      </el-header-sticky>
+    `;
+  }
+}
+customElements.define('component-header-sticky', ComponentHeaderSticky);
+// 종료: el-header-sticky
 
 // 시작:
 class MyButton extends HTMLElement {
