@@ -92,8 +92,8 @@ class ComponentTopBanner extends HTMLElement {
 customElements.define('component-top-banner', ComponentTopBanner);
 // 종료: 상단 띠배너
 
-// 시작: 헤더
-class ComponentHeader extends HTMLElement {
+// 시작: el-header-top
+class ComponentHeaderTop extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: 'open' });
@@ -105,11 +105,11 @@ class ComponentHeader extends HTMLElement {
   }
 
   loadExternalScript() {
-    loadScript(this, 'initHeaderSticky');
+    // loadScript(this, 'initHeaderSticky');
   }
 
   async loadScriptDynamically() {
-    loadDynamically(this, 'initHeaderSticky');
+    // loadDynamically(this, 'initHeaderSticky');
   }
 
   render() {
@@ -123,7 +123,6 @@ class ComponentHeader extends HTMLElement {
         crossorigin="anonymous"
       ></script>
 
-      <!-- 시작: 헤더 -->
       <el-header-top class="typo-label-lg">
         <el-header-top-left>
           <ul class="menu">
@@ -180,58 +179,11 @@ class ComponentHeader extends HTMLElement {
           </ul>
         </el-header-top-right>
       </el-header-top>
-      <el-header-sticky>
-        <el-header-content>
-          <el-header-content-left>
-            <el-logo>
-              <a href="#">
-                <img src="./images/logo.svg" alt="오피스콘" />
-                <el-logo-text>
-                  <div>
-                    <img
-                      src="./images/logo-text-2.svg"
-                      alt="이용자수 4년 연속 1위"
-                    />
-                  </div>
-                  <div>
-                    <img src="./images/logo-text-1.svg" alt="OFFICECON" />
-                  </div>
-                </el-logo-text>
-              </a>
-            </el-logo>
-            <el-center>
-              <el-search-area>
-                <el-search-layer>
-                  <el-search>
-                    <input
-                      class="form-control typo-body-lg typo-weight-bold"
-                      type="text"
-                      name="search"
-                      placeholder="기업회원에게만 신세계 백화점 상품권 최대 10%할인"
-                      maxlength="30"
-                    />
-                    <button type="button" aria-label="검색">
-                      <el-icon class="h32-search natural-0"></el-icon>
-                    </button>
-                  </el-search>
-                  <el-search-addon>레이어</el-search-addon>
-                </el-search-layer>
-              </el-search-area>
-              <el-toggle-button>토글</el-toggle-button>
-            </el-center>
-          </el-header-content-left>
-          <el-header-content-right>오른쪽</el-header-content-right>
-        </el-header-content>
-      </el-header-sticky>
-      <el-header-gnb>
-        <el-gnb-container>gnb</el-gnb-container>
-      </el-header-gnb>
-      <!-- 종료: 헤더 -->
     `;
   }
 }
-customElements.define('component-header', ComponentHeader);
-// 종료: 헤더
+customElements.define('component-header-top', ComponentHeaderTop);
+// 종료: el-header-top
 
 // 시작:
 class MyButton extends HTMLElement {

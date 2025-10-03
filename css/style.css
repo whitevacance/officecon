@@ -411,7 +411,6 @@ el-container {
 component-top-banner {
   display: block;
   width: 100%;
-  height: var(--layout-top-banner-height);
 }
 el-top-banner {
   display: flex;
