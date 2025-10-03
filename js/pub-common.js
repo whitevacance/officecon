@@ -23,7 +23,7 @@ const initTopBanner = (context = null) => {
   }
 };
 
-// 전역 함수로 등록 (웹 컴포넌트에서 호출 가능)
+// 전역 함수로 등록 (웹컴포넌트에서 호출 가능)
 window.initTopBanner = initTopBanner;
 
 // 실행 (일반 DOM에서만)
@@ -33,8 +33,9 @@ if (typeof window !== 'undefined' && !window.isShadowDOM) {
 // 종료: 상단 띠배너 숨기기
 
 // 시작: header sticky 시 box-shadow 처리
-const initHeaderSticky = () => {
-  const headerStickyEl = document.querySelector('el-header-sticky');
+const initHeaderSticky = (context = null) => {
+  const queryContext = context || document;
+  const headerStickyEl = queryContext.querySelector('el-header-sticky');
   if (headerStickyEl) {
     const observer = new IntersectionObserver(
       ([e]) => e.target.classList.toggle('is-stuck', e.intersectionRatio < 1),
@@ -45,5 +46,12 @@ const initHeaderSticky = () => {
     console.error('el-header-sticky 요소를 찾을 수 없습니다.');
   }
 };
-initHeaderSticky();
+
+// 전역 함수로 등록 (웹컴포넌트에서 호출 가능)
+window.initHeaderSticky = initHeaderSticky;
+
+// 실행 (일반 DOM에서만)
+if (typeof window !== 'undefined' && !window.isShadowDOM) {
+  initHeaderSticky();
+}
 // 종료: header sticky 시 box-shadow 처리

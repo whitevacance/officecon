@@ -1,15 +1,15 @@
 // 시작: 공통
-const loadScript = (target) => {
+const loadScript = (target, scriptName) => {
   // pub-common.js가 이미 로드되어 있다면 전역 함수 호출
-  if (window.initTopBanner) {
-    window.initTopBanner(target.shadowRoot);
+  if (window[scriptName]) {
+    window[scriptName](target.shadowRoot);
   } else {
     // 스크립트가 아직 로드되지 않았다면 동적 로드
     target.loadScriptDynamically();
   }
 };
 
-const loadDynamically = (target) => {
+const loadDynamically = (target, scriptName) => {
   try {
     // 이미 로드 중인지 확인
     if (target.scriptLoading) return;
@@ -20,25 +20,25 @@ const loadDynamically = (target) => {
     script.src = './js/pub-common.js';
     script.onload = () => {
       // 로드 완료 후 초기화
-      if (window.initTopBanner) {
-        window.initTopBanner(target.shadowRoot);
+      if (window[scriptName]) {
+        window[scriptName](target.shadowRoot);
       }
     };
     script.onerror = () => {
       console.error('pub-common.js 로드 실패');
-      target.initTopBanner(); // 폴백
+      target[scriptName](); // 폴백
     };
 
     document.head.appendChild(script);
   } catch (error) {
     console.error('외부 스크립트 로드 실패:', error);
-    target.initTopBanner(); // 폴백
+    target[scriptName](); // 폴백
   }
 };
 // 종료: 공통
 
 // 시작: 상단 띠배너
-class TopBanner extends HTMLElement {
+class ComponentTopBanner extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: 'open' });
@@ -50,11 +50,11 @@ class TopBanner extends HTMLElement {
   }
 
   loadExternalScript() {
-    loadScript(this);
+    loadScript(this, 'initTopBanner');
   }
 
   async loadScriptDynamically() {
-    loadDynamically(this);
+    loadDynamically(this, 'initTopBanner');
   }
 
   render() {
@@ -89,8 +89,149 @@ class TopBanner extends HTMLElement {
     `;
   }
 }
-customElements.define('component-top-banner', TopBanner);
+customElements.define('component-top-banner', ComponentTopBanner);
 // 종료: 상단 띠배너
+
+// 시작: 헤더
+class ComponentHeader extends HTMLElement {
+  constructor() {
+    super();
+    this.attachShadow({ mode: 'open' });
+  }
+
+  connectedCallback() {
+    this.render();
+    this.loadExternalScript();
+  }
+
+  loadExternalScript() {
+    loadScript(this, 'initHeaderSticky');
+  }
+
+  async loadScriptDynamically() {
+    loadDynamically(this, 'initHeaderSticky');
+  }
+
+  render() {
+    this.shadowRoot.innerHTML = `
+      <link type="text/css" rel="stylesheet" href="./css/bootstrap.min.css" />
+      <link type="text/css" rel="stylesheet" href="./css/swiper.min.css" />
+      <link type="text/css" rel="stylesheet" href="./css/style.css" />
+      <script src="./js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+      <script
+        src="./js/swiper-element-bundleswiper.min.js"
+        crossorigin="anonymous"
+      ></script>
+
+      <!-- 시작: 헤더 -->
+      <el-header-top class="typo-label-lg">
+        <el-header-top-left>
+          <ul class="menu">
+            <li>
+              <a href="#">대량발송 양식 다운로드</a>
+            </li>
+            <li>
+              <a href="#">판매상품 다운로드</a>
+            </li>
+            <li>
+              <a href="#">오피스콘 특장점</a>
+            </li>
+          </ul>
+        </el-header-top-left>
+        <el-header-top-right>
+          <ul class="menu">
+            <li>
+              <a href="#">로그인</a>
+            </li>
+            <li>
+              <a href="#">회원가입</a>
+            </li>
+            <li>
+              <a href="#">로그아웃</a>
+            </li>
+            <li>
+              <el-dropdown-menu>
+                <button
+                  type="button"
+                  class="typo-label-lg"
+                  data-bs-toggle="dropdown"
+                  data-bs-offset="5,10"
+                >
+                  고객센터
+                  <el-icon class="h16-arrow-down natural-40"></el-icon>
+                </button>
+                <el-layer-dropdown
+                  class="dropdown-menu dropdown-menu-end small"
+                >
+                  <ul class="typo-label-lg typo-weight-em">
+                    <li>
+                      <a href="#">공지사항</a>
+                    </li>
+                    <li>
+                      <a href="#">FAQ</a>
+                    </li>
+                    <li>
+                      <a href="#">1:1문의</a>
+                    </li>
+                  </ul>
+                </el-layer-dropdown>
+              </el-dropdown-menu>
+            </li>
+          </ul>
+        </el-header-top-right>
+      </el-header-top>
+      <el-header-sticky>
+        <el-header-content>
+          <el-header-content-left>
+            <el-logo>
+              <a href="#">
+                <img src="./images/logo.svg" alt="오피스콘" />
+                <el-logo-text>
+                  <div>
+                    <img
+                      src="./images/logo-text-2.svg"
+                      alt="이용자수 4년 연속 1위"
+                    />
+                  </div>
+                  <div>
+                    <img src="./images/logo-text-1.svg" alt="OFFICECON" />
+                  </div>
+                </el-logo-text>
+              </a>
+            </el-logo>
+            <el-center>
+              <el-search-area>
+                <el-search-layer>
+                  <el-search>
+                    <input
+                      class="form-control typo-body-lg typo-weight-bold"
+                      type="text"
+                      name="search"
+                      placeholder="기업회원에게만 신세계 백화점 상품권 최대 10%할인"
+                      maxlength="30"
+                    />
+                    <button type="button" aria-label="검색">
+                      <el-icon class="h32-search natural-0"></el-icon>
+                    </button>
+                  </el-search>
+                  <el-search-addon>레이어</el-search-addon>
+                </el-search-layer>
+              </el-search-area>
+              <el-toggle-button>토글</el-toggle-button>
+            </el-center>
+          </el-header-content-left>
+          <el-header-content-right>오른쪽</el-header-content-right>
+        </el-header-content>
+      </el-header-sticky>
+      <el-header-gnb>
+        <el-gnb-container>gnb</el-gnb-container>
+      </el-header-gnb>
+      <!-- 종료: 헤더 -->
+    `;
+  }
+}
+customElements.define('component-header', ComponentHeader);
+// 종료: 헤더
 
 // 시작:
 class MyButton extends HTMLElement {

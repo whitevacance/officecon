@@ -409,7 +409,9 @@ el-container {
 
 /* 시작: 레이아웃 > 상단 띠배너 */
 component-top-banner {
-  background-color: red;
+  display: block;
+  width: 100%;
+  height: var(--layout-top-banner-height);
 }
 el-top-banner {
   display: flex;
@@ -426,7 +428,7 @@ el-top-banner {
     width: var(--layout-width);
     height: 100%;
     position: relative;
-    background-color: red;
+    background-color: var(--color-natural-100);
     a {
       display: block;
       width: 100%;
