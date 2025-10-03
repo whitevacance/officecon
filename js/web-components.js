@@ -41,7 +41,6 @@ const loadDynamically = (target, scriptName) => {
 class ComponentTopBanner extends HTMLElement {
   constructor() {
     super();
-    this.attachShadow({ mode: 'open' });
   }
 
   connectedCallback() {
@@ -58,11 +57,7 @@ class ComponentTopBanner extends HTMLElement {
   }
 
   render() {
-    this.shadowRoot.innerHTML = `
-      <link type="text/css" rel="stylesheet" href="./css/bootstrap.min.css" />
-      <link type="text/css" rel="stylesheet" href="./css/swiper.min.css" />
-      <link type="text/css" rel="stylesheet" href="./css/style.css" />
-
+    this.innerHTML = `
       <!-- [DEV] 상단 띠배너 숨김 className: 'hide' -->
       <el-top-banner>
         <!-- [DEV] 상단 띠배너 컬러 커스텀 -->
@@ -96,7 +91,6 @@ customElements.define('component-top-banner', ComponentTopBanner);
 class ComponentHeaderTop extends HTMLElement {
   constructor() {
     super();
-    this.attachShadow({ mode: 'open' });
   }
 
   connectedCallback() {
@@ -113,16 +107,7 @@ class ComponentHeaderTop extends HTMLElement {
   }
 
   render() {
-    this.shadowRoot.innerHTML = `
-      <link type="text/css" rel="stylesheet" href="./css/bootstrap.min.css" />
-      <link type="text/css" rel="stylesheet" href="./css/swiper.min.css" />
-      <link type="text/css" rel="stylesheet" href="./css/style.css" />
-      <script src="./js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-      <script
-        src="./js/swiper-element-bundleswiper.min.js"
-        crossorigin="anonymous"
-      ></script>
-
+    this.innerHTML = `
       <el-header-top class="typo-label-lg">
         <el-header-top-left>
           <ul class="menu">
@@ -189,7 +174,6 @@ customElements.define('component-header-top', ComponentHeaderTop);
 class MyButton extends HTMLElement {
   constructor() {
     super();
-    this.attachShadow({ mode: 'open' });
   }
 
   connectedCallback() {
@@ -198,19 +182,15 @@ class MyButton extends HTMLElement {
   }
 
   loadExternalScript() {
-    loadScript(this);
+    // loadScript(this, 'initTopBanner');
   }
 
   async loadScriptDynamically() {
-    loadDynamically(this);
+    // loadDynamically(this, 'initTopBanner');
   }
 
   render() {
-    this.shadowRoot.innerHTML = `
-      <link type="text/css" rel="stylesheet" href="./css/bootstrap.min.css" />
-      <link type="text/css" rel="stylesheet" href="./css/swiper.min.css" />
-      <link type="text/css" rel="stylesheet" href="./css/style.css" />
-
+    this.innerHTML = `
       <div>테스트</div>
     `;
   }
