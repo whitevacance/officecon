@@ -89,7 +89,6 @@
   --layout-footer-height: 352px;
   --layout-home-content-width: 886px;
   --layout-home-aside-width: 322px;
-  --zindex-dropdown: 1000;
   --zindex-fixed: 1030;
 }
 el-wrapper.personal-member {
@@ -136,6 +135,9 @@ pre {
   letter-spacing: -0.48px;
   font-size: 16px;
   line-height: 1.5;
+}
+html {
+  scroll-behavior: auto !important;
 }
 body {
   /* bootstrap의 모달 팝업 노출 시 스크롤바 width 확보하는 padding 제거 */
@@ -346,17 +348,12 @@ el-icon {
 /* 종료: 공통 > icon */
 
 /* 시작: 공통 > el-layer-dropdown */
-el-layer-dropdown {
-  flex-grow: 0;
-  flex-shrink: 0;
-  display: block;
+el-layer-dropdown.dropdown-menu {
   width: 147px;
+  min-width: 0;
   height: fit-content;
-  position: absolute;
-  top: calc(100% + 14px);
-  right: -10px;
-  z-index: var(--zindex-dropdown);
   background-color: var(--color-natural-100);
+  border: none;
   border-radius: 20px;
   box-shadow: var(--color-boxShadow-3);
   padding: 14px;
@@ -411,6 +408,9 @@ el-container {
 /* 종료: 레이아웃 > wrapper, container */
 
 /* 시작: 레이아웃 > 상단 띠배너 */
+component-top-banner {
+  background-color: red;
+}
 el-top-banner {
   display: flex;
   align-items: center;
@@ -487,27 +487,20 @@ el-header-top {
           color: var(--color-natural-0);
         }
       }
-      details {
-        position: relative;
-        summary {
+      el-dropdown-menu {
+        button {
           display: flex;
           align-items: center;
           color: var(--color-natural-30);
-          &:hover {
+          &:hover,
+          &.show {
             color: var(--color-natural-0);
             el-icon {
               background-color: var(--color-natural-0);
             }
           }
-          &::marker {
-            content: '';
-          }
-        }
-        &[open] {
-          summary {
-            color: var(--color-natural-0);
+          &.show {
             el-icon {
-              background-color: var(--color-natural-0);
               -webkit-transform: rotate(180deg);
               transform: rotate(180deg);
             }
@@ -866,11 +859,9 @@ el-examples-article {
     padding: 8px;
     color: rgb(129, 216, 42);
   }
-  el-layer-dropdown {
+  el-layer-dropdown.dropdown-menu {
+    display: block;
     position: relative;
-    top: 0;
-    right: 0;
-    z-index: 0;
   }
 }
 /* 종료: 예시(example) */

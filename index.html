@@ -39,29 +39,11 @@
     <!-- [DEV] 일반회원일 때 className: 'personal-member' -->
     <el-wrapper>
       <el-container>
-        <!-- [DEV] 상단 띠배너 숨김 className: 'hide' -->
-        <el-top-banner>
-          <!-- [DEV] 상단 띠배너 컬러 커스텀 -->
-          <style>
-            el-top-banner {
-              background-color: rgba(0, 70, 196, 1); /* bg */
-              el-icon {
-                background-color: #ffffff; /* 닫기 버튼 */
-              }
-            }
-          </style>
-          <el-top-banner-content>
-            <a href="#">
-              <img
-                src="./images/temp/top-banner.png"
-                alt="한번 더! 다이아몬드 이벤트"
-              />
-            </a>
-            <button type="button">
-              <el-icon class="h20-closed">닫기</el-icon>
-            </button>
-          </el-top-banner-content>
-        </el-top-banner>
+        <!-- [DEV] 상단 띠배너:
+          1. 퍼블리싱 용 웹컴포넌트입니다.
+          2. 개발 시 examples.html 참고해 주세요.
+         -->
+        <component-top-banner></component-top-banner>
 
         <!-- 시작: 헤더 -->
         <el-header-top class="typo-label-lg">
@@ -91,27 +73,30 @@
               </li>
               <li>
                 <el-dropdown-menu>
-                  <details>
-                    <summary>
-                      고객센터
-                      <el-icon class="h16-arrow-down natural-40"></el-icon>
-                    </summary>
-                    <el-layer-dropdown
-                      class="small typo-label-lg typo-weight-em"
-                    >
-                      <ul>
-                        <li>
-                          <a href="#">공지사항</a>
-                        </li>
-                        <li>
-                          <a href="#">FAQ</a>
-                        </li>
-                        <li>
-                          <a href="#">1:1문의</a>
-                        </li>
-                      </ul>
-                    </el-layer-dropdown>
-                  </details>
+                  <button
+                    type="button"
+                    class="typo-label-lg"
+                    data-bs-toggle="dropdown"
+                    data-bs-offset="5,10"
+                  >
+                    고객센터
+                    <el-icon class="h16-arrow-down natural-40"></el-icon>
+                  </button>
+                  <el-layer-dropdown
+                    class="dropdown-menu dropdown-menu-end small"
+                  >
+                    <ul class="typo-label-lg typo-weight-em">
+                      <li>
+                        <a href="#">공지사항</a>
+                      </li>
+                      <li>
+                        <a href="#">FAQ</a>
+                      </li>
+                      <li>
+                        <a href="#">1:1문의</a>
+                      </li>
+                    </ul>
+                  </el-layer-dropdown>
                 </el-dropdown-menu>
               </li>
             </ul>
@@ -276,12 +261,10 @@
       </el-footer>
     </el-wrapper>
 
-    <!-- 공통js: common.js -->
+    <!-- [DEV] 공통js: common.js -->
     <script src="./js/pub-common.js" crossorigin="anonymous"></script>
-    <!--// 공통js: common.js -->
 
-    <script>
-      //
-    </script>
+    <!-- [DEV] 웹 컴포넌트js: 개발 시 필요에 따라 삭제해 주세요 -->
+    <script src="./js/web-components.js" crossorigin="anonymous"></script>
   </body>
 </html>
