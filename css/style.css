@@ -425,8 +425,6 @@ el-alert.modal {
   el-alert-dialog.modal-dialog {
     box-sizing: border-box;
     max-width: 432px;
-    /* height: 100%; */
-    /* margin: 0 auto; */
     padding-left: 16px;
     padding-right: 16px;
     transform: translate(0, 0) !important;
@@ -1057,14 +1055,49 @@ el-header-sticky {
 el-header-gnb {
   display: block;
   width: 100%;
-  height: var(--layout-gnb-height);
+  height: calc(var(--layout-gnb-height) + 1px);
+  padding-bottom: 10px;
   border-bottom: 1px solid var(--color-natural-90);
 
   el-gnb-container {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     width: var(--layout-width);
     padding: var(--layout-padding);
+    height: 100%;
     margin: 0 auto;
+
+    nav {
+      height: 100%;
+      & > ul {
+        display: flex;
+        height: 100%;
+        gap: 40px;
+
+        & > li {
+          display: flex;
+          align-items: center;
+          height: 100%;
+
+          & > button {
+            color: var(--color-natural-20);
+
+            &:hover {
+              color: var(--color-natural-0);
+            }
+          }
+
+          & > a {
+            color: var(--color-natural-20);
+
+            &:hover {
+              color: var(--color-natural-0);
+            }
+          }
+        }
+      }
+    }
   }
 }
 /* 종료: 레이아웃 > 헤더 > el-header-gnb */

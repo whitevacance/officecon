@@ -401,7 +401,10 @@ class ComponentHeaderGnb extends HTMLElement {
   render() {
     this.innerHTML = `
       <el-header-gnb>
-        <el-gnb-container>gnb</el-gnb-container>
+        <el-gnb-container>
+          <div>gnb</div>
+          <div>gnb</div>
+        </el-gnb-container>
       </el-header-gnb>
     `;
   }
