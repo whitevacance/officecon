@@ -36,6 +36,7 @@
     ></script>
   </head>
   <body>
+    <!-- [DEV] 일반회원일 때 className: 'personal-member' -->
     <el-wrapper>
       <el-container>
         <!-- [DEV] 상단 띠배너 숨김 className: 'hide' -->
@@ -261,7 +262,23 @@
                     </el-search-addon>
                   </el-search-layer>
                 </el-search-area>
-                <el-toggle-button>토글</el-toggle-button>
+                <el-theme-switch class="typo-body-sm">
+                  <el-theme-switch-buttons>
+                    <input
+                      type="radio"
+                      id="theme-company-member"
+                      name="theme-switch"
+                      checked
+                    />
+                    <label for="theme-company-member">기업</label>
+                    <input
+                      type="radio"
+                      id="theme-personal-member"
+                      name="theme-switch"
+                    />
+                    <label for="theme-personal-member">일반</label>
+                  </el-theme-switch-buttons>
+                </el-theme-switch>
               </el-center>
             </el-header-content-left>
             <el-header-content-right>오른쪽</el-header-content-right>

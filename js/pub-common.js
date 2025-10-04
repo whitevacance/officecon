@@ -1,6 +1,7 @@
 // 시작: 공통 변수
 const pubHtmlEl = document.querySelector('html');
 const pubBodyEl = document.querySelector('body');
+const pubWrapperEl = document.querySelector('el-wrapper');
 // 종료: 공통 변수
 
 // 시작: 상단 띠배너 숨기기
@@ -97,3 +98,52 @@ window.initSearchLayer = initSearchLayer;
 
 initSearchLayer();
 // 종료: el-search-layer 토글
+
+// 시작: el-theme-switch
+const initThemeSwitch = (context = null) => {
+  const queryContext = context || document;
+  const themeSwitchEl = queryContext.querySelector('el-theme-switch');
+  const themeRadioButtons = queryContext.querySelectorAll(
+    'input[name="theme-switch"]'
+  );
+
+  if (themeSwitchEl && themeRadioButtons.length > 0) {
+    // 테마 클래스 적용 함수
+    const applyThemeClass = (checkedRadio) => {
+      const isCompanyMember = checkedRadio.id === 'theme-company-member';
+      const isPersonalMember = checkedRadio.id === 'theme-personal-member';
+
+      // 테마 변경에 따른 추가 로직 처리
+      if (isCompanyMember) {
+        // 기업 회원 테마 관련 로직
+        pubWrapperEl.classList.remove('personal-member');
+      } else if (isPersonalMember) {
+        // 일반 회원 테마 관련 로직
+        pubWrapperEl.classList.add('personal-member');
+      }
+    };
+
+    // 페이지 로드 시 체크된 radio 버튼에 따라 초기 클래스 적용
+    const checkedRadio = queryContext.querySelector(
+      'input[name="theme-switch"]:checked'
+    );
+    if (checkedRadio) {
+      applyThemeClass(checkedRadio);
+    }
+
+    // 각 radio 버튼에 변경 이벤트 리스너 추가
+    themeRadioButtons.forEach((radio) => {
+      radio.addEventListener('change', (e) => {
+        applyThemeClass(e.target);
+      });
+    });
+  } else {
+    // console.error('el-theme-switch 또는 theme-switch radio 버튼을 찾을 수 없습니다.');
+  }
+};
+
+// 전역 함수로 등록 (웹컴포넌트에서 호출 가능)
+window.initThemeSwitch = initThemeSwitch;
+
+initThemeSwitch();
+// 종료: el-theme-switch
