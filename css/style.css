@@ -366,6 +366,25 @@ el-icon {
 }
 /* 종료: 공통 > icon */
 
+/* 시작: 공통 > badge */
+el-badge-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  width: fit-content;
+  height: 20px;
+  border-radius: 999px;
+  background-color: var(--color-red-40);
+  color: var(--color-natural-100);
+  font-weight: 700 !important;
+  overflow: hidden;
+  &:has(el-more) {
+    width: 30px;
+  }
+}
+/* 종료: 공통 > badge */
+
 /* 시작: 공통 > el-layer-dropdown */
 el-layer-dropdown.dropdown-menu {
   width: 147px;
@@ -935,6 +954,13 @@ el-header-sticky {
         height: 48px;
         font-weight: 600;
         color: var(--color-natural-40);
+        position: relative;
+
+        el-badge-count {
+          position: absolute;
+          top: -4px;
+          left: calc(50% + 3px);
+        }
 
         &:hover {
           color: var(--color-natural-0);

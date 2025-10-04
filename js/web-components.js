@@ -346,7 +346,20 @@ class ComponentHeaderSticky extends HTMLElement {
               </el-theme-switch>
             </el-center>
           </el-header-content-left>
-          <el-header-content-right>오른쪽</el-header-content-right>
+          <el-header-content-right class="typo-label-md">
+            <a href="#">
+              <el-icon class="h32-cart natural-30"></el-icon>
+              <span>장바구니</span>
+              <el-badge-count class="typo-label-md">
+                99
+                <el-more>+</el-more>
+              </el-badge-count>
+            </a>
+            <a href="#">
+              <el-icon class="h32-user natural-30"></el-icon>
+              <span>마이페이지</span>
+            </a>
+          </el-header-content-right>
         </el-header-content>
       </el-header-sticky>
     `;
