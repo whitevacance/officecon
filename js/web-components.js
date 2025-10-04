@@ -1,10 +1,8 @@
-// 시작: 공통
 const loadScript = (target, scriptName) => {
-  // pub-common.js가 이미 로드되어 있다면 전역 함수 호출
   if (window[scriptName]) {
-    window[scriptName](target.shadowRoot);
+    window[scriptName]();
   } else {
-    // 스크립트가 아직 로드되지 않았다면 동적 로드
+    // pub-common.js가 로드되지 않았다면 동적 로드
     target.loadScriptDynamically();
   }
 };
@@ -19,16 +17,15 @@ const loadDynamically = (target, scriptName) => {
     const script = document.createElement('script');
     script.src = './js/pub-common.js';
     script.onload = () => {
-      // 로드 완료 후 초기화
+      // 로드 완료 후 실행
       if (window[scriptName]) {
-        window[scriptName](target.shadowRoot);
+        window[scriptName]();
       }
     };
     script.onerror = () => {
       console.error('pub-common.js 로드 실패');
       target[scriptName](); // 폴백
     };
-
     document.head.appendChild(script);
   } catch (error) {
     console.error('외부 스크립트 로드 실패:', error);
@@ -49,10 +46,12 @@ class ComponentTopBanner extends HTMLElement {
   }
 
   loadExternalScript() {
+    loadScript(this, 'initAlert');
     loadScript(this, 'initTopBanner');
   }
 
   async loadScriptDynamically() {
+    loadDynamically(this, 'initAlert');
     loadDynamically(this, 'initTopBanner');
   }
 
@@ -95,6 +94,15 @@ class ComponentHeaderTop extends HTMLElement {
 
   connectedCallback() {
     this.render();
+    this.loadExternalScript();
+  }
+
+  loadExternalScript() {
+    loadScript(this, 'initAlert');
+  }
+
+  async loadScriptDynamically() {
+    loadDynamically(this, 'initAlert');
   }
 
   render() {
@@ -173,11 +181,18 @@ class ComponentHeaderSticky extends HTMLElement {
   }
 
   loadExternalScript() {
+    loadScript(this, 'initAlert');
     loadScript(this, 'initHeaderSticky');
+    loadScript(this, 'initSearchLayer');
+    loadScript(this, 'initThemeSwitch');
   }
 
   async loadScriptDynamically() {
+    loadDynamically(this, 'initAlert');
     loadDynamically(this, 'initHeaderSticky');
+    loadDynamically(this, 'initHeaderSticky');
+    loadDynamically(this, 'initSearchLayer');
+    loadDynamically(this, 'initThemeSwitch');
   }
 
   render() {
@@ -203,7 +218,18 @@ class ComponentHeaderSticky extends HTMLElement {
             </el-logo>
             <el-center>
               <el-search-area>
-                <el-search-layer>
+                <!-- 시작: [DEV] 검색레이어 토글을 위한 숨김 버튼 -->
+                <button
+                  type="button"
+                  id="searchLayerToggleButton"
+                  data-bs-toggle="dropdown"
+                  data-bs-offset="0,-17"
+                  data-bs-auto-close="outside"
+                  aria-expanded="false"
+                >
+                </button>
+                <!-- 종료: [DEV] 검색레이어 토글을 위한 숨김 버튼 -->
+                <el-search-layer class="dropdown-menu">
                   <el-search>
                     <input
                       class="form-control typo-body-lg typo-weight-bold"
@@ -216,13 +242,135 @@ class ComponentHeaderSticky extends HTMLElement {
                       <el-icon class="h32-search natural-0"></el-icon>
                     </button>
                   </el-search>
-                  <el-search-addon>레이어</el-search-addon>
+                  <el-search-addon>
+                    <el-addon-content class="typo-label-lg">
+                      <el-recent>
+                        <el-addon-title>
+                          최근 검색어
+                          <button type="button" class="typo-label-md">
+                            전체삭제
+                          </button>
+                        </el-addon-title>
+                        <!-- [DEV] >최근 검색어가 없을 경우 노출
+                          <el-empty>최근 검색어가 없습니다.</el-empty>
+                        -->
+                        <ul class="recent-list">
+                          <li>
+                            <a href="#">스타벅스</a>
+                            <button type="button" aria-label="삭제">
+                              <el-icon class="h16-closed natural-0"></el-icon>
+                            </button>
+                          </li>
+                          <li>
+                            <a href="#">
+                              배달의민족 요기요 쿠팡이츠 배달의민족 요기요
+                              쿠팡이츠
+                            </a>
+                            <button type="button" aria-label="삭제">
+                              <el-icon class="h16-closed natural-0"></el-icon>
+                            </button>
+                          </li>
+                          <li>
+                            <a href="#">스타벅스</a>
+                            <button type="button" aria-label="삭제">
+                              <el-icon class="h16-closed natural-0"></el-icon>
+                            </button>
+                          </li>
+                        </ul>
+                      </el-recent>
+                      <el-popular>
+                        <el-addon-title>인기 검색어</el-addon-title>
+                        <!-- [DEV] 인기 검색어가 없을 경우 노출
+                          <el-empty>인기 검색어가 없습니다.</el-empty>
+                        -->
+                        <ul class="popular-list">
+                          <li>
+                            <el-rank>1</el-rank>
+                            <a href="#">스타벅스</a>
+                          </li>
+                          <li>
+                            <el-rank>2</el-rank>
+                            <a href="#">
+                              배달의민족 요기요 쿠팡이츠 배달의민족 요기요
+                              쿠팡이츠
+                            </a>
+                          </li>
+                          <li>
+                            <el-rank>3</el-rank>
+                            <a href="#">스타벅스</a>
+                          </li>
+                          <li>
+                            <el-rank>4</el-rank>
+                            <a href="#">스타벅스</a>
+                          </li>
+                          <li>
+                            <el-rank>5</el-rank>
+                            <a href="#">스타벅스</a>
+                          </li>
+                          <li>
+                            <el-rank>6</el-rank>
+                            <a href="#">스타벅스</a>
+                          </li>
+                          <li>
+                            <el-rank>7</el-rank>
+                            <a href="#">스타벅스</a>
+                          </li>
+                          <li>
+                            <el-rank>8</el-rank>
+                            <a href="#">스타벅스</a>
+                          </li>
+                          <li>
+                            <el-rank>9</el-rank>
+                            <a href="#">스타벅스</a>
+                          </li>
+                          <li>
+                            <el-rank>10</el-rank>
+                            <a href="#">스타벅스</a>
+                          </li>
+                        </ul>
+                      </el-popular>
+                    </el-addon-content>
+                    <el-addon-close>
+                      <button type="button" class="typo-label-lg">
+                        닫기
+                      </button>
+                    </el-addon-close>
+                  </el-search-addon>
                 </el-search-layer>
               </el-search-area>
-              <el-toggle-button>토글</el-toggle-button>
+              <el-theme-switch class="typo-body-sm">
+                <el-theme-switch-buttons>
+                  <input
+                    type="radio"
+                    id="theme-company-member"
+                    name="theme-switch"
+                    checked
+                  />
+                  <label for="theme-company-member">기업</label>
+                  <input
+                    type="radio"
+                    id="theme-personal-member"
+                    name="theme-switch"
+                  />
+                  <label for="theme-personal-member">일반</label>
+                </el-theme-switch-buttons>
+              </el-theme-switch>
             </el-center>
           </el-header-content-left>
-          <el-header-content-right>오른쪽</el-header-content-right>
+          <el-header-content-right class="typo-label-md">
+            <a href="#">
+              <el-icon class="h32-cart natural-30"></el-icon>
+              <span>장바구니</span>
+              <el-badge-count class="typo-label-md">
+                99
+                <el-more>+</el-more>
+              </el-badge-count>
+            </a>
+            <a href="#">
+              <el-icon class="h32-user natural-30"></el-icon>
+              <span>마이페이지</span>
+            </a>
+          </el-header-content-right>
         </el-header-content>
       </el-header-sticky>
     `;
@@ -243,17 +391,20 @@ class ComponentHeaderGnb extends HTMLElement {
   }
 
   loadExternalScript() {
-    // loadScript(this, 'initTopBanner');
+    loadScript(this, 'initAlert');
   }
 
   async loadScriptDynamically() {
-    // loadDynamically(this, 'initTopBanner');
+    loadDynamically(this, 'initAlert');
   }
 
   render() {
     this.innerHTML = `
       <el-header-gnb>
-        <el-gnb-container>gnb</el-gnb-container>
+        <el-gnb-container>
+          <div>gnb</div>
+          <div>gnb</div>
+        </el-gnb-container>
       </el-header-gnb>
     `;
   }
@@ -269,6 +420,15 @@ class ComponentFooter extends HTMLElement {
 
   connectedCallback() {
     this.render();
+    this.loadExternalScript();
+  }
+
+  loadExternalScript() {
+    loadScript(this, 'initAlert');
+  }
+
+  async loadScriptDynamically() {
+    loadDynamically(this, 'initAlert');
   }
 
   render() {
@@ -379,11 +539,11 @@ class MyButton extends HTMLElement {
   }
 
   loadExternalScript() {
-    // loadScript(this, 'initTopBanner');
+    loadScript(this, 'initAlert');
   }
 
   async loadScriptDynamically() {
-    // loadDynamically(this, 'initTopBanner');
+    loadDynamically(this, 'initAlert');
   }
 
   render() {

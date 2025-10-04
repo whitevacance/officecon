@@ -1,12 +1,31 @@
 // 시작: 공통 변수
-const pubHtmlEl = document.querySelector('html');
-const pubBodyEl = document.querySelector('body');
+let pubWrapperEl = document.querySelector('el-wrapper');
+let bsAlert = null;
+let bsSearchLayerToggleButton = null;
 // 종료: 공통 변수
 
+// 시작: el-alert
+const initAlert = () => {
+  const alertEl = document.querySelector('el-alert');
+
+  if (alertEl) {
+    bsAlert = new bootstrap.Modal(alertEl);
+  } else {
+    // console.error('el-alert 요소를 찾을 수 없습니다.');
+  }
+};
+
+// 전역 함수로 등록
+if (window !== undefined) {
+  window.initAlert = initAlert;
+}
+
+initAlert();
+// 종료: el-alert
+
 // 시작: 상단 띠배너 숨기기
-const initTopBanner = (context = null) => {
-  const queryContext = context || document;
-  const topBannerEl = queryContext.querySelector('el-top-banner');
+const initTopBanner = () => {
+  const topBannerEl = document.querySelector('el-top-banner');
 
   if (topBannerEl) {
     topBannerEl.addEventListener('click', (e) => {
@@ -24,16 +43,17 @@ const initTopBanner = (context = null) => {
   }
 };
 
-// 전역 함수로 등록 (웹컴포넌트에서 호출 가능)
-window.initTopBanner = initTopBanner;
+// 전역 함수로 등록
+if (window !== undefined) {
+  window.initTopBanner = initTopBanner;
+}
 
 initTopBanner();
 // 종료: 상단 띠배너 숨기기
 
 // 시작: header sticky 시 box-shadow 처리
-const initHeaderSticky = (context = null) => {
-  const queryContext = context || document;
-  const headerStickyEl = queryContext.querySelector('el-header-sticky');
+const initHeaderSticky = () => {
+  const headerStickyEl = document.querySelector('el-header-sticky');
 
   if (headerStickyEl) {
     const observer = new IntersectionObserver(
@@ -46,26 +66,30 @@ const initHeaderSticky = (context = null) => {
   }
 };
 
-// 전역 함수로 등록 (웹컴포넌트에서 호출 가능)
-window.initHeaderSticky = initHeaderSticky;
+// 전역 함수로 등록
+if (window !== undefined) {
+  window.initHeaderSticky = initHeaderSticky;
+}
 
 initHeaderSticky();
 // 종료: header sticky 시 box-shadow 처리
 
-// 시작: el-search-layer 토글
-let bsSearchLayerToggleButton = null;
-const initSearchLayer = (context = null) => {
-  const queryContext = context || document;
-  const searchLayer = queryContext.querySelector('el-search-layer');
-  const searchLayerToggleButton = queryContext.querySelector(
+// 시작: el-search-layer
+const initSearchLayer = () => {
+  const searchLayer = document.querySelector('el-search-layer');
+  const searchLayerToggleButton = document.querySelector(
     '#searchLayerToggleButton'
   );
-  const searchLayerInput = queryContext.querySelector(
+  const searchLayerInput = document.querySelector(
     'el-search-layer el-search input'
   );
 
   // 부트스트랩 dropdown 인스턴스 생성
-  if (searchLayerToggleButton) {
+  if (!bootstrap) {
+    // console.error('bootstrap을 찾을 수 없습니다.');
+    return;
+  }
+  if (bootstrap && searchLayerToggleButton) {
     bsSearchLayerToggleButton = new bootstrap.Dropdown(searchLayerToggleButton);
   } else {
     // console.error('searchLayerEl 요소를 찾을 수 없습니다.');
@@ -75,6 +99,7 @@ const initSearchLayer = (context = null) => {
   if (searchLayerInput && bsSearchLayerToggleButton) {
     searchLayerInput.addEventListener('focus', () => {
       bsSearchLayerToggleButton.show();
+      searchLayerInput.focus(); // 레이어 show 시 포커스 유지되도록
     });
   }
 
@@ -91,8 +116,72 @@ const initSearchLayer = (context = null) => {
   }
 };
 
-// 전역 함수로 등록 (웹컴포넌트에서 호출 가능)
-window.initSearchLayer = initSearchLayer;
+// 전역 함수로 등록
+if (window !== undefined) {
+  window.initSearchLayer = initSearchLayer;
+}
 
 initSearchLayer();
-// 종료: el-search-layer 토글
+// 종료: el-search-layer
+
+// 시작: el-theme-switch
+const initThemeSwitch = () => {
+  const themeSwitchEl = document.querySelector('el-theme-switch');
+  const themeRadioButtons = document.querySelectorAll(
+    'input[name="theme-switch"]'
+  );
+  pubWrapperEl = document.querySelector('el-wrapper');
+
+  if (themeSwitchEl && themeRadioButtons.length > 0) {
+    // 테마 클래스 적용 함수
+    const applyThemeClass = (checkedRadio) => {
+      const isCompanyMember = checkedRadio.id === 'theme-company-member';
+      const isPersonalMember = checkedRadio.id === 'theme-personal-member';
+
+      // 테마 변경에 따른 추가 로직 처리
+      if (isCompanyMember) {
+        // 기업 회원 테마 관련 로직
+        pubWrapperEl.classList.remove('personal-member');
+      } else if (isPersonalMember) {
+        // 일반 회원 테마 관련 로직
+        pubWrapperEl.classList.add('personal-member');
+      }
+    };
+
+    // 페이지 로드 시 체크된 radio 버튼에 따라 초기 클래스 적용
+    const checkedRadio = document.querySelector(
+      'input[name="theme-switch"]:checked'
+    );
+    if (checkedRadio) {
+      applyThemeClass(checkedRadio);
+    }
+
+    // 각 radio 버튼에 변경 이벤트 리스너 추가
+    themeRadioButtons.forEach((radio) => {
+      radio.addEventListener('change', (e) => {
+        applyThemeClass(e.target);
+
+        if (bsAlert) {
+          bsAlert.show();
+        } else {
+          initAlert();
+          if (initAlert) {
+            bsAlert.show();
+          } else {
+            console.error('bsAlert 인스턴스를 찾을 수 없습니다.');
+          }
+        }
+      });
+    });
+  } else {
+    // console.error('el-theme-switch 또는 theme-switch radio 버튼을 찾을 수 없습니다.');
+  }
+};
+
+// 전역 함수로 등록
+if (window !== undefined) {
+  window.initThemeSwitch = initThemeSwitch;
+}
+
+initThemeSwitch();
+// 종료: el-theme-switch

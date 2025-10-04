@@ -36,6 +36,7 @@
     ></script>
   </head>
   <body>
+    <!-- [DEV] 일반회원일 때 className: 'personal-member' -->
     <el-wrapper>
       <el-container>
         <!-- [DEV] 상단 띠배너 숨김 className: 'hide' -->
@@ -261,15 +262,77 @@
                     </el-search-addon>
                   </el-search-layer>
                 </el-search-area>
-                <el-toggle-button>토글</el-toggle-button>
+                <el-theme-switch class="typo-body-sm">
+                  <el-theme-switch-buttons>
+                    <input
+                      type="radio"
+                      id="theme-company-member"
+                      name="theme-switch"
+                      checked
+                    />
+                    <label for="theme-company-member">기업</label>
+                    <input
+                      type="radio"
+                      id="theme-personal-member"
+                      name="theme-switch"
+                    />
+                    <label for="theme-personal-member">일반</label>
+                  </el-theme-switch-buttons>
+                </el-theme-switch>
               </el-center>
             </el-header-content-left>
-            <el-header-content-right>오른쪽</el-header-content-right>
+            <el-header-content-right class="typo-label-md">
+              <a href="#">
+                <el-icon class="h32-cart natural-30"></el-icon>
+                <span>장바구니</span>
+                <el-badge-count class="typo-label-md">
+                  99
+                  <el-more>+</el-more>
+                </el-badge-count>
+              </a>
+              <a href="#">
+                <el-icon class="h32-user natural-30"></el-icon>
+                <span>마이페이지</span>
+              </a>
+            </el-header-content-right>
           </el-header-content>
         </el-header-sticky>
 
         <el-header-gnb>
-          <el-gnb-container>gnb</el-gnb-container>
+          <el-gnb-container>
+            <nav>
+              <ul class="typo-body-md">
+                <li>
+                  <button type="button" class="typo-body-md">
+                    전체 카테고리
+                  </button>
+                </li>
+                <li>
+                  <a href="#">브랜드</a>
+                </li>
+                <li>
+                  <a href="#">이벤트</a>
+                </li>
+                <li>
+                  <a href="#">리워드관</a>
+                </li>
+                <li>
+                  <a href="#">파트너링크</a>
+                </li>
+                <li>
+                  <button type="button" class="typo-body-md">
+                    서비스 소개
+                  </button>
+                </li>
+                <li>
+                  <button type="button" class="typo-body-md">
+                    오피스콘 플러스
+                  </button>
+                </li>
+              </ul>
+            </nav>
+            <div>gnb</div>
+          </el-gnb-container>
         </el-header-gnb>
         <!-- 종료: 헤더 -->
 
@@ -542,6 +605,34 @@
               <el-examples-stack class="bg">
                 <el-icon class="h32-search"></el-icon>
                 <el-icon class="h32-search natural-0"></el-icon>
+                <el-icon class="h32-cart"></el-icon>
+                <el-icon class="h32-cart natural-0"></el-icon>
+                <el-icon class="h32-user"></el-icon>
+                <el-icon class="h32-user natural-0"></el-icon>
+              </el-examples-stack>
+            </el-examples-article>
+
+            <el-examples-article>
+              <h2>badge</h2>
+              <el-examples-stack>
+                <el-badge-count class="typo-label-md">1</el-badge-count>
+                <el-badge-count class="typo-label-md">99</el-badge-count>
+                <el-badge-count class="typo-label-md">
+                  99
+                  <el-more>+</el-more>
+                </el-badge-count>
+              </el-examples-stack>
+            </el-examples-article>
+
+            <el-examples-article>
+              <h2>button</h2>
+              <el-examples-stack>
+                <button type="button" class="button-h50-stroke typo-body-lg">
+                  h50-stroke
+                </button>
+                <button type="button" class="button-h50-fill typo-body-lg">
+                  h50-fill
+                </button>
               </el-examples-stack>
             </el-examples-article>
 
@@ -573,6 +664,20 @@
                     </li>
                   </ul>
                 </el-layer-dropdown>
+              </el-examples-stack>
+            </el-examples-article>
+
+            <el-examples-article>
+              <h2>alert</h2>
+              <el-examples-stack>
+                <button
+                  type="button"
+                  data-bs-toggle="modal"
+                  data-bs-target="#el-alert"
+                  class="button-h50-stroke typo-body-lg"
+                >
+                  얼럿 호출
+                </button>
               </el-examples-stack>
             </el-examples-article>
           </el-content>
@@ -669,6 +774,42 @@
         </footer>
       </el-footer>
     </el-wrapper>
+
+    <!-- 시작: alert -->
+    <el-alert
+      class="modal fade"
+      id="el-alert"
+      tabindex="-1"
+      aria-hidden="true"
+      data-bs-keyboard="false"
+    >
+      <el-alert-dialog class="modal-dialog modal-dialog-centered">
+        <el-alert-content class="modal-content">
+          <el-alert-body class="typo-subtitle-sm">
+            010-2131-2424로 인증번호가 정상적으로 발송되었습니다.<br />인증번호가
+            오지 않으면 입력하신 휴대폰번호를 확인해 주세요.<br />(인증번호 5회
+            실패 시 회원상태가 이용정지 처리 됩니다.)
+          </el-alert-body>
+          <el-alert-footer>
+            <button
+              type="button"
+              data-bs-dismiss="modal"
+              class="button-h50-stroke typo-body-lg"
+            >
+              취소
+            </button>
+            <button
+              type="button"
+              data-bs-dismiss="modal"
+              class="button-h50-fill typo-body-lg"
+            >
+              확인
+            </button>
+          </el-alert-footer>
+        </el-alert-content>
+      </el-alert-dialog>
+    </el-alert>
+    <!-- 종료: alert -->
 
     <!-- 공통js: common.js -->
     <script src="./js/pub-common.js" crossorigin="anonymous"></script>
