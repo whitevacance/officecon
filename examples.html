@@ -592,6 +592,18 @@
             </el-examples-article>
 
             <el-examples-article>
+              <h2>button</h2>
+              <el-examples-stack>
+                <button type="button" class="button-h50-stroke typo-body-lg">
+                  h50-stroke
+                </button>
+                <button type="button" class="button-h50-fill typo-body-lg">
+                  h50-fill
+                </button>
+              </el-examples-stack>
+            </el-examples-article>
+
+            <el-examples-article>
               <h2>dropdown</h2>
               <el-examples-stack>
                 <el-layer-dropdown class="dropdown-menu dropdown-menu-end">
@@ -737,9 +749,7 @@
       aria-hidden="true"
       data-bs-keyboard="false"
     >
-      <el-alert-dialog
-        class="modal-dialog modal-dialog-scrollable modal-dialog-centered"
-      >
+      <el-alert-dialog class="modal-dialog modal-dialog-centered">
         <el-alert-content class="modal-content">
           <el-alert-body class="typo-subtitle-sm">
             010-2131-2424로 인증번호가 정상적으로 발송되었습니다.<br />인증번호가
@@ -747,8 +757,20 @@
             실패 시 회원상태가 이용정지 처리 됩니다.)
           </el-alert-body>
           <el-alert-footer>
-            <button type="button" data-bs-dismiss="modal">취소</button>
-            <button type="button" data-bs-dismiss="modal">확인</button>
+            <button
+              type="button"
+              data-bs-dismiss="modal"
+              class="button-h50-stroke typo-body-lg"
+            >
+              취소
+            </button>
+            <button
+              type="button"
+              data-bs-dismiss="modal"
+              class="button-h50-fill typo-body-lg"
+            >
+              확인
+            </button>
           </el-alert-footer>
         </el-alert-content>
       </el-alert-dialog>

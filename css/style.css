@@ -385,6 +385,37 @@ el-badge-count {
 }
 /* 종료: 공통 > badge */
 
+/* 시작: 공통 > button */
+button {
+  &.button-h50-stroke {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    min-width: 70px;
+    height: 50px;
+    padding: 0 20px;
+    border-radius: 999px;
+    border: 1px solid var(--color-natural-0);
+    background-color: var(--color-natural-100);
+    overflow: hidden;
+  }
+  &.button-h50-fill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    min-width: 70px;
+    height: 50px;
+    padding: 0 20px;
+    border-radius: 999px;
+    background-color: var(--color-natural-0);
+    color: var(--color-natural-100);
+    overflow: hidden;
+  }
+}
+/* 종료: 공통 > button */
+
 /* 시작: 공통 > alert */
 .modal-backdrop {
   opacity: 1 !important;
@@ -394,8 +425,8 @@ el-alert.modal {
   el-alert-dialog.modal-dialog {
     box-sizing: border-box;
     max-width: 432px;
-    height: 100%;
-    margin: 0 auto;
+    /* height: 100%; */
+    /* margin: 0 auto; */
     padding-left: 16px;
     padding-right: 16px;
     transform: translate(0, 0) !important;
@@ -420,7 +451,7 @@ el-alert.modal {
         gap: 8px;
 
         button {
-          width: 100%;
+          width: 130px;
         }
       }
     }
