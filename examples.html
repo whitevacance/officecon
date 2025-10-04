@@ -621,6 +621,19 @@
                 </el-layer-dropdown>
               </el-examples-stack>
             </el-examples-article>
+
+            <el-examples-article>
+              <h2>alert</h2>
+              <el-examples-stack>
+                <button
+                  type="button"
+                  data-bs-toggle="modal"
+                  data-bs-target="#el-alert"
+                >
+                  얼럿 호출
+                </button>
+              </el-examples-stack>
+            </el-examples-article>
           </el-content>
         </main>
         <!-- 종료: 컨텐츠 -->
@@ -715,6 +728,24 @@
         </footer>
       </el-footer>
     </el-wrapper>
+
+    <!-- 시작: alert -->
+    <el-alert
+      class="modal fade"
+      id="el-alert"
+      tabindex="-1"
+      aria-hidden="true"
+      data-bs-keyboard="false"
+    >
+      <el-alert-dialog
+        class="modal-dialog modal-dialog-scrollable modal-dialog-centered"
+      >
+        <el-alert-content class="modal-content">
+          <div>얼럿</div>
+        </el-alert-content>
+      </el-alert-dialog>
+    </el-alert>
+    <!-- 종료: alert -->
 
     <!-- 공통js: common.js -->
     <script src="./js/pub-common.js" crossorigin="anonymous"></script>

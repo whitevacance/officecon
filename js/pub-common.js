@@ -1,8 +1,24 @@
 // 시작: 공통 변수
-const pubHtmlEl = document.querySelector('html');
-const pubBodyEl = document.querySelector('body');
-const pubWrapperEl = document.querySelector('el-wrapper');
+// let bsAlert = null;
 // 종료: 공통 변수
+
+// 시작: el-alert
+// const initAlert = (context = null) => {
+//   const queryContext = context || document;
+//   const alertEl = queryContext.querySelector('el-alert');
+
+//   if (alertEl) {
+//     bsAlert = new bootstrap.Modal(alertEl);
+//   } else {
+//     // console.error('el-alert 요소를 찾을 수 없습니다.');
+//   }
+// };
+
+// // 전역 함수로 등록 (웹컴포넌트에서 호출 가능)
+// window.initAlert = initAlert;
+
+// initAlert();
+// 종료: el-alert
 
 // 시작: 상단 띠배너 숨기기
 const initTopBanner = (context = null) => {
@@ -54,9 +70,9 @@ initHeaderSticky();
 // 종료: header sticky 시 box-shadow 처리
 
 // 시작: el-search-layer 토글
-let bsSearchLayerToggleButton = null;
 const initSearchLayer = (context = null) => {
   const queryContext = context || document;
+  console.log('???: ', queryContext, window);
   const searchLayer = queryContext.querySelector('el-search-layer');
   const searchLayerToggleButton = queryContext.querySelector(
     '#searchLayerToggleButton'
@@ -64,9 +80,14 @@ const initSearchLayer = (context = null) => {
   const searchLayerInput = queryContext.querySelector(
     'el-search-layer el-search input'
   );
+  let bsSearchLayerToggleButton = null;
 
   // 부트스트랩 dropdown 인스턴스 생성
-  if (searchLayerToggleButton) {
+  if (!bootstrap) {
+    // console.error('bootstrap을 찾을 수 없습니다.');
+    return;
+  }
+  if (bootstrap && searchLayerToggleButton) {
     bsSearchLayerToggleButton = new bootstrap.Dropdown(searchLayerToggleButton);
   } else {
     // console.error('searchLayerEl 요소를 찾을 수 없습니다.');
@@ -94,7 +115,12 @@ const initSearchLayer = (context = null) => {
 };
 
 // 전역 함수로 등록 (웹컴포넌트에서 호출 가능)
-window.initSearchLayer = initSearchLayer;
+if (window !== undefined) {
+  window.initSearchLayer = initSearchLayer;
+  // if (bsSearchLayerToggleButton) {
+  //   window.bsSearchLayerToggleButton = bsSearchLayerToggleButton;
+  // }
+}
 
 initSearchLayer();
 // 종료: el-search-layer 토글
@@ -106,6 +132,7 @@ const initThemeSwitch = (context = null) => {
   const themeRadioButtons = queryContext.querySelectorAll(
     'input[name="theme-switch"]'
   );
+  const pubWrapperEl = queryContext.querySelector('el-wrapper');
 
   if (themeSwitchEl && themeRadioButtons.length > 0) {
     // 테마 클래스 적용 함수

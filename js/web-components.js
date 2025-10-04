@@ -1,7 +1,6 @@
-// 시작: 공통
 const loadScript = (target, scriptName) => {
   // pub-common.js가 이미 로드되어 있다면 전역 함수 호출
-  if (window[scriptName]) {
+  if (window[scriptName] && target?.shadowRoot) {
     window[scriptName](target.shadowRoot);
   } else {
     // 스크립트가 아직 로드되지 않았다면 동적 로드
@@ -20,7 +19,7 @@ const loadDynamically = (target, scriptName) => {
     script.src = './js/pub-common.js';
     script.onload = () => {
       // 로드 완료 후 초기화
-      if (window[scriptName]) {
+      if (window[scriptName] && target?.shadowRoot) {
         window[scriptName](target.shadowRoot);
       }
     };
