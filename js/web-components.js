@@ -1,9 +1,8 @@
 const loadScript = (target, scriptName) => {
-  // pub-common.js가 이미 로드되어 있다면 전역 함수 호출
-  if (window[scriptName] && target?.shadowRoot) {
-    window[scriptName](target.shadowRoot);
+  if (window[scriptName]) {
+    window[scriptName]();
   } else {
-    // 스크립트가 아직 로드되지 않았다면 동적 로드
+    // pub-common.js가 로드되지 않았다면 동적 로드
     target.loadScriptDynamically();
   }
 };
@@ -18,16 +17,15 @@ const loadDynamically = (target, scriptName) => {
     const script = document.createElement('script');
     script.src = './js/pub-common.js';
     script.onload = () => {
-      // 로드 완료 후 초기화
-      if (window[scriptName] && target?.shadowRoot) {
-        window[scriptName](target.shadowRoot);
+      // 로드 완료 후 실행
+      if (window[scriptName]) {
+        window[scriptName]();
       }
     };
     script.onerror = () => {
       console.error('pub-common.js 로드 실패');
       target[scriptName](); // 폴백
     };
-
     document.head.appendChild(script);
   } catch (error) {
     console.error('외부 스크립트 로드 실패:', error);
@@ -48,10 +46,12 @@ class ComponentTopBanner extends HTMLElement {
   }
 
   loadExternalScript() {
+    loadScript(this, 'initAlert');
     loadScript(this, 'initTopBanner');
   }
 
   async loadScriptDynamically() {
+    loadDynamically(this, 'initAlert');
     loadDynamically(this, 'initTopBanner');
   }
 
@@ -94,6 +94,15 @@ class ComponentHeaderTop extends HTMLElement {
 
   connectedCallback() {
     this.render();
+    this.loadExternalScript();
+  }
+
+  loadExternalScript() {
+    loadScript(this, 'initAlert');
+  }
+
+  async loadScriptDynamically() {
+    loadDynamically(this, 'initAlert');
   }
 
   render() {
@@ -172,12 +181,15 @@ class ComponentHeaderSticky extends HTMLElement {
   }
 
   loadExternalScript() {
+    loadScript(this, 'initAlert');
     loadScript(this, 'initHeaderSticky');
     loadScript(this, 'initSearchLayer');
     loadScript(this, 'initThemeSwitch');
   }
 
   async loadScriptDynamically() {
+    loadDynamically(this, 'initAlert');
+    loadDynamically(this, 'initHeaderSticky');
     loadDynamically(this, 'initHeaderSticky');
     loadDynamically(this, 'initSearchLayer');
     loadDynamically(this, 'initThemeSwitch');
@@ -379,11 +391,11 @@ class ComponentHeaderGnb extends HTMLElement {
   }
 
   loadExternalScript() {
-    // loadScript(this, 'initTopBanner');
+    loadScript(this, 'initAlert');
   }
 
   async loadScriptDynamically() {
-    // loadDynamically(this, 'initTopBanner');
+    loadDynamically(this, 'initAlert');
   }
 
   render() {
@@ -405,6 +417,15 @@ class ComponentFooter extends HTMLElement {
 
   connectedCallback() {
     this.render();
+    this.loadExternalScript();
+  }
+
+  loadExternalScript() {
+    loadScript(this, 'initAlert');
+  }
+
+  async loadScriptDynamically() {
+    loadDynamically(this, 'initAlert');
   }
 
   render() {
@@ -515,11 +536,11 @@ class MyButton extends HTMLElement {
   }
 
   loadExternalScript() {
-    // loadScript(this, 'initTopBanner');
+    loadScript(this, 'initAlert');
   }
 
   async loadScriptDynamically() {
-    // loadDynamically(this, 'initTopBanner');
+    loadDynamically(this, 'initAlert');
   }
 
   render() {

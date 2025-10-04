@@ -1,29 +1,31 @@
 // 시작: 공통 변수
-// let bsAlert = null;
+let pubWrapperEl = document.querySelector('el-wrapper');
+let bsAlert = null;
+let bsSearchLayerToggleButton = null;
 // 종료: 공통 변수
 
 // 시작: el-alert
-// const initAlert = (context = null) => {
-//   const queryContext = context || document;
-//   const alertEl = queryContext.querySelector('el-alert');
+const initAlert = () => {
+  const alertEl = document.querySelector('el-alert');
 
-//   if (alertEl) {
-//     bsAlert = new bootstrap.Modal(alertEl);
-//   } else {
-//     // console.error('el-alert 요소를 찾을 수 없습니다.');
-//   }
-// };
+  if (alertEl) {
+    bsAlert = new bootstrap.Modal(alertEl);
+  } else {
+    // console.error('el-alert 요소를 찾을 수 없습니다.');
+  }
+};
 
-// // 전역 함수로 등록 (웹컴포넌트에서 호출 가능)
-// window.initAlert = initAlert;
+// 전역 함수로 등록
+if (window !== undefined) {
+  window.initAlert = initAlert;
+}
 
-// initAlert();
+initAlert();
 // 종료: el-alert
 
 // 시작: 상단 띠배너 숨기기
-const initTopBanner = (context = null) => {
-  const queryContext = context || document;
-  const topBannerEl = queryContext.querySelector('el-top-banner');
+const initTopBanner = () => {
+  const topBannerEl = document.querySelector('el-top-banner');
 
   if (topBannerEl) {
     topBannerEl.addEventListener('click', (e) => {
@@ -42,15 +44,16 @@ const initTopBanner = (context = null) => {
 };
 
 // 전역 함수로 등록 (웹컴포넌트에서 호출 가능)
-window.initTopBanner = initTopBanner;
+if (window !== undefined) {
+  window.initTopBanner = initTopBanner;
+}
 
 initTopBanner();
 // 종료: 상단 띠배너 숨기기
 
 // 시작: header sticky 시 box-shadow 처리
-const initHeaderSticky = (context = null) => {
-  const queryContext = context || document;
-  const headerStickyEl = queryContext.querySelector('el-header-sticky');
+const initHeaderSticky = () => {
+  const headerStickyEl = document.querySelector('el-header-sticky');
 
   if (headerStickyEl) {
     const observer = new IntersectionObserver(
@@ -64,23 +67,22 @@ const initHeaderSticky = (context = null) => {
 };
 
 // 전역 함수로 등록 (웹컴포넌트에서 호출 가능)
-window.initHeaderSticky = initHeaderSticky;
+if (window !== undefined) {
+  window.initHeaderSticky = initHeaderSticky;
+}
 
 initHeaderSticky();
 // 종료: header sticky 시 box-shadow 처리
 
 // 시작: el-search-layer 토글
-const initSearchLayer = (context = null) => {
-  const queryContext = context || document;
-  console.log('???: ', queryContext, window);
-  const searchLayer = queryContext.querySelector('el-search-layer');
-  const searchLayerToggleButton = queryContext.querySelector(
+const initSearchLayer = () => {
+  const searchLayer = document.querySelector('el-search-layer');
+  const searchLayerToggleButton = document.querySelector(
     '#searchLayerToggleButton'
   );
-  const searchLayerInput = queryContext.querySelector(
+  const searchLayerInput = document.querySelector(
     'el-search-layer el-search input'
   );
-  let bsSearchLayerToggleButton = null;
 
   // 부트스트랩 dropdown 인스턴스 생성
   if (!bootstrap) {
@@ -117,22 +119,18 @@ const initSearchLayer = (context = null) => {
 // 전역 함수로 등록 (웹컴포넌트에서 호출 가능)
 if (window !== undefined) {
   window.initSearchLayer = initSearchLayer;
-  // if (bsSearchLayerToggleButton) {
-  //   window.bsSearchLayerToggleButton = bsSearchLayerToggleButton;
-  // }
 }
 
 initSearchLayer();
 // 종료: el-search-layer 토글
 
 // 시작: el-theme-switch
-const initThemeSwitch = (context = null) => {
-  const queryContext = context || document;
-  const themeSwitchEl = queryContext.querySelector('el-theme-switch');
-  const themeRadioButtons = queryContext.querySelectorAll(
+const initThemeSwitch = () => {
+  const themeSwitchEl = document.querySelector('el-theme-switch');
+  const themeRadioButtons = document.querySelectorAll(
     'input[name="theme-switch"]'
   );
-  const pubWrapperEl = queryContext.querySelector('el-wrapper');
+  pubWrapperEl = document.querySelector('el-wrapper');
 
   if (themeSwitchEl && themeRadioButtons.length > 0) {
     // 테마 클래스 적용 함수
@@ -151,7 +149,7 @@ const initThemeSwitch = (context = null) => {
     };
 
     // 페이지 로드 시 체크된 radio 버튼에 따라 초기 클래스 적용
-    const checkedRadio = queryContext.querySelector(
+    const checkedRadio = document.querySelector(
       'input[name="theme-switch"]:checked'
     );
     if (checkedRadio) {
@@ -170,7 +168,9 @@ const initThemeSwitch = (context = null) => {
 };
 
 // 전역 함수로 등록 (웹컴포넌트에서 호출 가능)
-window.initThemeSwitch = initThemeSwitch;
+if (window !== undefined) {
+  window.initThemeSwitch = initThemeSwitch;
+}
 
 initThemeSwitch();
 // 종료: el-theme-switch
