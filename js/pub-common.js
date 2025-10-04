@@ -75,6 +75,7 @@ const initSearchLayer = (context = null) => {
   if (searchLayerInput && bsSearchLayerToggleButton) {
     searchLayerInput.addEventListener('focus', () => {
       bsSearchLayerToggleButton.show();
+      searchLayerInput.focus(); // 레이어 show 시 포커스 유지되도록
     });
   }
 
