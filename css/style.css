@@ -385,6 +385,49 @@ el-badge-count {
 }
 /* 종료: 공통 > badge */
 
+/* 시작: 공통 > alert */
+.modal-backdrop {
+  opacity: 1 !important;
+  background-color: var(--color-opacity-black-30);
+}
+el-alert.modal {
+  el-alert-dialog.modal-dialog {
+    box-sizing: border-box;
+    max-width: 432px;
+    height: 100%;
+    margin: 0 auto;
+    padding-left: 16px;
+    padding-right: 16px;
+    transform: translate(0, 0) !important;
+
+    el-alert-content.modal-content {
+      gap: 40px;
+      border: none;
+      border-radius: 32px;
+      padding: 56px 64px 28px;
+      box-shadow: var(--color-boxShadow-1);
+
+      el-alert-body {
+        display: block;
+        font-weight: 600;
+        text-align: center;
+      }
+
+      el-alert-footer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+
+        button {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+/* 종료: 공통 > alert */
+
 /* 시작: 공통 > el-layer-dropdown */
 el-layer-dropdown.dropdown-menu {
   width: 147px;

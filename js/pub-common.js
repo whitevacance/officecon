@@ -43,7 +43,7 @@ const initTopBanner = () => {
   }
 };
 
-// 전역 함수로 등록 (웹컴포넌트에서 호출 가능)
+// 전역 함수로 등록
 if (window !== undefined) {
   window.initTopBanner = initTopBanner;
 }
@@ -66,7 +66,7 @@ const initHeaderSticky = () => {
   }
 };
 
-// 전역 함수로 등록 (웹컴포넌트에서 호출 가능)
+// 전역 함수로 등록
 if (window !== undefined) {
   window.initHeaderSticky = initHeaderSticky;
 }
@@ -74,7 +74,7 @@ if (window !== undefined) {
 initHeaderSticky();
 // 종료: header sticky 시 box-shadow 처리
 
-// 시작: el-search-layer 토글
+// 시작: el-search-layer
 const initSearchLayer = () => {
   const searchLayer = document.querySelector('el-search-layer');
   const searchLayerToggleButton = document.querySelector(
@@ -116,13 +116,13 @@ const initSearchLayer = () => {
   }
 };
 
-// 전역 함수로 등록 (웹컴포넌트에서 호출 가능)
+// 전역 함수로 등록
 if (window !== undefined) {
   window.initSearchLayer = initSearchLayer;
 }
 
 initSearchLayer();
-// 종료: el-search-layer 토글
+// 종료: el-search-layer
 
 // 시작: el-theme-switch
 const initThemeSwitch = () => {
@@ -160,6 +160,17 @@ const initThemeSwitch = () => {
     themeRadioButtons.forEach((radio) => {
       radio.addEventListener('change', (e) => {
         applyThemeClass(e.target);
+
+        if (bsAlert) {
+          bsAlert.show();
+        } else {
+          initAlert();
+          if (initAlert) {
+            bsAlert.show();
+          } else {
+            console.error('bsAlert 인스턴스를 찾을 수 없습니다.');
+          }
+        }
       });
     });
   } else {
@@ -167,7 +178,7 @@ const initThemeSwitch = () => {
   }
 };
 
-// 전역 함수로 등록 (웹컴포넌트에서 호출 가능)
+// 전역 함수로 등록
 if (window !== undefined) {
   window.initThemeSwitch = initThemeSwitch;
 }
