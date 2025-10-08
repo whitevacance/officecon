@@ -404,7 +404,894 @@ class ComponentHeaderGnb extends HTMLElement {
     this.innerHTML = `
       <el-header-gnb>
         <el-gnb-container>
-          <div>gnb</div>
+          <nav>
+            <ul class="typo-body-md">
+              <li>
+                <button
+                  type="button"
+                  class="typo-body-md"
+                  data-bs-toggle="dropdown"
+                  data-bs-offset="0,-34"
+                  data-bs-auto-close="outside"
+                  aria-expanded="false"
+                >
+                  <el-icon class="h20-menu natural-20"></el-icon>
+                  <el-icon class="h20-closed-bold natural-0"></el-icon>
+                  전체 카테고리
+                </button>
+                <el-category-layer class="dropdown-menu">
+                  <el-category-tabs>
+                    <ul class="typo-body-sm" role="tablist">
+                      <li>
+                        <a
+                          href="#"
+                          data-bs-toggle="tab"
+                          data-bs-target="#el-category-tab-1"
+                          class="active"
+                        >
+                          전체
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          data-bs-toggle="tab"
+                          data-bs-target="#el-category-tab-2"
+                        >
+                          커피/음료
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          data-bs-toggle="tab"
+                          data-bs-target="#el-category-tab-3"
+                        >
+                          베이커리/디저트
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          data-bs-toggle="tab"
+                          data-bs-target="#el-category-tab-4"
+                        >
+                          아이스크림
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          data-bs-toggle="tab"
+                          data-bs-target="#el-category-tab-5"
+                        >
+                          치킨/피자/버거
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          data-bs-toggle="tab"
+                          data-bs-target="#el-category-tab-6"
+                        >
+                          외식
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          data-bs-toggle="tab"
+                          data-bs-target="#el-category-tab-7"
+                        >
+                          배달이용권
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          data-bs-toggle="tab"
+                          data-bs-target="#el-category-tab-8"
+                        >
+                          상품권/페이/주유
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          data-bs-toggle="tab"
+                          data-bs-target="#el-category-tab-9"
+                        >
+                          금액권/통합권
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          data-bs-toggle="tab"
+                          data-bs-target="#el-category-tab-10"
+                        >
+                          편의점/마트
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          data-bs-toggle="tab"
+                          data-bs-target="#el-category-tab-11"
+                        >
+                          문화/생활/뷰티
+                        </a>
+                      </li>
+                    </ul>
+                  </el-category-tabs>
+                  <el-category-tab-content class="tab-content typo-label-md">
+                    <el-category-tab-panel
+                      role="tabpanel"
+                      id="el-category-tab-1"
+                      class="tab-pane active"
+                    >
+                      <ul>
+                        <li>
+                          <a href="#">
+                            <el-thumbnail>
+                              <img
+                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                                alt="투썸플레이스"
+                              />
+                            </el-thumbnail>
+                            <el-label>일이삼사오육칠팔구십</el-label>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <el-thumbnail>
+                              <img
+                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250430/20250430110647_2318f45e-fe88-4773-8c53-1f62968291b8.jpg"
+                                alt="컴포즈커피"
+                              />
+                            </el-thumbnail>
+                            <el-label>컴포즈커피</el-label>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <el-thumbnail>
+                              <img
+                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                                alt="투썸플레이스"
+                              />
+                            </el-thumbnail>
+                            <el-label>투썸플레이스</el-label>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <el-thumbnail>
+                              <img
+                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250430/20250430110647_2318f45e-fe88-4773-8c53-1f62968291b8.jpg"
+                                alt="컴포즈커피"
+                              />
+                            </el-thumbnail>
+                            <el-label>컴포즈커피</el-label>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <el-thumbnail>
+                              <img
+                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                                alt="투썸플레이스"
+                              />
+                            </el-thumbnail>
+                            <el-label>투썸플레이스</el-label>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <el-thumbnail>
+                              <img
+                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250430/20250430110647_2318f45e-fe88-4773-8c53-1f62968291b8.jpg"
+                                alt="컴포즈커피"
+                              />
+                            </el-thumbnail>
+                            <el-label>컴포즈커피</el-label>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <el-thumbnail>
+                              <img
+                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                                alt="투썸플레이스"
+                              />
+                            </el-thumbnail>
+                            <el-label>투썸플레이스</el-label>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <el-thumbnail>
+                              <img
+                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250430/20250430110647_2318f45e-fe88-4773-8c53-1f62968291b8.jpg"
+                                alt="컴포즈커피"
+                              />
+                            </el-thumbnail>
+                            <el-label>컴포즈커피</el-label>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <el-thumbnail>
+                              <img
+                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                                alt="투썸플레이스"
+                              />
+                            </el-thumbnail>
+                            <el-label>투썸플레이스</el-label>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <el-thumbnail>
+                              <img
+                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250430/20250430110647_2318f45e-fe88-4773-8c53-1f62968291b8.jpg"
+                                alt="컴포즈커피"
+                              />
+                            </el-thumbnail>
+                            <el-label>컴포즈커피</el-label>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <el-thumbnail>
+                              <img
+                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                                alt="투썸플레이스"
+                              />
+                            </el-thumbnail>
+                            <el-label>투썸플레이스</el-label>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <el-thumbnail>
+                              <img
+                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250430/20250430110647_2318f45e-fe88-4773-8c53-1f62968291b8.jpg"
+                                alt="컴포즈커피"
+                              />
+                            </el-thumbnail>
+                            <el-label>컴포즈커피</el-label>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <el-thumbnail>
+                              <img
+                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                                alt="투썸플레이스"
+                              />
+                            </el-thumbnail>
+                            <el-label>투썸플레이스</el-label>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <el-thumbnail>
+                              <img
+                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250430/20250430110647_2318f45e-fe88-4773-8c53-1f62968291b8.jpg"
+                                alt="컴포즈커피"
+                              />
+                            </el-thumbnail>
+                            <el-label>컴포즈커피</el-label>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <el-thumbnail>
+                              <img
+                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                                alt="투썸플레이스"
+                              />
+                            </el-thumbnail>
+                            <el-label>투썸플레이스</el-label>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <el-thumbnail>
+                              <img
+                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250430/20250430110647_2318f45e-fe88-4773-8c53-1f62968291b8.jpg"
+                                alt="컴포즈커피"
+                              />
+                            </el-thumbnail>
+                            <el-label>컴포즈커피</el-label>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <el-thumbnail>
+                              <img
+                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                                alt="투썸플레이스"
+                              />
+                            </el-thumbnail>
+                            <el-label>투썸플레이스</el-label>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <el-thumbnail>
+                              <img
+                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250430/20250430110647_2318f45e-fe88-4773-8c53-1f62968291b8.jpg"
+                                alt="컴포즈커피"
+                              />
+                            </el-thumbnail>
+                            <el-label>컴포즈커피</el-label>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <el-thumbnail>
+                              <img
+                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                                alt="투썸플레이스"
+                              />
+                            </el-thumbnail>
+                            <el-label>투썸플레이스</el-label>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <el-thumbnail>
+                              <img
+                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250430/20250430110647_2318f45e-fe88-4773-8c53-1f62968291b8.jpg"
+                                alt="컴포즈커피"
+                              />
+                            </el-thumbnail>
+                            <el-label>컴포즈커피</el-label>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <el-thumbnail>
+                              <img
+                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                                alt="투썸플레이스"
+                              />
+                            </el-thumbnail>
+                            <el-label>투썸플레이스</el-label>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <el-thumbnail>
+                              <img
+                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250430/20250430110647_2318f45e-fe88-4773-8c53-1f62968291b8.jpg"
+                                alt="컴포즈커피"
+                              />
+                            </el-thumbnail>
+                            <el-label>컴포즈커피</el-label>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <el-thumbnail>
+                              <img
+                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                                alt="투썸플레이스"
+                              />
+                            </el-thumbnail>
+                            <el-label>투썸플레이스</el-label>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <el-thumbnail>
+                              <img
+                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250430/20250430110647_2318f45e-fe88-4773-8c53-1f62968291b8.jpg"
+                                alt="컴포즈커피"
+                              />
+                            </el-thumbnail>
+                            <el-label>컴포즈커피</el-label>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <el-thumbnail>
+                              <img
+                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                                alt="투썸플레이스"
+                              />
+                            </el-thumbnail>
+                            <el-label>투썸플레이스</el-label>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <el-thumbnail>
+                              <img
+                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250430/20250430110647_2318f45e-fe88-4773-8c53-1f62968291b8.jpg"
+                                alt="컴포즈커피"
+                              />
+                            </el-thumbnail>
+                            <el-label>컴포즈커피</el-label>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <el-thumbnail>
+                              <img
+                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                                alt="투썸플레이스"
+                              />
+                            </el-thumbnail>
+                            <el-label>투썸플레이스</el-label>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <el-thumbnail>
+                              <img
+                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250430/20250430110647_2318f45e-fe88-4773-8c53-1f62968291b8.jpg"
+                                alt="컴포즈커피"
+                              />
+                            </el-thumbnail>
+                            <el-label>컴포즈커피</el-label>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <el-thumbnail>
+                              <img
+                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                                alt="투썸플레이스"
+                              />
+                            </el-thumbnail>
+                            <el-label>투썸플레이스</el-label>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <el-thumbnail>
+                              <img
+                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250430/20250430110647_2318f45e-fe88-4773-8c53-1f62968291b8.jpg"
+                                alt="컴포즈커피"
+                              />
+                            </el-thumbnail>
+                            <el-label>컴포즈커피</el-label>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <el-thumbnail>
+                              <img
+                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                                alt="투썸플레이스"
+                              />
+                            </el-thumbnail>
+                            <el-label>투썸플레이스</el-label>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <el-thumbnail>
+                              <img
+                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250430/20250430110647_2318f45e-fe88-4773-8c53-1f62968291b8.jpg"
+                                alt="컴포즈커피"
+                              />
+                            </el-thumbnail>
+                            <el-label>컴포즈커피</el-label>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <el-thumbnail>
+                              <img
+                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                                alt="투썸플레이스"
+                              />
+                            </el-thumbnail>
+                            <el-label>투썸플레이스</el-label>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <el-thumbnail>
+                              <img
+                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250430/20250430110647_2318f45e-fe88-4773-8c53-1f62968291b8.jpg"
+                                alt="컴포즈커피"
+                              />
+                            </el-thumbnail>
+                            <el-label>컴포즈커피</el-label>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <el-thumbnail>
+                              <img
+                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                                alt="투썸플레이스"
+                              />
+                            </el-thumbnail>
+                            <el-label>투썸플레이스</el-label>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <el-thumbnail>
+                              <img
+                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250430/20250430110647_2318f45e-fe88-4773-8c53-1f62968291b8.jpg"
+                                alt="컴포즈커피"
+                              />
+                            </el-thumbnail>
+                            <el-label>컴포즈커피</el-label>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <el-thumbnail>
+                              <img
+                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                                alt="투썸플레이스"
+                              />
+                            </el-thumbnail>
+                            <el-label>투썸플레이스</el-label>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <el-thumbnail>
+                              <img
+                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250430/20250430110647_2318f45e-fe88-4773-8c53-1f62968291b8.jpg"
+                                alt="컴포즈커피"
+                              />
+                            </el-thumbnail>
+                            <el-label>컴포즈커피</el-label>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <el-thumbnail>
+                              <img
+                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                                alt="투썸플레이스"
+                              />
+                            </el-thumbnail>
+                            <el-label>투썸플레이스</el-label>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <el-thumbnail>
+                              <img
+                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250430/20250430110647_2318f45e-fe88-4773-8c53-1f62968291b8.jpg"
+                                alt="컴포즈커피"
+                              />
+                            </el-thumbnail>
+                            <el-label>컴포즈커피</el-label>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <el-thumbnail>
+                              <img
+                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                                alt="투썸플레이스"
+                              />
+                            </el-thumbnail>
+                            <el-label>투썸플레이스</el-label>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <el-thumbnail>
+                              <img
+                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250430/20250430110647_2318f45e-fe88-4773-8c53-1f62968291b8.jpg"
+                                alt="컴포즈커피"
+                              />
+                            </el-thumbnail>
+                            <el-label>컴포즈커피</el-label>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <el-thumbnail>
+                              <img
+                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                                alt="투썸플레이스"
+                              />
+                            </el-thumbnail>
+                            <el-label>투썸플레이스</el-label>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <el-thumbnail>
+                              <img
+                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250430/20250430110647_2318f45e-fe88-4773-8c53-1f62968291b8.jpg"
+                                alt="컴포즈커피"
+                              />
+                            </el-thumbnail>
+                            <el-label>컴포즈커피</el-label>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <el-thumbnail>
+                              <img
+                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                                alt="투썸플레이스"
+                              />
+                            </el-thumbnail>
+                            <el-label>투썸플레이스</el-label>
+                          </a>
+                        </li>
+                      </ul>
+                    </el-category-tab-panel>
+                    <el-category-tab-panel
+                      role="tabpanel"
+                      id="el-category-tab-2"
+                      class="tab-pane"
+                    >
+                      <ul>
+                        <li>
+                          <a href="#">
+                            <el-thumbnail>
+                              <img
+                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250430/20250430110647_2318f45e-fe88-4773-8c53-1f62968291b8.jpg"
+                                alt="컴포즈커피"
+                              />
+                            </el-thumbnail>
+                            <el-label>커피/음료</el-label>
+                          </a>
+                        </li>
+                      </ul>
+                    </el-category-tab-panel>
+                    <el-category-tab-panel
+                      role="tabpanel"
+                      id="el-category-tab-3"
+                      class="tab-pane"
+                    >
+                      <ul>
+                        <li>
+                          <a href="#">
+                            <el-thumbnail>
+                              <img
+                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250430/20250430110647_2318f45e-fe88-4773-8c53-1f62968291b8.jpg"
+                                alt="컴포즈커피"
+                              />
+                            </el-thumbnail>
+                            <el-label>베이커리/디저트</el-label>
+                          </a>
+                        </li>
+                      </ul>
+                    </el-category-tab-panel>
+                    <el-category-tab-panel
+                      role="tabpanel"
+                      id="el-category-tab-4"
+                      class="tab-pane"
+                    >
+                      <ul>
+                        <li>
+                          <a href="#">
+                            <el-thumbnail>
+                              <img
+                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250430/20250430110647_2318f45e-fe88-4773-8c53-1f62968291b8.jpg"
+                                alt="컴포즈커피"
+                              />
+                            </el-thumbnail>
+                            <el-label>아이스크림</el-label>
+                          </a>
+                        </li>
+                      </ul>
+                    </el-category-tab-panel>
+                    <el-category-tab-panel
+                      role="tabpanel"
+                      id="el-category-tab-5"
+                      class="tab-pane"
+                    >
+                      <ul>
+                        <li>
+                          <a href="#">
+                            <el-thumbnail>
+                              <img
+                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250430/20250430110647_2318f45e-fe88-4773-8c53-1f62968291b8.jpg"
+                                alt="컴포즈커피"
+                              />
+                            </el-thumbnail>
+                            <el-label>치킨/피자/버거</el-label>
+                          </a>
+                        </li>
+                      </ul>
+                    </el-category-tab-panel>
+                    <el-category-tab-panel
+                      role="tabpanel"
+                      id="el-category-tab-6"
+                      class="tab-pane"
+                    >
+                      <ul>
+                        <li>
+                          <a href="#">
+                            <el-thumbnail>
+                              <img
+                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250430/20250430110647_2318f45e-fe88-4773-8c53-1f62968291b8.jpg"
+                                alt="컴포즈커피"
+                              />
+                            </el-thumbnail>
+                            <el-label>외식</el-label>
+                          </a>
+                        </li>
+                      </ul>
+                    </el-category-tab-panel>
+                    <el-category-tab-panel
+                      role="tabpanel"
+                      id="el-category-tab-7"
+                      class="tab-pane"
+                    >
+                      <ul>
+                        <li>
+                          <a href="#">
+                            <el-thumbnail>
+                              <img
+                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250430/20250430110647_2318f45e-fe88-4773-8c53-1f62968291b8.jpg"
+                                alt="컴포즈커피"
+                              />
+                            </el-thumbnail>
+                            <el-label>배달이용권</el-label>
+                          </a>
+                        </li>
+                      </ul>
+                    </el-category-tab-panel>
+                    <el-category-tab-panel
+                      role="tabpanel"
+                      id="el-category-tab-8"
+                      class="tab-pane"
+                    >
+                      <ul>
+                        <li>
+                          <a href="#">
+                            <el-thumbnail>
+                              <img
+                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250430/20250430110647_2318f45e-fe88-4773-8c53-1f62968291b8.jpg"
+                                alt="컴포즈커피"
+                              />
+                            </el-thumbnail>
+                            <el-label>상품권/페이/주유</el-label>
+                          </a>
+                        </li>
+                      </ul>
+                    </el-category-tab-panel>
+                    <el-category-tab-panel
+                      role="tabpanel"
+                      id="el-category-tab-9"
+                      class="tab-pane"
+                    >
+                      <ul>
+                        <li>
+                          <a href="#">
+                            <el-thumbnail>
+                              <img
+                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250430/20250430110647_2318f45e-fe88-4773-8c53-1f62968291b8.jpg"
+                                alt="컴포즈커피"
+                              />
+                            </el-thumbnail>
+                            <el-label>금액권/통합권</el-label>
+                          </a>
+                        </li>
+                      </ul>
+                    </el-category-tab-panel>
+                    <el-category-tab-panel
+                      role="tabpanel"
+                      id="el-category-tab-10"
+                      class="tab-pane"
+                    >
+                      <ul>
+                        <li>
+                          <a href="#">
+                            <el-thumbnail>
+                              <img
+                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250430/20250430110647_2318f45e-fe88-4773-8c53-1f62968291b8.jpg"
+                                alt="컴포즈커피"
+                              />
+                            </el-thumbnail>
+                            <el-label>편의점/마트</el-label>
+                          </a>
+                        </li>
+                      </ul>
+                    </el-category-tab-panel>
+                    <el-category-tab-panel
+                      role="tabpanel"
+                      id="el-category-tab-11"
+                      class="tab-pane"
+                    >
+                      <ul>
+                        <li>
+                          <a href="#">
+                            <el-thumbnail>
+                              <img
+                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250430/20250430110647_2318f45e-fe88-4773-8c53-1f62968291b8.jpg"
+                                alt="컴포즈커피"
+                              />
+                            </el-thumbnail>
+                            <el-label>커문화/생활/뷰티</el-label>
+                          </a>
+                        </li>
+                      </ul>
+                    </el-category-tab-panel>
+                  </el-category-tab-content>
+                </el-category-layer>
+              </li>
+              <li>
+                <a href="#">브랜드</a>
+              </li>
+              <li>
+                <a href="#">이벤트</a>
+              </li>
+              <li>
+                <a href="#">리워드관</a>
+              </li>
+              <li>
+                <el-badge-bubble-blue class="typo-label-lg">
+                  <el-badge-transition>
+                    <span>오피스콘</span>
+                    <span>API도</span>
+                  </el-badge-transition>
+                </el-badge-bubble-blue>
+                <a href="#">파트너링크</a>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  class="typo-body-md"
+                  data-bs-toggle="dropdown"
+                  data-bs-offset="5,10"
+                >
+                  서비스 소개
+                  <el-icon class="h16-arrow-down natural-40"></el-icon>
+                </button>
+                <el-layer-dropdown class="dropdown-menu dropdown-menu-end">
+                  <ul class="typo-body-sm typo-weight-em">
+                    <li>
+                      <a href="#">오피스콘 특장점</a>
+                    </li>
+                    <li>
+                      <a href="#">회원등급</a>
+                    </li>
+                    <li>
+                      <a href="#">리워드 혜택</a>
+                    </li>
+                    <li>
+                      <a href="#">발송방법안내</a>
+                    </li>
+                  </ul>
+                </el-layer-dropdown>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  class="typo-body-md"
+                  data-bs-toggle="dropdown"
+                  data-bs-offset="5,10"
+                >
+                  오피스콘 플러스
+                  <el-icon class="h16-arrow-down natural-40"></el-icon>
+                </button>
+                <el-layer-dropdown class="dropdown-menu dropdown-menu-end">
+                  <ul class="typo-body-sm typo-weight-em">
+                    <li>
+                      <a href="#">상품 Pick 발송</a>
+                    </li>
+                    <li>
+                      <a href="#">문자서비스</a>
+                    </li>
+                    <li>
+                      <a href="#">설문등록</a>
+                    </li>
+                  </ul>
+                </el-layer-dropdown>
+              </li>
+            </ul>
+          </nav>
           <div>gnb</div>
         </el-gnb-container>
       </el-header-gnb>
