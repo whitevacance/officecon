@@ -200,9 +200,9 @@ const initCategoryTabs = () => {
         tabTrigger.show();
       });
 
-      triggerEl.addEventListener('click', (event) => {
-        if (event.target?.href) {
-          window.location.href = event.target.href;
+      triggerEl.addEventListener('click', (e) => {
+        if (e.target?.href) {
+          window.location.href = e.target.href;
         }
       });
     });
@@ -218,3 +218,30 @@ if (window !== undefined) {
 
 initCategoryTabs();
 // 종료: el-category-tabs
+
+// 시작: el-input
+const initCustomInput = () => {
+  if (document?.body) {
+    document?.body.addEventListener('click', (e) => {
+      const inputClearButtonEl = e.target.closest(
+        'el-input > el-input-addon > .input-clear-button'
+      );
+
+      if (inputClearButtonEl) {
+        e.preventDefault();
+        e.stopPropagation();
+        const inputEl = inputClearButtonEl.closest('el-input');
+        inputEl.querySelector('input').value = '';
+        inputEl.querySelector('input').focus();
+      }
+    });
+  }
+};
+
+// 전역 함수로 등록
+if (window !== undefined) {
+  window.initCustomInput = initCustomInput;
+}
+
+initCustomInput();
+// 종료: el-input
