@@ -303,10 +303,66 @@
             <nav>
               <ul class="typo-body-md">
                 <li>
-                  <button type="button" class="typo-body-md">
+                  <button
+                    type="button"
+                    class="typo-body-md"
+                    data-bs-toggle="dropdown"
+                    data-bs-offset="0,-34"
+                    data-bs-auto-close="outside"
+                    aria-expanded="false"
+                  >
                     <el-icon class="h20-menu natural-20"></el-icon>
                     전체 카테고리
                   </button>
+                  <el-category-layer class="dropdown-menu">
+                    <el-category-depth1-list>
+                      <ul class="typo-body-sm">
+                        <li>
+                          <a href="#">전체</a>
+                        </li>
+                        <li>
+                          <a href="#">커피/음료</a>
+                        </li>
+                        <li>
+                          <a href="#">베이커리/디저트</a>
+                        </li>
+                        <li>
+                          <a href="#">아이스크림</a>
+                        </li>
+                        <li>
+                          <a href="#">치킨/피자/버거</a>
+                        </li>
+                        <li>
+                          <a href="#">외식</a>
+                        </li>
+                        <li>
+                          <a href="#">배달이용권</a>
+                        </li>
+                        <li>
+                          <a href="#">상품권/페이/주유</a>
+                        </li>
+                        <li>
+                          <a href="#">금액권/통합권</a>
+                        </li>
+                        <li>
+                          <a href="#">편의점/마트</a>
+                        </li>
+                        <li>
+                          <a href="#">문화/생활/뷰티</a>
+                        </li>
+                      </ul>
+                    </el-category-depth1-list>
+                    <el-category-depth2-list>
+                      <ul>
+                        <li>
+                          <a href="#">아이템1</a>
+                        </li>
+                        <li>
+                          <a href="#">아이템2</a>
+                        </li>
+                      </ul>
+                    </el-category-depth2-list>
+                  </el-category-layer>
                 </li>
                 <li>
                   <a href="#">브랜드</a>
@@ -327,16 +383,55 @@
                   <a href="#">파트너링크</a>
                 </li>
                 <li>
-                  <button type="button" class="typo-body-md">
+                  <button
+                    type="button"
+                    class="typo-body-md"
+                    data-bs-toggle="dropdown"
+                    data-bs-offset="5,10"
+                  >
                     서비스 소개
                     <el-icon class="h16-arrow-down natural-40"></el-icon>
                   </button>
+                  <el-layer-dropdown class="dropdown-menu dropdown-menu-end">
+                    <ul class="typo-body-sm typo-weight-em">
+                      <li>
+                        <a href="#">오피스콘 특장점</a>
+                      </li>
+                      <li>
+                        <a href="#">회원등급</a>
+                      </li>
+                      <li>
+                        <a href="#">리워드 혜택</a>
+                      </li>
+                      <li>
+                        <a href="#">발송방법안내</a>
+                      </li>
+                    </ul>
+                  </el-layer-dropdown>
                 </li>
                 <li>
-                  <button type="button" class="typo-body-md">
+                  <button
+                    type="button"
+                    class="typo-body-md"
+                    data-bs-toggle="dropdown"
+                    data-bs-offset="5,10"
+                  >
                     오피스콘 플러스
                     <el-icon class="h16-arrow-down natural-40"></el-icon>
                   </button>
+                  <el-layer-dropdown class="dropdown-menu dropdown-menu-end">
+                    <ul class="typo-body-sm typo-weight-em">
+                      <li>
+                        <a href="#">상품 Pick 발송</a>
+                      </li>
+                      <li>
+                        <a href="#">문자서비스</a>
+                      </li>
+                      <li>
+                        <a href="#">설문등록</a>
+                      </li>
+                    </ul>
+                  </el-layer-dropdown>
                 </li>
               </ul>
             </nav>

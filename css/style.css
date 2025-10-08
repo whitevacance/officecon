@@ -1163,7 +1163,8 @@ el-header-gnb {
             gap: 2px;
             color: var(--color-natural-20);
 
-            &:hover {
+            &:hover,
+            &.show {
               color: var(--color-natural-0);
 
               el-icon {
@@ -1183,6 +1184,57 @@ el-header-gnb {
 
             &:hover {
               color: var(--color-natural-0);
+            }
+          }
+
+          & > el-category-layer.dropdown-menu {
+            position: absolute;
+            top: 100% !important;
+            display: none;
+            width: 898px;
+            height: 637px;
+            box-shadow: var(--color-boxShadow-3);
+            border: none;
+            border-radius: 20px;
+            padding: 24px;
+            overflow: auto;
+            gap: 37px;
+
+            &.show {
+              display: flex;
+            }
+
+            el-category-depth1-list {
+              flex-grow: 0;
+              flex-shrink: 0;
+              display: block;
+              width: 132px;
+
+              ul {
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+                width: 100%;
+
+                a {
+                  display: block;
+                  padding: 10px 20px;
+                  color: var(--color-natural-20);
+                  border-radius: 999px;
+
+                  &:hover {
+                    color: var(--color-natural-0);
+                    font-weight: 600;
+                    background-color: var(--color-natural-90);
+                  }
+                }
+              }
+            }
+
+            el-category-depth2-list {
+              ul > li {
+                display: none;
+              }
             }
           }
 
