@@ -392,10 +392,12 @@ class ComponentHeaderGnb extends HTMLElement {
 
   loadExternalScript() {
     loadScript(this, 'initAlert');
+    loadScript(this, 'initCategoryTabs');
   }
 
   async loadScriptDynamically() {
     loadDynamically(this, 'initAlert');
+    loadDynamically(this, 'initCategoryTabs');
   }
 
   render() {

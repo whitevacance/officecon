@@ -185,3 +185,36 @@ if (window !== undefined) {
 
 initThemeSwitch();
 // 종료: el-theme-switch
+
+// 시작: el-category-tabs
+const initCategoryTabs = () => {
+  const triggerTabList = document.querySelectorAll(
+    'el-category-tabs > ul > li > a'
+  );
+
+  if (triggerTabList?.length > 0) {
+    triggerTabList.forEach((triggerEl) => {
+      const tabTrigger = new bootstrap.Tab(triggerEl);
+
+      triggerEl.addEventListener('mouseenter', () => {
+        tabTrigger.show();
+      });
+
+      triggerEl.addEventListener('click', (event) => {
+        if (event.target?.href) {
+          window.location.href = event.target.href;
+        }
+      });
+    });
+  } else {
+    // console.error('el-category-tabs 요소를 찾을 수 없습니다.');
+  }
+};
+
+// 전역 함수로 등록
+if (window !== undefined) {
+  window.initCategoryTabs = initCategoryTabs;
+}
+
+initCategoryTabs();
+// 종료: el-category-tabs

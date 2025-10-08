@@ -312,56 +312,138 @@
                     aria-expanded="false"
                   >
                     <el-icon class="h20-menu natural-20"></el-icon>
+                    <el-icon class="h20-closed-bold natural-0"></el-icon>
                     전체 카테고리
                   </button>
                   <el-category-layer class="dropdown-menu">
-                    <el-category-depth1-list>
-                      <ul class="typo-body-sm">
+                    <el-category-tabs>
+                      <ul class="typo-body-sm" role="tablist">
                         <li>
-                          <a href="#">전체</a>
+                          <a
+                            href="#"
+                            data-bs-toggle="tab"
+                            data-bs-target="#el-category-tab-1"
+                            class="active"
+                          >
+                            전체
+                          </a>
                         </li>
                         <li>
-                          <a href="#">커피/음료</a>
+                          <a
+                            href="#"
+                            data-bs-toggle="tab"
+                            data-bs-target="#el-category-tab-2"
+                          >
+                            커피/음료
+                          </a>
                         </li>
                         <li>
-                          <a href="#">베이커리/디저트</a>
+                          <a
+                            href="#"
+                            data-bs-toggle="tab"
+                            data-bs-target="#el-category-tab-3"
+                          >
+                            베이커리/디저트
+                          </a>
                         </li>
                         <li>
-                          <a href="#">아이스크림</a>
+                          <a
+                            href="#"
+                            data-bs-toggle="tab"
+                            data-bs-target="#el-category-tab-4"
+                          >
+                            아이스크림
+                          </a>
                         </li>
                         <li>
-                          <a href="#">치킨/피자/버거</a>
+                          <a
+                            href="#"
+                            data-bs-toggle="tab"
+                            data-bs-target="#el-category-tab-5"
+                          >
+                            치킨/피자/버거
+                          </a>
                         </li>
                         <li>
-                          <a href="#">외식</a>
+                          <a
+                            href="#"
+                            data-bs-toggle="tab"
+                            data-bs-target="#el-category-tab-6"
+                          >
+                            외식
+                          </a>
                         </li>
                         <li>
-                          <a href="#">배달이용권</a>
+                          <a
+                            href="#"
+                            data-bs-toggle="tab"
+                            data-bs-target="#el-category-tab-7"
+                          >
+                            배달이용권
+                          </a>
                         </li>
                         <li>
-                          <a href="#">상품권/페이/주유</a>
+                          <a
+                            href="#"
+                            data-bs-toggle="tab"
+                            data-bs-target="#el-category-tab-8"
+                          >
+                            상품권/페이/주유
+                          </a>
                         </li>
                         <li>
-                          <a href="#">금액권/통합권</a>
+                          <a
+                            href="#"
+                            data-bs-toggle="tab"
+                            data-bs-target="#el-category-tab-9"
+                          >
+                            금액권/통합권
+                          </a>
                         </li>
                         <li>
-                          <a href="#">편의점/마트</a>
+                          <a
+                            href="#"
+                            data-bs-toggle="tab"
+                            data-bs-target="#el-category-tab-10"
+                          >
+                            편의점/마트
+                          </a>
                         </li>
                         <li>
-                          <a href="#">문화/생활/뷰티</a>
+                          <a
+                            href="#"
+                            data-bs-toggle="tab"
+                            data-bs-target="#el-category-tab-11"
+                          >
+                            문화/생활/뷰티
+                          </a>
                         </li>
                       </ul>
-                    </el-category-depth1-list>
-                    <el-category-depth2-list>
-                      <ul>
-                        <li>
-                          <a href="#">아이템1</a>
-                        </li>
-                        <li>
-                          <a href="#">아이템2</a>
-                        </li>
-                      </ul>
-                    </el-category-depth2-list>
+                    </el-category-tabs>
+                    <el-category-tab-content class="tab-content">
+                      <el-category-tab-panel
+                        role="tabpanel"
+                        id="el-category-tab-1"
+                        class="tab-pane active"
+                      >
+                        <ul>
+                          <li>
+                            <a href="#">아이템1</a>
+                          </li>
+                        </ul>
+                      </el-category-tab-panel>
+                      <el-category-tab-panel
+                        role="tabpanel"
+                        id="el-category-tab-2"
+                        class="tab-pane"
+                      >
+                        <ul>
+                          <li>
+                            <a href="#">아이템2</a>
+                          </li>
+                        </ul>
+                      </el-category-tab-panel>
+                    </el-category-tab-content>
                   </el-category-layer>
                 </li>
                 <li>
@@ -702,6 +784,8 @@
               <el-examples-stack class="bg">
                 <el-icon class="h20-closed"></el-icon>
                 <el-icon class="h20-closed natural-0"></el-icon>
+                <el-icon class="h20-closed-bold"></el-icon>
+                <el-icon class="h20-closed-bold natural-0"></el-icon>
                 <el-icon class="h20-menu"></el-icon>
                 <el-icon class="h20-menu natural-0"></el-icon>
               </el-examples-stack>
