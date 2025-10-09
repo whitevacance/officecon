@@ -1,17 +1,21 @@
-// 시작: 공통 변수
+// 시작: global 변수
 let pubWrapperEl = document.querySelector('el-wrapper');
 let bsAlert = null;
 let bsSearchLayerToggleButton = null;
-// 종료: 공통 변수
+// 종료: global 변수
 
 // 시작: el-alert
 const initAlert = () => {
   const alertEl = document.querySelector('el-alert');
 
+  // 부트스트랩 인스턴스 생성
+  if (!bootstrap) {
+    // console.error('bootstrap을 찾을 수 없습니다.');
+    return;
+  }
+
   if (alertEl) {
     bsAlert = new bootstrap.Modal(alertEl);
-  } else {
-    // console.error('el-alert 요소를 찾을 수 없습니다.');
   }
 };
 
@@ -25,21 +29,20 @@ initAlert();
 
 // 시작: 상단 띠배너 숨기기
 const initTopBanner = () => {
-  const topBannerEl = document.querySelector('el-top-banner');
+  if (document?.body) {
+    document.body.addEventListener('click', (e) => {
+      const topBannerCloseButtonEl = e.target.closest(
+        'el-top-banner el-top-banner-content button'
+      );
 
-  if (topBannerEl) {
-    topBannerEl.addEventListener('click', (e) => {
-      // 닫기 버튼이나 그 자식 요소가 클릭된 경우 처리
-      const buttonEl = e.target.closest('button');
-      if (buttonEl) {
+      if (topBannerCloseButtonEl) {
         e.preventDefault();
         e.stopPropagation();
 
+        const topBannerEl = topBannerCloseButtonEl.closest('el-top-banner');
         topBannerEl.classList.add('hide');
       }
     });
-  } else {
-    // console.error('el-top-banner 요소를 찾을 수 없습니다.');
   }
 };
 
@@ -61,8 +64,6 @@ const initHeaderSticky = () => {
       { threshold: [1] }
     );
     observer.observe(headerStickyEl);
-  } else {
-    // console.error('el-header-sticky 요소를 찾을 수 없습니다.');
   }
 };
 
@@ -84,15 +85,14 @@ const initSearchLayer = () => {
     'el-search-layer el-search input'
   );
 
-  // 부트스트랩 dropdown 인스턴스 생성
+  // 부트스트랩 인스턴스 생성
   if (!bootstrap) {
     // console.error('bootstrap을 찾을 수 없습니다.');
     return;
   }
-  if (bootstrap && searchLayerToggleButton) {
+
+  if (searchLayerToggleButton) {
     bsSearchLayerToggleButton = new bootstrap.Dropdown(searchLayerToggleButton);
-  } else {
-    // console.error('searchLayerEl 요소를 찾을 수 없습니다.');
   }
 
   // searchLayerInput에 focus 시 레이어 show
@@ -185,3 +185,68 @@ if (window !== undefined) {
 
 initThemeSwitch();
 // 종료: el-theme-switch
+
+// 시작: el-category-tabs
+const initCategoryTabs = () => {
+  const triggerTabList = document.querySelectorAll(
+    'el-category-tabs > ul > li > a'
+  );
+
+  // 부트스트랩 인스턴스 생성
+  if (!bootstrap) {
+    // console.error('bootstrap을 찾을 수 없습니다.');
+    return;
+  }
+
+  if (triggerTabList?.length > 0) {
+    triggerTabList.forEach((triggerEl) => {
+      const tabTrigger = new bootstrap.Tab(triggerEl);
+
+      triggerEl.addEventListener('mouseenter', () => {
+        tabTrigger.show();
+      });
+
+      triggerEl.addEventListener('click', (e) => {
+        if (e.target?.href) {
+          window.location.href = e.target.href;
+        }
+      });
+    });
+  }
+};
+
+// 전역 함수로 등록
+if (window !== undefined) {
+  window.initCategoryTabs = initCategoryTabs;
+}
+
+initCategoryTabs();
+// 종료: el-category-tabs
+
+// 시작: el-input
+const initCustomInput = () => {
+  if (document?.body) {
+    document.body.addEventListener('click', (e) => {
+      const inputClearButtonEl = e.target.closest(
+        'el-input > el-input-addon > .input-clear-button'
+      );
+
+      if (inputClearButtonEl) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        const inputEl = inputClearButtonEl.closest('el-input');
+        inputEl.querySelector('input').value = '';
+        inputEl.querySelector('input').focus();
+      }
+    });
+  }
+};
+
+// 전역 함수로 등록
+if (window !== undefined) {
+  window.initCustomInput = initCustomInput;
+}
+
+initCustomInput();
+// 종료: el-input
