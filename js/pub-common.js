@@ -2,6 +2,7 @@
 let pubWrapperEl = document.querySelector('el-wrapper');
 let bsAlert = null;
 let bsSearchLayerToggleButton = null;
+let homeMainSwiperInstance = null;
 // 종료: global 변수
 
 // 시작: el-alert
@@ -250,3 +251,57 @@ if (window !== undefined) {
 
 initCustomInput();
 // 종료: el-input
+
+// 시작: el-home-main-swiper
+const initHomeMainSwiper = () => {
+  const homeMainSwiperEl = document.querySelector('#homeMainSwiper');
+  const homeMainSwiperPauseEl = document.querySelector('#homeMainSwiperPause');
+  const homeMainSwiperPlayEl = document.querySelector('#homeMainSwiperPlay');
+  const homeMainSwiperParams = {
+    rewind: true,
+    effect: 'cards',
+    cardsEffect: {
+      perSlideOffset: 7,
+      perSlideRotate: 1.8,
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'fraction',
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    autoplay: {
+      delay: 4000,
+    },
+  };
+
+  if (homeMainSwiperEl && homeMainSwiperParams) {
+    Object.assign(homeMainSwiperEl, homeMainSwiperParams);
+    homeMainSwiperEl.initialize();
+    homeMainSwiperInstance = homeMainSwiperEl?.swiper || null;
+  }
+
+  if (homeMainSwiperInstance && homeMainSwiperPauseEl && homeMainSwiperPlayEl) {
+    homeMainSwiperPauseEl.addEventListener('click', () => {
+      homeMainSwiperInstance.autoplay.stop();
+      homeMainSwiperPlayEl.style.display = 'block';
+      homeMainSwiperPauseEl.style.display = 'none';
+    });
+
+    homeMainSwiperPlayEl.addEventListener('click', () => {
+      homeMainSwiperInstance.autoplay.start();
+      homeMainSwiperPlayEl.style.display = 'none';
+      homeMainSwiperPauseEl.style.display = 'block';
+    });
+  }
+};
+
+// 전역 함수로 등록
+if (window !== undefined) {
+  window.initHomeMainSwiper = initHomeMainSwiper;
+}
+
+initHomeMainSwiper();
+// 종료: el-home-main-swiper

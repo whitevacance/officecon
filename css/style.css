@@ -372,6 +372,42 @@ el-icon {
     -webkit-mask-image: url('../images/icon-h20-menu.svg');
     mask-image: url('../images/icon-h20-menu.svg');
   }
+  &.h20-arrow-left {
+    width: 20px;
+    height: 20px;
+    -webkit-mask-image: url('../images/icon-h20-arrow-left.svg');
+    mask-image: url('../images/icon-h20-arrow-left.svg');
+  }
+  &.h20-arrow-left-hover {
+    width: 20px;
+    height: 20px;
+    -webkit-mask-image: url('../images/icon-h20-arrow-left-hover.svg');
+    mask-image: url('../images/icon-h20-arrow-left-hover.svg');
+  }
+  &.h20-arrow-right {
+    width: 20px;
+    height: 20px;
+    -webkit-mask-image: url('../images/icon-h20-arrow-right.svg');
+    mask-image: url('../images/icon-h20-arrow-right.svg');
+  }
+  &.h20-arrow-right-hover {
+    width: 20px;
+    height: 20px;
+    -webkit-mask-image: url('../images/icon-h20-arrow-right-hover.svg');
+    mask-image: url('../images/icon-h20-arrow-right-hover.svg');
+  }
+  &.h20-pause {
+    width: 20px;
+    height: 20px;
+    -webkit-mask-image: url('../images/icon-h20-pause.svg');
+    mask-image: url('../images/icon-h20-pause.svg');
+  }
+  &.h20-pause-hover {
+    width: 20px;
+    height: 20px;
+    -webkit-mask-image: url('../images/icon-h20-pause-hover.svg');
+    mask-image: url('../images/icon-h20-pause-hover.svg');
+  }
   &.h16-closed {
     width: 16px;
     height: 16px;
@@ -1326,6 +1362,10 @@ el-header-gnb {
   padding-bottom: 10px;
   border-bottom: 1px solid var(--color-natural-90);
 
+  el-wrapper.home & {
+    border-bottom: none;
+  }
+
   el-gnb-container {
     display: flex;
     align-items: center;
@@ -1892,28 +1932,29 @@ el-footer {
 
 /* 종료: 레이아웃 > footer */
 
-/* 시작: 홈(home) > 레이아웃 */
-el-home {
+/* 시작: 2컬럼 레이아웃 */
+el-split-container {
   display: flex;
   align-items: flex-start;
   gap: 32px;
   width: 100%;
+  margin-top: -10px;
 
-  el-home-content {
+  el-split-content {
     flex-shrink: 0;
     display: block;
     width: var(--layout-home-content-width);
-    min-height: 1500px;
-    background-color: mediumpurple;
+    padding-top: 10px;
   }
 
-  el-home-aside {
+  el-split-aside {
     flex-shrink: 0;
     display: block;
     width: var(--layout-aside-width);
     padding-top: 10px;
     position: sticky;
-    top: calc(var(--layout-header-sticky-height) + 10px);
+    /* top: calc(var(--layout-header-sticky-height) + 10px); */
+    top: var(--layout-header-sticky-height);
 
     & > aside {
       min-height: 500px;
@@ -1921,7 +1962,171 @@ el-home {
     }
   }
 }
-/* 종료: 홈(home) > 레이아웃 */
+/* 종료: 2컬럼 레이아웃 */
+
+/* 시작: 홈 */
+el-home-container {
+  display: flex;
+  flex-direction: column;
+  gap: 78px;
+
+  el-home-section {
+    display: block;
+
+    &:first-of-type {
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+    }
+  }
+
+  el-home-main-swiper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+
+    swiper-container {
+      width: 820px;
+      height: 340px;
+
+      swiper-slide {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 24px;
+        overflow: hidden;
+
+        a {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          height: 100%;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+
+    el-swiper-control {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 147px;
+      height: 40px;
+      position: absolute;
+      bottom: 18px;
+      right: 52px;
+      border-radius: 999px;
+      background-color: var(--color-opacity-black-30);
+      color: var(--color-opacity-white-50);
+      z-index: 10;
+
+      .swiper-button-prev,
+      .swiper-button-next {
+        position: relative;
+        left: unset;
+        right: unset;
+        top: unset;
+        bottom: unset;
+        margin: 0;
+        padding: 0;
+        width: 20px;
+        height: 20px;
+        opacity: 0.5;
+
+        & > svg {
+          display: none;
+        }
+
+        &.swiper-button-disabled {
+          opacity: 0.5;
+        }
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+
+      .swiper-button-prev {
+        &:hover {
+          el-icon {
+            -webkit-mask-image: url('../images/icon-h20-arrow-left-hover.svg');
+            mask-image: url('../images/icon-h20-arrow-left-hover.svg');
+          }
+        }
+      }
+
+      .swiper-button-next {
+        &:hover {
+          el-icon {
+            -webkit-mask-image: url('../images/icon-h20-arrow-right-hover.svg');
+            mask-image: url('../images/icon-h20-arrow-right-hover.svg');
+          }
+        }
+      }
+
+      el-swiper-pagination {
+        display: block;
+        width: 46px;
+        position: relative;
+
+        .swiper-pagination {
+          position: relative;
+          bottom: 0;
+
+          .swiper-pagination-current {
+            color: var(--color-natural-100);
+          }
+        }
+      }
+
+      el-play-and-pause {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 20px;
+        height: 20px;
+        margin-left: 6px;
+
+        button {
+          width: 20px;
+          height: 20px;
+          opacity: 0.5;
+
+          &:hover {
+            opacity: 1;
+          }
+        }
+
+        #homeMainSwiperPlay {
+          display: none;
+          &:hover {
+            el-icon {
+              -webkit-mask-image: url('../images/icon-h20-arrow-right-hover.svg');
+              mask-image: url('../images/icon-h20-arrow-right-hover.svg');
+            }
+          }
+        }
+
+        #homeMainSwiperPause {
+          &:hover {
+            el-icon {
+              -webkit-mask-image: url('../images/icon-h20-pause-hover.svg');
+              mask-image: url('../images/icon-h20-pause-hover.svg');
+            }
+          }
+        }
+      }
+    }
+  }
+}
+/* 종료: 홈 */
 
 /* 시작: 예시(example) */
 el-examples-article {

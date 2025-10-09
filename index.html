@@ -37,7 +37,7 @@
   </head>
   <body>
     <!-- [DEV] 일반회원일 때 className: 'personal-member' -->
-    <el-wrapper>
+    <el-wrapper class="home">
       <el-container>
         <!-- 시작: [DEV] 웹컴포넌트
           1. 퍼블리싱용 웹컴포넌트입니다.
@@ -66,12 +66,106 @@
               </swiper-container>
             </el-swiper-wrapper> -->
 
-            <el-home>
-              <el-home-content>홈 컨텐츠</el-home-content>
-              <el-home-aside>
-                <aside>홈 aside</aside>
-              </el-home-aside>
-            </el-home>
+            <el-split-container>
+              <el-split-content>
+                <el-home-container>
+                  <el-home-section>
+                    <el-home-main-swiper>
+                      <swiper-container id="homeMainSwiper" init="false">
+                        <swiper-slide>
+                          <a href="#">
+                            <img
+                              src="./images/temp/main-swiper-1.jpg"
+                              alt="배너1"
+                            />
+                          </a>
+                        </swiper-slide>
+                        <swiper-slide>
+                          <a href="#">
+                            <img
+                              src="./images/temp/main-swiper-2.jpg"
+                              alt="배너2"
+                            />
+                          </a>
+                        </swiper-slide>
+                        <swiper-slide>
+                          <a href="#">
+                            <img
+                              src="./images/temp/main-swiper-3.jpg"
+                              alt="배너3"
+                            />
+                          </a>
+                        </swiper-slide>
+                        <swiper-slide>
+                          <a href="#">
+                            <img
+                              src="./images/temp/main-swiper-4.jpg"
+                              alt="배너4"
+                            />
+                          </a>
+                        </swiper-slide>
+                        <swiper-slide>
+                          <a href="#">
+                            <img
+                              src="./images/temp/main-swiper-5.jpg"
+                              alt="배너5"
+                            />
+                          </a>
+                        </swiper-slide>
+                      </swiper-container>
+
+                      <el-swiper-control class="typo-label-lg">
+                        <button
+                          type="button"
+                          class="swiper-button-prev"
+                          aria-label="이전"
+                        >
+                          <el-icon class="h20-arrow-left"></el-icon>
+                        </button>
+
+                        <el-swiper-pagination>
+                          <div class="swiper-pagination"></div>
+                        </el-swiper-pagination>
+
+                        <button
+                          type="button"
+                          class="swiper-button-next"
+                          aria-label="다음"
+                        >
+                          <el-icon class="h20-arrow-right"></el-icon>
+                        </button>
+
+                        <el-play-and-pause>
+                          <button
+                            type="button"
+                            aria-label="시작"
+                            id="homeMainSwiperPlay"
+                          >
+                            <el-icon class="h20-arrow-right"></el-icon>
+                          </button>
+                          <button
+                            type="button"
+                            aria-label="일시정지"
+                            id="homeMainSwiperPause"
+                          >
+                            <el-icon class="h20-pause"></el-icon>
+                          </button>
+                        </el-play-and-pause>
+                      </el-swiper-control>
+                    </el-home-main-swiper>
+
+                    <el-category-carousel>카테고리 배너</el-category-carousel>
+                  </el-home-section>
+
+                  <el-home-section> 두번째 섹션 </el-home-section>
+                  <el-home-section> 세번째 섹션 </el-home-section>
+                </el-home-container>
+              </el-split-content>
+
+              <el-split-aside>
+                <aside>aside</aside>
+              </el-split-aside>
+            </el-split-container>
           </el-content>
         </main>
         <!-- 종료: 컨텐츠 -->
@@ -96,9 +190,9 @@
       <el-alert-dialog class="modal-dialog modal-dialog-centered">
         <el-alert-content class="modal-content">
           <el-alert-body class="typo-subtitle-sm">
-            010-2131-2424로 인증번호가 정상적으로 발송되었습니다.<br />인증번호가
-            오지 않으면 입력하신 휴대폰번호를 확인해 주세요.<br />(인증번호 5회
-            실패 시 회원상태가 이용정지 처리 됩니다.)
+            얼럿 샘플입니다.
+            <br />
+            개발 시 내용이 변경됩니다.
           </el-alert-body>
           <el-alert-footer>
             <button
