@@ -3,6 +3,7 @@ let pubWrapperEl = document.querySelector('el-wrapper');
 let bsAlert = null;
 let bsSearchLayerToggleButton = null;
 let homeMainSwiperInstance = null;
+let categoryImageCarouselInstance = null;
 // 종료: global 변수
 
 // 시작: el-alert
@@ -255,6 +256,8 @@ initCustomInput();
 // 시작: el-home-main-swiper
 const initHomeMainSwiper = () => {
   const homeMainSwiperEl = document.querySelector('#homeMainSwiper');
+  const homeMainSwiperPrevEl = document.querySelector('#homeMainSwiperPrev');
+  const homeMainSwiperNextEl = document.querySelector('#homeMainSwiperNext');
   const homeMainSwiperPauseEl = document.querySelector('#homeMainSwiperPause');
   const homeMainSwiperPlayEl = document.querySelector('#homeMainSwiperPlay');
   const homeMainSwiperParams = {
@@ -268,10 +271,6 @@ const initHomeMainSwiper = () => {
       el: '.swiper-pagination',
       type: 'fraction',
     },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
     autoplay: {
       delay: 4000,
     },
@@ -283,7 +282,21 @@ const initHomeMainSwiper = () => {
     homeMainSwiperInstance = homeMainSwiperEl?.swiper || null;
   }
 
-  if (homeMainSwiperInstance && homeMainSwiperPauseEl && homeMainSwiperPlayEl) {
+  if (
+    homeMainSwiperInstance &&
+    homeMainSwiperPauseEl &&
+    homeMainSwiperPlayEl &&
+    homeMainSwiperPrevEl &&
+    homeMainSwiperNextEl
+  ) {
+    homeMainSwiperPrevEl.addEventListener('click', () => {
+      homeMainSwiperInstance.slidePrev();
+    });
+
+    homeMainSwiperNextEl.addEventListener('click', () => {
+      homeMainSwiperInstance.slideNext();
+    });
+
     homeMainSwiperPauseEl.addEventListener('click', () => {
       homeMainSwiperInstance.autoplay.stop();
       homeMainSwiperPlayEl.style.display = 'block';
@@ -304,4 +317,53 @@ if (window !== undefined) {
 }
 
 initHomeMainSwiper();
+// 종료: el-home-main-swiper
+
+// 시작: el-category-image-carousel
+const initCategoryImageCarousel = () => {
+  const categoryImageCarouselEl = document.querySelector(
+    'el-category-image-carousel swiper-container'
+  );
+  const categoryImageCarouselPrevEl = document.querySelector(
+    'el-category-image-carousel .button-prev-circle'
+  );
+  const categoryImageCarouselNextEl = document.querySelector(
+    'el-category-image-carousel .button-next-circle'
+  );
+  const categoryImageCarouselParams = {
+    slidesPerGroup: 7,
+    slidesPerView: 7,
+  };
+
+  if (categoryImageCarouselEl && categoryImageCarouselParams) {
+    Object.assign(categoryImageCarouselEl, categoryImageCarouselParams);
+    categoryImageCarouselEl.initialize();
+    categoryImageCarouselInstance = categoryImageCarouselEl?.swiper || null;
+  }
+
+  if (
+    categoryImageCarouselInstance &&
+    categoryImageCarouselPrevEl &&
+    categoryImageCarouselNextEl
+  ) {
+    categoryImageCarouselPrevEl.addEventListener('click', () => {
+      categoryImageCarouselInstance.slidePrev();
+      console.log('🚀 isBeginning:', categoryImageCarouselInstance.isBeginning);
+      console.log('🚀 isEnd:', categoryImageCarouselInstance.isEnd);
+    });
+
+    categoryImageCarouselNextEl.addEventListener('click', () => {
+      categoryImageCarouselInstance.slideNext();
+      console.log('🚀 isBeginning:', categoryImageCarouselInstance.isBeginning);
+      console.log('🚀 isEnd:', categoryImageCarouselInstance.isEnd);
+    });
+  }
+};
+
+// 전역 함수로 등록
+if (window !== undefined) {
+  window.initCategoryImageCarousel = initCategoryImageCarousel;
+}
+
+initCategoryImageCarousel();
 // 종료: el-home-main-swiper

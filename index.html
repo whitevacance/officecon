@@ -117,7 +117,7 @@
                       <el-swiper-control class="typo-label-lg">
                         <button
                           type="button"
-                          class="swiper-button-prev"
+                          id="homeMainSwiperPrev"
                           aria-label="이전"
                         >
                           <el-icon class="h20-arrow-left"></el-icon>
@@ -129,7 +129,7 @@
 
                         <button
                           type="button"
-                          class="swiper-button-next"
+                          id="homeMainSwiperNext"
                           aria-label="다음"
                         >
                           <el-icon class="h20-arrow-right"></el-icon>
@@ -154,7 +154,169 @@
                       </el-swiper-control>
                     </el-home-main-swiper>
 
-                    <el-category-carousel>카테고리 배너</el-category-carousel>
+                    <el-category-image-carousel>
+                      <button
+                        type="button"
+                        class="button-prev-circle"
+                        aria-label="이전"
+                      >
+                        <el-icon class="h20-arrow-left natural-0"></el-icon>
+                      </button>
+                      <el-swiper-wrapper class="typo-body-sm">
+                        <swiper-container init="false">
+                          <swiper-slide>
+                            <el-category-item>
+                              <a href="#">
+                                <el-image>
+                                  <img
+                                    src="./images/category-coffee.png"
+                                    alt="커피/음료"
+                                  />
+                                </el-image>
+                                <el-label>커피/음료</el-label>
+                              </a>
+                            </el-category-item>
+                          </swiper-slide>
+                          <swiper-slide>
+                            <el-category-item>
+                              <a href="#">
+                                <el-image>
+                                  <img
+                                    src="./images/category-cake.png"
+                                    alt="베이커리/디저트"
+                                  />
+                                </el-image>
+                                <el-label>베이커리/디저트</el-label>
+                              </a>
+                            </el-category-item>
+                          </swiper-slide>
+                          <swiper-slide>
+                            <el-category-item>
+                              <a href="#">
+                                <el-image>
+                                  <img
+                                    src="./images/category-icecream.png"
+                                    alt="아이스크림"
+                                  />
+                                </el-image>
+                                <el-label>아이스크림</el-label>
+                              </a>
+                            </el-category-item>
+                          </swiper-slide>
+                          <swiper-slide>
+                            <el-category-item>
+                              <a href="#">
+                                <el-image>
+                                  <img
+                                    src="./images/category-chicken.png"
+                                    alt="치킨/피자/버거"
+                                  />
+                                </el-image>
+                                <el-label>치킨/피자/버거</el-label>
+                              </a>
+                            </el-category-item>
+                          </swiper-slide>
+                          <swiper-slide>
+                            <el-category-item>
+                              <a href="#">
+                                <el-image>
+                                  <img
+                                    src="./images/category-steak.png"
+                                    alt="외식"
+                                  />
+                                </el-image>
+                                <el-label>외식</el-label>
+                              </a>
+                            </el-category-item>
+                          </swiper-slide>
+                          <swiper-slide>
+                            <el-category-item>
+                              <a href="#">
+                                <el-image>
+                                  <img
+                                    src="./images/category-paper-bag.png"
+                                    alt="배달이용권"
+                                  />
+                                </el-image>
+                                <el-label>배달이용권</el-label>
+                              </a>
+                            </el-category-item>
+                          </swiper-slide>
+                          <swiper-slide>
+                            <el-category-item>
+                              <a href="#">
+                                <el-image>
+                                  <img
+                                    src="./images/category-letter.png"
+                                    alt="상품권/페이/주유"
+                                  />
+                                </el-image>
+                                <el-label>상품권/페이/주유</el-label>
+                              </a>
+                            </el-category-item>
+                          </swiper-slide>
+                          <swiper-slide>
+                            <el-category-item>
+                              <a href="#">
+                                <el-image>
+                                  <img
+                                    src="./images/category-chocolate.png"
+                                    alt="편의점/마트"
+                                  />
+                                </el-image>
+                                <el-label>편의점/마트</el-label>
+                              </a>
+                            </el-category-item>
+                          </swiper-slide>
+                          <swiper-slide>
+                            <el-category-item>
+                              <a href="#">
+                                <el-image>
+                                  <img
+                                    src="./images/category-ribbon.png"
+                                    alt="금액권/통합권"
+                                  />
+                                </el-image>
+                                <el-label>금액권/통합권</el-label>
+                              </a>
+                            </el-category-item>
+                          </swiper-slide>
+                          <swiper-slide>
+                            <el-category-item>
+                              <a href="#">
+                                <el-image>
+                                  <img
+                                    src="./images/category-lipstick.png"
+                                    alt="문화/생활/뷰티"
+                                  />
+                                </el-image>
+                                <el-label>문화/생활/뷰티</el-label>
+                              </a>
+                            </el-category-item>
+                          </swiper-slide>
+                          <swiper-slide>
+                            <el-category-item>
+                              <a href="#">
+                                <el-image>
+                                  <img
+                                    src="./images/category-reward.png"
+                                    alt="리워드관"
+                                  />
+                                </el-image>
+                                <el-label>리워드관</el-label>
+                              </a>
+                            </el-category-item>
+                          </swiper-slide>
+                        </swiper-container>
+                      </el-swiper-wrapper>
+                      <button
+                        type="button"
+                        class="button-next-circle"
+                        aria-label="다음"
+                      >
+                        <el-icon class="h20-arrow-right natural-0"></el-icon>
+                      </button>
+                    </el-category-image-carousel>
                   </el-home-section>
 
                   <el-home-section> 두번째 섹션 </el-home-section>

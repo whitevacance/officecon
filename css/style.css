@@ -522,6 +522,7 @@ button {
     background-color: var(--color-natural-100);
     overflow: hidden;
   }
+
   &.button-h50-fill {
     display: inline-flex;
     align-items: center;
@@ -534,6 +535,23 @@ button {
     background-color: var(--color-natural-0);
     color: var(--color-natural-100);
     overflow: hidden;
+  }
+
+  &.button-prev-circle,
+  &.button-next-circle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 43px;
+    height: 43px;
+    border: 1px solid var(--color-natural-80);
+    border-radius: 50%;
+    background-color: var(--color-natural-100);
+    color: var(--color-natural-0);
+    overflow: hidden;
+    &:hover {
+      background-color: var(--color-natural-90);
+    }
   }
 }
 /* 종료: 공통 > button */
@@ -1953,7 +1971,6 @@ el-split-container {
     width: var(--layout-aside-width);
     padding-top: 10px;
     position: sticky;
-    /* top: calc(var(--layout-header-sticky-height) + 10px); */
     top: var(--layout-header-sticky-height);
 
     & > aside {
@@ -2027,33 +2044,17 @@ el-home-container {
       color: var(--color-opacity-white-50);
       z-index: 10;
 
-      .swiper-button-prev,
-      .swiper-button-next {
-        position: relative;
-        left: unset;
-        right: unset;
-        top: unset;
-        bottom: unset;
-        margin: 0;
-        padding: 0;
+      button {
         width: 20px;
         height: 20px;
         opacity: 0.5;
-
-        & > svg {
-          display: none;
-        }
-
-        &.swiper-button-disabled {
-          opacity: 0.5;
-        }
 
         &:hover {
           opacity: 1;
         }
       }
 
-      .swiper-button-prev {
+      #homeMainSwiperPrev {
         &:hover {
           el-icon {
             -webkit-mask-image: url('../images/icon-h20-arrow-left-hover.svg');
@@ -2062,7 +2063,7 @@ el-home-container {
         }
       }
 
-      .swiper-button-next {
+      #homeMainSwiperNext {
         &:hover {
           el-icon {
             -webkit-mask-image: url('../images/icon-h20-arrow-right-hover.svg');
@@ -2119,6 +2120,64 @@ el-home-container {
             el-icon {
               -webkit-mask-image: url('../images/icon-h20-pause-hover.svg');
               mask-image: url('../images/icon-h20-pause-hover.svg');
+            }
+          }
+        }
+      }
+    }
+  }
+
+  el-category-image-carousel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+
+    & > button {
+      flex-shrink: 0;
+      flex-grow: 0;
+    }
+
+    el-swiper-wrapper {
+      display: block;
+      width: calc(100% - 150px);
+
+      el-category-item {
+        display: block;
+        width: 100px;
+        height: 116px;
+
+        a {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 8px;
+          width: 100%;
+          height: 100%;
+          color: var(--color-natural-20);
+          font-weight: 600;
+
+          el-image {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 88px;
+            height: 88px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 50%;
+            background-color: var(--color-natural-95);
+
+            img {
+              width: 60.343px;
+              height: 60.343px;
+              object-fit: cover;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
             }
           }
         }
