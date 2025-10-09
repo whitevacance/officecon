@@ -1627,41 +1627,112 @@ el-header-gnb {
 
           el-filter-search-tab-panel {
             display: block;
-          }
 
-          .title {
-            font-weight: 600;
-            padding-bottom: 8px;
-            color: var(--color-natural-30);
-          }
+            .title {
+              font-weight: 600;
+              padding-bottom: 8px;
+              color: var(--color-natural-30);
+            }
 
-          el-input {
-            width: 130px;
-          }
+            .cta-button {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              width: 100%;
+              height: 43px;
+              border-radius: 8px;
+              font-weight: 600;
+              color: var(--color-natural-100);
+              background: var(--color-background-gradient-colorful);
+            }
 
-          el-price-select {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px 0;
-            width: 100%;
+            el-input {
+              width: 130px;
+            }
 
-            el-checkbox {
-              width: 50%;
+            el-price-select {
+              display: flex;
+              flex-wrap: wrap;
+              gap: 12px 0;
+              width: 100%;
 
-              label {
+              el-checkbox {
+                width: 50%;
+
+                label {
+                  font-weight: 600;
+                }
+              }
+            }
+
+            el-price-range {
+              display: block;
+              padding: 18px 0 16px;
+
+              el-price-range-inputs {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+              }
+            }
+
+            el-budget-inputs {
+              display: flex;
+              justify-content: space-between;
+              padding-bottom: 24px;
+            }
+
+            .calculator {
+              display: flex;
+              justify-content: space-between;
+              padding-bottom: 24px;
+
+              dt,
+              dd {
                 font-weight: 600;
               }
             }
-          }
 
-          el-price-range {
-            display: block;
-            padding-top: 18px;
-
-            el-price-range-inputs {
+            el-themes {
               display: flex;
-              align-items: center;
-              justify-content: space-between;
+              flex-wrap: wrap;
+              gap: 8px;
+              width: 100%;
+
+              a {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 6px;
+                width: 133px;
+                height: 109px;
+                font-weight: 600;
+                color: var(--color-natural-20);
+                border-radius: 10px;
+                background-color: var(--color-natural-100);
+                box-shadow: var(--color-boxShadow-4);
+
+                el-image {
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  width: 58px;
+                  height: 58px;
+                  background-color: var(--color-natural-95);
+                  border-radius: 50%;
+                  position: relative;
+
+                  img {
+                    width: 40px;
+                    height: auto;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                  }
+                }
+              }
             }
           }
         }

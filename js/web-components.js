@@ -1292,7 +1292,229 @@ class ComponentHeaderGnb extends HTMLElement {
               </li>
             </ul>
           </nav>
-          <div>gnb</div>
+
+          <el-filter-search>
+            <button
+              type="button"
+              class="typo-label-lg toggle-button"
+              data-bs-toggle="dropdown"
+              data-bs-offset="0,10"
+              data-bs-auto-close="outside"
+              aria-expanded="false"
+            >
+              <span>금액ㆍ예산ㆍ테마별 상품 검색</span>
+              <el-icon class="h16-arrow-down purple-30"></el-icon>
+            </button>
+            <el-filter-search-layer class="dropdown-menu">
+              <ul class="typo-body-sm tab-list" role="tablist">
+                <li>
+                  <button
+                    type="button"
+                    data-bs-toggle="tab"
+                    data-bs-target="#el-filter-search-tab-1"
+                    class="active"
+                  >
+                    금액별
+                  </button>
+                </li>
+                <li>
+                  <button
+                    type="button"
+                    data-bs-toggle="tab"
+                    data-bs-target="#el-filter-search-tab-2"
+                  >
+                    예산별
+                  </button>
+                </li>
+                <li>
+                  <button
+                    type="button"
+                    data-bs-toggle="tab"
+                    data-bs-target="#el-filter-search-tab-3"
+                  >
+                    테마별
+                  </button>
+                </li>
+              </ul>
+
+              <el-filter-search-tab-content class="tab-content typo-label-lg">
+                <el-filter-search-tab-panel
+                  id="el-filter-search-tab-1"
+                  class="tab-pane active"
+                >
+                  <el-price-select>
+                    <el-checkbox class="form-check">
+                      <input
+                        type="checkbox"
+                        id="priceSelect1"
+                        class="form-check-input custom-checkbox"
+                        value=""
+                        checked
+                      />
+                      <label
+                        class="form-check-label typo-body-sm"
+                        for="priceSelect1"
+                      >
+                        3천원 이하
+                      </label>
+                    </el-checkbox>
+                    <el-checkbox class="form-check">
+                      <input
+                        type="checkbox"
+                        id="priceSelect2"
+                        class="form-check-input custom-checkbox"
+                        value=""
+                      />
+                      <label
+                        class="form-check-label typo-body-sm"
+                        for="priceSelect2"
+                      >
+                        3~5천원
+                      </label>
+                    </el-checkbox>
+                    <el-checkbox class="form-check">
+                      <input
+                        type="checkbox"
+                        id="priceSelect3"
+                        class="form-check-input custom-checkbox"
+                        value=""
+                      />
+                      <label
+                        class="form-check-label typo-body-sm"
+                        for="priceSelect3"
+                      >
+                        5천~1만원
+                      </label>
+                    </el-checkbox>
+                    <el-checkbox class="form-check">
+                      <input
+                        type="checkbox"
+                        id="priceSelect4"
+                        class="form-check-input custom-checkbox"
+                        value=""
+                      />
+                      <label
+                        class="form-check-label typo-body-sm"
+                        for="priceSelect4"
+                      >
+                        1~3만원
+                      </label>
+                    </el-checkbox>
+                    <el-checkbox class="form-check">
+                      <input
+                        type="checkbox"
+                        id="priceSelect5"
+                        class="form-check-input custom-checkbox"
+                        value=""
+                      />
+                      <label
+                        class="form-check-label typo-body-sm"
+                        for="priceSelect5"
+                      >
+                        3만원 이상
+                      </label>
+                    </el-checkbox>
+                  </el-price-select>
+                  <el-price-range>
+                    <h3 class="title typo-label-lg">직접입력</h3>
+                    <el-price-range-inputs>
+                      <el-input>
+                        <input
+                          class="form-control custom-input"
+                          type="text"
+                          placeholder="최소가"
+                        />
+                      </el-input>
+                      ~
+                      <el-input>
+                        <input
+                          class="form-control custom-input"
+                          type="text"
+                          placeholder="최대가"
+                        />
+                      </el-input>
+                    </el-price-range-inputs>
+                  </el-price-range>
+                  <button type="button" class="cta-button typo-label-lg">
+                    상품 검색
+                  </button>
+                </el-filter-search-tab-panel>
+
+                <el-filter-search-tab-panel
+                  id="el-filter-search-tab-2"
+                  class="tab-pane"
+                >
+                  <el-budget-inputs>
+                    <el-item>
+                      <h3 class="title typo-label-lg">총예산</h3>
+                      <el-input>
+                        <input
+                          class="form-control custom-input"
+                          type="text"
+                          placeholder="예산"
+                        />
+                      </el-input>
+                    </el-item>
+                    <el-item>
+                      <h3 class="title typo-label-lg">인원수</h3>
+                      <el-input>
+                        <input
+                          class="form-control custom-input"
+                          type="text"
+                          placeholder="인원"
+                        />
+                      </el-input>
+                    </el-item>
+                  </el-budget-inputs>
+                  <dl class="calculator typo-label-lg">
+                    <dt>예상단가</dt>
+                    <dd>0</dd>
+                  </dl>
+                  <button type="button" class="cta-button typo-label-lg">
+                    상품 검색
+                  </button>
+                </el-filter-search-tab-panel>
+
+                <el-filter-search-tab-panel
+                  id="el-filter-search-tab-3"
+                  class="tab-pane"
+                >
+                  <el-themes class="typo-label-md">
+                    <a href="#">
+                      <el-image>
+                        <img
+                          src="./images/theme-present.png"
+                          alt="이벤트보상"
+                        />
+                      </el-image>
+                      <el-lable>이벤트보상</el-lable>
+                    </a>
+                    <a href="#">
+                      <el-image>
+                        <img src="./images/theme-prize.png" alt="성과보상" />
+                      </el-image>
+                      <el-lable>성과보상</el-lable>
+                    </a>
+                    <a href="#">
+                      <el-image>
+                        <img
+                          src="./images/theme-cake.png"
+                          alt="기념일 축하"
+                        />
+                      </el-image>
+                      <el-lable>기념일 축하</el-lable>
+                    </a>
+                    <a href="#">
+                      <el-image>
+                        <img src="./images/theme-pocket.png" alt="명절선물" />
+                      </el-image>
+                      <el-lable>명절선물</el-lable>
+                    </a>
+                  </el-themes>
+                </el-filter-search-tab-panel>
+              </el-filter-search-tab-content>
+            </el-filter-search-layer>
+          </el-filter-search>
         </el-gnb-container>
       </el-header-gnb>
     `;

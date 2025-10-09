@@ -1331,18 +1331,82 @@
                         </el-input>
                       </el-price-range-inputs>
                     </el-price-range>
+                    <button type="button" class="cta-button typo-label-lg">
+                      상품 검색
+                    </button>
                   </el-filter-search-tab-panel>
+
                   <el-filter-search-tab-panel
                     id="el-filter-search-tab-2"
                     class="tab-pane"
                   >
-                    222222222
+                    <el-budget-inputs>
+                      <el-item>
+                        <h3 class="title typo-label-lg">총예산</h3>
+                        <el-input>
+                          <input
+                            class="form-control custom-input"
+                            type="text"
+                            placeholder="예산"
+                          />
+                        </el-input>
+                      </el-item>
+                      <el-item>
+                        <h3 class="title typo-label-lg">인원수</h3>
+                        <el-input>
+                          <input
+                            class="form-control custom-input"
+                            type="text"
+                            placeholder="인원"
+                          />
+                        </el-input>
+                      </el-item>
+                    </el-budget-inputs>
+                    <dl class="calculator typo-label-lg">
+                      <dt>예상단가</dt>
+                      <dd>0</dd>
+                    </dl>
+                    <button type="button" class="cta-button typo-label-lg">
+                      상품 검색
+                    </button>
                   </el-filter-search-tab-panel>
+
                   <el-filter-search-tab-panel
                     id="el-filter-search-tab-3"
                     class="tab-pane"
                   >
-                    333333333
+                    <el-themes class="typo-label-md">
+                      <a href="#">
+                        <el-image>
+                          <img
+                            src="./images/theme-present.png"
+                            alt="이벤트보상"
+                          />
+                        </el-image>
+                        <el-lable>이벤트보상</el-lable>
+                      </a>
+                      <a href="#">
+                        <el-image>
+                          <img src="./images/theme-prize.png" alt="성과보상" />
+                        </el-image>
+                        <el-lable>성과보상</el-lable>
+                      </a>
+                      <a href="#">
+                        <el-image>
+                          <img
+                            src="./images/theme-cake.png"
+                            alt="기념일 축하"
+                          />
+                        </el-image>
+                        <el-lable>기념일 축하</el-lable>
+                      </a>
+                      <a href="#">
+                        <el-image>
+                          <img src="./images/theme-pocket.png" alt="명절선물" />
+                        </el-image>
+                        <el-lable>명절선물</el-lable>
+                      </a>
+                    </el-themes>
                   </el-filter-search-tab-panel>
                 </el-filter-search-tab-content>
               </el-filter-search-layer>
