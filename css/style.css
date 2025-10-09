@@ -1624,6 +1624,46 @@ el-header-gnb {
           margin-top: -1px;
           padding: 24px;
           background-color: var(--color-natural-98);
+
+          el-filter-search-tab-panel {
+            display: block;
+          }
+
+          .title {
+            font-weight: 600;
+            padding-bottom: 8px;
+            color: var(--color-natural-30);
+          }
+
+          el-input {
+            width: 130px;
+          }
+
+          el-price-select {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 0;
+            width: 100%;
+
+            el-checkbox {
+              width: 50%;
+
+              label {
+                font-weight: 600;
+              }
+            }
+          }
+
+          el-price-range {
+            display: block;
+            padding-top: 18px;
+
+            el-price-range-inputs {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+            }
+          }
         }
       }
     }
