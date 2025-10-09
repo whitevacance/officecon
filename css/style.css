@@ -587,6 +587,54 @@ el-input {
 }
 /* 종료: 공통 > input */
 
+/* 시작: 공통 > checkbox */
+el-checkbox {
+  display: inline-flex;
+  gap: 8px;
+
+  &.form-check {
+    display: inline-flex;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  .custom-checkbox.form-check-input {
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    box-shadow: none;
+    border: 0;
+    border-radius: 0;
+    background: url(../images/icon-checkbox.svg) no-repeat 50% 50%;
+    background-size: cover;
+    cursor: pointer;
+
+    &:active {
+      filter: none;
+    }
+
+    &:checked[type='checkbox'] {
+      background-image: url('../images/icon-checkbox-checked.svg');
+    }
+
+    &:disabled[type='checkbox'] {
+      opacity: 1;
+      background-image: url('../images/icon-checkbox-disabled.svg');
+    }
+  }
+
+  label {
+    color: var(--color-natural-20);
+  }
+}
+/* 종료: 공통 > checkbox */
+
+/* 시작: 공통 > radio */
+el-radio {
+}
+/* 종료: 공통 > radio */
+
 /* 시작: 공통 > alert */
 .modal-backdrop {
   opacity: 1 !important;
