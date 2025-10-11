@@ -260,6 +260,7 @@ const initHomeMainSwiper = () => {
   const homeMainSwiperNextEl = document.querySelector('#homeMainSwiperNext');
   const homeMainSwiperPauseEl = document.querySelector('#homeMainSwiperPause');
   const homeMainSwiperPlayEl = document.querySelector('#homeMainSwiperPlay');
+
   const homeMainSwiperParams = {
     speed: 600,
     rewind: true,
@@ -269,7 +270,7 @@ const initHomeMainSwiper = () => {
       perSlideRotate: 1.8,
     },
     pagination: {
-      el: '.swiper-pagination',
+      el: '#homeMainSwiperPagination',
       type: 'fraction',
     },
     autoplay: {
@@ -347,7 +348,7 @@ const initCategoryImageCarousel = () => {
     categoryImageCarouselPrevEl &&
     categoryImageCarouselNextEl
   ) {
-    const changeButtonDisabled = () => {
+    const handleButtonDisabled = () => {
       if (categoryImageCarouselInstance.isBeginning) {
         categoryImageCarouselPrevEl.disabled = true;
       } else {
@@ -360,7 +361,7 @@ const initCategoryImageCarousel = () => {
         categoryImageCarouselNextEl.disabled = false;
       }
     };
-    changeButtonDisabled();
+    handleButtonDisabled();
 
     categoryImageCarouselPrevEl.addEventListener('click', () => {
       categoryImageCarouselInstance.slidePrev();
@@ -371,7 +372,7 @@ const initCategoryImageCarousel = () => {
     });
 
     categoryImageCarouselInstance.on('slideChange', () => {
-      changeButtonDisabled();
+      handleButtonDisabled();
     });
   }
 };
@@ -387,59 +388,65 @@ initCategoryImageCarousel();
 // 시작: el-category-swiper
 const initHomeCategorySwiper = () => {
   const categorySwiperEls = document.querySelectorAll(
-    'el-home-section el-category-swiper swiper-container'
-  );
-  console.log(
-    '🚀 ~ initCategorySwiper ~ categorySwiperEls:',
-    categorySwiperEls
+    'el-home-section el-category-swiper'
   );
 
-  // const categorySwiperEl = document.querySelector(
-  //   'el-category-image-carousel swiper-container'
-  // );
-  // const categorySwiperPrevEl = document.querySelector(
-  //   'el-category-image-carousel .button-prev-circle'
-  // );
-  // const categorySwiperNextEl = document.querySelector(
-  //   'el-category-image-carousel .button-next-circle'
-  // );
-  // const categorySwiperParams = {
-  //   slidesPerGroup: 7,
-  //   slidesPerView: 7,
-  // };
-  // if (categoryImageCarouselEl && categoryImageCarouselParams) {
-  //   Object.assign(categoryImageCarouselEl, categoryImageCarouselParams);
-  //   categoryImageCarouselEl.initialize();
-  //   categoryImageCarouselInstance = categoryImageCarouselEl?.swiper || null;
-  // }
-  // if (
-  //   categoryImageCarouselInstance &&
-  //   categoryImageCarouselPrevEl &&
-  //   categoryImageCarouselNextEl
-  // ) {
-  //   const changeButtonDisabled = () => {
-  //     if (categoryImageCarouselInstance.isBeginning) {
-  //       categoryImageCarouselPrevEl.disabled = true;
-  //     } else {
-  //       categoryImageCarouselPrevEl.disabled = false;
-  //     }
-  //     if (categoryImageCarouselInstance.isEnd) {
-  //       categoryImageCarouselNextEl.disabled = true;
-  //     } else {
-  //       categoryImageCarouselNextEl.disabled = false;
-  //     }
-  //   };
-  //   changeButtonDisabled();
-  //   categoryImageCarouselPrevEl.addEventListener('click', () => {
-  //     categoryImageCarouselInstance.slidePrev();
-  //   });
-  //   categoryImageCarouselNextEl.addEventListener('click', () => {
-  //     categoryImageCarouselInstance.slideNext();
-  //   });
-  //   categoryImageCarouselInstance.on('slideChange', () => {
-  //     changeButtonDisabled();
-  //   });
-  // }
+  if (categorySwiperEls?.length > 0) {
+    const swiperParams = {
+      slidesPerView: 'auto',
+      spaceBetween: 4,
+      slidesOffsetBefore: 1,
+      slidesOffsetAfter: 12,
+      focusableElements: 'select',
+    };
+
+    [...categorySwiperEls].forEach((categorySwiperEl) => {
+      if (categorySwiperEl?.querySelector('swiper-container')) {
+        const targetSwiperContainer =
+          categorySwiperEl.querySelector('swiper-container');
+
+        Object.assign(targetSwiperContainer, swiperParams);
+        targetSwiperContainer.initialize();
+        const targetSwiperInstance = targetSwiperContainer?.swiper || null;
+
+        const targetSwiperPrevEl = categorySwiperEl.querySelector(
+          '.button-prev-circle'
+        );
+        const targetSwiperNextEl = categorySwiperEl.querySelector(
+          '.button-next-circle'
+        );
+
+        if (targetSwiperInstance && targetSwiperPrevEl && targetSwiperNextEl) {
+          const handleButtonDisabled = () => {
+            if (targetSwiperInstance.isBeginning) {
+              targetSwiperPrevEl.disabled = true;
+            } else {
+              targetSwiperPrevEl.disabled = false;
+            }
+
+            if (targetSwiperInstance.isEnd) {
+              targetSwiperNextEl.disabled = true;
+            } else {
+              targetSwiperNextEl.disabled = false;
+            }
+          };
+          handleButtonDisabled();
+
+          targetSwiperPrevEl.addEventListener('click', () => {
+            targetSwiperInstance.slidePrev();
+          });
+
+          targetSwiperNextEl.addEventListener('click', () => {
+            targetSwiperInstance.slideNext();
+          });
+
+          targetSwiperInstance.on('slideChange', () => {
+            handleButtonDisabled();
+          });
+        }
+      }
+    });
+  }
 };
 
 // 전역 함수로 등록

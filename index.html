@@ -69,15 +69,6 @@
         <!-- 시작: 컨텐츠 -->
         <main>
           <el-content>
-            <!--
-            <el-swiper-wrapper style="box-shadow: var(--color-boxShadow-5)">
-              <swiper-container>
-                <swiper-slide>Slide 1</swiper-slide>
-                <swiper-slide>Slide 2</swiper-slide>
-                <swiper-slide>Slide 3</swiper-slide>
-              </swiper-container>
-            </el-swiper-wrapper> -->
-
             <el-split-container>
               <el-split-content>
                 <el-home-container>
@@ -136,7 +127,10 @@
                         </button>
 
                         <el-swiper-pagination>
-                          <div class="swiper-pagination"></div>
+                          <div
+                            id="homeMainSwiperPagination"
+                            class="swiper-pagination"
+                          ></div>
                         </el-swiper-pagination>
 
                         <button
@@ -419,6 +413,7 @@
                               </swiper-slide>
                             </swiper-container>
                           </el-swiper-wrapper>
+
                           <el-swiper-navigation>
                             <button
                               type="button"
@@ -442,7 +437,7 @@
                         </el-category-swiper>
                       </el-home-recommend-top>
                       <el-home-recommend-products></el-home-recommend-products>
-                      <el-home-recommend-bottom></el-home-recommend-bottom>
+                      <el-home-recommend-bottom>버튼</el-home-recommend-bottom>
                     </el-home-recommend>
                   </el-home-section>
                   <el-home-section> 세번째 섹션 </el-home-section>
