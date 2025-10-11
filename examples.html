@@ -1713,6 +1713,10 @@
               <el-examples-stack class="bg">
                 <el-icon class="h24-search"></el-icon>
                 <el-icon class="h24-search natural-0"></el-icon>
+                <el-icon class="h24-cart"></el-icon>
+                <el-icon class="h24-cart natural-0"></el-icon>
+                <el-icon class="h24-card"></el-icon>
+                <el-icon class="h24-card natural-0"></el-icon>
               </el-examples-stack>
               <h5>h32</h5>
               <el-examples-stack class="bg">
@@ -1754,6 +1758,18 @@
                   <img src="./images/badge-event.svg" alt="이벤트특가" />
                   <img src="./images/badge-reward.svg" alt="리워드지급" />
                 </el-badge-special>
+                <el-badge-gift-card>
+                  <img src="./images/badge-gift-card.svg" alt="상품권" />
+                </el-badge-gift-card>
+                <el-badge-h14-cash>
+                  <img src="./images/badge-h14-cash.svg" alt="캐시" />
+                </el-badge-h14-cash>
+                <el-badge-h14-point>
+                  <img src="./images/badge-h14-point.svg" alt="포인트" />
+                </el-badge-h14-point>
+                <el-badge-h14-reward>
+                  <img src="./images/badge-h14-reward.svg" alt="리워드" />
+                </el-badge-h14-reward>
               </el-examples-stack>
             </el-examples-article>
 
@@ -2042,13 +2058,354 @@
                       <el-bg></el-bg>
                       <el-badge-special>
                         <img src="./images/badge-event.svg" alt="이벤트특가" />
+                      </el-badge-special>
+                      <el-badge-period class="typo-label-sm">
+                        30일
+                      </el-badge-period>
+                      <el-layer-action>
+                        <button
+                          type="button"
+                          aria-label="add to cart"
+                          onclick="event.preventDefault(); event.stopPropagation(); alert('add to cart')"
+                        >
+                          <el-icon class="h24-cart"></el-icon>
+                        </button>
+                        <button type="button" aria-label="buy now">
+                          <el-icon class="h24-card"></el-icon>
+                        </button>
+                      </el-layer-action>
+                    </el-item-thumbnail>
+
+                    <el-item-txt class="typo-body-sm">
+                      <el-item-name>
+                        <el-brand>스타벅스</el-brand>
+                        떠먹는 스트로베리
+                      </el-item-name>
+                      <el-item-price>
+                        <el-sale-price class="typo-body-sm">
+                          <strong class="typo-body-lg">999,999</strong>원
+                        </el-sale-price>
+                      </el-item-price>
+                    </el-item-txt>
+                  </a>
+                </el-product-item>
+
+                <el-product-item>
+                  <a href="#">
+                    <el-item-thumbnail>
+                      <img
+                        class="thumbnail-image"
+                        src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/product/20250227/20250227145823_a5b9221d-437d-4b84-b0ac-fbc6f58edf4f.jpg"
+                        alt=""
+                      />
+                      <el-bg></el-bg>
+                      <el-badge-special>
+                        <img src="./images/badge-event.svg" alt="이벤트특가" />
                         <img src="./images/badge-reward.svg" alt="리워드지급" />
                       </el-badge-special>
                       <el-badge-period class="typo-label-sm">
                         30일
                       </el-badge-period>
+                      <el-layer-action>
+                        <button
+                          type="button"
+                          aria-label="add to cart"
+                          onclick="event.preventDefault(); event.stopPropagation(); alert('add to cart')"
+                        >
+                          <el-icon class="h24-cart"></el-icon>
+                        </button>
+                        <button type="button" aria-label="buy now">
+                          <el-icon class="h24-card"></el-icon>
+                        </button>
+                      </el-layer-action>
+                      <el-layer-disabled class="typo-subtitle-lg">
+                        <el-txt>
+                          판매가능시간
+                          <br />
+                          9시 ~ 18시
+                        </el-txt>
+                        <el-addon class="typo-body-sm">
+                          공휴일/주말 제외
+                        </el-addon>
+                      </el-layer-disabled>
                     </el-item-thumbnail>
-                    <el-item-txt>asdf</el-item-txt>
+
+                    <el-item-txt class="typo-body-sm">
+                      <el-badge-gift-card>
+                        <img src="./images/badge-gift-card.svg" alt="상품권" />
+                      </el-badge-gift-card>
+                      <el-item-name>
+                        <el-brand>스타벅스</el-brand>
+                        떠먹는 스트로베리 초콜릿 생크림 + 아메리카노 R초콜릿
+                        떠먹는 스트로베리 초콜릿 생크림 + 아메리카노 R초콜릿
+                      </el-item-name>
+                      <el-item-price>
+                        <el-discount-rate class="typo-body-lg">
+                          20%
+                        </el-discount-rate>
+                        <el-sale-price class="typo-body-sm">
+                          <strong class="typo-body-lg">999,999</strong>원
+                        </el-sale-price>
+                        <el-retail-price class="typo-label-md">
+                          999,999원
+                        </el-retail-price>
+                      </el-item-price>
+                    </el-item-txt>
+                  </a>
+                </el-product-item>
+
+                <el-product-item class="disabled">
+                  <a href="#">
+                    <el-item-thumbnail>
+                      <img
+                        class="thumbnail-image"
+                        src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/product/20250227/20250227145823_a5b9221d-437d-4b84-b0ac-fbc6f58edf4f.jpg"
+                        alt=""
+                      />
+                      <el-bg></el-bg>
+                      <el-badge-special>
+                        <img src="./images/badge-event.svg" alt="이벤트특가" />
+                        <img src="./images/badge-reward.svg" alt="리워드지급" />
+                      </el-badge-special>
+                      <el-badge-period class="typo-label-sm">
+                        30일
+                      </el-badge-period>
+                      <el-layer-action>
+                        <button
+                          type="button"
+                          aria-label="add to cart"
+                          onclick="event.preventDefault(); event.stopPropagation(); alert('add to cart')"
+                        >
+                          <el-icon class="h24-cart"></el-icon>
+                        </button>
+                        <button type="button" aria-label="buy now">
+                          <el-icon class="h24-card"></el-icon>
+                        </button>
+                      </el-layer-action>
+                      <el-layer-disabled class="typo-subtitle-lg">
+                        <el-txt> 일시품절 </el-txt>
+                      </el-layer-disabled>
+                    </el-item-thumbnail>
+
+                    <el-item-txt class="typo-body-sm">
+                      <el-badge-gift-card>
+                        <img src="./images/badge-gift-card.svg" alt="상품권" />
+                      </el-badge-gift-card>
+                      <el-item-name>
+                        <el-brand>스타벅스</el-brand>
+                        떠먹는 스트로베리 초콜릿 생크림 + 아메리카노 R초콜릿
+                        떠먹는 스트로베리 초콜릿 생크림 + 아메리카노 R초콜릿
+                      </el-item-name>
+                      <el-item-price>
+                        <el-discount-rate class="typo-body-lg">
+                          20%
+                        </el-discount-rate>
+                        <el-sale-price class="typo-body-sm">
+                          <strong class="typo-body-lg">999,999</strong>원
+                        </el-sale-price>
+                        <el-retail-price class="typo-label-md">
+                          999,999원
+                        </el-retail-price>
+                      </el-item-price>
+                    </el-item-txt>
+                  </a>
+                </el-product-item>
+
+                <el-product-item class="disabled">
+                  <a href="#">
+                    <el-item-thumbnail>
+                      <img
+                        class="thumbnail-image"
+                        src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/product/20250227/20250227145823_a5b9221d-437d-4b84-b0ac-fbc6f58edf4f.jpg"
+                        alt=""
+                      />
+                      <el-bg></el-bg>
+                      <el-badge-special>
+                        <img src="./images/badge-event.svg" alt="이벤트특가" />
+                        <img src="./images/badge-reward.svg" alt="리워드지급" />
+                      </el-badge-special>
+                      <el-badge-period class="typo-label-sm">
+                        30일
+                      </el-badge-period>
+                      <el-layer-action>
+                        <button
+                          type="button"
+                          aria-label="add to cart"
+                          onclick="event.preventDefault(); event.stopPropagation(); alert('add to cart')"
+                        >
+                          <el-icon class="h24-cart"></el-icon>
+                        </button>
+                        <button type="button" aria-label="buy now">
+                          <el-icon class="h24-card"></el-icon>
+                        </button>
+                      </el-layer-action>
+                      <el-layer-disabled class="typo-subtitle-lg">
+                        <el-txt>
+                          판매가능시간
+                          <br />
+                          9시 ~ 18시
+                        </el-txt>
+                        <el-addon class="typo-body-sm">
+                          공휴일/주말 제외
+                        </el-addon>
+                      </el-layer-disabled>
+                    </el-item-thumbnail>
+
+                    <el-item-txt class="typo-body-sm">
+                      <el-badge-gift-card>
+                        <img src="./images/badge-gift-card.svg" alt="상품권" />
+                      </el-badge-gift-card>
+                      <el-item-name>
+                        <el-brand>스타벅스</el-brand>
+                        떠먹는 스트로베리 초콜릿 생크림 + 아메리카노 R초콜릿
+                        떠먹는 스트로베리 초콜릿 생크림 + 아메리카노 R초콜릿
+                      </el-item-name>
+                      <el-item-price>
+                        <el-discount-rate class="typo-body-lg">
+                          20%
+                        </el-discount-rate>
+                        <el-sale-price class="typo-body-sm">
+                          <strong class="typo-body-lg">999,999</strong>원
+                        </el-sale-price>
+                        <el-retail-price class="typo-label-md">
+                          999,999원
+                        </el-retail-price>
+                      </el-item-price>
+                    </el-item-txt>
+                  </a>
+                </el-product-item>
+              </el-examples-stack>
+              <el-examples-stack>
+                <el-product-item>
+                  <a href="#">
+                    <el-item-thumbnail>
+                      <img
+                        class="thumbnail-image"
+                        src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/product/20250227/20250227145823_a5b9221d-437d-4b84-b0ac-fbc6f58edf4f.jpg"
+                        alt=""
+                      />
+                      <el-bg></el-bg>
+                      <el-badge-period class="typo-label-sm">
+                        30일
+                      </el-badge-period>
+                      <el-layer-action>
+                        <button
+                          type="button"
+                          aria-label="add to cart"
+                          onclick="event.preventDefault(); event.stopPropagation(); alert('add to cart')"
+                        >
+                          <el-icon class="h24-cart"></el-icon>
+                        </button>
+                        <button type="button" aria-label="buy now">
+                          <el-icon class="h24-card"></el-icon>
+                        </button>
+                      </el-layer-action>
+                    </el-item-thumbnail>
+
+                    <el-item-txt class="typo-body-sm">
+                      <el-item-name>
+                        <el-brand>스타벅스</el-brand>
+                        떠먹는 스트로베리
+                      </el-item-name>
+                      <el-item-price>
+                        <el-badge-h14-cash class="unit-icon">
+                          <img src="./images/badge-h14-cash.svg" alt="캐시" />
+                        </el-badge-h14-cash>
+                        <el-sale-price class="typo-body-sm">
+                          <strong class="typo-body-lg">999,999</strong> 캐시
+                        </el-sale-price>
+                      </el-item-price>
+                    </el-item-txt>
+                  </a>
+                </el-product-item>
+                <el-product-item>
+                  <a href="#">
+                    <el-item-thumbnail>
+                      <img
+                        class="thumbnail-image"
+                        src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/product/20250227/20250227145823_a5b9221d-437d-4b84-b0ac-fbc6f58edf4f.jpg"
+                        alt=""
+                      />
+                      <el-bg></el-bg>
+                      <el-badge-period class="typo-label-sm">
+                        30일
+                      </el-badge-period>
+                      <el-layer-action>
+                        <button
+                          type="button"
+                          aria-label="add to cart"
+                          onclick="event.preventDefault(); event.stopPropagation(); alert('add to cart')"
+                        >
+                          <el-icon class="h24-cart"></el-icon>
+                        </button>
+                        <button type="button" aria-label="buy now">
+                          <el-icon class="h24-card"></el-icon>
+                        </button>
+                      </el-layer-action>
+                    </el-item-thumbnail>
+
+                    <el-item-txt class="typo-body-sm">
+                      <el-item-name>
+                        <el-brand>스타벅스</el-brand>
+                        떠먹는 스트로베리
+                      </el-item-name>
+                      <el-item-price>
+                        <el-badge-h14-point class="unit-icon">
+                          <img
+                            src="./images/badge-h14-point.svg"
+                            alt="포인트"
+                          />
+                        </el-badge-h14-point>
+                        <el-sale-price class="typo-body-sm">
+                          <strong class="typo-body-lg">999,999</strong> 포인트
+                        </el-sale-price>
+                      </el-item-price>
+                    </el-item-txt>
+                  </a>
+                </el-product-item>
+                <el-product-item>
+                  <a href="#">
+                    <el-item-thumbnail>
+                      <img
+                        class="thumbnail-image"
+                        src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/product/20250227/20250227145823_a5b9221d-437d-4b84-b0ac-fbc6f58edf4f.jpg"
+                        alt=""
+                      />
+                      <el-bg></el-bg>
+                      <el-badge-period class="typo-label-sm">
+                        30일
+                      </el-badge-period>
+                      <el-layer-action>
+                        <button
+                          type="button"
+                          aria-label="add to cart"
+                          onclick="event.preventDefault(); event.stopPropagation(); alert('add to cart')"
+                        >
+                          <el-icon class="h24-cart"></el-icon>
+                        </button>
+                        <button type="button" aria-label="buy now">
+                          <el-icon class="h24-card"></el-icon>
+                        </button>
+                      </el-layer-action>
+                    </el-item-thumbnail>
+
+                    <el-item-txt class="typo-body-sm">
+                      <el-item-name>
+                        <el-brand>스타벅스</el-brand>
+                        떠먹는 스트로베리
+                      </el-item-name>
+                      <el-item-price>
+                        <el-badge-h14-reward class="unit-icon">
+                          <img
+                            src="./images/badge-h14-reward.svg"
+                            alt="리워드"
+                          />
+                        </el-badge-h14-reward>
+                        <el-sale-price class="typo-body-sm">
+                          <strong class="typo-body-lg">999,999</strong> 리워드
+                        </el-sale-price>
+                      </el-item-price>
+                    </el-item-txt>
                   </a>
                 </el-product-item>
               </el-examples-stack>
