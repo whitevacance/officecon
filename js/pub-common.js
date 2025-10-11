@@ -346,16 +346,29 @@ const initCategoryImageCarousel = () => {
     categoryImageCarouselPrevEl &&
     categoryImageCarouselNextEl
   ) {
+    const changeButtonDisabled = () => {
+      if (categoryImageCarouselInstance.isBeginning) {
+        categoryImageCarouselPrevEl.disabled = true;
+      } else {
+        categoryImageCarouselPrevEl.disabled = false;
+      }
+
+      if (categoryImageCarouselInstance.isEnd) {
+        categoryImageCarouselNextEl.disabled = true;
+      } else {
+        categoryImageCarouselNextEl.disabled = false;
+      }
+    };
+    changeButtonDisabled();
+
     categoryImageCarouselPrevEl.addEventListener('click', () => {
       categoryImageCarouselInstance.slidePrev();
-      console.log('🚀 isBeginning:', categoryImageCarouselInstance.isBeginning);
-      console.log('🚀 isEnd:', categoryImageCarouselInstance.isEnd);
+      changeButtonDisabled();
     });
 
     categoryImageCarouselNextEl.addEventListener('click', () => {
       categoryImageCarouselInstance.slideNext();
-      console.log('🚀 isBeginning:', categoryImageCarouselInstance.isBeginning);
-      console.log('🚀 isEnd:', categoryImageCarouselInstance.isEnd);
+      changeButtonDisabled();
     });
   }
 };

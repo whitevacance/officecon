@@ -552,6 +552,13 @@ button {
     &:hover {
       background-color: var(--color-natural-90);
     }
+    &:disabled {
+      opacity: 0.3;
+      cursor: default;
+      &:hover {
+        background-color: var(--color-natural-100);
+      }
+    }
   }
 }
 /* 종료: 공통 > button */
