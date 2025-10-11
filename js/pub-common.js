@@ -382,4 +382,70 @@ if (window !== undefined) {
 }
 
 initCategoryImageCarousel();
-// 종료: el-home-main-swiper
+// 종료: el-category-image-carousel
+
+// 시작: el-category-swiper
+const initHomeCategorySwiper = () => {
+  const categorySwiperEls = document.querySelectorAll(
+    'el-home-section el-category-swiper swiper-container'
+  );
+  console.log(
+    '🚀 ~ initCategorySwiper ~ categorySwiperEls:',
+    categorySwiperEls
+  );
+
+  // const categorySwiperEl = document.querySelector(
+  //   'el-category-image-carousel swiper-container'
+  // );
+  // const categorySwiperPrevEl = document.querySelector(
+  //   'el-category-image-carousel .button-prev-circle'
+  // );
+  // const categorySwiperNextEl = document.querySelector(
+  //   'el-category-image-carousel .button-next-circle'
+  // );
+  // const categorySwiperParams = {
+  //   slidesPerGroup: 7,
+  //   slidesPerView: 7,
+  // };
+  // if (categoryImageCarouselEl && categoryImageCarouselParams) {
+  //   Object.assign(categoryImageCarouselEl, categoryImageCarouselParams);
+  //   categoryImageCarouselEl.initialize();
+  //   categoryImageCarouselInstance = categoryImageCarouselEl?.swiper || null;
+  // }
+  // if (
+  //   categoryImageCarouselInstance &&
+  //   categoryImageCarouselPrevEl &&
+  //   categoryImageCarouselNextEl
+  // ) {
+  //   const changeButtonDisabled = () => {
+  //     if (categoryImageCarouselInstance.isBeginning) {
+  //       categoryImageCarouselPrevEl.disabled = true;
+  //     } else {
+  //       categoryImageCarouselPrevEl.disabled = false;
+  //     }
+  //     if (categoryImageCarouselInstance.isEnd) {
+  //       categoryImageCarouselNextEl.disabled = true;
+  //     } else {
+  //       categoryImageCarouselNextEl.disabled = false;
+  //     }
+  //   };
+  //   changeButtonDisabled();
+  //   categoryImageCarouselPrevEl.addEventListener('click', () => {
+  //     categoryImageCarouselInstance.slidePrev();
+  //   });
+  //   categoryImageCarouselNextEl.addEventListener('click', () => {
+  //     categoryImageCarouselInstance.slideNext();
+  //   });
+  //   categoryImageCarouselInstance.on('slideChange', () => {
+  //     changeButtonDisabled();
+  //   });
+  // }
+};
+
+// 전역 함수로 등록
+if (window !== undefined) {
+  window.initHomeCategorySwiper = initHomeCategorySwiper;
+}
+
+initHomeCategorySwiper();
+// 종료: el-category-swiper
