@@ -261,6 +261,7 @@ const initHomeMainSwiper = () => {
   const homeMainSwiperPauseEl = document.querySelector('#homeMainSwiperPause');
   const homeMainSwiperPlayEl = document.querySelector('#homeMainSwiperPlay');
   const homeMainSwiperParams = {
+    speed: 600,
     rewind: true,
     effect: 'cards',
     cardsEffect: {
@@ -272,7 +273,7 @@ const initHomeMainSwiper = () => {
       type: 'fraction',
     },
     autoplay: {
-      delay: 4000,
+      delay: 3500,
     },
   };
 
@@ -363,11 +364,13 @@ const initCategoryImageCarousel = () => {
 
     categoryImageCarouselPrevEl.addEventListener('click', () => {
       categoryImageCarouselInstance.slidePrev();
-      changeButtonDisabled();
     });
 
     categoryImageCarouselNextEl.addEventListener('click', () => {
       categoryImageCarouselInstance.slideNext();
+    });
+
+    categoryImageCarouselInstance.on('slideChange', () => {
       changeButtonDisabled();
     });
   }

@@ -561,6 +561,49 @@ button {
     }
   }
 }
+
+el-tab-button {
+  width: fit-content;
+  position: relative;
+
+  & > button:not(.remove) {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600 !important;
+    min-width: 0px;
+    height: 43px;
+    padding: 0 18px;
+    color: var(--color-natural-30);
+    border-radius: 999px;
+    border: 1px solid var(--color-natural-80);
+    background-color: var(--color-natural-100);
+    overflow: hidden;
+  }
+
+  .remove {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 2px;
+    top: -8px;
+    border: 1px solid var(--color-natural-0);
+    border-radius: 50%;
+    background-color: var(--color-natural-100);
+    overflow: hidden;
+  }
+
+  &.active {
+    & > button:not(.remove) {
+      color: var(--color-natural-100);
+      border-color: var(--color-natural-0);
+      background-color: var(--color-natural-0);
+    }
+  }
+}
 /* 종료: 공통 > button */
 
 /* 시작: 공통 > input */
