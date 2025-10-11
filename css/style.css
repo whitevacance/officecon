@@ -2550,6 +2550,12 @@ el-home-container {
     el-home-recommend-products {
       display: block;
       padding-top: 40px;
+
+      & ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+      }
     }
 
     el-home-recommend-bottom {
