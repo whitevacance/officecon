@@ -1710,6 +1710,10 @@
                 <el-icon class="h20-pause natural-0"></el-icon>
                 <el-icon class="h20-pause-hover"></el-icon>
                 <el-icon class="h20-pause-hover natural-0"></el-icon>
+                <el-icon class="h20-eye-show"></el-icon>
+                <el-icon class="h20-eye-show natural-0"></el-icon>
+                <el-icon class="h20-eye-hide"></el-icon>
+                <el-icon class="h20-eye-hide natural-0"></el-icon>
               </el-examples-stack>
               <h5>h24</h5>
               <el-examples-stack class="bg">
@@ -1999,21 +2003,22 @@
             <el-examples-article>
               <h2>input</h2>
               <el-examples-stack>
-                <div style="width: 300px">
+                <div style="width: 220px">
                   <el-input>
                     <input
                       class="form-control custom-input"
                       type="text"
-                      placeholder="플레이스 홀더 텍스트"
+                      placeholder="검색어를 입력해 주세요."
                     />
                   </el-input>
                 </div>
-                <div style="width: 300px">
+                <div style="width: 220px">
                   <el-input>
                     <input
                       class="form-control custom-input"
                       type="text"
-                      placeholder="플레이스 홀더 텍스트"
+                      placeholder="검색어를 입력해 주세요."
+                      value="스타벅스"
                     />
                     <el-input-addon>
                       <button
@@ -2026,12 +2031,149 @@
                     </el-input-addon>
                   </el-input>
                 </div>
-                <div style="width: 300px">
+                <div style="width: 220px">
                   <el-input>
                     <input
                       class="form-control custom-input"
                       type="text"
-                      placeholder="플레이스 홀더 텍스트"
+                      placeholder="검색어를 입력해 주세요."
+                    />
+                    <el-input-addon>
+                      <button
+                        type="button"
+                        class="input-clear-button"
+                        aria-label="clear"
+                      >
+                        <el-icon class="h12-closed"></el-icon>
+                      </button>
+                      <button type="button" aria-label="search">
+                        <el-icon class="h24-search natural-0"></el-icon>
+                      </button>
+                    </el-input-addon>
+                  </el-input>
+                </div>
+                <div style="width: 220px">
+                  <el-input>
+                    <input
+                      class="form-control custom-input"
+                      type="text"
+                      placeholder="검색어를 입력해 주세요."
+                      value="스타벅스"
+                    />
+                    <el-input-addon>
+                      <button
+                        type="button"
+                        class="input-clear-button"
+                        aria-label="clear"
+                      >
+                        <el-icon class="h12-closed"></el-icon>
+                      </button>
+                      <button type="button" aria-label="search">
+                        <el-icon class="h24-search natural-0"></el-icon>
+                      </button>
+                    </el-input-addon>
+                  </el-input>
+                </div>
+              </el-examples-stack>
+              <el-examples-stack>
+                <div style="width: 220px">
+                  <el-input>
+                    <input
+                      class="form-control custom-input"
+                      type="text"
+                      placeholder="아이디를 입력해주세요"
+                      value=""
+                    />
+                    <el-input-addon>
+                      <button
+                        type="button"
+                        class="input-clear-button"
+                        aria-label="clear"
+                      >
+                        <el-icon class="h12-closed"></el-icon>
+                      </button>
+                    </el-input-addon>
+                  </el-input>
+                </div>
+                <div style="width: 220px">
+                  <el-input>
+                    <input
+                      disabled
+                      class="form-control custom-input"
+                      type="text"
+                      placeholder="아이디를 입력해주세요."
+                      value="test@test.com"
+                    />
+                  </el-input>
+                </div>
+                <div style="width: 220px">
+                  <el-input>
+                    <input
+                      class="form-control custom-input"
+                      type="text"
+                      placeholder="아이디를 입력해주세요"
+                      value="test@test.com"
+                    />
+                    <el-input-addon>
+                      <button
+                        type="button"
+                        class="input-clear-button"
+                        aria-label="clear"
+                      >
+                        <el-icon class="h12-closed"></el-icon>
+                      </button>
+                    </el-input-addon>
+                  </el-input>
+                </div>
+                <div style="width: 220px">
+                  <el-input>
+                    <input
+                      class="form-control custom-input"
+                      type="text"
+                      placeholder="인증번호를 입력해주세요."
+                    />
+                    <el-input-addon>
+                      <button
+                        type="button"
+                        class="input-clear-button"
+                        aria-label="clear"
+                      >
+                        <el-icon class="h12-closed"></el-icon>
+                      </button>
+                      <el-timer class="typo-label-md">09 : 50</el-timer>
+                    </el-input-addon>
+                  </el-input>
+                </div>
+                <div style="width: 220px">
+                  <el-input class="is-invalid">
+                    <input
+                      class="form-control custom-input"
+                      type="text"
+                      placeholder="아이디를 입력해주세요."
+                    />
+                    <el-input-addon>
+                      <button
+                        type="button"
+                        class="input-clear-button"
+                        aria-label="clear"
+                      >
+                        <el-icon class="h12-closed"></el-icon>
+                      </button>
+                    </el-input-addon>
+                    <el-invalide-feedback class="typo-label-lg">
+                      필수 입력 항목입니다.
+                    </el-invalide-feedback>
+                  </el-input>
+                </div>
+              </el-examples-stack>
+              <el-examples-stack>
+                <div style="width: 300px">
+                  <el-input>
+                    <input
+                      class="form-control custom-input"
+                      type="password"
+                      placeholder="비밀번호를 입력해 주세요."
+                      value=""
                     />
                     <el-input-addon>
                       <button

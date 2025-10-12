@@ -4,6 +4,7 @@ let bsAlert = null;
 let bsSearchLayerToggleButton = null;
 let homeMainSwiperInstance = null;
 let categoryImageCarouselInstance = null;
+let homeBrandCarouselInstance = null;
 // 종료: global 변수
 
 // 시작: el-alert
@@ -456,3 +457,53 @@ if (window !== undefined) {
 
 initHomeCategorySwiper();
 // 종료: el-category-swiper
+
+// 시작: el-home-brand-carousel
+const initHomeBrandCarousel = () => {
+  const homeBrandCarouselEl = document.querySelector(
+    'el-home-brand-carousel swiper-container'
+  );
+  const homeBrandCarouselPrevEl = document.querySelector(
+    'el-home-brand-carousel .button-prev-circle'
+  );
+  const homeBrandCarouselNextEl = document.querySelector(
+    'el-home-brand-carousel .button-next-circle'
+  );
+  const homeBrandCarouselParams = {
+    loop: true,
+    speed: 500,
+    slidesPerView: 6,
+    autoplay: {
+      delay: 2000,
+      pauseOnMouseEnter: true,
+    },
+  };
+
+  if (homeBrandCarouselEl && homeBrandCarouselParams) {
+    Object.assign(homeBrandCarouselEl, homeBrandCarouselParams);
+    homeBrandCarouselEl.initialize();
+    homeBrandCarouselInstance = homeBrandCarouselEl?.swiper || null;
+  }
+
+  if (
+    homeBrandCarouselInstance &&
+    homeBrandCarouselPrevEl &&
+    homeBrandCarouselNextEl
+  ) {
+    homeBrandCarouselPrevEl.addEventListener('click', () => {
+      homeBrandCarouselInstance.slidePrev();
+    });
+
+    homeBrandCarouselNextEl.addEventListener('click', () => {
+      homeBrandCarouselInstance.slideNext();
+    });
+  }
+};
+
+// 전역 함수로 등록
+if (window !== undefined) {
+  window.initHomeBrandCarousel = initHomeBrandCarousel;
+}
+
+initHomeBrandCarousel();
+// 종료: el-home-brand-carousel

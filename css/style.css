@@ -459,6 +459,18 @@ el-icon {
     -webkit-mask-image: url('../images/icon-h20-pause-hover.svg');
     mask-image: url('../images/icon-h20-pause-hover.svg');
   }
+  &.h20-eye-show {
+    width: 20px;
+    height: 20px;
+    -webkit-mask-image: url('../images/icon-h20-eye-show.svg');
+    mask-image: url('../images/icon-h20-eye-show.svg');
+  }
+  &.h20-eye-hide {
+    width: 20px;
+    height: 20px;
+    -webkit-mask-image: url('../images/icon-h20-eye-hide.svg');
+    mask-image: url('../images/icon-h20-eye-hide.svg');
+  }
   &.h16-closed {
     width: 16px;
     height: 16px;
@@ -722,17 +734,6 @@ el-input {
   width: 100%;
   position: relative;
 
-  &:has(el-input-addon > button) {
-    .custom-input.form-control {
-      padding-right: 42px;
-    }
-  }
-  &:has(el-input-addon > button:nth-of-type(2)) {
-    .custom-input.form-control {
-      padding-right: 72px;
-    }
-  }
-
   .custom-input.form-control {
     box-sizing: border-box;
     box-shadow: none;
@@ -755,17 +756,23 @@ el-input {
     &:focus {
       border-color: var(--color-natural-0);
     }
+
+    &:disabled {
+      opacity: 1;
+      cursor: default;
+      background-color: var(--color-natural-95);
+    }
   }
 
   el-input-addon {
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 43px;
     gap: 4px;
     position: absolute;
-    top: 50%;
+    top: 0;
     right: 12px;
-    transform: translateY(-50%);
 
     & > button {
       width: fit-content;
@@ -773,7 +780,7 @@ el-input {
     }
 
     .input-clear-button {
-      display: flex;
+      display: none;
       align-items: center;
       justify-content: center;
       width: 24px;
@@ -796,6 +803,45 @@ el-input {
         left: 50%;
         transform: translate(-50%, -50%);
       }
+    }
+
+    el-timer {
+      color: var(--color-red-40);
+      font-weight: 600 !important;
+    }
+  }
+
+  el-invalide-feedback {
+    display: none;
+    color: var(--color-red-40);
+    padding: 4px 0 0 4px;
+  }
+
+  &:has(el-input-addon > button) {
+    .custom-input.form-control {
+      padding-right: 42px;
+    }
+  }
+
+  &:has(el-input-addon > button:nth-of-type(2)) {
+    .custom-input.form-control {
+      padding-right: 72px;
+    }
+  }
+
+  &:has(.custom-input.form-control:not(:placeholder-shown)) {
+    .input-clear-button {
+      display: flex;
+    }
+  }
+
+  &.is-invalid {
+    .custom-input.form-control {
+      border-color: var(--color-red-40);
+    }
+
+    el-invalide-feedback {
+      display: block;
     }
   }
 }
@@ -2510,6 +2556,7 @@ el-home-container {
         display: block;
         width: 100px;
         height: 116px;
+        margin: 0 auto;
 
         a {
           display: flex;
@@ -2657,7 +2704,82 @@ el-home-banner-horizontal {
   }
 }
 
-el-home-brand {
+el-home-brand-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+  padding-top: 40px;
+
+  & > button {
+    flex-shrink: 0;
+    flex-grow: 0;
+  }
+
+  el-swiper-wrapper {
+    display: block;
+    width: calc(100% - 112px);
+
+    el-brand-item {
+      display: block;
+      width: 100px;
+      height: 130px;
+      margin: 0 auto;
+
+      a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        gap: 6px;
+        width: 100%;
+        height: 100%;
+        color: var(--color-natural-20);
+        font-weight: 600;
+
+        el-image {
+          flex-shrink: 0;
+          flex-grow: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100px;
+          height: 100px;
+          position: relative;
+          overflow: hidden;
+          border-radius: 50%;
+          background-color: var(--color-natural-95);
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+
+          &:after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 100%;
+            background-color: var(--color-opacity-black-3);
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
+        }
+
+        el-label {
+          display: block;
+          width: 100%;
+          text-align: center;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
 }
 /* 종료: 홈 */
 
