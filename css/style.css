@@ -1247,6 +1247,10 @@ el-product-item {
       display: flex;
     }
   }
+
+  &.large-type {
+    width: 232px;
+  }
 }
 /* 종료: 공통 > el-product-item */
 
@@ -2803,6 +2807,51 @@ el-home-brand-carousel {
           white-space: nowrap;
         }
       }
+    }
+  }
+}
+
+el-home-brand-info {
+  display: flex;
+  flex-direction: column;
+  gap: 54px;
+  width: 100%;
+  padding-top: 64px;
+
+  el-home-brand-info-item {
+    display: flex;
+    gap: 24px;
+    width: 100%;
+
+    el-brand-image {
+      flex-shrink: 0;
+      flex-grow: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 426px;
+      height: 306px;
+      border-radius: 32px;
+      overflow: hidden;
+
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    ul {
+      display: flex;
+      gap: 16px;
     }
   }
 }
