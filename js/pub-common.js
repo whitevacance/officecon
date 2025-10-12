@@ -11,6 +11,11 @@ let homeBrandCarouselInstance = null;
 const initAlert = () => {
   const alertEl = document.querySelector('el-alert');
 
+  // 이미 초기화된 경우 건너뛰기
+  if (alertEl?.dataset?.initialized === 'true') {
+    return;
+  }
+
   // 부트스트랩 인스턴스 생성
   if (!bootstrap) {
     // console.error('bootstrap을 찾을 수 없습니다.');
@@ -19,6 +24,9 @@ const initAlert = () => {
 
   if (alertEl) {
     bsAlert = new bootstrap.Modal(alertEl);
+
+    // 초기화 완료 전환
+    alertEl.dataset.initialized = 'true';
   }
 };
 
@@ -31,7 +39,13 @@ initAlert();
 // 종료: el-alert
 
 // 시작: 상단 띠배너 숨기기
+let topBannerInitialized = false;
 const initTopBanner = () => {
+  // 이미 초기화된 경우 건너뛰기
+  if (topBannerInitialized) {
+    return;
+  }
+
   if (document?.body) {
     document.body.addEventListener('click', (e) => {
       const topBannerCloseButtonEl = e.target.closest(
@@ -46,6 +60,9 @@ const initTopBanner = () => {
         topBannerEl.classList.add('hide');
       }
     });
+
+    // 초기화 완료 전환
+    topBannerInitialized = true;
   }
 };
 
@@ -61,12 +78,20 @@ initTopBanner();
 const initHeaderSticky = () => {
   const headerStickyEl = document.querySelector('el-header-sticky');
 
+  // 이미 초기화된 경우 건너뛰기
+  if (headerStickyEl?.dataset?.initialized === 'true') {
+    return;
+  }
+
   if (headerStickyEl) {
     const observer = new IntersectionObserver(
       ([e]) => e.target.classList.toggle('is-stuck', e.intersectionRatio < 1),
       { threshold: [1] }
     );
     observer.observe(headerStickyEl);
+
+    // 초기화 완료 전환
+    headerStickyEl.dataset.initialized = 'true';
   }
 };
 
@@ -87,6 +112,11 @@ const initSearchLayer = () => {
   const searchLayerInput = document.querySelector(
     'el-search-layer el-search input'
   );
+
+  // 이미 초기화된 경우 건너뛰기
+  if (searchLayer?.dataset?.initialized === 'true') {
+    return;
+  }
 
   // 부트스트랩 인스턴스 생성
   if (!bootstrap) {
@@ -117,6 +147,11 @@ const initSearchLayer = () => {
       }
     });
   }
+
+  if (bsSearchLayerToggleButton && searchLayerInput && searchLayer) {
+    // 초기화 완료 전환
+    searchLayer.dataset.initialized = 'true';
+  }
 };
 
 // 전역 함수로 등록
@@ -134,6 +169,11 @@ const initThemeSwitch = () => {
     'input[name="theme-switch"]'
   );
   pubWrapperEl = document.querySelector('el-wrapper');
+
+  // 이미 초기화된 경우 건너뛰기
+  if (themeSwitchEl?.dataset?.initialized === 'true') {
+    return;
+  }
 
   if (themeSwitchEl && themeRadioButtons.length > 0) {
     // 테마 클래스 적용 함수
@@ -176,8 +216,9 @@ const initThemeSwitch = () => {
         }
       });
     });
-  } else {
-    // console.error('el-theme-switch 또는 theme-switch radio 버튼을 찾을 수 없습니다.');
+
+    // 초기화 완료 전환
+    themeSwitchEl.dataset.initialized = 'true';
   }
 };
 
@@ -203,6 +244,11 @@ const initCategoryTabs = () => {
 
   if (triggerTabList?.length > 0) {
     triggerTabList.forEach((triggerEl) => {
+      // 이미 초기화된 경우 건너뛰기
+      if (triggerEl?.dataset?.initialized === 'true') {
+        return;
+      }
+
       const tabTrigger = new bootstrap.Tab(triggerEl);
 
       triggerEl.addEventListener('mouseenter', () => {
@@ -214,6 +260,9 @@ const initCategoryTabs = () => {
           window.location.href = e.target.href;
         }
       });
+
+      // 초기화 완료 전환
+      triggerEl.dataset.initialized = 'true';
     });
   }
 };
@@ -227,7 +276,13 @@ initCategoryTabs();
 // 종료: el-category-tabs
 
 // 시작: el-input
+let customInputInitialized = false;
 const initCustomInput = () => {
+  // 이미 초기화된 경우 건너뛰기
+  if (customInputInitialized) {
+    return;
+  }
+
   if (document?.body) {
     document.body.addEventListener('click', (e) => {
       const inputClearButtonEl = e.target.closest(
@@ -261,6 +316,9 @@ const initCustomInput = () => {
         }
       }
     });
+
+    // 초기화 완료 전환
+    customInputInitialized = true;
   }
 };
 
@@ -275,6 +333,12 @@ initCustomInput();
 // 시작: el-home-main-swiper
 const initHomeMainSwiper = () => {
   const homeMainSwiperEl = document.querySelector('#homeMainSwiper');
+
+  // 이미 초기화된 경우 건너뛰기
+  if (homeMainSwiperEl?.dataset?.initialized === 'true') {
+    return;
+  }
+
   const homeMainSwiperPrevEl = document.querySelector('#homeMainSwiperPrev');
   const homeMainSwiperNextEl = document.querySelector('#homeMainSwiperNext');
   const homeMainSwiperPauseEl = document.querySelector('#homeMainSwiperPause');
@@ -329,6 +393,9 @@ const initHomeMainSwiper = () => {
       homeMainSwiperPlayEl.style.display = 'none';
       homeMainSwiperPauseEl.style.display = 'block';
     });
+
+    // 초기화 완료 전환
+    homeMainSwiperEl.dataset.initialized = 'true';
   }
 };
 
@@ -345,6 +412,12 @@ const initCategoryImageCarousel = () => {
   const categoryImageCarouselEl = document.querySelector(
     'el-category-image-carousel swiper-container'
   );
+
+  // 이미 초기화된 경우 건너뛰기
+  if (categoryImageCarouselEl?.dataset?.initialized === 'true') {
+    return;
+  }
+
   const categoryImageCarouselPrevEl = document.querySelector(
     'el-category-image-carousel .button-prev-circle'
   );
@@ -393,6 +466,9 @@ const initCategoryImageCarousel = () => {
     categoryImageCarouselInstance.on('slideChange', () => {
       handleButtonDisabled();
     });
+
+    // 초기화 완료 전환
+    categoryImageCarouselEl.dataset.initialized = 'true';
   }
 };
 
@@ -420,6 +496,11 @@ const initHomeCategorySwiper = () => {
     };
 
     [...categorySwiperEls].forEach((categorySwiperEl) => {
+      // 이미 초기화된 경우 건너뛰기
+      if (categorySwiperEl?.dataset?.initialized === 'true') {
+        return;
+      }
+
       if (categorySwiperEl?.querySelector('swiper-container')) {
         const targetSwiperContainer =
           categorySwiperEl.querySelector('swiper-container');
@@ -431,6 +512,7 @@ const initHomeCategorySwiper = () => {
         const targetSwiperPrevEl = categorySwiperEl.querySelector(
           '.button-prev-circle'
         );
+
         const targetSwiperNextEl = categorySwiperEl.querySelector(
           '.button-next-circle'
         );
@@ -451,17 +533,26 @@ const initHomeCategorySwiper = () => {
           };
           handleButtonDisabled();
 
-          targetSwiperPrevEl.addEventListener('click', () => {
+          // 이벤트 핸들러 함수 정의
+          const handlePrevClick = () => {
             targetSwiperInstance.slidePrev();
-          });
+          };
 
-          targetSwiperNextEl.addEventListener('click', () => {
+          const handleNextClick = () => {
             targetSwiperInstance.slideNext();
-          });
+          };
 
-          targetSwiperInstance.on('slideChange', () => {
+          const handleSlideChange = () => {
             handleButtonDisabled();
-          });
+          };
+
+          // 이벤트 리스너 추가
+          targetSwiperPrevEl.addEventListener('click', handlePrevClick);
+          targetSwiperNextEl.addEventListener('click', handleNextClick);
+          targetSwiperInstance.on('slideChange', handleSlideChange);
+
+          // 초기화 완료 전환
+          categorySwiperEl.dataset.initialized = 'true';
         }
       }
     });
@@ -481,6 +572,12 @@ const initHomeBrandCarousel = () => {
   const homeBrandCarouselEl = document.querySelector(
     'el-home-brand-carousel swiper-container'
   );
+
+  // 이미 초기화된 경우 건너뛰기
+  if (homeBrandCarouselEl?.dataset?.initialized === 'true') {
+    return;
+  }
+
   const homeBrandCarouselPrevEl = document.querySelector(
     'el-home-brand-carousel .button-prev-circle'
   );
@@ -515,6 +612,9 @@ const initHomeBrandCarousel = () => {
     homeBrandCarouselNextEl.addEventListener('click', () => {
       homeBrandCarouselInstance.slideNext();
     });
+
+    // 초기화 완료 전환
+    homeBrandCarouselEl.dataset.initialized = 'true';
   }
 };
 
