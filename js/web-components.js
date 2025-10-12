@@ -1638,6 +1638,515 @@ class ComponentFooter extends HTMLElement {
 customElements.define('component-footer', ComponentFooter);
 // 종료: el-footer
 
+// 시작: el-product-item (1)
+class ComponentProductItem1 extends HTMLElement {
+  constructor() {
+    super();
+  }
+
+  connectedCallback() {
+    this.render();
+    this.loadExternalScript();
+  }
+
+  loadExternalScript() {
+    loadScript(this, 'initAlert');
+  }
+
+  async loadScriptDynamically() {
+    loadDynamically(this, 'initAlert');
+  }
+
+  render() {
+    this.innerHTML = `
+      <el-product-item>
+        <a href="#">
+          <el-item-thumbnail>
+            <img
+              class="thumbnail-image"
+              src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/product/20250227/20250227145823_a5b9221d-437d-4b84-b0ac-fbc6f58edf4f.jpg"
+              alt=""
+            />
+            <el-bg></el-bg>
+            <el-badge-special>
+              <img
+                src="./images/badge-event.svg"
+                alt="이벤트특가"
+              />
+            </el-badge-special>
+            <el-badge-period class="typo-label-sm">
+              30일
+            </el-badge-period>
+            <el-layer-action>
+              <button
+                type="button"
+                aria-label="add to cart"
+                onclick="event.preventDefault(); event.stopPropagation(); alert('add to cart')"
+              >
+                <el-icon class="h24-cart"></el-icon>
+              </button>
+              <button type="button" aria-label="buy now">
+                <el-icon class="h24-card"></el-icon>
+              </button>
+            </el-layer-action>
+          </el-item-thumbnail>
+
+          <el-item-txt class="typo-body-sm">
+            <el-item-name>
+              <el-brand>스타벅스</el-brand>
+              떠먹는 스트로베리
+            </el-item-name>
+            <el-item-price>
+              <el-sale-price class="typo-body-sm">
+                <strong class="typo-body-lg"
+                  >999,999</strong
+                >원
+              </el-sale-price>
+            </el-item-price>
+          </el-item-txt>
+        </a>
+      </el-product-item>
+    `;
+  }
+}
+customElements.define('component-product-item-1', ComponentProductItem1);
+// 종료: el-product-item (1)
+
+// 시작: el-product-item (2)
+class ComponentProductItem2 extends HTMLElement {
+  constructor() {
+    super();
+  }
+
+  connectedCallback() {
+    this.render();
+    this.loadExternalScript();
+  }
+
+  loadExternalScript() {
+    loadScript(this, 'initAlert');
+  }
+
+  async loadScriptDynamically() {
+    loadDynamically(this, 'initAlert');
+  }
+
+  render() {
+    this.innerHTML = `
+      <el-product-item>
+        <a href="#">
+          <el-item-thumbnail>
+            <img
+              class="thumbnail-image"
+              src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/product/20250227/20250227145823_a5b9221d-437d-4b84-b0ac-fbc6f58edf4f.jpg"
+              alt=""
+            />
+            <el-bg></el-bg>
+            <el-badge-special>
+              <img
+                src="./images/badge-event.svg"
+                alt="이벤트특가"
+              />
+              <img
+                src="./images/badge-reward.svg"
+                alt="리워드지급"
+              />
+            </el-badge-special>
+            <el-badge-period class="typo-label-sm">
+              30일
+            </el-badge-period>
+            <el-layer-action>
+              <button
+                type="button"
+                aria-label="add to cart"
+                onclick="event.preventDefault(); event.stopPropagation(); alert('add to cart')"
+              >
+                <el-icon class="h24-cart"></el-icon>
+              </button>
+              <button type="button" aria-label="buy now">
+                <el-icon class="h24-card"></el-icon>
+              </button>
+            </el-layer-action>
+            <el-layer-disabled class="typo-subtitle-lg">
+              <el-txt>
+                판매가능시간
+                <br />
+                9시 ~ 18시
+              </el-txt>
+              <el-addon class="typo-body-sm">
+                공휴일/주말 제외
+              </el-addon>
+            </el-layer-disabled>
+          </el-item-thumbnail>
+
+          <el-item-txt class="typo-body-sm">
+            <el-badge-gift-card>
+              <img
+                src="./images/badge-gift-card.svg"
+                alt="상품권"
+              />
+            </el-badge-gift-card>
+            <el-item-name>
+              <el-brand>스타벅스</el-brand>
+              떠먹는 스트로베리 초콜릿 생크림 + 아메리카노
+              R초콜릿 떠먹는 스트로베리 초콜릿 생크림 +
+              아메리카노 R초콜릿
+            </el-item-name>
+            <el-item-price>
+              <el-discount-rate class="typo-body-lg">
+                20%
+              </el-discount-rate>
+              <el-sale-price class="typo-body-sm">
+                <strong class="typo-body-lg"
+                  >999,999</strong
+                >원
+              </el-sale-price>
+              <el-retail-price class="typo-label-md">
+                999,999원
+              </el-retail-price>
+            </el-item-price>
+          </el-item-txt>
+        </a>
+      </el-product-item>
+    `;
+  }
+}
+customElements.define('component-product-item-2', ComponentProductItem2);
+// 종료: el-product-item (2)
+
+// 시작: el-product-item (3)
+class ComponentProductItem3 extends HTMLElement {
+  constructor() {
+    super();
+  }
+
+  connectedCallback() {
+    this.render();
+    this.loadExternalScript();
+  }
+
+  loadExternalScript() {
+    loadScript(this, 'initAlert');
+  }
+
+  async loadScriptDynamically() {
+    loadDynamically(this, 'initAlert');
+  }
+
+  render() {
+    this.innerHTML = `
+      <el-product-item class="disabled">
+        <a href="#">
+          <el-item-thumbnail>
+            <img
+              class="thumbnail-image"
+              src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/product/20250227/20250227145823_a5b9221d-437d-4b84-b0ac-fbc6f58edf4f.jpg"
+              alt=""
+            />
+            <el-bg></el-bg>
+            <el-badge-special>
+              <img
+                src="./images/badge-event.svg"
+                alt="이벤트특가"
+              />
+              <img
+                src="./images/badge-reward.svg"
+                alt="리워드지급"
+              />
+            </el-badge-special>
+            <el-badge-period class="typo-label-sm">
+              30일
+            </el-badge-period>
+            <el-layer-action>
+              <button
+                type="button"
+                aria-label="add to cart"
+                onclick="event.preventDefault(); event.stopPropagation(); alert('add to cart')"
+              >
+                <el-icon class="h24-cart"></el-icon>
+              </button>
+              <button type="button" aria-label="buy now">
+                <el-icon class="h24-card"></el-icon>
+              </button>
+            </el-layer-action>
+            <el-layer-disabled class="typo-subtitle-lg">
+              <el-txt> 일시품절 </el-txt>
+            </el-layer-disabled>
+          </el-item-thumbnail>
+
+          <el-item-txt class="typo-body-sm">
+            <el-badge-gift-card>
+              <img
+                src="./images/badge-gift-card.svg"
+                alt="상품권"
+              />
+            </el-badge-gift-card>
+            <el-item-name>
+              <el-brand>스타벅스</el-brand>
+              떠먹는 스트로베리 초콜릿 생크림 + 아메리카노
+              R초콜릿 떠먹는 스트로베리 초콜릿 생크림 +
+              아메리카노 R초콜릿
+            </el-item-name>
+            <el-item-price>
+              <el-discount-rate class="typo-body-lg">
+                20%
+              </el-discount-rate>
+              <el-sale-price class="typo-body-sm">
+                <strong class="typo-body-lg"
+                  >999,999</strong
+                >원
+              </el-sale-price>
+              <el-retail-price class="typo-label-md">
+                999,999원
+              </el-retail-price>
+            </el-item-price>
+          </el-item-txt>
+        </a>
+      </el-product-item>
+    `;
+  }
+}
+customElements.define('component-product-item-3', ComponentProductItem3);
+// 종료: el-product-item (3)
+
+// 시작: el-product-item (4)
+class ComponentProductItem4 extends HTMLElement {
+  constructor() {
+    super();
+  }
+
+  connectedCallback() {
+    this.render();
+    this.loadExternalScript();
+  }
+
+  loadExternalScript() {
+    loadScript(this, 'initAlert');
+  }
+
+  async loadScriptDynamically() {
+    loadDynamically(this, 'initAlert');
+  }
+
+  render() {
+    this.innerHTML = `
+      <el-product-item class="disabled">
+        <a href="#">
+          <el-item-thumbnail>
+            <img
+              class="thumbnail-image"
+              src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/product/20250227/20250227145823_a5b9221d-437d-4b84-b0ac-fbc6f58edf4f.jpg"
+              alt=""
+            />
+            <el-bg></el-bg>
+            <el-badge-special>
+              <img
+                src="./images/badge-event.svg"
+                alt="이벤트특가"
+              />
+              <img
+                src="./images/badge-reward.svg"
+                alt="리워드지급"
+              />
+            </el-badge-special>
+            <el-badge-period class="typo-label-sm">
+              30일
+            </el-badge-period>
+            <el-layer-action>
+              <button
+                type="button"
+                aria-label="add to cart"
+                onclick="event.preventDefault(); event.stopPropagation(); alert('add to cart')"
+              >
+                <el-icon class="h24-cart"></el-icon>
+              </button>
+              <button type="button" aria-label="buy now">
+                <el-icon class="h24-card"></el-icon>
+              </button>
+            </el-layer-action>
+            <el-layer-disabled class="typo-subtitle-lg">
+              <el-txt>
+                판매가능시간
+                <br />
+                9시 ~ 18시
+              </el-txt>
+              <el-addon class="typo-body-sm">
+                공휴일/주말 제외
+              </el-addon>
+            </el-layer-disabled>
+          </el-item-thumbnail>
+
+          <el-item-txt class="typo-body-sm">
+            <el-badge-gift-card>
+              <img
+                src="./images/badge-gift-card.svg"
+                alt="상품권"
+              />
+            </el-badge-gift-card>
+            <el-item-name>
+              <el-brand>스타벅스</el-brand>
+              떠먹는 스트로베리 초콜릿 생크림 + 아메리카노
+              R초콜릿 떠먹는 스트로베리 초콜릿 생크림 +
+              아메리카노 R초콜릿
+            </el-item-name>
+            <el-item-price>
+              <el-discount-rate class="typo-body-lg">
+                20%
+              </el-discount-rate>
+              <el-sale-price class="typo-body-sm">
+                <strong class="typo-body-lg"
+                  >999,999</strong
+                >원
+              </el-sale-price>
+              <el-retail-price class="typo-label-md">
+                999,999원
+              </el-retail-price>
+            </el-item-price>
+          </el-item-txt>
+        </a>
+      </el-product-item>
+    `;
+  }
+}
+customElements.define('component-product-item-4', ComponentProductItem4);
+// 종료: el-product-item (4)
+
+// 시작: el-home-category-swiper
+class ComponentHomeCategorySwiper extends HTMLElement {
+  constructor() {
+    super();
+  }
+
+  connectedCallback() {
+    this.render();
+    this.loadExternalScript();
+  }
+
+  loadExternalScript() {
+    loadScript(this, 'initAlert');
+    loadScript(this, 'initHomeCategorySwiper');
+  }
+
+  async loadScriptDynamically() {
+    loadDynamically(this, 'initAlert');
+    loadDynamically(this, 'initHomeCategorySwiper');
+  }
+
+  render() {
+    this.innerHTML = `
+      <el-home-category-swiper>
+        <el-swiper-wrapper>
+          <swiper-container init="false">
+            <swiper-slide>
+              <el-tab-button class="active">
+                <button type="button" class="typo-label-lg">
+                  커피/음료
+                </button>
+              </el-tab-button>
+            </swiper-slide>
+            <swiper-slide>
+              <el-tab-button>
+                <button type="button" class="typo-label-lg">
+                  베이커리/디저트
+                </button>
+              </el-tab-button>
+            </swiper-slide>
+            <swiper-slide>
+              <el-tab-button>
+                <button type="button" class="typo-label-lg">
+                  아이스크림
+                </button>
+              </el-tab-button>
+            </swiper-slide>
+            <swiper-slide>
+              <el-tab-button>
+                <button type="button" class="typo-label-lg">
+                  치킨/피자/버거
+                </button>
+              </el-tab-button>
+            </swiper-slide>
+            <swiper-slide>
+              <el-tab-button>
+                <button type="button" class="typo-label-lg">
+                  외식
+                </button>
+              </el-tab-button>
+            </swiper-slide>
+            <swiper-slide>
+              <el-tab-button>
+                <button type="button" class="typo-label-lg">
+                  배달이용권
+                </button>
+              </el-tab-button>
+            </swiper-slide>
+            <swiper-slide>
+              <el-tab-button>
+                <button type="button" class="typo-label-lg">
+                  상품권/페이/주유
+                </button>
+              </el-tab-button>
+            </swiper-slide>
+            <swiper-slide>
+              <el-tab-button>
+                <button type="button" class="typo-label-lg">
+                  편의점/마트
+                </button>
+              </el-tab-button>
+            </swiper-slide>
+            <swiper-slide>
+              <el-tab-button>
+                <button type="button" class="typo-label-lg">
+                  금액권/통합권
+                </button>
+              </el-tab-button>
+            </swiper-slide>
+            <swiper-slide>
+              <el-tab-button>
+                <button type="button" class="typo-label-lg">
+                  문화/생활/뷰티
+                </button>
+              </el-tab-button>
+            </swiper-slide>
+            <swiper-slide>
+              <el-tab-button>
+                <button type="button" class="typo-label-lg">
+                  리워드관
+                </button>
+              </el-tab-button>
+            </swiper-slide>
+          </swiper-container>
+        </el-swiper-wrapper>
+
+        <el-swiper-navigation>
+          <button
+            type="button"
+            class="button-prev-circle"
+            aria-label="이전"
+          >
+            <el-icon
+              class="h20-arrow-left natural-0"
+            ></el-icon>
+          </button>
+          <button
+            type="button"
+            class="button-next-circle"
+            aria-label="다음"
+          >
+            <el-icon
+              class="h20-arrow-right natural-0"
+            ></el-icon>
+          </button>
+        </el-swiper-navigation>
+      </el-home-category-swiper>
+    `;
+  }
+}
+customElements.define(
+  'component-home-category-swiper',
+  ComponentHomeCategorySwiper
+);
+// 종료: el-home-category-swiper
+
 // 시작:
 class MyButton extends HTMLElement {
   constructor() {
