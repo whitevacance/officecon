@@ -1254,6 +1254,41 @@ el-product-item {
 }
 /* 종료: 공통 > el-product-item */
 
+/* 종료: 공통 > el-post-list */
+el-post-list {
+  display: block;
+
+  & > ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    li {
+      display: block;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--color-natural-80);
+
+      a {
+        display: flex;
+        justify-content: space-between;
+        gap: 8px;
+        width: 100%;
+        position: relative;
+
+        el-item-title {
+          font-weight: 600 !important;
+          color: var(--color-natural-10);
+        }
+
+        el-item-addon {
+          color: var(--color-natural-30);
+        }
+      }
+    }
+  }
+}
+/* 종료: 공통 > el-post-list */
+
 /* 시작: 레이아웃 > wrapper, container */
 el-wrapper {
   width: 100%;
@@ -2622,6 +2657,10 @@ el-home-container {
         }
       }
     }
+  }
+
+  el-post-list {
+    padding-top: 10px;
   }
 }
 
