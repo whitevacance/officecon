@@ -233,6 +233,9 @@ const initCustomInput = () => {
       const inputClearButtonEl = e.target.closest(
         'el-input > el-input-addon > .input-clear-button'
       );
+      const inputEyeButtonEl = e.target.closest(
+        'el-input > el-input-addon > .input-eye-button'
+      );
 
       if (inputClearButtonEl) {
         e.preventDefault();
@@ -241,6 +244,21 @@ const initCustomInput = () => {
         const inputEl = inputClearButtonEl.closest('el-input');
         inputEl.querySelector('input').value = '';
         inputEl.querySelector('input').focus();
+      }
+
+      if (inputEyeButtonEl) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        const inputEl = inputEyeButtonEl.closest('el-input');
+
+        if (inputEl.classList.contains('show-password')) {
+          inputEl.classList.remove('show-password');
+          inputEl.querySelector('input').type = 'password';
+        } else {
+          inputEl.classList.add('show-password');
+          inputEl.querySelector('input').type = 'text';
+        }
       }
     });
   }

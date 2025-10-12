@@ -775,6 +775,8 @@ el-input {
     right: 12px;
 
     & > button {
+      display: flex;
+      align-items: center;
       width: fit-content;
       height: 24px;
     }
@@ -809,6 +811,16 @@ el-input {
       color: var(--color-red-40);
       font-weight: 600 !important;
     }
+
+    .input-eye-button {
+      padding: 0 2px;
+      .h20-eye-hide {
+        display: none;
+      }
+      .h20-eye-show {
+        display: block;
+      }
+    }
   }
 
   el-invalide-feedback {
@@ -842,6 +854,19 @@ el-input {
 
     el-invalide-feedback {
       display: block;
+    }
+  }
+
+  &.show-password {
+    el-input-addon {
+      .input-eye-button {
+        .h20-eye-hide {
+          display: block;
+        }
+        .h20-eye-show {
+          display: none;
+        }
+      }
     }
   }
 }
