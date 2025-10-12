@@ -1257,6 +1257,7 @@ el-product-item {
 /* 종료: 공통 > el-post-list */
 el-post-list {
   display: block;
+  width: 100%;
 
   & > ul {
     display: flex;
