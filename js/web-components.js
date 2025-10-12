@@ -2011,6 +2011,142 @@ class ComponentProductItem4 extends HTMLElement {
 customElements.define('component-product-item-4', ComponentProductItem4);
 // 종료: el-product-item (4)
 
+// 시작: el-home-category-swiper
+class ComponentHomeCategorySwiper extends HTMLElement {
+  constructor() {
+    super();
+  }
+
+  connectedCallback() {
+    this.render();
+    this.loadExternalScript();
+  }
+
+  loadExternalScript() {
+    loadScript(this, 'initAlert');
+    loadScript(this, 'initHomeCategorySwiper');
+  }
+
+  async loadScriptDynamically() {
+    loadDynamically(this, 'initAlert');
+    loadDynamically(this, 'initHomeCategorySwiper');
+  }
+
+  render() {
+    this.innerHTML = `
+      <el-home-category-swiper>
+        <el-swiper-wrapper>
+          <swiper-container init="false">
+            <swiper-slide>
+              <el-tab-button class="active">
+                <button type="button" class="typo-label-lg">
+                  커피/음료
+                </button>
+              </el-tab-button>
+            </swiper-slide>
+            <swiper-slide>
+              <el-tab-button>
+                <button type="button" class="typo-label-lg">
+                  베이커리/디저트
+                </button>
+              </el-tab-button>
+            </swiper-slide>
+            <swiper-slide>
+              <el-tab-button>
+                <button type="button" class="typo-label-lg">
+                  아이스크림
+                </button>
+              </el-tab-button>
+            </swiper-slide>
+            <swiper-slide>
+              <el-tab-button>
+                <button type="button" class="typo-label-lg">
+                  치킨/피자/버거
+                </button>
+              </el-tab-button>
+            </swiper-slide>
+            <swiper-slide>
+              <el-tab-button>
+                <button type="button" class="typo-label-lg">
+                  외식
+                </button>
+              </el-tab-button>
+            </swiper-slide>
+            <swiper-slide>
+              <el-tab-button>
+                <button type="button" class="typo-label-lg">
+                  배달이용권
+                </button>
+              </el-tab-button>
+            </swiper-slide>
+            <swiper-slide>
+              <el-tab-button>
+                <button type="button" class="typo-label-lg">
+                  상품권/페이/주유
+                </button>
+              </el-tab-button>
+            </swiper-slide>
+            <swiper-slide>
+              <el-tab-button>
+                <button type="button" class="typo-label-lg">
+                  편의점/마트
+                </button>
+              </el-tab-button>
+            </swiper-slide>
+            <swiper-slide>
+              <el-tab-button>
+                <button type="button" class="typo-label-lg">
+                  금액권/통합권
+                </button>
+              </el-tab-button>
+            </swiper-slide>
+            <swiper-slide>
+              <el-tab-button>
+                <button type="button" class="typo-label-lg">
+                  문화/생활/뷰티
+                </button>
+              </el-tab-button>
+            </swiper-slide>
+            <swiper-slide>
+              <el-tab-button>
+                <button type="button" class="typo-label-lg">
+                  리워드관
+                </button>
+              </el-tab-button>
+            </swiper-slide>
+          </swiper-container>
+        </el-swiper-wrapper>
+
+        <el-swiper-navigation>
+          <button
+            type="button"
+            class="button-prev-circle"
+            aria-label="이전"
+          >
+            <el-icon
+              class="h20-arrow-left natural-0"
+            ></el-icon>
+          </button>
+          <button
+            type="button"
+            class="button-next-circle"
+            aria-label="다음"
+          >
+            <el-icon
+              class="h20-arrow-right natural-0"
+            ></el-icon>
+          </button>
+        </el-swiper-navigation>
+      </el-home-category-swiper>
+    `;
+  }
+}
+customElements.define(
+  'component-home-category-swiper',
+  ComponentHomeCategorySwiper
+);
+// 종료: el-home-category-swiper
+
 // 시작:
 class MyButton extends HTMLElement {
   constructor() {

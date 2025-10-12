@@ -388,7 +388,7 @@ initCategoryImageCarousel();
 // 시작: el-category-swiper
 const initHomeCategorySwiper = () => {
   const categorySwiperEls = document.querySelectorAll(
-    'el-home-section el-category-swiper'
+    'el-home-category-swiper'
   );
 
   if (categorySwiperEls?.length > 0) {

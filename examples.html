@@ -1685,6 +1685,8 @@
               <el-examples-stack class="bg">
                 <el-icon class="h16-arrow-down"></el-icon>
                 <el-icon class="h16-arrow-down natural-0"></el-icon>
+                <el-icon class="h16-arrow-right"></el-icon>
+                <el-icon class="h16-arrow-right natural-0"></el-icon>
                 <el-icon class="h16-closed"></el-icon>
                 <el-icon class="h16-closed natural-0"></el-icon>
               </el-examples-stack>
@@ -1781,6 +1783,10 @@
                 </button>
                 <button type="button" class="button-h50-fill typo-body-lg">
                   h50-fill
+                </button>
+                <button type="button" class="button-h50-view-all typo-body-sm">
+                  전체보기
+                  <el-icon class="h16-arrow-right natural-40"></el-icon>
                 </button>
 
                 <el-tab-button>
@@ -2041,6 +2047,112 @@
                     </el-input-addon>
                   </el-input>
                 </div>
+              </el-examples-stack>
+            </el-examples-article>
+
+            <el-examples-article>
+              <h2>홈 &gt; 추천상품 상단 영역 스와이퍼</h2>
+              <el-examples-stack style="width: calc(683px + 32px)">
+                <el-home-category-swiper>
+                  <el-swiper-wrapper>
+                    <swiper-container init="false">
+                      <swiper-slide>
+                        <el-tab-button class="active">
+                          <button type="button" class="typo-label-lg">
+                            커피/음료
+                          </button>
+                        </el-tab-button>
+                      </swiper-slide>
+                      <swiper-slide>
+                        <el-tab-button>
+                          <button type="button" class="typo-label-lg">
+                            베이커리/디저트
+                          </button>
+                        </el-tab-button>
+                      </swiper-slide>
+                      <swiper-slide>
+                        <el-tab-button>
+                          <button type="button" class="typo-label-lg">
+                            아이스크림
+                          </button>
+                        </el-tab-button>
+                      </swiper-slide>
+                      <swiper-slide>
+                        <el-tab-button>
+                          <button type="button" class="typo-label-lg">
+                            치킨/피자/버거
+                          </button>
+                        </el-tab-button>
+                      </swiper-slide>
+                      <swiper-slide>
+                        <el-tab-button>
+                          <button type="button" class="typo-label-lg">
+                            외식
+                          </button>
+                        </el-tab-button>
+                      </swiper-slide>
+                      <swiper-slide>
+                        <el-tab-button>
+                          <button type="button" class="typo-label-lg">
+                            배달이용권
+                          </button>
+                        </el-tab-button>
+                      </swiper-slide>
+                      <swiper-slide>
+                        <el-tab-button>
+                          <button type="button" class="typo-label-lg">
+                            상품권/페이/주유
+                          </button>
+                        </el-tab-button>
+                      </swiper-slide>
+                      <swiper-slide>
+                        <el-tab-button>
+                          <button type="button" class="typo-label-lg">
+                            편의점/마트
+                          </button>
+                        </el-tab-button>
+                      </swiper-slide>
+                      <swiper-slide>
+                        <el-tab-button>
+                          <button type="button" class="typo-label-lg">
+                            금액권/통합권
+                          </button>
+                        </el-tab-button>
+                      </swiper-slide>
+                      <swiper-slide>
+                        <el-tab-button>
+                          <button type="button" class="typo-label-lg">
+                            문화/생활/뷰티
+                          </button>
+                        </el-tab-button>
+                      </swiper-slide>
+                      <swiper-slide>
+                        <el-tab-button>
+                          <button type="button" class="typo-label-lg">
+                            리워드관
+                          </button>
+                        </el-tab-button>
+                      </swiper-slide>
+                    </swiper-container>
+                  </el-swiper-wrapper>
+
+                  <el-swiper-navigation>
+                    <button
+                      type="button"
+                      class="button-prev-circle"
+                      aria-label="이전"
+                    >
+                      <el-icon class="h20-arrow-left natural-0"></el-icon>
+                    </button>
+                    <button
+                      type="button"
+                      class="button-next-circle"
+                      aria-label="다음"
+                    >
+                      <el-icon class="h20-arrow-right natural-0"></el-icon>
+                    </button>
+                  </el-swiper-navigation>
+                </el-home-category-swiper>
               </el-examples-stack>
             </el-examples-article>
 

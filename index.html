@@ -327,115 +327,18 @@
 
                   <el-home-section>
                     <el-home-recommend>
-                      <el-home-recommend-top>
+                      <el-home-section-title>
                         <h3 class="typo-subtitle-lg typo-weight-bold">
                           이벤트 특가 추천상품
                         </h3>
-                        <el-category-swiper>
-                          <el-swiper-wrapper>
-                            <swiper-container init="false">
-                              <swiper-slide>
-                                <el-tab-button class="active">
-                                  <button type="button" class="typo-label-lg">
-                                    커피/음료
-                                  </button>
-                                </el-tab-button>
-                              </swiper-slide>
-                              <swiper-slide>
-                                <el-tab-button>
-                                  <button type="button" class="typo-label-lg">
-                                    베이커리/디저트
-                                  </button>
-                                </el-tab-button>
-                              </swiper-slide>
-                              <swiper-slide>
-                                <el-tab-button>
-                                  <button type="button" class="typo-label-lg">
-                                    아이스크림
-                                  </button>
-                                </el-tab-button>
-                              </swiper-slide>
-                              <swiper-slide>
-                                <el-tab-button>
-                                  <button type="button" class="typo-label-lg">
-                                    치킨/피자/버거
-                                  </button>
-                                </el-tab-button>
-                              </swiper-slide>
-                              <swiper-slide>
-                                <el-tab-button>
-                                  <button type="button" class="typo-label-lg">
-                                    외식
-                                  </button>
-                                </el-tab-button>
-                              </swiper-slide>
-                              <swiper-slide>
-                                <el-tab-button>
-                                  <button type="button" class="typo-label-lg">
-                                    배달이용권
-                                  </button>
-                                </el-tab-button>
-                              </swiper-slide>
-                              <swiper-slide>
-                                <el-tab-button>
-                                  <button type="button" class="typo-label-lg">
-                                    상품권/페이/주유
-                                  </button>
-                                </el-tab-button>
-                              </swiper-slide>
-                              <swiper-slide>
-                                <el-tab-button>
-                                  <button type="button" class="typo-label-lg">
-                                    편의점/마트
-                                  </button>
-                                </el-tab-button>
-                              </swiper-slide>
-                              <swiper-slide>
-                                <el-tab-button>
-                                  <button type="button" class="typo-label-lg">
-                                    금액권/통합권
-                                  </button>
-                                </el-tab-button>
-                              </swiper-slide>
-                              <swiper-slide>
-                                <el-tab-button>
-                                  <button type="button" class="typo-label-lg">
-                                    문화/생활/뷰티
-                                  </button>
-                                </el-tab-button>
-                              </swiper-slide>
-                              <swiper-slide>
-                                <el-tab-button>
-                                  <button type="button" class="typo-label-lg">
-                                    리워드관
-                                  </button>
-                                </el-tab-button>
-                              </swiper-slide>
-                            </swiper-container>
-                          </el-swiper-wrapper>
-
-                          <el-swiper-navigation>
-                            <button
-                              type="button"
-                              class="button-prev-circle"
-                              aria-label="이전"
-                            >
-                              <el-icon
-                                class="h20-arrow-left natural-0"
-                              ></el-icon>
-                            </button>
-                            <button
-                              type="button"
-                              class="button-next-circle"
-                              aria-label="다음"
-                            >
-                              <el-icon
-                                class="h20-arrow-right natural-0"
-                              ></el-icon>
-                            </button>
-                          </el-swiper-navigation>
-                        </el-category-swiper>
-                      </el-home-recommend-top>
+                        <!-- 시작: [DEV] 웹컴포넌트
+                          1. 퍼블리싱용 웹컴포넌트입니다.
+                          2. el-home-category-swiper
+                          3. 개발 시 examples.html 원본을 참고해 주세요.
+                        -->
+                        <component-home-category-swiper></component-home-category-swiper>
+                        <!-- 종료: [DEV] 웹컴포넌트 -->
+                      </el-home-section-title>
                       <el-home-recommend-products>
                         <ul>
                           <li>
@@ -476,10 +379,209 @@
                           </li>
                         </ul>
                       </el-home-recommend-products>
-                      <el-home-recommend-bottom>버튼</el-home-recommend-bottom>
+                      <el-home-recommend-bottom>
+                        <button
+                          type="button"
+                          class="button-h50-view-all typo-body-sm"
+                        >
+                          전체보기
+                          <el-icon class="h16-arrow-right natural-40"></el-icon>
+                        </button>
+                      </el-home-recommend-bottom>
                     </el-home-recommend>
                   </el-home-section>
-                  <el-home-section> 세번째 섹션 </el-home-section>
+
+                  <el-home-section>
+                    <el-home-recommend>
+                      <el-home-section-title>
+                        <h3 class="typo-subtitle-lg typo-weight-bold">
+                          BEST 추천상품
+                        </h3>
+                        <!-- 시작: [DEV] 웹컴포넌트
+                          1. 퍼블리싱용 웹컴포넌트입니다.
+                          2. el-home-category-swiper
+                          3. 개발 시 examples.html 원본을 참고해 주세요.
+                        -->
+                        <component-home-category-swiper></component-home-category-swiper>
+                        <!-- 종료: [DEV] 웹컴포넌트 -->
+                      </el-home-section-title>
+                      <el-home-recommend-products>
+                        <ul>
+                          <li>
+                            <!-- 시작: [DEV] 웹컴포넌트
+                              1. 퍼블리싱용 웹컴포넌트입니다.
+                              2. el-product-item
+                              3. 개발 시 examples.html 원본을 참고해 주세요.
+                            -->
+                            <component-product-item-1></component-product-item-1>
+                            <!-- 종료: [DEV] 웹컴포넌트 -->
+                          </li>
+                          <li>
+                            <!-- 시작: [DEV] 웹컴포넌트
+                              1. 퍼블리싱용 웹컴포넌트입니다.
+                              2. el-product-item
+                              3. 개발 시 examples.html 원본을 참고해 주세요.
+                            -->
+                            <component-product-item-2></component-product-item-2>
+                            <!-- 종료: [DEV] 웹컴포넌트 -->
+                          </li>
+                          <li>
+                            <!-- 시작: [DEV] 웹컴포넌트
+                              1. 퍼블리싱용 웹컴포넌트입니다.
+                              2. el-product-item
+                              3. 개발 시 examples.html 원본을 참고해 주세요.
+                            -->
+                            <component-product-item-3></component-product-item-3>
+                            <!-- 종료: [DEV] 웹컴포넌트 -->
+                          </li>
+                          <li>
+                            <!-- 시작: [DEV] 웹컴포넌트
+                              1. 퍼블리싱용 웹컴포넌트입니다.
+                              2. el-product-item
+                              3. 개발 시 examples.html 원본을 참고해 주세요.
+                            -->
+                            <component-product-item-4></component-product-item-4>
+                            <!-- 종료: [DEV] 웹컴포넌트 -->
+                          </li>
+                        </ul>
+                      </el-home-recommend-products>
+                      <el-home-recommend-bottom>
+                        <button
+                          type="button"
+                          class="button-h50-view-all typo-body-sm"
+                        >
+                          전체보기
+                          <el-icon class="h16-arrow-right natural-40"></el-icon>
+                        </button>
+                      </el-home-recommend-bottom>
+                    </el-home-recommend>
+                  </el-home-section>
+
+                  <el-home-banner-horizontal>
+                    <a href="#">
+                      <img
+                        src="./images/temp/horizontal-banner.png"
+                        alt="지금 오피스콘 가입하고, 혜택 받으세요!"
+                      />
+                    </a>
+                  </el-home-banner-horizontal>
+
+                  <el-home-section>
+                    <el-home-recommend>
+                      <el-home-section-title>
+                        <h3 class="typo-subtitle-lg typo-weight-bold">
+                          테마별 추천상품
+                        </h3>
+                        <!-- 시작: [DEV] 웹컴포넌트
+                          1. 퍼블리싱용 웹컴포넌트입니다.
+                          2. el-home-category-swiper
+                          3. 개발 시 examples.html 원본을 참고해 주세요.
+                        -->
+                        <component-home-category-swiper></component-home-category-swiper>
+                        <!-- 종료: [DEV] 웹컴포넌트 -->
+                      </el-home-section-title>
+                      <el-home-recommend-products>
+                        <ul>
+                          <li>
+                            <!-- 시작: [DEV] 웹컴포넌트
+                              1. 퍼블리싱용 웹컴포넌트입니다.
+                              2. el-product-item
+                              3. 개발 시 examples.html 원본을 참고해 주세요.
+                            -->
+                            <component-product-item-1></component-product-item-1>
+                            <!-- 종료: [DEV] 웹컴포넌트 -->
+                          </li>
+                          <li>
+                            <!-- 시작: [DEV] 웹컴포넌트
+                              1. 퍼블리싱용 웹컴포넌트입니다.
+                              2. el-product-item
+                              3. 개발 시 examples.html 원본을 참고해 주세요.
+                            -->
+                            <component-product-item-2></component-product-item-2>
+                            <!-- 종료: [DEV] 웹컴포넌트 -->
+                          </li>
+                          <li>
+                            <!-- 시작: [DEV] 웹컴포넌트
+                              1. 퍼블리싱용 웹컴포넌트입니다.
+                              2. el-product-item
+                              3. 개발 시 examples.html 원본을 참고해 주세요.
+                            -->
+                            <component-product-item-3></component-product-item-3>
+                            <!-- 종료: [DEV] 웹컴포넌트 -->
+                          </li>
+                          <li>
+                            <!-- 시작: [DEV] 웹컴포넌트
+                              1. 퍼블리싱용 웹컴포넌트입니다.
+                              2. el-product-item
+                              3. 개발 시 examples.html 원본을 참고해 주세요.
+                            -->
+                            <component-product-item-4></component-product-item-4>
+                            <!-- 종료: [DEV] 웹컴포넌트 -->
+                          </li>
+                        </ul>
+                      </el-home-recommend-products>
+                      <el-home-recommend-bottom>
+                        <button
+                          type="button"
+                          class="button-h50-view-all typo-body-sm"
+                        >
+                          전체보기
+                          <el-icon class="h16-arrow-right natural-40"></el-icon>
+                        </button>
+                      </el-home-recommend-bottom>
+                    </el-home-recommend>
+                  </el-home-section>
+
+                  <el-home-section>
+                    <el-home-section-title>
+                      <h3 class="typo-subtitle-lg typo-weight-bold">
+                        다양한 브랜드 상품
+                      </h3>
+                      <button
+                        type="button"
+                        class="typo-label-lg typo-color-natural-30 d-flex align-items-center"
+                      >
+                        전체 브랜드보기
+                        <el-icon class="h16-arrow-right natural-40"></el-icon>
+                      </button>
+                    </el-home-section-title>
+                    <el-home-brand-carousel>
+                      <button
+                        type="button"
+                        class="button-prev-circle"
+                        aria-label="이전"
+                      >
+                        <el-icon class="h20-arrow-left natural-0"></el-icon>
+                      </button>
+                      <el-swiper-wrapper class="typo-body-sm">
+                        <swiper-container init="false">
+                          <swiper-slide>
+                            <el-category-item>
+                              <a href="#">
+                                <el-image>
+                                  <img
+                                    src="./images/category-coffee.png"
+                                    alt="커피/음료"
+                                  />
+                                </el-image>
+                                <el-label>커피/음료</el-label>
+                              </a>
+                            </el-category-item>
+                          </swiper-slide>
+                        </swiper-container>
+                      </el-swiper-wrapper>
+                      <button
+                        type="button"
+                        class="button-next-circle"
+                        aria-label="다음"
+                      >
+                        <el-icon class="h20-arrow-right natural-0"></el-icon>
+                      </button>
+                    </el-home-brand-carousel>
+                    <el-home-brand></el-home-brand>
+                  </el-home-section>
+
+                  <el-home-section> 섹션 </el-home-section>
                 </el-home-container>
               </el-split-content>
 
