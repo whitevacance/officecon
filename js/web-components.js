@@ -1694,7 +1694,7 @@ class ComponentProductItem1 extends HTMLElement {
           <el-item-txt class="typo-body-sm">
             <el-item-name>
               <el-brand>스타벅스</el-brand>
-              떠먹는 스트로베리
+              <el-item-name-txt>떠먹는 스트로베리</el-item-name-txt>
             </el-item-name>
             <el-item-price>
               <el-sale-price class="typo-body-sm">
@@ -1788,9 +1788,10 @@ class ComponentProductItem2 extends HTMLElement {
             </el-badge-gift-card>
             <el-item-name>
               <el-brand>스타벅스</el-brand>
-              떠먹는 스트로베리 초콜릿 생크림 + 아메리카노
-              R초콜릿 떠먹는 스트로베리 초콜릿 생크림 +
-              아메리카노 R초콜릿
+              <el-item-name-txt>
+                떠먹는 스트로베리 초콜릿 생크림 + 아메리카노 R초콜릿
+                떠먹는 스트로베리 초콜릿 생크림 + 아메리카노 R초콜릿
+              </el-item-name-txt>
             </el-item-name>
             <el-item-price>
               <el-discount-rate class="typo-body-lg">
@@ -1883,9 +1884,10 @@ class ComponentProductItem3 extends HTMLElement {
             </el-badge-gift-card>
             <el-item-name>
               <el-brand>스타벅스</el-brand>
-              떠먹는 스트로베리 초콜릿 생크림 + 아메리카노
-              R초콜릿 떠먹는 스트로베리 초콜릿 생크림 +
-              아메리카노 R초콜릿
+              <el-item-name-txt>
+                떠먹는 스트로베리 초콜릿 생크림 + 아메리카노 R초콜릿
+                떠먹는 스트로베리 초콜릿 생크림 + 아메리카노 R초콜릿
+              </el-item-name-txt>
             </el-item-name>
             <el-item-price>
               <el-discount-rate class="typo-body-lg">
@@ -1985,9 +1987,10 @@ class ComponentProductItem4 extends HTMLElement {
             </el-badge-gift-card>
             <el-item-name>
               <el-brand>스타벅스</el-brand>
-              떠먹는 스트로베리 초콜릿 생크림 + 아메리카노
-              R초콜릿 떠먹는 스트로베리 초콜릿 생크림 +
-              아메리카노 R초콜릿
+              <el-item-name-txt>
+                떠먹는 스트로베리 초콜릿 생크림 + 아메리카노 R초콜릿
+                떠먹는 스트로베리 초콜릿 생크림 + 아메리카노 R초콜릿
+              </el-item-name-txt>
             </el-item-name>
             <el-item-price>
               <el-discount-rate class="typo-body-lg">

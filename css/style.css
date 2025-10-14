@@ -1126,8 +1126,6 @@ el-layer-dropdown.dropdown-menu {
 /* 시작: 공통 > el-product-item */
 el-product-item {
   display: flex;
-  flex-direction: column;
-  gap: 14px;
   width: 210px;
   position: relative;
 
@@ -1140,6 +1138,8 @@ el-product-item {
   }
 
   el-item-thumbnail {
+    flex-grow: 0;
+    flex-shrink: 0;
     aspect-ratio: 1 / 1;
     display: block;
     width: 100%;
@@ -1210,35 +1210,6 @@ el-product-item {
       }
     }
 
-    el-layer-disabled {
-      display: none;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      left: 0;
-      top: 0;
-      background-color: var(--color-opacity-black-50);
-      z-index: 20;
-      color: var(--color-natural-100);
-      font-weight: 700 !important;
-      text-align: center;
-
-      el-addon {
-        display: flex;
-        align-items: center;
-        width: fit-content;
-        height: 32px;
-        font-weight: 600 !important;
-        padding: 0 12px;
-        border-radius: 9999px;
-        background-color: rgba(33, 75, 241, 0.8);
-      }
-    }
-
     &:not(.disabled):hover {
       .thumbnail-image {
         transform: scale(1.09523);
@@ -1251,6 +1222,35 @@ el-product-item {
       el-layer-action {
         opacity: 1;
       }
+    }
+  }
+
+  el-layer-disabled {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: var(--color-opacity-black-50);
+    z-index: 20;
+    color: var(--color-natural-100);
+    font-weight: 700 !important;
+    text-align: center;
+
+    el-addon {
+      display: flex;
+      align-items: center;
+      width: fit-content;
+      height: 32px;
+      font-weight: 600 !important;
+      padding: 0 12px;
+      border-radius: 9999px;
+      background-color: rgba(33, 75, 241, 0.8);
     }
   }
 
@@ -1282,6 +1282,10 @@ el-product-item {
       el-brand {
         display: inline;
         font-weight: 700;
+      }
+
+      el-item-name-txt {
+        display: inline;
       }
     }
 
@@ -1324,8 +1328,60 @@ el-product-item {
     }
   }
 
-  &.large-type {
+  &.size-large {
     width: 232px;
+  }
+
+  &.type-row {
+    width: 100%;
+
+    a {
+      flex-direction: row;
+
+      el-item-thumbnail {
+        width: 120px;
+        border-radius: 10px;
+      }
+
+      el-item-txt {
+        width: calc(100% - 120px - 14px);
+        justify-content: center;
+        padding: 0;
+
+        el-item-name {
+          display: block;
+          text-overflow: unset;
+
+          el-brand {
+            display: block;
+            padding-bottom: 2px;
+          }
+
+          el-item-name-txt {
+            width: 100%;
+            display: block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+        }
+      }
+
+      el-item-price {
+        flex-wrap: wrap;
+        gap: 2px 4px;
+        padding-top: 6px;
+
+        el-retail-price {
+          display: block;
+          width: 100%;
+        }
+      }
+
+      el-layer-disabled {
+        border-radius: 10px;
+      }
+    }
   }
 }
 /* 종료: 공통 > el-product-item */
