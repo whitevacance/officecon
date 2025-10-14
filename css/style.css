@@ -3335,6 +3335,46 @@ el-aside-cs {
     }
   }
 }
+
+el-aside-recent {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  padding: 29px 24px 24px;
+
+  & > h3 {
+    font-weight: 600 !important;
+  }
+
+  & > ul {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+
+    & > li {
+      display: block;
+      width: 100%;
+      position: relative;
+
+      & > .remove-btn {
+        position: absolute;
+        right: 6px;
+        top: 6px;
+        z-index: 100;
+      }
+
+      &:has(el-product-item.disabled) {
+        & > .remove-btn {
+          el-icon {
+            background-color: var(--color-natural-100);
+          }
+        }
+      }
+    }
+  }
+}
 /* 종료: 홈 */
 
 /* 시작: 예시(example) */
