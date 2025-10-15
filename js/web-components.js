@@ -1597,7 +1597,7 @@ class ComponentFooter extends HTMLElement {
               </li>
               <li>
                 <button type="button">
-                  <img src="./images/footer-Korfin.svg" alt="Korfin" />
+                  <img class="footer-korfin" src="./images/footer-Korfin.svg" alt="Korfin" />
                 </button>
                 <el-cert-layer>
                   <img

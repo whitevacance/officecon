@@ -471,6 +471,12 @@ el-icon {
     -webkit-mask-image: url('../images/icon-h20-eye-hide.svg');
     mask-image: url('../images/icon-h20-eye-hide.svg');
   }
+  &.h20-play {
+    width: 20px;
+    height: 20px;
+    -webkit-mask-image: url('../images/icon-h20-play.svg');
+    mask-image: url('../images/icon-h20-play.svg');
+  }
   &.h16-closed {
     width: 16px;
     height: 16px;
@@ -2529,6 +2535,9 @@ el-footer {
             &:hover + el-cert-layer {
               display: block;
             }
+            .footer-korfin {
+              width: 91px;
+            }
           }
 
           el-cert-layer {
@@ -2715,12 +2724,12 @@ el-home-container {
 
         #homeMainSwiperPlay {
           display: none;
-          &:hover {
+          /* &:hover {
             el-icon {
               -webkit-mask-image: url('../images/icon-h20-arrow-right-hover.svg');
               mask-image: url('../images/icon-h20-arrow-right-hover.svg');
             }
-          }
+          } */
         }
 
         #homeMainSwiperPause {
