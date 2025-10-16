@@ -3386,7 +3386,7 @@ el-aside-recent {
 }
 /* 종료: 홈 */
 
-/* 시작: 예시(example) */
+/* 시작: 예시 (example) */
 el-examples-article {
   display: flex;
   flex-direction: column;
@@ -3424,4 +3424,4 @@ el-examples-article {
     position: relative;
   }
 }
-/* 종료: 예시(example) */
+/* 종료: 예시 (example) */
