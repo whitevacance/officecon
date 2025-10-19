@@ -2014,8 +2014,8 @@ class ComponentProductItem4 extends HTMLElement {
 customElements.define('component-product-item-4', ComponentProductItem4);
 // 종료: el-product-item (4)
 
-// 시작: el-home-category-swiper
-class ComponentHomeCategorySwiper extends HTMLElement {
+// 시작: el-category-swiper
+class ComponentCategorySwiper extends HTMLElement {
   constructor() {
     super();
   }
@@ -2027,17 +2027,17 @@ class ComponentHomeCategorySwiper extends HTMLElement {
 
   loadExternalScript() {
     loadScript(this, 'initAlert');
-    loadScript(this, 'initHomeCategorySwiper');
+    loadScript(this, 'initCategorySwiper');
   }
 
   async loadScriptDynamically() {
     loadDynamically(this, 'initAlert');
-    loadDynamically(this, 'initHomeCategorySwiper');
+    loadDynamically(this, 'initCategorySwiper');
   }
 
   render() {
     this.innerHTML = `
-      <el-home-category-swiper>
+      <el-category-swiper>
         <el-swiper-wrapper>
           <swiper-container init="false">
             <swiper-slide>
@@ -2140,15 +2140,353 @@ class ComponentHomeCategorySwiper extends HTMLElement {
             ></el-icon>
           </button>
         </el-swiper-navigation>
-      </el-home-category-swiper>
+      </el-category-swiper>
     `;
   }
 }
-customElements.define(
-  'component-home-category-swiper',
-  ComponentHomeCategorySwiper
-);
-// 종료: el-home-category-swiper
+customElements.define('component-category-swiper', ComponentCategorySwiper);
+// 종료: el-category-swiper
+
+// 시작: el-breadcrumb
+class ComponentBreadcrumb extends HTMLElement {
+  constructor() {
+    super();
+  }
+
+  connectedCallback() {
+    this.render();
+    this.loadExternalScript();
+  }
+
+  loadExternalScript() {
+    loadScript(this, 'initAlert');
+  }
+
+  async loadScriptDynamically() {
+    loadDynamically(this, 'initAlert');
+  }
+
+  render() {
+    this.innerHTML = `
+      <el-breadcrumb>
+        <ul class="typo-label-lg">
+          <li><a href="#">HOME</a></li>
+          <li>
+            <button
+              type="button"
+              class="typo-label-lg"
+              data-bs-toggle="dropdown"
+              data-bs-offset="-16,8"
+            >
+              커피/음료
+              <el-icon-wrap>
+                <el-icon class="h5-arrow-down natural-30"></el-icon>
+              </el-icon-wrap>
+            </button>
+            <el-breadcrumb-layer-dropdown class="dropdown-menu">
+              <!-- 시작: [DEV] 컬럼당 21개씩 출력 -->
+              <ul class="typo-label-md">
+                <li>
+                  <a href="#">전체 카테고리</a>
+                </li>
+                <li class="active">
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+              </ul>
+              <!-- 종료: [DEV] 컬럼당 21개씩 출력 -->
+            </el-breadcrumb-layer-dropdown>
+          </li>
+          <li>
+            <button
+              type="button"
+              class="typo-label-lg"
+              data-bs-toggle="dropdown"
+              data-bs-offset="-16,8"
+            >
+              스타벅스
+              <el-icon-wrap>
+                <el-icon class="h5-arrow-down natural-30"></el-icon>
+              </el-icon-wrap>
+            </button>
+            <el-breadcrumb-layer-dropdown class="dropdown-menu">
+              <!-- 시작: [DEV] 컬럼당 21개씩 출력 -->
+              <ul class="typo-label-md">
+                <li>
+                  <a href="#">전체 카테고리</a>
+                </li>
+                <li class="active">
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+              </ul>
+              <!-- 종료: [DEV] 컬럼당 21개씩 출력 -->
+              <!-- 시작: [DEV] 컬럼당 21개씩 출력 -->
+              <ul class="typo-label-md">
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+              </ul>
+              <!-- 종료: [DEV] 컬럼당 21개씩 출력 -->
+              <!-- 시작: [DEV] 컬럼당 21개씩 출력 -->
+              <ul class="typo-label-md">
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+              </ul>
+              <!-- 종료: [DEV] 컬럼당 21개씩 출력 -->
+              <!-- 시작: [DEV] 컬럼당 21개씩 출력 -->
+              <ul class="typo-label-md">
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+              </ul>
+              <!-- 종료: [DEV] 컬럼당 21개씩 출력 -->
+            </el-breadcrumb-layer-dropdown>
+          </li>
+          <li><a href="#">상품상세</a></li>
+        </ul>
+      </el-breadcrumb>
+    `;
+  }
+}
+customElements.define('component-breadcrumb', ComponentBreadcrumb);
+// 종료: el-breadcrumb
 
 // 시작:
 class MyButton extends HTMLElement {
