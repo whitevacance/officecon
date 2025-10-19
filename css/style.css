@@ -3566,10 +3566,21 @@ el-aside-video {
   display: flex;
   flex-direction: column;
   gap: 11px;
-  padding: 24px;
+  padding: 23px;
 
   & > h3 {
     font-weight: 600 !important;
+  }
+
+  & > button {
+    display: flex;
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+    }
   }
 }
 /* 종료: 홈 */
