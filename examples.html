@@ -1917,6 +1917,14 @@
                 >
                   공지 팝업 호출
                 </button>
+                <button
+                  type="button"
+                  data-bs-toggle="modal"
+                  data-bs-target="#el-modal-video"
+                  class="button-h50-stroke typo-body-lg"
+                >
+                  영상 팝업 호출
+                </button>
               </el-examples-stack>
             </el-examples-article>
 
@@ -3352,12 +3360,12 @@
                 <swiper-container init="false">
                   <swiper-slide>
                     <a href="#">
-                      <img src="./images/temp/notice.jpg" alt="공지 1">
+                      <img src="./images/temp/notice.jpg" alt="공지 1" />
                     </a>
                   </swiper-slide>
                   <swiper-slide>
                     <a href="#">
-                      <img src="./images/temp/notice.jpg" alt="공지 2">
+                      <img src="./images/temp/notice.jpg" alt="공지 2" />
                     </a>
                   </swiper-slide>
                 </swiper-container>
@@ -3429,9 +3437,18 @@
           </el-modal-close-button>
 
           <el-modal-body>
-            <el-modal-notice>
-              <div>모달 입니다. 모달 입니다. 모달 입니다.</div>
-            </el-modal-notice>
+            <el-modal-video>
+              <h3 class="typo-subtitle-lg">오피스콘 발송방법</h3>
+              <el-modal-video-player>
+                <video
+                  src="https://smilecon-img.zlgoon.com/officecon/product_detail/officecon_note/officecon_guide.mp4"
+                  controls
+                  playsinline
+                  preload="metadata"
+                  poster="./images/temp/video.jpg"
+                ></video>
+              </el-modal-video-player>
+            </el-modal-video>
           </el-modal-body>
         </el-modal-content>
       </el-modal-dialog>

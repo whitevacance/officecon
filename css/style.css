@@ -1234,6 +1234,28 @@ el-modal-notice {
     }
   }
 }
+
+el-modal-video {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  width: 917px;
+  padding: 32px;
+
+  & > h3 {
+    font-weight: 700 !important;
+  }
+
+  el-modal-video-player {
+    display: block;
+    width: 100%;
+    position: relative;
+
+    video {
+      width: 100%;
+    }
+  }
+}
 /* 종료: 공통 > modal */
 
 /* 시작: 공통 > el-layer-dropdown */
