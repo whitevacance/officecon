@@ -1737,6 +1737,8 @@
                 <el-icon class="h32-cart natural-0"></el-icon>
                 <el-icon class="h32-user"></el-icon>
                 <el-icon class="h32-user natural-0"></el-icon>
+                <el-icon class="h32-closed"></el-icon>
+                <el-icon class="h32-closed natural-0"></el-icon>
               </el-examples-stack>
             </el-examples-article>
 
@@ -1900,6 +1902,20 @@
                   class="button-h50-stroke typo-body-lg"
                 >
                   얼럿 호출
+                </button>
+              </el-examples-stack>
+            </el-examples-article>
+
+            <el-examples-article>
+              <h2>모달 팝업</h2>
+              <el-examples-stack>
+                <button
+                  type="button"
+                  data-bs-toggle="modal"
+                  data-bs-target="#el-modal-notice"
+                  class="button-h50-stroke typo-body-lg"
+                >
+                  공지 팝업 호출
                 </button>
               </el-examples-stack>
             </el-examples-article>
@@ -3319,6 +3335,108 @@
       </el-alert-dialog>
     </el-alert>
     <!-- 종료: alert -->
+
+    <!-- 시작: modal: 공지 팝업 -->
+    <el-modal
+      class="modal fade"
+      id="el-modal-notice"
+      tabindex="-1"
+      aria-hidden="true"
+      data-bs-keyboard="false"
+    >
+      <el-modal-dialog class="modal-dialog modal-dialog-centered">
+        <el-modal-content class="modal-content">
+          <el-modal-body>
+            <el-modal-notice>
+              <el-modal-notice-swiper>
+                <swiper-container init="false">
+                  <swiper-slide>
+                    <a href="#">
+                      <img src="./images/temp/notice.jpg" alt="공지 1">
+                    </a>
+                  </swiper-slide>
+                  <swiper-slide>
+                    <a href="#">
+                      <img src="./images/temp/notice.jpg" alt="공지 2">
+                    </a>
+                  </swiper-slide>
+                </swiper-container>
+
+                <el-swiper-control class="typo-body-lg">
+                  <button
+                    type="button"
+                    id="modalNoticeSwiperPrev"
+                    aria-label="이전"
+                  >
+                    <el-icon class="h20-arrow-left"></el-icon>
+                  </button>
+                  <el-swiper-pagination>
+                    <div
+                      id="modalNoticeSwiperPagination"
+                      class="swiper-pagination"
+                    ></div>
+                  </el-swiper-pagination>
+                  <button
+                    type="button"
+                    id="modalNoticeSwiperNext"
+                    aria-label="다음"
+                  >
+                    <el-icon class="h20-arrow-right"></el-icon>
+                  </button>
+                </el-swiper-control>
+              </el-modal-notice-swiper>
+            </el-modal-notice>
+          </el-modal-body>
+
+          <el-modal-footer>
+            <el-checkbox class="form-check">
+              <input
+                type="checkbox"
+                id="dismissModalOneDay"
+                class="form-check-input custom-checkbox"
+                value=""
+              />
+              <label
+                class="form-check-label typo-body-sm"
+                for="dismissModalOneDay"
+              >
+                오늘 하루 열지 않기
+              </label>
+            </el-checkbox>
+            <button type="button" data-bs-dismiss="modal" class="typo-body-sm">
+              닫기
+            </button>
+          </el-modal-footer>
+        </el-modal-content>
+      </el-modal-dialog>
+    </el-modal>
+    <!-- 종료: modal: 공지 팝업 -->
+
+    <!-- 시작: modal: 영상 팝업 -->
+    <el-modal
+      class="modal fade"
+      id="el-modal-video"
+      tabindex="-1"
+      aria-hidden="true"
+      data-bs-keyboard="false"
+    >
+      <el-modal-dialog class="modal-dialog modal-dialog-centered">
+        <el-modal-content class="modal-content">
+          <el-modal-close-button>
+            <button type="button" data-bs-dismiss="modal" aria-label="닫기">
+              <el-icon class="h32-closed natural-0"></el-icon>
+            </button>
+          </el-modal-close-button>
+
+          <el-modal-body>
+            <el-modal-notice>
+              <div>모달 입니다. 모달 입니다. 모달 입니다.</div>
+            </el-modal-notice>
+          </el-modal-body>
+        </el-modal-content>
+      </el-modal-dialog>
+    </el-modal>
+    <!-- 종료: modal: 영상 팝업 -->
 
     <!-- 공통js: common.js -->
     <script src="./js/pub-common.js" crossorigin="anonymous"></script>

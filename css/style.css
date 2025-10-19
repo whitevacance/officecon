@@ -190,6 +190,11 @@ button {
   color: inherit;
   line-height: inherit;
 }
+
+.modal-backdrop {
+  opacity: 1 !important;
+  background-color: var(--color-opacity-black-30);
+}
 /* 종료: reset */
 
 /* 시작: 공통 > typography */
@@ -386,6 +391,12 @@ el-icon {
     height: 32px;
     -webkit-mask-image: url('../images/icon-h32-user.svg');
     mask-image: url('../images/icon-h32-user.svg');
+  }
+  &.h32-closed {
+    width: 32px;
+    height: 32px;
+    -webkit-mask-image: url('../images/icon-h32-closed.svg');
+    mask-image: url('../images/icon-h32-closed.svg');
   }
   &.h24-search {
     width: 24px;
@@ -1041,10 +1052,6 @@ el-radio {
 /* 종료: 공통 > radio */
 
 /* 시작: 공통 > alert */
-.modal-backdrop {
-  opacity: 1 !important;
-  background-color: var(--color-opacity-black-30);
-}
 el-alert.modal {
   el-alert-dialog.modal-dialog {
     box-sizing: border-box;
@@ -1080,6 +1087,154 @@ el-alert.modal {
   }
 }
 /* 종료: 공통 > alert */
+
+/* 시작: 공통 > modal */
+el-modal.modal {
+  el-modal-dialog.modal-dialog {
+    box-sizing: border-box;
+    width: fit-content;
+    max-width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+    transform: translate(0, 0) !important;
+
+    el-modal-content.modal-content {
+      width: fit-content;
+      max-width: 100%;
+      gap: 0px;
+      border: none;
+      border-radius: 32px;
+      padding: 0;
+      box-shadow: var(--color-boxShadow-1);
+      overflow: hidden;
+
+      el-modal-close-button {
+        display: block;
+        width: 32px;
+        height: 32px;
+        position: absolute;
+        top: 32px;
+        right: 32px;
+        z-index: 1060;
+
+        button {
+          width: 32px;
+          height: 32px;
+        }
+      }
+
+      el-modal-body {
+        display: block;
+        position: relative;
+        width: fit-content;
+        max-width: 100%;
+      }
+
+      el-modal-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        height: 65px;
+        padding: 0 32px;
+        color: var(--color-natural-20);
+      }
+    }
+  }
+}
+
+el-modal-notice {
+  display: block;
+  width: 500px;
+  position: relative;
+
+  el-modal-notice-swiper {
+    display: block;
+    width: 100%;
+    height: 500px;
+    position: relative;
+
+    swiper-container {
+      width: 100%;
+
+      swiper-slide {
+        a {
+          display: block;
+          width: 500px;
+          height: 500px;
+          position: relative;
+
+          img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+
+    el-swiper-control {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 132px;
+      height: 54px;
+      position: absolute;
+      bottom: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 999px;
+      background-color: var(--color-opacity-black-70);
+      color: var(--color-opacity-white-50);
+      z-index: 1060;
+
+      button {
+        width: 20px;
+        height: 20px;
+        opacity: 0.5;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+
+      #modalNoticeSwiperPrev {
+        &:hover {
+          el-icon {
+            -webkit-mask-image: url('../images/icon-h20-arrow-left-hover.svg');
+            mask-image: url('../images/icon-h20-arrow-left-hover.svg');
+          }
+        }
+      }
+
+      #modalNoticeSwiperNext {
+        &:hover {
+          el-icon {
+            -webkit-mask-image: url('../images/icon-h20-arrow-right-hover.svg');
+            mask-image: url('../images/icon-h20-arrow-right-hover.svg');
+          }
+        }
+      }
+
+      el-swiper-pagination {
+        display: block;
+        width: 46px;
+        position: relative;
+
+        .swiper-pagination {
+          position: relative;
+          bottom: 0;
+
+          .swiper-pagination-current {
+            color: var(--color-natural-100);
+          }
+        }
+      }
+    }
+  }
+}
+/* 종료: 공통 > modal */
 
 /* 시작: 공통 > el-layer-dropdown */
 el-layer-dropdown.dropdown-menu {
@@ -3382,6 +3537,17 @@ el-aside-recent {
         }
       }
     }
+  }
+}
+
+el-aside-video {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  padding: 24px;
+
+  & > h3 {
+    font-weight: 600 !important;
   }
 }
 /* 종료: 홈 */
