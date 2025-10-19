@@ -5,6 +5,7 @@ let bsSearchLayerToggleButton = null;
 let homeMainSwiperInstance = null;
 let categoryImageCarouselInstance = null;
 let homeBrandCarouselInstance = null;
+let modalNoticeSwiperInstance = null;
 // 종료: global 변수
 
 // 시작: el-alert
@@ -625,3 +626,60 @@ if (window !== undefined) {
 
 initHomeBrandCarousel();
 // 종료: el-home-brand-carousel
+
+// 시작: el-modal-notice-swiper
+const initModalNoticeSwiper = () => {
+  const modalNoticeSwiperEl = document.querySelector(
+    'el-modal-notice-swiper swiper-container'
+  );
+
+  // 이미 초기화된 경우 건너뛰기
+  if (modalNoticeSwiperEl?.dataset?.initialized === 'true') {
+    return;
+  }
+
+  const modalNoticeSwiperPrevEl = document.querySelector(
+    '#modalNoticeSwiperPrev'
+  );
+  const modalNoticeSwiperNextEl = document.querySelector(
+    '#modalNoticeSwiperNext'
+  );
+  const modalNoticeSwiperParams = {
+    loop: true,
+    pagination: {
+      el: '#modalNoticeSwiperPagination',
+      type: 'fraction',
+    },
+  };
+
+  if (modalNoticeSwiperEl && modalNoticeSwiperParams) {
+    Object.assign(modalNoticeSwiperEl, modalNoticeSwiperParams);
+    modalNoticeSwiperEl.initialize();
+    modalNoticeSwiperInstance = modalNoticeSwiperEl?.swiper || null;
+  }
+
+  if (
+    modalNoticeSwiperInstance &&
+    modalNoticeSwiperPrevEl &&
+    modalNoticeSwiperNextEl
+  ) {
+    modalNoticeSwiperPrevEl.addEventListener('click', () => {
+      modalNoticeSwiperInstance.slidePrev();
+    });
+
+    modalNoticeSwiperNextEl.addEventListener('click', () => {
+      modalNoticeSwiperInstance.slideNext();
+    });
+
+    // 초기화 완료 전환
+    modalNoticeSwiperEl.dataset.initialized = 'true';
+  }
+};
+
+// 전역 함수로 등록
+if (window !== undefined) {
+  window.initModalNoticeSwiper = initModalNoticeSwiper;
+}
+
+initModalNoticeSwiper();
+// 종료: el-modal-notice-swiper

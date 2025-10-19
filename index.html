@@ -147,7 +147,7 @@
                             aria-label="시작"
                             id="homeMainSwiperPlay"
                           >
-                            <el-icon class="h20-arrow-right"></el-icon>
+                            <el-icon class="h20-play"></el-icon>
                           </button>
                           <button
                             type="button"
@@ -873,7 +873,392 @@
               </el-split-content>
 
               <el-split-aside>
-                <aside>aside</aside>
+                <aside>
+                  <el-aside-article-box>
+                    <el-aside-login>
+                      <el-aside-login-title>
+                        <img src="./images/login-star.png" alt="" />
+                        할인과 혜택이 기다리고 있어요
+                      </el-aside-login-title>
+                      <button
+                        type="button"
+                        class="button-h50-fill-login color-primary typo-body-sm"
+                      >
+                        <span>로그인</span>
+                      </button>
+                      <el-aside-login-footer class="typo-label-lg">
+                        <a href="#">회원가입</a>
+                        <a href="#">아이디 찾기</a>
+                        <a href="#">비밀번호 찾기</a>
+                      </el-aside-login-footer>
+                    </el-aside-login>
+                  </el-aside-article-box>
+
+                  <el-aside-article-box>
+                    <el-aside-user-info>
+                      <el-aside-user-status>
+                        <el-aside-user-type class="typo-label-lg">
+                          기업회원
+                        </el-aside-user-type>
+                        <el-aside-user-name class="typo-body-lg">
+                          <strong>홍길동</strong>님
+                        </el-aside-user-name>
+                        <el-aside-user-level-txt class="typo-body-lg">
+                          오피스콘에 오신 것을 환영합니다.
+                        </el-aside-user-level-txt>
+                        <el-aside-user-level-txt class="typo-body-lg">
+                          등급은
+                          <strong class="level-silver">SILVER</strong>입니다.
+                        </el-aside-user-level-txt>
+                        <el-aside-user-level-txt class="typo-body-lg">
+                          등급은
+                          <strong class="level-gold">GOLD</strong>입니다.
+                        </el-aside-user-level-txt>
+                        <el-aside-user-level-txt class="typo-body-lg">
+                          등급은
+                          <strong class="level-diamond">DIAMOND</strong>입니다.
+                        </el-aside-user-level-txt>
+                        <button
+                          type="button"
+                          class="button-h34-cash typo-label-md"
+                        >
+                          캐쉬 충전
+                        </button>
+                      </el-aside-user-status>
+
+                      <el-aside-user-property>
+                        <ul>
+                          <li>
+                            <el-property-item>
+                              <el-left class="typo-label-lg">
+                                <el-badge-h14-cash class="type-icon">
+                                  <img
+                                    src="./images/badge-h14-cash.svg"
+                                    alt="캐시"
+                                  />
+                                </el-badge-h14-cash>
+                                나의 캐쉬
+                              </el-left>
+                              <el-right class="typo-label-md">
+                                <strong class="typo-body-sm">1,000,000</strong
+                                >원
+                              </el-right>
+                            </el-property-item>
+                          </li>
+                          <li>
+                            <el-property-item>
+                              <el-left class="typo-label-lg">
+                                <el-badge-h14-reward class="type-icon">
+                                  <img
+                                    src="./images/badge-h14-reward.svg"
+                                    alt="리워드"
+                                  />
+                                </el-badge-h14-reward>
+                                나의 리워드
+                              </el-left>
+                              <el-right class="typo-label-md">
+                                <strong class="typo-body-sm">1,000,000</strong
+                                >원
+                              </el-right>
+                            </el-property-item>
+                            <el-property-item-addon class="typo-label-md">
+                              <el-left>
+                                <el-icon class="h7-branch natural-50"></el-icon>
+                                소멸예정일
+                              </el-left>
+                              <el-right>2030.12.31</el-right>
+                            </el-property-item-addon>
+                          </li>
+                          <li>
+                            <el-property-item>
+                              <el-left class="typo-label-lg">
+                                <el-badge-h14-point class="type-icon">
+                                  <img
+                                    src="./images/badge-h14-point.svg"
+                                    alt="포인트"
+                                  />
+                                </el-badge-h14-point>
+                                제휴 포인트
+                              </el-left>
+                              <el-right class="typo-label-md">
+                                <strong class="typo-body-sm">1,000,000</strong
+                                >원
+                              </el-right>
+                            </el-property-item>
+                            <el-property-item-addon class="typo-label-md">
+                              <el-left>
+                                <el-icon class="h7-branch natural-50"></el-icon>
+                                소멸예정일
+                              </el-left>
+                              <el-right>2030.12.31</el-right>
+                            </el-property-item-addon>
+                          </li>
+                        </ul>
+                      </el-aside-user-property>
+                    </el-aside-user-info>
+                  </el-aside-article-box>
+
+                  <el-aside-banner>
+                    <a href="#">
+                      <img src="./images/temp/aside-banner.jpg" alt="배너" />
+                    </a>
+                  </el-aside-banner>
+
+                  <el-aside-banner>
+                    <a href="#">
+                      <img
+                        src="./images/temp/aside-banner-small.jpg"
+                        alt="배너"
+                      />
+                    </a>
+                  </el-aside-banner>
+
+                  <el-aside-article-box>
+                    <el-aside-cs>
+                      <el-aside-cs-header class="typo-label-md">
+                        <h4 class="typo-body-lg">고객센터</h4>
+                        평일 09:30-18:00 / 점심시간 11:30-13:00
+                      </el-aside-cs-header>
+                      <el-aside-cs-content>
+                        <el-aside-cs-tel>
+                          <img src="./images/icon-3d-bubble-mint.png" alt="" />
+                          <h5 class="typo-label-md">회원가입/발송문의</h5>
+                          <strong class="typo-subtitle-sm">1661-8197</strong>
+                        </el-aside-cs-tel>
+                        <el-aside-cs-tel>
+                          <img
+                            src="./images/icon-3d-bubble-yellow.png"
+                            alt=""
+                          />
+                          <h5 class="typo-label-md">쿠폰사용 관련문의</h5>
+                          <strong class="typo-subtitle-sm">1661-8191</strong>
+                        </el-aside-cs-tel>
+                      </el-aside-cs-content>
+                      <el-aside-cs-footer>
+                        <ul class="typo-label-lg">
+                          <li>
+                            <a href="#">이용가이드</a>
+                          </li>
+                          <li>
+                            <a href="#">공지사항</a>
+                          </li>
+                          <li>
+                            <a href="#">1:1문의</a>
+                          </li>
+                          <li>
+                            <a href="#">FAQ</a>
+                          </li>
+                        </ul>
+                      </el-aside-cs-footer>
+                    </el-aside-cs>
+                  </el-aside-article-box>
+
+                  <el-aside-article-box>
+                    <el-aside-recent>
+                      <h3 class="typo-body-lg">최근 본 상품</h3>
+                      <ul>
+                        <li>
+                          <el-product-item class="type-row">
+                            <a href="#">
+                              <el-item-thumbnail>
+                                <img
+                                  class="thumbnail-image"
+                                  src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/product/20250227/20250227145823_a5b9221d-437d-4b84-b0ac-fbc6f58edf4f.jpg"
+                                  alt=""
+                                />
+                                <el-bg></el-bg>
+                              </el-item-thumbnail>
+
+                              <el-item-txt class="typo-body-sm">
+                                <el-item-name>
+                                  <el-brand>스타벅스</el-brand>
+                                  <el-item-name-txt
+                                    >떠먹는 스트로베리</el-item-name-txt
+                                  >
+                                </el-item-name>
+                                <el-item-price>
+                                  <el-sale-price class="typo-body-sm">
+                                    <strong class="typo-body-lg">999,999</strong
+                                    >원
+                                  </el-sale-price>
+                                </el-item-price>
+                              </el-item-txt>
+                            </a>
+                          </el-product-item>
+
+                          <button
+                            type="button"
+                            class="remove-btn"
+                            aria-label="삭제"
+                          >
+                            <el-icon class="h16-closed natural-40"></el-icon>
+                          </button>
+                        </li>
+                        <li>
+                          <el-product-item class="type-row">
+                            <a href="#">
+                              <el-item-thumbnail>
+                                <img
+                                  class="thumbnail-image"
+                                  src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/product/20250227/20250227145823_a5b9221d-437d-4b84-b0ac-fbc6f58edf4f.jpg"
+                                  alt=""
+                                />
+                                <el-bg></el-bg>
+                              </el-item-thumbnail>
+
+                              <el-item-txt class="typo-body-sm">
+                                <el-item-name>
+                                  <el-brand>스타벅스</el-brand>
+                                  <el-item-name-txt>
+                                    떠먹는 스트로베리 초콜릿 생크림 + 아메리카노
+                                    R초콜릿 떠먹는 스트로베리 초콜릿 생크림 +
+                                    아메리카노 R초콜릿
+                                  </el-item-name-txt>
+                                </el-item-name>
+                                <el-item-price>
+                                  <el-retail-price class="typo-label-md">
+                                    999,999원
+                                  </el-retail-price>
+                                  <el-discount-rate class="typo-body-lg">
+                                    20%
+                                  </el-discount-rate>
+                                  <el-sale-price class="typo-body-sm">
+                                    <strong class="typo-body-lg">999,999</strong
+                                    >원
+                                  </el-sale-price>
+                                </el-item-price>
+                              </el-item-txt>
+                            </a>
+                          </el-product-item>
+
+                          <button
+                            type="button"
+                            class="remove-btn"
+                            aria-label="삭제"
+                          >
+                            <el-icon class="h16-closed natural-40"></el-icon>
+                          </button>
+                        </li>
+                        <li>
+                          <el-product-item class="disabled type-row">
+                            <a href="#">
+                              <el-item-thumbnail>
+                                <img
+                                  class="thumbnail-image"
+                                  src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/product/20250227/20250227145823_a5b9221d-437d-4b84-b0ac-fbc6f58edf4f.jpg"
+                                  alt=""
+                                />
+                                <el-bg></el-bg>
+                              </el-item-thumbnail>
+
+                              <el-item-txt class="typo-body-sm">
+                                <el-item-name>
+                                  <el-brand>스타벅스</el-brand>
+                                  <el-item-name-txt>
+                                    떠먹는 스트로베리 초콜릿 생크림 + 아메리카노
+                                    R초콜릿 떠먹는 스트로베리 초콜릿 생크림 +
+                                    아메리카노 R초콜릿
+                                  </el-item-name-txt>
+                                </el-item-name>
+                                <el-item-price>
+                                  <el-retail-price class="typo-label-md">
+                                    999,999원
+                                  </el-retail-price>
+                                  <el-discount-rate class="typo-body-lg">
+                                    20%
+                                  </el-discount-rate>
+                                  <el-sale-price class="typo-body-sm">
+                                    <strong class="typo-body-lg">999,999</strong
+                                    >원
+                                  </el-sale-price>
+                                </el-item-price>
+                              </el-item-txt>
+
+                              <el-layer-disabled class="typo-subtitle-sm">
+                                <el-txt> 일시품절 </el-txt>
+                              </el-layer-disabled>
+                            </a>
+                          </el-product-item>
+
+                          <button
+                            type="button"
+                            class="remove-btn"
+                            aria-label="삭제"
+                          >
+                            <el-icon class="h16-closed natural-40"></el-icon>
+                          </button>
+                        </li>
+                        <li>
+                          <el-product-item class="disabled type-row">
+                            <a href="#">
+                              <el-item-thumbnail>
+                                <img
+                                  class="thumbnail-image"
+                                  src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/product/20250227/20250227145823_a5b9221d-437d-4b84-b0ac-fbc6f58edf4f.jpg"
+                                  alt=""
+                                />
+                                <el-bg></el-bg>
+                              </el-item-thumbnail>
+
+                              <el-item-txt class="typo-body-sm">
+                                <el-item-name>
+                                  <el-brand>스타벅스</el-brand>
+                                  <el-item-name-txt>
+                                    떠먹는 스트로베리 초콜릿 생크림 + 아메리카노
+                                    R초콜릿 떠먹는 스트로베리 초콜릿 생크림 +
+                                    아메리카노 R초콜릿
+                                  </el-item-name-txt>
+                                </el-item-name>
+                                <el-item-price>
+                                  <el-retail-price class="typo-label-md">
+                                    999,999원
+                                  </el-retail-price>
+                                  <el-discount-rate class="typo-body-lg">
+                                    20%
+                                  </el-discount-rate>
+                                  <el-sale-price class="typo-body-sm">
+                                    <strong class="typo-body-lg">999,999</strong
+                                    >원
+                                  </el-sale-price>
+                                </el-item-price>
+                              </el-item-txt>
+
+                              <el-layer-disabled class="typo-subtitle-sm">
+                                <el-txt> 판매가능시간 9시 ~ 18시 </el-txt>
+                                <el-addon class="typo-body-sm">
+                                  공휴일/주말 제외
+                                </el-addon>
+                              </el-layer-disabled>
+                            </a>
+                          </el-product-item>
+                          <button
+                            type="button"
+                            class="remove-btn"
+                            aria-label="삭제"
+                          >
+                            <el-icon class="h16-closed natural-40"></el-icon>
+                          </button>
+                        </li>
+                      </ul>
+                    </el-aside-recent>
+                  </el-aside-article-box>
+
+                  <el-aside-article-box>
+                    <el-aside-video>
+                      <h3 class="typo-body-lg">오피스콘 발송방법</h3>
+                      <button
+                        type="button"
+                        data-bs-toggle="modal"
+                        data-bs-target="#el-modal-video"
+                      >
+                        <img
+                          src="./images/temp/video.jpg"
+                          alt="오피스콘 발송방법"
+                        />
+                      </button>
+                    </el-aside-video>
+                  </el-aside-article-box>
+                </aside>
               </el-split-aside>
             </el-split-container>
           </el-content>
@@ -925,8 +1310,130 @@
     </el-alert>
     <!-- 종료: alert -->
 
+    <!-- 시작: modal: 공지 팝업 -->
+    <el-modal
+      class="modal fade"
+      id="el-modal-notice"
+      tabindex="-1"
+      aria-hidden="true"
+      data-bs-keyboard="false"
+    >
+      <el-modal-dialog class="modal-dialog modal-dialog-centered">
+        <el-modal-content class="modal-content">
+          <el-modal-body>
+            <el-modal-notice>
+              <el-modal-notice-swiper>
+                <swiper-container init="false">
+                  <swiper-slide>
+                    <a href="#">
+                      <img src="./images/temp/notice.jpg" alt="공지 1" />
+                    </a>
+                  </swiper-slide>
+                  <swiper-slide>
+                    <a href="#">
+                      <img src="./images/temp/notice.jpg" alt="공지 2" />
+                    </a>
+                  </swiper-slide>
+                </swiper-container>
+
+                <el-swiper-control class="typo-body-lg">
+                  <button
+                    type="button"
+                    id="modalNoticeSwiperPrev"
+                    aria-label="이전"
+                  >
+                    <el-icon class="h20-arrow-left"></el-icon>
+                  </button>
+                  <el-swiper-pagination>
+                    <div
+                      id="modalNoticeSwiperPagination"
+                      class="swiper-pagination"
+                    ></div>
+                  </el-swiper-pagination>
+                  <button
+                    type="button"
+                    id="modalNoticeSwiperNext"
+                    aria-label="다음"
+                  >
+                    <el-icon class="h20-arrow-right"></el-icon>
+                  </button>
+                </el-swiper-control>
+              </el-modal-notice-swiper>
+            </el-modal-notice>
+          </el-modal-body>
+
+          <el-modal-footer>
+            <el-checkbox class="form-check">
+              <input
+                type="checkbox"
+                id="dismissModalOneDay"
+                class="form-check-input custom-checkbox"
+                value=""
+              />
+              <label
+                class="form-check-label typo-body-sm"
+                for="dismissModalOneDay"
+              >
+                오늘 하루 열지 않기
+              </label>
+            </el-checkbox>
+            <button type="button" data-bs-dismiss="modal" class="typo-body-sm">
+              닫기
+            </button>
+          </el-modal-footer>
+        </el-modal-content>
+      </el-modal-dialog>
+    </el-modal>
+    <!-- 종료: modal: 공지 팝업 -->
+
+    <!-- 시작: modal: 영상 팝업 -->
+    <el-modal
+      class="modal fade"
+      id="el-modal-video"
+      tabindex="-1"
+      aria-hidden="true"
+      data-bs-keyboard="false"
+    >
+      <el-modal-dialog class="modal-dialog modal-dialog-centered">
+        <el-modal-content class="modal-content">
+          <el-modal-close-button>
+            <button type="button" data-bs-dismiss="modal" aria-label="닫기">
+              <el-icon class="h32-closed natural-0"></el-icon>
+            </button>
+          </el-modal-close-button>
+
+          <el-modal-body>
+            <el-modal-video>
+              <h3 class="typo-subtitle-lg">오피스콘 발송방법</h3>
+              <el-modal-video-player>
+                <video
+                  src="https://smilecon-img.zlgoon.com/officecon/product_detail/officecon_note/officecon_guide.mp4"
+                  controls
+                  playsinline
+                  preload="metadata"
+                  poster="./images/temp/video.jpg"
+                ></video>
+              </el-modal-video-player>
+            </el-modal-video>
+          </el-modal-body>
+        </el-modal-content>
+      </el-modal-dialog>
+    </el-modal>
+    <!-- 종료: modal: 영상 팝업 -->
+
     <!-- 공통js: common.js -->
     <script src="./js/pub-common.js" crossorigin="anonymous"></script>
+
+    <script>
+      // 페이지 로드 시 공지 모달 노출 el-modal-notice
+      document.addEventListener('DOMContentLoaded', () => {
+        const modalNoticeEl = document.querySelector('#el-modal-notice');
+        if (modalNoticeEl) {
+          const bsModalNotice = new bootstrap.Modal(modalNoticeEl);
+          bsModalNotice.show();
+        }
+      });
+    </script>
 
     <!-- [DEV] 웹 컴포넌트js: 개발 시 삭제해 주세요 -->
     <script src="./js/web-components.js" crossorigin="anonymous"></script>
