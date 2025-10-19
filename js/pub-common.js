@@ -683,3 +683,51 @@ if (window !== undefined) {
 
 initModalNoticeSwiper();
 // 종료: el-modal-notice-swiper
+
+// 시작: scrollToTopButton
+const initScrollToTopButton = () => {
+  const scrollToTopButtonEl = document.querySelector('#scrollToTopButton');
+
+  // 이미 초기화된 경우 건너뛰기
+  if (scrollToTopButtonEl?.dataset?.initialized === 'true') {
+    return;
+  }
+
+  if (scrollToTopButtonEl) {
+    // 클릭 이벤트: 상단으로 스크롤
+    scrollToTopButtonEl.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
+    });
+
+    // 스크롤 이벤트: 버튼 위치 조정
+    const handleScroll = () => {
+      const scrollY = window.scrollY || window.pageYOffset;
+
+      if (scrollY > 100) {
+        scrollToTopButtonEl.style.bottom = '24px';
+      } else {
+        scrollToTopButtonEl.style.bottom = '-70px';
+      }
+    };
+
+    // 스크롤 이벤트 리스너 등록
+    window.addEventListener('scroll', handleScroll);
+
+    // 초기 상태 설정
+    handleScroll();
+
+    // 초기화 완료 전환
+    scrollToTopButtonEl.dataset.initialized = 'true';
+  }
+};
+
+// 전역 함수로 등록
+if (window !== undefined) {
+  window.initScrollToTopButton = initScrollToTopButton;
+}
+
+initScrollToTopButton();
+// 종료: el-top-button
