@@ -534,10 +534,12 @@ class ComponentHeaderGnb extends HTMLElement {
                         <li>
                           <a href="#">
                             <el-thumbnail>
-                              <img
-                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
-                                alt="투썸플레이스"
-                              />
+                              <el-thumbnail-img>
+                                <img
+                                  src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                                  alt="투썸플레이스"
+                                />
+                              </el-thumbnail-img>
                             </el-thumbnail>
                             <el-label>일이삼사오육칠팔구십</el-label>
                           </a>
@@ -545,10 +547,12 @@ class ComponentHeaderGnb extends HTMLElement {
                         <li>
                           <a href="#">
                             <el-thumbnail>
-                              <img
-                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250430/20250430110647_2318f45e-fe88-4773-8c53-1f62968291b8.jpg"
-                                alt="컴포즈커피"
-                              />
+                              <el-thumbnail-img>
+                                <img
+                                  src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250430/20250430110647_2318f45e-fe88-4773-8c53-1f62968291b8.jpg"
+                                  alt="컴포즈커피"
+                                />
+                              </el-thumbnail-img>
                             </el-thumbnail>
                             <el-label>컴포즈커피</el-label>
                           </a>
@@ -556,10 +560,12 @@ class ComponentHeaderGnb extends HTMLElement {
                         <li>
                           <a href="#">
                             <el-thumbnail>
-                              <img
-                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
-                                alt="투썸플레이스"
-                              />
+                              <el-thumbnail-img>
+                                <img
+                                  src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                                  alt="투썸플레이스"
+                                />
+                              </el-thumbnail-img>
                             </el-thumbnail>
                             <el-label>투썸플레이스</el-label>
                           </a>
@@ -567,10 +573,12 @@ class ComponentHeaderGnb extends HTMLElement {
                         <li>
                           <a href="#">
                             <el-thumbnail>
-                              <img
-                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250430/20250430110647_2318f45e-fe88-4773-8c53-1f62968291b8.jpg"
-                                alt="컴포즈커피"
-                              />
+                              <el-thumbnail-img>
+                                <img
+                                  src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250430/20250430110647_2318f45e-fe88-4773-8c53-1f62968291b8.jpg"
+                                  alt="컴포즈커피"
+                                />
+                              </el-thumbnail-img>
                             </el-thumbnail>
                             <el-label>컴포즈커피</el-label>
                           </a>
@@ -578,10 +586,12 @@ class ComponentHeaderGnb extends HTMLElement {
                         <li>
                           <a href="#">
                             <el-thumbnail>
-                              <img
-                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
-                                alt="투썸플레이스"
-                              />
+                              <el-thumbnail-img>
+                                <img
+                                  src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                                  alt="투썸플레이스"
+                                />
+                              </el-thumbnail-img>
                             </el-thumbnail>
                             <el-label>투썸플레이스</el-label>
                           </a>
@@ -589,10 +599,12 @@ class ComponentHeaderGnb extends HTMLElement {
                         <li>
                           <a href="#">
                             <el-thumbnail>
-                              <img
-                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250430/20250430110647_2318f45e-fe88-4773-8c53-1f62968291b8.jpg"
-                                alt="컴포즈커피"
-                              />
+                              <el-thumbnail-img>
+                                <img
+                                  src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250430/20250430110647_2318f45e-fe88-4773-8c53-1f62968291b8.jpg"
+                                  alt="컴포즈커피"
+                                />
+                              </el-thumbnail-img>
                             </el-thumbnail>
                             <el-label>컴포즈커피</el-label>
                           </a>
@@ -600,10 +612,12 @@ class ComponentHeaderGnb extends HTMLElement {
                         <li>
                           <a href="#">
                             <el-thumbnail>
-                              <img
-                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
-                                alt="투썸플레이스"
-                              />
+                              <el-thumbnail-img>
+                                <img
+                                  src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                                  alt="투썸플레이스"
+                                />
+                              </el-thumbnail-img>
                             </el-thumbnail>
                             <el-label>투썸플레이스</el-label>
                           </a>
@@ -611,10 +625,12 @@ class ComponentHeaderGnb extends HTMLElement {
                         <li>
                           <a href="#">
                             <el-thumbnail>
-                              <img
-                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250430/20250430110647_2318f45e-fe88-4773-8c53-1f62968291b8.jpg"
-                                alt="컴포즈커피"
-                              />
+                              <el-thumbnail-img>
+                                <img
+                                  src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250430/20250430110647_2318f45e-fe88-4773-8c53-1f62968291b8.jpg"
+                                  alt="컴포즈커피"
+                                />
+                              </el-thumbnail-img>
                             </el-thumbnail>
                             <el-label>컴포즈커피</el-label>
                           </a>
@@ -622,10 +638,12 @@ class ComponentHeaderGnb extends HTMLElement {
                         <li>
                           <a href="#">
                             <el-thumbnail>
-                              <img
-                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
-                                alt="투썸플레이스"
-                              />
+                              <el-thumbnail-img>
+                                <img
+                                  src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                                  alt="투썸플레이스"
+                                />
+                              </el-thumbnail-img>
                             </el-thumbnail>
                             <el-label>투썸플레이스</el-label>
                           </a>
@@ -633,10 +651,12 @@ class ComponentHeaderGnb extends HTMLElement {
                         <li>
                           <a href="#">
                             <el-thumbnail>
-                              <img
-                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250430/20250430110647_2318f45e-fe88-4773-8c53-1f62968291b8.jpg"
-                                alt="컴포즈커피"
-                              />
+                              <el-thumbnail-img>
+                                <img
+                                  src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250430/20250430110647_2318f45e-fe88-4773-8c53-1f62968291b8.jpg"
+                                  alt="컴포즈커피"
+                                />
+                              </el-thumbnail-img>
                             </el-thumbnail>
                             <el-label>컴포즈커피</el-label>
                           </a>
@@ -644,10 +664,12 @@ class ComponentHeaderGnb extends HTMLElement {
                         <li>
                           <a href="#">
                             <el-thumbnail>
-                              <img
-                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
-                                alt="투썸플레이스"
-                              />
+                              <el-thumbnail-img>
+                                <img
+                                  src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                                  alt="투썸플레이스"
+                                />
+                              </el-thumbnail-img>
                             </el-thumbnail>
                             <el-label>투썸플레이스</el-label>
                           </a>
@@ -655,10 +677,12 @@ class ComponentHeaderGnb extends HTMLElement {
                         <li>
                           <a href="#">
                             <el-thumbnail>
-                              <img
-                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250430/20250430110647_2318f45e-fe88-4773-8c53-1f62968291b8.jpg"
-                                alt="컴포즈커피"
-                              />
+                              <el-thumbnail-img>
+                                <img
+                                  src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                                  alt="투썸플레이스"
+                                />
+                              </el-thumbnail-img>
                             </el-thumbnail>
                             <el-label>컴포즈커피</el-label>
                           </a>
@@ -666,10 +690,12 @@ class ComponentHeaderGnb extends HTMLElement {
                         <li>
                           <a href="#">
                             <el-thumbnail>
-                              <img
-                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
-                                alt="투썸플레이스"
-                              />
+                              <el-thumbnail-img>
+                                <img
+                                  src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                                  alt="투썸플레이스"
+                                />
+                              </el-thumbnail-img>
                             </el-thumbnail>
                             <el-label>투썸플레이스</el-label>
                           </a>
@@ -677,10 +703,12 @@ class ComponentHeaderGnb extends HTMLElement {
                         <li>
                           <a href="#">
                             <el-thumbnail>
-                              <img
-                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250430/20250430110647_2318f45e-fe88-4773-8c53-1f62968291b8.jpg"
-                                alt="컴포즈커피"
-                              />
+                              <el-thumbnail-img>
+                                <img
+                                  src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                                  alt="투썸플레이스"
+                                />
+                              </el-thumbnail-img>
                             </el-thumbnail>
                             <el-label>컴포즈커피</el-label>
                           </a>
@@ -688,10 +716,12 @@ class ComponentHeaderGnb extends HTMLElement {
                         <li>
                           <a href="#">
                             <el-thumbnail>
-                              <img
-                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
-                                alt="투썸플레이스"
-                              />
+                              <el-thumbnail-img>
+                                <img
+                                  src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                                  alt="투썸플레이스"
+                                />
+                              </el-thumbnail-img>
                             </el-thumbnail>
                             <el-label>투썸플레이스</el-label>
                           </a>
@@ -699,10 +729,12 @@ class ComponentHeaderGnb extends HTMLElement {
                         <li>
                           <a href="#">
                             <el-thumbnail>
-                              <img
-                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250430/20250430110647_2318f45e-fe88-4773-8c53-1f62968291b8.jpg"
-                                alt="컴포즈커피"
-                              />
+                              <el-thumbnail-img>
+                                <img
+                                  src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                                  alt="투썸플레이스"
+                                />
+                              </el-thumbnail-img>
                             </el-thumbnail>
                             <el-label>컴포즈커피</el-label>
                           </a>
@@ -710,10 +742,12 @@ class ComponentHeaderGnb extends HTMLElement {
                         <li>
                           <a href="#">
                             <el-thumbnail>
-                              <img
-                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
-                                alt="투썸플레이스"
-                              />
+                              <el-thumbnail-img>
+                                <img
+                                  src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                                  alt="투썸플레이스"
+                                />
+                              </el-thumbnail-img>
                             </el-thumbnail>
                             <el-label>투썸플레이스</el-label>
                           </a>
@@ -721,10 +755,12 @@ class ComponentHeaderGnb extends HTMLElement {
                         <li>
                           <a href="#">
                             <el-thumbnail>
-                              <img
-                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250430/20250430110647_2318f45e-fe88-4773-8c53-1f62968291b8.jpg"
-                                alt="컴포즈커피"
-                              />
+                              <el-thumbnail-img>
+                                <img
+                                  src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                                  alt="투썸플레이스"
+                                />
+                              </el-thumbnail-img>
                             </el-thumbnail>
                             <el-label>컴포즈커피</el-label>
                           </a>
@@ -732,10 +768,12 @@ class ComponentHeaderGnb extends HTMLElement {
                         <li>
                           <a href="#">
                             <el-thumbnail>
-                              <img
-                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
-                                alt="투썸플레이스"
-                              />
+                              <el-thumbnail-img>
+                                <img
+                                  src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                                  alt="투썸플레이스"
+                                />
+                              </el-thumbnail-img>
                             </el-thumbnail>
                             <el-label>투썸플레이스</el-label>
                           </a>
@@ -743,10 +781,12 @@ class ComponentHeaderGnb extends HTMLElement {
                         <li>
                           <a href="#">
                             <el-thumbnail>
-                              <img
-                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250430/20250430110647_2318f45e-fe88-4773-8c53-1f62968291b8.jpg"
-                                alt="컴포즈커피"
-                              />
+                              <el-thumbnail-img>
+                                <img
+                                  src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                                  alt="투썸플레이스"
+                                />
+                              </el-thumbnail-img>
                             </el-thumbnail>
                             <el-label>컴포즈커피</el-label>
                           </a>
@@ -754,10 +794,12 @@ class ComponentHeaderGnb extends HTMLElement {
                         <li>
                           <a href="#">
                             <el-thumbnail>
-                              <img
-                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
-                                alt="투썸플레이스"
-                              />
+                              <el-thumbnail-img>
+                                <img
+                                  src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                                  alt="투썸플레이스"
+                                />
+                              </el-thumbnail-img>
                             </el-thumbnail>
                             <el-label>투썸플레이스</el-label>
                           </a>
@@ -765,10 +807,12 @@ class ComponentHeaderGnb extends HTMLElement {
                         <li>
                           <a href="#">
                             <el-thumbnail>
-                              <img
-                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250430/20250430110647_2318f45e-fe88-4773-8c53-1f62968291b8.jpg"
-                                alt="컴포즈커피"
-                              />
+                              <el-thumbnail-img>
+                                <img
+                                  src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                                  alt="투썸플레이스"
+                                />
+                              </el-thumbnail-img>
                             </el-thumbnail>
                             <el-label>컴포즈커피</el-label>
                           </a>
@@ -776,10 +820,12 @@ class ComponentHeaderGnb extends HTMLElement {
                         <li>
                           <a href="#">
                             <el-thumbnail>
-                              <img
-                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
-                                alt="투썸플레이스"
-                              />
+                              <el-thumbnail-img>
+                                <img
+                                  src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                                  alt="투썸플레이스"
+                                />
+                              </el-thumbnail-img>
                             </el-thumbnail>
                             <el-label>투썸플레이스</el-label>
                           </a>
@@ -787,10 +833,12 @@ class ComponentHeaderGnb extends HTMLElement {
                         <li>
                           <a href="#">
                             <el-thumbnail>
-                              <img
-                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250430/20250430110647_2318f45e-fe88-4773-8c53-1f62968291b8.jpg"
-                                alt="컴포즈커피"
-                              />
+                              <el-thumbnail-img>
+                                <img
+                                  src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                                  alt="투썸플레이스"
+                                />
+                              </el-thumbnail-img>
                             </el-thumbnail>
                             <el-label>컴포즈커피</el-label>
                           </a>
@@ -798,10 +846,12 @@ class ComponentHeaderGnb extends HTMLElement {
                         <li>
                           <a href="#">
                             <el-thumbnail>
-                              <img
-                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
-                                alt="투썸플레이스"
-                              />
+                              <el-thumbnail-img>
+                                <img
+                                  src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                                  alt="투썸플레이스"
+                                />
+                              </el-thumbnail-img>
                             </el-thumbnail>
                             <el-label>투썸플레이스</el-label>
                           </a>
@@ -809,10 +859,12 @@ class ComponentHeaderGnb extends HTMLElement {
                         <li>
                           <a href="#">
                             <el-thumbnail>
-                              <img
-                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250430/20250430110647_2318f45e-fe88-4773-8c53-1f62968291b8.jpg"
-                                alt="컴포즈커피"
-                              />
+                              <el-thumbnail-img>
+                                <img
+                                  src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                                  alt="투썸플레이스"
+                                />
+                              </el-thumbnail-img>
                             </el-thumbnail>
                             <el-label>컴포즈커피</el-label>
                           </a>
@@ -820,10 +872,12 @@ class ComponentHeaderGnb extends HTMLElement {
                         <li>
                           <a href="#">
                             <el-thumbnail>
-                              <img
-                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
-                                alt="투썸플레이스"
-                              />
+                              <el-thumbnail-img>
+                                <img
+                                  src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                                  alt="투썸플레이스"
+                                />
+                              </el-thumbnail-img>
                             </el-thumbnail>
                             <el-label>투썸플레이스</el-label>
                           </a>
@@ -831,10 +885,12 @@ class ComponentHeaderGnb extends HTMLElement {
                         <li>
                           <a href="#">
                             <el-thumbnail>
-                              <img
-                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250430/20250430110647_2318f45e-fe88-4773-8c53-1f62968291b8.jpg"
-                                alt="컴포즈커피"
-                              />
+                              <el-thumbnail-img>
+                                <img
+                                  src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                                  alt="투썸플레이스"
+                                />
+                              </el-thumbnail-img>
                             </el-thumbnail>
                             <el-label>컴포즈커피</el-label>
                           </a>
@@ -842,10 +898,12 @@ class ComponentHeaderGnb extends HTMLElement {
                         <li>
                           <a href="#">
                             <el-thumbnail>
-                              <img
-                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
-                                alt="투썸플레이스"
-                              />
+                              <el-thumbnail-img>
+                                <img
+                                  src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                                  alt="투썸플레이스"
+                                />
+                              </el-thumbnail-img>
                             </el-thumbnail>
                             <el-label>투썸플레이스</el-label>
                           </a>
@@ -853,10 +911,12 @@ class ComponentHeaderGnb extends HTMLElement {
                         <li>
                           <a href="#">
                             <el-thumbnail>
-                              <img
-                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250430/20250430110647_2318f45e-fe88-4773-8c53-1f62968291b8.jpg"
-                                alt="컴포즈커피"
-                              />
+                              <el-thumbnail-img>
+                                <img
+                                  src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                                  alt="투썸플레이스"
+                                />
+                              </el-thumbnail-img>
                             </el-thumbnail>
                             <el-label>컴포즈커피</el-label>
                           </a>
@@ -864,10 +924,12 @@ class ComponentHeaderGnb extends HTMLElement {
                         <li>
                           <a href="#">
                             <el-thumbnail>
-                              <img
-                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
-                                alt="투썸플레이스"
-                              />
+                              <el-thumbnail-img>
+                                <img
+                                  src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                                  alt="투썸플레이스"
+                                />
+                              </el-thumbnail-img>
                             </el-thumbnail>
                             <el-label>투썸플레이스</el-label>
                           </a>
@@ -875,10 +937,12 @@ class ComponentHeaderGnb extends HTMLElement {
                         <li>
                           <a href="#">
                             <el-thumbnail>
-                              <img
-                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250430/20250430110647_2318f45e-fe88-4773-8c53-1f62968291b8.jpg"
-                                alt="컴포즈커피"
-                              />
+                              <el-thumbnail-img>
+                                <img
+                                  src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                                  alt="투썸플레이스"
+                                />
+                              </el-thumbnail-img>
                             </el-thumbnail>
                             <el-label>컴포즈커피</el-label>
                           </a>
@@ -886,10 +950,12 @@ class ComponentHeaderGnb extends HTMLElement {
                         <li>
                           <a href="#">
                             <el-thumbnail>
-                              <img
-                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
-                                alt="투썸플레이스"
-                              />
+                              <el-thumbnail-img>
+                                <img
+                                  src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                                  alt="투썸플레이스"
+                                />
+                              </el-thumbnail-img>
                             </el-thumbnail>
                             <el-label>투썸플레이스</el-label>
                           </a>
@@ -897,10 +963,12 @@ class ComponentHeaderGnb extends HTMLElement {
                         <li>
                           <a href="#">
                             <el-thumbnail>
-                              <img
-                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250430/20250430110647_2318f45e-fe88-4773-8c53-1f62968291b8.jpg"
-                                alt="컴포즈커피"
-                              />
+                              <el-thumbnail-img>
+                                <img
+                                  src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                                  alt="투썸플레이스"
+                                />
+                              </el-thumbnail-img>
                             </el-thumbnail>
                             <el-label>컴포즈커피</el-label>
                           </a>
@@ -908,10 +976,12 @@ class ComponentHeaderGnb extends HTMLElement {
                         <li>
                           <a href="#">
                             <el-thumbnail>
-                              <img
-                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
-                                alt="투썸플레이스"
-                              />
+                              <el-thumbnail-img>
+                                <img
+                                  src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                                  alt="투썸플레이스"
+                                />
+                              </el-thumbnail-img>
                             </el-thumbnail>
                             <el-label>투썸플레이스</el-label>
                           </a>
@@ -919,10 +989,12 @@ class ComponentHeaderGnb extends HTMLElement {
                         <li>
                           <a href="#">
                             <el-thumbnail>
-                              <img
-                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250430/20250430110647_2318f45e-fe88-4773-8c53-1f62968291b8.jpg"
-                                alt="컴포즈커피"
-                              />
+                              <el-thumbnail-img>
+                                <img
+                                  src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                                  alt="투썸플레이스"
+                                />
+                              </el-thumbnail-img>
                             </el-thumbnail>
                             <el-label>컴포즈커피</el-label>
                           </a>
@@ -930,10 +1002,12 @@ class ComponentHeaderGnb extends HTMLElement {
                         <li>
                           <a href="#">
                             <el-thumbnail>
-                              <img
-                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
-                                alt="투썸플레이스"
-                              />
+                              <el-thumbnail-img>
+                                <img
+                                  src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                                  alt="투썸플레이스"
+                                />
+                              </el-thumbnail-img>
                             </el-thumbnail>
                             <el-label>투썸플레이스</el-label>
                           </a>
@@ -941,10 +1015,12 @@ class ComponentHeaderGnb extends HTMLElement {
                         <li>
                           <a href="#">
                             <el-thumbnail>
-                              <img
-                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250430/20250430110647_2318f45e-fe88-4773-8c53-1f62968291b8.jpg"
-                                alt="컴포즈커피"
-                              />
+                              <el-thumbnail-img>
+                                <img
+                                  src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                                  alt="투썸플레이스"
+                                />
+                              </el-thumbnail-img>
                             </el-thumbnail>
                             <el-label>컴포즈커피</el-label>
                           </a>
@@ -952,10 +1028,12 @@ class ComponentHeaderGnb extends HTMLElement {
                         <li>
                           <a href="#">
                             <el-thumbnail>
-                              <img
-                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
-                                alt="투썸플레이스"
-                              />
+                              <el-thumbnail-img>
+                                <img
+                                  src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                                  alt="투썸플레이스"
+                                />
+                              </el-thumbnail-img>
                             </el-thumbnail>
                             <el-label>투썸플레이스</el-label>
                           </a>
@@ -963,10 +1041,12 @@ class ComponentHeaderGnb extends HTMLElement {
                         <li>
                           <a href="#">
                             <el-thumbnail>
-                              <img
-                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250430/20250430110647_2318f45e-fe88-4773-8c53-1f62968291b8.jpg"
-                                alt="컴포즈커피"
-                              />
+                              <el-thumbnail-img>
+                                <img
+                                  src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                                  alt="투썸플레이스"
+                                />
+                              </el-thumbnail-img>
                             </el-thumbnail>
                             <el-label>컴포즈커피</el-label>
                           </a>
@@ -974,10 +1054,12 @@ class ComponentHeaderGnb extends HTMLElement {
                         <li>
                           <a href="#">
                             <el-thumbnail>
-                              <img
-                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
-                                alt="투썸플레이스"
-                              />
+                              <el-thumbnail-img>
+                                <img
+                                  src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                                  alt="투썸플레이스"
+                                />
+                              </el-thumbnail-img>
                             </el-thumbnail>
                             <el-label>투썸플레이스</el-label>
                           </a>
@@ -985,10 +1067,12 @@ class ComponentHeaderGnb extends HTMLElement {
                         <li>
                           <a href="#">
                             <el-thumbnail>
-                              <img
-                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250430/20250430110647_2318f45e-fe88-4773-8c53-1f62968291b8.jpg"
-                                alt="컴포즈커피"
-                              />
+                              <el-thumbnail-img>
+                                <img
+                                  src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                                  alt="투썸플레이스"
+                                />
+                              </el-thumbnail-img>
                             </el-thumbnail>
                             <el-label>컴포즈커피</el-label>
                           </a>
@@ -996,10 +1080,12 @@ class ComponentHeaderGnb extends HTMLElement {
                         <li>
                           <a href="#">
                             <el-thumbnail>
-                              <img
-                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
-                                alt="투썸플레이스"
-                              />
+                              <el-thumbnail-img>
+                                <img
+                                  src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                                  alt="투썸플레이스"
+                                />
+                              </el-thumbnail-img>
                             </el-thumbnail>
                             <el-label>투썸플레이스</el-label>
                           </a>
@@ -1007,10 +1093,12 @@ class ComponentHeaderGnb extends HTMLElement {
                         <li>
                           <a href="#">
                             <el-thumbnail>
-                              <img
-                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250430/20250430110647_2318f45e-fe88-4773-8c53-1f62968291b8.jpg"
-                                alt="컴포즈커피"
-                              />
+                              <el-thumbnail-img>
+                                <img
+                                  src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                                  alt="투썸플레이스"
+                                />
+                              </el-thumbnail-img>
                             </el-thumbnail>
                             <el-label>컴포즈커피</el-label>
                           </a>
@@ -1018,10 +1106,12 @@ class ComponentHeaderGnb extends HTMLElement {
                         <li>
                           <a href="#">
                             <el-thumbnail>
-                              <img
-                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
-                                alt="투썸플레이스"
-                              />
+                              <el-thumbnail-img>
+                                <img
+                                  src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                                  alt="투썸플레이스"
+                                />
+                              </el-thumbnail-img>
                             </el-thumbnail>
                             <el-label>투썸플레이스</el-label>
                           </a>
@@ -1037,10 +1127,12 @@ class ComponentHeaderGnb extends HTMLElement {
                         <li>
                           <a href="#">
                             <el-thumbnail>
-                              <img
-                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250430/20250430110647_2318f45e-fe88-4773-8c53-1f62968291b8.jpg"
-                                alt="컴포즈커피"
-                              />
+                              <el-thumbnail-img>
+                                <img
+                                  src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                                  alt="투썸플레이스"
+                                />
+                              </el-thumbnail-img>
                             </el-thumbnail>
                             <el-label>커피/음료</el-label>
                           </a>
@@ -1056,10 +1148,12 @@ class ComponentHeaderGnb extends HTMLElement {
                         <li>
                           <a href="#">
                             <el-thumbnail>
-                              <img
-                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250430/20250430110647_2318f45e-fe88-4773-8c53-1f62968291b8.jpg"
-                                alt="컴포즈커피"
-                              />
+                              <el-thumbnail-img>
+                                <img
+                                  src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                                  alt="투썸플레이스"
+                                />
+                              </el-thumbnail-img>
                             </el-thumbnail>
                             <el-label>베이커리/디저트</el-label>
                           </a>
@@ -1075,10 +1169,12 @@ class ComponentHeaderGnb extends HTMLElement {
                         <li>
                           <a href="#">
                             <el-thumbnail>
-                              <img
-                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250430/20250430110647_2318f45e-fe88-4773-8c53-1f62968291b8.jpg"
-                                alt="컴포즈커피"
-                              />
+                              <el-thumbnail-img>
+                                <img
+                                  src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                                  alt="투썸플레이스"
+                                />
+                              </el-thumbnail-img>
                             </el-thumbnail>
                             <el-label>아이스크림</el-label>
                           </a>
@@ -1094,10 +1190,12 @@ class ComponentHeaderGnb extends HTMLElement {
                         <li>
                           <a href="#">
                             <el-thumbnail>
-                              <img
-                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250430/20250430110647_2318f45e-fe88-4773-8c53-1f62968291b8.jpg"
-                                alt="컴포즈커피"
-                              />
+                              <el-thumbnail-img>
+                                <img
+                                  src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                                  alt="투썸플레이스"
+                                />
+                              </el-thumbnail-img>
                             </el-thumbnail>
                             <el-label>치킨/피자/버거</el-label>
                           </a>
@@ -1113,10 +1211,12 @@ class ComponentHeaderGnb extends HTMLElement {
                         <li>
                           <a href="#">
                             <el-thumbnail>
-                              <img
-                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250430/20250430110647_2318f45e-fe88-4773-8c53-1f62968291b8.jpg"
-                                alt="컴포즈커피"
-                              />
+                              <el-thumbnail-img>
+                                <img
+                                  src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                                  alt="투썸플레이스"
+                                />
+                              </el-thumbnail-img>
                             </el-thumbnail>
                             <el-label>외식</el-label>
                           </a>
@@ -1132,10 +1232,12 @@ class ComponentHeaderGnb extends HTMLElement {
                         <li>
                           <a href="#">
                             <el-thumbnail>
-                              <img
-                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250430/20250430110647_2318f45e-fe88-4773-8c53-1f62968291b8.jpg"
-                                alt="컴포즈커피"
-                              />
+                              <el-thumbnail-img>
+                                <img
+                                  src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                                  alt="투썸플레이스"
+                                />
+                              </el-thumbnail-img>
                             </el-thumbnail>
                             <el-label>배달이용권</el-label>
                           </a>
@@ -1151,10 +1253,12 @@ class ComponentHeaderGnb extends HTMLElement {
                         <li>
                           <a href="#">
                             <el-thumbnail>
-                              <img
-                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250430/20250430110647_2318f45e-fe88-4773-8c53-1f62968291b8.jpg"
-                                alt="컴포즈커피"
-                              />
+                              <el-thumbnail-img>
+                                <img
+                                  src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                                  alt="투썸플레이스"
+                                />
+                              </el-thumbnail-img>
                             </el-thumbnail>
                             <el-label>상품권/페이/주유</el-label>
                           </a>
@@ -1170,10 +1274,12 @@ class ComponentHeaderGnb extends HTMLElement {
                         <li>
                           <a href="#">
                             <el-thumbnail>
-                              <img
-                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250430/20250430110647_2318f45e-fe88-4773-8c53-1f62968291b8.jpg"
-                                alt="컴포즈커피"
-                              />
+                              <el-thumbnail-img>
+                                <img
+                                  src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                                  alt="투썸플레이스"
+                                />
+                              </el-thumbnail-img>
                             </el-thumbnail>
                             <el-label>금액권/통합권</el-label>
                           </a>
@@ -1189,10 +1295,12 @@ class ComponentHeaderGnb extends HTMLElement {
                         <li>
                           <a href="#">
                             <el-thumbnail>
-                              <img
-                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250430/20250430110647_2318f45e-fe88-4773-8c53-1f62968291b8.jpg"
-                                alt="컴포즈커피"
-                              />
+                              <el-thumbnail-img>
+                                <img
+                                  src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                                  alt="투썸플레이스"
+                                />
+                              </el-thumbnail-img>
                             </el-thumbnail>
                             <el-label>편의점/마트</el-label>
                           </a>
@@ -1208,10 +1316,12 @@ class ComponentHeaderGnb extends HTMLElement {
                         <li>
                           <a href="#">
                             <el-thumbnail>
-                              <img
-                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250430/20250430110647_2318f45e-fe88-4773-8c53-1f62968291b8.jpg"
-                                alt="컴포즈커피"
-                              />
+                              <el-thumbnail-img>
+                                <img
+                                  src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                                  alt="투썸플레이스"
+                                />
+                              </el-thumbnail-img>
                             </el-thumbnail>
                             <el-label>커문화/생활/뷰티</el-label>
                           </a>
@@ -2014,8 +2124,8 @@ class ComponentProductItem4 extends HTMLElement {
 customElements.define('component-product-item-4', ComponentProductItem4);
 // 종료: el-product-item (4)
 
-// 시작: el-home-category-swiper
-class ComponentHomeCategorySwiper extends HTMLElement {
+// 시작: el-product-item-large (1)
+class ComponentProductItemLarge1 extends HTMLElement {
   constructor() {
     super();
   }
@@ -2027,17 +2137,367 @@ class ComponentHomeCategorySwiper extends HTMLElement {
 
   loadExternalScript() {
     loadScript(this, 'initAlert');
-    loadScript(this, 'initHomeCategorySwiper');
   }
 
   async loadScriptDynamically() {
     loadDynamically(this, 'initAlert');
-    loadDynamically(this, 'initHomeCategorySwiper');
   }
 
   render() {
     this.innerHTML = `
-      <el-home-category-swiper>
+      <el-product-item class="size-large">
+        <a href="#">
+          <el-item-thumbnail>
+            <img
+              class="thumbnail-image"
+              src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/product/20250227/20250227145823_a5b9221d-437d-4b84-b0ac-fbc6f58edf4f.jpg"
+              alt=""
+            />
+            <el-bg></el-bg>
+            <el-badge-special>
+              <img src="./images/badge-event.svg" alt="이벤트특가" />
+            </el-badge-special>
+            <el-badge-period class="typo-label-sm">
+              30일
+            </el-badge-period>
+            <el-layer-action>
+              <button
+                type="button"
+                aria-label="add to cart"
+                onclick="event.preventDefault(); event.stopPropagation(); alert('add to cart')"
+              >
+                <el-icon class="h24-cart"></el-icon>
+              </button>
+              <button type="button" aria-label="buy now">
+                <el-icon class="h24-card"></el-icon>
+              </button>
+            </el-layer-action>
+          </el-item-thumbnail>
+
+          <el-item-txt class="typo-body-sm">
+            <el-item-name>
+              <el-brand>스타벅스</el-brand>
+              <el-item-name-txt>떠먹는 스트로베리</el-item-name-txt>
+            </el-item-name>
+            <el-item-price>
+              <el-sale-price class="typo-body-sm">
+                <strong class="typo-body-lg">999,999</strong>원
+              </el-sale-price>
+            </el-item-price>
+          </el-item-txt>
+        </a>
+      </el-product-item>
+    `;
+  }
+}
+customElements.define(
+  'component-product-item-large-1',
+  ComponentProductItemLarge1
+);
+// 종료: el-product-item-large (1)
+
+// 시작: el-product-item-large (2)
+class ComponentProductItemLarge2 extends HTMLElement {
+  constructor() {
+    super();
+  }
+
+  connectedCallback() {
+    this.render();
+    this.loadExternalScript();
+  }
+
+  loadExternalScript() {
+    loadScript(this, 'initAlert');
+  }
+
+  async loadScriptDynamically() {
+    loadDynamically(this, 'initAlert');
+  }
+
+  render() {
+    this.innerHTML = `
+      <el-product-item class="size-large">
+        <a href="#">
+          <el-item-thumbnail>
+            <img
+              class="thumbnail-image"
+              src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/product/20250227/20250227145823_a5b9221d-437d-4b84-b0ac-fbc6f58edf4f.jpg"
+              alt=""
+            />
+            <el-bg></el-bg>
+            <el-badge-special>
+              <img src="./images/badge-event.svg" alt="이벤트특가" />
+              <img src="./images/badge-reward.svg" alt="리워드지급" />
+            </el-badge-special>
+            <el-badge-period class="typo-label-sm">
+              30일
+            </el-badge-period>
+            <el-layer-action>
+              <button
+                type="button"
+                aria-label="add to cart"
+                onclick="event.preventDefault(); event.stopPropagation(); alert('add to cart')"
+              >
+                <el-icon class="h24-cart"></el-icon>
+              </button>
+              <button type="button" aria-label="buy now">
+                <el-icon class="h24-card"></el-icon>
+              </button>
+            </el-layer-action>
+            <el-layer-disabled class="typo-subtitle-lg">
+              <el-txt>
+                판매가능시간
+                <br />
+                9시 ~ 18시
+              </el-txt>
+              <el-addon class="typo-body-sm">
+                공휴일/주말 제외
+              </el-addon>
+            </el-layer-disabled>
+          </el-item-thumbnail>
+
+          <el-item-txt class="typo-body-sm">
+            <el-badge-gift-card>
+              <img src="./images/badge-gift-card.svg" alt="상품권" />
+            </el-badge-gift-card>
+            <el-item-name>
+              <el-brand>스타벅스</el-brand>
+              <el-item-name-txt>
+                떠먹는 스트로베리 초콜릿 생크림 + 아메리카노 R초콜릿
+                떠먹는 스트로베리 초콜릿 생크림 + 아메리카노 R초콜릿
+              </el-item-name-txt>
+            </el-item-name>
+            <el-item-price>
+              <el-discount-rate class="typo-body-lg">
+                20%
+              </el-discount-rate>
+              <el-sale-price class="typo-body-sm">
+                <strong class="typo-body-lg">999,999</strong>원
+              </el-sale-price>
+              <el-retail-price class="typo-label-md">
+                999,999원
+              </el-retail-price>
+            </el-item-price>
+          </el-item-txt>
+        </a>
+      </el-product-item>
+    `;
+  }
+}
+customElements.define(
+  'component-product-item-large-2',
+  ComponentProductItemLarge2
+);
+// 종료: el-product-item-large (2)
+
+// 시작: el-product-item-large (3)
+class ComponentProductItemLarge3 extends HTMLElement {
+  constructor() {
+    super();
+  }
+
+  connectedCallback() {
+    this.render();
+    this.loadExternalScript();
+  }
+
+  loadExternalScript() {
+    loadScript(this, 'initAlert');
+  }
+
+  async loadScriptDynamically() {
+    loadDynamically(this, 'initAlert');
+  }
+
+  render() {
+    this.innerHTML = `
+      <el-product-item class="disabled size-large">
+        <a href="#">
+          <el-item-thumbnail>
+            <img
+              class="thumbnail-image"
+              src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/product/20250227/20250227145823_a5b9221d-437d-4b84-b0ac-fbc6f58edf4f.jpg"
+              alt=""
+            />
+            <el-bg></el-bg>
+            <el-badge-special>
+              <img src="./images/badge-event.svg" alt="이벤트특가" />
+              <img src="./images/badge-reward.svg" alt="리워드지급" />
+            </el-badge-special>
+            <el-badge-period class="typo-label-sm">
+              30일
+            </el-badge-period>
+            <el-layer-action>
+              <button
+                type="button"
+                aria-label="add to cart"
+                onclick="event.preventDefault(); event.stopPropagation(); alert('add to cart')"
+              >
+                <el-icon class="h24-cart"></el-icon>
+              </button>
+              <button type="button" aria-label="buy now">
+                <el-icon class="h24-card"></el-icon>
+              </button>
+            </el-layer-action>
+            <el-layer-disabled class="typo-subtitle-lg">
+              <el-txt> 일시품절 </el-txt>
+            </el-layer-disabled>
+          </el-item-thumbnail>
+
+          <el-item-txt class="typo-body-sm">
+            <el-badge-gift-card>
+              <img src="./images/badge-gift-card.svg" alt="상품권" />
+            </el-badge-gift-card>
+            <el-item-name>
+              <el-brand>스타벅스</el-brand>
+              <el-item-name-txt>
+                떠먹는 스트로베리 초콜릿 생크림 + 아메리카노 R초콜릿
+                떠먹는 스트로베리 초콜릿 생크림 + 아메리카노 R초콜릿
+              </el-item-name-txt>
+            </el-item-name>
+            <el-item-price>
+              <el-discount-rate class="typo-body-lg">
+                20%
+              </el-discount-rate>
+              <el-sale-price class="typo-body-sm">
+                <strong class="typo-body-lg">999,999</strong>원
+              </el-sale-price>
+              <el-retail-price class="typo-label-md">
+                999,999원
+              </el-retail-price>
+            </el-item-price>
+          </el-item-txt>
+        </a>
+      </el-product-item>
+    `;
+  }
+}
+customElements.define(
+  'component-product-item-large-3',
+  ComponentProductItemLarge3
+);
+// 종료: el-product-item-large (3)
+
+// 시작: el-product-item-large (4)
+class ComponentProductItemLarge4 extends HTMLElement {
+  constructor() {
+    super();
+  }
+
+  connectedCallback() {
+    this.render();
+    this.loadExternalScript();
+  }
+
+  loadExternalScript() {
+    loadScript(this, 'initAlert');
+  }
+
+  async loadScriptDynamically() {
+    loadDynamically(this, 'initAlert');
+  }
+
+  render() {
+    this.innerHTML = `
+      <el-product-item class="disabled size-large">
+        <a href="#">
+          <el-item-thumbnail>
+            <img
+              class="thumbnail-image"
+              src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/product/20250227/20250227145823_a5b9221d-437d-4b84-b0ac-fbc6f58edf4f.jpg"
+              alt=""
+            />
+            <el-bg></el-bg>
+            <el-badge-special>
+              <img src="./images/badge-event.svg" alt="이벤트특가" />
+              <img src="./images/badge-reward.svg" alt="리워드지급" />
+            </el-badge-special>
+            <el-badge-period class="typo-label-sm">
+              30일
+            </el-badge-period>
+            <el-layer-action>
+              <button
+                type="button"
+                aria-label="add to cart"
+                onclick="event.preventDefault(); event.stopPropagation(); alert('add to cart')"
+              >
+                <el-icon class="h24-cart"></el-icon>
+              </button>
+              <button type="button" aria-label="buy now">
+                <el-icon class="h24-card"></el-icon>
+              </button>
+            </el-layer-action>
+            <el-layer-disabled class="typo-subtitle-lg">
+              <el-txt>
+                판매가능시간
+                <br />
+                9시 ~ 18시
+              </el-txt>
+              <el-addon class="typo-body-sm">
+                공휴일/주말 제외
+              </el-addon>
+            </el-layer-disabled>
+          </el-item-thumbnail>
+
+          <el-item-txt class="typo-body-sm">
+            <el-badge-gift-card>
+              <img src="./images/badge-gift-card.svg" alt="상품권" />
+            </el-badge-gift-card>
+            <el-item-name>
+              <el-brand>스타벅스</el-brand>
+              <el-item-name-txt>
+                떠먹는 스트로베리 초콜릿 생크림 + 아메리카노 R초콜릿
+                떠먹는 스트로베리 초콜릿 생크림 + 아메리카노 R초콜릿
+              </el-item-name-txt>
+            </el-item-name>
+            <el-item-price>
+              <el-discount-rate class="typo-body-lg">
+                20%
+              </el-discount-rate>
+              <el-sale-price class="typo-body-sm">
+                <strong class="typo-body-lg">999,999</strong>원
+              </el-sale-price>
+              <el-retail-price class="typo-label-md">
+                999,999원
+              </el-retail-price>
+            </el-item-price>
+          </el-item-txt>
+        </a>
+      </el-product-item>
+    `;
+  }
+}
+customElements.define(
+  'component-product-item-large-4',
+  ComponentProductItemLarge4
+);
+// 종료: el-product-item-large (4)
+
+// 시작: el-category-swiper
+class ComponentCategorySwiper extends HTMLElement {
+  constructor() {
+    super();
+  }
+
+  connectedCallback() {
+    this.render();
+    this.loadExternalScript();
+  }
+
+  loadExternalScript() {
+    loadScript(this, 'initAlert');
+    loadScript(this, 'initCategorySwiper');
+  }
+
+  async loadScriptDynamically() {
+    loadDynamically(this, 'initAlert');
+    loadDynamically(this, 'initCategorySwiper');
+  }
+
+  render() {
+    this.innerHTML = `
+      <el-category-swiper>
         <el-swiper-wrapper>
           <swiper-container init="false">
             <swiper-slide>
@@ -2140,15 +2600,435 @@ class ComponentHomeCategorySwiper extends HTMLElement {
             ></el-icon>
           </button>
         </el-swiper-navigation>
-      </el-home-category-swiper>
+      </el-category-swiper>
     `;
   }
 }
-customElements.define(
-  'component-home-category-swiper',
-  ComponentHomeCategorySwiper
-);
-// 종료: el-home-category-swiper
+customElements.define('component-category-swiper', ComponentCategorySwiper);
+// 종료: el-category-swiper
+
+// 시작: el-breadcrumb
+class ComponentBreadcrumb extends HTMLElement {
+  constructor() {
+    super();
+  }
+
+  connectedCallback() {
+    this.render();
+    this.loadExternalScript();
+  }
+
+  loadExternalScript() {
+    loadScript(this, 'initAlert');
+  }
+
+  async loadScriptDynamically() {
+    loadDynamically(this, 'initAlert');
+  }
+
+  render() {
+    this.innerHTML = `
+      <el-breadcrumb>
+        <ul class="typo-label-lg">
+          <li><a href="#">HOME</a></li>
+          <li>
+            <button
+              type="button"
+              class="typo-label-lg"
+              data-bs-toggle="dropdown"
+              data-bs-offset="-16,8"
+            >
+              커피/음료
+              <el-icon-wrap>
+                <el-icon class="h5-arrow-down natural-30"></el-icon>
+              </el-icon-wrap>
+            </button>
+            <el-breadcrumb-layer-dropdown class="dropdown-menu">
+              <!-- 시작: [DEV] 컬럼당 21개씩 출력 -->
+              <ul class="typo-label-md">
+                <li>
+                  <a href="#">전체 카테고리</a>
+                </li>
+                <li class="active">
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+              </ul>
+              <!-- 종료: [DEV] 컬럼당 21개씩 출력 -->
+            </el-breadcrumb-layer-dropdown>
+          </li>
+          <li>
+            <button
+              type="button"
+              class="typo-label-lg"
+              data-bs-toggle="dropdown"
+              data-bs-offset="-16,8"
+            >
+              스타벅스
+              <el-icon-wrap>
+                <el-icon class="h5-arrow-down natural-30"></el-icon>
+              </el-icon-wrap>
+            </button>
+            <el-breadcrumb-layer-dropdown class="dropdown-menu">
+              <!-- 시작: [DEV] 컬럼당 21개씩 출력 -->
+              <ul class="typo-label-md">
+                <li>
+                  <a href="#">전체 카테고리</a>
+                </li>
+                <li class="active">
+                  <a href="#">상품권/페이/주유/상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+              </ul>
+              <!-- 종료: [DEV] 컬럼당 21개씩 출력 -->
+              <!-- 시작: [DEV] 컬럼당 21개씩 출력 -->
+              <ul class="typo-label-md">
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+              </ul>
+              <!-- 종료: [DEV] 컬럼당 21개씩 출력 -->
+              <!-- 시작: [DEV] 컬럼당 21개씩 출력 -->
+              <ul class="typo-label-md">
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+              </ul>
+              <!-- 종료: [DEV] 컬럼당 21개씩 출력 -->
+              <!-- 시작: [DEV] 컬럼당 21개씩 출력 -->
+              <ul class="typo-label-md">
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+                <li>
+                  <a href="#">상품권/페이/주유</a>
+                </li>
+              </ul>
+              <!-- 종료: [DEV] 컬럼당 21개씩 출력 -->
+            </el-breadcrumb-layer-dropdown>
+          </li>
+          <li>상품상세</li>
+        </ul>
+      </el-breadcrumb>
+    `;
+  }
+}
+customElements.define('component-breadcrumb', ComponentBreadcrumb);
+// 종료: el-breadcrumb
+
+// 시작: pagination
+class Pagination extends HTMLElement {
+  constructor() {
+    super();
+  }
+
+  connectedCallback() {
+    this.render();
+    this.loadExternalScript();
+  }
+
+  loadExternalScript() {
+    loadScript(this, 'initAlert');
+  }
+
+  async loadScriptDynamically() {
+    loadDynamically(this, 'initAlert');
+  }
+
+  render() {
+    this.innerHTML = `
+      <el-pagination>
+        <nav aria-label="Page navigation">
+          <el-pagination-prev>
+            <a href="#" aria-label="처음">
+              <el-icon class="h20-chevrons-left natural-0"></el-icon>
+            </a>
+            <a href="#" aria-label="이전">
+              <el-icon class="h20-arrow-left natural-0"></el-icon>
+            </a>
+          </el-pagination-prev>
+          <ul class="typo-body-sm">
+            <li class="active">
+              <a href="#">1</a>
+            </li>
+            <li>
+              <a href="#">2</a>
+            </li>
+            <li>
+              <a href="#">3</a>
+            </li>
+            <li>
+              <a href="#">4</a>
+            </li>
+            <li>
+              <a href="#">5</a>
+            </li>
+            <li>
+              <a href="#">6</a>
+            </li>
+            <li>
+              <a href="#">7</a>
+            </li>
+            <li>
+              <a href="#">8</a>
+            </li>
+            <li>
+              <a href="#">9</a>
+            </li>
+            <li>
+              <a href="#">10</a>
+            </li>
+          </ul>
+          <el-pagination-next>
+            <a href="#" aria-label="다음">
+              <el-icon class="h20-arrow-right natural-0"></el-icon>
+            </a>
+            <a href="#" aria-label="마지막">
+              <el-icon class="h20-chevrons-right natural-0"></el-icon>
+            </a>
+          </el-pagination-next>
+        </nav>
+      </el-pagination>
+    `;
+  }
+}
+customElements.define('component-pagination', Pagination);
+// 종료: pagination
 
 // 시작:
 class MyButton extends HTMLElement {

@@ -482,17 +482,15 @@ initCategoryImageCarousel();
 // 종료: el-category-image-carousel
 
 // 시작: el-category-swiper
-const initHomeCategorySwiper = () => {
-  const categorySwiperEls = document.querySelectorAll(
-    'el-home-category-swiper'
-  );
+const initCategorySwiper = () => {
+  const categorySwiperEls = document.querySelectorAll('el-category-swiper');
 
   if (categorySwiperEls?.length > 0) {
     const swiperParams = {
       slidesPerView: 'auto',
       spaceBetween: 4,
       slidesOffsetBefore: 1,
-      slidesOffsetAfter: 12,
+      slidesOffsetAfter: 18,
       focusableElements: 'select',
     };
 
@@ -562,10 +560,10 @@ const initHomeCategorySwiper = () => {
 
 // 전역 함수로 등록
 if (window !== undefined) {
-  window.initHomeCategorySwiper = initHomeCategorySwiper;
+  window.initCategorySwiper = initCategorySwiper;
 }
 
-initHomeCategorySwiper();
+initCategorySwiper();
 // 종료: el-category-swiper
 
 // 시작: el-home-brand-carousel
