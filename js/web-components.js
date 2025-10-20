@@ -2951,6 +2951,85 @@ class ComponentBreadcrumb extends HTMLElement {
 customElements.define('component-breadcrumb', ComponentBreadcrumb);
 // 종료: el-breadcrumb
 
+// 시작: pagination
+class Pagination extends HTMLElement {
+  constructor() {
+    super();
+  }
+
+  connectedCallback() {
+    this.render();
+    this.loadExternalScript();
+  }
+
+  loadExternalScript() {
+    loadScript(this, 'initAlert');
+  }
+
+  async loadScriptDynamically() {
+    loadDynamically(this, 'initAlert');
+  }
+
+  render() {
+    this.innerHTML = `
+      <el-pagination>
+        <nav aria-label="Page navigation">
+          <el-pagination-prev>
+            <a href="#" aria-label="처음">
+              <el-icon class="h20-chevrons-left natural-0"></el-icon>
+            </a>
+            <a href="#" aria-label="이전">
+              <el-icon class="h20-arrow-left natural-0"></el-icon>
+            </a>
+          </el-pagination-prev>
+          <ul class="typo-body-sm">
+            <li class="active">
+              <a href="#">1</a>
+            </li>
+            <li>
+              <a href="#">2</a>
+            </li>
+            <li>
+              <a href="#">3</a>
+            </li>
+            <li>
+              <a href="#">4</a>
+            </li>
+            <li>
+              <a href="#">5</a>
+            </li>
+            <li>
+              <a href="#">6</a>
+            </li>
+            <li>
+              <a href="#">7</a>
+            </li>
+            <li>
+              <a href="#">8</a>
+            </li>
+            <li>
+              <a href="#">9</a>
+            </li>
+            <li>
+              <a href="#">10</a>
+            </li>
+          </ul>
+          <el-pagination-next>
+            <a href="#" aria-label="다음">
+              <el-icon class="h20-arrow-right natural-0"></el-icon>
+            </a>
+            <a href="#" aria-label="마지막">
+              <el-icon class="h20-chevrons-right natural-0"></el-icon>
+            </a>
+          </el-pagination-next>
+        </nav>
+      </el-pagination>
+    `;
+  }
+}
+customElements.define('component-pagination', Pagination);
+// 종료: pagination
+
 // 시작:
 class MyButton extends HTMLElement {
   constructor() {

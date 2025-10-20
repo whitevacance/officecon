@@ -500,6 +500,18 @@ el-icon {
     -webkit-mask-image: url('../images/icon-h20-refresh.svg');
     mask-image: url('../images/icon-h20-refresh.svg');
   }
+  &.h20-chevrons-left {
+    width: 20px;
+    height: 20px;
+    -webkit-mask-image: url('../images/icon-h20-chevrons-left.svg');
+    mask-image: url('../images/icon-h20-chevrons-left.svg');
+  }
+  &.h20-chevrons-right {
+    width: 20px;
+    height: 20px;
+    -webkit-mask-image: url('../images/icon-h20-chevrons-right.svg');
+    mask-image: url('../images/icon-h20-chevrons-right.svg');
+  }
   &.h16-closed {
     width: 16px;
     height: 16px;
@@ -1776,6 +1788,59 @@ el-category-swiper {
   }
 }
 /* 종료: 공통 > 카테고리 스와이퍼 */
+
+/* 시작: 공통 > pagination */
+el-pagination {
+  display: flex;
+  width: 100%;
+
+  & > nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 26px;
+    width: 100%;
+
+    el-pagination-prev,
+    el-pagination-next {
+      a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        height: 40px;
+        padding: 10px;
+      }
+    }
+
+    & > ul {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+
+      a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        height: 40px;
+        padding: 10px;
+        color: var(--color-natural-40);
+        font-weight: 600;
+        &:hover {
+          color: var(--color-natural-0);
+        }
+      }
+
+      & > li.active {
+        a {
+          color: var(--color-natural-0);
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}
+/* 종료: 공통 > pagination */
 
 /* 시작: 레이아웃 > wrapper, container */
 el-wrapper {
@@ -4240,6 +4305,12 @@ el-products-list {
     gap: 40px 20px;
     width: 100%;
   }
+}
+
+el-products-pagination {
+  display: block;
+  width: 100%;
+  padding-top: 80px;
 }
 /* 종료: 상품리스트 */
 
