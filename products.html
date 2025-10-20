@@ -637,12 +637,232 @@
                   <el-filter-detail-bar>
                     <el-left>
                       <el-tab-button>
-                        <button type="button" class="typo-label-lg">
+                        <button
+                          type="button"
+                          class="active typo-label-lg"
+                          data-bs-toggle="dropdown"
+                          data-bs-display="static"
+                          data-bs-auto-close="outside"
+                        >
                           혜택 1 선택
                           <el-icon class="h16-arrow-down natural-40"></el-icon>
                         </button>
+                        <el-filter-detail-layer-dropdown
+                          class="dropdown-1 dropdown-menu"
+                        >
+                          <el-filter-dtail-list>
+                            <ul class="typo-body-sm">
+                              <li>
+                                <button
+                                  type="button"
+                                  class="button-h43-square typo-body-sm"
+                                >
+                                  베스트
+                                </button>
+                              </li>
+                              <li>
+                                <button
+                                  type="button"
+                                  class="active button-h43-square typo-body-sm"
+                                >
+                                  특가
+                                </button>
+                              </li>
+                            </ul>
+                          </el-filter-dtail-list>
+
+                          <el-cta-bar>
+                            <button
+                              type="button"
+                              class="refresh button-h43-square typo-body-sm"
+                              aria-label="refresh"
+                            >
+                              <el-icon class="h20-refresh natural-0"></el-icon>
+                            </button>
+                            <button
+                              type="button"
+                              class="button-h43-square-fill typo-body-sm"
+                            >
+                              적용
+                            </button>
+                          </el-cta-bar>
+                        </el-filter-detail-layer-dropdown>
+                      </el-tab-button>
+
+                      <el-tab-button>
+                        <button
+                          type="button"
+                          class="typo-label-lg"
+                          data-bs-toggle="dropdown"
+                          data-bs-display="static"
+                          data-bs-auto-close="outside"
+                        >
+                          테마 선택
+                          <el-icon class="h16-arrow-down natural-40"></el-icon>
+                        </button>
+                        <el-filter-detail-layer-dropdown
+                          class="dropdown-2 dropdown-menu"
+                        >
+                          <el-filter-dtail-list class="column-2">
+                            <ul class="typo-body-sm">
+                              <li>
+                                <button
+                                  type="button"
+                                  class="button-h43-square typo-body-sm"
+                                >
+                                  이벤트 보상
+                                </button>
+                              </li>
+                              <li>
+                                <button
+                                  type="button"
+                                  class="active button-h43-square typo-body-sm"
+                                >
+                                  기념일 축하
+                                </button>
+                              </li>
+                              <li>
+                                <button
+                                  type="button"
+                                  class="active button-h43-square typo-body-sm"
+                                >
+                                  성과 보상
+                                </button>
+                              </li>
+                              <li>
+                                <button
+                                  type="button"
+                                  class="button-h43-square typo-body-sm"
+                                >
+                                  명절 선물
+                                </button>
+                              </li>
+                            </ul>
+                          </el-filter-dtail-list>
+
+                          <el-cta-bar>
+                            <button
+                              type="button"
+                              class="refresh button-h43-square typo-body-sm"
+                              aria-label="refresh"
+                            >
+                              <el-icon class="h20-refresh natural-0"></el-icon>
+                            </button>
+                            <button
+                              type="button"
+                              class="button-h43-square-fill typo-body-sm"
+                            >
+                              적용
+                            </button>
+                          </el-cta-bar>
+                        </el-filter-detail-layer-dropdown>
+                      </el-tab-button>
+
+                      <el-tab-button>
+                        <button
+                          type="button"
+                          class="active typo-label-lg"
+                          data-bs-toggle="dropdown"
+                          data-bs-display="static"
+                          data-bs-auto-close="outside"
+                        >
+                          1,000,000원 ~ 2,000,000원
+                          <el-icon class="h16-arrow-down natural-40"></el-icon>
+                        </button>
+                        <el-filter-detail-layer-dropdown
+                          class="dropdown-3 dropdown-menu"
+                        >
+                          <el-filter-dtail-list class="column-2">
+                            <ul class="typo-body-sm">
+                              <li>
+                                <button
+                                  type="button"
+                                  class="button-h43-square typo-body-sm"
+                                >
+                                  3천원 이하
+                                </button>
+                              </li>
+                              <li>
+                                <button
+                                  type="button"
+                                  class="active button-h43-square typo-body-sm"
+                                >
+                                  3~5천원
+                                </button>
+                              </li>
+                              <li>
+                                <button
+                                  type="button"
+                                  class="active button-h43-square typo-body-sm"
+                                >
+                                  5천~1만원
+                                </button>
+                              </li>
+                              <li>
+                                <button
+                                  type="button"
+                                  class="button-h43-square typo-body-sm"
+                                >
+                                  5천~1만원
+                                </button>
+                              </li>
+                              <li>
+                                <button
+                                  type="button"
+                                  class="button-h43-square typo-body-sm"
+                                >
+                                  3만원 이상
+                                </button>
+                              </li>
+                              <li>
+                                <button
+                                  type="button"
+                                  class="button-h43-square typo-body-sm"
+                                >
+                                  직접 입력
+                                </button>
+                              </li>
+                            </ul>
+                          </el-filter-dtail-list>
+
+                          <el-tilre-detail-inputs>
+                            <el-input>
+                              <input
+                                class="active form-control custom-input"
+                                type="text"
+                                placeholder="최소가 입력"
+                              />
+                            </el-input>
+                            ~
+                            <el-input>
+                              <input
+                                disabled
+                                class="active form-control custom-input"
+                                type="text"
+                                placeholder="최대가 입력"
+                              />
+                            </el-input>
+                          </el-tilre-detail-inputs>
+
+                          <el-cta-bar>
+                            <button
+                              type="button"
+                              class="refresh button-h43-square typo-body-sm"
+                              aria-label="refresh"
+                            >
+                              <el-icon class="h20-refresh natural-0"></el-icon>
+                            </button>
+                            <button
+                              type="button"
+                              class="button-h43-square-fill typo-body-sm"
+                            >
+                              적용
+                            </button>
+                          </el-cta-bar>
+                        </el-filter-detail-layer-dropdown>
                       </el-tab-button>
                     </el-left>
+
                     <el-right>
                       <el-tab-button>
                         <button type="button" class="typo-label-lg">

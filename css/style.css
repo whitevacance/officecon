@@ -494,6 +494,12 @@ el-icon {
     -webkit-mask-image: url('../images/icon-h20-play.svg');
     mask-image: url('../images/icon-h20-play.svg');
   }
+  &.h20-refresh {
+    width: 20px;
+    height: 20px;
+    -webkit-mask-image: url('../images/icon-h20-refresh.svg');
+    mask-image: url('../images/icon-h20-refresh.svg');
+  }
   &.h16-closed {
     width: 16px;
     height: 16px;
@@ -786,6 +792,41 @@ button {
     }
   }
 
+  &.button-h43-square {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    min-width: 0px;
+    height: 43px;
+    padding: 0 20px;
+    border-radius: 8px;
+    border: 1px solid var(--color-natural-70);
+    background-color: var(--color-natural-100);
+    overflow: hidden;
+    color: var(--color-natural-40);
+
+    &.active {
+      color: var(--color-natural-0);
+      border-color: var(--color-natural-0);
+    }
+  }
+
+  &.button-h43-square-fill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    min-width: 0px;
+    height: 43px;
+    padding: 0 20px;
+    border-radius: 8px;
+    border: 1px solid var(--color-natural-0);
+    background-color: var(--color-natural-0);
+    overflow: hidden;
+    color: var(--color-natural-100);
+  }
+
   &.button-h34-cash {
     display: inline-flex;
     align-items: center;
@@ -893,13 +934,15 @@ el-input {
       color: var(--color-natural-50);
     }
 
-    &:focus {
+    &:focus,
+    &.active {
       border-color: var(--color-natural-0);
     }
 
     &:disabled {
       opacity: 1;
       cursor: default;
+      border-color: var(--color-natural-70);
       background-color: var(--color-natural-95);
     }
   }
@@ -3827,7 +3870,6 @@ el-products-filter {
   width: 100%;
   border: 1px solid var(--color-natural-80);
   border-radius: 10px;
-  overflow: hidden;
   background-color: var(--color-natural-95);
 
   el-filter-label {
@@ -3979,6 +4021,108 @@ el-products-filter {
       justify-content: space-between;
       width: 100%;
       padding: 14px 0 16px;
+
+      el-tab-button {
+        &:after {
+          content: '';
+          display: none;
+          width: 12px;
+          height: 12px;
+          position: absolute;
+          bottom: -20px;
+          left: 50%;
+          transform: translateX(-50%) rotate(45deg) skew(4deg, 4deg);
+          background-color: var(--color-natural-100);
+          z-index: 1010;
+        }
+
+        &:has(button.show) {
+          &:after {
+            display: block;
+          }
+        }
+
+        & > button.show,
+        & > button.active {
+          border-color: var(--color-natural-0);
+          background-color: var(--color-natural-0);
+          color: var(--color-natural-100);
+
+          & > el-icon {
+            background-color: var(--color-natural-100);
+          }
+        }
+      }
+
+      el-filter-detail-layer-dropdown.dropdown-menu {
+        width: fit-content;
+        padding: 20px;
+        background-color: var(--color-natural-100);
+        border: none;
+        border-radius: 20px;
+        box-shadow: var(--color-boxShadow-3);
+
+        &.dropdown-1,
+        &.dropdown-2,
+        &.dropdown-3 {
+          left: -37px;
+          margin-top: 12px;
+        }
+        &.dropdown-1 {
+          left: 3px;
+        }
+
+        el-filter-dtail-list {
+          display: block;
+          width: 160px;
+
+          & > ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 11px;
+            width: 100%;
+
+            & > li {
+              width: 160px;
+
+              & > button {
+                width: 100%;
+              }
+            }
+          }
+
+          &.column-2 {
+            width: 331px;
+          }
+        }
+
+        el-tilre-detail-inputs {
+          display: flex;
+          align-items: center;
+          gap: 1px;
+          padding-top: 8px;
+        }
+
+        el-cta-bar {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 6px;
+          padding-top: 16px;
+
+          & > button {
+            width: 100%;
+          }
+
+          & > button.refresh {
+            flex-grow: 0;
+            flex-shrink: 0;
+            padding: 0;
+            width: 43px;
+            height: 43px;
+          }
+        }
+      }
 
       el-left {
         display: flex;
