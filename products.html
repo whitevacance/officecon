@@ -49,7 +49,7 @@
   </head>
   <body>
     <!-- [DEV] 일반회원일 때 className: 'personal-member' -->
-    <el-wrapper class="home">
+    <el-wrapper>
       <el-container>
         <!-- 시작: [DEV] 웹컴포넌트
           1. 퍼블리싱용 웹컴포넌트입니다.
@@ -875,6 +875,142 @@
                 </el-filter-content>
               </el-filter-detail>
             </el-products-filter>
+
+            <el-products-list-top-bar>
+              <el-left>
+                <el-products-count class="typo-body-lg">
+                  총 <strong>999,999</strong>개의 상품
+                </el-products-count>
+                <el-products-search>
+                  <el-input>
+                    <input
+                      class="form-control custom-input"
+                      type="text"
+                      placeholder="결과 내 재검색"
+                      value=""
+                    />
+                    <el-input-addon>
+                      <button
+                        type="button"
+                        class="input-clear-button"
+                        aria-label="clear"
+                      >
+                        <el-icon class="h12-closed"></el-icon>
+                      </button>
+                      <button type="button" aria-label="search">
+                        <el-icon class="h24-search natural-0"></el-icon>
+                      </button>
+                    </el-input-addon>
+                  </el-input>
+                </el-products-search>
+              </el-left>
+
+              <el-right>
+                <ul>
+                  <li class="active">
+                    <button type="button" class="typo-label-lg">
+                      <el-icon class="h16-check natural-0"></el-icon>
+                      인기순
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" class="typo-label-lg">
+                      <el-icon class="h16-check natural-0"></el-icon>
+                      최근등록순
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" class="typo-label-lg">
+                      <el-icon class="h16-check natural-0"></el-icon>
+                      낮은가격순
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" class="typo-label-lg">
+                      <el-icon class="h16-check natural-0"></el-icon>
+                      높은가격순
+                    </button>
+                  </li>
+                </ul>
+              </el-right>
+            </el-products-list-top-bar>
+
+            <el-products-list>
+              <ul>
+                <li>
+                  <!-- 시작: [DEV] 웹컴포넌트
+                    1. 퍼블리싱용 웹컴포넌트입니다.
+                    2. el-product-item : size-large
+                    3. 개발 시 examples.html 원본을 참고해 주세요.
+                  -->
+                  <component-product-item-large-1></component-product-item-large-1>
+                  <!-- 종료: [DEV] 웹컴포넌트 -->
+                </li>
+                <li>
+                  <!-- 시작: [DEV] 웹컴포넌트
+                    1. 퍼블리싱용 웹컴포넌트입니다.
+                    2. el-product-item : size-large
+                    3. 개발 시 examples.html 원본을 참고해 주세요.
+                  -->
+                  <component-product-item-large-2></component-product-item-large-2>
+                  <!-- 종료: [DEV] 웹컴포넌트 -->
+                </li>
+                <li>
+                  <!-- 시작: [DEV] 웹컴포넌트
+                    1. 퍼블리싱용 웹컴포넌트입니다.
+                    2. el-product-item : size-large
+                    3. 개발 시 examples.html 원본을 참고해 주세요.
+                  -->
+                  <component-product-item-large-1></component-product-item-large-1>
+                  <!-- 종료: [DEV] 웹컴포넌트 -->
+                </li>
+                <li>
+                  <!-- 시작: [DEV] 웹컴포넌트
+                    1. 퍼블리싱용 웹컴포넌트입니다.
+                    2. el-product-item : size-large
+                    3. 개발 시 examples.html 원본을 참고해 주세요.
+                  -->
+                  <component-product-item-large-2></component-product-item-large-2>
+                  <!-- 종료: [DEV] 웹컴포넌트 -->
+                </li>
+                <li>
+                  <!-- 시작: [DEV] 웹컴포넌트
+                    1. 퍼블리싱용 웹컴포넌트입니다.
+                    2. el-product-item : size-large
+                    3. 개발 시 examples.html 원본을 참고해 주세요.
+                  -->
+                  <component-product-item-large-1></component-product-item-large-1>
+                  <!-- 종료: [DEV] 웹컴포넌트 -->
+                </li>
+                <li>
+                  <!-- 시작: [DEV] 웹컴포넌트
+                    1. 퍼블리싱용 웹컴포넌트입니다.
+                    2. el-product-item : size-large
+                    3. 개발 시 examples.html 원본을 참고해 주세요.
+                  -->
+                  <component-product-item-large-2></component-product-item-large-2>
+                  <!-- 종료: [DEV] 웹컴포넌트 -->
+                </li>
+                <li>
+                  <!-- 시작: [DEV] 웹컴포넌트
+                    1. 퍼블리싱용 웹컴포넌트입니다.
+                    2. el-product-item : size-large
+                    3. 개발 시 examples.html 원본을 참고해 주세요.
+                  -->
+                  <component-product-item-large-3></component-product-item-large-3>
+                  <!-- 종료: [DEV] 웹컴포넌트 -->
+                </li>
+                <li>
+                  <!-- 시작: [DEV] 웹컴포넌트
+                    1. 퍼블리싱용 웹컴포넌트입니다.
+                    2. el-product-item : size-large
+                    3. 개발 시 examples.html 원본을 참고해 주세요.
+                  -->
+                  <component-product-item-large-4></component-product-item-large-4>
+                  <!-- 종료: [DEV] 웹컴포넌트 -->
+                </li>
+              </ul>
+            </el-products-list>
           </el-content>
         </main>
         <!-- 종료: 컨텐츠 -->

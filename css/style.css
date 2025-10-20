@@ -524,6 +524,12 @@ el-icon {
     -webkit-mask-image: url('../images/icon-h16-refresh.svg');
     mask-image: url('../images/icon-h16-refresh.svg');
   }
+  &.h16-check {
+    width: 16px;
+    height: 16px;
+    -webkit-mask-image: url('../images/icon-h16-check.svg');
+    mask-image: url('../images/icon-h16-check.svg');
+  }
   &.h12-closed {
     width: 12px;
     height: 12px;
@@ -4149,6 +4155,90 @@ el-products-filter {
         }
       }
     }
+  }
+}
+
+el-products-list-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding-top: 32px;
+
+  & > el-left {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+    el-products-count {
+      color: var(--color-natural-30);
+      strong {
+        color: var(--color-natural-0);
+      }
+    }
+
+    el-products-search {
+      display: block;
+      width: 203px;
+    }
+  }
+
+  & > el-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    & > ul {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 20px;
+
+      & > li {
+        display: flex;
+        align-items: center;
+
+        & > button {
+          display: inline-flex;
+          align-items: center;
+          gap: 3px;
+          color: var(--color-natural-40);
+          font-weight: 600;
+
+          &:hover {
+            color: var(--color-natural-0);
+          }
+
+          el-icon {
+            display: none;
+          }
+        }
+
+        &.active {
+          & > button {
+            font-weight: 700;
+            color: var(--color-natural-0);
+
+            el-icon {
+              display: inline-block;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+el-products-list {
+  display: block;
+  width: 100%;
+  padding-top: 32px;
+
+  & > ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px 20px;
+    width: 100%;
   }
 }
 /* 종료: 상품리스트 */
