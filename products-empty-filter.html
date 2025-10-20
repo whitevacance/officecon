@@ -81,13 +81,6 @@
           </el-main-header>
 
           <el-content>
-            <el-search-result class="typo-subtitle-lg">
-              <strong>
-                '라떼최대삼십자최대삼십자최대삼십자최대삼십자최대삼십자최대삼'
-              </strong>
-              검색결과입니다.
-            </el-search-result>
-
             <el-products-filter>
               <el-filter-category>
                 <el-filter-label class="typo-body-sm">
@@ -879,7 +872,7 @@
             <el-products-list-top-bar class="mt-4 pt-2">
               <el-left>
                 <el-products-count class="typo-body-lg">
-                  총 <strong>999,999</strong>개의 상품
+                  총 <strong>0</strong>개의 상품
                 </el-products-count>
                 <el-products-search>
                   <el-input>
@@ -935,7 +928,21 @@
               </el-right>
             </el-products-list-top-bar>
 
-            <el-products-list class="mt-4 pt-2">
+            <el-products-empty>
+              <el-products-empty-content class="typo-subtitle-md">
+                <h4 class="typo-heading-sm">관련 상품이 없습니다.</h4>
+                <p>
+                  상품권류(백화점, 주유권, 컬쳐랜드 등) 판매 시간은 09:00 ~
+                  18:00 (공휴일 제외) 입니다.
+                </p>
+              </el-products-empty-content>
+            </el-products-empty>
+
+            <el-section-title>
+              <h3 class="typo-subtitle-lg">추천상품</h3>
+            </el-section-title>
+
+            <el-products-list class="mt-4 pt-3">
               <ul>
                 <li>
                   <!-- 시작: [DEV] 웹컴포넌트
@@ -982,45 +989,8 @@
                   <component-product-item-large-1></component-product-item-large-1>
                   <!-- 종료: [DEV] 웹컴포넌트 -->
                 </li>
-                <li>
-                  <!-- 시작: [DEV] 웹컴포넌트
-                    1. 퍼블리싱용 웹컴포넌트입니다.
-                    2. el-product-item : size-large
-                    3. 개발 시 examples.html 원본을 참고해 주세요.
-                  -->
-                  <component-product-item-large-2></component-product-item-large-2>
-                  <!-- 종료: [DEV] 웹컴포넌트 -->
-                </li>
-                <li>
-                  <!-- 시작: [DEV] 웹컴포넌트
-                    1. 퍼블리싱용 웹컴포넌트입니다.
-                    2. el-product-item : size-large
-                    3. 개발 시 examples.html 원본을 참고해 주세요.
-                  -->
-                  <component-product-item-large-3></component-product-item-large-3>
-                  <!-- 종료: [DEV] 웹컴포넌트 -->
-                </li>
-                <li>
-                  <!-- 시작: [DEV] 웹컴포넌트
-                    1. 퍼블리싱용 웹컴포넌트입니다.
-                    2. el-product-item : size-large
-                    3. 개발 시 examples.html 원본을 참고해 주세요.
-                  -->
-                  <component-product-item-large-4></component-product-item-large-4>
-                  <!-- 종료: [DEV] 웹컴포넌트 -->
-                </li>
               </ul>
             </el-products-list>
-
-            <el-products-pagination>
-              <!-- 시작: [DEV] 웹컴포넌트
-                1. 퍼블리싱용 웹컴포넌트입니다.
-                2. el-pagination
-                3. 개발 시 examples.html 원본을 참고해 주세요.
-              -->
-              <component-pagination></component-pagination>
-              <!-- 종료: [DEV] 웹컴포넌트 -->
-            </el-products-pagination>
           </el-content>
         </main>
         <!-- 종료: 컨텐츠 -->

@@ -1414,6 +1414,45 @@ el-layer-dropdown.dropdown-menu {
 }
 /* 종료: 공통 > el-layer-dropdown */
 
+/* 시작: 공통 > el-section-title */
+el-section-title {
+  display: block;
+  width: 100%;
+
+  & > h3 {
+    font-weight: 700 !important;
+    padding: 24px 0 22px;
+    border-bottom: 2px solid var(--color-natural-0);
+  }
+}
+/* 종료: 공통 > el-section-title */
+
+/* 시작: 공통 > el-products-empty */
+el-products-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 32px 0;
+
+  & > el-products-empty-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 740px;
+    height: 474px;
+    text-align: center;
+    color: var(--color-natural-30);
+
+    h4 {
+      color: var(--color-natural-0);
+    }
+  }
+}
+/* 종료: 공통 > el-products-empty */
+
 /* 시작: 공통 > el-product-item */
 el-product-item {
   display: flex;
@@ -2895,6 +2934,10 @@ el-main-header {
             mask-image: url('../images/icon-h16-arrow-right.svg');
           }
 
+          &:last-of-type {
+            color: var(--color-natural-0);
+          }
+
           & > a,
           & > button {
             display: inline-flex;
@@ -4228,7 +4271,6 @@ el-products-list-top-bar {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding-top: 32px;
 
   & > el-left {
     display: flex;
@@ -4297,7 +4339,6 @@ el-products-list-top-bar {
 el-products-list {
   display: block;
   width: 100%;
-  padding-top: 32px;
 
   & > ul {
     display: flex;

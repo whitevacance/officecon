@@ -2942,7 +2942,7 @@ class ComponentBreadcrumb extends HTMLElement {
               <!-- 종료: [DEV] 컬럼당 21개씩 출력 -->
             </el-breadcrumb-layer-dropdown>
           </li>
-          <li><a href="#">상품상세</a></li>
+          <li>상품상세</li>
         </ul>
       </el-breadcrumb>
     `;
