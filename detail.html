@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>상품 상세 | 오피스콘</title>
+    <meta charset="UTF-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="shortcut icon" href="./images/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./images/favicon-apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="./images/favicon-android-chrome-192x192.png"
+    />
+    <link
+      rel="preload"
+      href="./fonts/Pretendard-Regular.subset.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="./fonts/Pretendard-SemiBold.subset.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="./fonts/Pretendard-Bold.subset.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link type="text/css" rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="./css/swiper.min.css" />
+    <link type="text/css" rel="stylesheet" href="./css/style.css" />
+    <script src="./js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script
+      src="./js/swiper-element-bundleswiper.min.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- [DEV] 일반회원일 때 className: 'personal-member' -->
+    <el-wrapper>
+      <el-container>
+        <!-- 시작: [DEV] 웹컴포넌트
+          1. 퍼블리싱용 웹컴포넌트입니다.
+          2. el-top-banner
+          3. 개발 시 examples.html 원본을 참고해 주세요.
+         -->
+        <component-top-banner></component-top-banner>
+        <!-- 종료: [DEV] 웹컴포넌트 -->
+
+        <!-- 시작: 헤더 -->
+
+        <!-- 시작: [DEV] 웹컴포넌트
+          1. 퍼블리싱용 웹컴포넌트입니다.
+          2. el-header-top
+          3. 개발 시 examples.html 원본을 참고해 주세요.
+         -->
+        <component-header-top></component-header-top>
+        <!-- 종료: [DEV] 웹컴포넌트 -->
+
+        <el-header-sticky>
+          <el-header-content>
+            <el-header-content-left>
+              <el-logo>
+                <a href="#">
+                  <img src="./images/logo.svg" alt="오피스콘" />
+                  <el-logo-text>
+                    <div>
+                      <img
+                        src="./images/logo-text-2.svg"
+                        alt="이용자수 4년 연속 1위"
+                      />
+                    </div>
+                    <div>
+                      <img src="./images/logo-text-1.svg" alt="OFFICECON" />
+                    </div>
+                  </el-logo-text>
+                </a>
+              </el-logo>
+              <el-center>
+                <el-search-area>
+                  <!-- 시작: [DEV] 검색레이어 토글을 위한 숨김 버튼 -->
+                  <button
+                    type="button"
+                    id="searchLayerToggleButton"
+                    data-bs-toggle="dropdown"
+                    data-bs-offset="0,-17"
+                    data-bs-auto-close="outside"
+                    aria-expanded="false"
+                  >
+                  </button>
+                  <!-- 종료: [DEV] 검색레이어 토글을 위한 숨김 버튼 -->
+                  <el-search-layer class="dropdown-menu">
+                    <el-search>
+                      <input
+                        class="form-control typo-body-lg typo-weight-bold"
+                        type="text"
+                        name="search"
+                        placeholder="기업회원에게만 신세계 백화점 상품권 최대 10%할인"
+                        maxlength="30"
+                      />
+                      <button type="button" aria-label="검색">
+                        <el-icon class="h32-search natural-0"></el-icon>
+                      </button>
+                    </el-search>
+                    <el-search-addon>
+                      <el-addon-content class="typo-label-lg">
+                        <el-recent>
+                          <el-addon-title>
+                            최근 검색어
+                            <button type="button" class="typo-label-md">
+                              전체삭제
+                            </button>
+                          </el-addon-title>
+                          <!-- [DEV] >최근 검색어가 없을 경우 노출
+                            <el-empty>최근 검색어가 없습니다.</el-empty>
+                          -->
+                          <ul class="recent-list">
+                            <li>
+                              <a href="#">스타벅스</a>
+                              <button type="button" aria-label="삭제">
+                                <el-icon class="h16-closed natural-0"></el-icon>
+                              </button>
+                            </li>
+                            <li>
+                              <a href="#">
+                                배달의민족 요기요 쿠팡이츠 배달의민족 요기요
+                                쿠팡이츠
+                              </a>
+                              <button type="button" aria-label="삭제">
+                                <el-icon class="h16-closed natural-0"></el-icon>
+                              </button>
+                            </li>
+                            <li>
+                              <a href="#">스타벅스</a>
+                              <button type="button" aria-label="삭제">
+                                <el-icon class="h16-closed natural-0"></el-icon>
+                              </button>
+                            </li>
+                          </ul>
+                        </el-recent>
+                        <el-popular>
+                          <el-addon-title>인기 검색어</el-addon-title>
+                          <!-- [DEV] 인기 검색어가 없을 경우 노출
+                            <el-empty>인기 검색어가 없습니다.</el-empty>
+                          -->
+                          <ul class="popular-list">
+                            <li>
+                              <el-rank>1</el-rank>
+                              <a href="#">스타벅스</a>
+                            </li>
+                            <li>
+                              <el-rank>2</el-rank>
+                              <a href="#">
+                                배달의민족 요기요 쿠팡이츠 배달의민족 요기요
+                                쿠팡이츠
+                              </a>
+                            </li>
+                            <li>
+                              <el-rank>3</el-rank>
+                              <a href="#">스타벅스</a>
+                            </li>
+                            <li>
+                              <el-rank>4</el-rank>
+                              <a href="#">스타벅스</a>
+                            </li>
+                            <li>
+                              <el-rank>5</el-rank>
+                              <a href="#">스타벅스</a>
+                            </li>
+                            <li>
+                              <el-rank>6</el-rank>
+                              <a href="#">스타벅스</a>
+                            </li>
+                            <li>
+                              <el-rank>7</el-rank>
+                              <a href="#">스타벅스</a>
+                            </li>
+                            <li>
+                              <el-rank>8</el-rank>
+                              <a href="#">스타벅스</a>
+                            </li>
+                            <li>
+                              <el-rank>9</el-rank>
+                              <a href="#">스타벅스</a>
+                            </li>
+                            <li>
+                              <el-rank>10</el-rank>
+                              <a href="#">스타벅스</a>
+                            </li>
+                          </ul>
+                        </el-popular>
+                      </el-addon-content>
+                      <el-addon-close>
+                        <button type="button" class="typo-label-lg">
+                          닫기
+                        </button>
+                      </el-addon-close>
+                    </el-search-addon>
+                  </el-search-layer>
+                </el-search-area>
+              </el-center>
+            </el-header-content-left>
+            <el-header-content-right class="typo-label-md">
+              <a href="#">
+                <el-icon class="h32-cart natural-30"></el-icon>
+                <span>장바구니</span>
+                <el-badge-count class="typo-label-md">
+                  99
+                  <el-more>+</el-more>
+                </el-badge-count>
+              </a>
+              <a href="#">
+                <el-icon class="h32-user natural-30"></el-icon>
+                <span>마이페이지</span>
+              </a>
+            </el-header-content-right>
+          </el-header-content>
+        </el-header-sticky>
+
+        <!-- 시작: [DEV] 웹컴포넌트
+          1. 퍼블리싱용 웹컴포넌트입니다.
+          2. el-header-gnb
+          3. 개발 시 examples.html 원본을 참고해 주세요.
+         -->
+        <component-header-gnb></component-header-gnb>
+        <!-- 종료: [DEV] 웹컴포넌트 -->
+
+        <!-- 종료: 헤더 -->
+
+        <!-- 시작: 컨텐츠 -->
+        <main>
+          <el-main-header>
+            <el-main-header-container>
+              <!-- 시작: [DEV] 웹컴포넌트
+                1. 퍼블리싱용 웹컴포넌트입니다.
+                2. el-breadcrumb
+                3. 개발 시 examples.html 원본을 참고해 주세요.
+              -->
+              <component-breadcrumb></component-breadcrumb>
+              <!-- 종료: [DEV] 웹컴포넌트 -->
+            </el-main-header-container>
+          </el-main-header>
+
+          <el-content>
+            <el-product-detail>
+              <el-product-detail-top>
+                <el-product-image>
+                  <el-product-image-content>
+                    <img
+                      src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/product/20250124/20250124174208_5fb03e78-9547-4774-9dd9-98b4dbc61c73.jpg"
+                      alt="상품 이미지"
+                    />
+                  </el-product-image-content>
+                  <el-product-image-addon class="typo-body-sm">
+                    <el-icon class="h16-clock"></el-icon>
+                    <div>
+                      상품권 판매시간 : <strong>9시~ 18시</strong>(공휴일 제외),
+                      <strong>관리자 승인 후 발송</strong>(1시간이내/점심시간
+                      제외)
+                    </div>
+                  </el-product-image-addon>
+                </el-product-image>
+
+                <el-product-info>
+                  <el-product-info-header>
+                    <el-product-brand class="typo-subtitle-sm">
+                      <el-thumbnail>
+                        <img
+                          src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250729/20250729155550_5c89e6f3-bf53-4183-9a8b-d7e8faebb23f.jpg"
+                          alt="배달의민족"
+                        />
+                      </el-thumbnail>
+                      배달의민족
+                    </el-product-brand>
+                    <el-product-name>
+                      <h2 class="typo-heading-sm">
+                        치즈롤 수퍼 파파스(L)+파파스
+                        파스타(로제)+파파콘샐러드+파파코울슬로+코카-콜라500ml
+                      </h2>
+                    </el-product-name>
+                    <el-product-badge>
+                      <el-badge-square class="event typo-label-md">
+                        이벤트특가
+                      </el-badge-square>
+                      <el-badge-square class="reward typo-label-md">
+                        리워드지급
+                      </el-badge-square>
+                      <el-badge-square class="daily typo-label-md">
+                        상시특가
+                      </el-badge-square>
+                      <el-badge-square class="gift-card typo-label-md">
+                        상품권
+                      </el-badge-square>
+                    </el-product-badge>
+                    <el-product-price class="typo-heading-md">
+                      <el-discount-rate>asd</el-discount-rate>
+                      <el-sale-price>asd</el-sale-price>
+                      <el-original-price>asd</el-original-price>
+                    </el-product-price>
+                  </el-product-info-header>
+
+                  <el-product-info-content>22</el-product-info-content>
+
+                  <el-product-info-level>22</el-product-info-level>
+
+                  <el-product-info-cta>22</el-product-info-cta>
+                </el-product-info>
+              </el-product-detail-top>
+
+              <el-section-title>
+                <h3 class="typo-subtitle-lg">추천상품</h3>
+              </el-section-title>
+
+              <el-products-list class="mt-4 pt-3">
+                <ul>
+                  <li>
+                    <!-- 시작: [DEV] 웹컴포넌트
+                      1. 퍼블리싱용 웹컴포넌트입니다.
+                      2. el-product-item : size-large
+                      3. 개발 시 examples.html 원본을 참고해 주세요.
+                    -->
+                    <component-product-item-large-1></component-product-item-large-1>
+                    <!-- 종료: [DEV] 웹컴포넌트 -->
+                  </li>
+                  <li>
+                    <!-- 시작: [DEV] 웹컴포넌트
+                      1. 퍼블리싱용 웹컴포넌트입니다.
+                      2. el-product-item : size-large
+                      3. 개발 시 examples.html 원본을 참고해 주세요.
+                    -->
+                    <component-product-item-large-2></component-product-item-large-2>
+                    <!-- 종료: [DEV] 웹컴포넌트 -->
+                  </li>
+                  <li>
+                    <!-- 시작: [DEV] 웹컴포넌트
+                      1. 퍼블리싱용 웹컴포넌트입니다.
+                      2. el-product-item : size-large
+                      3. 개발 시 examples.html 원본을 참고해 주세요.
+                    -->
+                    <component-product-item-large-1></component-product-item-large-1>
+                    <!-- 종료: [DEV] 웹컴포넌트 -->
+                  </li>
+                  <li>
+                    <!-- 시작: [DEV] 웹컴포넌트
+                      1. 퍼블리싱용 웹컴포넌트입니다.
+                      2. el-product-item : size-large
+                      3. 개발 시 examples.html 원본을 참고해 주세요.
+                    -->
+                    <component-product-item-large-2></component-product-item-large-2>
+                    <!-- 종료: [DEV] 웹컴포넌트 -->
+                  </li>
+                  <li>
+                    <!-- 시작: [DEV] 웹컴포넌트
+                      1. 퍼블리싱용 웹컴포넌트입니다.
+                      2. el-product-item : size-large
+                      3. 개발 시 examples.html 원본을 참고해 주세요.
+                    -->
+                    <component-product-item-large-1></component-product-item-large-1>
+                    <!-- 종료: [DEV] 웹컴포넌트 -->
+                  </li>
+                </ul>
+              </el-products-list>
+            </el-product-detail>
+          </el-content>
+        </main>
+        <!-- 종료: 컨텐츠 -->
+      </el-container>
+
+      <!-- 시작: [DEV] 웹컴포넌트
+        1. 퍼블리싱용 웹컴포넌트입니다(el-footer).
+        2. 개발 시 examples.html 참고해 주세요.
+      -->
+      <component-footer></component-footer>
+      <!-- 종료: [DEV] 웹컴포넌트 -->
+    </el-wrapper>
+
+    <button id="scrollToTopButton" type="button" aria-label="상단으로 이동">
+      <el-icon class="h32-arrow-up natural-0"></el-icon>
+    </button>
+
+    <!-- 시작: alert -->
+    <el-alert
+      class="modal fade"
+      id="el-alert"
+      tabindex="-1"
+      aria-hidden="true"
+      data-bs-keyboard="false"
+    >
+      <el-alert-dialog class="modal-dialog modal-dialog-centered">
+        <el-alert-content class="modal-content">
+          <el-alert-body class="typo-subtitle-sm">
+            얼럿 샘플입니다.
+            <br />
+            개발 시 내용이 변경됩니다.
+          </el-alert-body>
+          <el-alert-footer>
+            <button
+              type="button"
+              data-bs-dismiss="modal"
+              class="button-h50-stroke typo-body-lg"
+            >
+              취소
+            </button>
+            <button
+              type="button"
+              data-bs-dismiss="modal"
+              class="button-h50-fill typo-body-lg"
+            >
+              확인
+            </button>
+          </el-alert-footer>
+        </el-alert-content>
+      </el-alert-dialog>
+    </el-alert>
+    <!-- 종료: alert -->
+
+    <!-- 공통js: common.js -->
+    <script src="./js/pub-common.js" crossorigin="anonymous"></script>
+
+    <!-- [DEV] 웹 컴포넌트js: 개발 시 삭제해 주세요 -->
+    <script src="./js/web-components.js" crossorigin="anonymous"></script>
+  </body>
+</html>
