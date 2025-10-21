@@ -305,73 +305,216 @@
                       </el-badge-square>
                     </el-product-badge>
                     <el-product-price class="typo-heading-md">
-                      <el-discount-rate>asd</el-discount-rate>
-                      <el-sale-price>asd</el-sale-price>
-                      <el-original-price>asd</el-original-price>
+                      <el-discount-rate>99%</el-discount-rate>
+                      <el-sale-price>
+                        999,999<span class="typo-subtitle-md">원</span>
+                      </el-sale-price>
+                      <el-original-price class="typo-body-lg">
+                        999,999<span>원</span>
+                      </el-original-price>
                     </el-product-price>
                   </el-product-info-header>
 
-                  <el-product-info-content>22</el-product-info-content>
+                  <el-product-info-content>
+                    <h4 class="typo-body-lg">상품정보</h4>
+                    <dl class="typo-body-sm">
+                      <dt>
+                        <el-icon class="h16-product-type natural-30"></el-icon>
+                        상품유형
+                      </dt>
+                      <dd>상품권</dd>
+                      <dt>
+                        <el-icon class="h16-sending-type natural-30"></el-icon>
+                        발송타입
+                      </dt>
+                      <dd>
+                        <ul class="sending-type">
+                          <li>알림톡 발송</li>
+                          <li>문자발송</li>
+                          <li>이메일발송</li>
+                        </ul>
+                      </dd>
+                      <dt>
+                        <el-icon
+                          class="h16-expiration-period natural-30"
+                        ></el-icon>
+                        유효기간
+                      </dt>
+                      <dd>30일</dd>
+                      <dt>
+                        <el-icon
+                          class="h16-exchange-place natural-30"
+                        ></el-icon>
+                        교환처
+                      </dt>
+                      <dd>이마트/트레이더스 및 노브랜드 직영 매장</dd>
+                      <dt>
+                        <el-icon
+                          class="h16-select-quantity natural-30"
+                        ></el-icon>
+                        수량선택 방법
+                      </dt>
+                      <dd>주문 결제 시 입력한 수신자번호 수가 수량으로 적용</dd>
+                      <dt>
+                        <el-icon class="h16-reward natural-30"></el-icon>
+                        리워드 지급
+                      </dt>
+                      <dd>3,200 리워드 (발송건당)</dd>
+                      <dt>
+                        <el-icon class="h16-sales-period natural-30"></el-icon>
+                        판매기간
+                      </dt>
+                      <dd>2025.08.01 00:00 ~ 2025.08.31 24:00</dd>
+                    </dl>
+                  </el-product-info-content>
 
-                  <el-product-info-level>22</el-product-info-level>
+                  <el-product-info-level>
+                    <h4 class="typo-body-sm">기업회원 등급별 판매가</h4>
+                    <ul class="typo-body-lg">
+                      <li>
+                        <el-level class="silver">
+                          <el-badge-current-level class="silver typo-label-md">
+                            현재등급
+                          </el-badge-current-level>
+                          SILVER
+                        </el-level>
+                        <el-level-price>
+                          <el-discount-rate>99%</el-discount-rate>
+                          <el-sale-price>999,999원</el-sale-price>
+                        </el-level-price>
+                      </li>
+                      <li>
+                        <el-level class="gold">
+                          <el-badge-current-level class="gold typo-label-md">
+                            현재등급
+                          </el-badge-current-level>
+                          GOLD
+                        </el-level>
+                        <el-level-price>
+                          <el-discount-rate>99%</el-discount-rate>
+                          <el-sale-price>999,999원</el-sale-price>
+                        </el-level-price>
+                      </li>
+                      <li>
+                        <el-level class="diamond">
+                          <el-badge-current-level class="diamond typo-label-md">
+                            현재등급
+                          </el-badge-current-level>
+                          DIAMOND
+                        </el-level>
+                        <el-level-price>
+                          <el-discount-rate>99%</el-discount-rate>
+                          <el-sale-price>999,999원</el-sale-price>
+                        </el-level-price>
+                      </li>
+                    </ul>
+                  </el-product-info-level>
 
-                  <el-product-info-cta>22</el-product-info-cta>
+                  <el-product-info-cta>
+                    <button
+                      type="button"
+                      class="button-h60-square typo-body-lg"
+                    >
+                      견적서 출력
+                    </button>
+                    <button
+                      type="button"
+                      class="button-h60-square typo-body-lg"
+                    >
+                      장바구니
+                    </button>
+                    <button
+                      type="button"
+                      class="button-h60-square-fill typo-body-lg"
+                    >
+                      바로 구매
+                    </button>
+                  </el-product-info-cta>
+
+                  <el-product-info-cta>
+                    <button
+                      disabled
+                      type="button"
+                      class="button-h60-square-fill typo-body-lg"
+                    >
+                      일시 품절
+                    </button>
+                  </el-product-info-cta>
                 </el-product-info>
               </el-product-detail-top>
 
-              <el-section-title>
-                <h3 class="typo-subtitle-lg">추천상품</h3>
-              </el-section-title>
+              <el-product-detail-banner>
+                <a href="#">
+                  <img
+                    src="./images/temp/product-detail-banner.jpg"
+                    alt="배너"
+                  />
+                </a>
+              </el-product-detail-banner>
 
-              <el-products-list class="mt-4 pt-3">
-                <ul>
-                  <li>
-                    <!-- 시작: [DEV] 웹컴포넌트
-                      1. 퍼블리싱용 웹컴포넌트입니다.
-                      2. el-product-item : size-large
-                      3. 개발 시 examples.html 원본을 참고해 주세요.
-                    -->
-                    <component-product-item-large-1></component-product-item-large-1>
-                    <!-- 종료: [DEV] 웹컴포넌트 -->
-                  </li>
-                  <li>
-                    <!-- 시작: [DEV] 웹컴포넌트
-                      1. 퍼블리싱용 웹컴포넌트입니다.
-                      2. el-product-item : size-large
-                      3. 개발 시 examples.html 원본을 참고해 주세요.
-                    -->
-                    <component-product-item-large-2></component-product-item-large-2>
-                    <!-- 종료: [DEV] 웹컴포넌트 -->
-                  </li>
-                  <li>
-                    <!-- 시작: [DEV] 웹컴포넌트
-                      1. 퍼블리싱용 웹컴포넌트입니다.
-                      2. el-product-item : size-large
-                      3. 개발 시 examples.html 원본을 참고해 주세요.
-                    -->
-                    <component-product-item-large-1></component-product-item-large-1>
-                    <!-- 종료: [DEV] 웹컴포넌트 -->
-                  </li>
-                  <li>
-                    <!-- 시작: [DEV] 웹컴포넌트
-                      1. 퍼블리싱용 웹컴포넌트입니다.
-                      2. el-product-item : size-large
-                      3. 개발 시 examples.html 원본을 참고해 주세요.
-                    -->
-                    <component-product-item-large-2></component-product-item-large-2>
-                    <!-- 종료: [DEV] 웹컴포넌트 -->
-                  </li>
-                  <li>
-                    <!-- 시작: [DEV] 웹컴포넌트
-                      1. 퍼블리싱용 웹컴포넌트입니다.
-                      2. el-product-item : size-large
-                      3. 개발 시 examples.html 원본을 참고해 주세요.
-                    -->
-                    <component-product-item-large-1></component-product-item-large-1>
-                    <!-- 종료: [DEV] 웹컴포넌트 -->
-                  </li>
-                </ul>
-              </el-products-list>
+              <el-product-description>
+                <el-section-title>
+                  <h3 class="typo-subtitle-lg">상품상세정보</h3>
+                </el-section-title>
+
+                <article>상품상세정보 노출 영역입니다.</article>
+              </el-product-description>
+
+              <el-recommend-products>
+                <el-section-title>
+                  <h3 class="typo-subtitle-lg">추천상품</h3>
+                </el-section-title>
+
+                <el-products-list class="mt-4 pt-3">
+                  <ul>
+                    <li>
+                      <!-- 시작: [DEV] 웹컴포넌트
+                        1. 퍼블리싱용 웹컴포넌트입니다.
+                        2. el-product-item : size-large
+                        3. 개발 시 examples.html 원본을 참고해 주세요.
+                      -->
+                      <component-product-item-large-1></component-product-item-large-1>
+                      <!-- 종료: [DEV] 웹컴포넌트 -->
+                    </li>
+                    <li>
+                      <!-- 시작: [DEV] 웹컴포넌트
+                        1. 퍼블리싱용 웹컴포넌트입니다.
+                        2. el-product-item : size-large
+                        3. 개발 시 examples.html 원본을 참고해 주세요.
+                      -->
+                      <component-product-item-large-2></component-product-item-large-2>
+                      <!-- 종료: [DEV] 웹컴포넌트 -->
+                    </li>
+                    <li>
+                      <!-- 시작: [DEV] 웹컴포넌트
+                        1. 퍼블리싱용 웹컴포넌트입니다.
+                        2. el-product-item : size-large
+                        3. 개발 시 examples.html 원본을 참고해 주세요.
+                      -->
+                      <component-product-item-large-1></component-product-item-large-1>
+                      <!-- 종료: [DEV] 웹컴포넌트 -->
+                    </li>
+                    <li>
+                      <!-- 시작: [DEV] 웹컴포넌트
+                        1. 퍼블리싱용 웹컴포넌트입니다.
+                        2. el-product-item : size-large
+                        3. 개발 시 examples.html 원본을 참고해 주세요.
+                      -->
+                      <component-product-item-large-2></component-product-item-large-2>
+                      <!-- 종료: [DEV] 웹컴포넌트 -->
+                    </li>
+                    <li>
+                      <!-- 시작: [DEV] 웹컴포넌트
+                        1. 퍼블리싱용 웹컴포넌트입니다.
+                        2. el-product-item : size-large
+                        3. 개발 시 examples.html 원본을 참고해 주세요.
+                      -->
+                      <component-product-item-large-1></component-product-item-large-1>
+                      <!-- 종료: [DEV] 웹컴포넌트 -->
+                    </li>
+                  </ul>
+                </el-products-list>
+              </el-recommend-products>
             </el-product-detail>
           </el-content>
         </main>
