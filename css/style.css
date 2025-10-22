@@ -2032,7 +2032,9 @@ el-pagination {
 
 /* 시작: 레이아웃 > wrapper, container */
 el-wrapper {
+  display: block;
   width: 100%;
+  min-width: var(--layout-width);
   position: relative;
 }
 
@@ -2705,7 +2707,10 @@ el-header-gnb {
                   color: var(--color-natural-20);
                   border-radius: 999px;
 
-                  &:hover,
+                  &:hover {
+                    background-color: var(--color-natural-90);
+                  }
+
                   &.active {
                     color: var(--color-natural-0);
                     font-weight: 600;
@@ -3043,9 +3048,11 @@ el-main-header {
 
   el-main-header-container {
     display: block;
-    width: var(--layout-width);
-    padding: var(--layout-padding);
+    width: var(--layout-container-width);
     margin: 0 auto;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
 
     el-breadcrumb {
       display: block;
@@ -3179,6 +3186,14 @@ el-main-header {
           }
         }
       }
+    }
+
+    & > h2 {
+      width: 100%;
+      text-align: center;
+      font-weight: 600;
+      color: var(--color-natural-0);
+      padding-bottom: 30px;
     }
   }
 }
@@ -4383,6 +4398,11 @@ el-products-filter {
             padding: 0;
             width: 43px;
             height: 43px;
+
+            &:hover {
+              background-color: var(--color-natural-90);
+              border-color: var(--color-natural-70);
+            }
           }
         }
       }
@@ -4408,6 +4428,12 @@ el-products-filter {
         & > el-tab-button {
           & > button {
             gap: 4px;
+
+            &:hover {
+              color: var(--color-natural-20);
+              background-color: var(--color-natural-80);
+              border-color: var(--color-natural-70);
+            }
           }
         }
       }

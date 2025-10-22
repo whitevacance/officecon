@@ -232,48 +232,48 @@ initThemeSwitch();
 // 종료: el-theme-switch
 
 // 시작: el-category-tabs
-const initCategoryTabs = () => {
-  const triggerTabList = document.querySelectorAll(
-    'el-category-tabs > ul > li > a'
-  );
+// const initCategoryTabs = () => {
+//   const triggerTabList = document.querySelectorAll(
+//     'el-category-tabs > ul > li > a'
+//   );
 
-  // 부트스트랩 인스턴스 생성
-  if (!bootstrap) {
-    // console.error('bootstrap을 찾을 수 없습니다.');
-    return;
-  }
+//   // 부트스트랩 인스턴스 생성
+//   if (!bootstrap) {
+//     // console.error('bootstrap을 찾을 수 없습니다.');
+//     return;
+//   }
 
-  if (triggerTabList?.length > 0) {
-    triggerTabList.forEach((triggerEl) => {
-      // 이미 초기화된 경우 건너뛰기
-      if (triggerEl?.dataset?.initialized === 'true') {
-        return;
-      }
+//   if (triggerTabList?.length > 0) {
+//     triggerTabList.forEach((triggerEl) => {
+//       // 이미 초기화된 경우 건너뛰기
+//       if (triggerEl?.dataset?.initialized === 'true') {
+//         return;
+//       }
 
-      const tabTrigger = new bootstrap.Tab(triggerEl);
+//       const tabTrigger = new bootstrap.Tab(triggerEl);
 
-      triggerEl.addEventListener('mouseenter', () => {
-        tabTrigger.show();
-      });
+//       triggerEl.addEventListener('mouseenter', () => {
+//         tabTrigger.show();
+//       });
 
-      triggerEl.addEventListener('click', (e) => {
-        if (e.target?.href) {
-          window.location.href = e.target.href;
-        }
-      });
+//       triggerEl.addEventListener('click', (e) => {
+//         if (e.target?.href) {
+//           window.location.href = e.target.href;
+//         }
+//       });
 
-      // 초기화 완료 전환
-      triggerEl.dataset.initialized = 'true';
-    });
-  }
-};
+//       // 초기화 완료 전환
+//       triggerEl.dataset.initialized = 'true';
+//     });
+//   }
+// };
 
-// 전역 함수로 등록
-if (window !== undefined) {
-  window.initCategoryTabs = initCategoryTabs;
-}
+// // 전역 함수로 등록
+// if (window !== undefined) {
+//   window.initCategoryTabs = initCategoryTabs;
+// }
 
-initCategoryTabs();
+// initCategoryTabs();
 // 종료: el-category-tabs
 
 // 시작: el-input
