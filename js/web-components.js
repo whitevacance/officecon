@@ -1692,7 +1692,11 @@ class ComponentFooter extends HTMLElement {
             <ul>
               <li>
                 <button type="button">
-                  <img src="./images/footer-ISMSP.svg" alt="ISMS-P" />
+                  <img
+                    src="./images/footer-ISMSP.png"
+                    alt="ISMS-P"
+                    style="width: 64px; height: auto"
+                  />
                   <el-label class="typo-label-sm">
                     <span>[인증범위] 쿠폰 판매 서비스 운영</span>
                     <span>[유효기간] 2025.06.18 ~ 2028.06.17</span>
@@ -1707,7 +1711,12 @@ class ComponentFooter extends HTMLElement {
               </li>
               <li>
                 <button type="button">
-                  <img class="footer-korfin" src="./images/footer-Korfin.svg" alt="Korfin" />
+                  <img
+                    class="footer-korfin"
+                    src="./images/footer-Korfin.png"
+                    alt="Korfin"
+                    style="width: 91px; height: auto"
+                  />
                 </button>
                 <el-cert-layer>
                   <img
@@ -1718,7 +1727,11 @@ class ComponentFooter extends HTMLElement {
               </li>
               <li>
                 <button type="button">
-                  <img src="./images/footer-Seoul.svg" alt="서울특별시" />
+                  <img
+                    src="./images/footer-Seoul.png"
+                    alt="서울특별시"
+                    style="width: 112px; height: auto"
+                  />
                 </button>
                 <el-cert-layer>
                   <img
@@ -1729,7 +1742,11 @@ class ComponentFooter extends HTMLElement {
               </li>
               <li>
                 <button type="button">
-                  <img src="./images/footer-Innobiz.svg" alt="Innobiz" />
+                  <img
+                    src="./images/footer-Innobiz.png"
+                    alt="Innobiz"
+                    style="width: 87px; height: auto"
+                  />
                 </button>
                 <el-cert-layer>
                   <img
