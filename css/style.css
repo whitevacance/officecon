@@ -3042,11 +3042,19 @@ el-header-gnb {
 /* 종료: 레이아웃 > 헤더 > el-header-gnb */
 
 /* 시작: 레이아웃 > 컨텐츠 */
-el-main-header {
+el-content-header {
   display: block;
   width: 100%;
 
-  el-main-header-container {
+  &.type-reward {
+    background: #eeeef5;
+    el-content-header-container {
+      height: 204px;
+      background-image: url('../images/temp/page-header-bg-reward.jpg');
+    }
+  }
+
+  el-content-header-container {
     display: block;
     width: var(--layout-container-width);
     margin: 0 auto;
@@ -3194,6 +3202,105 @@ el-main-header {
       font-weight: 600;
       color: var(--color-natural-0);
       padding-bottom: 30px;
+    }
+  }
+
+  el-content-header-filter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 39px;
+    width: 100%;
+    height: 73px;
+    background-color: var(--color-opacity-white-70);
+    border-radius: 10px 10px 0 0;
+    padding: 0 20px 0 28px;
+
+    el-apply {
+      display: flex;
+      align-items: center;
+      gap: 33px;
+      width: 100%;
+
+      & > h3 {
+        flex-grow: 0;
+        flex-shrink: 0;
+        font-weight: 700 !important;
+      }
+
+      el-apply-input {
+        display: flex;
+        align-items: center;
+        width: 100%;
+
+        el-apply-chips {
+          display: flex;
+          align-items: center;
+
+          & > ul {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+
+            el-tab-button {
+              & > button:first-of-type {
+                width: 110px;
+              }
+
+              button.remove {
+                display: none;
+              }
+
+              &.active:hover {
+                button.remove {
+                  display: inline-flex;
+                }
+              }
+            }
+          }
+        }
+
+        el-apply-range {
+          display: flex;
+          align-items: center;
+          gap: 6px;
+          width: 321px;
+          padding-left: 10px;
+        }
+
+        el-apply-action {
+          padding-left: 6px;
+
+          & > button.button-h43-square {
+            color: var(--color-natural-30);
+            background-color: var(--color-natural-90);
+
+            &:hover {
+              color: var(--color-natural-20);
+              background-color: var(--color-natural-80);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  el-reset {
+    flex-grow: 0;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    width: 118px;
+
+    & > button.button-h43-square {
+      width: 100%;
+      gap: 4px;
+      padding: 0 19px;
+
+      &:hover {
+        color: var(--color-natural-20);
+        background-color: var(--color-natural-80);
+      }
     }
   }
 }
@@ -4374,7 +4481,7 @@ el-products-filter {
           }
         }
 
-        el-tilre-detail-inputs {
+        el-filter-detail-range {
           display: flex;
           align-items: center;
           gap: 1px;

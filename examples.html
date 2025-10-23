@@ -1439,7 +1439,7 @@
                         <el-input>
                           <input
                             class="form-control custom-input"
-                            type="text"
+                            type="number"
                             placeholder="최소가"
                           />
                         </el-input>
@@ -1447,7 +1447,7 @@
                         <el-input>
                           <input
                             class="form-control custom-input"
-                            type="text"
+                            type="number"
                             placeholder="최대가"
                           />
                         </el-input>
@@ -1539,8 +1539,8 @@
 
         <!-- 시작: 컨텐츠 -->
         <main>
-          <el-main-header style="background: #eeeef5">
-            <el-main-header-container>
+          <el-content-header class="type-reward">
+            <el-content-header-container>
               <el-breadcrumb>
                 <ul class="typo-label-lg">
                   <li><a href="#">HOME</a></li>
@@ -1858,10 +1858,123 @@
                   <li>상품상세</li>
                 </ul>
               </el-breadcrumb>
-              <div>컨텐츠 헤더 영역</div>
-              <div>컨텐츠 헤더 영역</div>
-            </el-main-header-container>
-          </el-main-header>
+
+              <h2 class="typo-heading-md">리워드관</h2>
+
+              <el-content-header-filter class="typo-label-lg">
+                <el-apply>
+                  <h3 class="typo-body-sm">금액대</h3>
+                  <el-apply-input>
+                    <el-apply-chips>
+                      <ul>
+                        <li>
+                          <el-tab-button class="active">
+                            <button type="button" class="typo-label-lg">
+                              3천원 이하
+                            </button>
+                            <button
+                              type="button"
+                              class="remove"
+                              aria-label="remove"
+                            >
+                              <el-icon class="h16-closed natural-0"></el-icon>
+                            </button>
+                          </el-tab-button>
+                        </li>
+                        <li>
+                          <el-tab-button>
+                            <button type="button" class="typo-label-lg">
+                              3~5천원
+                            </button>
+                            <button
+                              type="button"
+                              class="remove"
+                              aria-label="remove"
+                            >
+                              <el-icon class="h16-closed natural-0"></el-icon>
+                            </button>
+                          </el-tab-button>
+                        </li>
+                        <li>
+                          <el-tab-button>
+                            <button type="button" class="typo-label-lg">
+                              5천~1만원
+                            </button>
+                            <button
+                              type="button"
+                              class="remove"
+                              aria-label="remove"
+                            >
+                              <el-icon class="h16-closed natural-0"></el-icon>
+                            </button>
+                          </el-tab-button>
+                        </li>
+                        <li>
+                          <el-tab-button>
+                            <button type="button" class="typo-label-lg">
+                              1~3만원
+                            </button>
+                            <button
+                              type="button"
+                              class="remove"
+                              aria-label="remove"
+                            >
+                              <el-icon class="h16-closed natural-0"></el-icon>
+                            </button>
+                          </el-tab-button>
+                        </li>
+                        <li>
+                          <el-tab-button>
+                            <button type="button" class="typo-label-lg">
+                              3만원 이상
+                            </button>
+                            <button
+                              type="button"
+                              class="remove"
+                              aria-label="remove"
+                            >
+                              <el-icon class="h16-closed natural-0"></el-icon>
+                            </button>
+                          </el-tab-button>
+                        </li>
+                      </ul>
+                    </el-apply-chips>
+                    <el-apply-range>
+                      <el-input>
+                        <input
+                          class="form-control custom-input"
+                          type="number"
+                          placeholder="최소가 입력"
+                        />
+                      </el-input>
+                      ~
+                      <el-input>
+                        <input
+                          class="form-control custom-input"
+                          type="number"
+                          placeholder="최대가 입력"
+                        />
+                      </el-input>
+                    </el-apply-range>
+                    <el-apply-action>
+                      <button
+                        type="button"
+                        class="button-h43-square typo-label-lg"
+                      >
+                        적용
+                      </button>
+                    </el-apply-action>
+                  </el-apply-input>
+                </el-apply>
+                <el-reset>
+                  <button type="button" class="button-h43-square typo-label-lg">
+                    <el-icon class="h16-refresh natural-40"></el-icon>
+                    전체 초기화
+                  </button>
+                </el-reset>
+              </el-content-header-filter>
+            </el-content-header-container>
+          </el-content-header>
 
           <el-content>
             <el-examples-article>

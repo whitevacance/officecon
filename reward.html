@@ -68,12 +68,8 @@
 
         <!-- 시작: 컨텐츠 -->
         <main>
-          <el-main-header style="background: #eeeef5">
-            <el-main-header-container
-              style="
-                background-image: url('../images/temp/page-header-bg-reward.jpg');
-              "
-            >
+          <el-content-header class="type-reward">
+            <el-content-header-container>
               <!-- 시작: [DEV] 웹컴포넌트
                 1. 퍼블리싱용 웹컴포넌트입니다.
                 2. el-breadcrumb
@@ -83,15 +79,127 @@
               <!-- 종료: [DEV] 웹컴포넌트 -->
 
               <h2 class="typo-heading-md">리워드관</h2>
-              <div>컨텐츠 헤더 영역</div>
-            </el-main-header-container>
-          </el-main-header>
+
+              <el-content-header-filter class="typo-label-lg">
+                <el-apply>
+                  <h3 class="typo-body-sm">금액대</h3>
+                  <el-apply-input>
+                    <el-apply-chips>
+                      <ul>
+                        <li>
+                          <el-tab-button class="active">
+                            <button type="button" class="typo-label-lg">
+                              3천원 이하
+                            </button>
+                            <button
+                              type="button"
+                              class="remove"
+                              aria-label="remove"
+                            >
+                              <el-icon class="h16-closed natural-0"></el-icon>
+                            </button>
+                          </el-tab-button>
+                        </li>
+                        <li>
+                          <el-tab-button>
+                            <button type="button" class="typo-label-lg">
+                              3~5천원
+                            </button>
+                            <button
+                              type="button"
+                              class="remove"
+                              aria-label="remove"
+                            >
+                              <el-icon class="h16-closed natural-0"></el-icon>
+                            </button>
+                          </el-tab-button>
+                        </li>
+                        <li>
+                          <el-tab-button>
+                            <button type="button" class="typo-label-lg">
+                              5천~1만원
+                            </button>
+                            <button
+                              type="button"
+                              class="remove"
+                              aria-label="remove"
+                            >
+                              <el-icon class="h16-closed natural-0"></el-icon>
+                            </button>
+                          </el-tab-button>
+                        </li>
+                        <li>
+                          <el-tab-button>
+                            <button type="button" class="typo-label-lg">
+                              1~3만원
+                            </button>
+                            <button
+                              type="button"
+                              class="remove"
+                              aria-label="remove"
+                            >
+                              <el-icon class="h16-closed natural-0"></el-icon>
+                            </button>
+                          </el-tab-button>
+                        </li>
+                        <li>
+                          <el-tab-button>
+                            <button type="button" class="typo-label-lg">
+                              3만원 이상
+                            </button>
+                            <button
+                              type="button"
+                              class="remove"
+                              aria-label="remove"
+                            >
+                              <el-icon class="h16-closed natural-0"></el-icon>
+                            </button>
+                          </el-tab-button>
+                        </li>
+                      </ul>
+                    </el-apply-chips>
+                    <el-apply-range>
+                      <el-input>
+                        <input
+                          class="form-control custom-input"
+                          type="number"
+                          placeholder="최소가 입력"
+                        />
+                      </el-input>
+                      ~
+                      <el-input>
+                        <input
+                          class="form-control custom-input"
+                          type="number"
+                          placeholder="최대가 입력"
+                        />
+                      </el-input>
+                    </el-apply-range>
+                    <el-apply-action>
+                      <button
+                        type="button"
+                        class="button-h43-square typo-label-lg"
+                      >
+                        적용
+                      </button>
+                    </el-apply-action>
+                  </el-apply-input>
+                </el-apply>
+                <el-reset>
+                  <button type="button" class="button-h43-square typo-label-lg">
+                    <el-icon class="h16-refresh natural-40"></el-icon>
+                    전체 초기화
+                  </button>
+                </el-reset>
+              </el-content-header-filter>
+            </el-content-header-container>
+          </el-content-header>
 
           <el-content>
             <el-products-list-top-bar class="mt-4 pt-2">
               <el-left>
                 <el-products-count class="typo-body-lg">
-                  총 <strong>0</strong>개의 상품
+                  총 <strong>99,999</strong>개의 상품
                 </el-products-count>
               </el-left>
 
@@ -128,16 +236,177 @@
             <el-products-list class="mt-4 pt-3">
               <ul>
                 <li>
-                  <!-- 시작: [DEV] 웹컴포넌트
-                    1. 퍼블리싱용 웹컴포넌트입니다.
-                    2. el-product-item : size-large
-                    3. 개발 시 examples.html 원본을 참고해 주세요.
-                  -->
-                  <component-product-item-large-1></component-product-item-large-1>
-                  <!-- 종료: [DEV] 웹컴포넌트 -->
+                  <el-product-item>
+                    <a href="#">
+                      <el-item-thumbnail>
+                        <img
+                          class="thumbnail-image"
+                          src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/product/20250227/20250227145823_a5b9221d-437d-4b84-b0ac-fbc6f58edf4f.jpg"
+                          alt=""
+                        />
+                        <el-bg></el-bg>
+                        <el-badge-special>
+                          <img
+                            src="./images/badge-event.svg"
+                            alt="이벤트특가"
+                          />
+                          <img
+                            src="./images/badge-reward.svg"
+                            alt="리워드지급"
+                          />
+                        </el-badge-special>
+                        <el-badge-period class="typo-label-sm">
+                          30일
+                        </el-badge-period>
+                        <el-layer-action>
+                          <button
+                            type="button"
+                            aria-label="add to cart"
+                            onclick="event.preventDefault(); event.stopPropagation(); alert('add to cart')"
+                          >
+                            <el-icon class="h24-cart"></el-icon>
+                          </button>
+                          <button type="button" aria-label="buy now">
+                            <el-icon class="h24-card"></el-icon>
+                          </button>
+                        </el-layer-action>
+                      </el-item-thumbnail>
+
+                      <el-item-txt class="typo-body-sm">
+                        <el-item-name>
+                          <el-brand>스타벅스</el-brand>
+                          <el-item-name-txt>떠먹는 스트로베리</el-item-name-txt>
+                        </el-item-name>
+                        <el-item-price>
+                          <el-badge-h14-cash class="unit-icon">
+                            <img src="./images/badge-h14-cash.svg" alt="캐시" />
+                          </el-badge-h14-cash>
+                          <el-sale-price class="typo-body-sm">
+                            <strong class="typo-body-lg">999,999</strong> 캐시
+                          </el-sale-price>
+                        </el-item-price>
+                      </el-item-txt>
+                    </a>
+                  </el-product-item>
+                </li>
+                <li>
+                  <el-product-item>
+                    <a href="#">
+                      <el-item-thumbnail>
+                        <img
+                          class="thumbnail-image"
+                          src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/product/20250227/20250227145823_a5b9221d-437d-4b84-b0ac-fbc6f58edf4f.jpg"
+                          alt=""
+                        />
+                        <el-bg></el-bg>
+                        <el-badge-special>
+                          <img
+                            src="./images/badge-reward.svg"
+                            alt="리워드지급"
+                          />
+                        </el-badge-special>
+                        <el-badge-period class="typo-label-sm">
+                          30일
+                        </el-badge-period>
+                        <el-layer-action>
+                          <button
+                            type="button"
+                            aria-label="add to cart"
+                            onclick="event.preventDefault(); event.stopPropagation(); alert('add to cart')"
+                          >
+                            <el-icon class="h24-cart"></el-icon>
+                          </button>
+                          <button type="button" aria-label="buy now">
+                            <el-icon class="h24-card"></el-icon>
+                          </button>
+                        </el-layer-action>
+                      </el-item-thumbnail>
+
+                      <el-item-txt class="typo-body-sm">
+                        <el-item-name>
+                          <el-brand>스타벅스</el-brand>
+                          <el-item-name-txt>떠먹는 스트로베리</el-item-name-txt>
+                        </el-item-name>
+                        <el-item-price>
+                          <el-badge-h14-point class="unit-icon">
+                            <img
+                              src="./images/badge-h14-point.svg"
+                              alt="포인트"
+                            />
+                          </el-badge-h14-point>
+                          <el-sale-price class="typo-body-sm">
+                            <strong class="typo-body-lg">999,999</strong> 포인트
+                          </el-sale-price>
+                        </el-item-price>
+                      </el-item-txt>
+                    </a>
+                  </el-product-item>
+                </li>
+                <li>
+                  <el-product-item>
+                    <a href="#">
+                      <el-item-thumbnail>
+                        <img
+                          class="thumbnail-image"
+                          src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/product/20250227/20250227145823_a5b9221d-437d-4b84-b0ac-fbc6f58edf4f.jpg"
+                          alt=""
+                        />
+                        <el-bg></el-bg>
+                        <el-badge-special>
+                          <img
+                            src="./images/badge-reward.svg"
+                            alt="리워드지급"
+                          />
+                        </el-badge-special>
+                        <el-badge-period class="typo-label-sm">
+                          30일
+                        </el-badge-period>
+                        <el-layer-action>
+                          <button
+                            type="button"
+                            aria-label="add to cart"
+                            onclick="event.preventDefault(); event.stopPropagation(); alert('add to cart')"
+                          >
+                            <el-icon class="h24-cart"></el-icon>
+                          </button>
+                          <button type="button" aria-label="buy now">
+                            <el-icon class="h24-card"></el-icon>
+                          </button>
+                        </el-layer-action>
+                      </el-item-thumbnail>
+
+                      <el-item-txt class="typo-body-sm">
+                        <el-item-name>
+                          <el-brand>스타벅스</el-brand>
+                          <el-item-name-txt>떠먹는 스트로베리</el-item-name-txt>
+                        </el-item-name>
+                        <el-item-price>
+                          <el-badge-h14-reward class="unit-icon">
+                            <img
+                              src="./images/badge-h14-reward.svg"
+                              alt="리워드"
+                            />
+                          </el-badge-h14-reward>
+                          <el-sale-price class="typo-body-sm">
+                            <strong class="typo-body-lg">999,999</strong> 리워드
+                          </el-sale-price>
+                        </el-item-price>
+                      </el-item-txt>
+                    </a>
+                  </el-product-item>
                 </li>
               </ul>
             </el-products-list>
+
+            <el-products-pagination>
+              <!-- 시작: [DEV] 웹컴포넌트
+                1. 퍼블리싱용 웹컴포넌트입니다.
+                2. el-pagination
+                3. 개발 시 examples.html 원본을 참고해 주세요.
+              -->
+              <component-pagination></component-pagination>
+              <!-- 종료: [DEV] 웹컴포넌트 -->
+            </el-products-pagination>
           </el-content>
         </main>
         <!-- 종료: 컨텐츠 -->
