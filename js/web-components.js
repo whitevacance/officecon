@@ -392,12 +392,12 @@ class ComponentHeaderGnb extends HTMLElement {
 
   loadExternalScript() {
     loadScript(this, 'initAlert');
-    loadScript(this, 'initCategoryTabs');
+    // loadScript(this, 'initCategoryTabs');
   }
 
   async loadScriptDynamically() {
     loadDynamically(this, 'initAlert');
-    loadDynamically(this, 'initCategoryTabs');
+    // loadDynamically(this, 'initCategoryTabs');
   }
 
   render() {
@@ -1531,7 +1531,7 @@ class ComponentHeaderGnb extends HTMLElement {
                       <el-input>
                         <input
                           class="form-control custom-input"
-                          type="text"
+                          type="number"
                           placeholder="최소가"
                         />
                       </el-input>
@@ -1539,7 +1539,7 @@ class ComponentHeaderGnb extends HTMLElement {
                       <el-input>
                         <input
                           class="form-control custom-input"
-                          type="text"
+                          type="number"
                           placeholder="최대가"
                         />
                       </el-input>

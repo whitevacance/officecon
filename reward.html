@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>리워드관 | 오피스콘</title>
+    <meta charset="UTF-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="shortcut icon" href="./images/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./images/favicon-apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="./images/favicon-android-chrome-192x192.png"
+    />
+    <link
+      rel="preload"
+      href="./fonts/Pretendard-Regular.subset.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="./fonts/Pretendard-SemiBold.subset.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="./fonts/Pretendard-Bold.subset.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link type="text/css" rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="./css/swiper.min.css" />
+    <link type="text/css" rel="stylesheet" href="./css/style.css" />
+    <script src="./js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script
+      src="./js/swiper-element-bundleswiper.min.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- [DEV] 일반회원일 때 className: 'personal-member' -->
+    <el-wrapper>
+      <el-container>
+        <!-- 시작: [DEV] 웹컴포넌트
+          1. 퍼블리싱용 웹컴포넌트입니다.
+          2. el-top-banner, el-header-top, el-header-sticky, el-header-gnb
+          3. 개발 시 examples.html 원본을 참고해 주세요.
+         -->
+        <component-top-banner></component-top-banner>
+
+        <!-- 시작: 헤더 -->
+        <component-header-top></component-header-top>
+        <component-header-sticky></component-header-sticky>
+        <component-header-gnb></component-header-gnb>
+        <!-- 종료: 헤더 -->
+
+        <!-- 종료: [DEV] 웹컴포넌트 -->
+
+        <!-- 시작: 컨텐츠 -->
+        <main>
+          <el-content-header class="type-reward">
+            <el-content-header-container>
+              <!-- 시작: [DEV] 웹컴포넌트
+                1. 퍼블리싱용 웹컴포넌트입니다.
+                2. el-breadcrumb
+                3. 개발 시 examples.html 원본을 참고해 주세요.
+              -->
+              <component-breadcrumb></component-breadcrumb>
+              <!-- 종료: [DEV] 웹컴포넌트 -->
+
+              <h2 class="typo-heading-md">리워드관</h2>
+
+              <el-content-header-filter class="typo-label-lg">
+                <el-apply>
+                  <h3 class="typo-body-sm">금액대</h3>
+                  <el-apply-input>
+                    <el-apply-chips>
+                      <ul>
+                        <li>
+                          <el-tab-button class="active">
+                            <button type="button" class="typo-label-lg">
+                              3천원 이하
+                            </button>
+                            <button
+                              type="button"
+                              class="remove"
+                              aria-label="remove"
+                            >
+                              <el-icon class="h16-closed natural-0"></el-icon>
+                            </button>
+                          </el-tab-button>
+                        </li>
+                        <li>
+                          <el-tab-button>
+                            <button type="button" class="typo-label-lg">
+                              3~5천원
+                            </button>
+                            <button
+                              type="button"
+                              class="remove"
+                              aria-label="remove"
+                            >
+                              <el-icon class="h16-closed natural-0"></el-icon>
+                            </button>
+                          </el-tab-button>
+                        </li>
+                        <li>
+                          <el-tab-button>
+                            <button type="button" class="typo-label-lg">
+                              5천~1만원
+                            </button>
+                            <button
+                              type="button"
+                              class="remove"
+                              aria-label="remove"
+                            >
+                              <el-icon class="h16-closed natural-0"></el-icon>
+                            </button>
+                          </el-tab-button>
+                        </li>
+                        <li>
+                          <el-tab-button>
+                            <button type="button" class="typo-label-lg">
+                              1~3만원
+                            </button>
+                            <button
+                              type="button"
+                              class="remove"
+                              aria-label="remove"
+                            >
+                              <el-icon class="h16-closed natural-0"></el-icon>
+                            </button>
+                          </el-tab-button>
+                        </li>
+                        <li>
+                          <el-tab-button>
+                            <button type="button" class="typo-label-lg">
+                              3만원 이상
+                            </button>
+                            <button
+                              type="button"
+                              class="remove"
+                              aria-label="remove"
+                            >
+                              <el-icon class="h16-closed natural-0"></el-icon>
+                            </button>
+                          </el-tab-button>
+                        </li>
+                      </ul>
+                    </el-apply-chips>
+                    <el-apply-range>
+                      <el-input>
+                        <input
+                          class="form-control custom-input"
+                          type="number"
+                          placeholder="최소가 입력"
+                        />
+                      </el-input>
+                      ~
+                      <el-input>
+                        <input
+                          class="form-control custom-input"
+                          type="number"
+                          placeholder="최대가 입력"
+                        />
+                      </el-input>
+                    </el-apply-range>
+                    <el-apply-action>
+                      <button
+                        type="button"
+                        class="button-h43-square typo-label-lg"
+                      >
+                        적용
+                      </button>
+                    </el-apply-action>
+                  </el-apply-input>
+                </el-apply>
+                <el-reset>
+                  <button type="button" class="button-h43-square typo-label-lg">
+                    <el-icon class="h16-refresh natural-40"></el-icon>
+                    전체 초기화
+                  </button>
+                </el-reset>
+              </el-content-header-filter>
+            </el-content-header-container>
+          </el-content-header>
+
+          <el-content>
+            <el-products-list-top-bar class="mt-4 pt-2">
+              <el-left>
+                <el-products-count class="typo-body-lg">
+                  총 <strong>99,999</strong>개의 상품
+                </el-products-count>
+              </el-left>
+
+              <el-right>
+                <ul>
+                  <li class="active">
+                    <button type="button" class="typo-label-lg">
+                      <el-icon class="h16-check natural-0"></el-icon>
+                      인기순
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" class="typo-label-lg">
+                      <el-icon class="h16-check natural-0"></el-icon>
+                      최근등록순
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" class="typo-label-lg">
+                      <el-icon class="h16-check natural-0"></el-icon>
+                      낮은가격순
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" class="typo-label-lg">
+                      <el-icon class="h16-check natural-0"></el-icon>
+                      높은가격순
+                    </button>
+                  </li>
+                </ul>
+              </el-right>
+            </el-products-list-top-bar>
+
+            <el-products-list class="mt-4 pt-3">
+              <ul>
+                <li>
+                  <el-product-item>
+                    <a href="#">
+                      <el-item-thumbnail>
+                        <img
+                          class="thumbnail-image"
+                          src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/product/20250227/20250227145823_a5b9221d-437d-4b84-b0ac-fbc6f58edf4f.jpg"
+                          alt=""
+                        />
+                        <el-bg></el-bg>
+                        <el-badge-special>
+                          <img
+                            src="./images/badge-event.svg"
+                            alt="이벤트특가"
+                          />
+                          <img
+                            src="./images/badge-reward.svg"
+                            alt="리워드지급"
+                          />
+                        </el-badge-special>
+                        <el-badge-period class="typo-label-sm">
+                          30일
+                        </el-badge-period>
+                        <el-layer-action>
+                          <button
+                            type="button"
+                            aria-label="add to cart"
+                            onclick="event.preventDefault(); event.stopPropagation(); alert('add to cart')"
+                          >
+                            <el-icon class="h24-cart"></el-icon>
+                          </button>
+                          <button type="button" aria-label="buy now">
+                            <el-icon class="h24-card"></el-icon>
+                          </button>
+                        </el-layer-action>
+                      </el-item-thumbnail>
+
+                      <el-item-txt class="typo-body-sm">
+                        <el-item-name>
+                          <el-brand>스타벅스</el-brand>
+                          <el-item-name-txt>떠먹는 스트로베리</el-item-name-txt>
+                        </el-item-name>
+                        <el-item-price>
+                          <el-badge-h14-cash class="unit-icon">
+                            <img src="./images/badge-h14-cash.svg" alt="캐시" />
+                          </el-badge-h14-cash>
+                          <el-sale-price class="typo-body-sm">
+                            <strong class="typo-body-lg">999,999</strong> 캐시
+                          </el-sale-price>
+                        </el-item-price>
+                      </el-item-txt>
+                    </a>
+                  </el-product-item>
+                </li>
+                <li>
+                  <el-product-item>
+                    <a href="#">
+                      <el-item-thumbnail>
+                        <img
+                          class="thumbnail-image"
+                          src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/product/20250227/20250227145823_a5b9221d-437d-4b84-b0ac-fbc6f58edf4f.jpg"
+                          alt=""
+                        />
+                        <el-bg></el-bg>
+                        <el-badge-special>
+                          <img
+                            src="./images/badge-reward.svg"
+                            alt="리워드지급"
+                          />
+                        </el-badge-special>
+                        <el-badge-period class="typo-label-sm">
+                          30일
+                        </el-badge-period>
+                        <el-layer-action>
+                          <button
+                            type="button"
+                            aria-label="add to cart"
+                            onclick="event.preventDefault(); event.stopPropagation(); alert('add to cart')"
+                          >
+                            <el-icon class="h24-cart"></el-icon>
+                          </button>
+                          <button type="button" aria-label="buy now">
+                            <el-icon class="h24-card"></el-icon>
+                          </button>
+                        </el-layer-action>
+                      </el-item-thumbnail>
+
+                      <el-item-txt class="typo-body-sm">
+                        <el-item-name>
+                          <el-brand>스타벅스</el-brand>
+                          <el-item-name-txt>떠먹는 스트로베리</el-item-name-txt>
+                        </el-item-name>
+                        <el-item-price>
+                          <el-badge-h14-point class="unit-icon">
+                            <img
+                              src="./images/badge-h14-point.svg"
+                              alt="포인트"
+                            />
+                          </el-badge-h14-point>
+                          <el-sale-price class="typo-body-sm">
+                            <strong class="typo-body-lg">999,999</strong> 포인트
+                          </el-sale-price>
+                        </el-item-price>
+                      </el-item-txt>
+                    </a>
+                  </el-product-item>
+                </li>
+                <li>
+                  <el-product-item>
+                    <a href="#">
+                      <el-item-thumbnail>
+                        <img
+                          class="thumbnail-image"
+                          src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/product/20250227/20250227145823_a5b9221d-437d-4b84-b0ac-fbc6f58edf4f.jpg"
+                          alt=""
+                        />
+                        <el-bg></el-bg>
+                        <el-badge-special>
+                          <img
+                            src="./images/badge-reward.svg"
+                            alt="리워드지급"
+                          />
+                        </el-badge-special>
+                        <el-badge-period class="typo-label-sm">
+                          30일
+                        </el-badge-period>
+                        <el-layer-action>
+                          <button
+                            type="button"
+                            aria-label="add to cart"
+                            onclick="event.preventDefault(); event.stopPropagation(); alert('add to cart')"
+                          >
+                            <el-icon class="h24-cart"></el-icon>
+                          </button>
+                          <button type="button" aria-label="buy now">
+                            <el-icon class="h24-card"></el-icon>
+                          </button>
+                        </el-layer-action>
+                      </el-item-thumbnail>
+
+                      <el-item-txt class="typo-body-sm">
+                        <el-item-name>
+                          <el-brand>스타벅스</el-brand>
+                          <el-item-name-txt>떠먹는 스트로베리</el-item-name-txt>
+                        </el-item-name>
+                        <el-item-price>
+                          <el-badge-h14-reward class="unit-icon">
+                            <img
+                              src="./images/badge-h14-reward.svg"
+                              alt="리워드"
+                            />
+                          </el-badge-h14-reward>
+                          <el-sale-price class="typo-body-sm">
+                            <strong class="typo-body-lg">999,999</strong> 리워드
+                          </el-sale-price>
+                        </el-item-price>
+                      </el-item-txt>
+                    </a>
+                  </el-product-item>
+                </li>
+              </ul>
+            </el-products-list>
+
+            <el-products-pagination>
+              <!-- 시작: [DEV] 웹컴포넌트
+                1. 퍼블리싱용 웹컴포넌트입니다.
+                2. el-pagination
+                3. 개발 시 examples.html 원본을 참고해 주세요.
+              -->
+              <component-pagination></component-pagination>
+              <!-- 종료: [DEV] 웹컴포넌트 -->
+            </el-products-pagination>
+          </el-content>
+        </main>
+        <!-- 종료: 컨텐츠 -->
+      </el-container>
+
+      <!-- 시작: [DEV] 웹컴포넌트
+        1. 퍼블리싱용 웹컴포넌트입니다(el-footer).
+        2. 개발 시 examples.html 참고해 주세요.
+      -->
+      <component-footer></component-footer>
+      <!-- 종료: [DEV] 웹컴포넌트 -->
+    </el-wrapper>
+
+    <button id="scrollToTopButton" type="button" aria-label="상단으로 이동">
+      <el-icon class="h32-arrow-up natural-0"></el-icon>
+    </button>
+
+    <!-- 시작: alert -->
+    <el-alert
+      class="modal fade"
+      id="el-alert"
+      tabindex="-1"
+      aria-hidden="true"
+      data-bs-keyboard="false"
+    >
+      <el-alert-dialog class="modal-dialog modal-dialog-centered">
+        <el-alert-content class="modal-content">
+          <el-alert-body class="typo-subtitle-sm">
+            얼럿 샘플입니다.
+            <br />
+            개발 시 내용이 변경됩니다.
+          </el-alert-body>
+          <el-alert-footer>
+            <button
+              type="button"
+              data-bs-dismiss="modal"
+              class="button-h50-stroke typo-body-lg"
+            >
+              취소
+            </button>
+            <button
+              type="button"
+              data-bs-dismiss="modal"
+              class="button-h50-fill typo-body-lg"
+            >
+              확인
+            </button>
+          </el-alert-footer>
+        </el-alert-content>
+      </el-alert-dialog>
+    </el-alert>
+    <!-- 종료: alert -->
+
+    <!-- 공통js: common.js -->
+    <script src="./js/pub-common.js" crossorigin="anonymous"></script>
+
+    <!-- [DEV] 웹 컴포넌트js: 개발 시 삭제해 주세요 -->
+    <script src="./js/web-components.js" crossorigin="anonymous"></script>
+  </body>
+</html>
