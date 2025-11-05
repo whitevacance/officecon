@@ -1804,9 +1804,13 @@ el-product-item {
   }
 
   &.disabled {
-    a {
+    /* a {
       pointer-events: none;
       cursor: default;
+    } */
+
+    el-layer-action {
+      display: none;
     }
 
     el-layer-disabled {
