@@ -5,8 +5,9 @@
   --color-primary: var(--color-blue-40);
   --color-blue-officecon: #202b9c;
   --color-blue-40: #4165f8;
-  --color-blue-20: #c3e1ff;
-  --color-blue-10: #f0f6ff;
+  --color-blue-30: #c3e1ff;
+  --color-blue-20: #f0f6ff;
+  --color-blue-10: #f6f8fb;
   --color-blue-grayish: #778198;
   --color-blue-grayish-light: #c3c7d0;
   --color-purple-40: #6943d2;
@@ -672,6 +673,7 @@ el-badge-bubble-blue {
     height: 100%;
     overflow: hidden;
     position: relative;
+    background-color: var(--color-blue-20);
 
     span {
       display: flex;
@@ -681,7 +683,7 @@ el-badge-bubble-blue {
       height: 100%;
       position: absolute;
       top: 0;
-      background-color: var(--color-blue-10);
+      background-color: var(--color-blue-20);
       animation: badgeBubbleBlueFade 3s ease-out infinite;
 
       &:first-child {
@@ -1792,6 +1794,7 @@ el-product-item {
 
       el-retail-price {
         color: var(--color-natural-40);
+        text-decoration: line-through;
       }
     }
   }
@@ -4975,7 +4978,7 @@ el-examples-article {
   gap: 20px;
   width: 100%;
   padding: 30px 0;
-  border-bottom: 2px solid var(--color-blue-20);
+  border-bottom: 2px solid var(--color-blue-30);
 
   el-examples-stack {
     display: flex;

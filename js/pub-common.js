@@ -346,6 +346,7 @@ const initHomeMainSwiper = () => {
   const homeMainSwiperPlayEl = document.querySelector('#homeMainSwiperPlay');
 
   const homeMainSwiperParams = {
+    // loop: true,
     speed: 600,
     rewind: true,
     effect: 'cards',
