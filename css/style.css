@@ -98,6 +98,10 @@ el-wrapper.personal-member {
 /* 종료: css 공통 변수 */
 
 /* 시작: reset */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 @font-face {
   font-family: Pretendard;
   font-style: normal;
