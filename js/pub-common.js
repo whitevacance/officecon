@@ -344,12 +344,13 @@ const initHomeMainSwiper = () => {
   const homeMainSwiperNextEl = document.querySelector('#homeMainSwiperNext');
   const homeMainSwiperPauseEl = document.querySelector('#homeMainSwiperPause');
   const homeMainSwiperPlayEl = document.querySelector('#homeMainSwiperPlay');
-  const originalSlidesCount =
-    homeMainSwiperEl?.querySelectorAll('swiper-slide')?.length || 0;
 
   // 슬라이드 개수 확인 (loop 모드가 제대로 작동하려면 최소 8개 이상 필요)
-  let slidesCount =
+  // 원본 슬라이드 개수를 먼저 저장 (복제 전)
+  const originalSlidesCount =
     homeMainSwiperEl?.querySelectorAll('swiper-slide')?.length || 0;
+  let slidesCount = originalSlidesCount;
+  let isCloned = false; // 복제 여부 플래그
 
   // slidesCount가 1 이하인 경우 초기화하지 않음
   if (slidesCount <= 1) {
@@ -358,6 +359,7 @@ const initHomeMainSwiper = () => {
 
   // slidesCount가 8 미만인 경우 복제 로직 실행
   if (slidesCount < 8) {
+    isCloned = true; // 복제가 진행됨
     const originalSlides = Array.from(
       homeMainSwiperEl.querySelectorAll('swiper-slide')
     );
@@ -444,11 +446,28 @@ const initHomeMainSwiper = () => {
     const homeMainSwiperPaginationEl = document.querySelector(
       '#homeMainSwiperPagination'
     );
-    homeMainSwiperPaginationEl.textContent = `1 / ${originalSlidesCount}`;
-    homeMainSwiperInstance.on('slideChange', () => {
-      const currentSlide = homeMainSwiperInstance.activeIndex + 1;
-      homeMainSwiperPaginationEl.textContent = `${currentSlide} / ${originalSlidesCount}`;
-    });
+
+    if (homeMainSwiperPaginationEl) {
+      const getOriginalSlideIndex = () => {
+        if (isCloned) {
+          // 복제된 경우: loop 모드에서 realIndex를 사용하여 원본 인덱스 계산
+          const realIndex = homeMainSwiperInstance.realIndex;
+          return (realIndex % originalSlidesCount) + 1;
+        } else {
+          // 복제되지 않은 경우: activeIndex를 그대로 사용
+          return homeMainSwiperInstance.activeIndex + 1;
+        }
+      };
+
+      // 초기 페이지네이션 설정
+      const initialSlide = getOriginalSlideIndex();
+      homeMainSwiperPaginationEl.textContent = `${initialSlide} / ${originalSlidesCount}`;
+
+      homeMainSwiperInstance.on('slideChange', () => {
+        const currentSlide = getOriginalSlideIndex();
+        homeMainSwiperPaginationEl.textContent = `${currentSlide} / ${originalSlidesCount}`;
+      });
+    }
 
     // 초기화 완료 전환
     homeMainSwiperEl.dataset.initialized = 'true';
