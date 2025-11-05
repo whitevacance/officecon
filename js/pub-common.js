@@ -344,20 +344,64 @@ const initHomeMainSwiper = () => {
   const homeMainSwiperNextEl = document.querySelector('#homeMainSwiperNext');
   const homeMainSwiperPauseEl = document.querySelector('#homeMainSwiperPause');
   const homeMainSwiperPlayEl = document.querySelector('#homeMainSwiperPlay');
+  const originalSlidesCount =
+    homeMainSwiperEl?.querySelectorAll('swiper-slide')?.length || 0;
+
+  // 슬라이드 개수 확인 (loop 모드가 제대로 작동하려면 최소 8개 이상 필요)
+  let slidesCount =
+    homeMainSwiperEl?.querySelectorAll('swiper-slide')?.length || 0;
+
+  // slidesCount가 1 이하인 경우 초기화하지 않음
+  if (slidesCount <= 1) {
+    return;
+  }
+
+  // slidesCount가 8 미만인 경우 복제 로직 실행
+  if (slidesCount < 8) {
+    const originalSlides = Array.from(
+      homeMainSwiperEl.querySelectorAll('swiper-slide')
+    );
+
+    let multiplier = 1;
+
+    if (slidesCount === 2) {
+      // 2개인 경우: 4배수로 복제 (최종 8개)
+      multiplier = 4;
+    } else if (slidesCount === 3) {
+      // 3개인 경우: 3배수로 복제 (최종 9개)
+      multiplier = 3;
+    } else if (slidesCount >= 4 && slidesCount <= 7) {
+      // 4~7개인 경우: 2배수로 복제
+      multiplier = 2;
+    }
+
+    // 전체 슬라이드 그룹을 순서대로 반복 복제
+    // 예: [1번, 2번] → [1번, 2번, 1번, 2번, 1번, 2번, 1번, 2번]
+    for (let i = 1; i < multiplier; i++) {
+      originalSlides.forEach((slide) => {
+        const clonedSlide = slide.cloneNode(true);
+        homeMainSwiperEl.appendChild(clonedSlide);
+      });
+    }
+
+    // 복제 후 슬라이드 개수 재확인
+    slidesCount =
+      homeMainSwiperEl?.querySelectorAll('swiper-slide')?.length || 0;
+  }
 
   const homeMainSwiperParams = {
-    // loop: true,
-    speed: 600,
-    rewind: true,
     effect: 'cards',
+    loop: true,
+    // rewind: true,
+    speed: 600,
     cardsEffect: {
       perSlideOffset: 7,
       perSlideRotate: 1.8,
     },
-    pagination: {
-      el: '#homeMainSwiperPagination',
-      type: 'fraction',
-    },
+    // pagination: {
+    //   el: '#homeMainSwiperPagination',
+    //   type: 'fraction',
+    // },
     autoplay: {
       delay: 3500,
     },
@@ -394,6 +438,16 @@ const initHomeMainSwiper = () => {
       homeMainSwiperInstance.autoplay.start();
       homeMainSwiperPlayEl.style.display = 'none';
       homeMainSwiperPauseEl.style.display = 'block';
+    });
+
+    // 스와이퍼 페이지네이션 수동으로 카운팅
+    const homeMainSwiperPaginationEl = document.querySelector(
+      '#homeMainSwiperPagination'
+    );
+    homeMainSwiperPaginationEl.textContent = `1 / ${originalSlidesCount}`;
+    homeMainSwiperInstance.on('slideChange', () => {
+      const currentSlide = homeMainSwiperInstance.activeIndex + 1;
+      homeMainSwiperPaginationEl.textContent = `${currentSlide} / ${originalSlidesCount}`;
     });
 
     // 초기화 완료 전환
@@ -645,6 +699,7 @@ const initModalNoticeSwiper = () => {
   );
   const modalNoticeSwiperParams = {
     loop: true,
+    slidesPerView: 1,
     pagination: {
       el: '#modalNoticeSwiperPagination',
       type: 'fraction',

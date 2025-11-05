@@ -3504,7 +3504,9 @@ el-home-container {
   el-home-main-swiper {
     display: flex;
     justify-content: center;
-    width: 100%;
+    width: calc(100% + 200px);
+    margin-left: -100px;
+    overflow: hidden;
     position: relative;
 
     swiper-container {
