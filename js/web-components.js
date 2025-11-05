@@ -258,7 +258,7 @@ class ComponentHeaderSticky extends HTMLElement {
                           <li>
                             <a href="#">스타벅스</a>
                             <button type="button" aria-label="삭제">
-                              <el-icon class="h16-closed natural-0"></el-icon>
+                              <el-icon class="h16-closed natural-30"></el-icon>
                             </button>
                           </li>
                           <li>
@@ -267,13 +267,13 @@ class ComponentHeaderSticky extends HTMLElement {
                               쿠팡이츠
                             </a>
                             <button type="button" aria-label="삭제">
-                              <el-icon class="h16-closed natural-0"></el-icon>
+                              <el-icon class="h16-closed natural-30"></el-icon>
                             </button>
                           </li>
                           <li>
                             <a href="#">스타벅스</a>
                             <button type="button" aria-label="삭제">
-                              <el-icon class="h16-closed natural-0"></el-icon>
+                              <el-icon class="h16-closed natural-30"></el-icon>
                             </button>
                           </li>
                         </ul>

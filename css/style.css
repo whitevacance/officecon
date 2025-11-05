@@ -2410,8 +2410,8 @@ el-header-sticky {
 
                   button {
                     text-decoration: underline;
-                    text-decoration-color: var(--color-natural-20);
-                    color: var(--color-natural-20);
+                    text-decoration-color: var(--color-natural-30);
+                    color: var(--color-natural-30);
                     font-weight: 600;
                   }
                 }
