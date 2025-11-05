@@ -879,6 +879,10 @@ button {
     background-color: var(--color-natural-100);
     color: var(--color-natural-20);
     overflow: hidden;
+
+    &:has(el-icon.h16-arrow-right) {
+      padding-left: 26px;
+    }
   }
 
   &.button-h50-stroke-login {
