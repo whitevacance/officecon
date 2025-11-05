@@ -4580,6 +4580,7 @@ el-products-list-top-bar {
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  padding: 0 20px 0 4px;
 
   & > el-left {
     display: flex;
