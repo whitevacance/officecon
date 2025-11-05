@@ -1690,7 +1690,7 @@ el-product-item {
         transition: all 0.3s ease-out;
 
         &:hover {
-          background-color: var(--color-primary);
+          background-color: var(--color-blue-officecon);
         }
       }
     }
