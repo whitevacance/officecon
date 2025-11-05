@@ -449,24 +449,39 @@ const initHomeMainSwiper = () => {
 
     if (homeMainSwiperPaginationEl) {
       const getOriginalSlideIndex = () => {
+        // loop 모드에서는 항상 realIndex를 사용해야 함 (activeIndex는 클론 슬라이드 때문에 부정확할 수 있음)
+        const realIndex = homeMainSwiperInstance.realIndex;
+
         if (isCloned) {
-          // 복제된 경우: loop 모드에서 realIndex를 사용하여 원본 인덱스 계산
-          const realIndex = homeMainSwiperInstance.realIndex;
+          // 복제된 경우: realIndex를 원본 슬라이드 개수로 나눈 나머지를 사용
           return (realIndex % originalSlidesCount) + 1;
         } else {
-          // 복제되지 않은 경우: activeIndex를 그대로 사용
-          return homeMainSwiperInstance.activeIndex + 1;
+          // 복제되지 않은 경우: realIndex를 그대로 사용
+          return realIndex + 1;
         }
       };
 
-      // 초기 페이지네이션 설정
-      const initialSlide = getOriginalSlideIndex();
-      homeMainSwiperPaginationEl.textContent = `${initialSlide} / ${originalSlidesCount}`;
-
-      homeMainSwiperInstance.on('slideChange', () => {
+      // 페이지네이션 업데이트 함수
+      const updatePagination = () => {
         const currentSlide = getOriginalSlideIndex();
         homeMainSwiperPaginationEl.textContent = `${currentSlide} / ${originalSlidesCount}`;
+      };
+
+      // Swiper 초기화 완료 후 초기 페이지네이션 설정
+      homeMainSwiperInstance.on('init', () => {
+        updatePagination();
       });
+
+      // 슬라이드 변경 시 페이지네이션 업데이트
+      homeMainSwiperInstance.on('slideChange', () => {
+        updatePagination();
+      });
+
+      // 초기 페이지네이션 설정 (이미 초기화된 경우를 대비)
+      // setTimeout을 사용하여 Swiper가 완전히 초기화된 후 실행
+      setTimeout(() => {
+        updatePagination();
+      }, 0);
     }
 
     // 초기화 완료 전환
