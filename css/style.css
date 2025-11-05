@@ -4684,6 +4684,7 @@ el-product-detail {
       display: flex;
       flex-direction: column;
       width: 600px;
+      height: fit-content;
       border-radius: 20px;
       overflow: hidden;
 
