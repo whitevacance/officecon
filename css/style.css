@@ -2557,7 +2557,7 @@ el-header-sticky {
 
     el-header-content-right {
       display: flex;
-      align-items: center;
+      align-items: flex-end;
       justify-content: flex-end;
       gap: 17px;
       height: 100%;
@@ -2566,7 +2566,7 @@ el-header-sticky {
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-end;
         height: 48px;
         font-weight: 600;
         color: var(--color-natural-40);
