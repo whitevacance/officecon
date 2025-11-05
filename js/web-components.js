@@ -411,7 +411,7 @@ class ComponentHeaderGnb extends HTMLElement {
                   type="button"
                   class="typo-body-md"
                   data-bs-toggle="dropdown"
-                  data-bs-offset="0,-34"
+                  data-bs-offset="-24,-34"
                   data-bs-auto-close="outside"
                   aria-expanded="false"
                 >
