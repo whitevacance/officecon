@@ -4789,6 +4789,7 @@ el-product-detail {
           el-original-price {
             color: var(--color-natural-30);
             font-weight: 600 !important;
+            text-decoration: line-through;
           }
         }
       }
