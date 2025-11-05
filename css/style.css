@@ -1756,6 +1756,7 @@ el-product-item {
     }
 
     el-item-name {
+      min-height: 40px;
       display: -webkit-box;
       overflow: hidden;
       text-overflow: ellipsis;
