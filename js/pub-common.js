@@ -464,7 +464,19 @@ const initHomeMainSwiper = () => {
       // 페이지네이션 업데이트 함수
       const updatePagination = () => {
         const currentSlide = getOriginalSlideIndex();
-        homeMainSwiperPaginationEl.textContent = `${currentSlide} / ${originalSlidesCount}`;
+        const currentSpan = homeMainSwiperPaginationEl.querySelector(
+          '.swiper-pagination-current'
+        );
+        const totalSpan = homeMainSwiperPaginationEl.querySelector(
+          '.swiper-pagination-total'
+        );
+
+        if (currentSpan) {
+          currentSpan.textContent = currentSlide;
+        }
+        if (totalSpan) {
+          totalSpan.textContent = originalSlidesCount;
+        }
       };
 
       // Swiper 초기화 완료 후 초기 페이지네이션 설정
