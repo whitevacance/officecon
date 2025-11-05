@@ -662,7 +662,7 @@ el-badge-bubble-blue {
   background-position: center;
   background-repeat: no-repeat;
   font-weight: 700 !important;
-  padding: 4px 10px 9px 10px;
+  padding: 5px 10px 8px 10px;
   position: relative;
 
   el-badge-transition {
