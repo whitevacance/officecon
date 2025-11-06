@@ -394,16 +394,11 @@ const initHomeMainSwiper = () => {
   const homeMainSwiperParams = {
     effect: 'cards',
     loop: true,
-    // rewind: true,
     speed: 600,
     cardsEffect: {
       perSlideOffset: 7,
       perSlideRotate: 1.8,
     },
-    // pagination: {
-    //   el: '#homeMainSwiperPagination',
-    //   type: 'fraction',
-    // },
     autoplay: {
       delay: 3500,
     },
@@ -593,6 +588,7 @@ const initCategorySwiper = () => {
       slidesOffsetBefore: 1,
       slidesOffsetAfter: 18,
       focusableElements: 'select',
+      watchSlidesProgress: true,
     };
 
     [...categorySwiperEls].forEach((categorySwiperEl) => {
@@ -604,6 +600,14 @@ const initCategorySwiper = () => {
       if (categorySwiperEl?.querySelector('swiper-container')) {
         const targetSwiperContainer =
           categorySwiperEl.querySelector('swiper-container');
+
+        // 시작: [251106 1차 검수 반영]
+        // 맨 마지막 칩메뉴이동 시 맨 앞 칩메뉴가 짤리지 않고 다음 칩메뉴를 첫 번쨰로 원형 모두 나오도록 위치 수정
+        const swiperSlide = document.createElement('swiper-slide');
+        swiperSlide.textContent = ' ';
+        swiperSlide.style.width = '200px';
+        targetSwiperContainer.appendChild(swiperSlide);
+        // 종료: [251106 1차 검수 반영]
 
         Object.assign(targetSwiperContainer, swiperParams);
         targetSwiperContainer.initialize();
@@ -618,20 +622,20 @@ const initCategorySwiper = () => {
         );
 
         if (targetSwiperInstance && targetSwiperPrevEl && targetSwiperNextEl) {
-          const handleButtonDisabled = () => {
+          const handleButtonDisabled = ({ isNextElDisabled = false }) => {
             if (targetSwiperInstance.isBeginning) {
               targetSwiperPrevEl.disabled = true;
             } else {
               targetSwiperPrevEl.disabled = false;
             }
 
-            if (targetSwiperInstance.isEnd) {
+            if (isNextElDisabled || targetSwiperInstance.isEnd) {
               targetSwiperNextEl.disabled = true;
             } else {
               targetSwiperNextEl.disabled = false;
             }
           };
-          handleButtonDisabled();
+          handleButtonDisabled({ isNextElDisabled: false });
 
           // 이벤트 핸들러 함수 정의
           const handlePrevClick = () => {
@@ -642,8 +646,16 @@ const initCategorySwiper = () => {
             targetSwiperInstance.slideNext();
           };
 
-          const handleSlideChange = () => {
-            handleButtonDisabled();
+          const handleSlideChange = (swiper) => {
+            // 시작: [251106 1차 검수 반영]
+            // 맨 마지막 칩메뉴이동 시 맨 앞 칩메뉴가 짤리지 않고 다음 칩메뉴를 첫 번쨰로 원형 모두 나오도록 위치 수정
+            const lastSlide = swiper.slides[swiper.slides.length - 1];
+            if (lastSlide.classList.contains('swiper-slide-visible')) {
+              handleButtonDisabled({ isNextElDisabled: true });
+            } else {
+              handleButtonDisabled({ isNextElDisabled: false });
+            }
+            // 종료: [251106 1차 검수 반영]
           };
 
           // 이벤트 리스너 추가

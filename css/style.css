@@ -1921,6 +1921,11 @@ el-post-list {
 component-category-swiper {
   display: block;
   width: 100%;
+
+  el-home-section-title & {
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
 }
 el-category-swiper {
   display: flex;
@@ -1928,6 +1933,12 @@ el-category-swiper {
   justify-content: space-between;
   width: 100%;
   position: relative;
+
+  el-home-section-title & {
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: calc(100% - 198px - 5px);
+  }
 
   el-swiper-wrapper {
     display: block;
