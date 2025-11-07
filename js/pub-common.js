@@ -345,17 +345,59 @@ const initHomeMainSwiper = () => {
   const homeMainSwiperPauseEl = document.querySelector('#homeMainSwiperPause');
   const homeMainSwiperPlayEl = document.querySelector('#homeMainSwiperPlay');
 
+  // 슬라이드 개수 확인 (loop 모드가 제대로 작동하려면 최소 8개 이상 필요)
+  // 원본 슬라이드 개수를 먼저 저장 (복제 전)
+  const originalSlidesCount =
+    homeMainSwiperEl?.querySelectorAll('swiper-slide')?.length || 0;
+  let slidesCount = originalSlidesCount;
+  let isCloned = false; // 복제 여부 플래그
+
+  // slidesCount가 1 이하인 경우 초기화하지 않음
+  if (slidesCount <= 1) {
+    return;
+  }
+
+  // slidesCount가 8 미만인 경우 복제 로직 실행
+  if (slidesCount < 8) {
+    isCloned = true; // 복제가 진행됨
+    const originalSlides = Array.from(
+      homeMainSwiperEl.querySelectorAll('swiper-slide')
+    );
+
+    let multiplier = 1;
+
+    if (slidesCount === 2) {
+      // 2개인 경우: 4배수로 복제 (최종 8개)
+      multiplier = 4;
+    } else if (slidesCount === 3) {
+      // 3개인 경우: 3배수로 복제 (최종 9개)
+      multiplier = 3;
+    } else if (slidesCount >= 4 && slidesCount <= 7) {
+      // 4~7개인 경우: 2배수로 복제
+      multiplier = 2;
+    }
+
+    // 전체 슬라이드 그룹을 순서대로 반복 복제
+    // 예: [1번, 2번] → [1번, 2번, 1번, 2번, 1번, 2번, 1번, 2번]
+    for (let i = 1; i < multiplier; i++) {
+      originalSlides.forEach((slide) => {
+        const clonedSlide = slide.cloneNode(true);
+        homeMainSwiperEl.appendChild(clonedSlide);
+      });
+    }
+
+    // 복제 후 슬라이드 개수 재확인
+    slidesCount =
+      homeMainSwiperEl?.querySelectorAll('swiper-slide')?.length || 0;
+  }
+
   const homeMainSwiperParams = {
-    speed: 600,
-    rewind: true,
     effect: 'cards',
+    loop: true,
+    speed: 600,
     cardsEffect: {
       perSlideOffset: 7,
       perSlideRotate: 1.8,
-    },
-    pagination: {
-      el: '#homeMainSwiperPagination',
-      type: 'fraction',
     },
     autoplay: {
       delay: 3500,
@@ -394,6 +436,60 @@ const initHomeMainSwiper = () => {
       homeMainSwiperPlayEl.style.display = 'none';
       homeMainSwiperPauseEl.style.display = 'block';
     });
+
+    // 스와이퍼 페이지네이션 수동으로 카운팅
+    const homeMainSwiperPaginationEl = document.querySelector(
+      '#homeMainSwiperPagination'
+    );
+
+    if (homeMainSwiperPaginationEl) {
+      const getOriginalSlideIndex = () => {
+        // loop 모드에서는 항상 realIndex를 사용해야 함 (activeIndex는 클론 슬라이드 때문에 부정확할 수 있음)
+        const realIndex = homeMainSwiperInstance.realIndex;
+
+        if (isCloned) {
+          // 복제된 경우: realIndex를 원본 슬라이드 개수로 나눈 나머지를 사용
+          return (realIndex % originalSlidesCount) + 1;
+        } else {
+          // 복제되지 않은 경우: realIndex를 그대로 사용
+          return realIndex + 1;
+        }
+      };
+
+      // 페이지네이션 업데이트 함수
+      const updatePagination = () => {
+        const currentSlide = getOriginalSlideIndex();
+        const currentSpan = homeMainSwiperPaginationEl.querySelector(
+          '.swiper-pagination-current'
+        );
+        const totalSpan = homeMainSwiperPaginationEl.querySelector(
+          '.swiper-pagination-total'
+        );
+
+        if (currentSpan) {
+          currentSpan.textContent = currentSlide;
+        }
+        if (totalSpan) {
+          totalSpan.textContent = originalSlidesCount;
+        }
+      };
+
+      // Swiper 초기화 완료 후 초기 페이지네이션 설정
+      homeMainSwiperInstance.on('init', () => {
+        updatePagination();
+      });
+
+      // 슬라이드 변경 시 페이지네이션 업데이트
+      homeMainSwiperInstance.on('slideChange', () => {
+        updatePagination();
+      });
+
+      // 초기 페이지네이션 설정 (이미 초기화된 경우를 대비)
+      // setTimeout을 사용하여 Swiper가 완전히 초기화된 후 실행
+      setTimeout(() => {
+        updatePagination();
+      }, 0);
+    }
 
     // 초기화 완료 전환
     homeMainSwiperEl.dataset.initialized = 'true';
@@ -492,6 +588,7 @@ const initCategorySwiper = () => {
       slidesOffsetBefore: 1,
       slidesOffsetAfter: 18,
       focusableElements: 'select',
+      watchSlidesProgress: true,
     };
 
     [...categorySwiperEls].forEach((categorySwiperEl) => {
@@ -503,6 +600,14 @@ const initCategorySwiper = () => {
       if (categorySwiperEl?.querySelector('swiper-container')) {
         const targetSwiperContainer =
           categorySwiperEl.querySelector('swiper-container');
+
+        // 시작: [251106 1차 검수 반영]
+        // 맨 마지막 칩메뉴이동 시 맨 앞 칩메뉴가 짤리지 않고 다음 칩메뉴를 첫 번쨰로 원형 모두 나오도록 위치 수정
+        const swiperSlide = document.createElement('swiper-slide');
+        swiperSlide.textContent = ' ';
+        swiperSlide.style.width = '200px';
+        targetSwiperContainer.appendChild(swiperSlide);
+        // 종료: [251106 1차 검수 반영]
 
         Object.assign(targetSwiperContainer, swiperParams);
         targetSwiperContainer.initialize();
@@ -517,20 +622,20 @@ const initCategorySwiper = () => {
         );
 
         if (targetSwiperInstance && targetSwiperPrevEl && targetSwiperNextEl) {
-          const handleButtonDisabled = () => {
+          const handleButtonDisabled = ({ isNextElDisabled = false }) => {
             if (targetSwiperInstance.isBeginning) {
               targetSwiperPrevEl.disabled = true;
             } else {
               targetSwiperPrevEl.disabled = false;
             }
 
-            if (targetSwiperInstance.isEnd) {
+            if (isNextElDisabled || targetSwiperInstance.isEnd) {
               targetSwiperNextEl.disabled = true;
             } else {
               targetSwiperNextEl.disabled = false;
             }
           };
-          handleButtonDisabled();
+          handleButtonDisabled({ isNextElDisabled: false });
 
           // 이벤트 핸들러 함수 정의
           const handlePrevClick = () => {
@@ -541,8 +646,16 @@ const initCategorySwiper = () => {
             targetSwiperInstance.slideNext();
           };
 
-          const handleSlideChange = () => {
-            handleButtonDisabled();
+          const handleSlideChange = (swiper) => {
+            // 시작: [251106 1차 검수 반영]
+            // 맨 마지막 칩메뉴이동 시 맨 앞 칩메뉴가 짤리지 않고 다음 칩메뉴를 첫 번쨰로 원형 모두 나오도록 위치 수정
+            const lastSlide = swiper.slides[swiper.slides.length - 1];
+            if (lastSlide.classList.contains('swiper-slide-visible')) {
+              handleButtonDisabled({ isNextElDisabled: true });
+            } else {
+              handleButtonDisabled({ isNextElDisabled: false });
+            }
+            // 종료: [251106 1차 검수 반영]
           };
 
           // 이벤트 리스너 추가
@@ -644,6 +757,7 @@ const initModalNoticeSwiper = () => {
   );
   const modalNoticeSwiperParams = {
     loop: true,
+    slidesPerView: 1,
     pagination: {
       el: '#modalNoticeSwiperPagination',
       type: 'fraction',

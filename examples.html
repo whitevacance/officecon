@@ -102,18 +102,18 @@
                 <a href="#">로그아웃</a>
               </li>
               <li>
-                <el-dropdown-menu>
+                <el-dropdown-menu class="dropdown-center">
                   <button
                     type="button"
                     class="typo-label-lg"
                     data-bs-toggle="dropdown"
-                    data-bs-offset="5,10"
+                    data-bs-offset="-8,10"
                   >
                     고객센터
                     <el-icon class="h16-arrow-down natural-40"></el-icon>
                   </button>
                   <el-layer-dropdown
-                    class="dropdown-menu dropdown-menu-end small typo-label-lg typo-weight-em"
+                    class="dropdown-menu small typo-label-lg typo-weight-em"
                   >
                     <ul>
                       <li>
@@ -159,7 +159,7 @@
                     type="button"
                     id="searchLayerToggleButton"
                     data-bs-toggle="dropdown"
-                    data-bs-offset="0,-17"
+                    data-bs-offset="0,-18"
                     data-bs-auto-close="outside"
                     aria-expanded="false"
                   >
@@ -194,7 +194,9 @@
                             <li>
                               <a href="#">스타벅스</a>
                               <button type="button" aria-label="삭제">
-                                <el-icon class="h16-closed natural-0"></el-icon>
+                                <el-icon
+                                  class="h16-closed natural-30"
+                                ></el-icon>
                               </button>
                             </li>
                             <li>
@@ -203,13 +205,17 @@
                                 쿠팡이츠
                               </a>
                               <button type="button" aria-label="삭제">
-                                <el-icon class="h16-closed natural-0"></el-icon>
+                                <el-icon
+                                  class="h16-closed natural-30"
+                                ></el-icon>
                               </button>
                             </li>
                             <li>
                               <a href="#">스타벅스</a>
                               <button type="button" aria-label="삭제">
-                                <el-icon class="h16-closed natural-0"></el-icon>
+                                <el-icon
+                                  class="h16-closed natural-30"
+                                ></el-icon>
                               </button>
                             </li>
                           </ul>
@@ -319,7 +325,7 @@
                     type="button"
                     class="typo-body-md"
                     data-bs-toggle="dropdown"
-                    data-bs-offset="0,-34"
+                    data-bs-offset="-24,-34"
                     data-bs-auto-close="outside"
                     aria-expanded="false"
                   >
@@ -1257,17 +1263,17 @@
                   </el-badge-bubble-blue>
                   <a href="#">파트너링크</a>
                 </li>
-                <li>
+                <li class="dropdown-center">
                   <button
                     type="button"
                     class="typo-body-md"
                     data-bs-toggle="dropdown"
-                    data-bs-offset="5,10"
+                    data-bs-offset="-8,10"
                   >
                     서비스 소개
                     <el-icon class="h16-arrow-down natural-40"></el-icon>
                   </button>
-                  <el-layer-dropdown class="dropdown-menu dropdown-menu-end">
+                  <el-layer-dropdown class="dropdown-menu">
                     <ul class="typo-body-sm typo-weight-em">
                       <li>
                         <a href="#">오피스콘 특장점</a>
@@ -1284,17 +1290,17 @@
                     </ul>
                   </el-layer-dropdown>
                 </li>
-                <li>
+                <li class="dropdown-center">
                   <button
                     type="button"
                     class="typo-body-md"
                     data-bs-toggle="dropdown"
-                    data-bs-offset="5,10"
+                    data-bs-offset="-8,10"
                   >
                     오피스콘 플러스
                     <el-icon class="h16-arrow-down natural-40"></el-icon>
                   </button>
-                  <el-layer-dropdown class="dropdown-menu dropdown-menu-end">
+                  <el-layer-dropdown class="dropdown-menu">
                     <ul class="typo-body-sm typo-weight-em">
                       <li>
                         <a href="#">상품 Pick 발송</a>
@@ -1990,6 +1996,9 @@
                 </el-color-chip>
                 <el-color-chip style="background: var(--color-blue-40)">
                   --color-blue-40
+                </el-color-chip>
+                <el-color-chip style="background: var(--color-blue-30)">
+                  --color-blue-30
                 </el-color-chip>
                 <el-color-chip style="background: var(--color-blue-20)">
                   --color-blue-20
@@ -2879,6 +2888,7 @@
                         aria-label="show password"
                       >
                         <el-icon class="h20-eye-show natural-0"></el-icon>
+                        <el-icon class="h20-eye-hide natural-0"></el-icon>
                       </button>
                     </el-input-addon>
                   </el-input>
@@ -2942,7 +2952,7 @@
 
             <el-examples-article>
               <h2>홈 &gt; 추천상품 상단 영역 스와이퍼</h2>
-              <el-examples-stack style="width: calc(683px + 32px)">
+              <el-examples-stack style="width: 886px">
                 <el-category-swiper>
                   <el-swiper-wrapper>
                     <swiper-container init="false">

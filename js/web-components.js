@@ -133,18 +133,18 @@ class ComponentHeaderTop extends HTMLElement {
               <a href="#">로그아웃</a>
             </li>
             <li>
-              <el-dropdown-menu>
+              <el-dropdown-menu class="dropdown-center">
                 <button
                   type="button"
                   class="typo-label-lg"
                   data-bs-toggle="dropdown"
-                  data-bs-offset="5,10"
+                  data-bs-offset="-8,10"
                 >
                   고객센터
                   <el-icon class="h16-arrow-down natural-40"></el-icon>
                 </button>
                 <el-layer-dropdown
-                  class="dropdown-menu dropdown-menu-end small"
+                  class="dropdown-menu small"
                 >
                   <ul class="typo-label-lg typo-weight-em">
                     <li>
@@ -223,7 +223,7 @@ class ComponentHeaderSticky extends HTMLElement {
                   type="button"
                   id="searchLayerToggleButton"
                   data-bs-toggle="dropdown"
-                  data-bs-offset="0,-17"
+                  data-bs-offset="0,-18"
                   data-bs-auto-close="outside"
                   aria-expanded="false"
                 >
@@ -258,7 +258,7 @@ class ComponentHeaderSticky extends HTMLElement {
                           <li>
                             <a href="#">스타벅스</a>
                             <button type="button" aria-label="삭제">
-                              <el-icon class="h16-closed natural-0"></el-icon>
+                              <el-icon class="h16-closed natural-30"></el-icon>
                             </button>
                           </li>
                           <li>
@@ -267,13 +267,13 @@ class ComponentHeaderSticky extends HTMLElement {
                               쿠팡이츠
                             </a>
                             <button type="button" aria-label="삭제">
-                              <el-icon class="h16-closed natural-0"></el-icon>
+                              <el-icon class="h16-closed natural-30"></el-icon>
                             </button>
                           </li>
                           <li>
                             <a href="#">스타벅스</a>
                             <button type="button" aria-label="삭제">
-                              <el-icon class="h16-closed natural-0"></el-icon>
+                              <el-icon class="h16-closed natural-30"></el-icon>
                             </button>
                           </li>
                         </ul>
@@ -411,7 +411,7 @@ class ComponentHeaderGnb extends HTMLElement {
                   type="button"
                   class="typo-body-md"
                   data-bs-toggle="dropdown"
-                  data-bs-offset="0,-34"
+                  data-bs-offset="-24,-34"
                   data-bs-auto-close="outside"
                   aria-expanded="false"
                 >
@@ -1349,17 +1349,17 @@ class ComponentHeaderGnb extends HTMLElement {
                 </el-badge-bubble-blue>
                 <a href="#">파트너링크</a>
               </li>
-              <li>
+              <li class="dropdown-center">
                 <button
                   type="button"
                   class="typo-body-md"
                   data-bs-toggle="dropdown"
-                  data-bs-offset="5,10"
+                  data-bs-offset="-8,10"
                 >
                   서비스 소개
                   <el-icon class="h16-arrow-down natural-40"></el-icon>
                 </button>
-                <el-layer-dropdown class="dropdown-menu dropdown-menu-end">
+                <el-layer-dropdown class="dropdown-menu">
                   <ul class="typo-body-sm typo-weight-em">
                     <li>
                       <a href="#">오피스콘 특장점</a>
@@ -1376,17 +1376,17 @@ class ComponentHeaderGnb extends HTMLElement {
                   </ul>
                 </el-layer-dropdown>
               </li>
-              <li>
+              <li class="dropdown-center">
                 <button
                   type="button"
                   class="typo-body-md"
                   data-bs-toggle="dropdown"
-                  data-bs-offset="5,10"
+                  data-bs-offset="-8,10"
                 >
                   오피스콘 플러스
                   <el-icon class="h16-arrow-down natural-40"></el-icon>
                 </button>
-                <el-layer-dropdown class="dropdown-menu dropdown-menu-end">
+                <el-layer-dropdown class="dropdown-menu">
                   <ul class="typo-body-sm typo-weight-em">
                     <li>
                       <a href="#">상품 Pick 발송</a>
