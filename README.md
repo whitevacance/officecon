@@ -31,4 +31,4 @@
 - 상품리스트 - 필터 결과 없음: http://officecon-pub.s3-website.ap-northeast-2.amazonaws.com/products-empty-filter.html
 - 상품상세: http://officecon-pub.s3-website.ap-northeast-2.amazonaws.com/detail.html
 - 리워드관: http://officecon-pub.s3-website.ap-northeast-2.amazonaws.com/reward.html
-- 리워드관: http://officecon-pub.s3-website.ap-northeast-2.amazonaws.com/reward.html
+- (기타-퍼블리싱 확인): http://officecon-pub.s3-website.ap-northeast-2.amazonaws.com/etc.html
