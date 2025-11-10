@@ -223,7 +223,7 @@ class ComponentHeaderSticky extends HTMLElement {
                   type="button"
                   id="searchLayerToggleButton"
                   data-bs-toggle="dropdown"
-                  data-bs-offset="0,-18"
+                  data-bs-offset="0,-17"
                   data-bs-auto-close="outside"
                   aria-expanded="false"
                 >
