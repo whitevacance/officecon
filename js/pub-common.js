@@ -39,6 +39,118 @@ if (window !== undefined) {
 initAlert();
 // 종료: el-alert
 
+// 시작: el-tab-button
+let tabButtonActiveInitialized = false;
+const initTabButtonActive = () => {
+  // 이미 초기화된 경우 건너뛰기
+  if (tabButtonActiveInitialized) {
+    return;
+  }
+
+  if (document?.body) {
+    document.body.addEventListener('click', (e) => {
+      const tabButtonActiveEl = e.target.closest(
+        'el-tab-button > button:first-child'
+      );
+
+      if (
+        tabButtonActiveEl &&
+        !tabButtonActiveEl.classList.contains('disable-click-active')
+      ) {
+        const tabButtonEl = tabButtonActiveEl.closest('el-tab-button');
+        if (!tabButtonEl.classList.contains('active')) {
+          tabButtonEl.classList.add('active');
+        }
+      }
+    });
+
+    // 초기화 완료 전환
+    tabButtonActiveInitialized = true;
+  }
+};
+
+// 전역 함수로 등록
+if (window !== undefined) {
+  window.initTabButtonActive = initTabButtonActive;
+}
+
+initTabButtonActive();
+// 종료: el-tab-button
+
+// 시작: el-filter-brand 내 브랜드 클릭 시 active 처리
+let filterBrandActiveInitialized = false;
+const initFilterBrandActive = () => {
+  // 이미 초기화된 경우 건너뛰기
+  if (filterBrandActiveInitialized) {
+    return;
+  }
+
+  if (document?.body) {
+    document.body.addEventListener('click', (e) => {
+      const filterBrandActiveEl = e.target.closest(
+        'el-filter-brand el-filter-content > ul > li > button'
+      );
+
+      if (filterBrandActiveEl) {
+        const filterBrandEl = filterBrandActiveEl.closest(
+          'el-filter-brand el-filter-content > ul > li'
+        );
+        if (!filterBrandEl.classList.contains('active')) {
+          filterBrandEl.classList.add('active');
+        }
+      }
+    });
+
+    // 초기화 완료 전환
+    filterBrandActiveInitialized = true;
+  }
+};
+
+// 전역 함수로 등록
+if (window !== undefined) {
+  window.initFilterBrandActive = initFilterBrandActive;
+}
+
+initFilterBrandActive();
+// 종료: el-filter-brand 내 브랜드 클릭 시 active 처리
+
+// 시작: el-filter-detail-layer-dropdown 내 버튼 클릭 시 active 토글 처리
+let filterDetailLayerDropdownActiveInitialized = false;
+const initFilterDetailLayerDropdownActive = () => {
+  // 이미 초기화된 경우 건너뛰기
+  if (filterDetailLayerDropdownActiveInitialized) {
+    return;
+  }
+
+  if (document?.body) {
+    document.body.addEventListener('click', (e) => {
+      const filterDetailListActiveEl = e.target.closest(
+        'el-filter-detail-layer-dropdown el-filter-detail-list > ul > li > button'
+      );
+
+      if (filterDetailListActiveEl) {
+        if (!filterDetailListActiveEl.classList.contains('active')) {
+          filterDetailListActiveEl.classList.add('active');
+        } else {
+          filterDetailListActiveEl.classList.remove('active');
+        }
+      }
+    });
+
+    // 초기화 완료 전환
+    filterDetailLayerDropdownActiveInitialized = true;
+  }
+};
+
+// 전역 함수로 등록
+if (window !== undefined) {
+  window.initFilterDetailLayerDropdownActive =
+    initFilterDetailLayerDropdownActive;
+}
+
+initFilterDetailLayerDropdownActive();
+// 종료: el-filter-brand 내 브랜드 클릭 시 active 토글 처리
+
 // 시작: 상단 띠배너 숨기기
 let topBannerInitialized = false;
 const initTopBanner = () => {
@@ -662,6 +774,37 @@ const initCategorySwiper = () => {
           targetSwiperPrevEl.addEventListener('click', handlePrevClick);
           targetSwiperNextEl.addEventListener('click', handleNextClick);
           targetSwiperInstance.on('slideChange', handleSlideChange);
+
+          // 탭 버튼 클릭 이벤트 처리
+          // el-category-swiper에 disable-siblings-inactive 클래스가 없을 때만 실행
+          if (
+            !categorySwiperEl.classList.contains('disable-siblings-inactive')
+          ) {
+            const tabButtons = targetSwiperContainer.querySelectorAll(
+              'swiper-slide el-tab-button > button:first-child'
+            );
+            tabButtons.forEach((button) => {
+              button.addEventListener('click', (e) => {
+                // 클릭된 버튼의 부모 el-tab-button
+                const clickedTabButton = button.closest('el-tab-button');
+
+                if (clickedTabButton) {
+                  // 같은 swiper-container 내의 모든 el-tab-button에서 active 제거
+                  const allTabButtons = targetSwiperContainer.querySelectorAll(
+                    'swiper-slide el-tab-button'
+                  );
+                  allTabButtons.forEach((tabButton) => {
+                    tabButton.classList.remove('active');
+                  });
+
+                  // 클릭된 el-tab-button에 active 추가 (이미 있으면 추가 안함)
+                  if (!clickedTabButton.classList.contains('active')) {
+                    clickedTabButton.classList.add('active');
+                  }
+                }
+              });
+            });
+          }
 
           // 초기화 완료 전환
           categorySwiperEl.dataset.initialized = 'true';
