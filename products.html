@@ -94,7 +94,9 @@
                   카테고리
                 </el-filter-label>
                 <el-filter-content>
-                  <el-category-swiper class="products-filter-category-swiper">
+                  <el-category-swiper
+                    class="disable-siblings-inactive products-filter-category-swiper"
+                  >
                     <el-swiper-wrapper>
                       <swiper-container init="false">
                         <swiper-slide>
@@ -636,7 +638,7 @@
                       <el-tab-button>
                         <button
                           type="button"
-                          class="active typo-label-lg"
+                          class="disable-click-active typo-label-lg active"
                           data-bs-toggle="dropdown"
                           data-bs-display="static"
                           data-bs-auto-close="outside"
@@ -647,7 +649,7 @@
                         <el-filter-detail-layer-dropdown
                           class="dropdown-1 dropdown-menu"
                         >
-                          <el-filter-dtail-list>
+                          <el-filter-detail-list>
                             <ul class="typo-body-sm">
                               <li>
                                 <button
@@ -666,7 +668,7 @@
                                 </button>
                               </li>
                             </ul>
-                          </el-filter-dtail-list>
+                          </el-filter-detail-list>
 
                           <el-cta-bar>
                             <button
@@ -689,7 +691,7 @@
                       <el-tab-button>
                         <button
                           type="button"
-                          class="typo-label-lg"
+                          class="disable-click-active typo-label-lg"
                           data-bs-toggle="dropdown"
                           data-bs-display="static"
                           data-bs-auto-close="outside"
@@ -700,7 +702,7 @@
                         <el-filter-detail-layer-dropdown
                           class="dropdown-2 dropdown-menu"
                         >
-                          <el-filter-dtail-list class="column-2">
+                          <el-filter-detail-list class="column-2">
                             <ul class="typo-body-sm">
                               <li>
                                 <button
@@ -735,7 +737,7 @@
                                 </button>
                               </li>
                             </ul>
-                          </el-filter-dtail-list>
+                          </el-filter-detail-list>
 
                           <el-cta-bar>
                             <button
@@ -758,7 +760,7 @@
                       <el-tab-button>
                         <button
                           type="button"
-                          class="active typo-label-lg"
+                          class="disable-click-active typo-label-lg active"
                           data-bs-toggle="dropdown"
                           data-bs-display="static"
                           data-bs-auto-close="outside"
@@ -769,7 +771,7 @@
                         <el-filter-detail-layer-dropdown
                           class="dropdown-3 dropdown-menu"
                         >
-                          <el-filter-dtail-list class="column-2">
+                          <el-filter-detail-list class="column-2">
                             <ul class="typo-body-sm">
                               <li>
                                 <button
@@ -820,7 +822,7 @@
                                 </button>
                               </li>
                             </ul>
-                          </el-filter-dtail-list>
+                          </el-filter-detail-list>
 
                           <el-filter-detail-range>
                             <el-input>
