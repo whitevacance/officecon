@@ -663,6 +663,35 @@ const initCategorySwiper = () => {
           targetSwiperNextEl.addEventListener('click', handleNextClick);
           targetSwiperInstance.on('slideChange', handleSlideChange);
 
+          // 탭 버튼 클릭 이벤트 처리
+          const tabButtons = targetSwiperContainer.querySelectorAll(
+            'swiper-slide el-tab-button button'
+          );
+          tabButtons.forEach((button) => {
+            button.addEventListener('click', (e) => {
+              e.preventDefault();
+              e.stopPropagation();
+
+              // 클릭된 버튼의 부모 el-tab-button
+              const clickedTabButton = button.closest('el-tab-button');
+
+              if (clickedTabButton) {
+                // 같은 swiper-container 내의 모든 el-tab-button에서 active 제거
+                const allTabButtons = targetSwiperContainer.querySelectorAll(
+                  'swiper-slide el-tab-button'
+                );
+                allTabButtons.forEach((tabButton) => {
+                  tabButton.classList.remove('active');
+                });
+
+                // 클릭된 el-tab-button에 active 추가 (이미 있으면 추가 안함)
+                if (!clickedTabButton.classList.contains('active')) {
+                  clickedTabButton.classList.add('active');
+                }
+              }
+            });
+          });
+
           // 초기화 완료 전환
           categorySwiperEl.dataset.initialized = 'true';
         }
