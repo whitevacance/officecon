@@ -39,6 +39,41 @@ if (window !== undefined) {
 initAlert();
 // 종료: el-alert
 
+// 시작: el-tab-button
+let tabButtonActiveInitialized = false;
+const initTabButtonActive = () => {
+  // 이미 초기화된 경우 건너뛰기
+  if (tabButtonActiveInitialized) {
+    return;
+  }
+
+  if (document?.body) {
+    document.body.addEventListener('click', (e) => {
+      const tabButtonActiveEl = e.target.closest(
+        'el-tab-button > button:first-child'
+      );
+
+      if (tabButtonActiveEl) {
+        const tabButtonEl = tabButtonActiveEl.closest('el-tab-button');
+        if (!tabButtonEl.classList.contains('active')) {
+          tabButtonEl.classList.add('active');
+        }
+      }
+    });
+
+    // 초기화 완료 전환
+    tabButtonActiveInitialized = true;
+  }
+};
+
+// 전역 함수로 등록
+if (window !== undefined) {
+  window.initTabButtonActive = initTabButtonActive;
+}
+
+initTabButtonActive();
+// 종료: el-tab-button
+
 // 시작: 상단 띠배너 숨기기
 let topBannerInitialized = false;
 const initTopBanner = () => {
