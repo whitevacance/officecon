@@ -4516,6 +4516,13 @@ el-products-filter {
           }
         }
 
+        el-filter-detail-inputs {
+          display: flex;
+          align-items: center;
+          gap: 1px;
+          padding-top: 8px;
+        }
+
         el-filter-detail-range {
           display: flex;
           align-items: center;
