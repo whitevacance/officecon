@@ -49,6 +49,7 @@ const initTabButtonActive = () => {
 
   if (document?.body) {
     document.body.addEventListener('click', (e) => {
+      // 클릭 시 active 처리
       const tabButtonActiveEl = e.target.closest(
         'el-tab-button > button:first-child'
       );
@@ -61,6 +62,16 @@ const initTabButtonActive = () => {
         if (!tabButtonEl.classList.contains('active')) {
           tabButtonEl.classList.add('active');
         }
+      }
+
+      // 제거 버튼 클릭 시 active 제거 처리
+      const tabButtonRemoveEl = e.target.closest(
+        'el-tab-button > button.remove'
+      );
+
+      if (tabButtonRemoveEl) {
+        const tabButtonEl = tabButtonRemoveEl.closest('el-tab-button');
+        tabButtonEl.classList.remove('active');
       }
     });
 
@@ -87,6 +98,7 @@ const initFilterBrandActive = () => {
 
   if (document?.body) {
     document.body.addEventListener('click', (e) => {
+      // 클릭 시 active 처리
       const filterBrandActiveEl = e.target.closest(
         'el-filter-brand el-filter-content > ul > li > button'
       );
@@ -98,6 +110,18 @@ const initFilterBrandActive = () => {
         if (!filterBrandEl.classList.contains('active')) {
           filterBrandEl.classList.add('active');
         }
+      }
+
+      // 제거 버튼 클릭 시 active 제거 처리
+      const filterBrandRemoveEl = e.target.closest(
+        'el-filter-brand el-filter-content > ul > li > button.remove'
+      );
+
+      if (filterBrandRemoveEl) {
+        const filterBrandEl = filterBrandRemoveEl.closest(
+          'el-filter-brand el-filter-content > ul > li'
+        );
+        filterBrandEl.classList.remove('active');
       }
     });
 
