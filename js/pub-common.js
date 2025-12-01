@@ -1010,3 +1010,54 @@ if (window !== undefined) {
 
 initScrollToTopButton();
 // 종료: el-top-button
+
+// 시작: date picker
+const initDatePicker = () => {
+  const datePickerEl = document.querySelector('#datepicker-input');
+
+  // 이미 초기화된 경우 건너뛰기
+  if (datePickerEl?.dataset?.initialized === 'true') {
+    return;
+  }
+
+  // tui.DatePicker 확인
+  if (!tui?.DatePicker) {
+    // console.error('tui?.DatePicker을 찾을 수 없습니다.');
+    return;
+  }
+
+  if (datePickerEl) {
+    // 코드 삽입
+    const datepicker = new tui.DatePicker('#datepicker-wrapper', {
+      language: 'ko',
+      date: new Date(),
+      input: {
+        element: '#datepicker-input',
+        format: 'yyyy-MM-dd',
+      },
+      showAlways: true,
+      autoClose: false,
+      calendar: {
+        // showToday: false,
+      },
+      openers: ['.input-calendar'],
+    });
+    console.log('🚀 ~ initDatePicker ~ datepicker:', datepicker);
+
+    // bind the 'close' event
+    datepicker.on('close', () => {
+      alert('close');
+    });
+
+    // 초기화 완료 전환
+    datePickerEl.dataset.initialized = 'true';
+  }
+};
+
+// 전역 함수로 등록
+if (window !== undefined) {
+  window.initDatePicker = initDatePicker;
+}
+
+initDatePicker();
+// 종료: date picker

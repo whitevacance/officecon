@@ -427,6 +427,12 @@ el-icon {
     -webkit-mask-image: url('../images/icon-h24-card.svg');
     mask-image: url('../images/icon-h24-card.svg');
   }
+  &.h24-calendar {
+    width: 24px;
+    height: 24px;
+    -webkit-mask-image: url('../images/icon-h24-calendar.svg');
+    mask-image: url('../images/icon-h24-calendar.svg');
+  }
   &.h20-closed {
     width: 20px;
     height: 20px;
@@ -2056,6 +2062,27 @@ el-pagination {
   }
 }
 /* 종료: 공통 > pagination */
+
+/* 시작: 공통 > date picker */
+el-datepicker-input.tui-datepicker-input {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: none;
+  position: relative;
+  z-index: 10;
+
+  el-datepicker-wrapper {
+    position: absolute;
+    left: 0;
+    top: 43px;
+
+    .tui-datepicker {
+      position: relative;
+    }
+  }
+}
+/* 종료: 공통 > date picker */
 
 /* 시작: 레이아웃 > wrapper, container */
 el-wrapper {
