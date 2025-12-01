@@ -1017,8 +1017,6 @@ const initDatePicker = () => {
 
   if (datePickerEls?.length > 0) {
     [...datePickerEls].forEach((datePickerEl) => {
-      console.log('🚀 ~ initDatePicker ~ datePickerEl:', datePickerEl);
-
       // 이미 초기화된 경우 건너뛰기
       if (datePickerEl?.dataset?.initialized === 'true') {
         return;
@@ -1035,27 +1033,41 @@ const initDatePicker = () => {
       const targetLayerEl = datePickerEl.querySelector('el-datepicker-layer');
 
       if (targetInputEl && targetButtonEl && targetLayerEl) {
+        // const currentTime = new Date();
+        // const currentHour = currentTime.getHours();
+        // const currentMinute = currentTime.getMinutes();
+
         const datepicker = new tui.DatePicker(targetLayerEl, {
-          language: 'ko',
+          // date: new Date(),
           input: {
             element: targetInputEl,
-            // format: 'yyyy-MM-dd',
             format: 'yyyy.MM.dd HH:mm',
           },
           timePicker: {
+            format: 'HH:mm',
             showMeridiem: false,
+            minuteStep: 10,
+            // initialHour: currentHour,
+            // initialMinute: currentMinute,
           },
         });
 
         datepicker.on('open', () => {
-          //
+          const updatedTime = new Date();
+          const updatedTimestamp = updatedTime.getTime();
+
+          // endDate 기준: 오늘 기준 16일 후 날짜
+          const endDate = new Date(updatedTimestamp + 16 * 24 * 60 * 60 * 1000);
+
+          datepicker.setRanges([[updatedTime, endDate]]);
         });
-        datepicker.on('close', () => {
-          //
-        });
-        datepicker.on('change', () => {
-          console.log(`Selected date: ${datepicker.getDate()}`);
-        });
+
+        // datepicker.on('close', () => {
+        //   //
+        // });
+        // datepicker.on('change', () => {
+        //   console.log(`Selected date: ${datepicker.getDate()}`);
+        // });
 
         targetButtonEl.addEventListener('click', () => {
           targetInputEl.focus();
