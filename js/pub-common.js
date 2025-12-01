@@ -1013,44 +1013,56 @@ initScrollToTopButton();
 
 // 시작: date picker
 const initDatePicker = () => {
-  const datePickerEl = document.querySelector('#datepicker-input');
+  const datePickerEls = document.querySelectorAll('el-datepicker');
 
-  // 이미 초기화된 경우 건너뛰기
-  if (datePickerEl?.dataset?.initialized === 'true') {
-    return;
-  }
+  if (datePickerEls?.length > 0) {
+    [...datePickerEls].forEach((datePickerEl) => {
+      console.log('🚀 ~ initDatePicker ~ datePickerEl:', datePickerEl);
 
-  // tui.DatePicker 확인
-  if (!tui?.DatePicker) {
-    // console.error('tui?.DatePicker을 찾을 수 없습니다.');
-    return;
-  }
+      // 이미 초기화된 경우 건너뛰기
+      if (datePickerEl?.dataset?.initialized === 'true') {
+        return;
+      }
 
-  if (datePickerEl) {
-    // 코드 삽입
-    const datepicker = new tui.DatePicker('#datepicker-wrapper', {
-      language: 'ko',
-      date: new Date(),
-      input: {
-        element: '#datepicker-input',
-        format: 'yyyy-MM-dd',
-      },
-      showAlways: true,
-      autoClose: false,
-      calendar: {
-        // showToday: false,
-      },
-      openers: ['.input-calendar'],
+      // tui.DatePicker 확인
+      if (!tui?.DatePicker) {
+        // console.error('tui?.DatePicker을 찾을 수 없습니다.');
+        return;
+      }
+
+      const targetInputEl = datePickerEl.querySelector('.datepicker-input');
+      const targetButtonEl = datePickerEl.querySelector('.button-calendar');
+      const targetWrapperEl = datePickerEl.querySelector(
+        'el-datepicker-wrapper'
+      );
+
+      if (targetInputEl && targetButtonEl && targetWrapperEl) {
+        // 코드 삽입
+        const datepicker = new tui.DatePicker('#datepicker-wrapper', {
+          language: 'ko',
+          input: {
+            element: targetInputEl,
+            format: 'yyyy-MM-dd',
+          },
+        });
+        console.log('🚀 ~ initDatePicker ~ datepicker:', datepicker);
+
+        datepicker.on('open', () => {
+          targetWrapperEl.style.display = 'block';
+        });
+        datepicker.on('close', () => {
+          targetWrapperEl.style.display = 'none';
+        });
+
+        targetButtonEl.addEventListener('click', () => {
+          targetInputEl.focus();
+          datepicker.open();
+        });
+
+        // 초기화 완료 전환
+        datePickerEl.dataset.initialized = 'true';
+      }
     });
-    console.log('🚀 ~ initDatePicker ~ datepicker:', datepicker);
-
-    // bind the 'close' event
-    datepicker.on('close', () => {
-      alert('close');
-    });
-
-    // 초기화 완료 전환
-    datePickerEl.dataset.initialized = 'true';
   }
 };
 

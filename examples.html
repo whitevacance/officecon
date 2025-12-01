@@ -2954,14 +2954,13 @@
               </el-examples-stack>
               <h4>date picker</h4>
               <el-examples-stack>
-                <div style="position: relative; width: 160px">
-                  <el-datepicker-input
-                    class="tui-datepicker-input tui-datetime-input tui-has-focus"
-                  >
-                    <el-input>
+                <div style="width: 160px">
+                  <el-datepicker>
+                    <el-input
+                      class="tui-datepicker-input tui-datetime-input tui-has-focus"
+                    >
                       <input
-                        id="datepicker-input"
-                        class="form-control custom-input"
+                        class="form-control custom-input datepicker-input"
                         type="text"
                         placeholder="날짜/시간 선택"
                         value=""
@@ -2969,8 +2968,8 @@
                       <el-input-addon>
                         <button
                           type="button"
-                          class="input-calendar"
-                          aria-label="clear"
+                          class="button-calendar"
+                          aria-label="calendar"
                         >
                           <el-icon class="h24-calendar natural-0"></el-icon>
                         </button>
@@ -2978,8 +2977,9 @@
                     </el-input>
                     <el-datepicker-wrapper>
                       <div id="datepicker-wrapper"></div>
+                      <el-datepicker-time>시간선택영역</el-datepicker-time>
                     </el-datepicker-wrapper>
-                  </el-datepicker-input>
+                  </el-datepicker>
                 </div>
               </el-examples-stack>
             </el-examples-article>
