@@ -40,6 +40,7 @@
     />
     <link type="text/css" rel="stylesheet" href="./css/bootstrap.min.css" />
     <link type="text/css" rel="stylesheet" href="./css/swiper.min.css" />
+    <link type="text/css" rel="stylesheet" href="./css/tui-time-picker.css" />
     <link type="text/css" rel="stylesheet" href="./css/tui-date-picker.css" />
     <link type="text/css" rel="stylesheet" href="./css/style.css" />
     <script src="./js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
@@ -47,6 +48,7 @@
       src="./js/swiper-element-bundleswiper.min.js"
       crossorigin="anonymous"
     ></script>
+    <script src="./js/tui-time-picker.js" crossorigin="anonymous"></script>
     <script src="./js/tui-date-picker.js" crossorigin="anonymous"></script>
   </head>
   <body>
@@ -2964,6 +2966,7 @@
                         type="text"
                         placeholder="날짜/시간 선택"
                         value=""
+                        aria-label="Date-Time"
                       />
                       <el-input-addon>
                         <button
@@ -2975,10 +2978,7 @@
                         </button>
                       </el-input-addon>
                     </el-input>
-                    <el-datepicker-wrapper>
-                      <div id="datepicker-wrapper"></div>
-                      <el-datepicker-time>시간선택영역</el-datepicker-time>
-                    </el-datepicker-wrapper>
+                    <el-datepicker-layer></el-datepicker-layer>
                   </el-datepicker>
                 </div>
               </el-examples-stack>

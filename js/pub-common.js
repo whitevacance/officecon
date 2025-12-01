@@ -1032,26 +1032,29 @@ const initDatePicker = () => {
 
       const targetInputEl = datePickerEl.querySelector('.datepicker-input');
       const targetButtonEl = datePickerEl.querySelector('.button-calendar');
-      const targetWrapperEl = datePickerEl.querySelector(
-        'el-datepicker-wrapper'
-      );
+      const targetLayerEl = datePickerEl.querySelector('el-datepicker-layer');
 
-      if (targetInputEl && targetButtonEl && targetWrapperEl) {
-        // 코드 삽입
-        const datepicker = new tui.DatePicker('#datepicker-wrapper', {
+      if (targetInputEl && targetButtonEl && targetLayerEl) {
+        const datepicker = new tui.DatePicker(targetLayerEl, {
           language: 'ko',
           input: {
             element: targetInputEl,
-            format: 'yyyy-MM-dd',
+            // format: 'yyyy-MM-dd',
+            format: 'yyyy.MM.dd HH:mm',
+          },
+          timePicker: {
+            showMeridiem: false,
           },
         });
-        console.log('🚀 ~ initDatePicker ~ datepicker:', datepicker);
 
         datepicker.on('open', () => {
-          targetWrapperEl.style.display = 'block';
+          //
         });
         datepicker.on('close', () => {
-          targetWrapperEl.style.display = 'none';
+          //
+        });
+        datepicker.on('change', () => {
+          console.log(`Selected date: ${datepicker.getDate()}`);
         });
 
         targetButtonEl.addEventListener('click', () => {

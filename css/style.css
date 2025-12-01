@@ -2076,18 +2076,10 @@ el-datepicker {
     padding: 0;
     border: none;
     position: relative;
-  }
 
-  el-datepicker-wrapper {
-    display: none;
-    position: absolute;
-    left: 0;
-    top: 43px;
-    background-color: var(--color-natural-100);
-    z-index: 1000;
-
-    .tui-datepicker {
-      position: relative;
+    input {
+      padding-left: 14px !important;
+      padding-right: 32px !important;
     }
   }
 }
