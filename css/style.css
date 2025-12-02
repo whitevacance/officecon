@@ -2244,6 +2244,23 @@ el-datepicker {
     .tui-datepicker-footer {
       .tui-timepicker {
         width: 256px;
+        padding: 12px 0 14px;
+
+        .tui-timepicker-select {
+          width: 59px;
+          height: 34px;
+          font-size: 12px;
+          font-weight: 400;
+          line-height: 16px;
+          letter-spacing: -0.36px;
+          color: var(--color-natural-0);
+          border: 1px solid var(--color-natural-80);
+          border-radius: 8px;
+          padding: 9px 0 9px 14px;
+          background-image: url('../images/icon-h16-arrow-down.svg');
+          background-position: right 5px center;
+          outline: none;
+        }
       }
     }
   }
