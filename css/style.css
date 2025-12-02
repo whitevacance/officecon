@@ -861,6 +861,43 @@ button {
     }
   }
 
+  &.button-h52-square {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    min-width: 0px;
+    height: 52px;
+    padding: 0 20px;
+    border-radius: 10px;
+    border: 1px solid var(--color-natural-0);
+    background-color: var(--color-natural-100);
+    overflow: hidden;
+    color: var(--color-natural-0);
+  }
+
+  &.button-h52-square-fill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    min-width: 0px;
+    height: 52px;
+    padding: 0 20px;
+    border-radius: 10px;
+    border: 1px solid var(--color-natural-0);
+    background-color: var(--color-natural-0);
+    overflow: hidden;
+    color: var(--color-natural-100);
+
+    &:disabled {
+      cursor: default;
+      border-color: var(--color-natural-70);
+      background-color: var(--color-natural-90);
+      color: var(--color-natural-50);
+    }
+  }
+
   &.button-h50-stroke {
     display: inline-flex;
     align-items: center;
@@ -1192,6 +1229,7 @@ el-input {
     }
 
     .input-eye-button {
+      display: none;
       padding: 0 2px;
       .h20-eye-hide {
         display: none;
@@ -1221,6 +1259,12 @@ el-input {
   }
 
   &:has(.custom-input.form-control:not(:placeholder-shown)) {
+    .input-eye-button {
+      display: flex;
+    }
+  }
+
+  &:has(.custom-input.form-control:focus:not(:placeholder-shown)) {
     .input-clear-button {
       display: flex;
     }
@@ -2267,6 +2311,15 @@ el-datepicker {
 }
 /* 종료: 공통 > date picker */
 
+/* 시작: 공통 > el-section-small : width 430px */
+el-section-small {
+  display: block;
+  width: 430px;
+  margin: 0 auto;
+  position: relative;
+}
+/* 종료: 공통 > el-section-small : width 430px */
+
 /* 시작: 레이아웃 > wrapper, container */
 el-wrapper {
   display: block;
@@ -3288,6 +3341,10 @@ el-content-header {
     el-content-header-container {
       height: 204px;
       background-image: url('../images/temp/page-header-bg-reward.jpg');
+
+      & > h2 {
+        padding-bottom: 30px;
+      }
     }
   }
 
@@ -3438,7 +3495,7 @@ el-content-header {
       text-align: center;
       font-weight: 600;
       color: var(--color-natural-0);
-      padding-bottom: 30px;
+      padding-bottom: 52px;
     }
   }
 
@@ -5223,6 +5280,80 @@ el-product-description {
   }
 }
 /* 종료: 상품 상세 */
+
+/* 시작: 로그인 */
+el-login-top {
+  display: block;
+  text-align: center;
+  color: var(--color-natural-10);
+  padding-bottom: 48px;
+
+  h3 {
+    font-weight: 700 !important;
+    padding-bottom: 5px;
+
+    strong {
+      color: var(--color-orange-officecon);
+    }
+  }
+}
+el-login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+
+  el-cta-area {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-top: 16px;
+  }
+}
+el-login-bottom {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+  padding-top: 16px;
+
+  ul {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 14px;
+    color: var(--color-natural-30);
+
+    & > li {
+      display: flex;
+      align-items: center;
+      position: relative;
+
+      &:before {
+        content: '';
+        display: inline-block;
+        width: 1px;
+        height: 10px;
+        margin-right: 14px;
+        background-color: var(--color-natural-80);
+      }
+
+      &:first-of-type {
+        &:before {
+          display: none;
+        }
+      }
+
+      & > a {
+        color: var(--color-natural-30);
+        &:hover {
+          color: var(--color-natural-0);
+        }
+      }
+    }
+  }
+}
+/* 종료: 로그인 */
 
 /* 시작: 예시 (example) */
 el-examples-article {

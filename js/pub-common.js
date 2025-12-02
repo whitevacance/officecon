@@ -421,10 +421,26 @@ const initCustomInput = () => {
   }
 
   if (document?.body) {
+    // mousedown에서 preventDefault()를 호출하여 blur 이벤트 발생 방지
+    document.body.addEventListener('mousedown', (e) => {
+      const inputClearButtonEl = e.target.closest(
+        'el-input > el-input-addon > .input-clear-button'
+      );
+      const inputEyeButtonEl = e.target.closest(
+        'el-input > el-input-addon > .input-eye-button'
+      );
+
+      // input 관련 버튼 클릭 시 blur 방지
+      if (inputClearButtonEl || inputEyeButtonEl) {
+        e.preventDefault();
+      }
+    });
+
     document.body.addEventListener('click', (e) => {
       const inputClearButtonEl = e.target.closest(
         'el-input > el-input-addon > .input-clear-button'
       );
+
       const inputEyeButtonEl = e.target.closest(
         'el-input > el-input-addon > .input-eye-button'
       );
