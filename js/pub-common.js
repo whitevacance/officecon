@@ -1010,3 +1010,73 @@ if (window !== undefined) {
 
 initScrollToTopButton();
 // 종료: el-top-button
+
+// 시작: date picker
+const initDatePicker = () => {
+  const datePickerEls = document.querySelectorAll('el-datepicker');
+
+  if (datePickerEls?.length > 0) {
+    [...datePickerEls].forEach((datePickerEl) => {
+      // 이미 초기화된 경우 건너뛰기
+      if (datePickerEl?.dataset?.initialized === 'true') {
+        return;
+      }
+
+      // tui.DatePicker 확인
+      if (!tui?.DatePicker) {
+        // console.error('tui?.DatePicker을 찾을 수 없습니다.');
+        return;
+      }
+
+      const targetInputEl = datePickerEl.querySelector('.datepicker-input');
+      const targetButtonEl = datePickerEl.querySelector('.button-calendar');
+      const targetLayerEl = datePickerEl.querySelector('el-datepicker-layer');
+
+      if (targetInputEl && targetButtonEl && targetLayerEl) {
+        // const currentTime = new Date();
+        // const currentHour = currentTime.getHours();
+        // const currentMinute = currentTime.getMinutes();
+
+        const datepicker = new tui.DatePicker(targetLayerEl, {
+          // date: new Date(),
+          input: {
+            element: targetInputEl,
+            format: 'yyyy.MM.dd HH:mm',
+          },
+          timePicker: {
+            format: 'HH:mm',
+            showMeridiem: false,
+            minuteStep: 10,
+            // initialHour: currentHour,
+            // initialMinute: currentMinute,
+          },
+        });
+
+        datepicker.on('open', () => {
+          const updatedTime = new Date();
+          const updatedTimestamp = updatedTime.getTime();
+
+          // endDate 기준: 오늘 기준 16일 후 날짜
+          // const endDate = new Date(updatedTimestamp + 16 * 24 * 60 * 60 * 1000);
+          // datepicker.setRanges([[updatedTime, endDate]]);
+        });
+
+        targetButtonEl.addEventListener('click', () => {
+          targetInputEl.focus();
+          datepicker.open();
+        });
+
+        // 초기화 완료 전환
+        datePickerEl.dataset.initialized = 'true';
+      }
+    });
+  }
+};
+
+// 전역 함수로 등록
+if (window !== undefined) {
+  window.initDatePicker = initDatePicker;
+}
+
+initDatePicker();
+// 종료: date picker

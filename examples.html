@@ -40,12 +40,16 @@
     />
     <link type="text/css" rel="stylesheet" href="./css/bootstrap.min.css" />
     <link type="text/css" rel="stylesheet" href="./css/swiper.min.css" />
+    <link type="text/css" rel="stylesheet" href="./css/tui-time-picker.css" />
+    <link type="text/css" rel="stylesheet" href="./css/tui-date-picker.css" />
     <link type="text/css" rel="stylesheet" href="./css/style.css" />
     <script src="./js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script
       src="./js/swiper-element-bundleswiper.min.js"
       crossorigin="anonymous"
     ></script>
+    <script src="./js/tui-time-picker.js" crossorigin="anonymous"></script>
+    <script src="./js/tui-date-picker.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <!-- [DEV] 일반회원일 때 className: 'personal-member' -->
@@ -2307,6 +2311,15 @@
                 <el-icon class="h24-cart natural-0"></el-icon>
                 <el-icon class="h24-card"></el-icon>
                 <el-icon class="h24-card natural-0"></el-icon>
+                <el-icon class="h24-calendar"></el-icon>
+                <el-icon class="h24-calendar natural-0"></el-icon>
+              </el-examples-stack>
+              <h5>h26</h5>
+              <el-examples-stack class="bg">
+                <el-icon class="h26-arrow-left"></el-icon>
+                <el-icon class="h26-arrow-left natural-0"></el-icon>
+                <el-icon class="h26-arrow-right"></el-icon>
+                <el-icon class="h26-arrow-right natural-0"></el-icon>
               </el-examples-stack>
               <h5>h32</h5>
               <el-examples-stack class="bg">
@@ -2946,6 +2959,34 @@
                       </button>
                     </el-input-addon>
                   </el-input>
+                </div>
+              </el-examples-stack>
+              <h4>date picker</h4>
+              <el-examples-stack>
+                <div style="width: 160px">
+                  <el-datepicker>
+                    <el-input
+                      class="tui-datepicker-input tui-datetime-input tui-has-focus"
+                    >
+                      <input
+                        class="form-control custom-input datepicker-input"
+                        type="text"
+                        placeholder="날짜/시간 선택"
+                        value=""
+                        aria-label="Date-Time"
+                      />
+                      <el-input-addon>
+                        <button
+                          type="button"
+                          class="button-calendar"
+                          aria-label="calendar"
+                        >
+                          <el-icon class="h24-calendar natural-0"></el-icon>
+                        </button>
+                      </el-input-addon>
+                    </el-input>
+                    <el-datepicker-layer></el-datepicker-layer>
+                  </el-datepicker>
                 </div>
               </el-examples-stack>
             </el-examples-article>
