@@ -1,3 +1,4 @@
+// 시작: 공통
 const loadScript = (target, scriptName) => {
   if (window[scriptName]) {
     window[scriptName]();

@@ -1057,17 +1057,9 @@ const initDatePicker = () => {
           const updatedTimestamp = updatedTime.getTime();
 
           // endDate 기준: 오늘 기준 16일 후 날짜
-          const endDate = new Date(updatedTimestamp + 16 * 24 * 60 * 60 * 1000);
-
-          datepicker.setRanges([[updatedTime, endDate]]);
+          // const endDate = new Date(updatedTimestamp + 16 * 24 * 60 * 60 * 1000);
+          // datepicker.setRanges([[updatedTime, endDate]]);
         });
-
-        // datepicker.on('close', () => {
-        //   //
-        // });
-        // datepicker.on('change', () => {
-        //   console.log(`Selected date: ${datepicker.getDate()}`);
-        // });
 
         targetButtonEl.addEventListener('click', () => {
           targetInputEl.focus();

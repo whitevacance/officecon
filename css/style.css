@@ -4,6 +4,7 @@
 :root {
   --color-primary: var(--color-blue-40);
   --color-blue-officecon: #202b9c;
+  --color-blue-60: #4165f8;
   --color-blue-40: #4165f8;
   --color-blue-30: #c3e1ff;
   --color-blue-20: #f0f6ff;
@@ -2159,9 +2160,11 @@ el-datepicker {
         }
 
         .tui-calendar-body {
-          padding: 0 10px;
-
           .tui-calendar-body-inner {
+            width: 234px;
+            border-collapse: separate;
+            border-spacing: 3px 4px;
+
             * {
               font-size: 11px !important;
               font-weight: 400 !important;
@@ -2169,10 +2172,69 @@ el-datepicker {
               letter-spacing: -0.33px !important;
             }
 
+            th,
+            td {
+              color: var(--color-natural-0);
+              height: 30px;
+              position: relative;
+              border-radius: 50%;
+            }
+
             .tui-calendar-body-header {
               th {
                 color: var(--color-natural-40);
               }
+            }
+
+            .tui-calendar-today {
+              color: var(--color-blue-officecon);
+            }
+
+            .tui-is-blocked {
+              color: var(--color-natural-50);
+            }
+
+            .tui-is-selectable {
+              &:hover {
+                background-color: var(--color-natural-90);
+              }
+
+              &.tui-is-selected {
+                background-color: var(--color-blue-60);
+                color: #fff;
+              }
+            }
+          }
+        }
+      }
+
+      .tui-calendar-month {
+        .tui-calendar-body {
+          padding-top: 28px;
+          padding-bottom: 28px;
+
+          .tui-calendar-body-inner {
+            width: 200px;
+            border-spacing: 8px 4px;
+
+            td {
+              height: 40px;
+            }
+          }
+        }
+      }
+
+      .tui-calendar-year {
+        .tui-calendar-body {
+          padding-top: 14px;
+          padding-bottom: 14px;
+
+          .tui-calendar-body-inner {
+            width: 200px;
+            border-spacing: 8px 4px;
+
+            td {
+              height: 56px;
             }
           }
         }
