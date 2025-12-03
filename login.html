@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>로그인 | 오피스콘</title>
+    <meta charset="UTF-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="shortcut icon" href="./images/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./images/favicon-apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="./images/favicon-android-chrome-192x192.png"
+    />
+    <link
+      rel="preload"
+      href="./fonts/Pretendard-Regular.subset.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="./fonts/Pretendard-SemiBold.subset.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="./fonts/Pretendard-Bold.subset.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link type="text/css" rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="./css/swiper.min.css" />
+    <link type="text/css" rel="stylesheet" href="./css/tui-time-picker.css" />
+    <link type="text/css" rel="stylesheet" href="./css/tui-date-picker.css" />
+    <link type="text/css" rel="stylesheet" href="./css/style.css" />
+    <script src="./js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script
+      src="./js/swiper-element-bundleswiper.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/tui-time-picker.js" crossorigin="anonymous"></script>
+    <script src="./js/tui-date-picker.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <!-- [DEV] 일반회원일 때 className: 'personal-member' -->
+    <el-wrapper>
+      <el-container>
+        <!-- 시작: [DEV] 웹컴포넌트
+          1. 퍼블리싱용 웹컴포넌트입니다.
+          2. el-top-banner, el-header-top, el-header-sticky, el-header-gnb
+          3. 개발 시 examples.html 원본을 참고해 주세요.
+         -->
+        <component-top-banner></component-top-banner>
+
+        <!-- 시작: 헤더 -->
+        <component-header-top></component-header-top>
+        <component-header-sticky></component-header-sticky>
+        <component-header-gnb></component-header-gnb>
+        <!-- 종료: 헤더 -->
+
+        <!-- 종료: [DEV] 웹컴포넌트 -->
+
+        <!-- 시작: 컨텐츠 -->
+        <main>
+          <el-content-header>
+            <el-content-header-container>
+              <!-- 시작: [DEV] 웹컴포넌트
+                1. 퍼블리싱용 웹컴포넌트입니다.
+                2. el-breadcrumb
+                3. 개발 시 examples.html 원본을 참고해 주세요.
+              -->
+              <component-breadcrumb></component-breadcrumb>
+              <!-- 종료: [DEV] 웹컴포넌트 -->
+
+              <h2 class="typo-heading-md">로그인</h2>
+            </el-content-header-container>
+          </el-content-header>
+
+          <el-content>
+            <el-section-small>
+              <el-login-top>
+                <h3 class="typo-subtitle-sm">
+                  <strong>오피스콘</strong>에 오신 것을 환영합니다.
+                </h3>
+                <p class="typo-body-sm">
+                  등급별 할인혜택, 추가 혜택 등과 함께 편리한 대량발송 서비스를
+                  이용해보세요.
+                </p>
+              </el-login-top>
+              <el-login-form>
+                <el-input class="input-h50">
+                  <input
+                    class="form-control custom-input"
+                    type="text"
+                    placeholder="아이디를 입력해주세요"
+                    value=""
+                  />
+                  <el-input-addon>
+                    <button
+                      type="button"
+                      class="input-clear-button"
+                      aria-label="clear"
+                    >
+                      <el-icon class="h12-closed"></el-icon>
+                    </button>
+                  </el-input-addon>
+                </el-input>
+                <el-input class="input-h50 is-invalid">
+                  <input
+                    class="form-control custom-input"
+                    type="text"
+                    placeholder="아이디를 입력해주세요"
+                    value=""
+                  />
+                  <el-input-addon>
+                    <button
+                      type="button"
+                      class="input-clear-button"
+                      aria-label="clear"
+                    >
+                      <el-icon class="h12-closed"></el-icon>
+                    </button>
+                  </el-input-addon>
+                  <el-invalide-feedback class="typo-label-lg">
+                    필수 입력 항목입니다.
+                  </el-invalide-feedback>
+                </el-input>
+                <el-input class="input-h50">
+                  <input
+                    class="form-control custom-input"
+                    type="password"
+                    placeholder="비밀번호를 입력해 주세요."
+                    value=""
+                  />
+                  <el-input-addon>
+                    <button
+                      type="button"
+                      class="input-eye-button"
+                      aria-label="show password"
+                    >
+                      <el-icon class="h20-eye-show natural-0"></el-icon>
+                      <el-icon class="h20-eye-hide natural-0"></el-icon>
+                    </button>
+                    <button
+                      type="button"
+                      class="input-clear-button"
+                      aria-label="clear"
+                    >
+                      <el-icon class="h12-closed"></el-icon>
+                    </button>
+                  </el-input-addon>
+                </el-input>
+                <el-input class="input-h50 is-invalid">
+                  <input
+                    class="form-control custom-input"
+                    type="password"
+                    placeholder="비밀번호를 입력해 주세요."
+                    value=""
+                  />
+                  <el-input-addon>
+                    <button
+                      type="button"
+                      class="input-eye-button"
+                      aria-label="show password"
+                    >
+                      <el-icon class="h20-eye-show natural-0"></el-icon>
+                      <el-icon class="h20-eye-hide natural-0"></el-icon>
+                    </button>
+                    <button
+                      type="button"
+                      class="input-clear-button"
+                      aria-label="clear"
+                    >
+                      <el-icon class="h12-closed"></el-icon>
+                    </button>
+                  </el-input-addon>
+                  <el-invalide-feedback class="typo-label-lg">
+                    필수 입력 항목입니다.
+                  </el-invalide-feedback>
+                </el-input>
+                <el-checkbox class="form-check">
+                  <input
+                    type="checkbox"
+                    id="checlForSaveId"
+                    class="form-check-input custom-checkbox"
+                    value=""
+                  />
+                  <label
+                    class="form-check-label typo-body-sm"
+                    for="checlForSaveId"
+                  >
+                    아이디 저장
+                  </label>
+                </el-checkbox>
+                <el-cta-area>
+                  <button
+                    type="button"
+                    data-bs-toggle="modal"
+                    data-bs-target="#el-modal-additional-cert"
+                    class="button-h52-square-fill typo-body-sm"
+                  >
+                    로그인
+                  </button>
+                </el-cta-area>
+              </el-login-form>
+              <el-login-bottom>
+                <ul class="typo-label-lg">
+                  <li>
+                    <a href="#">회원가입</a>
+                  </li>
+                  <li>
+                    <a href="#">아이디/비밀번호 찾기</a>
+                  </li>
+                </ul>
+              </el-login-bottom>
+            </el-section-small>
+          </el-content>
+        </main>
+        <!-- 종료: 컨텐츠 -->
+      </el-container>
+
+      <!-- 시작: [DEV] 웹컴포넌트
+        1. 퍼블리싱용 웹컴포넌트입니다(el-footer).
+        2. 개발 시 examples.html 참고해 주세요.
+      -->
+      <component-footer></component-footer>
+      <!-- 종료: [DEV] 웹컴포넌트 -->
+    </el-wrapper>
+
+    <button id="scrollToTopButton" type="button" aria-label="상단으로 이동">
+      <el-icon class="h32-arrow-up natural-0"></el-icon>
+    </button>
+
+    <!-- 시작: modal: 추가 인증 -->
+    <el-modal
+      class="modal fade"
+      id="el-modal-additional-cert"
+      tabindex="-1"
+      aria-hidden="true"
+      data-bs-keyboard="false"
+    >
+      <el-modal-dialog class="modal-dialog modal-dialog-centered">
+        <el-modal-content class="modal-content">
+          <el-modal-close-button>
+            <button type="button" data-bs-dismiss="modal" aria-label="닫기">
+              <el-icon class="h32-closed natural-0"></el-icon>
+            </button>
+          </el-modal-close-button>
+
+          <el-modal-header>
+            <h3 class="typo-subtitle-lg center">추가 인증</h3>
+          </el-modal-header>
+
+          <el-modal-body>
+            <el-modal-additional-cert>
+              <el-additional-cert-description class="typo-body-sm">
+                소중한 정보 보호를 위해<br />
+                인증 IP 관리에 등록되지 않는 경우 본인인증 절차가 필요합니다.
+              </el-additional-cert-description>
+              <el-additional-cert-form>
+                <el-additional-cert-form-row>
+                  <el-input class="input-h50">
+                    <input
+                      disabled
+                      class="form-control custom-input"
+                      type="text"
+                      placeholder="휴대폰 번호를 입력해주세요."
+                      value="010-1234-5678"
+                    />
+                  </el-input>
+                  <button
+                    type="button"
+                    class="button-h50-square-fill color-orange typo-body-sm"
+                  >
+                    <span>인증받기</span>
+                  </button>
+                </el-additional-cert-form-row>
+                <el-additional-cert-form-row>
+                  <el-input class="input-h50">
+                    <input
+                      class="form-control custom-input"
+                      type="text"
+                      placeholder="인증번호를 입력해주세요."
+                    />
+                    <el-input-addon>
+                      <el-timer class="typo-label-md">09 : 50</el-timer>
+                    </el-input-addon>
+                  </el-input>
+                  <button type="button" class="button-h50-square typo-body-sm">
+                    <span>확인</span>
+                  </button>
+                </el-additional-cert-form-row>
+                <el-additional-cert-form-row>
+                  <el-checkbox class="form-check">
+                    <input
+                      type="checkbox"
+                      id="checkRegisterIp"
+                      class="form-check-input custom-checkbox"
+                      value=""
+                    />
+                    <label
+                      class="form-check-label typo-body-sm"
+                      for="checkRegisterIp"
+                    >
+                      인증한 IP 등록
+                    </label>
+                  </el-checkbox>
+                </el-additional-cert-form-row>
+              </el-additional-cert-form>
+              <el-marker-list>
+                <ul>
+                  <li>
+                    인증 IP 등록은 최대 10개이며, 등록 후에는 추가 인증 없이
+                    간편하게 로그인 하실 수 있습니다. [마이페이지 &gt; 인증 IP
+                    관리]을 통해 확인하실 수 있습니다.
+                  </li>
+                  <li>
+                    [마이페이지 &gt; 회원정보 수정 &gt; 휴대폰번호 변경]을
+                    통해서 휴대폰번호를 변경 하실 수 있습니다.
+                  </li>
+                  <li>
+                    휴대폰번호 변경이 어려운 경우 1:1문의 게시판으로 문의해
+                    주세요.
+                  </li>
+                </ul>
+              </el-marker-list>
+              <el-additional-cert-cta>
+                <button
+                  type="button"
+                  onclick="bsAlert.show()"
+                  class="button-h50-fill typo-body-lg"
+                >
+                  추가 인증 확인
+                </button>
+              </el-additional-cert-cta>
+            </el-modal-additional-cert>
+          </el-modal-body>
+        </el-modal-content>
+      </el-modal-dialog>
+    </el-modal>
+    <!-- 종료: modal: 추가 인증 -->
+
+    <!-- 시작: alert -->
+    <el-alert
+      class="modal fade"
+      id="el-alert"
+      tabindex="-1"
+      aria-hidden="true"
+      data-bs-keyboard="false"
+    >
+      <el-alert-dialog class="modal-dialog modal-dialog-centered">
+        <el-alert-content class="modal-content">
+          <el-alert-body class="typo-subtitle-sm">
+            얼럿 샘플입니다.
+            <br />
+            개발 시 내용이 변경됩니다.
+          </el-alert-body>
+          <el-alert-footer>
+            <button
+              type="button"
+              data-bs-dismiss="modal"
+              class="button-h50-fill typo-body-lg"
+            >
+              확인
+            </button>
+          </el-alert-footer>
+        </el-alert-content>
+      </el-alert-dialog>
+    </el-alert>
+    <!-- 종료: alert -->
+
+    <!-- 공통js: common.js -->
+    <script src="./js/pub-common.js" crossorigin="anonymous"></script>
+
+    <!-- [DEV] 웹 컴포넌트js: 개발 시 삭제해 주세요 -->
+    <script src="./js/web-components.js" crossorigin="anonymous"></script>
+  </body>
+</html>
