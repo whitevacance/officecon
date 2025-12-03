@@ -241,7 +241,7 @@
       <el-icon class="h32-arrow-up natural-0"></el-icon>
     </button>
 
-    <!-- 시작: modal: 영상 팝업 -->
+    <!-- 시작: modal: 추가 인증 -->
     <el-modal
       class="modal fade"
       id="el-modal-additional-cert"
@@ -257,8 +257,12 @@
             </button>
           </el-modal-close-button>
 
+          <el-modal-header>
+            <h3 class="typo-subtitle-lg center">추가 인증</h3>
+          </el-modal-header>
+
           <el-modal-body>
-            <div style="width: 400px">
+            <el-modal-additional-cert>
               <p>모달 body 영역</p>
               <div>
                 <button
@@ -269,12 +273,12 @@
                   이중 얼럿 테스트
                 </button>
               </div>
-            </div>
+            </el-modal-additional-cert>
           </el-modal-body>
         </el-modal-content>
       </el-modal-dialog>
     </el-modal>
-    <!-- 종료: modal: 영상 팝업 -->
+    <!-- 종료: modal: 추가 인증 -->
 
     <!-- 시작: alert -->
     <el-alert
@@ -292,13 +296,6 @@
             개발 시 내용이 변경됩니다.
           </el-alert-body>
           <el-alert-footer>
-            <button
-              type="button"
-              data-bs-dismiss="modal"
-              class="button-h50-stroke typo-body-lg"
-            >
-              취소
-            </button>
             <button
               type="button"
               data-bs-dismiss="modal"

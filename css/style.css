@@ -1383,6 +1383,8 @@ el-radio {
 
 /* 시작: 공통 > alert */
 el-alert.modal {
+  z-index: 1058;
+
   el-alert-dialog.modal-dialog {
     box-sizing: border-box;
     max-width: 432px;
@@ -1450,6 +1452,24 @@ el-modal.modal {
         button {
           width: 32px;
           height: 32px;
+        }
+      }
+
+      el-modal-header {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 88px;
+        padding: 0 32px;
+        color: var(--color-natural-0);
+
+        & > h3 {
+          width: 100%;
+          font-weight: 700 !important;
+
+          &.center {
+            text-align: center;
+          }
         }
       }
 
@@ -5297,6 +5317,7 @@ el-login-top {
     }
   }
 }
+
 el-login-form {
   display: flex;
   flex-direction: column;
@@ -5310,6 +5331,7 @@ el-login-form {
     padding-top: 16px;
   }
 }
+
 el-login-bottom {
   display: flex;
   justify-content: center;
@@ -5352,6 +5374,12 @@ el-login-bottom {
       }
     }
   }
+}
+
+el-modal-additional-cert {
+  display: flex;
+  flex-direction: column;
+  width: 484px;
 }
 /* 종료: 로그인 */
 
