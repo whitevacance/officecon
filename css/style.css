@@ -200,6 +200,10 @@ button {
 .modal-backdrop {
   opacity: 1 !important;
   background-color: var(--color-opacity-black-30);
+
+  &:nth-of-type(2) {
+    z-index: 1057;
+  }
 }
 /* 종료: reset */
 
@@ -945,6 +949,40 @@ button {
     }
   }
 
+  &.button-h50-square {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    min-width: 70px;
+    height: 50px;
+    padding: 0 20px;
+    border-radius: 10px;
+    border: 1px solid var(--color-natural-70);
+    background-color: var(--color-natural-100);
+    overflow: hidden;
+  }
+
+  &.button-h50-square-fill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    min-width: 70px;
+    height: 50px;
+    padding: 0 20px;
+    color: var(--color-natural-100);
+    border-radius: 10px;
+    border: 1px solid var(--color-natural-0);
+    background-color: var(--color-natural-0);
+    overflow: hidden;
+
+    &.color-orange {
+      border: 1px solid var(--color-orange-officecon);
+      background-color: var(--color-orange-officecon);
+    }
+  }
+
   &.button-h50-stroke-login {
     display: inline-flex;
     align-items: center;
@@ -1290,6 +1328,16 @@ el-input {
           display: none;
         }
       }
+    }
+  }
+
+  &.input-h50 {
+    input {
+      height: 50px !important;
+    }
+
+    el-input-addon {
+      height: 50px !important;
     }
   }
 }
@@ -2330,6 +2378,44 @@ el-datepicker {
   }
 }
 /* 종료: 공통 > date picker */
+
+/* 시작: 공통 > marker list */
+el-marker-list {
+  display: block;
+  width: 100%;
+
+  & > ul {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 100%;
+
+    & > li {
+      width: 100%;
+      padding-left: 11px;
+      position: relative;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 20px;
+      letter-spacing: -0.42px;
+      font-weight: 600;
+      word-break: keep-all;
+
+      &:before {
+        content: '';
+        display: block;
+        width: 3px;
+        height: 3px;
+        border-radius: 50%;
+        background-color: var(--color-natural-0);
+        position: absolute;
+        left: 0;
+        top: 9px;
+      }
+    }
+  }
+}
+/* 종료: 공통 > marker list */
 
 /* 시작: 공통 > el-section-small : width 430px */
 el-section-small {
@@ -5380,6 +5466,62 @@ el-modal-additional-cert {
   display: flex;
   flex-direction: column;
   width: 484px;
+  padding: 0 32px 50px;
+
+  el-additional-cert-description {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 32px;
+    color: var(--color-natural-10);
+  }
+
+  el-additional-cert-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+
+    el-additional-cert-form-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      gap: 10px;
+
+      & > button {
+        flex-grow: 0;
+        flex-shrink: 0;
+        width: 80px;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
+    }
+  }
+
+  & > el-marker-list {
+    padding-top: 40px;
+    color: var(--color-red-40);
+
+    & > ul {
+      & > li {
+        &:before {
+          background-color: var(--color-red-40);
+        }
+      }
+    }
+  }
+
+  el-additional-cert-cta {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-top: 46px;
+
+    & > button {
+      width: 152px;
+    }
+  }
 }
 /* 종료: 로그인 */
 

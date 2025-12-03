@@ -98,7 +98,7 @@
                 </p>
               </el-login-top>
               <el-login-form>
-                <el-input>
+                <el-input class="input-h50">
                   <input
                     class="form-control custom-input"
                     type="text"
@@ -115,7 +115,7 @@
                     </button>
                   </el-input-addon>
                 </el-input>
-                <el-input class="is-invalid">
+                <el-input class="input-h50 is-invalid">
                   <input
                     class="form-control custom-input"
                     type="text"
@@ -135,7 +135,7 @@
                     필수 입력 항목입니다.
                   </el-invalide-feedback>
                 </el-input>
-                <el-input>
+                <el-input class="input-h50">
                   <input
                     class="form-control custom-input"
                     type="password"
@@ -160,7 +160,7 @@
                     </button>
                   </el-input-addon>
                 </el-input>
-                <el-input class="is-invalid">
+                <el-input class="input-h50 is-invalid">
                   <input
                     class="form-control custom-input"
                     type="password"
@@ -263,16 +263,86 @@
 
           <el-modal-body>
             <el-modal-additional-cert>
-              <p>모달 body 영역</p>
-              <div>
+              <el-additional-cert-description class="typo-body-sm">
+                소중한 정보 보호를 위해<br />
+                인증 IP 관리에 등록되지 않는 경우 본인인증 절차가 필요합니다.
+              </el-additional-cert-description>
+              <el-additional-cert-form>
+                <el-additional-cert-form-row>
+                  <el-input class="input-h50">
+                    <input
+                      disabled
+                      class="form-control custom-input"
+                      type="text"
+                      placeholder="휴대폰 번호를 입력해주세요."
+                      value="010-1234-5678"
+                    />
+                  </el-input>
+                  <button
+                    type="button"
+                    class="button-h50-square-fill color-orange typo-body-sm"
+                  >
+                    <span>인증받기</span>
+                  </button>
+                </el-additional-cert-form-row>
+                <el-additional-cert-form-row>
+                  <el-input class="input-h50">
+                    <input
+                      class="form-control custom-input"
+                      type="text"
+                      placeholder="인증번호를 입력해주세요."
+                    />
+                    <el-input-addon>
+                      <el-timer class="typo-label-md">09 : 50</el-timer>
+                    </el-input-addon>
+                  </el-input>
+                  <button type="button" class="button-h50-square typo-body-sm">
+                    <span>확인</span>
+                  </button>
+                </el-additional-cert-form-row>
+                <el-additional-cert-form-row>
+                  <el-checkbox class="form-check">
+                    <input
+                      type="checkbox"
+                      id="checkRegisterIp"
+                      class="form-check-input custom-checkbox"
+                      value=""
+                    />
+                    <label
+                      class="form-check-label typo-body-sm"
+                      for="checkRegisterIp"
+                    >
+                      인증한 IP 등록
+                    </label>
+                  </el-checkbox>
+                </el-additional-cert-form-row>
+              </el-additional-cert-form>
+              <el-marker-list>
+                <ul>
+                  <li>
+                    인증 IP 등록은 최대 10개이며, 등록 후에는 추가 인증 없이
+                    간편하게 로그인 하실 수 있습니다. [마이페이지 &gt; 인증 IP
+                    관리]을 통해 확인하실 수 있습니다.
+                  </li>
+                  <li>
+                    [마이페이지 &gt; 회원정보 수정 &gt; 휴대폰번호 변경]을
+                    통해서 휴대폰번호를 변경 하실 수 있습니다.
+                  </li>
+                  <li>
+                    휴대폰번호 변경이 어려운 경우 1:1문의 게시판으로 문의해
+                    주세요.
+                  </li>
+                </ul>
+              </el-marker-list>
+              <el-additional-cert-cta>
                 <button
-                  onclick="bsAlert.show()"
                   type="button"
-                  class="button-h52-square-fill typo-body-sm"
+                  onclick="bsAlert.show()"
+                  class="button-h50-fill typo-body-lg"
                 >
-                  이중 얼럿 테스트
+                  추가 인증 확인
                 </button>
-              </div>
+              </el-additional-cert-cta>
             </el-modal-additional-cert>
           </el-modal-body>
         </el-modal-content>
