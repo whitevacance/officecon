@@ -5623,9 +5623,12 @@ el-change-password-form {
 
 /* 시작: 아이디 / 비밀번호 찾기 */
 el-find-idpw-top {
-  /* display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  padding-bottom: 48px; */
+  width: 100%;
+  padding-top: 30px;
 }
 /* 종료: 아이디 / 비밀번호 찾기 */
 
