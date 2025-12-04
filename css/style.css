@@ -2426,6 +2426,73 @@ el-section-small {
 }
 /* 종료: 공통 > el-section-small : width 430px */
 
+/* 시작: 공통 > 탭메뉴 */
+el-tabs {
+  display: block;
+  width: 100%;
+
+  el-tabs-nav {
+    display: flex;
+    width: 100%;
+    height: 38px;
+    position: relative;
+
+    &:before {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: var(--color-natural-60);
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
+
+    & > button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      border: none;
+      background-color: transparent;
+      color: var(--color-natural-10);
+      position: relative;
+
+      &.active {
+        font-weight: 700;
+
+        &:before {
+          content: '';
+          display: block;
+          width: 100%;
+          height: 2px;
+          background-color: var(--color-natural-10);
+          position: absolute;
+          left: 0;
+          bottom: 0;
+        }
+      }
+    }
+  }
+
+  el-tabs-content {
+    display: block;
+    width: 100%;
+
+    el-tab-panel {
+      display: none;
+      width: 100%;
+      position: relative;
+
+      &.active {
+        display: block;
+      }
+    }
+  }
+}
+/* 종료: 공통 > 탭메뉴 */
+
 /* 시작: 레이아웃 > wrapper, container */
 el-wrapper {
   display: block;
@@ -5524,6 +5591,98 @@ el-modal-additional-cert {
   }
 }
 /* 종료: 로그인 */
+
+/* 시작: 비밀번호 변경 */
+el-change-password-top {
+  display: block;
+  text-align: center;
+  padding-bottom: 48px;
+
+  strong {
+    color: var(--color-blue-officecon);
+  }
+}
+
+el-change-password-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+
+  el-cta-area {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    padding-top: 16px;
+
+    button {
+      width: 100%;
+    }
+  }
+}
+/* 종료: 비밀번호 변경 */
+
+/* 시작: 아이디 / 비밀번호 찾기 */
+el-find-idpw-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  padding-top: 30px;
+  color: var(--color-natural-10);
+}
+
+el-find-idpw-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  padding-top: 48px;
+
+  el-select-member-type {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 14px;
+    margin-bottom: -2px;
+  }
+
+  el-find-idpw-form-row {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+
+    & > button {
+      flex-grow: 0;
+      flex-shrink: 0;
+      width: 80px;
+    }
+  }
+
+  el-cta-area {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    padding-top: 16px;
+
+    button {
+      width: 100%;
+    }
+  }
+}
+
+el-find-idpw-bottom {
+  display: block;
+  text-align: center;
+  padding-top: 30px;
+  color: var(--color-natural-10);
+
+  a {
+    color: var(--color-blue-60);
+  }
+}
+/* 종료: 아이디 / 비밀번호 찾기 */
 
 /* 시작: 예시 (example) */
 el-examples-article {
