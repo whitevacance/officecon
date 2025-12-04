@@ -5602,6 +5602,7 @@ el-change-password-top {
     color: var(--color-blue-officecon);
   }
 }
+
 el-change-password-form {
   display: flex;
   flex-direction: column;
@@ -5629,6 +5630,45 @@ el-find-idpw-top {
   text-align: center;
   width: 100%;
   padding-top: 30px;
+  color: var(--color-natural-10);
+}
+
+el-find-idpw-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  padding-top: 48px;
+
+  el-select-member-type {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 14px;
+    margin-bottom: -2px;
+  }
+
+  el-cta-area {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    padding-top: 16px;
+
+    button {
+      width: 100%;
+    }
+  }
+}
+
+el-find-idpw-bottom {
+  display: block;
+  text-align: center;
+  padding-top: 30px;
+  color: var(--color-natural-10);
+
+  a {
+    color: var(--color-blue-60);
+  }
 }
 /* 종료: 아이디 / 비밀번호 찾기 */
 

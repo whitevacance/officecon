@@ -107,104 +107,104 @@
                       회원가입 시 등록하신 휴대폰 정보로<br />
                       아이디를 확인하실 수 있습니다.
                     </el-find-idpw-top>
+                    <el-find-idpw-form>
+                      <el-select-member-type>
+                        <el-radio class="form-check">
+                          <input
+                            type="radio"
+                            class="form-check-input custom-radio"
+                            name="radioMemberType"
+                            id="radioMemberType1"
+                            value=""
+                            checked
+                          />
+                          <label
+                            class="form-check-label typo-body-sm"
+                            for="radioMemberType1"
+                          >
+                            일반회원
+                          </label>
+                        </el-radio>
+                        <el-radio class="form-check">
+                          <input
+                            type="radio"
+                            class="form-check-input custom-radio"
+                            name="radioMemberType"
+                            id="radioMemberType2"
+                            value=""
+                          />
+                          <label
+                            class="form-check-label typo-body-sm"
+                            for="radioMemberType2"
+                          >
+                            기업회원
+                          </label>
+                        </el-radio>
+                      </el-select-member-type>
+                      <el-input class="input-h50">
+                        <input
+                          class="form-control custom-input"
+                          type="text"
+                          placeholder="가입하신 휴대폰 번호를 입력해 주세요"
+                          value=""
+                        />
+                        <el-input-addon>
+                          <button
+                            type="button"
+                            class="input-clear-button"
+                            aria-label="clear"
+                          >
+                            <el-icon class="h12-closed"></el-icon>
+                          </button>
+                        </el-input-addon>
+                      </el-input>
+                      <el-input class="input-h50 is-invalid">
+                        <input
+                          class="form-control custom-input"
+                          type="text"
+                          placeholder="가입하신 휴대폰 번호를 입력해 주세요"
+                          value=""
+                        />
+                        <el-input-addon>
+                          <button
+                            type="button"
+                            class="input-clear-button"
+                            aria-label="clear"
+                          >
+                            <el-icon class="h12-closed"></el-icon>
+                          </button>
+                        </el-input-addon>
+                        <el-invalide-feedback class="typo-label-lg">
+                          필수 입력 항목입니다.
+                        </el-invalide-feedback>
+                      </el-input>
+                      <el-cta-area>
+                        <button
+                          type="button"
+                          class="button-h52-square typo-body-sm"
+                        >
+                          취소
+                        </button>
+                        <button
+                          type="button"
+                          data-bs-toggle="modal"
+                          data-bs-target="#el-alert"
+                          class="button-h52-square-fill typo-body-sm"
+                        >
+                          확인
+                        </button>
+                      </el-cta-area>
+                    </el-find-idpw-form>
+                    <el-find-idpw-bottom class="typo-body-sm">
+                      아이디를 찾지 못하셨다면 고객센터(1661-8197)로
+                      문의해주세요.<br />
+                      이메일 인증 회원이신 경우 <a href="#">이곳</a>을
+                      클릭하세요.
+                    </el-find-idpw-bottom>
                   </el-tab-panel>
                   <el-tab-panel role="tabpanel">내용2</el-tab-panel>
                 </el-tabs-content>
               </el-tabs>
-
-              <el-change-password-form>
-                <el-input class="input-h50">
-                  <input
-                    class="form-control custom-input"
-                    type="password"
-                    placeholder="현재 비밀번호를 입력해 주세요."
-                    value=""
-                  />
-                  <el-input-addon>
-                    <button
-                      type="button"
-                      class="input-eye-button"
-                      aria-label="show password"
-                    >
-                      <el-icon class="h20-eye-show natural-0"></el-icon>
-                      <el-icon class="h20-eye-hide natural-0"></el-icon>
-                    </button>
-                    <button
-                      type="button"
-                      class="input-clear-button"
-                      aria-label="clear"
-                    >
-                      <el-icon class="h12-closed"></el-icon>
-                    </button>
-                  </el-input-addon>
-                </el-input>
-                <el-input class="input-h50 is-invalid">
-                  <input
-                    class="form-control custom-input"
-                    type="password"
-                    placeholder="새로운 비밀번호를 입력해 주세요."
-                    value=""
-                  />
-                  <el-input-addon>
-                    <button
-                      type="button"
-                      class="input-eye-button"
-                      aria-label="show password"
-                    >
-                      <el-icon class="h20-eye-show natural-0"></el-icon>
-                      <el-icon class="h20-eye-hide natural-0"></el-icon>
-                    </button>
-                    <button
-                      type="button"
-                      class="input-clear-button"
-                      aria-label="clear"
-                    >
-                      <el-icon class="h12-closed"></el-icon>
-                    </button>
-                  </el-input-addon>
-                  <el-invalide-feedback class="typo-label-lg">
-                    필수 입력 항목입니다.
-                  </el-invalide-feedback>
-                </el-input>
-                <el-input class="input-h50">
-                  <input
-                    class="form-control custom-input"
-                    type="password"
-                    placeholder="새로운 비밀번호를 확인해 주세요."
-                    value=""
-                  />
-                  <el-input-addon>
-                    <button
-                      type="button"
-                      class="input-eye-button"
-                      aria-label="show password"
-                    >
-                      <el-icon class="h20-eye-show natural-0"></el-icon>
-                      <el-icon class="h20-eye-hide natural-0"></el-icon>
-                    </button>
-                    <button
-                      type="button"
-                      class="input-clear-button"
-                      aria-label="clear"
-                    >
-                      <el-icon class="h12-closed"></el-icon>
-                    </button>
-                  </el-input-addon>
-                </el-input>
-                <el-cta-area>
-                  <button type="button" class="button-h52-square typo-body-sm">
-                    나중에 변경(90일 후)
-                  </button>
-                  <button
-                    type="button"
-                    data-bs-toggle="modal"
-                    data-bs-target="#el-alert"
-                    class="button-h52-square-fill typo-body-sm"
-                  >
-                    비밀번호 변경
-                  </button>
-                </el-cta-area>
-              </el-change-password-form>
             </el-section-small>
           </el-content>
         </main>
