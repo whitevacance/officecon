@@ -5648,6 +5648,18 @@ el-find-idpw-form {
     margin-bottom: -2px;
   }
 
+  el-find-idpw-form-row {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+
+    & > button {
+      flex-grow: 0;
+      flex-shrink: 0;
+      width: 80px;
+    }
+  }
+
   el-cta-area {
     display: flex;
     gap: 10px;
