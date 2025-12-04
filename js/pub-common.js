@@ -1096,3 +1096,61 @@ if (window !== undefined) {
 
 initDatePicker();
 // 종료: date picker
+
+// 시작: 탭 el-tabs
+let tabsInitialized = false;
+const initTabs = () => {
+  // 이미 초기화된 경우 건너뛰기
+  if (tabsInitialized) {
+    return;
+  }
+
+  if (document?.body) {
+    document.body.addEventListener('click', (e) => {
+      // 클릭 시 active 처리
+      const tabsNavButtonEl = e.target.closest('el-tabs-nav > button');
+
+      if (tabsNavButtonEl) {
+        const tabsEl = tabsNavButtonEl.closest('el-tabs');
+        const tabsNavEl = tabsEl.querySelector('el-tabs-nav');
+        const tabsContentEl = tabsEl.querySelector('el-tabs-content');
+        const tabsNavButtonEls =
+          tabsNavEl.querySelectorAll('button[role="tab"]');
+        const tabsPanelEls = tabsContentEl.querySelectorAll('el-tab-panel');
+
+        // 클릭된 탭 버튼의 인덱스 찾기
+        const clickedIndex =
+          Array.from(tabsNavButtonEls).indexOf(tabsNavButtonEl);
+
+        // 모든 탭 버튼에서 active 클래스 제거
+        tabsNavButtonEls.forEach((button) => {
+          button.classList.remove('active');
+        });
+
+        // 클릭된 탭 버튼에 active 클래스 추가
+        tabsNavButtonEl.classList.add('active');
+
+        // 모든 탭 패널에서 active 클래스 제거
+        tabsPanelEls.forEach((panel) => {
+          panel.classList.remove('active');
+        });
+
+        // 해당 인덱스의 탭 패널에 active 클래스 추가
+        if (tabsPanelEls[clickedIndex]) {
+          tabsPanelEls[clickedIndex].classList.add('active');
+        }
+      }
+    });
+  }
+
+  // 초기화 완료 전환
+  tabsInitialized = true;
+};
+
+// 전역 함수로 등록
+if (window !== undefined) {
+  window.initTabs = initTabs;
+}
+
+initTabs();
+// 종료: 탭 el-tabs
