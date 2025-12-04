@@ -5525,6 +5525,35 @@ el-modal-additional-cert {
 }
 /* 종료: 로그인 */
 
+/* 시작: 비밀번호 변경 */
+el-change-password-top {
+  display: block;
+  text-align: center;
+  padding-bottom: 48px;
+
+  strong {
+    color: var(--color-blue-officecon);
+  }
+}
+el-change-password-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+
+  el-cta-area {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    padding-top: 16px;
+
+    button {
+      width: 100%;
+    }
+  }
+}
+/* 종료: 비밀번호 변경 */
+
 /* 시작: 예시 (example) */
 el-examples-article {
   display: flex;
