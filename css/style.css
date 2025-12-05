@@ -2426,6 +2426,15 @@ el-section-small {
 }
 /* 종료: 공통 > el-section-small : width 430px */
 
+/* 시작: 공통 > el-section-medium : width 712px */
+el-section-medium {
+  display: block;
+  width: 712px;
+  margin: 0 auto;
+  position: relative;
+}
+/* 종료: 공통 > el-section-medium : width 712px */
+
 /* 시작: 공통 > 탭메뉴 */
 el-tabs {
   display: block;
@@ -5683,6 +5692,30 @@ el-find-idpw-bottom {
   }
 }
 /* 종료: 아이디 / 비밀번호 찾기 */
+
+/* 시작: 회원가입 안내 */
+el-signup-intro {
+  display: flex;
+  flex-direction: column;
+  gap: 72px;
+  width: 100%;
+
+  el-signup-intro-select-type {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 20px;
+
+    el-signup-intro-type-paper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 346px;
+      height: 512px;
+    }
+  }
+}
+/* 종료: 회원가입 안내 */
 
 /* 시작: 예시 (example) */
 el-examples-article {
