@@ -2459,6 +2459,15 @@ el-section-medium {
 }
 /* 종료: 공통 > el-section-medium : width 712px */
 
+/* 시작: 공통 > el-section-large : width 800px */
+el-section-large {
+  display: block;
+  width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+/* 종료: 공통 > el-section-large : width 800px */
+
 /* 시작: 공통 > 탭메뉴 */
 el-tabs {
   display: block;
