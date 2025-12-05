@@ -1,5 +1,6 @@
 // 시작: global 변수
 let pubWrapperEl = document.querySelector('el-wrapper');
+let bsModalLoader = null;
 let bsAlert = null;
 let bsSearchLayerToggleButton = null;
 let homeMainSwiperInstance = null;
@@ -7,6 +8,40 @@ let categoryImageCarouselInstance = null;
 let homeBrandCarouselInstance = null;
 let modalNoticeSwiperInstance = null;
 // 종료: global 변수
+
+// 시작: el-modal-loader
+const initModalLoader = () => {
+  const modalLoaderEl = document.querySelector('el-modal-loader');
+
+  // 이미 초기화된 경우 건너뛰기
+  if (modalLoaderEl?.dataset?.initialized === 'true') {
+    return;
+  }
+
+  // 부트스트랩 인스턴스 생성
+  if (!bootstrap) {
+    // console.error('bootstrap을 찾을 수 없습니다.');
+    return;
+  }
+
+  if (modalLoaderEl) {
+    bsModalLoader = new bootstrap.Modal(modalLoaderEl, {
+      keyboard: false,
+      backdrop: 'static',
+    });
+
+    // 초기화 완료 전환
+    modalLoaderEl.dataset.initialized = 'true';
+  }
+};
+
+// 전역 함수로 등록
+if (window !== undefined) {
+  window.initModalLoader = initModalLoader;
+}
+
+initModalLoader();
+// 종료: el-modal-loader
 
 // 시작: el-alert
 const initAlert = () => {

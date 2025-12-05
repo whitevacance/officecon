@@ -2616,6 +2616,19 @@
             </el-examples-article>
 
             <el-examples-article>
+              <h2>loader</h2>
+              <el-examples-stack>
+                <button
+                  type="button"
+                  onclick="showModalLoader()"
+                  class="button-h50-stroke typo-body-lg"
+                >
+                  loader 호출 - (임시: 3초 후 닫힘)
+                </button>
+              </el-examples-stack>
+            </el-examples-article>
+
+            <el-examples-article>
               <h2>alert</h2>
               <el-examples-stack>
                 <button
@@ -4396,7 +4409,32 @@
     </el-modal>
     <!-- 종료: modal: 영상 팝업 -->
 
+    <!-- 시작: modal: loader -->
+    <el-modal-loader
+      class="modal fade"
+      id="el-modal-loader"
+      tabindex="-1"
+      aria-hidden="true"
+      data-bs-keyboard="false"
+      data-bs-backdrop="static"
+    >
+      <el-modal-dialog class="modal-dialog modal-dialog-centered">
+        <el-modal-content class="modal-content">
+          <img importance="high" src="./images/loader.gif" alt="" />
+          <p class="typo-body-sm">데이터 처리중 입니다.</p>
+        </el-modal-content>
+      </el-modal-dialog>
+    </el-modal-loader>
+    <!-- 종료: modal: loader -->
+
     <!-- 공통js: common.js -->
     <script src="./js/pub-common.js" crossorigin="anonymous"></script>
+
+    <script>
+      const hideModalLoader = () => {};
+      const showModalLoader = () => {
+        bsModalLoader.show();
+      };
+    </script>
   </body>
 </html>

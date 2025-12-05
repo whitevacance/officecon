@@ -1678,6 +1678,26 @@ el-modal-video {
     }
   }
 }
+
+#el-modal-loader {
+  el-modal-content.modal-content {
+    background-color: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    color: #fff;
+    text-align: center;
+
+    & > img {
+      width: 70px;
+      height: auto;
+      margin: 0 auto;
+    }
+
+    & > p {
+      padding-top: 8px;
+    }
+  }
+}
 /* 종료: 공통 > modal */
 
 /* 시작: 공통 > el-layer-dropdown */
@@ -5896,6 +5916,26 @@ el-signup-intro {
   }
 }
 /* 종료: 회원가입 안내 */
+
+/* 시작: 회원가입 폼 */
+el-signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+
+  el-signup-form-cta {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-top: 8px;
+
+    button {
+      width: 250px;
+    }
+  }
+}
+/* 종료: 회원가입 폼 */
 
 /* 시작: 예시 (example) */
 el-examples-article {
