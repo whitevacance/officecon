@@ -384,6 +384,18 @@ el-icon {
   &.purple-30 {
     background-color: var(--color-purple-30);
   }
+  &.h52-building {
+    width: 52px;
+    height: 52px;
+    -webkit-mask-image: url('../images/icon-h52-building.svg');
+    mask-image: url('../images/icon-h52-building.svg');
+  }
+  &.h52-person {
+    width: 52px;
+    height: 52px;
+    -webkit-mask-image: url('../images/icon-h52-person.svg');
+    mask-image: url('../images/icon-h52-person.svg');
+  }
   &.h32-search {
     width: 32px;
     height: 32px;
@@ -641,6 +653,18 @@ el-icon {
     height: 5px;
     -webkit-mask-image: url('../images/icon-h5-arrow-down.svg');
     mask-image: url('../images/icon-h5-arrow-down.svg');
+  }
+  &.etc-member-company {
+    width: 99px;
+    height: 24px;
+    -webkit-mask-image: url('../images/icon-etc-member-company.svg');
+    mask-image: url('../images/icon-etc-member-company.svg');
+  }
+  &.etc-member-personal {
+    width: 98px;
+    height: 24px;
+    -webkit-mask-image: url('../images/icon-etc-member-personal.svg');
+    mask-image: url('../images/icon-etc-member-personal.svg');
   }
 }
 /* 종료: 공통 > icon */
@@ -5710,8 +5734,155 @@ el-signup-intro {
       display: flex;
       flex-direction: column;
       align-items: center;
+      gap: 20px;
       width: 346px;
       height: 512px;
+      background-color: var(--color-natural-100);
+      box-shadow: var(--color-boxShadow-2);
+      border-radius: 20px;
+      padding: 32px 28px;
+
+      &.member-company {
+        & > el-icon:first-of-type {
+          background-color: var(--color-blue-60);
+        }
+
+        el-member-type-desc {
+          p {
+            span {
+              color: var(--color-blue-60);
+            }
+          }
+        }
+
+        el-member-type-benefit {
+          & > ul {
+            & > li {
+              &.active {
+                & > el-icon {
+                  background-color: var(--color-blue-60);
+                }
+              }
+            }
+          }
+        }
+
+        .button-h60-square-fill {
+          background-color: var(--color-blue-60);
+          border-color: var(--color-blue-60);
+        }
+      }
+
+      &.member-personal {
+        & > el-icon:first-of-type {
+          background-color: var(--color-orange-officecon);
+        }
+
+        el-member-type-desc {
+          p {
+            span {
+              color: var(--color-orange-officecon);
+            }
+          }
+        }
+
+        el-member-type-benefit {
+          & > ul {
+            & > li {
+              &.active {
+                & > el-icon {
+                  background-color: var(--color-orange-officecon);
+                }
+              }
+            }
+          }
+        }
+
+        .button-h60-square-fill {
+          background-color: var(--color-orange-officecon);
+          border-color: var(--color-orange-officecon);
+        }
+      }
+
+      el-member-type-desc {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        width: 100%;
+
+        el-member-type-desc-icon {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          height: 32px;
+        }
+
+        p {
+          text-align: center;
+          font-weight: 600 !important;
+        }
+      }
+
+      el-member-type-benefit {
+        display: block;
+        width: 100%;
+        height: 192px;
+        padding: 24px 24px 24px 28px;
+        background-color: var(--color-natural-98);
+        border-radius: 10px;
+
+        & > ul {
+          display: flex;
+          flex-direction: column;
+          gap: 11px;
+          width: 100%;
+
+          & > li {
+            width: 100%;
+            padding-left: 24px;
+            color: var(--color-natural-30);
+            position: relative;
+
+            &.active {
+              color: var(--color-natural-10);
+              font-weight: 600 !important;
+            }
+
+            & > el-icon {
+              position: absolute;
+              left: 0;
+              top: 2px;
+              background-color: var(--color-natural-50);
+            }
+          }
+        }
+      }
+
+      .button-h60-square-fill {
+        width: 100%;
+        border-radius: 10px;
+      }
+    }
+  }
+
+  el-signup-intro-banners {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 16px;
+
+    a {
+      display: block;
+      width: 100%;
+      height: auto;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
     }
   }
 }
