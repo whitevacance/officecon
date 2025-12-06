@@ -234,7 +234,7 @@
                 </el-signup-form-section>
                 <!-- 종료: 사업자 정보 -->
 
-                <!-- 시작:  -->
+                <!-- 시작: 사용자 정보 -->
                 <el-signup-form-section>
                   <el-section-title>
                     <h3 class="typo-subtitle-lg">사용자 정보</h3>
@@ -430,6 +430,7 @@
                                 id="checkAutoFill"
                                 class="form-check-input custom-checkbox"
                                 value=""
+                                checked
                               />
                               <label
                                 class="form-check-label typo-body-sm"
@@ -439,7 +440,6 @@
                               </label>
                             </el-checkbox>
                           </el-input>
-
                           <button
                             type="button"
                             class="button-h43-square-fill typo-body-sm color-orange"
@@ -448,24 +448,520 @@
                           </button>
                         </el-signup-form-inputs-content>
                       </el-signup-form-inputs-row>
+                      <el-signup-form-inputs-row>
+                        <el-signup-form-inputs-label class="typo-body-lg">
+                          담당자명<span>*</span>
+                        </el-signup-form-inputs-label>
+                        <el-signup-form-inputs-content>
+                          <el-input>
+                            <input
+                              disabled
+                              class="form-control custom-input"
+                              type="text"
+                              placeholder="휴대폰 본인 인증시 자동 입력"
+                              value=""
+                            />
+                          </el-input>
+                        </el-signup-form-inputs-content>
+                      </el-signup-form-inputs-row>
+                      <el-signup-form-inputs-row>
+                        <el-signup-form-inputs-label class="typo-body-lg">
+                          근무부서
+                        </el-signup-form-inputs-label>
+                        <el-signup-form-inputs-content>
+                          <el-input>
+                            <input
+                              class="form-control custom-input"
+                              type="text"
+                              placeholder="근무부서를 입력해 주세요."
+                              value=""
+                            />
+                          </el-input>
+                        </el-signup-form-inputs-content>
+                      </el-signup-form-inputs-row>
+                      <el-signup-form-inputs-row>
+                        <el-signup-form-inputs-label class="typo-body-lg">
+                          이메일<span>*</span>
+                        </el-signup-form-inputs-label>
+                        <el-signup-form-inputs-content>
+                          <el-input>
+                            <input
+                              class="form-control custom-input"
+                              type="text"
+                              placeholder="이메일을 입력해 주세요."
+                              value=""
+                            />
+                          </el-input>
+                        </el-signup-form-inputs-content>
+                      </el-signup-form-inputs-row>
+                      <el-signup-form-inputs-row>
+                        <el-signup-form-inputs-label class="typo-body-lg">
+                          이메일<span>*</span>
+                        </el-signup-form-inputs-label>
+                        <el-signup-form-inputs-content>
+                          <el-input class="is-invalid">
+                            <input
+                              class="form-control custom-input"
+                              type="text"
+                              placeholder="이메일을 입력해 주세요."
+                              value=""
+                            />
+                            <el-invalide-feedback class="typo-label-lg">
+                              필수 입력 항목입니다.
+                            </el-invalide-feedback>
+                          </el-input>
+                        </el-signup-form-inputs-content>
+                      </el-signup-form-inputs-row>
+                      <el-signup-form-inputs-row>
+                        <el-signup-form-inputs-label class="typo-body-lg">
+                          추천인ID/프로모션코드
+                        </el-signup-form-inputs-label>
+                        <el-signup-form-inputs-content>
+                          <el-input>
+                            <input
+                              class="form-control custom-input"
+                              type="text"
+                              placeholder="추천인ID 또는 프로모션코드를 입력해 주세요."
+                              value=""
+                            />
+                          </el-input>
+                        </el-signup-form-inputs-content>
+                      </el-signup-form-inputs-row>
                     </el-signup-form-inputs>
                   </el-signup-form-section-content>
                 </el-signup-form-section>
-                <!-- 종료:  -->
+                <!-- 종료: 사용자 정보 -->
 
-                <!-- 시작:  -->
+                <!-- 시작: 추가 보안 강화 기능 -->
                 <el-signup-form-section>
                   <el-section-title>
-                    <h3 class="typo-subtitle-lg">제목</h3>
+                    <h3 class="typo-subtitle-lg">추가 보안 강화 기능</h3>
+                  </el-section-title>
+                  <el-signup-form-section-content>
+                    <el-signup-form-security>
+                      <el-signup-form-security-row>
+                        <h3 class="typo-body-lg">
+                          로그인 시 추가 인증 방법 선택
+                        </h3>
+                        <el-signup-form-security-selects>
+                          <el-radio class="form-check">
+                            <input
+                              type="radio"
+                              class="form-check-input custom-radio"
+                              name="loginAddtionalCertification"
+                              id="loginAddtionalCertification-1"
+                              value=""
+                              checked
+                            />
+                            <label
+                              class="form-check-label typo-body-sm"
+                              for="loginAddtionalCertification-1"
+                            >
+                              휴대폰 인증
+                            </label>
+                          </el-radio>
+                          <el-radio class="form-check">
+                            <input
+                              type="radio"
+                              class="form-check-input custom-radio"
+                              name="loginAddtionalCertification"
+                              id="loginAddtionalCertification-2"
+                              value=""
+                            />
+                            <label
+                              class="form-check-label typo-body-sm"
+                              for="loginAddtionalCertification-2"
+                            >
+                              미 인증 (ID/PW 로그인)
+                            </label>
+                          </el-radio>
+                        </el-signup-form-security-selects>
+                      </el-signup-form-security-row>
+                      <el-signup-form-security-row>
+                        <h3 class="typo-body-lg">
+                          캐쉬(리워드) 사용 시 추가 인증 방법 선택
+                        </h3>
+                        <el-signup-form-security-selects>
+                          <el-radio class="form-check">
+                            <input
+                              type="radio"
+                              class="form-check-input custom-radio"
+                              name="cashAddtionalCertification"
+                              id="cashAddtionalCertification-1"
+                              value=""
+                              checked
+                            />
+                            <label
+                              class="form-check-label typo-body-sm"
+                              for="cashAddtionalCertification-1"
+                            >
+                              휴대폰 인증
+                            </label>
+                          </el-radio>
+                          <el-radio class="form-check">
+                            <input
+                              type="radio"
+                              class="form-check-input custom-radio"
+                              name="cashAddtionalCertification"
+                              id="cashAddtionalCertification-2"
+                              value=""
+                            />
+                            <label
+                              class="form-check-label typo-body-sm"
+                              for="cashAddtionalCertification-2"
+                            >
+                              비밀번호 인증
+                            </label>
+                          </el-radio>
+                        </el-signup-form-security-selects>
+                      </el-signup-form-security-row>
+                      <el-cash-cert-password>
+                        <el-signup-form-inputs>
+                          <el-signup-form-inputs-row>
+                            <el-signup-form-inputs-label class="typo-body-lg">
+                              비밀번호 인증<span>*</span>
+                            </el-signup-form-inputs-label>
+                            <el-signup-form-inputs-content>
+                              <el-input>
+                                <input
+                                  class="form-control custom-input"
+                                  type="password"
+                                  placeholder="숫자 6자리"
+                                  maxlength="6"
+                                  value=""
+                                />
+                                <el-input-addon>
+                                  <button
+                                    type="button"
+                                    class="input-eye-button"
+                                    aria-label="show password"
+                                  >
+                                    <el-icon
+                                      class="h20-eye-show natural-0"
+                                    ></el-icon>
+                                    <el-icon
+                                      class="h20-eye-hide natural-0"
+                                    ></el-icon>
+                                  </button>
+                                </el-input-addon>
+                              </el-input>
+                            </el-signup-form-inputs-content>
+                          </el-signup-form-inputs-row>
+                          <el-signup-form-inputs-row>
+                            <el-signup-form-inputs-label class="typo-body-lg">
+                              비밀번호 인증<span>*</span>
+                            </el-signup-form-inputs-label>
+                            <el-signup-form-inputs-content>
+                              <el-input class="is-invalid">
+                                <input
+                                  class="form-control custom-input"
+                                  type="password"
+                                  placeholder="숫자 6자리"
+                                  maxlength="6"
+                                  value=""
+                                />
+                                <el-input-addon>
+                                  <button
+                                    type="button"
+                                    class="input-eye-button"
+                                    aria-label="show password"
+                                  >
+                                    <el-icon
+                                      class="h20-eye-show natural-0"
+                                    ></el-icon>
+                                    <el-icon
+                                      class="h20-eye-hide natural-0"
+                                    ></el-icon>
+                                  </button>
+                                </el-input-addon>
+                                <el-invalide-feedback class="typo-label-lg">
+                                  필수 입력 항목입니다.
+                                </el-invalide-feedback>
+                              </el-input>
+                            </el-signup-form-inputs-content>
+                          </el-signup-form-inputs-row>
+                          <el-signup-form-inputs-row>
+                            <el-signup-form-inputs-label class="typo-body-lg">
+                              비밀번호 인증 확인<span>*</span>
+                            </el-signup-form-inputs-label>
+                            <el-signup-form-inputs-content>
+                              <el-input>
+                                <input
+                                  class="form-control custom-input"
+                                  type="password"
+                                  placeholder="인증 비밀번호를 확인해 주세요."
+                                  maxlength="6"
+                                  value=""
+                                />
+                                <el-input-addon>
+                                  <button
+                                    type="button"
+                                    class="input-eye-button"
+                                    aria-label="show password"
+                                  >
+                                    <el-icon
+                                      class="h20-eye-show natural-0"
+                                    ></el-icon>
+                                    <el-icon
+                                      class="h20-eye-hide natural-0"
+                                    ></el-icon>
+                                  </button>
+                                </el-input-addon>
+                              </el-input>
+                            </el-signup-form-inputs-content>
+                          </el-signup-form-inputs-row>
+                          <el-signup-form-inputs-row>
+                            <el-signup-form-inputs-label class="typo-body-lg">
+                              비밀번호 인증 확인<span>*</span>
+                            </el-signup-form-inputs-label>
+                            <el-signup-form-inputs-content>
+                              <el-input class="is-invalid">
+                                <input
+                                  class="form-control custom-input"
+                                  type="password"
+                                  placeholder="인증 비밀번호를 확인해 주세요."
+                                  maxlength="6"
+                                  value=""
+                                />
+                                <el-input-addon>
+                                  <button
+                                    type="button"
+                                    class="input-eye-button"
+                                    aria-label="show password"
+                                  >
+                                    <el-icon
+                                      class="h20-eye-show natural-0"
+                                    ></el-icon>
+                                    <el-icon
+                                      class="h20-eye-hide natural-0"
+                                    ></el-icon>
+                                  </button>
+                                </el-input-addon>
+                                <el-invalide-feedback class="typo-label-lg">
+                                  필수 입력 항목입니다.
+                                </el-invalide-feedback>
+                              </el-input>
+                            </el-signup-form-inputs-content>
+                          </el-signup-form-inputs-row>
+                        </el-signup-form-inputs>
+                      </el-cash-cert-password>
+                    </el-signup-form-security>
+                  </el-signup-form-section-content>
+                </el-signup-form-section>
+                <!-- 종료: 추가 보안 강화 기능 -->
+
+                <!-- 시작: 약관 동의 -->
+                <el-signup-form-section>
+                  <el-section-title>
+                    <h3 class="typo-subtitle-lg">약관 동의</h3>
                     <el-section-title-addon class="typo-body-sm">
-                      <span>*</span> 필수입력사항
+                      <el-checkbox class="form-check size-xl">
+                        <input
+                          type="checkbox"
+                          id="checkboxAgreeAll"
+                          class="form-check-input custom-checkbox"
+                          value=""
+                        />
+                        <label
+                          class="form-check-label typo-body-lg"
+                          for="checkboxAgreeAll"
+                        >
+                          모든 약관 전체 동의
+                        </label>
+                      </el-checkbox>
                     </el-section-title-addon>
                   </el-section-title>
                   <el-signup-form-section-content>
-                    asdfsadfsadf
+                    <el-signup-form-inputs>
+                      <el-signup-form-inputs-row>
+                        <el-signup-form-inputs-label class="typo-body-lg">
+                          이용약관 동의
+                        </el-signup-form-inputs-label>
+                        <el-signup-form-inputs-content>
+                          <el-signup-form-agree-header class="typo-body-sm">
+                            고객님께서 동의 거부 권리가 있으며, 동의 거부 시
+                            서비스 가입이 불가능합니다.
+                          </el-signup-form-agree-header>
+                          <el-signup-form-agree-items>
+                            <el-signup-form-agree-item>
+                              <el-checkbox class="form-check size-lg">
+                                <input
+                                  type="checkbox"
+                                  id="checkTermsOfservice"
+                                  class="form-check-input custom-checkbox"
+                                  value=""
+                                />
+                                <label
+                                  class="form-check-label typo-body-md"
+                                  for="checkTermsOfservice"
+                                >
+                                  서비스 이용약관
+                                  <span>(필수)</span>
+                                </label>
+                              </el-checkbox>
+                              <button
+                                type="button"
+                                class="typo-body-sm"
+                                data-bs-toggle="modal"
+                                data-bs-target="#el-modal-default"
+                                onclick="handleChangePre('service')"
+                              >
+                                약관보기
+                              </button>
+                            </el-signup-form-agree-item>
+                            <el-signup-form-agree-item>
+                              <el-checkbox class="form-check size-lg">
+                                <input
+                                  type="checkbox"
+                                  id="checkPrivacyPolicy"
+                                  class="form-check-input custom-checkbox"
+                                  value=""
+                                />
+                                <label
+                                  class="form-check-label typo-body-md"
+                                  for="checkPrivacyPolicy"
+                                >
+                                  개인정보 수집 이용동의
+                                  <span>(필수)</span>
+                                </label>
+                              </el-checkbox>
+                              <button
+                                type="button"
+                                class="typo-body-sm"
+                                data-bs-toggle="modal"
+                                data-bs-target="#el-modal-default"
+                                onclick="handleChangePre('privacy')"
+                              >
+                                약관보기
+                              </button>
+                            </el-signup-form-agree-item>
+                            <el-signup-form-agree-item>
+                              <el-checkbox class="form-check size-lg">
+                                <input
+                                  type="checkbox"
+                                  id="checkPrivacyPolicyOptional"
+                                  class="form-check-input custom-checkbox"
+                                  value=""
+                                />
+                                <label
+                                  class="form-check-label typo-body-md"
+                                  for="checkPrivacyPolicyOptional"
+                                >
+                                  개인정보 수집 이용동의
+                                  <span>(선택)</span>
+                                </label>
+                              </el-checkbox>
+                              <button
+                                type="button"
+                                class="typo-body-sm"
+                                data-bs-toggle="modal"
+                                data-bs-target="#el-modal-default"
+                                onclick="handleChangePre('privacyOptional')"
+                              >
+                                약관보기
+                              </button>
+                            </el-signup-form-agree-item>
+                          </el-signup-form-agree-items>
+                        </el-signup-form-inputs-content>
+                      </el-signup-form-inputs-row>
+                      <el-signup-form-inputs-row>
+                        <el-signup-form-inputs-label
+                          class="typo-body-lg"
+                          style="top: 12px"
+                        >
+                          마케팅 정보 수집<br />이용 동의
+                        </el-signup-form-inputs-label>
+                        <el-signup-form-inputs-content>
+                          <el-signup-form-agree-header class="typo-body-sm">
+                            고객님께서 동의 거부 권리가 있으며, 동의 거부 시
+                            서비스 가입이 불가능합니다.
+                          </el-signup-form-agree-header>
+                          <el-signup-form-agree-items>
+                            <el-signup-form-agree-item>
+                              <el-checkbox class="form-check size-lg">
+                                <input
+                                  type="checkbox"
+                                  id="checkTermsOfservice"
+                                  class="form-check-input custom-checkbox"
+                                  value=""
+                                />
+                                <label
+                                  class="form-check-label typo-body-md"
+                                  for="checkTermsOfservice"
+                                >
+                                  서비스 이용약관
+                                  <span>(필수)</span>
+                                </label>
+                              </el-checkbox>
+                              <button
+                                type="button"
+                                class="typo-body-sm"
+                                data-bs-toggle="modal"
+                                data-bs-target="#el-modal-default"
+                                onclick="handleChangePre('service')"
+                              >
+                                약관보기
+                              </button>
+                            </el-signup-form-agree-item>
+                            <el-signup-form-agree-item>
+                              <el-checkbox class="form-check size-lg">
+                                <input
+                                  type="checkbox"
+                                  id="checkPrivacyPolicy"
+                                  class="form-check-input custom-checkbox"
+                                  value=""
+                                />
+                                <label
+                                  class="form-check-label typo-body-md"
+                                  for="checkPrivacyPolicy"
+                                >
+                                  개인정보 수집 이용동의
+                                  <span>(필수)</span>
+                                </label>
+                              </el-checkbox>
+                              <button
+                                type="button"
+                                class="typo-body-sm"
+                                data-bs-toggle="modal"
+                                data-bs-target="#el-modal-default"
+                                onclick="handleChangePre('privacy')"
+                              >
+                                약관보기
+                              </button>
+                            </el-signup-form-agree-item>
+                            <el-signup-form-agree-item>
+                              <el-checkbox class="form-check size-lg">
+                                <input
+                                  type="checkbox"
+                                  id="checkPrivacyPolicyOptional"
+                                  class="form-check-input custom-checkbox"
+                                  value=""
+                                />
+                                <label
+                                  class="form-check-label typo-body-md"
+                                  for="checkPrivacyPolicyOptional"
+                                >
+                                  개인정보 수집 이용동의
+                                  <span>(선택)</span>
+                                </label>
+                              </el-checkbox>
+                              <button
+                                type="button"
+                                class="typo-body-sm"
+                                data-bs-toggle="modal"
+                                data-bs-target="#el-modal-default"
+                                onclick="handleChangePre('privacyOptional')"
+                              >
+                                약관보기
+                              </button>
+                            </el-signup-form-agree-item>
+                          </el-signup-form-agree-items>
+                        </el-signup-form-inputs-content>
+                      </el-signup-form-inputs-row>
+                    </el-signup-form-inputs>
                   </el-signup-form-section-content>
                 </el-signup-form-section>
-                <!-- 종료:  -->
+                <!-- 종료: 약관 동의 -->
 
                 <el-signup-form-cta>
                   <button
@@ -863,11 +1359,11 @@
 
 본 서비스 이용약관은 2018년 1월 5일부터 유효합니다.`,
       };
-      const TERMS_OF_PRIVACY = {
+      const PRIVACY_POLICY = {
         title: '개인정보 수집 이용동의(필수)',
         content: `개인정보 수집 이용동의(필수) 내용`,
       };
-      const TERMS_OF_PRIVACY_OPTIONAL = {
+      const PRIVACY_POLICY_OPTIONAL = {
         title: '개인정보 수집 이용동의(선택)',
         content: `개인정보 수집 이용동의(선택) 내용`,
       };
@@ -878,8 +1374,8 @@
 
       const TERMS_DATA = {
         service: TERMS_OF_SERVICE,
-        privacy: TERMS_OF_PRIVACY,
-        privacyOptional: TERMS_OF_PRIVACY_OPTIONAL,
+        privacy: PRIVACY_POLICY,
+        privacyOptional: PRIVACY_POLICY_OPTIONAL,
         marketing: TERMS_OF_MARKETING,
       };
 
