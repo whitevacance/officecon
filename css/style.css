@@ -145,10 +145,12 @@ pre {
 html {
   scroll-behavior: auto !important;
   text-underline-offset: 2px;
+  scrollbar-gutter: stable;
 }
 body {
   /* bootstrap의 모달 팝업 노출 시 스크롤바 width 확보하는 padding 제거 */
   padding-right: 0 !important;
+  scrollbar-gutter: stable;
 }
 a {
   text-decoration: none;
@@ -201,8 +203,16 @@ button {
   opacity: 1 !important;
   background-color: var(--color-opacity-black-30);
 
-  &:nth-of-type(2) {
+  &:last-of-type {
     z-index: 1057;
+  }
+
+  &:nth-of-type(1) {
+    z-index: 1050;
+  }
+
+  &:nth-of-type(2) {
+    z-index: 1056;
   }
 }
 /* 종료: reset */
@@ -342,6 +352,7 @@ el-icon {
   overflow: hidden;
   text-indent: -9999px;
   background-color: var(--color-natural-100);
+
   &.natural-0 {
     background-color: var(--color-natural-0);
   }
@@ -383,6 +394,18 @@ el-icon {
   }
   &.purple-30 {
     background-color: var(--color-purple-30);
+  }
+  &.h52-building {
+    width: 52px;
+    height: 52px;
+    -webkit-mask-image: url('../images/icon-h52-building.svg');
+    mask-image: url('../images/icon-h52-building.svg');
+  }
+  &.h52-person {
+    width: 52px;
+    height: 52px;
+    -webkit-mask-image: url('../images/icon-h52-person.svg');
+    mask-image: url('../images/icon-h52-person.svg');
   }
   &.h32-search {
     width: 32px;
@@ -641,6 +664,24 @@ el-icon {
     height: 5px;
     -webkit-mask-image: url('../images/icon-h5-arrow-down.svg');
     mask-image: url('../images/icon-h5-arrow-down.svg');
+  }
+  &.etc-member-company {
+    width: 99px;
+    height: 24px;
+    -webkit-mask-image: url('../images/icon-etc-member-company.svg');
+    mask-image: url('../images/icon-etc-member-company.svg');
+  }
+  &.etc-member-personal {
+    width: 98px;
+    height: 24px;
+    -webkit-mask-image: url('../images/icon-etc-member-personal.svg');
+    mask-image: url('../images/icon-etc-member-personal.svg');
+  }
+  &.etc-circle-check {
+    width: 64px;
+    height: 64px;
+    background-image: url('../images/icon-etc-circle-check.svg');
+    background-color: transparent;
   }
 }
 /* 종료: 공통 > icon */
@@ -1077,9 +1118,8 @@ button {
     overflow: hidden;
     color: var(--color-natural-40);
 
-    &.active {
+    &.text-black {
       color: var(--color-natural-0);
-      border-color: var(--color-natural-0);
     }
   }
 
@@ -1096,6 +1136,11 @@ button {
     background-color: var(--color-natural-0);
     overflow: hidden;
     color: var(--color-natural-100);
+
+    &.color-orange {
+      border: 1px solid var(--color-orange-officecon);
+      background-color: var(--color-orange-officecon);
+    }
   }
 
   &.button-h34-cash {
@@ -1282,6 +1327,7 @@ el-input {
     display: none;
     color: var(--color-red-40);
     padding: 4px 0 0 4px;
+    font-weight: 600 !important;
   }
 
   &:has(el-input-addon > button) {
@@ -1382,6 +1428,24 @@ el-checkbox {
 
   label {
     color: var(--color-natural-20);
+  }
+
+  &.size-lg {
+    label {
+      font-weight: 600;
+      color: var(--color-natural-0);
+    }
+  }
+
+  &.size-xl {
+    .custom-checkbox.form-check-input {
+      margin-top: 1px;
+    }
+
+    label {
+      font-weight: 600;
+      color: var(--color-natural-0);
+    }
   }
 }
 /* 종료: 공통 > checkbox */
@@ -1505,10 +1569,9 @@ el-modal.modal {
 
       el-modal-header {
         display: flex;
-        align-items: center;
         width: 100%;
         height: 88px;
-        padding: 0 32px;
+        padding: 32px 32px 0;
         color: var(--color-natural-0);
 
         & > h3 {
@@ -1526,6 +1589,7 @@ el-modal.modal {
         position: relative;
         width: fit-content;
         max-width: 100%;
+        padding: 0;
       }
 
       el-modal-footer {
@@ -1537,6 +1601,20 @@ el-modal.modal {
         padding: 0 32px;
         color: var(--color-natural-20);
       }
+    }
+  }
+}
+
+#el-modal-default {
+  el-modal-content.modal-content {
+    padding-bottom: 32px;
+
+    &:has(el-modal-footer) {
+      padding-bottom: 0;
+    }
+
+    el-modal-body {
+      padding: 0 32px;
     }
   }
 }
@@ -1654,6 +1732,68 @@ el-modal-video {
     }
   }
 }
+
+#el-modal-loader {
+  z-index: 9999;
+
+  el-modal-loader-dialog.modal-dialog {
+    box-sizing: border-box;
+    max-width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+    transform: translate(0, 0) !important;
+
+    el-modal-loader-content.modal-content {
+      background-color: transparent;
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
+      color: #fff;
+      text-align: center;
+
+      & > img {
+        width: 70px;
+        height: auto;
+        margin: 0 auto;
+      }
+
+      & > p {
+        padding-top: 8px;
+      }
+    }
+  }
+}
+
+el-modal-pre-wrapper {
+  display: block;
+  width: 853px;
+  height: 100%;
+  max-height: 592px;
+  padding: 20px 24px;
+  background-color: var(--color-natural-95);
+  border: 1px solid var(--color-natural-80);
+  border-radius: 10px;
+  overflow: auto;
+  scrollbar-color: var(--color-opacity-black-30) transparent;
+  scrollbar-width: thin;
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  pre {
+    color: var(--color-natural-20);
+    margin: 0;
+    padding: 0;
+    white-space: pre-wrap;
+
+    el-indent {
+      display: inline-block;
+      width: 100%;
+      padding-left: 10px;
+    }
+  }
+}
 /* 종료: 공통 > modal */
 
 /* 시작: 공통 > el-layer-dropdown */
@@ -1706,13 +1846,22 @@ el-layer-dropdown.dropdown-menu {
 
 /* 시작: 공통 > el-section-title */
 el-section-title {
-  display: block;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
   width: 100%;
+  min-height: 80px;
+  padding: 24px 0 22px;
+  border-bottom: 2px solid var(--color-natural-0);
 
   & > h3 {
     font-weight: 700 !important;
-    padding: 24px 0 22px;
-    border-bottom: 2px solid var(--color-natural-0);
+  }
+
+  el-section-title-addon {
+    span {
+      color: var(--color-red-40);
+    }
   }
 }
 /* 종료: 공통 > el-section-title */
@@ -2425,6 +2574,24 @@ el-section-small {
   position: relative;
 }
 /* 종료: 공통 > el-section-small : width 430px */
+
+/* 시작: 공통 > el-section-medium : width 712px */
+el-section-medium {
+  display: block;
+  width: 712px;
+  margin: 0 auto;
+  position: relative;
+}
+/* 종료: 공통 > el-section-medium : width 712px */
+
+/* 시작: 공통 > el-section-large : width 800px */
+el-section-large {
+  display: block;
+  width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+/* 종료: 공통 > el-section-large : width 800px */
 
 /* 시작: 공통 > 탭메뉴 */
 el-tabs {
@@ -5533,7 +5700,7 @@ el-modal-additional-cert {
   display: flex;
   flex-direction: column;
   width: 484px;
-  padding: 0 32px 50px;
+  padding: 0 0 50px;
 
   el-additional-cert-description {
     display: block;
@@ -5683,6 +5850,405 @@ el-find-idpw-bottom {
   }
 }
 /* 종료: 아이디 / 비밀번호 찾기 */
+
+/* 시작: 회원가입 안내 - 인트로, 가입완료 */
+el-signup-info {
+  display: flex;
+  flex-direction: column;
+  gap: 72px;
+  width: 100%;
+
+  el-signup-intro-select-type {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 20px;
+
+    el-signup-intro-type-paper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      width: 346px;
+      height: 512px;
+      background-color: var(--color-natural-100);
+      box-shadow: var(--color-boxShadow-2);
+      border-radius: 20px;
+      padding: 32px 28px;
+
+      &.member-company {
+        & > el-icon:first-of-type {
+          background-color: var(--color-blue-60);
+        }
+
+        el-member-type-desc {
+          p {
+            span {
+              color: var(--color-blue-60);
+            }
+          }
+        }
+
+        el-member-type-benefit {
+          & > ul {
+            & > li {
+              &.active {
+                & > el-icon {
+                  background-color: var(--color-blue-60);
+                }
+              }
+            }
+          }
+        }
+
+        .button-h60-square-fill {
+          background-color: var(--color-blue-60);
+          border-color: var(--color-blue-60);
+        }
+      }
+
+      &.member-personal {
+        & > el-icon:first-of-type {
+          background-color: var(--color-orange-officecon);
+        }
+
+        el-member-type-desc {
+          p {
+            span {
+              color: var(--color-orange-officecon);
+            }
+          }
+        }
+
+        el-member-type-benefit {
+          & > ul {
+            & > li {
+              &.active {
+                & > el-icon {
+                  background-color: var(--color-orange-officecon);
+                }
+              }
+            }
+          }
+        }
+
+        .button-h60-square-fill {
+          background-color: var(--color-orange-officecon);
+          border-color: var(--color-orange-officecon);
+        }
+      }
+
+      el-member-type-desc {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        width: 100%;
+
+        el-member-type-desc-icon {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          height: 32px;
+        }
+
+        p {
+          text-align: center;
+          font-weight: 600 !important;
+        }
+      }
+
+      el-member-type-benefit {
+        display: block;
+        width: 100%;
+        height: 192px;
+        padding: 24px 24px 24px 28px;
+        background-color: var(--color-natural-98);
+        border-radius: 10px;
+
+        & > ul {
+          display: flex;
+          flex-direction: column;
+          gap: 11px;
+          width: 100%;
+
+          & > li {
+            width: 100%;
+            padding-left: 24px;
+            color: var(--color-natural-30);
+            position: relative;
+
+            &.active {
+              color: var(--color-natural-10);
+              font-weight: 600 !important;
+            }
+
+            & > el-icon {
+              position: absolute;
+              left: 0;
+              top: 2px;
+              background-color: var(--color-natural-50);
+            }
+          }
+        }
+      }
+
+      .button-h60-square-fill {
+        width: 100%;
+        border-radius: 10px;
+      }
+    }
+  }
+
+  el-signup-success {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 72px;
+    width: 100%;
+    text-align: center;
+
+    el-signup-success-greeting {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+      width: 100%;
+
+      el-signup-success-greeting-message {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        width: 100%;
+
+        & > p {
+          color: var(--color-natural-10);
+        }
+      }
+    }
+
+    el-signup-success-buttons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      width: 100%;
+
+      button {
+        width: 250px;
+      }
+    }
+  }
+
+  el-signup-info-banners {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 16px;
+
+    a {
+      display: block;
+      width: 100%;
+      height: auto;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
+/* 종료: 회원가입 안내 - 인트로, 가입완료 */
+
+/* 시작: 회원가입 폼 */
+el-signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+
+  el-signup-form-section {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+
+    el-signup-form-section-content {
+      display: block;
+      width: 100%;
+      padding: 0 13px;
+
+      el-signup-form-inputs {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        width: 100%;
+
+        el-signup-form-inputs-row {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          width: 100%;
+
+          el-signup-form-inputs-label {
+            align-self: flex-start;
+            flex-grow: 0;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            width: 144px;
+            height: 43px;
+            font-weight: 700 !important;
+            position: relative;
+            span {
+              color: var(--color-red-40);
+            }
+          }
+
+          el-signup-form-inputs-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0px 8px;
+            width: 100%;
+
+            el-input {
+              width: 400px;
+
+              el-checkbox {
+                margin-top: 8px !important;
+              }
+            }
+
+            & > button {
+              align-self: flex-start;
+              flex-grow: 0;
+              flex-shrink: 0;
+            }
+
+            el-signup-form-agree-header {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              gap: 12px;
+              width: 100%;
+              height: 43px;
+              color: var(--color-natural-10);
+
+              & > button {
+                font-weight: 700 !important;
+                color: var(--color-natural-40);
+                text-decoration: underline;
+              }
+            }
+
+            el-signup-form-agree-items {
+              display: flex;
+              flex-direction: column;
+              gap: 20px;
+              width: 100%;
+              padding-top: 7px;
+
+              el-signup-form-agree-item {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 12px;
+                width: 100%;
+
+                & > el-checkbox {
+                  label {
+                    span {
+                      color: var(--color-natural-40);
+                    }
+                  }
+                }
+
+                & > button {
+                  font-weight: 700 !important;
+                  color: var(--color-natural-40);
+                  text-decoration: underline;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      el-signup-form-caution {
+        display: block;
+        width: 100%;
+        margin-top: 24px;
+        padding: 16px 24px;
+        background-color: var(--color-blue-10);
+        border-radius: 8px;
+
+        ul li {
+          font-weight: 400;
+          color: var(--color-natural-20);
+
+          &:before {
+            background-color: var(--color-natural-20);
+          }
+        }
+      }
+
+      el-signup-form-security {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        width: 100%;
+
+        el-signup-form-security-row {
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+          width: 100%;
+          padding-bottom: 24px;
+          border-bottom: 1px solid var(--color-natural-80);
+
+          & > h3 {
+            font-weight: 700 !important;
+          }
+
+          el-signup-form-security-selects {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            width: 100%;
+          }
+        }
+
+        el-cash-cert-password {
+          display: none;
+          width: 100%;
+        }
+
+        &:has(#cashAddtionalCertification-2:checked) {
+          el-cash-cert-password {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+
+  el-signup-form-cta {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-top: 8px;
+
+    button {
+      width: 250px;
+    }
+  }
+}
+/* 종료: 회원가입 폼 */
 
 /* 시작: 예시 (example) */
 el-examples-article {

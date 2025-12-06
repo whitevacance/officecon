@@ -1998,6 +1998,9 @@
                 <el-color-chip style="background: var(--color-blue-officecon)">
                   --color-blue-officecon
                 </el-color-chip>
+                <el-color-chip style="background: var(--color-blue-60)">
+                  --color-blue-60
+                </el-color-chip>
                 <el-color-chip style="background: var(--color-blue-40)">
                   --color-blue-40
                 </el-color-chip>
@@ -2334,6 +2337,21 @@
                 <el-icon class="h32-arrow-up"></el-icon>
                 <el-icon class="h32-arrow-up natural-0"></el-icon>
               </el-examples-stack>
+              <h5>h52</h5>
+              <el-examples-stack class="bg">
+                <el-icon class="h52-building"></el-icon>
+                <el-icon class="h52-building natural-0"></el-icon>
+                <el-icon class="h52-person"></el-icon>
+                <el-icon class="h52-person natural-0"></el-icon>
+              </el-examples-stack>
+              <h5>etc</h5>
+              <el-examples-stack class="bg">
+                <el-icon class="etc-member-company"></el-icon>
+                <el-icon class="etc-member-company natural-0"></el-icon>
+                <el-icon class="etc-member-personal"></el-icon>
+                <el-icon class="etc-member-personal natural-0"></el-icon>
+                <el-icon class="etc-circle-check"></el-icon>
+              </el-examples-stack>
             </el-examples-article>
 
             <el-examples-article>
@@ -2524,13 +2542,19 @@
                 </button>
                 <button
                   type="button"
-                  class="active button-h43-square typo-body-sm"
+                  class="text-black button-h43-square typo-body-sm"
                 >
                   button-h43-square
                 </button>
                 <button
                   type="button"
                   class="button-h43-square-fill typo-body-sm"
+                >
+                  button-h43-square-fill
+                </button>
+                <button
+                  type="button"
+                  class="button-h43-square-fill typo-body-sm color-orange"
                 >
                   button-h43-square-fill
                 </button>
@@ -2599,6 +2623,19 @@
             </el-examples-article>
 
             <el-examples-article>
+              <h2>loader</h2>
+              <el-examples-stack>
+                <button
+                  type="button"
+                  onclick="showModalLoader()"
+                  class="button-h50-stroke typo-body-lg"
+                >
+                  loader 호출 - (임시: 2초 후 닫힘)
+                </button>
+              </el-examples-stack>
+            </el-examples-article>
+
+            <el-examples-article>
               <h2>alert</h2>
               <el-examples-stack>
                 <button
@@ -2615,6 +2652,14 @@
             <el-examples-article>
               <h2>모달 팝업</h2>
               <el-examples-stack>
+                <button
+                  type="button"
+                  data-bs-toggle="modal"
+                  data-bs-target="#el-modal-default"
+                  class="button-h50-stroke typo-body-lg"
+                >
+                  공통 팝업 호출
+                </button>
                 <button
                   type="button"
                   data-bs-toggle="modal"
@@ -2693,6 +2738,34 @@
                     </label>
                   </el-checkbox>
                 </div>
+                <el-checkbox class="form-check size-lg">
+                  <input
+                    type="checkbox"
+                    id="checkSample3"
+                    class="form-check-input custom-checkbox"
+                    value=""
+                  />
+                  <label
+                    class="form-check-label typo-body-md"
+                    for="checkSample3"
+                  >
+                    레이블이 있을 때
+                  </label>
+                </el-checkbox>
+                <el-checkbox class="form-check size-xl">
+                  <input
+                    type="checkbox"
+                    id="checkSample4"
+                    class="form-check-input custom-checkbox"
+                    value=""
+                  />
+                  <label
+                    class="form-check-label typo-body-lg"
+                    for="checkSample4"
+                  >
+                    레이블이 있을 때
+                  </label>
+                </el-checkbox>
               </el-examples-stack>
               <el-examples-stack>
                 <el-radio>
@@ -2862,6 +2935,17 @@
                         <el-icon class="h12-closed"></el-icon>
                       </button>
                     </el-input-addon>
+                  </el-input>
+                </div>
+                <div style="width: 220px">
+                  <el-input>
+                    <input
+                      disabled
+                      class="form-control custom-input"
+                      type="text"
+                      placeholder="아이디를 입력해주세요."
+                      value=""
+                    />
                   </el-input>
                 </div>
                 <div style="width: 220px">
@@ -4099,6 +4183,9 @@
               <el-examples-stack>
                 <el-section-title>
                   <h3 class="typo-subtitle-lg">제목</h3>
+                  <el-section-title-addon class="typo-body-sm">
+                    <span>*</span> 필수입력사항
+                  </el-section-title-addon>
                 </el-section-title>
               </el-examples-stack>
             </el-examples-article>
@@ -4379,7 +4466,76 @@
     </el-modal>
     <!-- 종료: modal: 영상 팝업 -->
 
+    <!-- 시작: modal: 공통 모달 -->
+    <el-modal
+      class="modal fade"
+      id="el-modal-default"
+      tabindex="-1"
+      aria-hidden="true"
+      data-bs-keyboard="false"
+    >
+      <el-modal-dialog class="modal-dialog modal-dialog-centered">
+        <el-modal-content class="modal-content">
+          <el-modal-close-button>
+            <button type="button" data-bs-dismiss="modal" aria-label="닫기">
+              <el-icon class="h32-closed natural-0"></el-icon>
+            </button>
+          </el-modal-close-button>
+
+          <el-modal-header>
+            <!-- 타이틀 정렬: 기본 left. 중앙정렬 필요 시 class명 'center' 추가 -->
+            <h3 class="typo-subtitle-lg center">공통 모달 타이틀</h3>
+          </el-modal-header>
+
+          <el-modal-body>
+            <div style="width: 800px">
+              모달 컨텐츠 영역 - 이 영역의 width에 따라 모달의 width가
+              결정됩니다(좌우 padding은 32px).
+            </div>
+          </el-modal-body>
+
+          <el-modal-footer>모달 footer 영역</el-modal-footer>
+        </el-modal-content>
+      </el-modal-dialog>
+    </el-modal>
+    <!-- 종료: modal: 공통 모달 -->
+
+    <!-- 시작: modal: loader -->
+    <el-modal-loader
+      class="modal fade"
+      id="el-modal-loader"
+      tabindex="-1"
+      aria-hidden="true"
+      data-bs-keyboard="false"
+      data-bs-backdrop="static"
+    >
+      <el-modal-loader-dialog class="modal-dialog modal-dialog-centered">
+        <el-modal-loader-content class="modal-content">
+          <img importance="high" src="./images/loader.gif" alt="" />
+          <p class="typo-body-sm">데이터 처리중 입니다.</p>
+        </el-modal-loader-content>
+      </el-modal-loader-dialog>
+    </el-modal-loader>
+    <!-- 종료: modal: loader -->
+
     <!-- 공통js: common.js -->
     <script src="./js/pub-common.js" crossorigin="anonymous"></script>
+
+    <script>
+      // 시작: loader handle 샘플
+      let modalLoaderTimer = null;
+      const showModalLoader = () => {
+        if (modalLoaderTimer) {
+          clearTimeout(modalLoaderTimer);
+        }
+        bsModalLoader.show();
+        modalLoaderTimer = setTimeout(() => {
+          bsModalLoader.hide();
+          modalLoaderTimer = null;
+        }, 2000);
+        return modalLoaderTimer;
+      };
+      // 종료: loader handle 샘플
+    </script>
   </body>
 </html>
