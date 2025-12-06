@@ -1111,9 +1111,8 @@ button {
     overflow: hidden;
     color: var(--color-natural-40);
 
-    &.active {
+    &.text-black {
       color: var(--color-natural-0);
-      border-color: var(--color-natural-0);
     }
   }
 
@@ -1130,6 +1129,11 @@ button {
     background-color: var(--color-natural-0);
     overflow: hidden;
     color: var(--color-natural-100);
+
+    &.color-orange {
+      border: 1px solid var(--color-orange-officecon);
+      background-color: var(--color-orange-officecon);
+    }
   }
 
   &.button-h34-cash {
@@ -1316,6 +1320,7 @@ el-input {
     display: none;
     color: var(--color-red-40);
     padding: 4px 0 0 4px;
+    font-weight: 600 !important;
   }
 
   &:has(el-input-addon > button) {
@@ -1817,13 +1822,22 @@ el-layer-dropdown.dropdown-menu {
 
 /* 시작: 공통 > el-section-title */
 el-section-title {
-  display: block;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
   width: 100%;
+  min-height: 80px;
+  padding: 24px 0 22px;
+  border-bottom: 2px solid var(--color-natural-0);
 
   & > h3 {
     font-weight: 700 !important;
-    padding: 24px 0 22px;
-    border-bottom: 2px solid var(--color-natural-0);
+  }
+
+  el-section-title-addon {
+    span {
+      color: var(--color-red-40);
+    }
   }
 }
 /* 종료: 공통 > el-section-title */
@@ -5990,6 +6004,87 @@ el-signup-form {
   flex-direction: column;
   gap: 40px;
   width: 100%;
+
+  el-signup-form-section {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+
+    el-signup-form-section-content {
+      display: block;
+      width: 100%;
+      padding: 0 13px;
+
+      el-signup-form-inputs {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        width: 100%;
+
+        el-signup-form-inputs-row {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          width: 100%;
+
+          el-signup-form-inputs-label {
+            align-self: flex-start;
+            flex-grow: 0;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            width: 144px;
+            height: 43px;
+            font-weight: 700 !important;
+            span {
+              color: var(--color-red-40);
+            }
+          }
+
+          el-signup-form-inputs-content {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            width: 100%;
+
+            el-input {
+              width: 400px;
+
+              el-checkbox {
+                margin-top: 8px !important;
+              }
+            }
+
+            & > button {
+              align-self: flex-start;
+              flex-grow: 0;
+              flex-shrink: 0;
+            }
+          }
+        }
+      }
+
+      el-signup-form-caution {
+        display: block;
+        width: 100%;
+        margin-top: 24px;
+        padding: 16px 24px;
+        background-color: var(--color-blue-10);
+        border-radius: 8px;
+
+        ul li {
+          font-weight: 400;
+          color: var(--color-natural-20);
+
+          &:before {
+            background-color: var(--color-natural-20);
+          }
+        }
+      }
+    }
+  }
 
   el-signup-form-cta {
     display: flex;

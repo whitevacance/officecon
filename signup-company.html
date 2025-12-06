@@ -89,7 +89,383 @@
           <el-content>
             <el-section-large>
               <el-signup-form>
-                <div>asdfsadfsadf</div>
+                <!-- 시작: 사업자 정보 -->
+                <el-signup-form-section>
+                  <el-section-title>
+                    <h3 class="typo-subtitle-lg">사업자 정보</h3>
+                    <el-section-title-addon class="typo-body-sm">
+                      <span>*</span> 필수입력사항
+                    </el-section-title-addon>
+                  </el-section-title>
+                  <el-signup-form-section-content>
+                    <el-signup-form-inputs>
+                      <el-signup-form-inputs-row>
+                        <el-signup-form-inputs-label class="typo-body-lg">
+                          상호명<span>*</span>
+                        </el-signup-form-inputs-label>
+                        <el-signup-form-inputs-content>
+                          <el-input>
+                            <input
+                              class="form-control custom-input"
+                              type="text"
+                              placeholder="상호명을 입력해 주세요."
+                              value=""
+                            />
+                          </el-input>
+                        </el-signup-form-inputs-content>
+                      </el-signup-form-inputs-row>
+                      <el-signup-form-inputs-row>
+                        <el-signup-form-inputs-label class="typo-body-lg">
+                          상호명<span>*</span>
+                        </el-signup-form-inputs-label>
+                        <el-signup-form-inputs-content>
+                          <el-input class="is-invalid">
+                            <input
+                              class="form-control custom-input"
+                              type="text"
+                              placeholder="상호명을 입력해 주세요."
+                              value=""
+                            />
+                            <el-invalide-feedback class="typo-label-lg">
+                              필수 입력 항목입니다.
+                            </el-invalide-feedback>
+                          </el-input>
+                        </el-signup-form-inputs-content>
+                      </el-signup-form-inputs-row>
+                      <el-signup-form-inputs-row>
+                        <el-signup-form-inputs-label class="typo-body-lg">
+                          대표자명<span>*</span>
+                        </el-signup-form-inputs-label>
+                        <el-signup-form-inputs-content>
+                          <el-input>
+                            <input
+                              class="form-control custom-input"
+                              type="text"
+                              placeholder="대표자명을 입력해 주세요."
+                              value=""
+                            />
+                          </el-input>
+                        </el-signup-form-inputs-content>
+                      </el-signup-form-inputs-row>
+                      <el-signup-form-inputs-row>
+                        <el-signup-form-inputs-label class="typo-body-lg">
+                          대표자명<span>*</span>
+                        </el-signup-form-inputs-label>
+                        <el-signup-form-inputs-content>
+                          <el-input class="is-invalid">
+                            <input
+                              class="form-control custom-input"
+                              type="text"
+                              placeholder="대표자명을 입력해 주세요."
+                              value=""
+                            />
+                            <el-invalide-feedback class="typo-label-lg">
+                              필수 입력 항목입니다.
+                            </el-invalide-feedback>
+                          </el-input>
+                        </el-signup-form-inputs-content>
+                      </el-signup-form-inputs-row>
+                      <el-signup-form-inputs-row>
+                        <el-signup-form-inputs-label class="typo-body-lg">
+                          사업자번호<span>*</span>
+                        </el-signup-form-inputs-label>
+                        <el-signup-form-inputs-content>
+                          <el-input>
+                            <input
+                              class="form-control custom-input"
+                              type="text"
+                              placeholder="사업자번호를 입력해 주세요."
+                              value=""
+                            />
+                          </el-input>
+                          <button
+                            type="button"
+                            class="button-h43-square-fill typo-body-sm color-orange"
+                          >
+                            인증
+                          </button>
+                        </el-signup-form-inputs-content>
+                      </el-signup-form-inputs-row>
+                      <el-signup-form-inputs-row>
+                        <el-signup-form-inputs-label class="typo-body-lg">
+                          사업자번호<span>*</span>
+                        </el-signup-form-inputs-label>
+                        <el-signup-form-inputs-content>
+                          <el-input class="is-invalid">
+                            <input
+                              class="form-control custom-input"
+                              type="text"
+                              placeholder="사업자번호를 입력해 주세요."
+                              value=""
+                            />
+                            <el-invalide-feedback class="typo-label-lg">
+                              필수 입력 항목입니다.
+                            </el-invalide-feedback>
+                          </el-input>
+                          <button
+                            type="button"
+                            class="button-h43-square-fill typo-body-sm color-orange"
+                          >
+                            인증
+                          </button>
+                        </el-signup-form-inputs-content>
+                      </el-signup-form-inputs-row>
+                    </el-signup-form-inputs>
+                    <el-signup-form-caution>
+                      <el-marker-list>
+                        <ul>
+                          <li>
+                            올바른 사업자 번호를 입력하였음에도 실명확인이 되지
+                            않을 시, 고객센터 -&gt; FAQ -&gt; 회원 항목에서 기업
+                            실명인증 방법을 확인 바랍니다.
+                          </li>
+                          <li>
+                            타인의 정보를 부정하게 사용하는 경우 3년 이하의 징역
+                            또는 1천 만원 이하의 벌금에 처해지게 됩니다.
+                          </li>
+                          <li>
+                            상호명에 "(주)"가 들어갈 경우, "주식회사"로
+                            입력하시기 바랍니다.
+                          </li>
+                        </ul>
+                      </el-marker-list>
+                    </el-signup-form-caution>
+                  </el-signup-form-section-content>
+                </el-signup-form-section>
+                <!-- 종료: 사업자 정보 -->
+
+                <!-- 시작:  -->
+                <el-signup-form-section>
+                  <el-section-title>
+                    <h3 class="typo-subtitle-lg">사용자 정보</h3>
+                    <el-section-title-addon class="typo-body-sm">
+                      <span>*</span> 필수입력사항
+                    </el-section-title-addon>
+                  </el-section-title>
+                  <el-signup-form-section-content>
+                    <el-signup-form-inputs>
+                      <el-signup-form-inputs-row>
+                        <el-signup-form-inputs-label class="typo-body-lg">
+                          아이디<span>*</span>
+                        </el-signup-form-inputs-label>
+                        <el-signup-form-inputs-content>
+                          <el-input>
+                            <input
+                              class="form-control custom-input"
+                              type="text"
+                              placeholder="영문 소문자, 숫자 포함 5~20자리"
+                              value=""
+                            />
+                          </el-input>
+                          <button
+                            type="button"
+                            class="text-black button-h43-square typo-body-sm"
+                          >
+                            중복확인
+                          </button>
+                        </el-signup-form-inputs-content>
+                      </el-signup-form-inputs-row>
+                      <el-signup-form-inputs-row>
+                        <el-signup-form-inputs-label class="typo-body-lg">
+                          아이디<span>*</span>
+                        </el-signup-form-inputs-label>
+                        <el-signup-form-inputs-content>
+                          <el-input class="is-invalid">
+                            <input
+                              class="form-control custom-input"
+                              type="text"
+                              placeholder="영문 소문자, 숫자 포함 5~20자리"
+                              value=""
+                            />
+                            <el-invalide-feedback class="typo-label-lg">
+                              필수 입력 항목입니다.
+                            </el-invalide-feedback>
+                          </el-input>
+                          <button
+                            type="button"
+                            class="text-black button-h43-square typo-body-sm"
+                          >
+                            중복확인
+                          </button>
+                        </el-signup-form-inputs-content>
+                      </el-signup-form-inputs-row>
+                      <el-signup-form-inputs-row>
+                        <el-signup-form-inputs-label class="typo-body-lg">
+                          비밀번호<span>*</span>
+                        </el-signup-form-inputs-label>
+                        <el-signup-form-inputs-content>
+                          <el-input>
+                            <input
+                              class="form-control custom-input"
+                              type="password"
+                              placeholder="영문 대/소문자 + 숫자 + 특수문자 조합으로 9~20자리"
+                              value=""
+                            />
+                            <el-input-addon>
+                              <button
+                                type="button"
+                                class="input-eye-button"
+                                aria-label="show password"
+                              >
+                                <el-icon
+                                  class="h20-eye-show natural-0"
+                                ></el-icon>
+                                <el-icon
+                                  class="h20-eye-hide natural-0"
+                                ></el-icon>
+                              </button>
+                            </el-input-addon>
+                          </el-input>
+                        </el-signup-form-inputs-content>
+                      </el-signup-form-inputs-row>
+                      <el-signup-form-inputs-row>
+                        <el-signup-form-inputs-label class="typo-body-lg">
+                          비밀번호<span>*</span>
+                        </el-signup-form-inputs-label>
+                        <el-signup-form-inputs-content>
+                          <el-input class="is-invalid">
+                            <input
+                              class="form-control custom-input"
+                              type="password"
+                              placeholder="영문 대/소문자 + 숫자 + 특수문자 조합으로 9~20자리"
+                              value=""
+                            />
+                            <el-input-addon>
+                              <button
+                                type="button"
+                                class="input-eye-button"
+                                aria-label="show password"
+                              >
+                                <el-icon
+                                  class="h20-eye-show natural-0"
+                                ></el-icon>
+                                <el-icon
+                                  class="h20-eye-hide natural-0"
+                                ></el-icon>
+                              </button>
+                            </el-input-addon>
+                            <el-invalide-feedback class="typo-label-lg">
+                              필수 입력 항목입니다.
+                            </el-invalide-feedback>
+                          </el-input>
+                        </el-signup-form-inputs-content>
+                      </el-signup-form-inputs-row>
+                      <el-signup-form-inputs-row>
+                        <el-signup-form-inputs-label class="typo-body-lg">
+                          비밀번호 확인<span>*</span>
+                        </el-signup-form-inputs-label>
+                        <el-signup-form-inputs-content>
+                          <el-input>
+                            <input
+                              class="form-control custom-input"
+                              type="password"
+                              placeholder="비밀번호를 확인해 주세요."
+                              value=""
+                            />
+                            <el-input-addon>
+                              <button
+                                type="button"
+                                class="input-eye-button"
+                                aria-label="show password"
+                              >
+                                <el-icon
+                                  class="h20-eye-show natural-0"
+                                ></el-icon>
+                                <el-icon
+                                  class="h20-eye-hide natural-0"
+                                ></el-icon>
+                              </button>
+                            </el-input-addon>
+                          </el-input>
+                        </el-signup-form-inputs-content>
+                      </el-signup-form-inputs-row>
+                      <el-signup-form-inputs-row>
+                        <el-signup-form-inputs-label class="typo-body-lg">
+                          비밀번호 확인<span>*</span>
+                        </el-signup-form-inputs-label>
+                        <el-signup-form-inputs-content>
+                          <el-input class="is-invalid">
+                            <input
+                              class="form-control custom-input"
+                              type="password"
+                              placeholder="비밀번호를 확인해 주세요."
+                              value=""
+                            />
+                            <el-input-addon>
+                              <button
+                                type="button"
+                                class="input-eye-button"
+                                aria-label="show password"
+                              >
+                                <el-icon
+                                  class="h20-eye-show natural-0"
+                                ></el-icon>
+                                <el-icon
+                                  class="h20-eye-hide natural-0"
+                                ></el-icon>
+                              </button>
+                            </el-input-addon>
+                            <el-invalide-feedback class="typo-label-lg">
+                              필수 입력 항목입니다.
+                            </el-invalide-feedback>
+                          </el-input>
+                        </el-signup-form-inputs-content>
+                      </el-signup-form-inputs-row>
+                      <el-signup-form-inputs-row>
+                        <el-signup-form-inputs-label class="typo-body-lg">
+                          휴대폰번호<span>*</span>
+                        </el-signup-form-inputs-label>
+                        <el-signup-form-inputs-content>
+                          <el-input>
+                            <input
+                              disabled
+                              class="form-control custom-input"
+                              type="text"
+                              placeholder="우측 인증버튼을 눌러 인증해 주세요."
+                              value=""
+                            />
+                            <el-checkbox class="form-check">
+                              <input
+                                type="checkbox"
+                                id="checkAutoFill"
+                                class="form-check-input custom-checkbox"
+                                value=""
+                              />
+                              <label
+                                class="form-check-label typo-body-sm"
+                                for="checkAutoFill"
+                              >
+                                주문시 발신번호로 자동입력
+                              </label>
+                            </el-checkbox>
+                          </el-input>
+
+                          <button
+                            type="button"
+                            class="button-h43-square-fill typo-body-sm color-orange"
+                          >
+                            인증
+                          </button>
+                        </el-signup-form-inputs-content>
+                      </el-signup-form-inputs-row>
+                    </el-signup-form-inputs>
+                  </el-signup-form-section-content>
+                </el-signup-form-section>
+                <!-- 종료:  -->
+
+                <!-- 시작:  -->
+                <el-signup-form-section>
+                  <el-section-title>
+                    <h3 class="typo-subtitle-lg">제목</h3>
+                    <el-section-title-addon class="typo-body-sm">
+                      <span>*</span> 필수입력사항
+                    </el-section-title-addon>
+                  </el-section-title>
+                  <el-signup-form-section-content>
+                    asdfsadfsadf
+                  </el-signup-form-section-content>
+                </el-signup-form-section>
+                <!-- 종료:  -->
 
                 <el-signup-form-cta>
                   <button

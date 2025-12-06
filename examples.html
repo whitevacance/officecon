@@ -2541,13 +2541,19 @@
                 </button>
                 <button
                   type="button"
-                  class="active button-h43-square typo-body-sm"
+                  class="text-black button-h43-square typo-body-sm"
                 >
                   button-h43-square
                 </button>
                 <button
                   type="button"
                   class="button-h43-square-fill typo-body-sm"
+                >
+                  button-h43-square-fill
+                </button>
+                <button
+                  type="button"
+                  class="button-h43-square-fill typo-body-sm color-orange"
                 >
                   button-h43-square-fill
                 </button>
@@ -2900,6 +2906,17 @@
                         <el-icon class="h12-closed"></el-icon>
                       </button>
                     </el-input-addon>
+                  </el-input>
+                </div>
+                <div style="width: 220px">
+                  <el-input>
+                    <input
+                      disabled
+                      class="form-control custom-input"
+                      type="text"
+                      placeholder="아이디를 입력해주세요."
+                      value=""
+                    />
                   </el-input>
                 </div>
                 <div style="width: 220px">
@@ -4137,6 +4154,9 @@
               <el-examples-stack>
                 <el-section-title>
                   <h3 class="typo-subtitle-lg">제목</h3>
+                  <el-section-title-addon class="typo-body-sm">
+                    <span>*</span> 필수입력사항
+                  </el-section-title-addon>
                 </el-section-title>
               </el-examples-stack>
             </el-examples-article>
