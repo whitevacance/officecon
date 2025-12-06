@@ -1557,7 +1557,7 @@ el-modal.modal {
         position: relative;
         width: fit-content;
         max-width: 100%;
-        padding: 0 32px;
+        padding: 0;
       }
 
       el-modal-footer {
@@ -1569,6 +1569,14 @@ el-modal.modal {
         padding: 0 32px;
         color: var(--color-natural-20);
       }
+    }
+  }
+}
+
+#el-modal-default {
+  el-modal-content.modal-content {
+    el-modal-body {
+      padding: 0 32px;
     }
   }
 }
@@ -5613,7 +5621,7 @@ el-login-bottom {
 el-modal-additional-cert {
   display: flex;
   flex-direction: column;
-  width: 420px;
+  width: 484px;
   padding: 0 0 50px;
 
   el-additional-cert-description {
