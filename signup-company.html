@@ -772,7 +772,7 @@
                     </el-section-title-addon>
                   </el-section-title>
                   <el-signup-form-section-content>
-                    <el-signup-form-inputs>
+                    <el-signup-form-inputs style="gap: 27px">
                       <el-signup-form-inputs-row>
                         <el-signup-form-inputs-label class="typo-body-lg">
                           이용약관 동의
@@ -873,87 +873,69 @@
                         </el-signup-form-inputs-label>
                         <el-signup-form-inputs-content>
                           <el-signup-form-agree-header class="typo-body-sm">
-                            고객님께서 동의 거부 권리가 있으며, 동의 거부 시
-                            서비스 가입이 불가능합니다.
+                            이메일/SMS 수신동의하시면 이벤트 등 프로모션 알림
+                            메일/SMS를 받아보실 수 있습니다.
+                            <button
+                              type="button"
+                              class="typo-body-sm"
+                              data-bs-toggle="modal"
+                              data-bs-target="#el-modal-default"
+                              onclick="handleChangePre('marketing')"
+                            >
+                              약관보기
+                            </button>
                           </el-signup-form-agree-header>
                           <el-signup-form-agree-items>
                             <el-signup-form-agree-item>
                               <el-checkbox class="form-check size-lg">
                                 <input
                                   type="checkbox"
-                                  id="checkTermsOfservice"
+                                  id="checkAgreeMarketing"
                                   class="form-check-input custom-checkbox"
                                   value=""
                                 />
                                 <label
                                   class="form-check-label typo-body-md"
-                                  for="checkTermsOfservice"
+                                  for="checkAgreeMarketing"
                                 >
-                                  서비스 이용약관
-                                  <span>(필수)</span>
-                                </label>
-                              </el-checkbox>
-                              <button
-                                type="button"
-                                class="typo-body-sm"
-                                data-bs-toggle="modal"
-                                data-bs-target="#el-modal-default"
-                                onclick="handleChangePre('service')"
-                              >
-                                약관보기
-                              </button>
-                            </el-signup-form-agree-item>
-                            <el-signup-form-agree-item>
-                              <el-checkbox class="form-check size-lg">
-                                <input
-                                  type="checkbox"
-                                  id="checkPrivacyPolicy"
-                                  class="form-check-input custom-checkbox"
-                                  value=""
-                                />
-                                <label
-                                  class="form-check-label typo-body-md"
-                                  for="checkPrivacyPolicy"
-                                >
-                                  개인정보 수집 이용동의
-                                  <span>(필수)</span>
-                                </label>
-                              </el-checkbox>
-                              <button
-                                type="button"
-                                class="typo-body-sm"
-                                data-bs-toggle="modal"
-                                data-bs-target="#el-modal-default"
-                                onclick="handleChangePre('privacy')"
-                              >
-                                약관보기
-                              </button>
-                            </el-signup-form-agree-item>
-                            <el-signup-form-agree-item>
-                              <el-checkbox class="form-check size-lg">
-                                <input
-                                  type="checkbox"
-                                  id="checkPrivacyPolicyOptional"
-                                  class="form-check-input custom-checkbox"
-                                  value=""
-                                />
-                                <label
-                                  class="form-check-label typo-body-md"
-                                  for="checkPrivacyPolicyOptional"
-                                >
-                                  개인정보 수집 이용동의
+                                  마케팅 정보 수집 이용 동의
                                   <span>(선택)</span>
                                 </label>
                               </el-checkbox>
-                              <button
-                                type="button"
-                                class="typo-body-sm"
-                                data-bs-toggle="modal"
-                                data-bs-target="#el-modal-default"
-                                onclick="handleChangePre('privacyOptional')"
-                              >
-                                약관보기
-                              </button>
+                            </el-signup-form-agree-item>
+                            <el-signup-form-agree-item>
+                              <el-checkbox class="form-check size-lg">
+                                <input
+                                  type="checkbox"
+                                  id="checkAgreeSMS"
+                                  class="form-check-input custom-checkbox"
+                                  value=""
+                                />
+                                <label
+                                  class="form-check-label typo-body-md"
+                                  for="checkAgreeSMS"
+                                >
+                                  SMS 수신동의
+                                  <span>(선택)</span>
+                                </label>
+                              </el-checkbox>
+                            </el-signup-form-agree-item>
+                            <el-signup-form-agree-item>
+                              <el-checkbox class="form-check size-lg">
+                                <input
+                                  type="checkbox"
+                                  id="checkAgreeEmail"
+                                  class="form-check-input custom-checkbox"
+                                  value=""
+                                />
+                                <label
+                                  class="form-check-label typo-body-md"
+                                  for="checkAgreeEmail"
+                                >
+                                  이메일 수신동의
+                                  <span>(선택)</span>
+                                </label>
+                              </el-checkbox>
                             </el-signup-form-agree-item>
                           </el-signup-form-agree-items>
                         </el-signup-form-inputs-content>
@@ -967,18 +949,9 @@
                   <button
                     type="button"
                     class="button-h60-square-fill typo-body-lg"
-                    data-bs-toggle="modal"
-                    data-bs-target="#el-modal-default"
-                    onclick="handleChangePre('privacy')"
-                  >
-                    기업 회원가입
-                  </button>
-                  <button
-                    type="button"
-                    class="button-h60-square-fill typo-body-lg"
                     onclick="showModalLoader()"
                   >
-                    로더 호출(샘플)
+                    기업 회원가입
                   </button>
                 </el-signup-form-cta>
               </el-signup-form>

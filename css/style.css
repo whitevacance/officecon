@@ -6090,6 +6090,12 @@ el-signup-form {
               width: 100%;
               height: 43px;
               color: var(--color-natural-10);
+
+              & > button {
+                font-weight: 700 !important;
+                color: var(--color-natural-40);
+                text-decoration: underline;
+              }
             }
 
             el-signup-form-agree-items {
