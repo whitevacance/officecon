@@ -2623,7 +2623,7 @@
                   onclick="showModalLoader()"
                   class="button-h50-stroke typo-body-lg"
                 >
-                  loader 호출 - (임시: 3초 후 닫힘)
+                  loader 호출 - (임시: 2초 후 닫힘)
                 </button>
               </el-examples-stack>
             </el-examples-article>
@@ -2645,6 +2645,14 @@
             <el-examples-article>
               <h2>모달 팝업</h2>
               <el-examples-stack>
+                <button
+                  type="button"
+                  data-bs-toggle="modal"
+                  data-bs-target="#el-modal-default"
+                  class="button-h50-stroke typo-body-lg"
+                >
+                  공통 팝업 호출
+                </button>
                 <button
                   type="button"
                   data-bs-toggle="modal"
@@ -4409,6 +4417,40 @@
     </el-modal>
     <!-- 종료: modal: 영상 팝업 -->
 
+    <!-- 시작: modal: 공통 모달 -->
+    <el-modal
+      class="modal fade"
+      id="el-modal-default"
+      tabindex="-1"
+      aria-hidden="true"
+      data-bs-keyboard="false"
+    >
+      <el-modal-dialog class="modal-dialog modal-dialog-centered">
+        <el-modal-content class="modal-content">
+          <el-modal-close-button>
+            <button type="button" data-bs-dismiss="modal" aria-label="닫기">
+              <el-icon class="h32-closed natural-0"></el-icon>
+            </button>
+          </el-modal-close-button>
+
+          <el-modal-header>
+            <!-- 타이틀 정렬: 기본 left. 중앙정렬 필요 시 class명 'center' 추가 -->
+            <h3 class="typo-subtitle-lg center">공통 모달 타이틀</h3>
+          </el-modal-header>
+
+          <el-modal-body>
+            <div style="width: 800px">
+              모달 컨텐츠 영역 - 이 영역의 width에 따라 모달의 width가
+              결정됩니다(좌우 padding은 32px).
+            </div>
+          </el-modal-body>
+
+          <el-modal-footer>모달 footer 영역</el-modal-footer>
+        </el-modal-content>
+      </el-modal-dialog>
+    </el-modal>
+    <!-- 종료: modal: 공통 모달 -->
+
     <!-- 시작: modal: loader -->
     <el-modal-loader
       class="modal fade"
@@ -4418,12 +4460,12 @@
       data-bs-keyboard="false"
       data-bs-backdrop="static"
     >
-      <el-modal-dialog class="modal-dialog modal-dialog-centered">
-        <el-modal-content class="modal-content">
+      <el-modal-loader-dialog class="modal-dialog modal-dialog-centered">
+        <el-modal-loader-content class="modal-content">
           <img importance="high" src="./images/loader.gif" alt="" />
           <p class="typo-body-sm">데이터 처리중 입니다.</p>
-        </el-modal-content>
-      </el-modal-dialog>
+        </el-modal-loader-content>
+      </el-modal-loader-dialog>
     </el-modal-loader>
     <!-- 종료: modal: loader -->
 
@@ -4431,9 +4473,17 @@
     <script src="./js/pub-common.js" crossorigin="anonymous"></script>
 
     <script>
-      const hideModalLoader = () => {};
+      let modalLoaderTimer = null;
       const showModalLoader = () => {
+        if (modalLoaderTimer) {
+          clearTimeout(modalLoaderTimer);
+        }
         bsModalLoader.show();
+        modalLoaderTimer = setTimeout(() => {
+          bsModalLoader.hide();
+          modalLoaderTimer = null;
+        }, 2000);
+        return modalLoaderTimer;
       };
     </script>
   </body>
