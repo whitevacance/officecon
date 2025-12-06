@@ -35,6 +35,48 @@ const loadDynamically = (target, scriptName) => {
 };
 // 종료: 공통
 
+// 시작: loader
+class ComponentModalLoader extends HTMLElement {
+  constructor() {
+    super();
+  }
+
+  connectedCallback() {
+    this.render();
+    this.loadExternalScript();
+  }
+
+  loadExternalScript() {
+    loadScript(this, 'initModalLoader');
+  }
+
+  async loadScriptDynamically() {
+    loadDynamically(this, 'initModalLoader');
+  }
+
+  render() {
+    this.innerHTML = `
+      <el-modal-loader
+        class="modal fade"
+        id="el-modal-loader"
+        tabindex="-1"
+        aria-hidden="true"
+        data-bs-keyboard="false"
+        data-bs-backdrop="static"
+      >
+        <el-modal-loader-dialog class="modal-dialog modal-dialog-centered">
+          <el-modal-loader-content class="modal-content">
+            <img importance="high" src="./images/loader.gif" alt="" />
+            <p class="typo-body-sm">데이터 처리중 입니다.</p>
+          </el-modal-loader-content>
+        </el-modal-loader-dialog>
+      </el-modal-loader>
+    `;
+  }
+}
+customElements.define('component-modal-loader', ComponentModalLoader);
+// 종료: loader
+
 // 시작: 상단 띠배너
 class ComponentTopBanner extends HTMLElement {
   constructor() {

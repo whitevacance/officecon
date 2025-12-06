@@ -1575,6 +1575,12 @@ el-modal.modal {
 
 #el-modal-default {
   el-modal-content.modal-content {
+    padding-bottom: 32px;
+
+    &:has(el-modal-footer) {
+      padding-bottom: 0;
+    }
+
     el-modal-body {
       padding: 0 32px;
     }
@@ -1723,6 +1729,22 @@ el-modal-video {
         padding-top: 8px;
       }
     }
+  }
+}
+
+el-modal-pre-wrapper {
+  display: block;
+  width: 853px;
+  height: 100%;
+  max-height: 592px;
+  padding: 20px 24px;
+  background-color: var(--color-natural-95);
+  border: 1px solid var(--color-natural-80);
+  border-radius: 10px;
+  overflow: auto;
+
+  pre {
+    color: var(--color-natural-20);
   }
 }
 /* 종료: 공통 > modal */

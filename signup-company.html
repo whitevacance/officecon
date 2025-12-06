@@ -95,8 +95,17 @@
                   <button
                     type="button"
                     class="button-h60-square-fill typo-body-lg"
+                    data-bs-toggle="modal"
+                    data-bs-target="#el-modal-default"
                   >
                     기업 회원가입
+                  </button>
+                  <button
+                    type="button"
+                    class="button-h60-square-fill typo-body-lg"
+                    onclick="showModalLoader()"
+                  >
+                    로더 호출(샘플)
                   </button>
                 </el-signup-form-cta>
               </el-signup-form>
@@ -117,6 +126,69 @@
     <button id="scrollToTopButton" type="button" aria-label="상단으로 이동">
       <el-icon class="h32-arrow-up natural-0"></el-icon>
     </button>
+
+    <!-- 시작: modal: 공통 모달 -->
+    <el-modal
+      class="modal fade"
+      id="el-modal-default"
+      tabindex="-1"
+      aria-hidden="true"
+      data-bs-keyboard="false"
+    >
+      <el-modal-dialog class="modal-dialog modal-dialog-centered">
+        <el-modal-content class="modal-content">
+          <el-modal-close-button>
+            <button type="button" data-bs-dismiss="modal" aria-label="닫기">
+              <el-icon class="h32-closed natural-0"></el-icon>
+            </button>
+          </el-modal-close-button>
+
+          <el-modal-header>
+            <h3 class="typo-subtitle-lg">공통 모달 타이틀</h3>
+          </el-modal-header>
+
+          <el-modal-body>
+            <el-modal-pre-wrapper>
+              <pre class="typo-body-sm">
+모달 컨텐츠 영역 - 이 영역의 width에 따라 모달의 width가
+모달 컨텐츠 영역 - 이 영역의 width에 따라 모달의 width가
+모달 컨텐츠 영역 - 이 영역의 width에 따라 모달의 width가
+모달 컨텐츠 영역 - 이 영역의 width에 따라 모달의 width가
+모달 컨텐츠 영역 - 이 영역의 width에 따라 모달의 width가
+모달 컨텐츠 영역 - 이 영역의 width에 따라 모달의 width가
+모달 컨텐츠 영역 - 이 영역의 width에 따라 모달의 width가
+모달 컨텐츠 영역 - 이 영역의 width에 따라 모달의 width가
+모달 컨텐츠 영역 - 이 영역의 width에 따라 모달의 width가
+모달 컨텐츠 영역 - 이 영역의 width에 따라 모달의 width가
+모달 컨텐츠 영역 - 이 영역의 width에 따라 모달의 width가
+모달 컨텐츠 영역 - 이 영역의 width에 따라 모달의 width가
+모달 컨텐츠 영역 - 이 영역의 width에 따라 모달의 width가
+모달 컨텐츠 영역 - 이 영역의 width에 따라 모달의 width가
+모달 컨텐츠 영역 - 이 영역의 width에 따라 모달의 width가
+모달 컨텐츠 영역 - 이 영역의 width에 따라 모달의 width가
+모달 컨텐츠 영역 - 이 영역의 width에 따라 모달의 width가
+모달 컨텐츠 영역 - 이 영역의 width에 따라 모달의 width가
+모달 컨텐츠 영역 - 이 영역의 width에 따라 모달의 width가
+모달 컨텐츠 영역 - 이 영역의 width에 따라 모달의 width가
+모달 컨텐츠 영역 - 이 영역의 width에 따라 모달의 width가
+모달 컨텐츠 영역 - 이 영역의 width에 따라 모달의 width가
+모달 컨텐츠 영역 - 이 영역의 width에 따라 모달의 width가
+모달 컨텐츠 영역 - 이 영역의 width에 따라 모달의 width가
+모달 컨텐츠 영역 - 이 영역의 width에 따라 모달의 width가
+모달 컨텐츠 영역 - 이 영역의 width에 따라 모달의 width가
+모달 컨텐츠 영역 - 이 영역의 width에 따라 모달의 width가
+모달 컨텐츠 영역 - 이 영역의 width에 따라 모달의 width가
+모달 컨텐츠 영역 - 이 영역의 width에 따라 모달의 width가
+모달 컨텐츠 영역 - 이 영역의 width에 따라 모달의 width가
+모달 컨텐츠 영역 - 이 영역의 width에 따라 모달의 width가
+결정됩니다(좌우 padding은 32px).</pre
+              >
+            </el-modal-pre-wrapper>
+          </el-modal-body>
+        </el-modal-content>
+      </el-modal-dialog>
+    </el-modal>
+    <!-- 종료: modal: 공통 모달 -->
 
     <!-- 시작: alert -->
     <el-alert
@@ -147,10 +219,35 @@
     </el-alert>
     <!-- 종료: alert -->
 
+    <!-- 시작: [DEV] 웹컴포넌트
+      1. 퍼블리싱용 웹컴포넌트입니다.
+      2. el-modal-loader
+      3. 개발 시 examples.html 원본을 참고해 주세요.
+    -->
+    <component-modal-loader></component-modal-loader>
+    <!-- 종료: [DEV] 웹컴포넌트 -->
+
     <!-- 공통js: common.js -->
     <script src="./js/pub-common.js" crossorigin="anonymous"></script>
 
     <!-- [DEV] 웹 컴포넌트js: 개발 시 삭제해 주세요 -->
     <script src="./js/web-components.js" crossorigin="anonymous"></script>
+
+    <script>
+      // 시작: loader handle 샘플
+      let modalLoaderTimer = null;
+      const showModalLoader = () => {
+        if (modalLoaderTimer) {
+          clearTimeout(modalLoaderTimer);
+        }
+        bsModalLoader.show();
+        modalLoaderTimer = setTimeout(() => {
+          bsModalLoader.hide();
+          modalLoaderTimer = null;
+        }, 2000);
+        return modalLoaderTimer;
+      };
+      // 종료: loader handle 샘플
+    </script>
   </body>
 </html>
