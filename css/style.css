@@ -145,10 +145,12 @@ pre {
 html {
   scroll-behavior: auto !important;
   text-underline-offset: 2px;
+  scrollbar-gutter: stable;
 }
 body {
   /* bootstrap의 모달 팝업 노출 시 스크롤바 width 확보하는 padding 제거 */
   padding-right: 0 !important;
+  scrollbar-gutter: stable;
 }
 a {
   text-decoration: none;
@@ -1742,9 +1744,25 @@ el-modal-pre-wrapper {
   border: 1px solid var(--color-natural-80);
   border-radius: 10px;
   overflow: auto;
+  scrollbar-gutter: stable;
+  scrollbar-color: var(--color-opacity-black-30) transparent;
+  scrollbar-width: thin;
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
 
   pre {
     color: var(--color-natural-20);
+    margin: 0;
+    padding: 0;
+    white-space: pre-wrap;
+
+    el-indent {
+      display: inline-block;
+      width: 100%;
+      padding-left: 10px;
+    }
   }
 }
 /* 종료: 공통 > modal */
