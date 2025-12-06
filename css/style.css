@@ -352,6 +352,7 @@ el-icon {
   overflow: hidden;
   text-indent: -9999px;
   background-color: var(--color-natural-100);
+
   &.natural-0 {
     background-color: var(--color-natural-0);
   }
@@ -675,6 +676,12 @@ el-icon {
     height: 24px;
     -webkit-mask-image: url('../images/icon-etc-member-personal.svg');
     mask-image: url('../images/icon-etc-member-personal.svg');
+  }
+  &.etc-circle-check {
+    width: 64px;
+    height: 64px;
+    background-image: url('../images/icon-etc-circle-check.svg');
+    background-color: transparent;
   }
 }
 /* 종료: 공통 > icon */
@@ -5844,8 +5851,8 @@ el-find-idpw-bottom {
 }
 /* 종료: 아이디 / 비밀번호 찾기 */
 
-/* 시작: 회원가입 안내 */
-el-signup-intro {
+/* 시작: 회원가입 안내 - 인트로, 가입완료 */
+el-signup-info {
   display: flex;
   flex-direction: column;
   gap: 72px;
@@ -5994,7 +6001,48 @@ el-signup-intro {
     }
   }
 
-  el-signup-intro-banners {
+  el-signup-success {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 72px;
+    width: 100%;
+    text-align: center;
+
+    el-signup-success-greeting {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+      width: 100%;
+
+      el-signup-success-greeting-message {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        width: 100%;
+
+        & > p {
+          color: var(--color-natural-10);
+        }
+      }
+    }
+
+    el-signup-success-buttons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      width: 100%;
+
+      button {
+        width: 250px;
+      }
+    }
+  }
+
+  el-signup-info-banners {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -6013,7 +6061,7 @@ el-signup-intro {
     }
   }
 }
-/* 종료: 회원가입 안내 */
+/* 종료: 회원가입 안내 - 인트로, 가입완료 */
 
 /* 시작: 회원가입 폼 */
 el-signup-form {
