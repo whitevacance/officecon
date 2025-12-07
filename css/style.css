@@ -683,6 +683,18 @@ el-icon {
     background-image: url('../images/icon-etc-circle-check.svg');
     background-color: transparent;
   }
+  &.etc-doc {
+    width: 14px;
+    height: 14px;
+    background-image: url('../images/icon-etc-doc.svg');
+    background-color: transparent;
+  }
+  &.etc-excel {
+    width: 14px;
+    height: 14px;
+    background-image: url('../images/icon-etc-excel.svg');
+    background-color: transparent;
+  }
 }
 /* 종료: 공통 > icon */
 
@@ -3834,6 +3846,7 @@ el-content-header {
 
     & > h2 {
       width: 100%;
+      min-height: 90px;
       text-align: center;
       font-weight: 600;
       color: var(--color-natural-0);
@@ -6251,6 +6264,99 @@ el-signup-form {
   }
 }
 /* 종료: 회원가입 폼 */
+
+/* 시작: 장바구니 */
+el-cart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding-bottom: 32px;
+
+  el-cart-header-left {
+    flex-grow: 0;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+
+    el-cart-header-count {
+      color: var(--color-natural-30);
+
+      strong {
+        color: var(--color-natural-0);
+      }
+    }
+  }
+
+  el-cart-header-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+
+    & > button {
+      min-width: 120px !important;
+      gap: 4px;
+    }
+  }
+}
+
+el-cart-list {
+  display: block;
+  width: 100%;
+
+  table.table {
+    table-layout: fixed;
+    margin: 0;
+
+    colgroup {
+      .col-auto {
+        width: auto;
+      }
+      .col-checkbox {
+        width: 52px;
+      }
+      .col-default {
+        width: 144px;
+      }
+      .col-action {
+        width: 128px;
+      }
+    }
+
+    th,
+    td {
+      white-space: nowrap;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 20px;
+      letter-spacing: -0.42px;
+      text-align: center;
+
+      &.product-info {
+        text-align: left;
+      }
+    }
+
+    thead th {
+      padding: 13px 16px;
+      border-top: 1px solid var(--color-natural-50);
+      border-bottom: 1px solid var(--color-natural-50);
+      font-weight: 700;
+
+      &.product-info {
+        padding-left: 172px;
+      }
+    }
+
+    tbody td {
+      padding: 16px;
+      border-bottom: 1px solid var(--color-natural-80);
+      font-weight: 600;
+    }
+  }
+}
+/* 종료: 장바구니 */
 
 /* 시작: 예시 (example) */
 el-examples-article {
