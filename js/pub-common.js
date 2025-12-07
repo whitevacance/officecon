@@ -76,13 +76,25 @@ initModalDefault();
 // 종료: el-modal-default
 
 // 시작: handel modal scroll
-const initHandelModalScroll = () => {
+/**
+ * 모달 body 요소에 스크롤이 생겼는지 여부를 확인하는 함수
+ * @param {HTMLElement} targetModalBodyEl - 확인할 모달 body 요소
+ * @returns {boolean} 스크롤이 있으면 true, 없으면 false
+ */
+const hasModalBodyScroll = (targetModalBodyEl) => {
+  if (!targetModalBodyEl) {
+    return false;
+  }
+  return targetModalBodyEl.scrollHeight > targetModalBodyEl.clientHeight;
+};
+
+const initHandleModalScroll = () => {
   const modalEls = document.querySelectorAll('el-modal');
 
   if (modalEls?.length > 0) {
     [...modalEls].forEach((modalEl) => {
       // 이미 초기화된 경우 건너뛰기
-      if (modalEl?.dataset?.initialized === 'true') {
+      if (modalEl?.dataset?.initializedScroll === 'true') {
         return;
       }
 
@@ -93,18 +105,46 @@ const initHandelModalScroll = () => {
         'el-modal-body.modal-body'
       );
 
-      // 초기화 완료 전환
-      modalEl.dataset.initialized = 'true';
+      // 스크롤 여부 확인 함수
+      const checkScroll = () => {
+        if (targetModalBodyEl) {
+          console.log('스크롤여부: ', hasModalBodyScroll(targetModalBodyEl));
+        }
+      };
+
+      // 창 크기 조절 이벤트 리스너
+      const handleResize = () => {
+        checkScroll();
+      };
+
+      // resize 이벤트 리스너 등록
+      window.addEventListener('resize', handleResize);
+
+      // 모달이 열릴 때도 스크롤 여부 확인
+      if (modalEl) {
+        const bsModal = bootstrap?.Modal?.getInstance(modalEl);
+        if (bsModal) {
+          modalEl.addEventListener('shown.bs.modal', () => {
+            // 모달이 완전히 표시된 후 스크롤 여부 확인
+            setTimeout(() => {
+              checkScroll();
+            }, 0);
+          });
+        }
+
+        // 초기화 완료 전환
+        modalEl.dataset.initializedScroll = 'true';
+      }
     });
   }
 };
 
 // 전역 함수로 등록
 if (window !== undefined) {
-  window.initHandelModalScroll = initHandelModalScroll;
+  window.initHandleModalScroll = initHandleModalScroll;
 }
 
-initHandelModalScroll();
+initHandleModalScroll();
 // 종료: el-modal-default
 
 // 시작: el-alert
