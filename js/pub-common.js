@@ -75,6 +75,38 @@ if (window !== undefined) {
 initModalDefault();
 // 종료: el-modal-default
 
+// 시작: handel modal scroll
+const initHandelModalScroll = () => {
+  const modalEls = document.querySelectorAll('el-modal');
+
+  if (modalEls?.length > 0) {
+    [...modalEls].forEach((modalEl) => {
+      // 이미 초기화된 경우 건너뛰기
+      if (modalEl?.dataset?.initialized === 'true') {
+        return;
+      }
+
+      const targetModalHeaderEl = modalEl.querySelector(
+        'el-modal-header.modal-header'
+      );
+      const targetModalBodyEl = modalEl.querySelector(
+        'el-modal-body.modal-body'
+      );
+
+      // 초기화 완료 전환
+      modalEl.dataset.initialized = 'true';
+    });
+  }
+};
+
+// 전역 함수로 등록
+if (window !== undefined) {
+  window.initHandelModalScroll = initHandelModalScroll;
+}
+
+initHandelModalScroll();
+// 종료: el-modal-default
+
 // 시작: el-alert
 const initAlert = () => {
   const alertEl = document.querySelector('el-alert');

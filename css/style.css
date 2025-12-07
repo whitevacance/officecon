@@ -1609,6 +1609,10 @@ el-modal.modal {
         color: var(--color-natural-0);
         border: 0;
 
+        &.shadow-bottom {
+          box-shadow: var(--color-boxShadow-2);
+        }
+
         & > h3 {
           width: 100%;
           font-weight: 700 !important;
@@ -1625,6 +1629,9 @@ el-modal.modal {
         width: fit-content;
         max-width: 100%;
         padding: 0;
+        scrollbar-color: var(--color-opacity-black-30) transparent;
+        scrollbar-width: thin;
+        scrollbar-gutter: stable;
       }
 
       el-modal-footer {
