@@ -695,6 +695,12 @@ el-icon {
     background-image: url('../images/icon-etc-excel.svg');
     background-color: transparent;
   }
+  &.etc-circle-cart {
+    width: 74px;
+    height: 74px;
+    background-image: url('../images/icon-etc-circle-cart.svg');
+    background-color: transparent;
+  }
 }
 /* 종료: 공통 > icon */
 
@@ -2688,6 +2694,12 @@ el-tabs {
   }
 }
 /* 종료: 공통 > 탭메뉴 */
+
+/* 시작: 공통 > 추천상품 el-recommend-products */
+el-recommend-products {
+  display: block;
+}
+/* 종료: 공통 > 추천상품 el-recommend-products */
 
 /* 시작: 레이아웃 > wrapper, container */
 el-wrapper {
@@ -6402,6 +6414,22 @@ el-cart-list {
         left: 50%;
         transform: translateX(-50%);
       }
+    }
+  }
+
+  el-cart-empty {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    padding: 75px 0;
+    font-weight: 700 !important;
+    color: var(--color-natural-20);
+
+    el-icon {
+      font-size: 48px;
     }
   }
 }
