@@ -981,7 +981,9 @@
       aria-hidden="true"
       data-bs-keyboard="false"
     >
-      <el-modal-dialog class="modal-dialog modal-dialog-centered">
+      <el-modal-dialog
+        class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+      >
         <el-modal-content class="modal-content">
           <el-modal-close-button>
             <button type="button" data-bs-dismiss="modal" aria-label="닫기">
@@ -989,11 +991,11 @@
             </button>
           </el-modal-close-button>
 
-          <el-modal-header>
+          <el-modal-header class="modal-header">
             <h3 class="typo-subtitle-lg">&nbsp;</h3>
           </el-modal-header>
 
-          <el-modal-body>
+          <el-modal-body class="modal-body">
             <el-modal-pre-wrapper>
               <pre class="typo-body-sm"></pre>
             </el-modal-pre-wrapper>

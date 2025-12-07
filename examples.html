@@ -4474,7 +4474,9 @@
       aria-hidden="true"
       data-bs-keyboard="false"
     >
-      <el-modal-dialog class="modal-dialog modal-dialog-centered">
+      <el-modal-dialog
+        class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+      >
         <el-modal-content class="modal-content">
           <el-modal-close-button>
             <button type="button" data-bs-dismiss="modal" aria-label="닫기">
@@ -4482,19 +4484,29 @@
             </button>
           </el-modal-close-button>
 
-          <el-modal-header>
+          <el-modal-header class="modal-header">
             <!-- 타이틀 정렬: 기본 left. 중앙정렬 필요 시 class명 'center' 추가 -->
             <h3 class="typo-subtitle-lg center">공통 모달 타이틀</h3>
           </el-modal-header>
 
-          <el-modal-body>
+          <el-modal-body class="modal-body">
             <div style="width: 800px">
               모달 컨텐츠 영역 - 이 영역의 width에 따라 모달의 width가
               결정됩니다(좌우 padding은 32px).
+              <div>asdf</div>
+              <div>asdf</div>
+              <div>asdf</div>
+              <div>asdf</div>
+              <div>asdf</div>
+              <div>asdf</div>
+              <div>asdf</div>
+              <div>asdf</div>
             </div>
           </el-modal-body>
 
-          <el-modal-footer>모달 footer 영역</el-modal-footer>
+          <el-modal-footer class="modal-footer">
+            모달 footer 영역
+          </el-modal-footer>
         </el-modal-content>
       </el-modal-dialog>
     </el-modal>
