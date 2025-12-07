@@ -90,11 +90,12 @@
             <el-cart-header>
               <el-cart-header-left>
                 <el-cart-header-count class="typo-body-lg">
-                  총 <strong>0</strong>개 선택
+                  총 <strong id="checkedProductCount">0</strong>개 선택
                 </el-cart-header-count>
               </el-cart-header-left>
               <el-cart-header-right>
                 <button
+                  id="buttonUnselectAllProducts"
                   type="button"
                   class="text-black button-h43-square typo-body-sm"
                 >
@@ -137,6 +138,7 @@
                     <th scope="col">
                       <el-checkbox>
                         <input
+                          id="checkboxAllProducts"
                           type="checkbox"
                           class="form-check-input custom-checkbox"
                           value=""
@@ -446,5 +448,107 @@
 
     <!-- [DEV] 웹 컴포넌트js: 개발 시 삭제해 주세요 -->
     <script src="./js/web-components.js" crossorigin="anonymous"></script>
+
+    <script>
+      // 시작: 체크된 상품 갯수 카운트
+      const handleCheckedProductCount = () => {
+        const checkedProductCount = document.getElementById(
+          'checkedProductCount'
+        );
+        const checkedProducts = document.querySelectorAll(
+          'el-cart-list tbody el-checkbox .form-check-input:checked'
+        );
+
+        if (checkedProductCount) {
+          checkedProductCount.textContent = checkedProducts.length;
+        }
+      };
+      handleCheckedProductCount();
+      // 종료: 체크된 상품 갯수 카운트
+
+      // 시작: 상품 선택 initCheckProducts
+      const initCheckProducts = () => {
+        const buttonUnselectAllProducts = document.getElementById(
+          'buttonUnselectAllProducts'
+        );
+        const checkboxAllProducts = document.getElementById(
+          'checkboxAllProducts'
+        );
+        const checkboxes = document.querySelectorAll(
+          'el-cart-list tbody el-checkbox .form-check-input:not([disabled])'
+        );
+
+        // 이미 초기화된 경우 건너뛰기
+        if (checkboxAllProducts?.dataset?.initialized === 'true') {
+          return;
+        }
+
+        const handleUncheckAllProducts = (e) => {
+          checkboxAllProducts.checked = false;
+          [...checkboxes].map((checkbox) => {
+            checkbox.checked = false;
+            return () => {};
+          });
+
+          handleCheckedProductCount();
+        };
+
+        const handleCheckboxAllProducts = (e) => {
+          if (e?.target?.checked) {
+            [...checkboxes].map((checkbox) => {
+              checkbox.checked = true;
+              return () => {};
+            });
+          } else {
+            [...checkboxes].map((checkbox) => {
+              checkbox.checked = false;
+              return () => {};
+            });
+          }
+
+          handleCheckedProductCount();
+        };
+
+        if (buttonUnselectAllProducts) {
+          buttonUnselectAllProducts.addEventListener(
+            'click',
+            handleUncheckAllProducts
+          );
+        }
+
+        if (checkboxAllProducts) {
+          checkboxAllProducts.addEventListener(
+            'change',
+            handleCheckboxAllProducts
+          );
+        }
+
+        const handleCheckbox = (e) => {
+          const unCheckedItem = [...checkboxes].find(
+            (checkbox) => checkbox.checked === false
+          );
+          if (unCheckedItem) {
+            checkboxAllProducts.checked = false;
+          } else {
+            checkboxAllProducts.checked = true;
+          }
+
+          handleCheckedProductCount();
+        };
+
+        [...checkboxes].map((checkbox) => {
+          checkbox.addEventListener('change', handleCheckbox);
+        });
+
+        // 초기화 완료 전환
+        checkboxAllProducts.dataset.initialized = 'true';
+      };
+      // 전역 함수로 등록
+      if (window !== undefined) {
+        window.initCheckProducts = initCheckProducts;
+      }
+      initCheckProducts();
+      // 종료: 상품 선택 initCheckProducts
+    </script>
   </body>
 </html>
