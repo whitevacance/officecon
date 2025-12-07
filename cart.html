@@ -108,6 +108,7 @@
                   선택삭제
                 </button>
                 <button
+                  onclick="handleEstimate()"
                   type="button"
                   class="text-black button-h43-square typo-body-sm"
                 >
@@ -414,6 +415,60 @@
       <el-icon class="h32-arrow-up natural-0"></el-icon>
     </button>
 
+    <!-- 시작: modal: 공통 모달 -->
+    <el-modal
+      class="modal fade"
+      id="el-modal-default"
+      tabindex="-1"
+      aria-hidden="true"
+      data-bs-keyboard="false"
+    >
+      <el-modal-dialog
+        class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+      >
+        <el-modal-content class="modal-content">
+          <el-modal-close-button>
+            <button type="button" data-bs-dismiss="modal" aria-label="닫기">
+              <el-icon class="h32-closed natural-0"></el-icon>
+            </button>
+          </el-modal-close-button>
+
+          <el-modal-header class="modal-header">
+            <h3 class="typo-subtitle-lg center">견적서 출력</h3>
+          </el-modal-header>
+
+          <el-modal-body class="modal-body">
+            <div style="width: 551px">
+              모달 컨텐츠 영역 - 이 영역의 width에 따라 모달의 width가
+              결정됩니다(좌우 padding은 32px).
+              <div>asdf</div>
+              <div>asdf</div>
+              <div>asdf</div>
+              <div>asdf</div>
+              <div>asdf</div>
+              <div>asdf</div>
+              <div>asdf</div>
+              <div>asdf</div>
+            </div>
+          </el-modal-body>
+
+          <el-modal-footer class="modal-footer">
+            <button
+              type="button"
+              data-bs-dismiss="modal"
+              class="button-h50-stroke typo-body-lg"
+            >
+              취소
+            </button>
+            <button type="button" class="button-h50-fill typo-body-lg">
+              다음
+            </button>
+          </el-modal-footer>
+        </el-modal-content>
+      </el-modal-dialog>
+    </el-modal>
+    <!-- 종료: modal: 공통 모달 -->
+
     <!-- 시작: alert -->
     <el-alert
       class="modal fade"
@@ -549,6 +604,24 @@
       }
       initCheckProducts();
       // 종료: 상품 선택 initCheckProducts
+
+      // 시작: 견적서 handleEstimate
+      const handleEstimate = () => {
+        const checkedProducts = document.querySelectorAll(
+          'el-cart-list tbody el-checkbox .form-check-input:checked'
+        );
+
+        if (checkedProducts.length) {
+          if (bsModalDefault) {
+            bsModalDefault.show();
+          }
+        } else {
+          if (bsAlert) {
+            bsAlert.show();
+          }
+        }
+      };
+      // 종료: 견적서 handleEstimate
     </script>
   </body>
 </html>

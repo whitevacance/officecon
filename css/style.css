@@ -1651,6 +1651,24 @@ el-modal.modal {
     el-modal-body {
       padding: 0 32px;
     }
+
+    el-modal-footer.modal-footer {
+      align-items: flex-start;
+      justify-content: center;
+      gap: 8px;
+      height: 130px;
+      padding: 30px 32px 0;
+      border-top: 0;
+      color: var(--color-natural-0);
+
+      & > * {
+        margin: 0;
+      }
+
+      & > button {
+        min-width: 130px;
+      }
+    }
   }
 }
 
