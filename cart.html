@@ -134,7 +134,15 @@
                 </colgroup>
                 <thead>
                   <tr>
-                    <th scope="col">#</th>
+                    <th scope="col">
+                      <el-checkbox>
+                        <input
+                          type="checkbox"
+                          class="form-check-input custom-checkbox"
+                          value=""
+                        />
+                      </el-checkbox>
+                    </th>
                     <th scope="col" class="product-info">상품정보</th>
                     <th scope="col">유효기간</th>
                     <th scope="col">정상가</th>
@@ -144,14 +152,244 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <td>Mark</td>
-                    <td class="product-info">Mark</td>
+                    <td>
+                      <el-checkbox>
+                        <input
+                          type="checkbox"
+                          class="form-check-input custom-checkbox"
+                          value=""
+                        />
+                      </el-checkbox>
+                    </td>
+                    <td class="product-info">
+                      <el-cart-product-item>
+                        <a href="#">
+                          <el-item-thumbnail>
+                            <img
+                              class="thumbnail-image"
+                              src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/product/20250227/20250227145823_a5b9221d-437d-4b84-b0ac-fbc6f58edf4f.jpg"
+                              alt=""
+                            />
+                            <el-bg></el-bg>
+                          </el-item-thumbnail>
+
+                          <el-item-txt class="typo-body-sm">
+                            <el-item-name>
+                              <el-brand>스타벅스</el-brand>
+                              <el-item-name-txt>
+                                떠먹는 스트로베리
+                              </el-item-name-txt>
+                            </el-item-name>
+                          </el-item-txt>
+                        </a>
+                      </el-cart-product-item>
+                    </td>
+                    <td>2025.12.31</td>
+                    <td><el-line-through>1,004,700원</el-line-through></td>
+                    <td>
+                      <el-sale-price>
+                        <el-badge-discount class="typo-label-sm">
+                          3%
+                        </el-badge-discount>
+                        <span>1,004,700원</span>
+                      </el-sale-price>
+                    </td>
+                    <td>
+                      <el-cart-cta>
+                        <button
+                          type="button"
+                          class="button-h43-square-fill typo-body-sm color-orange"
+                        >
+                          바로구매
+                        </button>
+                        <button
+                          type="button"
+                          class="text-black button-h43-square typo-body-sm"
+                        >
+                          삭제
+                        </button>
+                      </el-cart-cta>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <el-checkbox>
+                        <input
+                          type="checkbox"
+                          class="form-check-input custom-checkbox"
+                          value=""
+                        />
+                      </el-checkbox>
+                    </td>
+                    <td class="product-info">
+                      <el-cart-product-item>
+                        <a href="#">
+                          <el-item-thumbnail>
+                            <img
+                              class="thumbnail-image"
+                              src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/product/20250227/20250227145823_a5b9221d-437d-4b84-b0ac-fbc6f58edf4f.jpg"
+                              alt=""
+                            />
+                            <el-bg></el-bg>
+                          </el-item-thumbnail>
+
+                          <el-item-txt class="typo-body-sm">
+                            <el-item-name>
+                              <el-brand>일이삼사오육칠팔구십일이삼사</el-brand>
+                              <el-item-name-txt>
+                                일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일
+                                일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일
+                              </el-item-name-txt>
+                            </el-item-name>
+                          </el-item-txt>
+                        </a>
+                      </el-cart-product-item>
+                    </td>
                     <td>2025.12.31</td>
                     <td>1,004,700원</td>
-                    <td>1,004,700원</td>
                     <td>
-                      <div>@mdo</div>
-                      <div>@mdo</div>
+                      <el-sale-price>
+                        <span>1,004,700원</span>
+                      </el-sale-price>
+                    </td>
+                    <td>
+                      <el-cart-cta>
+                        <button
+                          type="button"
+                          class="button-h43-square-fill typo-body-sm color-orange"
+                        >
+                          바로구매
+                        </button>
+                        <button
+                          type="button"
+                          class="text-black button-h43-square typo-body-sm"
+                        >
+                          삭제
+                        </button>
+                      </el-cart-cta>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <el-checkbox>
+                        <input
+                          type="checkbox"
+                          class="form-check-input custom-checkbox"
+                          value=""
+                          disabled
+                        />
+                      </el-checkbox>
+                    </td>
+                    <td class="product-info">
+                      <el-cart-product-item class="disabled">
+                        <a href="#">
+                          <el-item-thumbnail>
+                            <img
+                              class="thumbnail-image"
+                              src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/product/20250227/20250227145823_a5b9221d-437d-4b84-b0ac-fbc6f58edf4f.jpg"
+                              alt=""
+                            />
+                            <el-bg></el-bg>
+                            <el-layer-disabled class="typo-body-lg">
+                              <el-txt>일시품절</el-txt>
+                            </el-layer-disabled>
+                          </el-item-thumbnail>
+
+                          <el-item-txt class="typo-body-sm">
+                            <el-item-name>
+                              <el-brand>스타벅스</el-brand>
+                              <el-item-name-txt>
+                                떠먹는 스트로베리
+                              </el-item-name-txt>
+                            </el-item-name>
+                          </el-item-txt>
+                        </a>
+                      </el-cart-product-item>
+                    </td>
+                    <td>2025.12.31</td>
+                    <td><el-line-through>1,004,700원</el-line-through></td>
+                    <td>
+                      <el-sale-price>
+                        <el-badge-discount class="typo-label-sm">
+                          3%
+                        </el-badge-discount>
+                        <span>1,004,700원</span>
+                      </el-sale-price>
+                    </td>
+                    <td>
+                      <el-cart-cta>
+                        <button
+                          type="button"
+                          class="text-black button-h43-square typo-body-sm"
+                        >
+                          삭제
+                        </button>
+                      </el-cart-cta>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <el-checkbox>
+                        <input
+                          type="checkbox"
+                          class="form-check-input custom-checkbox"
+                          value=""
+                          disabled
+                        />
+                      </el-checkbox>
+                    </td>
+                    <td class="product-info">
+                      <el-cart-product-item class="disabled">
+                        <a href="#">
+                          <el-item-thumbnail>
+                            <img
+                              class="thumbnail-image"
+                              src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/product/20250227/20250227145823_a5b9221d-437d-4b84-b0ac-fbc6f58edf4f.jpg"
+                              alt=""
+                            />
+                            <el-bg></el-bg>
+                            <el-layer-disabled class="typo-body-lg">
+                              <el-txt>
+                                판매가능시간
+                                <br />
+                                9시 ~ 18시
+                              </el-txt>
+                              <el-addon class="typo-label-lg">
+                                공휴일/주말 제외
+                              </el-addon>
+                            </el-layer-disabled>
+                          </el-item-thumbnail>
+
+                          <el-item-txt class="typo-body-sm">
+                            <el-item-name>
+                              <el-brand>스타벅스</el-brand>
+                              <el-item-name-txt>
+                                떠먹는 스트로베리
+                              </el-item-name-txt>
+                            </el-item-name>
+                          </el-item-txt>
+                        </a>
+                      </el-cart-product-item>
+                    </td>
+                    <td>2025.12.31</td>
+                    <td><el-line-through>1,004,700원</el-line-through></td>
+                    <td>
+                      <el-sale-price>
+                        <el-badge-discount class="typo-label-sm">
+                          3%
+                        </el-badge-discount>
+                        <span>1,004,700원</span>
+                      </el-sale-price>
+                    </td>
+                    <td>
+                      <el-cart-cta>
+                        <button
+                          type="button"
+                          class="text-black button-h43-square typo-body-sm"
+                        >
+                          삭제
+                        </button>
+                      </el-cart-cta>
                     </td>
                   </tr>
                 </tbody>
