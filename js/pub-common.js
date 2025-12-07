@@ -105,10 +105,36 @@ const initHandleModalScroll = () => {
         'el-modal-body.modal-body'
       );
 
-      // 스크롤 여부 확인 함수
+      // 스크롤 이벤트 핸들러
+      let scrollHandler = null;
+      let isScrollListenerAttached = false;
+
+      // 스크롤 여부 확인 및 이벤트 리스너 등록 함수
       const checkScroll = () => {
         if (targetModalBodyEl) {
-          console.log('스크롤여부: ', hasModalBodyScroll(targetModalBodyEl));
+          if (hasModalBodyScroll(targetModalBodyEl)) {
+            // 스크롤 이벤트 리스너가 아직 등록되지 않았을 때만 등록
+            if (!isScrollListenerAttached) {
+              scrollHandler = () => {
+                // 스크롤 이벤트 처리 로직
+                if (targetModalBodyEl.scrollTop > 0) {
+                  targetModalHeaderEl.classList.add('shadow-bottom');
+                } else {
+                  targetModalHeaderEl.classList.remove('shadow-bottom');
+                }
+              };
+
+              targetModalBodyEl.addEventListener('scroll', scrollHandler);
+              isScrollListenerAttached = true;
+            }
+          } else {
+            // 스크롤이 없을 때는 이벤트 리스너 제거
+            if (isScrollListenerAttached && scrollHandler) {
+              targetModalBodyEl.removeEventListener('scroll', scrollHandler);
+              isScrollListenerAttached = false;
+              scrollHandler = null;
+            }
+          }
         }
       };
 
@@ -129,6 +155,19 @@ const initHandleModalScroll = () => {
             setTimeout(() => {
               checkScroll();
             }, 0);
+          });
+
+          // 모달이 닫힐 때 스크롤 이벤트 리스너 정리
+          modalEl.addEventListener('hidden.bs.modal', () => {
+            if (
+              isScrollListenerAttached &&
+              scrollHandler &&
+              targetModalBodyEl
+            ) {
+              targetModalBodyEl.removeEventListener('scroll', scrollHandler);
+              isScrollListenerAttached = false;
+              scrollHandler = null;
+            }
           });
         }
 
