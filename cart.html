@@ -438,18 +438,215 @@
           </el-modal-header>
 
           <el-modal-body class="modal-body">
-            <div style="width: 551px">
-              모달 컨텐츠 영역 - 이 영역의 width에 따라 모달의 width가
-              결정됩니다(좌우 padding은 32px).
-              <div>asdf</div>
-              <div>asdf</div>
-              <div>asdf</div>
-              <div>asdf</div>
-              <div>asdf</div>
-              <div>asdf</div>
-              <div>asdf</div>
-              <div>asdf</div>
-            </div>
+            <el-modal-estimate-request>
+              <el-modal-estimate-request-info>
+                <el-estimate-request-row>
+                  <el-estimate-request-inputs-label class="typo-body-lg">
+                    사업자번호
+                  </el-estimate-request-inputs-label>
+                  <el-estimate-request-inputs-content>
+                    <el-input>
+                      <input
+                        class="form-control custom-input"
+                        type="text"
+                        placeholder="사업자번호를 입력해주세요."
+                        value=""
+                      />
+                    </el-input>
+                  </el-estimate-request-inputs-content>
+                </el-estimate-request-row>
+                <el-estimate-request-row>
+                  <el-estimate-request-inputs-label class="typo-body-lg">
+                    상호명<span>*</span>
+                  </el-estimate-request-inputs-label>
+                  <el-estimate-request-inputs-content>
+                    <el-input class="is-invalid">
+                      <input
+                        class="form-control custom-input"
+                        type="text"
+                        placeholder="상호명을 입력해주세요."
+                        value=""
+                      />
+                      <el-invalide-feedback class="typo-label-lg">
+                        필수 입력 항목입니다.
+                      </el-invalide-feedback>
+                    </el-input>
+                  </el-estimate-request-inputs-content>
+                </el-estimate-request-row>
+                <el-estimate-request-row>
+                  <el-estimate-request-inputs-label class="typo-body-lg">
+                    담당자명<span>*</span>
+                  </el-estimate-request-inputs-label>
+                  <el-estimate-request-inputs-content>
+                    <el-input>
+                      <input
+                        class="form-control custom-input"
+                        type="text"
+                        placeholder="당당자명을 입력해주세요."
+                        value=""
+                      />
+                    </el-input>
+                  </el-estimate-request-inputs-content>
+                </el-estimate-request-row>
+              </el-modal-estimate-request-info>
+
+              <el-modal-estimate-request-quantity>
+                <el-modal-scrollable-list>
+                  <el-modal-scrollable-list-header class="typo-body-sm">
+                    <el-scrollable-list-header-label>
+                      상품명
+                    </el-scrollable-list-header-label>
+                    <el-scrollable-list-header-aside>
+                      수량
+                    </el-scrollable-list-header-aside>
+                  </el-modal-scrollable-list-header>
+
+                  <el-modal-scrollable-list-content>
+                    <ul>
+                      <li>
+                        <el-modal-estimate-request-product>
+                          <el-modal-estimate-request-product-item>
+                            <el-item-thumbnail>
+                              <img
+                                class="thumbnail-image"
+                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/product/20250227/20250227145823_a5b9221d-437d-4b84-b0ac-fbc6f58edf4f.jpg"
+                                alt=""
+                              />
+                              <el-bg></el-bg>
+                            </el-item-thumbnail>
+
+                            <el-item-txt class="typo-body-sm">
+                              <el-item-name>
+                                <el-brand>스타벅스</el-brand>
+                                <el-item-name-txt>
+                                  떠먹는 스트로베리
+                                </el-item-name-txt>
+                              </el-item-name>
+                            </el-item-txt>
+                          </el-modal-estimate-request-product-item>
+
+                          <el-modal-estimate-request-product-aside>
+                            <el-input>
+                              <input
+                                class="form-control custom-input"
+                                type="text"
+                                placeholder=""
+                                value="999,999"
+                              />
+                            </el-input>
+                          </el-modal-estimate-request-product-aside>
+                        </el-modal-estimate-request-product>
+                      </li>
+                      <li>
+                        <el-modal-estimate-request-product>
+                          <el-modal-estimate-request-product-item>
+                            <el-item-thumbnail>
+                              <img
+                                class="thumbnail-image"
+                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/product/20250227/20250227145823_a5b9221d-437d-4b84-b0ac-fbc6f58edf4f.jpg"
+                                alt=""
+                              />
+                              <el-bg></el-bg>
+                            </el-item-thumbnail>
+
+                            <el-item-txt class="typo-body-sm">
+                              <el-item-name>
+                                <el-brand
+                                  >일이삼사오육칠팔구십일이삼사</el-brand
+                                >
+                                <el-item-name-txt>
+                                  일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일
+                                  일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일
+                                </el-item-name-txt>
+                              </el-item-name>
+                            </el-item-txt>
+                          </el-modal-estimate-request-product-item>
+
+                          <el-modal-estimate-request-product-aside>
+                            <el-input>
+                              <input
+                                class="form-control custom-input"
+                                type="text"
+                                placeholder=""
+                                value="999,999"
+                              />
+                            </el-input>
+                          </el-modal-estimate-request-product-aside>
+                        </el-modal-estimate-request-product>
+                      </li>
+                      <li>
+                        <el-modal-estimate-request-product>
+                          <el-modal-estimate-request-product-item>
+                            <el-item-thumbnail>
+                              <img
+                                class="thumbnail-image"
+                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/product/20250227/20250227145823_a5b9221d-437d-4b84-b0ac-fbc6f58edf4f.jpg"
+                                alt=""
+                              />
+                              <el-bg></el-bg>
+                            </el-item-thumbnail>
+
+                            <el-item-txt class="typo-body-sm">
+                              <el-item-name>
+                                <el-brand>스타벅스</el-brand>
+                                <el-item-name-txt>
+                                  떠먹는 스트로베리
+                                </el-item-name-txt>
+                              </el-item-name>
+                            </el-item-txt>
+                          </el-modal-estimate-request-product-item>
+
+                          <el-modal-estimate-request-product-aside>
+                            <el-input>
+                              <input
+                                class="form-control custom-input"
+                                type="text"
+                                placeholder=""
+                                value="999,999"
+                              />
+                            </el-input>
+                          </el-modal-estimate-request-product-aside>
+                        </el-modal-estimate-request-product>
+                      </li>
+                      <li>
+                        <el-modal-estimate-request-product>
+                          <el-modal-estimate-request-product-item>
+                            <el-item-thumbnail>
+                              <img
+                                class="thumbnail-image"
+                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/product/20250227/20250227145823_a5b9221d-437d-4b84-b0ac-fbc6f58edf4f.jpg"
+                                alt=""
+                              />
+                              <el-bg></el-bg>
+                            </el-item-thumbnail>
+
+                            <el-item-txt class="typo-body-sm">
+                              <el-item-name>
+                                <el-brand>스타벅스</el-brand>
+                                <el-item-name-txt>
+                                  떠먹는 스트로베리
+                                </el-item-name-txt>
+                              </el-item-name>
+                            </el-item-txt>
+                          </el-modal-estimate-request-product-item>
+
+                          <el-modal-estimate-request-product-aside>
+                            <el-input>
+                              <input
+                                class="form-control custom-input"
+                                type="text"
+                                placeholder=""
+                                value="999,999"
+                              />
+                            </el-input>
+                          </el-modal-estimate-request-product-aside>
+                        </el-modal-estimate-request-product>
+                      </li>
+                    </ul>
+                  </el-modal-scrollable-list-content>
+                </el-modal-scrollable-list>
+              </el-modal-estimate-request-quantity>
+            </el-modal-estimate-request>
           </el-modal-body>
 
           <el-modal-footer class="modal-footer">
