@@ -193,43 +193,41 @@ const initHandleModalScroll = () => {
 
       // 모달이 열릴 때도 스크롤 여부 확인
       if (modalEl) {
-        const bsModal = bootstrap?.Modal?.getInstance(modalEl);
-        if (bsModal) {
-          modalEl.addEventListener('shown.bs.modal', () => {
-            // 모달이 완전히 표시된 후 스크롤 여부 확인
-            setTimeout(() => {
-              checkScroll();
-            }, 0);
-          });
-
-          // 모달이 닫힐 때 스크롤 이벤트 리스너 정리
-          modalEl.addEventListener('hidden.bs.modal', () => {
-            // 모달 body 스크롤 이벤트 리스너 정리
-            if (
-              isScrollListenerAttached &&
-              scrollHandler &&
-              targetModalBodyEl
-            ) {
-              targetModalBodyEl.removeEventListener('scroll', scrollHandler);
-              isScrollListenerAttached = false;
-              scrollHandler = null;
-            }
-
-            // 모달 내부 스크롤리스트 컨텐츠 스크롤 이벤트 리스너 정리
-            if (
-              isScrollListenerAttachedForScrollableList &&
-              scrollHandlerForScrollableList &&
-              targetModalScrollableListContentEl
-            ) {
-              targetModalScrollableListContentEl.removeEventListener(
-                'scroll',
-                scrollHandlerForScrollableList
-              );
-              isScrollListenerAttachedForScrollableList = false;
-              scrollHandlerForScrollableList = null;
-            }
-          });
+        // 이미 생성된 인스턴스가 없어도 이벤트는 등록하여 여러 모달에 동일하게 적용
+        if (bootstrap?.Modal) {
+          bootstrap.Modal.getOrCreateInstance(modalEl);
         }
+
+        modalEl.addEventListener('shown.bs.modal', () => {
+          // 모달이 완전히 표시된 후 스크롤 여부 확인
+          setTimeout(() => {
+            checkScroll();
+          }, 0);
+        });
+
+        // 모달이 닫힐 때 스크롤 이벤트 리스너 정리
+        modalEl.addEventListener('hidden.bs.modal', () => {
+          // 모달 body 스크롤 이벤트 리스너 정리
+          if (isScrollListenerAttached && scrollHandler && targetModalBodyEl) {
+            targetModalBodyEl.removeEventListener('scroll', scrollHandler);
+            isScrollListenerAttached = false;
+            scrollHandler = null;
+          }
+
+          // 모달 내부 스크롤리스트 컨텐츠 스크롤 이벤트 리스너 정리
+          if (
+            isScrollListenerAttachedForScrollableList &&
+            scrollHandlerForScrollableList &&
+            targetModalScrollableListContentEl
+          ) {
+            targetModalScrollableListContentEl.removeEventListener(
+              'scroll',
+              scrollHandlerForScrollableList
+            );
+            isScrollListenerAttachedForScrollableList = false;
+            scrollHandlerForScrollableList = null;
+          }
+        });
 
         // 초기화 완료 전환
         modalEl.dataset.initializedScroll = 'true';

@@ -417,7 +417,7 @@
 
     <!-- 시작: modal: 공통 모달 -->
     <el-modal
-      class="modal fade"
+      class="modal fade el-modal-default"
       id="el-modal-default"
       tabindex="-1"
       aria-hidden="true"
@@ -660,6 +660,15 @@
             <button type="button" class="button-h50-fill typo-body-lg">
               다음
             </button>
+            <!-- 시작: [DEV] 얼럿 테스트용 - 개발 시 삭제해 주세요 -->
+            <button
+              type="button"
+              onclick="bsAlert.show()"
+              class="button-h50-fill typo-body-lg"
+            >
+              alert(개발 시 삭제)
+            </button>
+            <!-- 종료: [DEV] 얼럿 테스트용 - 개발 시 삭제해 주세요 -->
           </el-modal-footer>
         </el-modal-content>
       </el-modal-dialog>
