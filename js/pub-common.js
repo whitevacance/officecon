@@ -76,16 +76,11 @@ initModalDefault();
 // 종료: el-modal-default
 
 // 시작: handel modal scroll
-/**
- * 모달 body 요소에 스크롤이 생겼는지 여부를 확인하는 함수
- * @param {HTMLElement} targetModalBodyEl - 확인할 모달 body 요소
- * @returns {boolean} 스크롤이 있으면 true, 없으면 false
- */
-const hasModalBodyScroll = (targetModalBodyEl) => {
-  if (!targetModalBodyEl) {
+const hasModalInnerScroll = (targetEl) => {
+  if (!targetEl) {
     return false;
   }
-  return targetModalBodyEl.scrollHeight > targetModalBodyEl.clientHeight;
+  return targetEl.scrollHeight > targetEl.clientHeight;
 };
 
 const initHandleModalScroll = () => {
@@ -104,15 +99,24 @@ const initHandleModalScroll = () => {
       const targetModalBodyEl = modalEl.querySelector(
         'el-modal-body.modal-body'
       );
+      const targetModalScrollableListContentEl = modalEl.querySelector(
+        'el-modal-scrollable-list-content'
+      );
+      const targetModalFooterEl = modalEl.querySelector(
+        'el-modal-footer.modal-footer'
+      );
 
       // 스크롤 이벤트 핸들러
       let scrollHandler = null;
+      let scrollHandlerForScrollableList = null;
       let isScrollListenerAttached = false;
+      let isScrollListenerAttachedForScrollableList = false;
 
       // 스크롤 여부 확인 및 이벤트 리스너 등록 함수
       const checkScroll = () => {
+        // 모달 body 스크롤 여부 확인
         if (targetModalBodyEl) {
-          if (hasModalBodyScroll(targetModalBodyEl)) {
+          if (hasModalInnerScroll(targetModalBodyEl)) {
             // 스크롤 이벤트 리스너가 아직 등록되지 않았을 때만 등록
             if (!isScrollListenerAttached) {
               scrollHandler = () => {
@@ -133,6 +137,47 @@ const initHandleModalScroll = () => {
               targetModalBodyEl.removeEventListener('scroll', scrollHandler);
               isScrollListenerAttached = false;
               scrollHandler = null;
+            }
+          }
+        }
+
+        // 모달 내부 스크롤리스트 컨텐츠 스크롤 여부 확인
+        if (targetModalScrollableListContentEl) {
+          if (hasModalInnerScroll(targetModalScrollableListContentEl)) {
+            // 스크롤 이벤트 리스너가 아직 등록되지 않았을 때만 등록
+            if (!isScrollListenerAttachedForScrollableList) {
+              scrollHandlerForScrollableList = () => {
+                // 스크롤 이벤트 처리 로직
+                const isScrollBottom =
+                  targetModalScrollableListContentEl.scrollTop +
+                    targetModalScrollableListContentEl.clientHeight >=
+                  targetModalScrollableListContentEl.scrollHeight;
+
+                if (isScrollBottom) {
+                  targetModalFooterEl.classList.add('shadow-top');
+                } else {
+                  targetModalFooterEl.classList.remove('shadow-top');
+                }
+              };
+
+              targetModalScrollableListContentEl.addEventListener(
+                'scroll',
+                scrollHandlerForScrollableList
+              );
+              isScrollListenerAttachedForScrollableList = true;
+            }
+          } else {
+            // 스크롤이 없을 때는 이벤트 리스너 제거
+            if (
+              isScrollListenerAttachedForScrollableList &&
+              scrollHandlerForScrollableList
+            ) {
+              targetModalScrollableListContentEl.removeEventListener(
+                'scroll',
+                scrollHandlerForScrollableList
+              );
+              isScrollListenerAttachedForScrollableList = false;
+              scrollHandlerForScrollableList = null;
             }
           }
         }
@@ -159,6 +204,7 @@ const initHandleModalScroll = () => {
 
           // 모달이 닫힐 때 스크롤 이벤트 리스너 정리
           modalEl.addEventListener('hidden.bs.modal', () => {
+            // 모달 body 스크롤 이벤트 리스너 정리
             if (
               isScrollListenerAttached &&
               scrollHandler &&
@@ -167,6 +213,20 @@ const initHandleModalScroll = () => {
               targetModalBodyEl.removeEventListener('scroll', scrollHandler);
               isScrollListenerAttached = false;
               scrollHandler = null;
+            }
+
+            // 모달 내부 스크롤리스트 컨텐츠 스크롤 이벤트 리스너 정리
+            if (
+              isScrollListenerAttachedForScrollableList &&
+              scrollHandlerForScrollableList &&
+              targetModalScrollableListContentEl
+            ) {
+              targetModalScrollableListContentEl.removeEventListener(
+                'scroll',
+                scrollHandlerForScrollableList
+              );
+              isScrollListenerAttachedForScrollableList = false;
+              scrollHandlerForScrollableList = null;
             }
           });
         }
