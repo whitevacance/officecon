@@ -4609,14 +4609,120 @@
                   </tbody>
                 </table>
               </el-estimate-document-info>
-            </el-modal-estimate-document>
-          </el-modal-body>
 
-          <el-modal-footer class="modal-footer">
-            <button type="button" class="button-h50-fill typo-body-lg">
-              다운로드
-            </button>
-          </el-modal-footer>
+              <el-estimate-document-products>
+                <h3 class="typo-subtitle-sm">상세내역</h3>
+                <table class="table align-middle">
+                  <colgroup>
+                    <col class="col-auto" />
+                    <col class="col-fix" />
+                    <col class="col-fix" />
+                    <col class="col-fix" />
+                    <col class="col-fix" />
+                    <col class="col-fix" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col">상품명</th>
+                      <th scope="col">단가</th>
+                      <th scope="col">할인율</th>
+                      <th scope="col">구매가</th>
+                      <th scope="col">수량</th>
+                      <th scope="col">공급가액(합계)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        [일이삼사오육칠팔구십일이삼사]
+                        일이삼사오육칠팔구십일이삼사오육칠
+                      </td>
+                      <td>9,999,999원</td>
+                      <td>99.99%</td>
+                      <td>9,999,999원</td>
+                      <td>9,999,999개</td>
+                      <td>9,999,999,999원</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        [일이삼사오육칠팔구십일이삼사] 일이삼사오육칠팔구십
+                        일이삼사오육칠팔구십 일이삼사오육칠팔구십
+                      </td>
+                      <td>9,999,999원</td>
+                      <td>99.99%</td>
+                      <td>9,999,999원</td>
+                      <td>9,999,999개</td>
+                      <td>9,999,999,999원</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        [일이삼사오육칠팔구십일이삼사]
+                        일이삼사오육칠팔구십일이삼사오육칠
+                      </td>
+                      <td>9,999,999원</td>
+                      <td>99.99%</td>
+                      <td>9,999,999원</td>
+                      <td>9,999,999개</td>
+                      <td>9,999,999,999원</td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <th scope="row" colspan="4">TOTAL</th>
+                      <td>1</td>
+                      <td>1</td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </el-estimate-document-products>
+
+              <el-modal-estimate-caution>
+                <el-marker-list>
+                  <ul>
+                    <li>
+                      본 견적서의 견적 공급가액은 다운로드일 기준입니다.
+                    </li>
+                    <li>
+                      해당 상품은 자사 및 브랜드사에 의해 상품가 변경 및 공급이
+                      중단될 수 있습니다.
+                    </li>
+                    <li> 쿠폰의 유효기간은 쿠폰 발송일로부터 산정됩니다. </li>
+                  </ul>
+                </el-marker-list>
+                <el-marker-list>
+                  <ul>
+                    <li>
+                      본 상품의 이용안내는 상품상세 이용안내 참고 바랍니다.
+                    </li>
+                    <li>
+                      오피스콘은 유가증권으로 부가세 면세 상품이며, 별도
+                      세금계산서 발행이 불가합니다.
+                    </li>
+                    <li>
+                      회원등급 또는 할인상품, 상품권 등 특정 상품에 따라
+                      견적가는 변동될 수 있습니다.
+                    </li>
+                  </ul>
+                </el-marker-list>
+              </el-modal-estimate-caution>
+
+              <el-modal-estimate-signature class="typo-subtitle-lg">
+                <el-modal-estimate-date>
+                  2025년 11월 11일
+                </el-modal-estimate-date>
+                <el-modal-estimate-name>
+                  주식회사 즐거운 대표이사 임관웅
+                  <img src="./images/ceo-stamp.png" alt="" />
+                </el-modal-estimate-name>
+              </el-modal-estimate-signature>
+            </el-modal-estimate-document>
+
+            <el-modal-estimate-cta>
+              <button type="button" class="button-h50-fill typo-body-lg">
+                다운로드
+              </button>
+            </el-modal-estimate-cta>
+          </el-modal-body>
         </el-modal-content>
       </el-modal-dialog>
     </el-modal>
