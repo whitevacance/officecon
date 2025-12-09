@@ -6214,20 +6214,20 @@ el-find-idpw-bottom {
 }
 /* 종료: 아이디 / 비밀번호 찾기 */
 
-/* 시작: 회원가입 안내 - 인트로, 가입완료 */
-el-signup-info {
+/* 시작: 회원가입 인트로, 가입완료, 결제완료료 */
+el-intro-and-success {
   display: flex;
   flex-direction: column;
   gap: 72px;
   width: 100%;
 
-  el-signup-intro-select-type {
+  el-intro-select-type {
     display: flex;
     justify-content: space-between;
     width: 100%;
     gap: 20px;
 
-    el-signup-intro-type-paper {
+    el-intro-type-paper {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -6364,7 +6364,7 @@ el-signup-info {
     }
   }
 
-  el-signup-success {
+  el-success {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -6372,14 +6372,14 @@ el-signup-info {
     width: 100%;
     text-align: center;
 
-    el-signup-success-greeting {
+    el-success-greeting {
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 24px;
       width: 100%;
 
-      el-signup-success-greeting-message {
+      el-success-greeting-message {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -6388,11 +6388,14 @@ el-signup-info {
 
         & > p {
           color: var(--color-natural-10);
+          &.typo-subtitle-md {
+            font-weight: 700 !important;
+          }
         }
       }
     }
 
-    el-signup-success-buttons {
+    el-success-buttons {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -6405,7 +6408,7 @@ el-signup-info {
     }
   }
 
-  el-signup-info-banners {
+  el-intro-and-success-banners {
     display: flex;
     flex-direction: column;
     align-items: center;
