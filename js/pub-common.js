@@ -2,6 +2,7 @@
 let pubWrapperEl = document.querySelector('el-wrapper');
 let bsModalLoader = null;
 let bsModalDefault = null;
+let bsModalEstimateDownload = null;
 let bsAlert = null;
 let bsSearchLayerToggleButton = null;
 let homeMainSwiperInstance = null;
@@ -74,6 +75,39 @@ if (window !== undefined) {
 
 initModalDefault();
 // 종료: el-modal-default
+
+// 시작: el-modal-estimate-download
+const initModalEstimateDownload = () => {
+  const modalEstimateDownloadEl = document.querySelector(
+    '#el-modal-estimate-download'
+  );
+
+  // 이미 초기화된 경우 건너뛰기
+  if (modalEstimateDownloadEl?.dataset?.initialized === 'true') {
+    return;
+  }
+
+  // 부트스트랩 인스턴스 생성
+  if (!bootstrap) {
+    // console.error('bootstrap을 찾을 수 없습니다.');
+    return;
+  }
+
+  if (modalEstimateDownloadEl) {
+    bsModalEstimateDownload = new bootstrap.Modal(modalEstimateDownloadEl);
+
+    // 초기화 완료 전환
+    modalEstimateDownloadEl.dataset.initialized = 'true';
+  }
+};
+
+// 전역 함수로 등록
+if (window !== undefined) {
+  window.initModalEstimateDownload = initModalEstimateDownload;
+}
+
+initModalEstimateDownload();
+// 종료: el-modal-estimate-download
 
 // 시작: handel modal scroll
 const hasModalInnerScroll = (targetEl) => {
