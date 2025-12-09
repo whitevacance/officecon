@@ -1,6 +1,8 @@
 // 시작: global 변수
 let pubWrapperEl = document.querySelector('el-wrapper');
 let bsModalLoader = null;
+let bsModalDefault = null;
+let bsModalEstimateDownload = null;
 let bsAlert = null;
 let bsSearchLayerToggleButton = null;
 let homeMainSwiperInstance = null;
@@ -42,6 +44,239 @@ if (window !== undefined) {
 
 initModalLoader();
 // 종료: el-modal-loader
+
+// 시작: el-modal-default
+const initModalDefault = () => {
+  const modalDefaultEl = document.querySelector('#el-modal-default');
+
+  // 이미 초기화된 경우 건너뛰기
+  if (modalDefaultEl?.dataset?.initialized === 'true') {
+    return;
+  }
+
+  // 부트스트랩 인스턴스 생성
+  if (!bootstrap) {
+    // console.error('bootstrap을 찾을 수 없습니다.');
+    return;
+  }
+
+  if (modalDefaultEl) {
+    bsModalDefault = new bootstrap.Modal(modalDefaultEl);
+
+    // 초기화 완료 전환
+    modalDefaultEl.dataset.initialized = 'true';
+  }
+};
+
+// 전역 함수로 등록
+if (window !== undefined) {
+  window.initModalDefault = initModalDefault;
+}
+
+initModalDefault();
+// 종료: el-modal-default
+
+// 시작: el-modal-estimate-download
+const initModalEstimateDownload = () => {
+  const modalEstimateDownloadEl = document.querySelector(
+    '#el-modal-estimate-download'
+  );
+
+  // 이미 초기화된 경우 건너뛰기
+  if (modalEstimateDownloadEl?.dataset?.initialized === 'true') {
+    return;
+  }
+
+  // 부트스트랩 인스턴스 생성
+  if (!bootstrap) {
+    // console.error('bootstrap을 찾을 수 없습니다.');
+    return;
+  }
+
+  if (modalEstimateDownloadEl) {
+    bsModalEstimateDownload = new bootstrap.Modal(modalEstimateDownloadEl);
+
+    // 초기화 완료 전환
+    modalEstimateDownloadEl.dataset.initialized = 'true';
+  }
+};
+
+// 전역 함수로 등록
+if (window !== undefined) {
+  window.initModalEstimateDownload = initModalEstimateDownload;
+}
+
+initModalEstimateDownload();
+// 종료: el-modal-estimate-download
+
+// 시작: handel modal scroll
+const hasModalInnerScroll = (targetEl) => {
+  if (!targetEl) {
+    return false;
+  }
+  return targetEl.scrollHeight > targetEl.clientHeight;
+};
+
+const initHandleModalScroll = () => {
+  const modalEls = document.querySelectorAll('el-modal');
+
+  if (modalEls?.length > 0) {
+    [...modalEls].forEach((modalEl) => {
+      // 이미 초기화된 경우 건너뛰기
+      if (modalEl?.dataset?.initializedScroll === 'true') {
+        return;
+      }
+
+      const targetModalHeaderEl = modalEl.querySelector(
+        'el-modal-header.modal-header'
+      );
+      const targetModalBodyEl = modalEl.querySelector(
+        'el-modal-body.modal-body'
+      );
+      const targetModalScrollableListContentEl = modalEl.querySelector(
+        'el-modal-scrollable-list-content'
+      );
+      const targetModalFooterEl = modalEl.querySelector(
+        'el-modal-footer.modal-footer'
+      );
+
+      // 스크롤 이벤트 핸들러
+      let scrollHandler = null;
+      let scrollHandlerForScrollableList = null;
+      let isScrollListenerAttached = false;
+      let isScrollListenerAttachedForScrollableList = false;
+
+      // 스크롤 여부 확인 및 이벤트 리스너 등록 함수
+      const checkScroll = () => {
+        // 모달 body 스크롤 여부 확인
+        if (targetModalBodyEl) {
+          if (hasModalInnerScroll(targetModalBodyEl)) {
+            // 스크롤 이벤트 리스너가 아직 등록되지 않았을 때만 등록
+            if (!isScrollListenerAttached) {
+              scrollHandler = () => {
+                // 스크롤 이벤트 처리 로직
+                if (targetModalBodyEl.scrollTop > 0) {
+                  targetModalHeaderEl.classList.add('shadow-bottom');
+                } else {
+                  targetModalHeaderEl.classList.remove('shadow-bottom');
+                }
+              };
+
+              targetModalBodyEl.addEventListener('scroll', scrollHandler);
+              isScrollListenerAttached = true;
+            }
+          } else {
+            // 스크롤이 없을 때는 이벤트 리스너 제거
+            if (isScrollListenerAttached && scrollHandler) {
+              targetModalBodyEl.removeEventListener('scroll', scrollHandler);
+              isScrollListenerAttached = false;
+              scrollHandler = null;
+            }
+          }
+        }
+
+        // 모달 내부 스크롤리스트 컨텐츠 스크롤 여부 확인
+        if (targetModalScrollableListContentEl) {
+          if (hasModalInnerScroll(targetModalScrollableListContentEl)) {
+            // 스크롤 이벤트 리스너가 아직 등록되지 않았을 때만 등록
+            if (!isScrollListenerAttachedForScrollableList) {
+              scrollHandlerForScrollableList = () => {
+                // 스크롤 이벤트 처리 로직
+                const isScrollBottom =
+                  targetModalScrollableListContentEl.scrollTop +
+                    targetModalScrollableListContentEl.clientHeight >=
+                  targetModalScrollableListContentEl.scrollHeight;
+
+                if (isScrollBottom) {
+                  targetModalFooterEl.classList.add('shadow-top');
+                } else {
+                  targetModalFooterEl.classList.remove('shadow-top');
+                }
+              };
+
+              targetModalScrollableListContentEl.addEventListener(
+                'scroll',
+                scrollHandlerForScrollableList
+              );
+              isScrollListenerAttachedForScrollableList = true;
+            }
+          } else {
+            // 스크롤이 없을 때는 이벤트 리스너 제거
+            if (
+              isScrollListenerAttachedForScrollableList &&
+              scrollHandlerForScrollableList
+            ) {
+              targetModalScrollableListContentEl.removeEventListener(
+                'scroll',
+                scrollHandlerForScrollableList
+              );
+              isScrollListenerAttachedForScrollableList = false;
+              scrollHandlerForScrollableList = null;
+            }
+          }
+        }
+      };
+
+      // 창 크기 조절 이벤트 리스너
+      const handleResize = () => {
+        checkScroll();
+      };
+
+      // resize 이벤트 리스너 등록
+      window.addEventListener('resize', handleResize);
+
+      // 모달이 열릴 때도 스크롤 여부 확인
+      if (modalEl) {
+        // 이미 생성된 인스턴스가 없어도 이벤트는 등록하여 여러 모달에 동일하게 적용
+        if (bootstrap?.Modal) {
+          bootstrap.Modal.getOrCreateInstance(modalEl);
+        }
+
+        modalEl.addEventListener('shown.bs.modal', () => {
+          // 모달이 완전히 표시된 후 스크롤 여부 확인
+          setTimeout(() => {
+            checkScroll();
+          }, 0);
+        });
+
+        // 모달이 닫힐 때 스크롤 이벤트 리스너 정리
+        modalEl.addEventListener('hidden.bs.modal', () => {
+          // 모달 body 스크롤 이벤트 리스너 정리
+          if (isScrollListenerAttached && scrollHandler && targetModalBodyEl) {
+            targetModalBodyEl.removeEventListener('scroll', scrollHandler);
+            isScrollListenerAttached = false;
+            scrollHandler = null;
+          }
+
+          // 모달 내부 스크롤리스트 컨텐츠 스크롤 이벤트 리스너 정리
+          if (
+            isScrollListenerAttachedForScrollableList &&
+            scrollHandlerForScrollableList &&
+            targetModalScrollableListContentEl
+          ) {
+            targetModalScrollableListContentEl.removeEventListener(
+              'scroll',
+              scrollHandlerForScrollableList
+            );
+            isScrollListenerAttachedForScrollableList = false;
+            scrollHandlerForScrollableList = null;
+          }
+        });
+
+        // 초기화 완료 전환
+        modalEl.dataset.initializedScroll = 'true';
+      }
+    });
+  }
+};
+
+// 전역 함수로 등록
+if (window !== undefined) {
+  window.initHandleModalScroll = initHandleModalScroll;
+}
+
+initHandleModalScroll();
+// 종료: el-modal-default
 
 // 시작: el-alert
 const initAlert = () => {

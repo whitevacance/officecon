@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>장바구니 | 오피스콘</title>
+    <meta charset="UTF-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="shortcut icon" href="./images/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./images/favicon-apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="./images/favicon-android-chrome-192x192.png"
+    />
+    <link
+      rel="preload"
+      href="./fonts/Pretendard-Regular.subset.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="./fonts/Pretendard-SemiBold.subset.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="./fonts/Pretendard-Bold.subset.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link type="text/css" rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="./css/swiper.min.css" />
+    <link type="text/css" rel="stylesheet" href="./css/tui-time-picker.css" />
+    <link type="text/css" rel="stylesheet" href="./css/tui-date-picker.css" />
+    <link type="text/css" rel="stylesheet" href="./css/style.css" />
+    <script src="./js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script
+      src="./js/swiper-element-bundleswiper.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/tui-time-picker.js" crossorigin="anonymous"></script>
+    <script src="./js/tui-date-picker.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <!-- [DEV] 일반회원일 때 className: 'personal-member' -->
+    <el-wrapper>
+      <el-container>
+        <!-- 시작: [DEV] 웹컴포넌트
+          1. 퍼블리싱용 웹컴포넌트입니다.
+          2. el-top-banner, el-header-top, el-header-sticky, el-header-gnb
+          3. 개발 시 examples.html 원본을 참고해 주세요.
+         -->
+        <component-top-banner></component-top-banner>
+
+        <!-- 시작: 헤더 -->
+        <component-header-top></component-header-top>
+        <component-header-sticky></component-header-sticky>
+        <component-header-gnb></component-header-gnb>
+        <!-- 종료: 헤더 -->
+
+        <!-- 종료: [DEV] 웹컴포넌트 -->
+
+        <!-- 시작: 컨텐츠 -->
+        <main>
+          <el-content-header>
+            <el-content-header-container>
+              <!-- 시작: [DEV] 웹컴포넌트
+                1. 퍼블리싱용 웹컴포넌트입니다.
+                2. el-breadcrumb
+                3. 개발 시 examples.html 원본을 참고해 주세요.
+              -->
+              <component-breadcrumb></component-breadcrumb>
+              <!-- 종료: [DEV] 웹컴포넌트 -->
+
+              <h2 class="typo-heading-md">장바구니</h2>
+            </el-content-header-container>
+          </el-content-header>
+
+          <el-content>
+            <el-cart-header>
+              <el-cart-header-left>
+                <el-cart-header-count class="typo-body-lg">
+                  총 <strong id="checkedProductCount">0</strong>개 선택
+                </el-cart-header-count>
+              </el-cart-header-left>
+              <el-cart-header-right>
+                <button
+                  id="buttonUnselectAllProducts"
+                  type="button"
+                  class="text-black button-h43-square typo-body-sm"
+                >
+                  선택해제
+                </button>
+                <button
+                  type="button"
+                  class="text-black button-h43-square typo-body-sm"
+                >
+                  선택삭제
+                </button>
+                <button
+                  onclick="handleEstimate()"
+                  type="button"
+                  class="text-black button-h43-square typo-body-sm"
+                >
+                  <el-icon class="etc-doc"></el-icon>
+                  견적서
+                </button>
+                <button
+                  type="button"
+                  class="button-h43-square-fill typo-body-sm color-orange"
+                >
+                  선택구매
+                </button>
+              </el-cart-header-right>
+            </el-cart-header>
+
+            <el-cart-list>
+              <table class="table align-middle">
+                <colgroup>
+                  <col class="col-checkbox" />
+                  <col class="col-auto" />
+                  <col class="col-default" />
+                  <col class="col-default" />
+                  <col class="col-default" />
+                  <col class="col-action" />
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th scope="col">
+                      <el-checkbox>
+                        <input
+                          id="checkboxAllProducts"
+                          type="checkbox"
+                          class="form-check-input custom-checkbox"
+                          value=""
+                        />
+                      </el-checkbox>
+                    </th>
+                    <th scope="col" class="product-info">상품정보</th>
+                    <th scope="col">유효기간</th>
+                    <th scope="col">정상가</th>
+                    <th scope="col">판매가</th>
+                    <th scope="col"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <el-checkbox>
+                        <input
+                          type="checkbox"
+                          class="form-check-input custom-checkbox"
+                          value=""
+                        />
+                      </el-checkbox>
+                    </td>
+                    <td class="product-info">
+                      <el-cart-product-item>
+                        <a href="#">
+                          <el-item-thumbnail>
+                            <img
+                              class="thumbnail-image"
+                              src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/product/20250227/20250227145823_a5b9221d-437d-4b84-b0ac-fbc6f58edf4f.jpg"
+                              alt=""
+                            />
+                            <el-bg></el-bg>
+                          </el-item-thumbnail>
+
+                          <el-item-txt class="typo-body-sm">
+                            <el-item-name>
+                              <el-brand>스타벅스</el-brand>
+                              <el-item-name-txt>
+                                떠먹는 스트로베리
+                              </el-item-name-txt>
+                            </el-item-name>
+                          </el-item-txt>
+                        </a>
+                      </el-cart-product-item>
+                    </td>
+                    <td>2025.12.31</td>
+                    <td><el-line-through>1,004,700원</el-line-through></td>
+                    <td>
+                      <el-sale-price>
+                        <el-badge-discount class="typo-label-sm">
+                          3%
+                        </el-badge-discount>
+                        <span>1,004,700원</span>
+                      </el-sale-price>
+                    </td>
+                    <td>
+                      <el-cart-cta>
+                        <button
+                          type="button"
+                          class="button-h43-square-fill typo-body-sm color-orange"
+                        >
+                          바로구매
+                        </button>
+                        <button
+                          type="button"
+                          class="text-black button-h43-square typo-body-sm"
+                        >
+                          삭제
+                        </button>
+                      </el-cart-cta>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <el-checkbox>
+                        <input
+                          type="checkbox"
+                          class="form-check-input custom-checkbox"
+                          value=""
+                        />
+                      </el-checkbox>
+                    </td>
+                    <td class="product-info">
+                      <el-cart-product-item>
+                        <a href="#">
+                          <el-item-thumbnail>
+                            <img
+                              class="thumbnail-image"
+                              src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/product/20250227/20250227145823_a5b9221d-437d-4b84-b0ac-fbc6f58edf4f.jpg"
+                              alt=""
+                            />
+                            <el-bg></el-bg>
+                          </el-item-thumbnail>
+
+                          <el-item-txt class="typo-body-sm">
+                            <el-item-name>
+                              <el-brand>일이삼사오육칠팔구십일이삼사</el-brand>
+                              <el-item-name-txt>
+                                일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일
+                                일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일
+                              </el-item-name-txt>
+                            </el-item-name>
+                          </el-item-txt>
+                        </a>
+                      </el-cart-product-item>
+                    </td>
+                    <td>2025.12.31</td>
+                    <td>1,004,700원</td>
+                    <td>
+                      <el-sale-price>
+                        <span>1,004,700원</span>
+                      </el-sale-price>
+                    </td>
+                    <td>
+                      <el-cart-cta>
+                        <button
+                          type="button"
+                          class="button-h43-square-fill typo-body-sm color-orange"
+                        >
+                          바로구매
+                        </button>
+                        <button
+                          type="button"
+                          class="text-black button-h43-square typo-body-sm"
+                        >
+                          삭제
+                        </button>
+                      </el-cart-cta>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <el-checkbox>
+                        <input
+                          type="checkbox"
+                          class="form-check-input custom-checkbox"
+                          value=""
+                          disabled
+                        />
+                      </el-checkbox>
+                    </td>
+                    <td class="product-info">
+                      <el-cart-product-item class="disabled">
+                        <a href="#">
+                          <el-item-thumbnail>
+                            <img
+                              class="thumbnail-image"
+                              src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/product/20250227/20250227145823_a5b9221d-437d-4b84-b0ac-fbc6f58edf4f.jpg"
+                              alt=""
+                            />
+                            <el-bg></el-bg>
+                            <el-layer-disabled class="typo-body-lg">
+                              <el-txt>일시품절</el-txt>
+                            </el-layer-disabled>
+                          </el-item-thumbnail>
+
+                          <el-item-txt class="typo-body-sm">
+                            <el-item-name>
+                              <el-brand>스타벅스</el-brand>
+                              <el-item-name-txt>
+                                떠먹는 스트로베리
+                              </el-item-name-txt>
+                            </el-item-name>
+                          </el-item-txt>
+                        </a>
+                      </el-cart-product-item>
+                    </td>
+                    <td>2025.12.31</td>
+                    <td><el-line-through>1,004,700원</el-line-through></td>
+                    <td>
+                      <el-sale-price>
+                        <el-badge-discount class="typo-label-sm">
+                          3%
+                        </el-badge-discount>
+                        <span>1,004,700원</span>
+                      </el-sale-price>
+                    </td>
+                    <td>
+                      <el-cart-cta>
+                        <button
+                          type="button"
+                          class="text-black button-h43-square typo-body-sm"
+                        >
+                          삭제
+                        </button>
+                      </el-cart-cta>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <el-checkbox>
+                        <input
+                          type="checkbox"
+                          class="form-check-input custom-checkbox"
+                          value=""
+                          disabled
+                        />
+                      </el-checkbox>
+                    </td>
+                    <td class="product-info">
+                      <el-cart-product-item class="disabled">
+                        <a href="#">
+                          <el-item-thumbnail>
+                            <img
+                              class="thumbnail-image"
+                              src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/product/20250227/20250227145823_a5b9221d-437d-4b84-b0ac-fbc6f58edf4f.jpg"
+                              alt=""
+                            />
+                            <el-bg></el-bg>
+                            <el-layer-disabled class="typo-body-lg">
+                              <el-txt>
+                                판매가능시간
+                                <br />
+                                9시 ~ 18시
+                              </el-txt>
+                              <el-addon class="typo-label-lg">
+                                공휴일/주말 제외
+                              </el-addon>
+                            </el-layer-disabled>
+                          </el-item-thumbnail>
+
+                          <el-item-txt class="typo-body-sm">
+                            <el-item-name>
+                              <el-brand>스타벅스</el-brand>
+                              <el-item-name-txt>
+                                떠먹는 스트로베리
+                              </el-item-name-txt>
+                            </el-item-name>
+                          </el-item-txt>
+                        </a>
+                      </el-cart-product-item>
+                    </td>
+                    <td>2025.12.31</td>
+                    <td><el-line-through>1,004,700원</el-line-through></td>
+                    <td>
+                      <el-sale-price>
+                        <el-badge-discount class="typo-label-sm">
+                          3%
+                        </el-badge-discount>
+                        <span>1,004,700원</span>
+                      </el-sale-price>
+                    </td>
+                    <td>
+                      <el-cart-cta>
+                        <button
+                          type="button"
+                          class="text-black button-h43-square typo-body-sm"
+                        >
+                          삭제
+                        </button>
+                      </el-cart-cta>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </el-cart-list>
+          </el-content>
+        </main>
+        <!-- 종료: 컨텐츠 -->
+      </el-container>
+
+      <!-- 시작: [DEV] 웹컴포넌트
+        1. 퍼블리싱용 웹컴포넌트입니다(el-footer).
+        2. 개발 시 examples.html 참고해 주세요.
+      -->
+      <component-footer></component-footer>
+      <!-- 종료: [DEV] 웹컴포넌트 -->
+    </el-wrapper>
+
+    <button id="scrollToTopButton" type="button" aria-label="상단으로 이동">
+      <el-icon class="h32-arrow-up natural-0"></el-icon>
+    </button>
+
+    <!-- 시작: modal: 공통 모달 -->
+    <el-modal
+      class="modal fade el-modal-default"
+      id="el-modal-default"
+      tabindex="-1"
+      aria-hidden="true"
+      data-bs-keyboard="false"
+    >
+      <el-modal-dialog
+        class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+      >
+        <el-modal-content class="modal-content">
+          <el-modal-close-button>
+            <button type="button" data-bs-dismiss="modal" aria-label="닫기">
+              <el-icon class="h32-closed natural-0"></el-icon>
+            </button>
+          </el-modal-close-button>
+
+          <el-modal-header class="modal-header">
+            <h3 class="typo-subtitle-lg center">견적서 출력</h3>
+          </el-modal-header>
+
+          <el-modal-body class="modal-body">
+            <el-modal-estimate-request>
+              <el-modal-estimate-request-info>
+                <el-estimate-request-row>
+                  <el-estimate-request-inputs-label class="typo-body-lg">
+                    사업자번호
+                  </el-estimate-request-inputs-label>
+                  <el-estimate-request-inputs-content>
+                    <el-input>
+                      <input
+                        class="form-control custom-input"
+                        type="text"
+                        placeholder="사업자번호를 입력해주세요."
+                        value=""
+                      />
+                    </el-input>
+                  </el-estimate-request-inputs-content>
+                </el-estimate-request-row>
+                <el-estimate-request-row>
+                  <el-estimate-request-inputs-label class="typo-body-lg">
+                    상호명<span>*</span>
+                  </el-estimate-request-inputs-label>
+                  <el-estimate-request-inputs-content>
+                    <el-input class="is-invalid">
+                      <input
+                        class="form-control custom-input"
+                        type="text"
+                        placeholder="상호명을 입력해주세요."
+                        value=""
+                      />
+                      <el-invalide-feedback class="typo-label-lg">
+                        필수 입력 항목입니다.
+                      </el-invalide-feedback>
+                    </el-input>
+                  </el-estimate-request-inputs-content>
+                </el-estimate-request-row>
+                <el-estimate-request-row>
+                  <el-estimate-request-inputs-label class="typo-body-lg">
+                    담당자명<span>*</span>
+                  </el-estimate-request-inputs-label>
+                  <el-estimate-request-inputs-content>
+                    <el-input>
+                      <input
+                        class="form-control custom-input"
+                        type="text"
+                        placeholder="당당자명을 입력해주세요."
+                        value=""
+                      />
+                    </el-input>
+                  </el-estimate-request-inputs-content>
+                </el-estimate-request-row>
+              </el-modal-estimate-request-info>
+
+              <el-modal-estimate-request-quantity>
+                <el-modal-scrollable-list>
+                  <el-modal-scrollable-list-header class="typo-body-sm">
+                    <el-scrollable-list-header-label>
+                      상품명
+                    </el-scrollable-list-header-label>
+                    <el-scrollable-list-header-aside>
+                      수량
+                    </el-scrollable-list-header-aside>
+                  </el-modal-scrollable-list-header>
+
+                  <el-modal-scrollable-list-content>
+                    <ul>
+                      <li>
+                        <el-modal-estimate-request-product>
+                          <el-modal-estimate-request-product-item>
+                            <el-item-thumbnail>
+                              <img
+                                class="thumbnail-image"
+                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/product/20250227/20250227145823_a5b9221d-437d-4b84-b0ac-fbc6f58edf4f.jpg"
+                                alt=""
+                              />
+                              <el-bg></el-bg>
+                            </el-item-thumbnail>
+
+                            <el-item-txt class="typo-body-sm">
+                              <el-item-name>
+                                <el-brand>스타벅스</el-brand>
+                                <el-item-name-txt>
+                                  떠먹는 스트로베리
+                                </el-item-name-txt>
+                              </el-item-name>
+                            </el-item-txt>
+                          </el-modal-estimate-request-product-item>
+
+                          <el-modal-estimate-request-product-aside>
+                            <el-input>
+                              <input
+                                class="form-control custom-input"
+                                type="text"
+                                placeholder=""
+                                value="999,999"
+                              />
+                            </el-input>
+                          </el-modal-estimate-request-product-aside>
+                        </el-modal-estimate-request-product>
+                      </li>
+                      <li>
+                        <el-modal-estimate-request-product>
+                          <el-modal-estimate-request-product-item>
+                            <el-item-thumbnail>
+                              <img
+                                class="thumbnail-image"
+                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/product/20250227/20250227145823_a5b9221d-437d-4b84-b0ac-fbc6f58edf4f.jpg"
+                                alt=""
+                              />
+                              <el-bg></el-bg>
+                            </el-item-thumbnail>
+
+                            <el-item-txt class="typo-body-sm">
+                              <el-item-name>
+                                <el-brand
+                                  >일이삼사오육칠팔구십일이삼사</el-brand
+                                >
+                                <el-item-name-txt>
+                                  일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일
+                                  일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일
+                                </el-item-name-txt>
+                              </el-item-name>
+                            </el-item-txt>
+                          </el-modal-estimate-request-product-item>
+
+                          <el-modal-estimate-request-product-aside>
+                            <el-input>
+                              <input
+                                class="form-control custom-input"
+                                type="text"
+                                placeholder=""
+                                value="999,999"
+                              />
+                            </el-input>
+                          </el-modal-estimate-request-product-aside>
+                        </el-modal-estimate-request-product>
+                      </li>
+                      <li>
+                        <el-modal-estimate-request-product>
+                          <el-modal-estimate-request-product-item>
+                            <el-item-thumbnail>
+                              <img
+                                class="thumbnail-image"
+                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/product/20250227/20250227145823_a5b9221d-437d-4b84-b0ac-fbc6f58edf4f.jpg"
+                                alt=""
+                              />
+                              <el-bg></el-bg>
+                            </el-item-thumbnail>
+
+                            <el-item-txt class="typo-body-sm">
+                              <el-item-name>
+                                <el-brand>스타벅스</el-brand>
+                                <el-item-name-txt>
+                                  떠먹는 스트로베리
+                                </el-item-name-txt>
+                              </el-item-name>
+                            </el-item-txt>
+                          </el-modal-estimate-request-product-item>
+
+                          <el-modal-estimate-request-product-aside>
+                            <el-input>
+                              <input
+                                class="form-control custom-input"
+                                type="text"
+                                placeholder=""
+                                value="999,999"
+                              />
+                            </el-input>
+                          </el-modal-estimate-request-product-aside>
+                        </el-modal-estimate-request-product>
+                      </li>
+                      <li>
+                        <el-modal-estimate-request-product>
+                          <el-modal-estimate-request-product-item>
+                            <el-item-thumbnail>
+                              <img
+                                class="thumbnail-image"
+                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/product/20250227/20250227145823_a5b9221d-437d-4b84-b0ac-fbc6f58edf4f.jpg"
+                                alt=""
+                              />
+                              <el-bg></el-bg>
+                            </el-item-thumbnail>
+
+                            <el-item-txt class="typo-body-sm">
+                              <el-item-name>
+                                <el-brand>스타벅스</el-brand>
+                                <el-item-name-txt>
+                                  떠먹는 스트로베리
+                                </el-item-name-txt>
+                              </el-item-name>
+                            </el-item-txt>
+                          </el-modal-estimate-request-product-item>
+
+                          <el-modal-estimate-request-product-aside>
+                            <el-input>
+                              <input
+                                class="form-control custom-input"
+                                type="text"
+                                placeholder=""
+                                value="999,999"
+                              />
+                            </el-input>
+                          </el-modal-estimate-request-product-aside>
+                        </el-modal-estimate-request-product>
+                      </li>
+                    </ul>
+                  </el-modal-scrollable-list-content>
+                </el-modal-scrollable-list>
+              </el-modal-estimate-request-quantity>
+            </el-modal-estimate-request>
+          </el-modal-body>
+
+          <el-modal-footer class="modal-footer">
+            <button
+              type="button"
+              data-bs-dismiss="modal"
+              class="button-h50-stroke typo-body-lg"
+            >
+              취소
+            </button>
+            <button
+              type="button"
+              onclick="bsModalDefault.hide(); bsModalEstimateDownload.show()"
+              class="button-h50-fill typo-body-lg"
+            >
+              다음
+            </button>
+            <!-- 시작: [DEV] 얼럿 테스트용 - 개발 시 삭제해 주세요 -->
+            <button
+              type="button"
+              onclick="bsAlert.show()"
+              class="button-h50-fill typo-body-lg"
+            >
+              alert(개발 시 삭제)
+            </button>
+            <!-- 종료: [DEV] 얼럿 테스트용 - 개발 시 삭제해 주세요 -->
+          </el-modal-footer>
+        </el-modal-content>
+      </el-modal-dialog>
+    </el-modal>
+    <!-- 종료: modal: 공통 모달 -->
+
+    <!-- 시작: modal: 견적서 다운로드 모달 -->
+    <el-modal
+      class="modal fade el-modal-default"
+      id="el-modal-estimate-download"
+      tabindex="-1"
+      aria-hidden="true"
+      data-bs-keyboard="false"
+    >
+      <el-modal-dialog
+        class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+      >
+        <el-modal-content class="modal-content">
+          <el-modal-close-button>
+            <button type="button" data-bs-dismiss="modal" aria-label="닫기">
+              <el-icon class="h32-closed natural-0"></el-icon>
+            </button>
+          </el-modal-close-button>
+
+          <el-modal-header class="modal-header"> </el-modal-header>
+
+          <el-modal-body class="modal-body">
+            <el-modal-estimate-document>
+              <h2 class="typo-heading-md estimate-document-title">
+                오피스콘 온라인 견적서
+              </h2>
+
+              <el-estimate-document-info>
+                <table class="table align-middle">
+                  <colgroup>
+                    <col class="col-th" />
+                    <col class="col-td" />
+                    <col class="col-th" />
+                    <col class="col-td" />
+                    <col class="col-th" />
+                    <col class="col-auto" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col" colspan="4">공급자</th>
+                      <th scope="col" colspan="2">공급받는자</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">사업자번호</th>
+                      <td colspan="3">104-86-33511</td>
+                      <th scope="row">사업자번호</th>
+                      <td>141-12-12311</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">상호</th>
+                      <td>주식회사 즐거운</td>
+                      <th scope="row">대표</th>
+                      <td>임관웅</td>
+                      <th scope="row">상호</th>
+                      <td>티젠</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">주소</th>
+                      <td colspan="3">
+                        서울특별시 강남구 논현로 111길 23 (논현동, 즐거운 빌딩)
+                      </td>
+                      <th scope="row">담당자</th>
+                      <td>티젠</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">업태</th>
+                      <td>서비스</td>
+                      <th scope="row">업태</th>
+                      <td>전자상거래</td>
+                      <th scope="row">견적일</th>
+                      <td>2025.11.11</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </el-estimate-document-info>
+
+              <el-estimate-document-products>
+                <h3 class="typo-subtitle-sm">상세내역</h3>
+                <table class="table align-middle">
+                  <colgroup>
+                    <col class="col-auto" />
+                    <col class="col-fix" />
+                    <col class="col-fix" />
+                    <col class="col-fix" />
+                    <col class="col-fix" />
+                    <col class="col-fix" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col">상품명</th>
+                      <th scope="col">단가</th>
+                      <th scope="col">할인율</th>
+                      <th scope="col">구매가</th>
+                      <th scope="col">수량</th>
+                      <th scope="col">공급가액(합계)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        [일이삼사오육칠팔구십일이삼사]
+                        일이삼사오육칠팔구십일이삼사오육칠
+                      </td>
+                      <td>9,999,999원</td>
+                      <td>99.99%</td>
+                      <td>9,999,999원</td>
+                      <td>9,999,999개</td>
+                      <td>9,999,999,999원</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        [일이삼사오육칠팔구십일이삼사] 일이삼사오육칠팔구십
+                        일이삼사오육칠팔구십 일이삼사오육칠팔구십
+                      </td>
+                      <td>9,999,999원</td>
+                      <td>99.99%</td>
+                      <td>9,999,999원</td>
+                      <td>9,999,999개</td>
+                      <td>9,999,999,999원</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        [일이삼사오육칠팔구십일이삼사]
+                        일이삼사오육칠팔구십일이삼사오육칠
+                      </td>
+                      <td>9,999,999원</td>
+                      <td>99.99%</td>
+                      <td>9,999,999원</td>
+                      <td>9,999,999개</td>
+                      <td>9,999,999,999원</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        [일이삼사오육칠팔구십일이삼사]
+                        일이삼사오육칠팔구십일이삼사오육칠
+                      </td>
+                      <td>9,999,999원</td>
+                      <td>99.99%</td>
+                      <td>9,999,999원</td>
+                      <td>9,999,999개</td>
+                      <td>9,999,999,999원</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        [일이삼사오육칠팔구십일이삼사]
+                        일이삼사오육칠팔구십일이삼사오육칠
+                      </td>
+                      <td>9,999,999원</td>
+                      <td>99.99%</td>
+                      <td>9,999,999원</td>
+                      <td>9,999,999개</td>
+                      <td>9,999,999,999원</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        [일이삼사오육칠팔구십일이삼사]
+                        일이삼사오육칠팔구십일이삼사오육칠
+                      </td>
+                      <td>9,999,999원</td>
+                      <td>99.99%</td>
+                      <td>9,999,999원</td>
+                      <td>9,999,999개</td>
+                      <td>9,999,999,999원</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        [일이삼사오육칠팔구십일이삼사]
+                        일이삼사오육칠팔구십일이삼사오육칠
+                      </td>
+                      <td>9,999,999원</td>
+                      <td>99.99%</td>
+                      <td>9,999,999원</td>
+                      <td>9,999,999개</td>
+                      <td>9,999,999,999원</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        [일이삼사오육칠팔구십일이삼사]
+                        일이삼사오육칠팔구십일이삼사오육칠
+                      </td>
+                      <td>9,999,999원</td>
+                      <td>99.99%</td>
+                      <td>9,999,999원</td>
+                      <td>9,999,999개</td>
+                      <td>9,999,999,999원</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        [일이삼사오육칠팔구십일이삼사]
+                        일이삼사오육칠팔구십일이삼사오육칠
+                      </td>
+                      <td>9,999,999원</td>
+                      <td>99.99%</td>
+                      <td>9,999,999원</td>
+                      <td>9,999,999개</td>
+                      <td>9,999,999,999원</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        [일이삼사오육칠팔구십일이삼사]
+                        일이삼사오육칠팔구십일이삼사오육칠
+                      </td>
+                      <td>9,999,999원</td>
+                      <td>99.99%</td>
+                      <td>9,999,999원</td>
+                      <td>9,999,999개</td>
+                      <td>9,999,999,999원</td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <th scope="row" colspan="4">TOTAL</th>
+                      <td>9,999,999개</td>
+                      <td>9,999,999,999원</td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </el-estimate-document-products>
+
+              <el-modal-estimate-caution>
+                <el-marker-list>
+                  <ul>
+                    <li>
+                      본 견적서의 견적 공급가액은 다운로드일 기준입니다.
+                    </li>
+                    <li>
+                      해당 상품은 자사 및 브랜드사에 의해 상품가 변경 및 공급이
+                      중단될 수 있습니다.
+                    </li>
+                    <li> 쿠폰의 유효기간은 쿠폰 발송일로부터 산정됩니다. </li>
+                  </ul>
+                </el-marker-list>
+                <el-marker-list>
+                  <ul>
+                    <li>
+                      본 상품의 이용안내는 상품상세 이용안내 참고 바랍니다.
+                    </li>
+                    <li>
+                      오피스콘은 유가증권으로 부가세 면세 상품이며, 별도
+                      세금계산서 발행이 불가합니다.
+                    </li>
+                    <li>
+                      회원등급 또는 할인상품, 상품권 등 특정 상품에 따라
+                      견적가는 변동될 수 있습니다.
+                    </li>
+                  </ul>
+                </el-marker-list>
+              </el-modal-estimate-caution>
+
+              <el-modal-estimate-signature class="typo-subtitle-lg">
+                <el-modal-estimate-date>
+                  2025년 11월 11일
+                </el-modal-estimate-date>
+                <el-modal-estimate-name>
+                  주식회사 즐거운 대표이사 임관웅
+                  <img src="./images/ceo-stamp.png" alt="" />
+                </el-modal-estimate-name>
+              </el-modal-estimate-signature>
+            </el-modal-estimate-document>
+
+            <el-modal-estimate-cta>
+              <button type="button" class="button-h50-fill typo-body-lg">
+                다운로드
+              </button>
+            </el-modal-estimate-cta>
+          </el-modal-body>
+        </el-modal-content>
+      </el-modal-dialog>
+    </el-modal>
+    <!-- 종료: modal: 견적서 다운로드 모달 -->
+
+    <!-- 시작: alert -->
+    <el-alert
+      class="modal fade"
+      id="el-alert"
+      tabindex="-1"
+      aria-hidden="true"
+      data-bs-keyboard="false"
+    >
+      <el-alert-dialog class="modal-dialog modal-dialog-centered">
+        <el-alert-content class="modal-content">
+          <el-alert-body class="typo-subtitle-sm">
+            얼럿 샘플입니다.
+            <br />
+            개발 시 내용이 변경됩니다.
+          </el-alert-body>
+          <el-alert-footer>
+            <button
+              type="button"
+              data-bs-dismiss="modal"
+              class="button-h50-fill typo-body-lg"
+            >
+              확인
+            </button>
+          </el-alert-footer>
+        </el-alert-content>
+      </el-alert-dialog>
+    </el-alert>
+    <!-- 종료: alert -->
+
+    <!-- 공통js: common.js -->
+    <script src="./js/pub-common.js" crossorigin="anonymous"></script>
+
+    <!-- [DEV] 웹 컴포넌트js: 개발 시 삭제해 주세요 -->
+    <script src="./js/web-components.js" crossorigin="anonymous"></script>
+
+    <script>
+      // 시작: 체크된 상품 갯수 카운트
+      const handleCheckedProductCount = () => {
+        const checkedProductCount = document.getElementById(
+          'checkedProductCount'
+        );
+        const checkedProducts = document.querySelectorAll(
+          'el-cart-list tbody el-checkbox .form-check-input:checked'
+        );
+
+        if (checkedProductCount) {
+          checkedProductCount.textContent = checkedProducts.length;
+        }
+      };
+      handleCheckedProductCount();
+      // 종료: 체크된 상품 갯수 카운트
+
+      // 시작: 상품 선택 initCheckProducts
+      const initCheckProducts = () => {
+        const buttonUnselectAllProducts = document.getElementById(
+          'buttonUnselectAllProducts'
+        );
+        const checkboxAllProducts = document.getElementById(
+          'checkboxAllProducts'
+        );
+        const checkboxes = document.querySelectorAll(
+          'el-cart-list tbody el-checkbox .form-check-input:not([disabled])'
+        );
+
+        // 이미 초기화된 경우 건너뛰기
+        if (checkboxAllProducts?.dataset?.initialized === 'true') {
+          return;
+        }
+
+        const handleUncheckAllProducts = (e) => {
+          checkboxAllProducts.checked = false;
+          [...checkboxes].map((checkbox) => {
+            checkbox.checked = false;
+            return () => {};
+          });
+
+          handleCheckedProductCount();
+        };
+
+        const handleCheckboxAllProducts = (e) => {
+          if (e?.target?.checked) {
+            [...checkboxes].map((checkbox) => {
+              checkbox.checked = true;
+              return () => {};
+            });
+          } else {
+            [...checkboxes].map((checkbox) => {
+              checkbox.checked = false;
+              return () => {};
+            });
+          }
+
+          handleCheckedProductCount();
+        };
+
+        if (buttonUnselectAllProducts) {
+          buttonUnselectAllProducts.addEventListener(
+            'click',
+            handleUncheckAllProducts
+          );
+        }
+
+        if (checkboxAllProducts) {
+          checkboxAllProducts.addEventListener(
+            'change',
+            handleCheckboxAllProducts
+          );
+        }
+
+        const handleCheckbox = (e) => {
+          const unCheckedItem = [...checkboxes].find(
+            (checkbox) => checkbox.checked === false
+          );
+          if (unCheckedItem) {
+            checkboxAllProducts.checked = false;
+          } else {
+            checkboxAllProducts.checked = true;
+          }
+
+          handleCheckedProductCount();
+        };
+
+        [...checkboxes].map((checkbox) => {
+          checkbox.addEventListener('change', handleCheckbox);
+        });
+
+        // 초기화 완료 전환
+        checkboxAllProducts.dataset.initialized = 'true';
+      };
+      // 전역 함수로 등록
+      if (window !== undefined) {
+        window.initCheckProducts = initCheckProducts;
+      }
+      initCheckProducts();
+      // 종료: 상품 선택 initCheckProducts
+
+      // 시작: 견적서 handleEstimate
+      const handleEstimate = () => {
+        const checkedProducts = document.querySelectorAll(
+          'el-cart-list tbody el-checkbox .form-check-input:checked'
+        );
+
+        if (checkedProducts.length) {
+          if (bsModalDefault) {
+            bsModalDefault.show();
+          }
+        } else {
+          if (bsAlert) {
+            bsAlert.show();
+          }
+        }
+      };
+      // 종료: 견적서 handleEstimate
+    </script>
+  </body>
+</html>

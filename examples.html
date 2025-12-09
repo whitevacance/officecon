@@ -2351,6 +2351,9 @@
                 <el-icon class="etc-member-personal"></el-icon>
                 <el-icon class="etc-member-personal natural-0"></el-icon>
                 <el-icon class="etc-circle-check"></el-icon>
+                <el-icon class="etc-doc"></el-icon>
+                <el-icon class="etc-excel"></el-icon>
+                <el-icon class="etc-circle-cart"></el-icon>
               </el-examples-stack>
             </el-examples-article>
 
@@ -2370,6 +2373,7 @@
                   </el-badge-transition>
                 </el-badge-bubble-blue>
                 <el-badge-period class="typo-label-sm">30일</el-badge-period>
+                <el-badge-discount class="typo-label-sm">3%</el-badge-discount>
                 <el-badge-special>
                   <img src="./images/badge-event.svg" alt="이벤트특가" />
                 </el-badge-special>
@@ -2659,6 +2663,14 @@
                   class="button-h50-stroke typo-body-lg"
                 >
                   공통 팝업 호출
+                </button>
+                <button
+                  type="button"
+                  data-bs-toggle="modal"
+                  data-bs-target="#el-modal-estimate-download"
+                  class="button-h50-stroke typo-body-lg"
+                >
+                  견적서 다운로드 팝업 호출
                 </button>
                 <button
                   type="button"
@@ -4468,13 +4480,15 @@
 
     <!-- 시작: modal: 공통 모달 -->
     <el-modal
-      class="modal fade"
+      class="modal fade el-modal-default"
       id="el-modal-default"
       tabindex="-1"
       aria-hidden="true"
       data-bs-keyboard="false"
     >
-      <el-modal-dialog class="modal-dialog modal-dialog-centered">
+      <el-modal-dialog
+        class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+      >
         <el-modal-content class="modal-content">
           <el-modal-close-button>
             <button type="button" data-bs-dismiss="modal" aria-label="닫기">
@@ -4482,23 +4496,237 @@
             </button>
           </el-modal-close-button>
 
-          <el-modal-header>
+          <el-modal-header class="modal-header">
             <!-- 타이틀 정렬: 기본 left. 중앙정렬 필요 시 class명 'center' 추가 -->
             <h3 class="typo-subtitle-lg center">공통 모달 타이틀</h3>
           </el-modal-header>
 
-          <el-modal-body>
+          <el-modal-body class="modal-body">
             <div style="width: 800px">
               모달 컨텐츠 영역 - 이 영역의 width에 따라 모달의 width가
               결정됩니다(좌우 padding은 32px).
+              <div>asdf</div>
+              <div>asdf</div>
+              <div>asdf</div>
+              <div>asdf</div>
+              <div>asdf</div>
+              <div>asdf</div>
+              <div>asdf</div>
+              <div>asdf</div>
             </div>
           </el-modal-body>
 
-          <el-modal-footer>모달 footer 영역</el-modal-footer>
+          <el-modal-footer class="modal-footer">
+            <button
+              type="button"
+              data-bs-dismiss="modal"
+              class="button-h50-stroke typo-body-lg"
+            >
+              취소
+            </button>
+            <button type="button" class="button-h50-fill typo-body-lg">
+              확인
+            </button>
+          </el-modal-footer>
         </el-modal-content>
       </el-modal-dialog>
     </el-modal>
     <!-- 종료: modal: 공통 모달 -->
+
+    <!-- 시작: modal: 견적서 다운로드 모달 -->
+    <el-modal
+      class="modal fade el-modal-default"
+      id="el-modal-estimate-download"
+      tabindex="-1"
+      aria-hidden="true"
+      data-bs-keyboard="false"
+    >
+      <el-modal-dialog
+        class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+      >
+        <el-modal-content class="modal-content">
+          <el-modal-close-button>
+            <button type="button" data-bs-dismiss="modal" aria-label="닫기">
+              <el-icon class="h32-closed natural-0"></el-icon>
+            </button>
+          </el-modal-close-button>
+
+          <el-modal-header class="modal-header"> </el-modal-header>
+
+          <el-modal-body class="modal-body">
+            <el-modal-estimate-document>
+              <h2 class="typo-heading-md estimate-document-title">
+                오피스콘 온라인 견적서
+              </h2>
+
+              <el-estimate-document-info>
+                <table class="table align-middle">
+                  <colgroup>
+                    <col class="col-th" />
+                    <col class="col-td" />
+                    <col class="col-th" />
+                    <col class="col-td" />
+                    <col class="col-th" />
+                    <col class="col-auto" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col" colspan="4">공급자</th>
+                      <th scope="col" colspan="2">공급받는자</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">사업자번호</th>
+                      <td colspan="3">104-86-33511</td>
+                      <th scope="row">사업자번호</th>
+                      <td>141-12-12311</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">상호</th>
+                      <td>주식회사 즐거운</td>
+                      <th scope="row">대표</th>
+                      <td>임관웅</td>
+                      <th scope="row">상호</th>
+                      <td>티젠</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">주소</th>
+                      <td colspan="3">
+                        서울특별시 강남구 논현로 111길 23 (논현동, 즐거운 빌딩)
+                      </td>
+                      <th scope="row">담당자</th>
+                      <td>티젠</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">업태</th>
+                      <td>서비스</td>
+                      <th scope="row">업태</th>
+                      <td>전자상거래</td>
+                      <th scope="row">견적일</th>
+                      <td>2025.11.11</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </el-estimate-document-info>
+
+              <el-estimate-document-products>
+                <h3 class="typo-subtitle-sm">상세내역</h3>
+                <table class="table align-middle">
+                  <colgroup>
+                    <col class="col-auto" />
+                    <col class="col-fix" />
+                    <col class="col-fix" />
+                    <col class="col-fix" />
+                    <col class="col-fix" />
+                    <col class="col-fix" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col">상품명</th>
+                      <th scope="col">단가</th>
+                      <th scope="col">할인율</th>
+                      <th scope="col">구매가</th>
+                      <th scope="col">수량</th>
+                      <th scope="col">공급가액(합계)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        [일이삼사오육칠팔구십일이삼사]
+                        일이삼사오육칠팔구십일이삼사오육칠
+                      </td>
+                      <td>9,999,999원</td>
+                      <td>99.99%</td>
+                      <td>9,999,999원</td>
+                      <td>9,999,999개</td>
+                      <td>9,999,999,999원</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        [일이삼사오육칠팔구십일이삼사] 일이삼사오육칠팔구십
+                        일이삼사오육칠팔구십 일이삼사오육칠팔구십
+                      </td>
+                      <td>9,999,999원</td>
+                      <td>99.99%</td>
+                      <td>9,999,999원</td>
+                      <td>9,999,999개</td>
+                      <td>9,999,999,999원</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        [일이삼사오육칠팔구십일이삼사]
+                        일이삼사오육칠팔구십일이삼사오육칠
+                      </td>
+                      <td>9,999,999원</td>
+                      <td>99.99%</td>
+                      <td>9,999,999원</td>
+                      <td>9,999,999개</td>
+                      <td>9,999,999,999원</td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <th scope="row" colspan="4">TOTAL</th>
+                      <td>9,999,999개</td>
+                      <td>9,999,999,999원</td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </el-estimate-document-products>
+
+              <el-modal-estimate-caution>
+                <el-marker-list>
+                  <ul>
+                    <li>
+                      본 견적서의 견적 공급가액은 다운로드일 기준입니다.
+                    </li>
+                    <li>
+                      해당 상품은 자사 및 브랜드사에 의해 상품가 변경 및 공급이
+                      중단될 수 있습니다.
+                    </li>
+                    <li> 쿠폰의 유효기간은 쿠폰 발송일로부터 산정됩니다. </li>
+                  </ul>
+                </el-marker-list>
+                <el-marker-list>
+                  <ul>
+                    <li>
+                      본 상품의 이용안내는 상품상세 이용안내 참고 바랍니다.
+                    </li>
+                    <li>
+                      오피스콘은 유가증권으로 부가세 면세 상품이며, 별도
+                      세금계산서 발행이 불가합니다.
+                    </li>
+                    <li>
+                      회원등급 또는 할인상품, 상품권 등 특정 상품에 따라
+                      견적가는 변동될 수 있습니다.
+                    </li>
+                  </ul>
+                </el-marker-list>
+              </el-modal-estimate-caution>
+
+              <el-modal-estimate-signature class="typo-subtitle-lg">
+                <el-modal-estimate-date>
+                  2025년 11월 11일
+                </el-modal-estimate-date>
+                <el-modal-estimate-name>
+                  주식회사 즐거운 대표이사 임관웅
+                  <img src="./images/ceo-stamp.png" alt="" />
+                </el-modal-estimate-name>
+              </el-modal-estimate-signature>
+            </el-modal-estimate-document>
+
+            <el-modal-estimate-cta>
+              <button type="button" class="button-h50-fill typo-body-lg">
+                다운로드
+              </button>
+            </el-modal-estimate-cta>
+          </el-modal-body>
+        </el-modal-content>
+      </el-modal-dialog>
+    </el-modal>
+    <!-- 종료: modal: 견적서 다운로드 모달 -->
 
     <!-- 시작: modal: loader -->
     <el-modal-loader

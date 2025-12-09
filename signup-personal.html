@@ -815,7 +815,7 @@
 
     <!-- 시작: modal: 공통 모달 -->
     <el-modal
-      class="modal fade"
+      class="modal fade el-modal-default"
       id="el-modal-default"
       tabindex="-1"
       aria-hidden="true"
@@ -927,13 +927,9 @@
             });
           }
         };
+
         if (checkboxAgreeAll) {
           checkboxAgreeAll.addEventListener('change', handleCheckboxAgreeAll);
-        } else {
-          checkboxAgreeAll.removeEventListener(
-            'change',
-            handleCheckboxAgreeAll
-          );
         }
 
         const handleCheckbox = (e) => {
@@ -947,11 +943,7 @@
           }
         };
         [...checkboxes].map((checkbox) => {
-          if (checkbox) {
-            checkbox.addEventListener('change', handleCheckbox);
-          } else {
-            checkbox.removeEventListener('change', handleCheckbox);
-          }
+          checkbox.addEventListener('change', handleCheckbox);
         });
 
         // 초기화 완료 전환

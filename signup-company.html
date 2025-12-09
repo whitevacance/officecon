@@ -975,13 +975,15 @@
 
     <!-- 시작: modal: 공통 모달 -->
     <el-modal
-      class="modal fade"
+      class="modal fade el-modal-default"
       id="el-modal-default"
       tabindex="-1"
       aria-hidden="true"
       data-bs-keyboard="false"
     >
-      <el-modal-dialog class="modal-dialog modal-dialog-centered">
+      <el-modal-dialog
+        class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+      >
         <el-modal-content class="modal-content">
           <el-modal-close-button>
             <button type="button" data-bs-dismiss="modal" aria-label="닫기">
@@ -989,11 +991,11 @@
             </button>
           </el-modal-close-button>
 
-          <el-modal-header>
+          <el-modal-header class="modal-header">
             <h3 class="typo-subtitle-lg">&nbsp;</h3>
           </el-modal-header>
 
-          <el-modal-body>
+          <el-modal-body class="modal-body">
             <el-modal-pre-wrapper>
               <pre class="typo-body-sm"></pre>
             </el-modal-pre-wrapper>
@@ -1087,13 +1089,9 @@
             });
           }
         };
+
         if (checkboxAgreeAll) {
           checkboxAgreeAll.addEventListener('change', handleCheckboxAgreeAll);
-        } else {
-          checkboxAgreeAll.removeEventListener(
-            'change',
-            handleCheckboxAgreeAll
-          );
         }
 
         const handleCheckbox = (e) => {
@@ -1107,11 +1105,7 @@
           }
         };
         [...checkboxes].map((checkbox) => {
-          if (checkbox) {
-            checkbox.addEventListener('change', handleCheckbox);
-          } else {
-            checkbox.removeEventListener('change', handleCheckbox);
-          }
+          checkbox.addEventListener('change', handleCheckbox);
         });
 
         // 초기화 완료 전환
