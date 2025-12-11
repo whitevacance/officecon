@@ -123,12 +123,39 @@
                       for="radioSendType-2"
                     >
                       문자발송
+                      <el-send-type-tooltip class="typo-label-lg">
+                        이미지 추가 기능을 이용 가능 (일부 상품 제외)
+                      </el-send-type-tooltip>
+                    </label>
+                  </el-radio>
+                  <el-radio class="form-check">
+                    <input
+                      type="radio"
+                      class="form-check-input custom-radio"
+                      name="radioSendType"
+                      id="radioSendType-3"
+                      value=""
+                    />
+                    <label
+                      class="form-check-label typo-body-sm weight-em"
+                      for="radioSendType-3"
+                    >
+                      이메일발송
+                      <el-send-type-tooltip class="typo-label-lg">
+                        휴대폰 번호 없이 이메일 주소만으로도 쿠폰 발송 가능
+                      </el-send-type-tooltip>
                     </label>
                   </el-radio>
                 </dd>
               </dl>
               <dl>
-                <dt>발송 시간</dt>
+                <dt>
+                  발송 시간
+                  <el-send-time-tooltip class="typo-label-lg">
+                    상품권 발송은 관리자 승인 후 발송 (1시간 이내 / 점심시간
+                    제외)
+                  </el-send-time-tooltip>
+                </dt>
                 <dd>
                   <el-radio class="form-check">
                     <input
@@ -160,6 +187,31 @@
                     >
                       예약 발송
                     </label>
+                    <el-datepicker-wrapper>
+                      <el-datepicker>
+                        <el-input
+                          class="tui-datepicker-input tui-datetime-input tui-has-focus"
+                        >
+                          <input
+                            class="form-control custom-input datepicker-input"
+                            type="text"
+                            placeholder="날짜/시간 선택"
+                            value=""
+                            aria-label="Date-Time"
+                          />
+                          <el-input-addon>
+                            <button
+                              type="button"
+                              class="button-calendar"
+                              aria-label="calendar"
+                            >
+                              <el-icon class="h24-calendar natural-0"></el-icon>
+                            </button>
+                          </el-input-addon>
+                        </el-input>
+                        <el-datepicker-layer></el-datepicker-layer>
+                      </el-datepicker>
+                    </el-datepicker-wrapper>
                   </el-radio>
                 </dd>
               </dl>
@@ -167,10 +219,112 @@
 
             <el-split-container>
               <el-split-content>
-                <div>sdfasdf</div>
+                <el-order-content>
+                  <el-order-box>
+                    <el-order-box-header>
+                      <el-order-box-header-title class="typo-subtitle-lg">
+                        박스 제목
+                      </el-order-box-header-title>
+                    </el-order-box-header>
+                    <el-order-box-content> 박스 내용 </el-order-box-content>
+                  </el-order-box>
+                </el-order-content>
               </el-split-content>
               <el-split-aside>
-                <aside>asfdasdf</aside>
+                <el-order-aside>
+                  <el-order-box>
+                    <el-order-box-header>
+                      <el-order-box-header-title class="typo-subtitle-lg">
+                        결제정보
+                      </el-order-box-header-title>
+                    </el-order-box-header>
+                    <el-order-box-content>
+                      <el-order-payment-info>
+                        <el-order-payment-info-items>
+                          <dl class="typo-body-sm">
+                            <dt>주문 금액</dt>
+                            <dd><strong>0</strong>원</dd>
+                          </dl>
+                          <dl class="typo-body-sm">
+                            <dt>할인</dt>
+                            <dd class="color-red"> <strong>0</strong>원 </dd>
+                          </dl>
+                          <dl class="typo-body-sm">
+                            <dt>캐쉬</dt>
+                            <dd class="color-red"> <strong>0</strong>원 </dd>
+                          </dl>
+                        </el-order-payment-info-items>
+                        <el-order-divider></el-order-divider>
+                        <el-order-payment-info-final>
+                          <dl class="typo-body-lg">
+                            <dt>최종 결제 금액</dt>
+                            <dd>
+                              <strong class="typo-subtitle-md">0</strong>원
+                            </dd>
+                          </dl>
+                        </el-order-payment-info-final>
+                      </el-order-payment-info>
+                      <button
+                        disabled
+                        type="button"
+                        class="button-h60-square-fill typo-body-lg"
+                      >
+                        결제하기
+                      </button>
+                    </el-order-box-content>
+                  </el-order-box>
+                  <el-order-box>
+                    <el-order-box-header>
+                      <el-order-box-header-title class="typo-subtitle-lg">
+                        결제정보
+                      </el-order-box-header-title>
+                    </el-order-box-header>
+                    <el-order-box-content>
+                      <el-order-payment-info>
+                        <el-order-payment-info-items>
+                          <dl class="typo-body-sm">
+                            <dt>주문 금액</dt>
+                            <dd><strong>2,244,700</strong>원</dd>
+                          </dl>
+                          <dl class="typo-body-sm">
+                            <dt>할인</dt>
+                            <dd class="color-red">
+                              <strong>-242,242</strong>원
+                            </dd>
+                          </dl>
+                          <dl class="typo-body-sm">
+                            <dt>캐쉬</dt>
+                            <dd class="color-red">
+                              <strong>-10,000</strong>원
+                            </dd>
+                          </dl>
+                          <dl class="typo-body-sm">
+                            <dt>포인트최대글자수열자</dt>
+                            <dd class="color-red">
+                              <strong>-1,000,000</strong>리워드
+                            </dd>
+                          </dl>
+                        </el-order-payment-info-items>
+                        <el-order-divider></el-order-divider>
+                        <el-order-payment-info-final>
+                          <dl class="typo-body-lg">
+                            <dt>최종 결제 금액</dt>
+                            <dd>
+                              <strong class="typo-subtitle-md">2,002,458</strong
+                              >원
+                            </dd>
+                          </dl>
+                        </el-order-payment-info-final>
+                      </el-order-payment-info>
+                      <button
+                        type="button"
+                        class="button-h60-square-fill typo-body-lg"
+                      >
+                        결제하기
+                      </button>
+                    </el-order-box-content>
+                  </el-order-box>
+                </el-order-aside>
               </el-split-aside>
             </el-split-container>
           </el-content>
