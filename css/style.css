@@ -7061,6 +7061,7 @@ el-order-header {
         & > el-radio:last-of-type:has(input.custom-radio:checked) {
           el-datepicker-wrapper {
             display: block;
+            z-index: 1000;
           }
         }
       }
