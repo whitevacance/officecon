@@ -1522,6 +1522,11 @@ el-radio {
 
   label {
     color: var(--color-natural-20);
+
+    &.weight-em {
+      font-weight: 600 !important;
+      color: var(--color-natural-0);
+    }
   }
 }
 /* 종료: 공통 > radio */
@@ -1812,7 +1817,6 @@ el-modal.modal.el-modal-default {
 
             &:first-of-type {
               text-align: left;
-              padding-left: 49px;
             }
           }
 
@@ -7020,6 +7024,81 @@ el-modal-estimate-request {
   }
 }
 /* 종료: 장바구니 */
+
+/* 시작: 주문결제 */
+el-order-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 20px;
+  border: 1px solid var(--color-natural-80);
+  border-radius: 10px;
+  background-color: var(--color-natural-95);
+  padding: 28px 0;
+
+  & > dl {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0 32px;
+
+    & > dt {
+      flex-grow: 0;
+      flex-shrink: 0;
+      width: 118px;
+      padding-right: 12px;
+    }
+
+    & > dd {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+
+      el-radio {
+        label {
+          position: relative;
+
+          el-send-type-tooltip {
+            flex-grow: 0;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            white-space: nowrap;
+            font-weight: 600 !important;
+            background-color: var(--color-natural-100);
+            position: absolute;
+            left: 50%;
+            top: -15px;
+            transform: translate(-50%, -100%);
+            padding: 10px 16px;
+            border: 1px solid var(--color-natural-0);
+            border-radius: 999px;
+            position: relative;
+
+            &:before {
+              content: '';
+              display: block;
+              width: 10px;
+              height: 10px;
+              position: absolute;
+              bottom: -6px;
+              left: 50%;
+              background-color: var(--color-natural-100);
+              /* transform: translateX(-50%) rotate(45deg) skew(5deg, 5deg); */
+              transform: translateX(-50%) rotate(45deg);
+              border-bottom: 1px solid var(--color-natural-0);
+              border-right: 1px solid var(--color-natural-0);
+              border-radius: 2px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+/* 종료: 주문결제 */
 
 /* 시작: 예시 (example) */
 el-examples-article {
