@@ -223,13 +223,89 @@
                   <el-order-box>
                     <el-order-box-header>
                       <el-order-box-header-title class="typo-subtitle-lg">
-                        박스 제목
+                        주문상품 1
+                      </el-order-box-header-title>
+
+                      <!-- [DEV] 개발 시 data-bs-target의 값에
+                           '#collapse-box-content-{인덱스}' 를 사용해 주세요.
+                       -->
+                      <button
+                        type="button"
+                        aria-label="toogle box"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapse-box-content-0"
+                      >
+                        <el-icon class="h32-minus natural-0"></el-icon>
+                        <el-icon class="h32-plus natural-0"></el-icon>
+                      </button>
+                    </el-order-box-header>
+
+                    <!-- [DEV] 개발 시 id 값에
+                           'collapse-box-content-{인덱스}'를 사용해 주세요.
+                       -->
+                    <el-order-box-content-collapse
+                      class="collapse show"
+                      id="collapse-box-content-0"
+                    >
+                      <el-order-box-content>
+                        <el-order-product>
+                          <div>sdfg</div>
+
+                          <el-order-divider></el-order-divider>
+
+                          <div>sdfg</div>
+                        </el-order-product>
+                      </el-order-box-content>
+                    </el-order-box-content-collapse>
+                  </el-order-box>
+
+                  <el-order-box>
+                    <el-order-box-header>
+                      <el-order-box-header-title class="typo-subtitle-lg">
+                        주문상품 2
+                      </el-order-box-header-title>
+
+                      <!-- [DEV] 개발 시 data-bs-target의 값에
+                           '#collapse-box-content-{인덱스}' 를 사용해 주세요.
+                       -->
+                      <button
+                        type="button"
+                        aria-label="toogle box"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapse-box-content-1"
+                      >
+                        <el-icon class="h32-minus natural-0"></el-icon>
+                        <el-icon class="h32-plus natural-0"></el-icon>
+                      </button>
+                    </el-order-box-header>
+
+                    <!-- [DEV] 개발 시 id 값에
+                           'collapse-box-content-{인덱스}'를 사용해 주세요.
+                       -->
+                    <el-order-box-content-collapse
+                      class="collapse show"
+                      id="collapse-box-content-1"
+                    >
+                      <el-order-box-content> 박스 내용 </el-order-box-content>
+                    </el-order-box-content-collapse>
+                  </el-order-box>
+
+                  <el-order-box>
+                    <el-order-box-header>
+                      <el-order-box-header-title class="typo-subtitle-lg">
+                        포인트 사용
                       </el-order-box-header-title>
                     </el-order-box-header>
-                    <el-order-box-content> 박스 내용 </el-order-box-content>
+
+                    <el-order-box-content-collapse>
+                      <el-order-box-content>
+                        포인트 사용 내용
+                      </el-order-box-content>
+                    </el-order-box-content-collapse>
                   </el-order-box>
                 </el-order-content>
               </el-split-content>
+
               <el-split-aside>
                 <el-order-aside>
                   <el-order-box>
