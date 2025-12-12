@@ -249,11 +249,204 @@
                     >
                       <el-order-box-content>
                         <el-order-product>
-                          <div>sdfg</div>
+                          <el-order-product-item>
+                            <table class="table align-middle table-borderless">
+                              <colgroup>
+                                <col class="col-auto" />
+                                <col class="col-fix" />
+                                <col class="col-fix" />
+                                <col class="col-fix" />
+                                <col class="col-fix" />
+                              </colgroup>
+                              <thead>
+                                <tr>
+                                  <th scope="col">상품정보</th>
+                                  <th scope="col">유효기간</th>
+                                  <th scope="col">지급 리워드</th>
+                                  <th scope="col">정상가</th>
+                                  <th scope="col">판매가</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>
+                                    <el-order-product-item-detail>
+                                      <a href="#">
+                                        <el-item-thumbnail>
+                                          <img
+                                            class="thumbnail-image"
+                                            src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/product/20250227/20250227145823_a5b9221d-437d-4b84-b0ac-fbc6f58edf4f.jpg"
+                                            alt=""
+                                          />
+                                          <el-bg></el-bg>
+                                        </el-item-thumbnail>
+
+                                        <el-item-txt class="typo-body-sm">
+                                          <el-item-name>
+                                            <el-brand>
+                                              일이삼사오육칠팔구십일이삼사
+                                            </el-brand>
+                                            <el-item-name-txt>
+                                              일이삼사오육칠팔구십일이삼사오육칠
+                                            </el-item-name-txt>
+                                          </el-item-name>
+                                        </el-item-txt>
+                                      </a>
+                                    </el-order-product-item-detail>
+                                  </td>
+                                  <td>2025.12.31</td>
+                                  <td>
+                                    <el-reward>
+                                      <img
+                                        src="./images/badge-h14-reward.svg"
+                                        alt="리워드"
+                                      />
+                                      1,004,700
+                                    </el-reward>
+                                  </td>
+                                  <td>1,004,700</td>
+                                  <td>
+                                    <el-sale-price> 1,004,700 </el-sale-price>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </el-order-product-item>
+                          <el-order-product-item>
+                            <table class="table align-middle table-borderless">
+                              <colgroup>
+                                <col class="col-auto" />
+                                <col class="col-fix" />
+                                <col class="col-fix" />
+                                <col class="col-fix" />
+                                <col class="col-fix" />
+                              </colgroup>
+                              <thead>
+                                <tr>
+                                  <th scope="col">상품정보</th>
+                                  <th scope="col">유효기간</th>
+                                  <th scope="col">지급 리워드</th>
+                                  <th scope="col">정상가</th>
+                                  <th scope="col">판매가</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>
+                                    <el-order-product-item-detail>
+                                      <a href="#">
+                                        <el-item-thumbnail>
+                                          <img
+                                            class="thumbnail-image"
+                                            src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/product/20250227/20250227145823_a5b9221d-437d-4b84-b0ac-fbc6f58edf4f.jpg"
+                                            alt=""
+                                          />
+                                          <el-bg></el-bg>
+                                        </el-item-thumbnail>
+
+                                        <el-item-txt class="typo-body-sm">
+                                          <el-item-name>
+                                            <el-brand>
+                                              일이삼사오육칠팔구십일이삼사
+                                            </el-brand>
+                                            <el-item-name-txt>
+                                              일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일
+                                            </el-item-name-txt>
+                                          </el-item-name>
+                                        </el-item-txt>
+                                      </a>
+                                    </el-order-product-item-detail>
+                                  </td>
+                                  <td>2025.12.31</td>
+                                  <td>
+                                    <el-reward>
+                                      <img
+                                        src="./images/badge-h14-reward.svg"
+                                        alt="리워드"
+                                      />
+                                      1,004,700
+                                    </el-reward>
+                                  </td>
+                                  <td
+                                    ><el-line-through
+                                      >1,004,700</el-line-through
+                                    ></td
+                                  >
+                                  <td>
+                                    <el-sale-price>
+                                      <el-badge-discount class="typo-label-sm">
+                                        3%
+                                      </el-badge-discount>
+                                      1,004,700
+                                    </el-sale-price>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </el-order-product-item>
 
                           <el-order-divider></el-order-divider>
 
-                          <div>sdfg</div>
+                          <el-order-product-article>
+                            <el-article-title>
+                              <h3 class="typo-subtitle-lg">발신 정보</h3>
+                            </el-article-title>
+                            <el-order-input-row>
+                              <el-order-input-label>
+                                발신번호
+                              </el-order-input-label>
+                              <el-order-input>
+                                <el-input>
+                                  <input
+                                    class="form-control custom-input"
+                                    type="text"
+                                    placeholder="발신자 번호를 입력해 주세요. (일반번호도 사용가능)"
+                                  />
+                                </el-input>
+                              </el-order-input>
+                            </el-order-input-row>
+                            <el-order-input-row>
+                              <el-order-input-label>
+                                발신번호
+                              </el-order-input-label>
+                              <el-order-input>
+                                <el-input class="is-invalid">
+                                  <input
+                                    class="form-control custom-input"
+                                    type="text"
+                                    placeholder="발신자 번호를 입력해 주세요. (일반번호도 사용가능)"
+                                  />
+                                  <el-invalide-feedback class="typo-label-lg">
+                                    올바른 발신 번호를 입력해 주세요.
+                                  </el-invalide-feedback>
+                                </el-input>
+                              </el-order-input>
+                            </el-order-input-row>
+                          </el-order-product-article>
+
+                          <el-order-divider></el-order-divider>
+
+                          <el-order-product-article>
+                            <el-article-title>
+                              <h3 class="typo-subtitle-lg">
+                                발송메시지 만들기
+                              </h3>
+                              <el-article-title-addon>
+                                <button
+                                  type="button"
+                                  class="text-black button-h43-square typo-body-sm"
+                                >
+                                  발송문구 불러오기
+                                </button>
+                                <button
+                                  type="button"
+                                  class="text-black button-h43-square typo-body-sm"
+                                >
+                                  최근 발송문구 불러오기
+                                </button>
+                              </el-article-title-addon>
+                            </el-article-title>
+                          </el-order-product-article>
                         </el-order-product>
                       </el-order-box-content>
                     </el-order-box-content-collapse>
