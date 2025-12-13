@@ -867,6 +867,208 @@
                                 </button>
                               </el-article-title-addon>
                             </el-article-title>
+
+                            <el-order-message-create>
+                              <el-order-input-row>
+                                <el-order-input-label>
+                                  프로모션명
+                                </el-order-input-label>
+                                <el-order-input>
+                                  <el-input>
+                                    <input
+                                      class="form-control custom-input"
+                                      type="text"
+                                      placeholder="관리용 제목을 입력해 주세요. (수신자에게 발송되지 않습니다.)"
+                                    />
+                                  </el-input>
+                                  <el-order-input-length class="typo-body-sm">
+                                    (0/60)
+                                  </el-order-input-length>
+                                </el-order-input>
+                              </el-order-input-row>
+                              <el-order-input-row>
+                                <el-order-input-label>
+                                  제목
+                                </el-order-input-label>
+                                <el-order-input>
+                                  <el-input>
+                                    <input
+                                      class="form-control custom-input"
+                                      type="text"
+                                      placeholder="제목을 입력해 주세요. (예시: 오피스콘 설문조사 답례 쿠폰)"
+                                    />
+                                  </el-input>
+                                  <el-order-input-length class="typo-body-sm">
+                                    (0/20)
+                                  </el-order-input-length>
+                                </el-order-input>
+                              </el-order-input-row>
+                              <el-order-input-row>
+                                <el-order-input-label>
+                                  내용
+                                </el-order-input-label>
+                                <el-order-input class="order-textarea">
+                                  <textarea
+                                    class="form-control"
+                                    placeholder="내용을 입력해 주세요.&#13;&#10;(예시 : 오피스콘 설문조사에 응해 주셔서 진심으로 감사드립니다.)"
+                                  ></textarea>
+                                  <el-order-input-length class="typo-body-sm">
+                                    (0/250)
+                                  </el-order-input-length>
+                                </el-order-input>
+                              </el-order-input-row>
+                              <el-order-save-message>
+                                <el-checkbox class="form-check">
+                                  <input
+                                    type="checkbox"
+                                    id="checkSaveMessage-1-1"
+                                    class="form-check-input custom-checkbox"
+                                    value=""
+                                  />
+                                  <label
+                                    class="form-check-label typo-body-sm"
+                                    for="checkSaveMessage-1-1"
+                                  >
+                                    발송문구 저장
+                                  </label>
+                                </el-checkbox>
+                                <el-checkbox class="form-check">
+                                  <input
+                                    type="checkbox"
+                                    id="checkSaveMessage-1-2"
+                                    class="form-check-input custom-checkbox"
+                                    value=""
+                                  />
+                                  <label
+                                    class="form-check-label typo-body-sm"
+                                    for="checkSaveMessage-1-2"
+                                  >
+                                    발송메시지 나머지 상품 동일 적용
+                                  </label>
+                                </el-checkbox>
+                              </el-order-save-message>
+                            </el-order-message-create>
+
+                            <el-order-caution class="typo-body-sm theme-red">
+                              <el-marker-list>
+                                <ul>
+                                  <li>
+                                    기본 이용안내 사항 및 아래문구가 자동으로
+                                    추가됩니다.
+                                  </li>
+                                  <li>
+                                    본 쿠폰은 재판매 금지하며, 프로모션(B2B)
+                                    발송상품으로 유효기간 연장 및 환불
+                                    불가합니다.
+                                  </li>
+                                  <li>유효기간 내 사용(교환)바랍니다.</li>
+                                </ul>
+                              </el-marker-list>
+                            </el-order-caution>
+                          </el-order-product-article>
+
+                          <el-order-divider></el-order-divider>
+
+                          <el-order-product-article>
+                            <el-article-title>
+                              <h3 class="typo-subtitle-lg">이미지 추가</h3>
+                            </el-article-title>
+                            <el-order-add-image-box>
+                              <el-order-add-image-box-header>
+                                <el-radio class="form-check">
+                                  <input
+                                    type="radio"
+                                    class="form-check-input custom-radio"
+                                    name="radioAddImage"
+                                    id="radioAddImage-1-1"
+                                    value=""
+                                    checked
+                                  />
+                                  <label
+                                    class="form-check-label typo-body-sm"
+                                    for="radioAddImage-1-1"
+                                  >
+                                    이미지 없음
+                                  </label>
+                                </el-radio>
+                                <el-radio class="form-check">
+                                  <input
+                                    type="radio"
+                                    class="form-check-input custom-radio"
+                                    name="radioAddImage"
+                                    id="radioAddImage-1-2"
+                                    value=""
+                                  />
+                                  <label
+                                    class="form-check-label typo-body-sm"
+                                    for="radioAddImage-1-2"
+                                  >
+                                    기본 이미지
+                                  </label>
+                                </el-radio>
+                                <el-radio class="form-check">
+                                  <input
+                                    type="radio"
+                                    class="form-check-input custom-radio"
+                                    name="radioAddImage"
+                                    id="radioAddImage-1-3"
+                                    value=""
+                                  />
+                                  <label
+                                    class="form-check-label typo-body-sm"
+                                    for="radioAddImage-1-3"
+                                  >
+                                    최근 이미지
+                                  </label>
+                                </el-radio>
+                                <el-radio class="form-check">
+                                  <input
+                                    type="radio"
+                                    class="form-check-input custom-radio"
+                                    name="radioAddImage"
+                                    id="radioAddImage-1-4"
+                                    value=""
+                                  />
+                                  <label
+                                    class="form-check-label typo-body-sm"
+                                    for="radioAddImage-1-4"
+                                  >
+                                    나의 이미지 (400 x 200px)
+                                  </label>
+                                </el-radio>
+                              </el-order-add-image-box-header>
+
+                              <!-- 시작: 컨텐츠 - '기본 이미지' -->
+                              <el-order-add-image-box-content>
+                                <ul>
+                                  <li>
+                                    <el-add-image-item> a </el-add-image-item>
+                                  </li>
+                                  <li>
+                                    <el-add-image-item> a </el-add-image-item>
+                                  </li>
+                                  <li>
+                                    <el-add-image-item> a </el-add-image-item>
+                                  </li>
+                                  <li>
+                                    <el-add-image-item> a </el-add-image-item>
+                                  </li>
+                                </ul>
+                              </el-order-add-image-box-content>
+                              <!-- 종료: 컨텐츠 - '기본 이미지' -->
+
+                              <!-- 시작: 컨텐츠 - '최근 이미지' -->
+                              <el-order-add-image-box-content>
+                                최근 이미지 컨텐츠 영역
+                              </el-order-add-image-box-content>
+                              <!-- 종료: 컨텐츠 - '최근 이미지' -->
+
+                              <!-- 시작: 컨텐츠 - '나의 이미지' -->
+                              <el-order-add-image-box-content>
+                                나의 이미지 컨텐츠 영역
+                              </el-order-add-image-box-content>
+                              <!-- 종료: 컨텐츠 - '나의 이미지' -->
+                            </el-order-add-image-box>
                           </el-order-product-article>
                         </el-order-product>
                       </el-order-box-content>
