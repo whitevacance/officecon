@@ -7440,6 +7440,40 @@ el-order-content {
           width: 400px;
         }
       }
+
+      el-order-caution {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        width: 100%;
+        padding: 20px 24px;
+        background-color: var(--color-blue-10);
+        border-radius: 8px;
+
+        el-order-caution-header {
+          display: flex;
+          gap: 16px;
+          font-weight: 700 !important;
+
+          a {
+            display: flex;
+            align-items: center;
+            color: var(--color-blue-60);
+            text-decoration: underline;
+
+            el-icon {
+              background-color: var(--color-blue-60);
+            }
+          }
+        }
+
+        el-marker-list {
+          ul li {
+            font-weight: 400;
+            color: var(--color-natural-20);
+          }
+        }
+      }
     }
   }
 }
