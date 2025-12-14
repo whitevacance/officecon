@@ -1424,3 +1424,129 @@ if (window !== undefined) {
 
 initTabs();
 // 종료: 탭 el-tabs
+
+// 시작: 전화번호 입력 시 자동 하이픈 처리 - 일반전화와 핸드폰 번호 모두 처리
+let phoneNumberInputInitialized = false;
+const initPhoneNumberInput = () => {
+  // 이미 초기화된 경우 건너뛰기
+  if (phoneNumberInputInitialized) {
+    return;
+  }
+
+  if (document?.body) {
+    document.body.addEventListener('input', (e) => {
+      const targetInputEl = e.target.closest(
+        'el-input > input.input-type-phone'
+      );
+
+      // 전화번호 입력 시 자동 하이픈 처리 로직
+      if (targetInputEl) {
+        // 숫자만 추출
+        let phoneNumber = targetInputEl.value.replace(/[^0-9]/g, '');
+
+        // '010'으로 시작하는 경우에만 처리
+        if (phoneNumber.startsWith('010')) {
+          // 최대 11자리 제한
+          if (phoneNumber.length > 11) {
+            phoneNumber = phoneNumber.substring(0, 11);
+          }
+
+          // 3-4-4 형식으로 하이픈 추가
+          let formattedNumber = '';
+          if (phoneNumber.length > 0) {
+            if (phoneNumber.length <= 3) {
+              formattedNumber = phoneNumber;
+            } else if (phoneNumber.length <= 7) {
+              formattedNumber =
+                phoneNumber.substring(0, 3) + '-' + phoneNumber.substring(3);
+            } else {
+              formattedNumber =
+                phoneNumber.substring(0, 3) +
+                '-' +
+                phoneNumber.substring(3, 7) +
+                '-' +
+                phoneNumber.substring(7, 11);
+            }
+          }
+
+          // 포맷된 번호를 입력 필드에 적용
+          targetInputEl.value = formattedNumber;
+        } else {
+          // '010'으로 시작하지 않으면 숫자만 입력 가능하도록 처리 (하이픈 제거)
+          targetInputEl.value = phoneNumber;
+        }
+      }
+    });
+
+    // 초기화 완료 전환
+    phoneNumberInputInitialized = true;
+  }
+};
+
+// 전역 함수로 등록
+if (window !== undefined) {
+  window.initPhoneNumberInput = initPhoneNumberInput;
+}
+
+initPhoneNumberInput();
+// 종료: 전화번호 입력 시 자동 하이픈 처리 - 일반전화와 핸드폰 번호 모두 처리
+
+// 시작: 핸드폰 번호 입력 시 자동 하이픈 처리 - 핸드폰 번호만 처리
+let mobileNumberInputInitialized = false;
+const initMobileNumberInput = () => {
+  // 이미 초기화된 경우 건너뛰기
+  if (mobileNumberInputInitialized) {
+    return;
+  }
+
+  if (document?.body) {
+    document.body.addEventListener('input', (e) => {
+      const targetInputEl = e.target.closest(
+        'el-input > input.input-type-mobile'
+      );
+
+      // 핸드폰 번호 입력 시 자동 하이픈 처리 로직
+      if (targetInputEl) {
+        // 숫자만 추출
+        let mobileNumber = targetInputEl.value.replace(/[^0-9]/g, '');
+
+        // 최대 11자리 제한
+        if (mobileNumber.length > 11) {
+          mobileNumber = mobileNumber.substring(0, 11);
+        }
+
+        // 3-4-4 형식으로 하이픈 추가
+        let formattedNumber = '';
+        if (mobileNumber.length > 0) {
+          if (mobileNumber.length <= 3) {
+            formattedNumber = mobileNumber;
+          } else if (mobileNumber.length <= 7) {
+            formattedNumber =
+              mobileNumber.substring(0, 3) + '-' + mobileNumber.substring(3);
+          } else {
+            formattedNumber =
+              mobileNumber.substring(0, 3) +
+              '-' +
+              mobileNumber.substring(3, 7) +
+              '-' +
+              mobileNumber.substring(7, 11);
+          }
+        }
+
+        // 포맷된 번호를 입력 필드에 적용
+        targetInputEl.value = formattedNumber;
+      }
+    });
+
+    // 초기화 완료 전환
+    mobileNumberInputInitialized = true;
+  }
+};
+
+// 전역 함수로 등록
+if (window !== undefined) {
+  window.initMobileNumberInput = initMobileNumberInput;
+}
+
+initMobileNumberInput();
+// 종료: 핸드폰 번호 입력 시 자동 하이픈 처리 - 핸드폰 번호만 처리

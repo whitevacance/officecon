@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
   <head>
-    <title>회원가입 안내 | 오피스콘</title>
+    <title>주문완료 | 오피스콘</title>
     <meta charset="UTF-8" />
     <meta name="format-detection" content="telephone=no" />
     <link rel="shortcut icon" href="./images/favicon.ico" />
@@ -82,115 +82,45 @@
               <component-breadcrumb></component-breadcrumb>
               <!-- 종료: [DEV] 웹컴포넌트 -->
 
-              <h2 class="typo-heading-md">회원가입 안내</h2>
+              <h2 class="typo-heading-md"></h2>
             </el-content-header-container>
           </el-content-header>
 
           <el-content>
             <el-section-medium>
               <el-intro-and-success>
-                <el-intro-select-type>
-                  <!-- 시작: 기업 회원 -->
-                  <el-intro-type-paper class="member-company">
-                    <el-icon class="h52-building"></el-icon>
-                    <el-member-type-desc>
-                      <el-member-type-desc-icon>
-                        <el-icon class="etc-member-company natural-0"></el-icon>
-                      </el-member-type-desc-icon>
-                      <p class="typo-body-sm">
-                        이벤트, 프로모션 등 발송 기업의<br />
-                        <span>비용 절감</span>을 위한 회원님께 추천해요.
+                <el-success>
+                  <el-success-greeting>
+                    <el-icon class="etc-circle-check"></el-icon>
+                    <el-success-greeting-message>
+                      <h3 class="typo-heading-md">주문완료</h3>
+                      <p class="typo-subtitle-md">
+                        발송 결과를 확인하시고 실패한 건은 재발송 또는 환불
+                        요청해주세요.
                       </p>
-                    </el-member-type-desc>
-                    <el-member-type-benefit>
-                      <ul class="typo-body-sm">
-                        <li>
-                          <el-icon class="h16-check"></el-icon>
-                          법인 사업자 또는 개인 사업자
-                        </li>
-                        <li class="active">
-                          <el-icon class="h16-check"></el-icon>
-                          등급할인(최대 12%)혜택 제공
-                        </li>
-                        <li class="active">
-                          <el-icon class="h16-check"></el-icon>
-                          [리워드지급] 상품 1% 적립
-                        </li>
-                        <li>
-                          <el-icon class="h16-check"></el-icon>
-                          기간연장 및 만료 시 환불불가
-                        </li>
-                        <li>
-                          <el-icon class="h16-check"></el-icon>
-                          쿠폰 유효기간 30일 - 60일
-                        </li>
-                      </ul>
-                    </el-member-type-benefit>
+                      <p class="typo-body-lg">
+                        발송 결과는 최대 24시간 소요될 수 있습니다.
+                        <br />
+                        (전원이 꺼져 있는 등 핸드폰이 수신불가한 상태인 경우
+                        발송 중으로 표기)
+                      </p>
+                    </el-success-greeting-message>
+                  </el-success-greeting>
+                  <el-success-buttons>
                     <button
                       type="button"
                       class="button-h60-square-fill typo-body-lg"
                     >
-                      기업 회원 가입하기
+                      주문/발송조회
                     </button>
-                  </el-intro-type-paper>
-                  <!-- 종료: 기업 회원 -->
-
-                  <!-- 시작: 일반 회원 -->
-                  <el-intro-type-paper class="member-personal">
-                    <el-icon class="h52-person"></el-icon>
-                    <el-member-type-desc>
-                      <el-member-type-desc-icon>
-                        <el-icon
-                          class="etc-member-personal natural-0"
-                        ></el-icon>
-                      </el-member-type-desc-icon>
-                      <p class="typo-body-sm">
-                        임직원 복지, 성과보상 등<br />
-                        <span>사용성</span>이 중요하신 회원님께 추천해요.
-                      </p>
-                    </el-member-type-desc>
-                    <el-member-type-benefit>
-                      <ul class="typo-body-sm">
-                        <li>
-                          <el-icon class="h16-check"></el-icon>
-                          사업자 정보 없이 가입(기업도 이용 가능)
-                        </li>
-                        <li>
-                          <el-icon class="h16-check"></el-icon>
-                          등급할인 혜택 미 제공
-                        </li>
-                        <li>
-                          <el-icon class="h16-check"></el-icon>
-                          [리워드지급] 상품 혜택 없음
-                        </li>
-                        <li class="active">
-                          <el-icon class="h16-check"></el-icon>
-                          기간 연장 및 환불 가능(90%~)
-                        </li>
-                        <li class="active">
-                          <el-icon class="h16-check"></el-icon>
-                          쿠폰 유효기간 90일 - 1년
-                        </li>
-                      </ul>
-                    </el-member-type-benefit>
                     <button
                       type="button"
-                      class="button-h60-square-fill typo-body-lg"
+                      class="button-h60-square typo-body-lg"
                     >
-                      일반 회원 가입하기
+                      계속 쇼핑하기
                     </button>
-                  </el-intro-type-paper>
-                  <!-- 종료: 일반 회원 -->
-                </el-intro-select-type>
-
-                <el-intro-and-success-banners>
-                  <a href="#">
-                    <img src="./images/temp/signup-banner-1.png" alt="banner" />
-                  </a>
-                  <a href="#">
-                    <img src="./images/temp/signup-banner-2.png" alt="banner" />
-                  </a>
-                </el-intro-and-success-banners>
+                  </el-success-buttons>
+                </el-success>
               </el-intro-and-success>
             </el-section-medium>
           </el-content>

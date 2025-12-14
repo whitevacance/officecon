@@ -1,0 +1,2914 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>주문결제 | 오피스콘</title>
+    <meta charset="UTF-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="shortcut icon" href="./images/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./images/favicon-apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="./images/favicon-android-chrome-192x192.png"
+    />
+    <link
+      rel="preload"
+      href="./fonts/Pretendard-Regular.subset.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="./fonts/Pretendard-SemiBold.subset.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="./fonts/Pretendard-Bold.subset.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link type="text/css" rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="./css/swiper.min.css" />
+    <link type="text/css" rel="stylesheet" href="./css/tui-time-picker.css" />
+    <link type="text/css" rel="stylesheet" href="./css/tui-date-picker.css" />
+    <link type="text/css" rel="stylesheet" href="./css/style.css" />
+    <script src="./js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script
+      src="./js/swiper-element-bundleswiper.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/tui-time-picker.js" crossorigin="anonymous"></script>
+    <script src="./js/tui-date-picker.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <!-- [DEV] 일반회원일 때 className: 'personal-member' -->
+    <el-wrapper>
+      <el-container>
+        <!-- 시작: [DEV] 웹컴포넌트
+          1. 퍼블리싱용 웹컴포넌트입니다.
+          2. el-top-banner, el-header-top, el-header-sticky, el-header-gnb
+          3. 개발 시 examples.html 원본을 참고해 주세요.
+         -->
+        <component-top-banner></component-top-banner>
+
+        <!-- 시작: 헤더 -->
+        <component-header-top></component-header-top>
+        <component-header-sticky></component-header-sticky>
+        <component-header-gnb></component-header-gnb>
+        <!-- 종료: 헤더 -->
+
+        <!-- 종료: [DEV] 웹컴포넌트 -->
+
+        <!-- 시작: 컨텐츠 -->
+        <main>
+          <el-content-header>
+            <el-content-header-container>
+              <!-- 시작: [DEV] 웹컴포넌트
+                1. 퍼블리싱용 웹컴포넌트입니다.
+                2. el-breadcrumb
+                3. 개발 시 examples.html 원본을 참고해 주세요.
+              -->
+              <component-breadcrumb></component-breadcrumb>
+              <!-- 종료: [DEV] 웹컴포넌트 -->
+
+              <h2 class="typo-heading-md">주문결제</h2>
+            </el-content-header-container>
+          </el-content-header>
+
+          <el-content>
+            <el-order-header class="typo-body-lg">
+              <dl>
+                <dt>발송 타입</dt>
+                <dd>
+                  <el-radio class="form-check">
+                    <input
+                      type="radio"
+                      class="form-check-input custom-radio"
+                      name="radioSendType"
+                      id="radioSendType-1"
+                      value=""
+                      checked
+                    />
+                    <label
+                      class="form-check-label typo-body-sm weight-em"
+                      for="radioSendType-1"
+                    >
+                      알림톡발송
+                      <el-send-type-tooltip class="typo-label-lg">
+                        카카오톡으로 발송되며 설치가 안된 경우 문자로 발송
+                      </el-send-type-tooltip>
+                    </label>
+                  </el-radio>
+                  <el-radio class="form-check">
+                    <input
+                      type="radio"
+                      class="form-check-input custom-radio"
+                      name="radioSendType"
+                      id="radioSendType-2"
+                      value=""
+                    />
+                    <label
+                      class="form-check-label typo-body-sm weight-em"
+                      for="radioSendType-2"
+                    >
+                      문자발송
+                      <el-send-type-tooltip class="typo-label-lg">
+                        이미지 추가 기능을 이용 가능 (일부 상품 제외)
+                      </el-send-type-tooltip>
+                    </label>
+                  </el-radio>
+                  <el-radio class="form-check">
+                    <input
+                      type="radio"
+                      class="form-check-input custom-radio"
+                      name="radioSendType"
+                      id="radioSendType-3"
+                      value=""
+                    />
+                    <label
+                      class="form-check-label typo-body-sm weight-em"
+                      for="radioSendType-3"
+                    >
+                      이메일발송
+                      <el-send-type-tooltip class="typo-label-lg">
+                        휴대폰 번호 없이 이메일 주소만으로도 쿠폰 발송 가능
+                      </el-send-type-tooltip>
+                    </label>
+                  </el-radio>
+                </dd>
+              </dl>
+              <dl>
+                <dt>
+                  발송 시간
+                  <el-send-time-tooltip class="typo-label-lg">
+                    상품권 발송은 관리자 승인 후 발송 (1시간 이내 / 점심시간
+                    제외)
+                  </el-send-time-tooltip>
+                </dt>
+                <dd>
+                  <el-radio class="form-check">
+                    <input
+                      type="radio"
+                      class="form-check-input custom-radio"
+                      name="radioSendTime"
+                      id="radioSendTime-1"
+                      value=""
+                      checked
+                    />
+                    <label
+                      class="form-check-label typo-body-sm weight-em"
+                      for="radioSendTime-1"
+                    >
+                      즉시 발송
+                    </label>
+                  </el-radio>
+                  <el-radio class="form-check">
+                    <input
+                      type="radio"
+                      class="form-check-input custom-radio"
+                      name="radioSendTime"
+                      id="radioSendTime-2"
+                      value=""
+                    />
+                    <label
+                      class="form-check-label typo-body-sm weight-em"
+                      for="radioSendTime-2"
+                    >
+                      예약 발송
+                    </label>
+                    <el-datepicker-wrapper>
+                      <el-datepicker>
+                        <el-input
+                          class="tui-datepicker-input tui-datetime-input tui-has-focus"
+                        >
+                          <input
+                            class="form-control custom-input datepicker-input"
+                            type="text"
+                            placeholder="날짜/시간 선택"
+                            value=""
+                            aria-label="Date-Time"
+                          />
+                          <el-input-addon>
+                            <button
+                              type="button"
+                              class="button-calendar"
+                              aria-label="calendar"
+                            >
+                              <el-icon class="h24-calendar natural-0"></el-icon>
+                            </button>
+                          </el-input-addon>
+                        </el-input>
+                        <el-datepicker-layer></el-datepicker-layer>
+                      </el-datepicker>
+                    </el-datepicker-wrapper>
+                  </el-radio>
+                </dd>
+              </dl>
+            </el-order-header>
+
+            <el-split-container>
+              <el-split-content>
+                <el-order-content>
+                  <el-order-box>
+                    <el-order-box-header>
+                      <el-order-box-header-title class="typo-subtitle-lg">
+                        주문상품 1
+                      </el-order-box-header-title>
+
+                      <!-- [DEV] 개발 시 data-bs-target의 값에
+                           '#collapse-box-content-{인덱스}' 를 사용해 주세요.
+                       -->
+                      <button
+                        type="button"
+                        aria-label="toogle box"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapse-box-content-0"
+                      >
+                        <el-icon class="h32-plus natural-0"></el-icon>
+                        <el-icon class="h32-minus natural-0"></el-icon>
+                      </button>
+                    </el-order-box-header>
+
+                    <!-- [DEV] 개발 시 id 값에
+                           'collapse-box-content-{인덱스}'를 사용해 주세요.
+                       -->
+                    <el-order-box-content-collapse
+                      class="collapse show"
+                      id="collapse-box-content-0"
+                    >
+                      <el-order-box-content>
+                        <el-order-product>
+                          <el-order-product-item>
+                            <table class="table align-middle table-borderless">
+                              <colgroup>
+                                <col class="col-auto" />
+                                <col class="col-fix" />
+                                <col class="col-fix" />
+                                <col class="col-fix" />
+                                <col class="col-fix" />
+                              </colgroup>
+                              <thead>
+                                <tr>
+                                  <th scope="col">상품정보</th>
+                                  <th scope="col">유효기간</th>
+                                  <th scope="col">지급 리워드</th>
+                                  <th scope="col">정상가</th>
+                                  <th scope="col">판매가</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>
+                                    <el-order-product-item-detail>
+                                      <a href="#">
+                                        <el-item-thumbnail>
+                                          <img
+                                            class="thumbnail-image"
+                                            src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/product/20250227/20250227145823_a5b9221d-437d-4b84-b0ac-fbc6f58edf4f.jpg"
+                                            alt=""
+                                          />
+                                          <el-bg></el-bg>
+                                        </el-item-thumbnail>
+
+                                        <el-item-txt class="typo-body-sm">
+                                          <el-item-name>
+                                            <el-brand>
+                                              일이삼사오육칠팔구십일이삼사
+                                            </el-brand>
+                                            <el-item-name-txt>
+                                              일이삼사오육칠팔구십일이삼사오육칠
+                                            </el-item-name-txt>
+                                          </el-item-name>
+                                        </el-item-txt>
+                                      </a>
+                                    </el-order-product-item-detail>
+                                  </td>
+                                  <td>2025.12.31</td>
+                                  <td>
+                                    <el-reward>
+                                      <img
+                                        src="./images/badge-h14-reward.svg"
+                                        alt="리워드"
+                                      />
+                                      1,004,700
+                                    </el-reward>
+                                  </td>
+                                  <td>1,004,700</td>
+                                  <td>
+                                    <el-sale-price> 1,004,700 </el-sale-price>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </el-order-product-item>
+                          <el-order-product-item>
+                            <table class="table align-middle table-borderless">
+                              <colgroup>
+                                <col class="col-auto" />
+                                <col class="col-fix" />
+                                <col class="col-fix" />
+                                <col class="col-fix" />
+                                <col class="col-fix" />
+                              </colgroup>
+                              <thead>
+                                <tr>
+                                  <th scope="col">상품정보</th>
+                                  <th scope="col">유효기간</th>
+                                  <th scope="col">지급 리워드</th>
+                                  <th scope="col">정상가</th>
+                                  <th scope="col">판매가</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>
+                                    <el-order-product-item-detail>
+                                      <a href="#">
+                                        <el-item-thumbnail>
+                                          <img
+                                            class="thumbnail-image"
+                                            src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/product/20250227/20250227145823_a5b9221d-437d-4b84-b0ac-fbc6f58edf4f.jpg"
+                                            alt=""
+                                          />
+                                          <el-bg></el-bg>
+                                        </el-item-thumbnail>
+
+                                        <el-item-txt class="typo-body-sm">
+                                          <el-item-name>
+                                            <el-brand>
+                                              일이삼사오육칠팔구십일이삼사
+                                            </el-brand>
+                                            <el-item-name-txt>
+                                              일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일
+                                            </el-item-name-txt>
+                                          </el-item-name>
+                                        </el-item-txt>
+                                      </a>
+                                    </el-order-product-item-detail>
+                                  </td>
+                                  <td>2025.12.31</td>
+                                  <td>
+                                    <el-reward>
+                                      <img
+                                        src="./images/badge-h14-reward.svg"
+                                        alt="리워드"
+                                      />
+                                      1,004,700
+                                    </el-reward>
+                                  </td>
+                                  <td
+                                    ><el-line-through
+                                      >1,004,700</el-line-through
+                                    ></td
+                                  >
+                                  <td>
+                                    <el-sale-price>
+                                      <el-badge-discount class="typo-label-sm">
+                                        3%
+                                      </el-badge-discount>
+                                      1,004,700
+                                    </el-sale-price>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </el-order-product-item>
+
+                          <el-order-divider></el-order-divider>
+
+                          <el-order-product-article>
+                            <el-article-title>
+                              <h3 class="typo-subtitle-lg">발신 정보</h3>
+                            </el-article-title>
+                            <el-order-input-row>
+                              <el-order-input-label>
+                                발신번호
+                              </el-order-input-label>
+                              <el-order-input>
+                                <el-input>
+                                  <input
+                                    class="form-control custom-input input-type-phone"
+                                    type="text"
+                                    placeholder="발신자 번호를 입력해 주세요. (일반번호도 사용가능)"
+                                  />
+                                </el-input>
+                              </el-order-input>
+                            </el-order-input-row>
+                            <el-order-input-row>
+                              <el-order-input-label>
+                                발신번호
+                              </el-order-input-label>
+                              <el-order-input>
+                                <el-input class="is-invalid">
+                                  <input
+                                    class="form-control custom-input input-type-phone"
+                                    type="text"
+                                    placeholder="발신자 번호를 입력해 주세요. (일반번호도 사용가능)"
+                                  />
+                                  <el-invalide-feedback class="typo-label-lg">
+                                    올바른 발신 번호를 입력해 주세요.
+                                  </el-invalide-feedback>
+                                </el-input>
+                              </el-order-input>
+                            </el-order-input-row>
+
+                            <el-order-caution class="typo-body-sm">
+                              <el-order-caution-header>
+                                발신번호가 올바르지 않으면 발송이 실패됩니다.
+                                <a
+                                  href="https://www.officecon.co.kr/"
+                                  target="_blank"
+                                >
+                                  발송실패예시
+                                  <el-icon class="h16-arrow-right"></el-icon>
+                                </a>
+                              </el-order-caution-header>
+                              <el-marker-list>
+                                <ul>
+                                  <li>
+                                    일반번호에는 지역번호를 포함하여 등록하세요.
+                                    (02-XXXX-XXXX)
+                                  </li>
+                                  <li>
+                                    전국대표번호(1544, 1661 등)에는 지역번호
+                                    없이 입력하세요. (1544-XXXX)
+                                  </li>
+                                </ul>
+                              </el-marker-list>
+                            </el-order-caution>
+
+                            <el-order-input-row>
+                              <el-order-input-label>
+                                발신메일주소
+                              </el-order-input-label>
+                              <el-order-input>
+                                <el-input>
+                                  <input
+                                    class="form-control custom-input"
+                                    type="email"
+                                    placeholder="발신자 이메일 주소를 입력해 주세요."
+                                  />
+                                </el-input>
+                              </el-order-input>
+                            </el-order-input-row>
+                            <el-order-input-row>
+                              <el-order-input-label>
+                                발신메일주소
+                              </el-order-input-label>
+                              <el-order-input>
+                                <el-input class="is-invalid">
+                                  <input
+                                    class="form-control custom-input"
+                                    type="email"
+                                    placeholder="발신자 이메일 주소를 입력해 주세요."
+                                  />
+                                  <el-invalide-feedback class="typo-label-lg">
+                                    입력하신 메일 도메인은 발송이 불가합니다.
+                                  </el-invalide-feedback>
+                                </el-input>
+                              </el-order-input>
+                            </el-order-input-row>
+
+                            <el-order-caution class="typo-body-sm theme-red">
+                              <el-marker-list>
+                                <ul>
+                                  <li>
+                                    구글 메일 정책에 따라 @gmail.com 또는
+                                    @googlemail.com으로는 발송하실 수 없습니다.
+                                  </li>
+                                </ul>
+                              </el-marker-list>
+                            </el-order-caution>
+
+                            <el-order-input-row>
+                              <el-order-input-label>
+                                발신메일이름
+                              </el-order-input-label>
+                              <el-order-input>
+                                <el-input>
+                                  <input
+                                    class="form-control custom-input"
+                                    type="text"
+                                    placeholder="발신자 이름을 입력해 주세요."
+                                  />
+                                </el-input>
+                              </el-order-input>
+                            </el-order-input-row>
+                          </el-order-product-article>
+
+                          <el-order-divider></el-order-divider>
+
+                          <el-order-product-article>
+                            <el-article-title>
+                              <h3 class="typo-subtitle-lg">수신자 편집</h3>
+                            </el-article-title>
+                            <el-order-input-row>
+                              <el-order-input-label>
+                                휴대폰번호
+                              </el-order-input-label>
+                              <el-order-input>
+                                <el-input>
+                                  <input
+                                    class="form-control custom-input input-type-mobile"
+                                    type="text"
+                                    placeholder="받으실 분 휴대폰번호를 입력해주세요."
+                                  />
+                                </el-input>
+                                <button
+                                  type="button"
+                                  class="text-black button-h43-square typo-body-sm"
+                                >
+                                  추가
+                                </button>
+                              </el-order-input>
+                            </el-order-input-row>
+                            <el-order-input-row>
+                              <el-order-input-label>
+                                휴대폰번호
+                              </el-order-input-label>
+                              <el-order-input>
+                                <el-input class="is-invalid">
+                                  <input
+                                    class="form-control custom-input input-type-mobile"
+                                    type="text"
+                                    placeholder="받으실 분 휴대폰번호를 입력해주세요."
+                                  />
+                                  <el-invalide-feedback class="typo-label-lg">
+                                    필수 입력 항목입니다.
+                                  </el-invalide-feedback>
+                                </el-input>
+                                <button
+                                  type="button"
+                                  class="text-black button-h43-square typo-body-sm"
+                                >
+                                  추가
+                                </button>
+                              </el-order-input>
+                            </el-order-input-row>
+                            <el-order-input-row>
+                              <el-order-input-label>
+                                이메일 주소
+                              </el-order-input-label>
+                              <el-order-input>
+                                <el-input>
+                                  <input
+                                    class="form-control custom-input"
+                                    type="email"
+                                    placeholder="받으실 분 이메일주소를 입력해주세요."
+                                  />
+                                </el-input>
+                                <button
+                                  type="button"
+                                  class="text-black button-h43-square typo-body-sm"
+                                >
+                                  추가
+                                </button>
+                              </el-order-input>
+                            </el-order-input-row>
+                            <el-order-input-row>
+                              <el-order-input-label>
+                                이메일 주소
+                              </el-order-input-label>
+                              <el-order-input>
+                                <el-input class="is-invalid">
+                                  <input
+                                    class="form-control custom-input"
+                                    type="email"
+                                    placeholder="받으실 분 이메일주소를 입력해주세요."
+                                  />
+                                  <el-invalide-feedback class="typo-label-lg">
+                                    필수 입력 항목입니다.
+                                  </el-invalide-feedback>
+                                </el-input>
+                                <button
+                                  type="button"
+                                  class="text-black button-h43-square typo-body-sm"
+                                >
+                                  추가
+                                </button>
+                              </el-order-input>
+                            </el-order-input-row>
+                            <el-order-addressee-list>
+                              <el-order-addressee-util-bar>
+                                <button
+                                  type="button"
+                                  class="text-black button-h43-square typo-body-sm"
+                                >
+                                  복사하여 붙여넣기
+                                </button>
+                                <button
+                                  type="button"
+                                  class="text-black button-h43-square typo-body-sm"
+                                >
+                                  엑셀 업로드
+                                </button>
+                                <button
+                                  type="button"
+                                  class="text-black button-h43-square typo-body-sm"
+                                >
+                                  <el-icon class="etc-excel"></el-icon>
+                                  엑셀 양식 다운로드
+                                </button>
+                              </el-order-addressee-util-bar>
+                              <el-order-addressee-list-content>
+                                <ul class="typo-body-md"> </ul>
+                                <el-order-addressee-list-status>
+                                  <el-status-top>
+                                    <button type="button" aria-label="refresh">
+                                      <el-icon
+                                        class="h20-refresh natural-0"
+                                      ></el-icon>
+                                    </button>
+                                    <el-status-top-label class="typo-body-lg">
+                                      선택된 수신자
+                                    </el-status-top-label>
+                                    <el-status-top-count class="typo-body-sm">
+                                      <strong class="typo-heading-md">0</strong
+                                      >명
+                                    </el-status-top-count>
+                                  </el-status-top>
+                                  <el-order-divider></el-order-divider>
+                                  <el-status-bottom>
+                                    <el-status-bottom-default
+                                      class="typo-body-sm"
+                                    >
+                                      선택된 수신자로<br />모바일쿠폰을
+                                      보내드려요.
+                                      <img src="./images/letter.png" alt="" />
+                                    </el-status-bottom-default>
+                                  </el-status-bottom>
+                                </el-order-addressee-list-status>
+                              </el-order-addressee-list-content>
+                              <el-order-addressee-list-content>
+                                <ul class="typo-body-md">
+                                  <li>
+                                    010-6730-4442 (1건)
+                                    <button
+                                      type="button"
+                                      class="remove"
+                                      aria-label="remove"
+                                    >
+                                      <el-icon class="h16-closed"></el-icon>
+                                    </button>
+                                  </li>
+                                  <li>
+                                    010-6730-4442 (1건)
+                                    <button
+                                      type="button"
+                                      class="remove"
+                                      aria-label="remove"
+                                    >
+                                      <el-icon class="h16-closed"></el-icon>
+                                    </button>
+                                  </li>
+                                  <li>
+                                    010-6730-4442 (1건)
+                                    <button
+                                      type="button"
+                                      class="remove"
+                                      aria-label="remove"
+                                    >
+                                      <el-icon class="h16-closed"></el-icon>
+                                    </button>
+                                  </li>
+                                  <li>
+                                    010-6730-4442 (1건)
+                                    <button
+                                      type="button"
+                                      class="remove"
+                                      aria-label="remove"
+                                    >
+                                      <el-icon class="h16-closed"></el-icon>
+                                    </button>
+                                  </li>
+                                  <li>
+                                    010-6730-4442 (1건)
+                                    <button
+                                      type="button"
+                                      class="remove"
+                                      aria-label="remove"
+                                    >
+                                      <el-icon class="h16-closed"></el-icon>
+                                    </button>
+                                  </li>
+                                  <li>
+                                    010-6730-4442 (1건)
+                                    <button
+                                      type="button"
+                                      class="remove"
+                                      aria-label="remove"
+                                    >
+                                      <el-icon class="h16-closed"></el-icon>
+                                    </button>
+                                  </li>
+                                  <li>
+                                    010-6730-4442 (1건)
+                                    <button
+                                      type="button"
+                                      class="remove"
+                                      aria-label="remove"
+                                    >
+                                      <el-icon class="h16-closed"></el-icon>
+                                    </button>
+                                  </li>
+                                  <li>
+                                    010-6730-4442 (1건)
+                                    <button
+                                      type="button"
+                                      class="remove"
+                                      aria-label="remove"
+                                    >
+                                      <el-icon class="h16-closed"></el-icon>
+                                    </button>
+                                  </li>
+                                  <li>
+                                    010-6730-4442 (1건)
+                                    <button
+                                      type="button"
+                                      class="remove"
+                                      aria-label="remove"
+                                    >
+                                      <el-icon class="h16-closed"></el-icon>
+                                    </button>
+                                  </li>
+                                  <li>
+                                    010-6730-4442 (1건)
+                                    <button
+                                      type="button"
+                                      class="remove"
+                                      aria-label="remove"
+                                    >
+                                      <el-icon class="h16-closed"></el-icon>
+                                    </button>
+                                  </li>
+                                </ul>
+                                <el-order-addressee-list-status>
+                                  <el-status-top>
+                                    <button type="button" aria-label="refresh">
+                                      <el-icon
+                                        class="h20-refresh natural-0"
+                                      ></el-icon>
+                                    </button>
+                                    <el-status-top-label class="typo-body-lg">
+                                      선택된 수신자
+                                    </el-status-top-label>
+                                    <el-status-top-count class="typo-body-sm">
+                                      <strong class="typo-heading-md"
+                                        >9,999,999</strong
+                                      >명
+                                    </el-status-top-count>
+                                  </el-status-top>
+                                  <el-order-divider></el-order-divider>
+                                  <el-status-bottom>
+                                    <ul class="typo-body-sm">
+                                      <li>
+                                        <el-status-bottom-item-label>
+                                          현재 주문가능 수량
+                                        </el-status-bottom-item-label>
+                                        <strong>9,423개</strong>
+                                      </li>
+                                      <li>
+                                        <el-status-bottom-item-label>
+                                          ID당 주문 가능 수량
+                                        </el-status-bottom-item-label>
+                                        <strong>9,423개</strong>
+                                      </li>
+                                    </ul>
+                                  </el-status-bottom>
+                                </el-order-addressee-list-status>
+                              </el-order-addressee-list-content>
+                              <el-order-addressee-list-content>
+                                <ul class="typo-body-md">
+                                  <li>
+                                    abcf@zlgoon.co.kr (1건)
+                                    <button
+                                      type="button"
+                                      class="remove"
+                                      aria-label="remove"
+                                    >
+                                      <el-icon class="h16-closed"></el-icon>
+                                    </button>
+                                  </li>
+                                </ul>
+                                <el-order-addressee-list-status>
+                                  <el-status-top>
+                                    <button type="button" aria-label="refresh">
+                                      <el-icon
+                                        class="h20-refresh natural-0"
+                                      ></el-icon>
+                                    </button>
+                                    <el-status-top-label class="typo-body-lg">
+                                      선택된 수신자
+                                    </el-status-top-label>
+                                    <el-status-top-count class="typo-body-sm">
+                                      <strong class="typo-heading-md"
+                                        >9,999,999</strong
+                                      >명
+                                    </el-status-top-count>
+                                  </el-status-top>
+                                  <el-order-divider></el-order-divider>
+                                  <el-status-bottom>
+                                    <ul class="typo-body-sm">
+                                      <li>
+                                        <el-status-bottom-item-label>
+                                          현재 주문가능 수량
+                                        </el-status-bottom-item-label>
+                                        <strong>9,423개</strong>
+                                      </li>
+                                      <li>
+                                        <el-status-bottom-item-label>
+                                          일일 주문가능 수량
+                                        </el-status-bottom-item-label>
+                                        <strong>9,423개</strong>
+                                      </li>
+                                      <li>
+                                        <el-status-bottom-item-label>
+                                          ID당 주문 가능 수량
+                                        </el-status-bottom-item-label>
+                                        <strong>9,423개</strong>
+                                      </li>
+                                    </ul>
+                                  </el-status-bottom>
+                                </el-order-addressee-list-status>
+                              </el-order-addressee-list-content>
+                            </el-order-addressee-list>
+                          </el-order-product-article>
+
+                          <el-order-divider></el-order-divider>
+
+                          <el-order-product-article>
+                            <el-article-title>
+                              <h3 class="typo-subtitle-lg">
+                                발송메시지 만들기
+                              </h3>
+                              <el-article-title-addon>
+                                <button
+                                  type="button"
+                                  class="text-black button-h43-square typo-body-sm"
+                                >
+                                  발송문구 불러오기
+                                </button>
+                                <button
+                                  type="button"
+                                  class="text-black button-h43-square typo-body-sm"
+                                >
+                                  최근 발송문구 불러오기
+                                </button>
+                              </el-article-title-addon>
+                            </el-article-title>
+
+                            <el-order-message-create>
+                              <el-order-input-row>
+                                <el-order-input-label>
+                                  프로모션명
+                                </el-order-input-label>
+                                <el-order-input>
+                                  <el-input>
+                                    <input
+                                      class="form-control custom-input"
+                                      type="text"
+                                      placeholder="관리용 제목을 입력해 주세요. (수신자에게 발송되지 않습니다.)"
+                                    />
+                                  </el-input>
+                                  <el-order-input-length class="typo-body-sm">
+                                    (0/60)
+                                  </el-order-input-length>
+                                </el-order-input>
+                              </el-order-input-row>
+                              <el-order-input-row>
+                                <el-order-input-label>
+                                  제목
+                                </el-order-input-label>
+                                <el-order-input>
+                                  <el-input>
+                                    <input
+                                      class="form-control custom-input"
+                                      type="text"
+                                      placeholder="제목을 입력해 주세요. (예시: 오피스콘 설문조사 답례 쿠폰)"
+                                    />
+                                  </el-input>
+                                  <el-order-input-length class="typo-body-sm">
+                                    (0/20)
+                                  </el-order-input-length>
+                                </el-order-input>
+                              </el-order-input-row>
+                              <el-order-input-row>
+                                <el-order-input-label>
+                                  내용
+                                </el-order-input-label>
+                                <el-order-input class="order-textarea">
+                                  <textarea
+                                    class="form-control"
+                                    placeholder="내용을 입력해 주세요.&#13;&#10;(예시 : 오피스콘 설문조사에 응해 주셔서 진심으로 감사드립니다.)"
+                                  ></textarea>
+                                  <el-order-input-length class="typo-body-sm">
+                                    (0/250)
+                                  </el-order-input-length>
+                                </el-order-input>
+                              </el-order-input-row>
+                              <el-order-save-message>
+                                <el-checkbox class="form-check">
+                                  <input
+                                    type="checkbox"
+                                    id="checkSaveMessage-1-1"
+                                    class="form-check-input custom-checkbox"
+                                    value=""
+                                  />
+                                  <label
+                                    class="form-check-label typo-body-sm"
+                                    for="checkSaveMessage-1-1"
+                                  >
+                                    발송문구 저장
+                                  </label>
+                                </el-checkbox>
+                                <el-checkbox class="form-check">
+                                  <input
+                                    type="checkbox"
+                                    id="checkSaveMessage-1-2"
+                                    class="form-check-input custom-checkbox"
+                                    value=""
+                                  />
+                                  <label
+                                    class="form-check-label typo-body-sm"
+                                    for="checkSaveMessage-1-2"
+                                  >
+                                    발송메시지 나머지 상품 동일 적용
+                                  </label>
+                                </el-checkbox>
+                              </el-order-save-message>
+                            </el-order-message-create>
+
+                            <el-order-caution class="typo-body-sm theme-red">
+                              <el-marker-list>
+                                <ul>
+                                  <li>
+                                    기본 이용안내 사항 및 아래문구가 자동으로
+                                    추가됩니다.
+                                  </li>
+                                  <li>
+                                    본 쿠폰은 재판매 금지하며, 프로모션(B2B)
+                                    발송상품으로 유효기간 연장 및 환불
+                                    불가합니다.
+                                  </li>
+                                  <li>유효기간 내 사용(교환)바랍니다.</li>
+                                </ul>
+                              </el-marker-list>
+                            </el-order-caution>
+                          </el-order-product-article>
+
+                          <el-order-divider></el-order-divider>
+
+                          <el-order-product-article>
+                            <el-article-title>
+                              <h3 class="typo-subtitle-lg">이미지 추가</h3>
+                            </el-article-title>
+                            <el-order-add-image-box>
+                              <el-order-add-image-box-header>
+                                <el-radio class="form-check">
+                                  <input
+                                    type="radio"
+                                    class="form-check-input custom-radio"
+                                    name="radioAddImage-1"
+                                    id="radioAddImage-1-1"
+                                    value=""
+                                    checked
+                                  />
+                                  <label
+                                    class="form-check-label typo-body-sm"
+                                    for="radioAddImage-1-1"
+                                  >
+                                    이미지 없음
+                                  </label>
+                                </el-radio>
+                                <el-radio class="form-check">
+                                  <input
+                                    type="radio"
+                                    class="form-check-input custom-radio"
+                                    name="radioAddImage-1"
+                                    id="radioAddImage-1-2"
+                                    value=""
+                                  />
+                                  <label
+                                    class="form-check-label typo-body-sm"
+                                    for="radioAddImage-1-2"
+                                  >
+                                    기본 이미지
+                                  </label>
+                                </el-radio>
+                                <el-radio class="form-check">
+                                  <input
+                                    type="radio"
+                                    class="form-check-input custom-radio"
+                                    name="radioAddImage-1"
+                                    id="radioAddImage-1-3"
+                                    value=""
+                                  />
+                                  <label
+                                    class="form-check-label typo-body-sm"
+                                    for="radioAddImage-1-3"
+                                  >
+                                    최근 이미지
+                                  </label>
+                                </el-radio>
+                                <el-radio class="form-check">
+                                  <input
+                                    type="radio"
+                                    class="form-check-input custom-radio"
+                                    name="radioAddImage-1"
+                                    id="radioAddImage-1-4"
+                                    value=""
+                                  />
+                                  <label
+                                    class="form-check-label typo-body-sm"
+                                    for="radioAddImage-1-4"
+                                  >
+                                    나의 이미지 (400 x 200px)
+                                  </label>
+                                </el-radio>
+                              </el-order-add-image-box-header>
+
+                              <!-- 시작: 컨텐츠 - '기본 이미지' -->
+                              <el-order-add-image-box-content
+                                class="default-image"
+                              >
+                                <el-box-content-inner>
+                                  <ul>
+                                    <li>
+                                      <el-add-image-item>
+                                        <el-add-image-item-label>
+                                          <el-radio class="form-check">
+                                            <input
+                                              type="radio"
+                                              class="form-check-input custom-radio"
+                                              name="radioDefaultImage"
+                                              id="radioDefaultImage-1"
+                                              value=""
+                                              checked
+                                            />
+                                            <label
+                                              class="form-check-label typo-body-sm"
+                                              for="radioDefaultImage-1"
+                                            >
+                                              졸업 축하해
+                                            </label>
+                                          </el-radio>
+                                        </el-add-image-item-label>
+                                        <el-add-image-item-preview>
+                                          <img
+                                            src="./images/temp/sample-order-message-image.png"
+                                            alt=""
+                                          />
+                                        </el-add-image-item-preview>
+                                      </el-add-image-item>
+                                    </li>
+                                    <li>
+                                      <el-add-image-item>
+                                        <el-add-image-item-label>
+                                          <el-radio class="form-check">
+                                            <input
+                                              type="radio"
+                                              class="form-check-input custom-radio"
+                                              name="radioDefaultImage"
+                                              id="radioDefaultImage-2"
+                                              value=""
+                                            />
+                                            <label
+                                              class="form-check-label typo-body-sm"
+                                              for="radioDefaultImage-2"
+                                            >
+                                              졸업 축하해
+                                            </label>
+                                          </el-radio>
+                                        </el-add-image-item-label>
+                                        <el-add-image-item-preview>
+                                          <img
+                                            src="./images/temp/sample-order-message-image.png"
+                                            alt=""
+                                          />
+                                        </el-add-image-item-preview>
+                                      </el-add-image-item>
+                                    </li>
+                                    <li>
+                                      <el-add-image-item>
+                                        <el-add-image-item-label>
+                                          <el-radio class="form-check">
+                                            <input
+                                              type="radio"
+                                              class="form-check-input custom-radio"
+                                              name="radioDefaultImage"
+                                              id="radioDefaultImage-3"
+                                              value=""
+                                            />
+                                            <label
+                                              class="form-check-label typo-body-sm"
+                                              for="radioDefaultImage-3"
+                                            >
+                                              졸업 축하해
+                                            </label>
+                                          </el-radio>
+                                        </el-add-image-item-label>
+                                        <el-add-image-item-preview>
+                                          <img
+                                            src="./images/temp/sample-order-message-image.png"
+                                            alt=""
+                                          />
+                                        </el-add-image-item-preview>
+                                      </el-add-image-item>
+                                    </li>
+                                    <li>
+                                      <el-add-image-item>
+                                        <el-add-image-item-label>
+                                          <el-radio class="form-check">
+                                            <input
+                                              type="radio"
+                                              class="form-check-input custom-radio"
+                                              name="radioDefaultImage"
+                                              id="radioDefaultImage-4"
+                                              value=""
+                                            />
+                                            <label
+                                              class="form-check-label typo-body-sm"
+                                              for="radioDefaultImage-4"
+                                            >
+                                              졸업 축하해
+                                            </label>
+                                          </el-radio>
+                                        </el-add-image-item-label>
+                                        <el-add-image-item-preview>
+                                          <img
+                                            src="./images/temp/sample-order-message-image.png"
+                                            alt=""
+                                          />
+                                        </el-add-image-item-preview>
+                                      </el-add-image-item>
+                                    </li>
+                                    <li>
+                                      <el-add-image-item>
+                                        <el-add-image-item-label>
+                                          <el-radio class="form-check">
+                                            <input
+                                              type="radio"
+                                              class="form-check-input custom-radio"
+                                              name="radioDefaultImage"
+                                              id="radioDefaultImage-5"
+                                              value=""
+                                            />
+                                            <label
+                                              class="form-check-label typo-body-sm"
+                                              for="radioDefaultImage-5"
+                                            >
+                                              졸업 축하해
+                                            </label>
+                                          </el-radio>
+                                        </el-add-image-item-label>
+                                        <el-add-image-item-preview>
+                                          <img
+                                            src="./images/temp/sample-order-message-image.png"
+                                            alt=""
+                                          />
+                                        </el-add-image-item-preview>
+                                      </el-add-image-item>
+                                    </li>
+                                    <li>
+                                      <el-add-image-item>
+                                        <el-add-image-item-label>
+                                          <el-radio class="form-check">
+                                            <input
+                                              type="radio"
+                                              class="form-check-input custom-radio"
+                                              name="radioDefaultImage"
+                                              id="radioDefaultImage-6"
+                                              value=""
+                                            />
+                                            <label
+                                              class="form-check-label typo-body-sm"
+                                              for="radioDefaultImage-6"
+                                            >
+                                              졸업 축하해
+                                            </label>
+                                          </el-radio>
+                                        </el-add-image-item-label>
+                                        <el-add-image-item-preview>
+                                          <img
+                                            src="./images/temp/sample-order-message-image.png"
+                                            alt=""
+                                          />
+                                        </el-add-image-item-preview>
+                                      </el-add-image-item>
+                                    </li>
+                                    <li>
+                                      <el-add-image-item>
+                                        <el-add-image-item-label>
+                                          <el-radio class="form-check">
+                                            <input
+                                              type="radio"
+                                              class="form-check-input custom-radio"
+                                              name="radioDefaultImage"
+                                              id="radioDefaultImage-7"
+                                              value=""
+                                            />
+                                            <label
+                                              class="form-check-label typo-body-sm"
+                                              for="radioDefaultImage-7"
+                                            >
+                                              졸업 축하해
+                                            </label>
+                                          </el-radio>
+                                        </el-add-image-item-label>
+                                        <el-add-image-item-preview>
+                                          <img
+                                            src="./images/temp/sample-order-message-image.png"
+                                            alt=""
+                                          />
+                                        </el-add-image-item-preview>
+                                      </el-add-image-item>
+                                    </li>
+                                    <li>
+                                      <el-add-image-item>
+                                        <el-add-image-item-label>
+                                          <el-radio class="form-check">
+                                            <input
+                                              type="radio"
+                                              class="form-check-input custom-radio"
+                                              name="radioDefaultImage"
+                                              id="radioDefaultImage-8"
+                                              value=""
+                                            />
+                                            <label
+                                              class="form-check-label typo-body-sm"
+                                              for="radioDefaultImage-8"
+                                            >
+                                              졸업 축하해
+                                            </label>
+                                          </el-radio>
+                                        </el-add-image-item-label>
+                                        <el-add-image-item-preview>
+                                          <img
+                                            src="./images/temp/sample-order-message-image.png"
+                                            alt=""
+                                          />
+                                        </el-add-image-item-preview>
+                                      </el-add-image-item>
+                                    </li>
+                                    <li>
+                                      <el-add-image-item>
+                                        <el-add-image-item-label>
+                                          <el-radio class="form-check">
+                                            <input
+                                              type="radio"
+                                              class="form-check-input custom-radio"
+                                              name="radioDefaultImage"
+                                              id="radioDefaultImage-9"
+                                              value=""
+                                            />
+                                            <label
+                                              class="form-check-label typo-body-sm"
+                                              for="radioDefaultImage-9"
+                                            >
+                                              졸업 축하해
+                                            </label>
+                                          </el-radio>
+                                        </el-add-image-item-label>
+                                        <el-add-image-item-preview>
+                                          <img
+                                            src="./images/temp/sample-order-message-image.png"
+                                            alt=""
+                                          />
+                                        </el-add-image-item-preview>
+                                      </el-add-image-item>
+                                    </li>
+                                    <li>
+                                      <el-add-image-item>
+                                        <el-add-image-item-label>
+                                          <el-radio class="form-check">
+                                            <input
+                                              type="radio"
+                                              class="form-check-input custom-radio"
+                                              name="radioDefaultImage"
+                                              id="radioDefaultImage-10"
+                                              value=""
+                                            />
+                                            <label
+                                              class="form-check-label typo-body-sm"
+                                              for="radioDefaultImage-10"
+                                            >
+                                              졸업 축하해
+                                            </label>
+                                          </el-radio>
+                                        </el-add-image-item-label>
+                                        <el-add-image-item-preview>
+                                          <img
+                                            src="./images/temp/sample-order-message-image.png"
+                                            alt=""
+                                          />
+                                        </el-add-image-item-preview>
+                                      </el-add-image-item>
+                                    </li>
+                                  </ul>
+                                </el-box-content-inner>
+                              </el-order-add-image-box-content>
+                              <!-- 종료: 컨텐츠 - '기본 이미지' -->
+
+                              <!-- 시작: 컨텐츠 - '최근 이미지' -->
+                              <el-order-add-image-box-content>
+                                <el-box-content-inner>
+                                  <ul>
+                                    <li>
+                                      <el-add-image-item>
+                                        <el-add-image-item-label>
+                                          <el-radio class="form-check">
+                                            <input
+                                              type="radio"
+                                              class="form-check-input custom-radio"
+                                              name="radioRecentImage"
+                                              value=""
+                                              checked
+                                            />
+                                          </el-radio>
+                                        </el-add-image-item-label>
+                                        <el-add-image-item-preview>
+                                          <img
+                                            src="./images/temp/sample-order-message-image.png"
+                                            alt=""
+                                          />
+                                        </el-add-image-item-preview>
+                                      </el-add-image-item>
+                                    </li>
+                                  </ul>
+                                </el-box-content-inner>
+                              </el-order-add-image-box-content>
+                              <!-- 종료: 컨텐츠 - '최근 이미지' -->
+
+                              <!-- 시작: 컨텐츠 - '나의 이미지' -->
+                              <el-order-add-image-box-content>
+                                <el-box-content-inner>
+                                  <ul>
+                                    <li>
+                                      <el-add-image-item>
+                                        <el-add-image-item-label>
+                                          <el-radio class="form-check">
+                                            <input
+                                              type="radio"
+                                              class="form-check-input custom-radio"
+                                              name="radioMyImage"
+                                              value=""
+                                              checked
+                                            />
+                                          </el-radio>
+                                        </el-add-image-item-label>
+                                        <el-add-image-item-preview>
+                                          <img
+                                            src="./images/temp/sample-order-message-image.png"
+                                            alt=""
+                                          />
+                                          <button
+                                            type="button"
+                                            class="remove-item"
+                                            aria-label="remove item"
+                                          >
+                                            <el-icon
+                                              class="h20-closed"
+                                            ></el-icon>
+                                          </button>
+                                        </el-add-image-item-preview>
+                                      </el-add-image-item>
+                                    </li>
+                                    <li>
+                                      <el-add-image-item>
+                                        <el-add-image-item-label>
+                                          <el-radio class="form-check">
+                                            <input
+                                              type="radio"
+                                              class="form-check-input custom-radio"
+                                              name="radioMyImage"
+                                              value=""
+                                            />
+                                          </el-radio>
+                                        </el-add-image-item-label>
+                                        <el-add-image-item-preview>
+                                          <img
+                                            src="./images/temp/sample-order-message-image.png"
+                                            alt=""
+                                          />
+                                          <button
+                                            type="button"
+                                            class="remove-item"
+                                            aria-label="remove item"
+                                          >
+                                            <el-icon
+                                              class="h20-closed"
+                                            ></el-icon>
+                                          </button>
+                                        </el-add-image-item-preview>
+                                      </el-add-image-item>
+                                    </li>
+                                    <li>
+                                      <el-add-image-item>
+                                        <el-add-image-item-label>
+                                          <el-radio class="form-check">
+                                            <input
+                                              type="radio"
+                                              class="form-check-input custom-radio"
+                                              name="radioMyImage"
+                                              value=""
+                                            />
+                                          </el-radio>
+                                        </el-add-image-item-label>
+                                        <el-add-image-item-preview>
+                                          <img
+                                            src="./images/temp/sample-order-message-image.png"
+                                            alt=""
+                                          />
+                                          <button
+                                            type="button"
+                                            class="remove-item"
+                                            aria-label="remove item"
+                                          >
+                                            <el-icon
+                                              class="h20-closed"
+                                            ></el-icon>
+                                          </button>
+                                        </el-add-image-item-preview>
+                                      </el-add-image-item>
+                                    </li>
+                                    <li>
+                                      <el-add-image-item>
+                                        <el-add-image-item-label>
+                                          <el-radio class="form-check">
+                                            <input
+                                              type="radio"
+                                              class="form-check-input custom-radio"
+                                              name="radioMyImage"
+                                              value=""
+                                            />
+                                          </el-radio>
+                                        </el-add-image-item-label>
+                                        <el-add-image-item-preview>
+                                          <img
+                                            src="./images/temp/sample-order-message-image.png"
+                                            alt=""
+                                          />
+                                          <button
+                                            type="button"
+                                            class="remove-item"
+                                            aria-label="remove item"
+                                          >
+                                            <el-icon
+                                              class="h20-closed"
+                                            ></el-icon>
+                                          </button>
+                                        </el-add-image-item-preview>
+                                      </el-add-image-item>
+                                    </li>
+                                    <li>
+                                      <el-add-image-item>
+                                        <el-add-image-item-label>
+                                          <el-radio class="form-check">
+                                            <input
+                                              type="radio"
+                                              class="form-check-input custom-radio"
+                                              name="radioMyImage"
+                                              value=""
+                                            />
+                                          </el-radio>
+                                        </el-add-image-item-label>
+                                        <el-add-image-item-preview>
+                                          <img
+                                            src="./images/temp/sample-order-message-image.png"
+                                            alt=""
+                                          />
+                                          <button
+                                            type="button"
+                                            class="remove-item"
+                                            aria-label="remove item"
+                                          >
+                                            <el-icon
+                                              class="h20-closed"
+                                            ></el-icon>
+                                          </button>
+                                        </el-add-image-item-preview>
+                                      </el-add-image-item>
+                                    </li>
+                                    <li>
+                                      <el-add-image-item>
+                                        <el-add-image-item-label>
+                                          <el-radio class="form-check">
+                                            <input
+                                              type="radio"
+                                              class="form-check-input custom-radio"
+                                              name="radioMyImage"
+                                              value=""
+                                            />
+                                          </el-radio>
+                                        </el-add-image-item-label>
+                                        <el-add-image-item-preview>
+                                          <img
+                                            src="./images/temp/sample-order-message-image.png"
+                                            alt=""
+                                          />
+                                          <button
+                                            type="button"
+                                            class="remove-item"
+                                            aria-label="remove item"
+                                          >
+                                            <el-icon
+                                              class="h20-closed"
+                                            ></el-icon>
+                                          </button>
+                                        </el-add-image-item-preview>
+                                      </el-add-image-item>
+                                    </li>
+                                    <li>
+                                      <el-add-image-item>
+                                        <el-add-image-item-label>
+                                          <el-radio class="form-check">
+                                            <input
+                                              type="radio"
+                                              class="form-check-input custom-radio"
+                                              name="radioMyImage"
+                                              value=""
+                                            />
+                                          </el-radio>
+                                        </el-add-image-item-label>
+                                        <el-add-image-item-preview>
+                                          <img
+                                            src="./images/temp/sample-order-message-image.png"
+                                            alt=""
+                                          />
+                                          <button
+                                            type="button"
+                                            class="remove-item"
+                                            aria-label="remove item"
+                                          >
+                                            <el-icon
+                                              class="h20-closed"
+                                            ></el-icon>
+                                          </button>
+                                        </el-add-image-item-preview>
+                                      </el-add-image-item>
+                                    </li>
+                                    <li>
+                                      <el-add-image-item>
+                                        <el-add-image-item-label>
+                                          <el-radio class="form-check">
+                                            <input
+                                              type="radio"
+                                              class="form-check-input custom-radio"
+                                              name="radioMyImage"
+                                              value=""
+                                            />
+                                          </el-radio>
+                                        </el-add-image-item-label>
+                                        <el-add-image-item-preview>
+                                          <img
+                                            src="./images/temp/sample-order-message-image.png"
+                                            alt=""
+                                          />
+                                          <button
+                                            type="button"
+                                            class="remove-item"
+                                            aria-label="remove item"
+                                          >
+                                            <el-icon
+                                              class="h20-closed"
+                                            ></el-icon>
+                                          </button>
+                                        </el-add-image-item-preview>
+                                      </el-add-image-item>
+                                    </li>
+                                    <li>
+                                      <el-add-image-item>
+                                        <el-add-image-item-label>
+                                          <el-radio class="form-check">
+                                            <input
+                                              type="radio"
+                                              class="form-check-input custom-radio"
+                                              name="radioMyImage"
+                                              value=""
+                                            />
+                                          </el-radio>
+                                        </el-add-image-item-label>
+                                        <el-add-image-item-preview>
+                                          <img
+                                            src="./images/temp/sample-order-message-image.png"
+                                            alt=""
+                                          />
+                                          <button
+                                            type="button"
+                                            class="remove-item"
+                                            aria-label="remove item"
+                                          >
+                                            <el-icon
+                                              class="h20-closed"
+                                            ></el-icon>
+                                          </button>
+                                        </el-add-image-item-preview>
+                                      </el-add-image-item>
+                                    </li>
+                                  </ul>
+                                </el-box-content-inner>
+
+                                <el-order-divider
+                                  style="
+                                    width: calc(100% - 48px);
+                                    margin: 0 auto;
+                                  "
+                                ></el-order-divider>
+
+                                <el-order-add-image-upload-wrap>
+                                  <el-order-add-image-upload>
+                                    <el-image-upload-input>
+                                      <input
+                                        type="file"
+                                        id="fileUploadImage"
+                                        accept="image/*"
+                                      />
+                                      <label for="fileUploadImage"></label>
+                                    </el-image-upload-input>
+                                    <el-image-upload-right>
+                                      <el-image-upload-info>
+                                        <el-image-upload-title
+                                          class="typo-body-lg"
+                                        >
+                                          나의 이미지 등록하기
+                                        </el-image-upload-title>
+                                        <el-marker-list>
+                                          <ul>
+                                            <li>파일용량 100KB 이하</li>
+                                            <li>최대 9개까지 등록 </li>
+                                            <li>
+                                              <strong>
+                                                등록 버튼을 꼭 눌러주세요.
+                                              </strong>
+                                            </li>
+                                          </ul>
+                                        </el-marker-list>
+                                      </el-image-upload-info>
+                                      <el-image-upload-cta>
+                                        <button
+                                          type="button"
+                                          class="text-black button-h43-square typo-body-sm"
+                                        >
+                                          불러오기
+                                        </button>
+                                        <button
+                                          type="button"
+                                          class="button-h43-square-fill typo-body-sm"
+                                        >
+                                          등록
+                                        </button>
+                                      </el-image-upload-cta>
+                                    </el-image-upload-right>
+                                  </el-order-add-image-upload>
+                                </el-order-add-image-upload-wrap>
+                              </el-order-add-image-box-content>
+                              <!-- 종료: 컨텐츠 - '나의 이미지' -->
+                            </el-order-add-image-box>
+
+                            <el-order-add-image-box>
+                              <el-order-add-image-box-header>
+                                <el-radio class="form-check">
+                                  <input
+                                    type="radio"
+                                    class="form-check-input custom-radio"
+                                    name="radioAddImage-2"
+                                    id="radioAddImage-2-1"
+                                    value=""
+                                    checked
+                                  />
+                                  <label
+                                    class="form-check-label typo-body-sm"
+                                    for="radioAddImage-2-1"
+                                  >
+                                    이미지 없음
+                                  </label>
+                                </el-radio>
+                                <el-radio class="form-check">
+                                  <input
+                                    type="radio"
+                                    class="form-check-input custom-radio"
+                                    name="radioAddImage-2"
+                                    id="radioAddImage-2-2"
+                                    value=""
+                                  />
+                                  <label
+                                    class="form-check-label typo-body-sm"
+                                    for="radioAddImage-2-2"
+                                  >
+                                    기본 이미지
+                                  </label>
+                                </el-radio>
+                                <el-radio class="form-check">
+                                  <input
+                                    type="radio"
+                                    class="form-check-input custom-radio"
+                                    name="radioAddImage-2"
+                                    id="radioAddImage-2-3"
+                                    value=""
+                                  />
+                                  <label
+                                    class="form-check-label typo-body-sm"
+                                    for="radioAddImage-2-3"
+                                  >
+                                    최근 이미지
+                                  </label>
+                                </el-radio>
+                                <el-radio class="form-check">
+                                  <input
+                                    type="radio"
+                                    class="form-check-input custom-radio"
+                                    name="radioAddImage-2"
+                                    id="radioAddImage-2-4"
+                                    value=""
+                                  />
+                                  <label
+                                    class="form-check-label typo-body-sm"
+                                    for="radioAddImage-2-4"
+                                  >
+                                    나의 이미지 (400 x 200px)
+                                  </label>
+                                </el-radio>
+                              </el-order-add-image-box-header>
+
+                              <!-- 시작: 컨텐츠 - '기본 이미지' -->
+                              <el-order-add-image-box-content
+                                class="default-image"
+                              >
+                                <el-box-content-inner>
+                                  <ul>
+                                    <li>
+                                      <el-add-image-item>
+                                        <el-add-image-item-label>
+                                          <el-radio class="form-check">
+                                            <input
+                                              type="radio"
+                                              class="form-check-input custom-radio"
+                                              name="radioDefaultImage-2"
+                                              id="radioDefaultImage-2-1"
+                                              value=""
+                                              checked
+                                            />
+                                            <label
+                                              class="form-check-label typo-body-sm"
+                                              for="radioDefaultImage-2-1"
+                                            >
+                                              졸업 축하해
+                                            </label>
+                                          </el-radio>
+                                        </el-add-image-item-label>
+                                        <el-add-image-item-preview>
+                                          <img
+                                            src="./images/temp/sample-order-message-image.png"
+                                            alt=""
+                                          />
+                                        </el-add-image-item-preview>
+                                      </el-add-image-item>
+                                    </li>
+                                  </ul>
+                                </el-box-content-inner>
+                              </el-order-add-image-box-content>
+                              <!-- 종료: 컨텐츠 - '기본 이미지' -->
+
+                              <!-- 시작: 컨텐츠 - '최근 이미지' -->
+                              <el-order-add-image-box-content>
+                              </el-order-add-image-box-content>
+                              <!-- 종료: 컨텐츠 - '최근 이미지' -->
+
+                              <!-- 시작: 컨텐츠 - '나의 이미지' -->
+                              <el-order-add-image-box-content>
+                                <el-order-add-image-upload-wrap>
+                                  <el-order-add-image-upload>
+                                    <el-image-upload-input>
+                                      <input
+                                        type="file"
+                                        id="fileUploadImage-2"
+                                        accept="image/*"
+                                      />
+                                      <label for="fileUploadImage-2">
+                                        <img
+                                          src="./images/temp/sample-order-message-image.png"
+                                          alt=""
+                                        />
+                                      </label>
+                                    </el-image-upload-input>
+                                    <el-image-upload-right>
+                                      <el-image-upload-info>
+                                        <el-image-upload-title
+                                          class="typo-body-lg"
+                                        >
+                                          나의 이미지 등록하기
+                                        </el-image-upload-title>
+                                        <el-marker-list>
+                                          <ul>
+                                            <li>파일용량 100KB 이하</li>
+                                            <li>최대 9개까지 등록 </li>
+                                            <li>
+                                              <strong>
+                                                등록 버튼을 꼭 눌러주세요.
+                                              </strong>
+                                            </li>
+                                          </ul>
+                                        </el-marker-list>
+                                      </el-image-upload-info>
+                                      <el-image-upload-cta>
+                                        <button
+                                          type="button"
+                                          class="text-black button-h43-square typo-body-sm"
+                                        >
+                                          불러오기
+                                        </button>
+                                        <button
+                                          type="button"
+                                          class="button-h43-square-fill typo-body-sm"
+                                        >
+                                          등록
+                                        </button>
+                                      </el-image-upload-cta>
+                                    </el-image-upload-right>
+                                  </el-order-add-image-upload>
+                                </el-order-add-image-upload-wrap>
+                              </el-order-add-image-box-content>
+                              <!-- 종료: 컨텐츠 - '나의 이미지' -->
+                            </el-order-add-image-box>
+                          </el-order-product-article>
+
+                          <el-order-divider></el-order-divider>
+
+                          <el-order-product-footer>
+                            <button
+                              type="button"
+                              class="button-h50-stroke-login typo-body-sm"
+                            >
+                              <span>미리보기</span>
+                            </button>
+
+                            <el-order-caution class="typo-body-sm">
+                              <el-marker-list>
+                                <ul>
+                                  <li>
+                                    이메일로 수신된 쿠폰을 문자로 전환할 수 있는
+                                    기간은 해당 메일이 발송된 이후 60일
+                                    이내입니다.
+                                  </li>
+                                  <li>
+                                    휴면계정, 스팸 설정, 메일 용량 초과 등에
+                                    이유로 거부될 수 있으며 이로 인한 환불 및
+                                    취소는 불가합니다. (재발송은 3회 가능)
+                                  </li>
+                                  <li>
+                                    주문 당 최대 1,000명까지 발송 가능합니다.
+                                  </li>
+                                  <li>
+                                    유효하지 않은 발송 메일 주소 입력 시 메일
+                                    발송이 실패될 수 있습니다. 기입을 원치
+                                    않으실 경우 officecon@zlgoon.co.kr을 입력해
+                                    주세요.
+                                  </li>
+                                </ul>
+                              </el-marker-list>
+                            </el-order-caution>
+                          </el-order-product-footer>
+                        </el-order-product>
+                      </el-order-box-content>
+                    </el-order-box-content-collapse>
+                  </el-order-box>
+
+                  <el-order-box>
+                    <el-order-box-header>
+                      <el-order-box-header-title class="typo-subtitle-lg">
+                        주문상품 2
+                      </el-order-box-header-title>
+
+                      <!-- [DEV] 개발 시 data-bs-target의 값에
+                           '#collapse-box-content-{인덱스}' 를 사용해 주세요.
+                       -->
+                      <button
+                        type="button"
+                        aria-label="toogle box"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapse-box-content-1"
+                      >
+                        <el-icon class="h32-plus natural-0"></el-icon>
+                        <el-icon class="h32-minus natural-0"></el-icon>
+                      </button>
+                    </el-order-box-header>
+
+                    <!-- [DEV] 개발 시 id 값에
+                           'collapse-box-content-{인덱스}'를 사용해 주세요.
+                       -->
+                    <el-order-box-content-collapse
+                      class="collapse show"
+                      id="collapse-box-content-1"
+                    >
+                      <el-order-box-content>
+                        <el-order-product>
+                          <el-order-product-item>
+                            <table class="table align-middle table-borderless">
+                              <colgroup>
+                                <col class="col-auto" />
+                                <col class="col-fix" />
+                                <col class="col-fix" />
+                                <col class="col-fix" />
+                                <col class="col-fix" />
+                              </colgroup>
+                              <thead>
+                                <tr>
+                                  <th scope="col">상품정보</th>
+                                  <th scope="col">유효기간</th>
+                                  <th scope="col">지급 리워드</th>
+                                  <th scope="col">정상가</th>
+                                  <th scope="col">판매가</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>
+                                    <el-order-product-item-detail>
+                                      <a href="#">
+                                        <el-item-thumbnail>
+                                          <img
+                                            class="thumbnail-image"
+                                            src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/product/20250227/20250227145823_a5b9221d-437d-4b84-b0ac-fbc6f58edf4f.jpg"
+                                            alt=""
+                                          />
+                                          <el-bg></el-bg>
+                                        </el-item-thumbnail>
+
+                                        <el-item-txt class="typo-body-sm">
+                                          <el-item-name>
+                                            <el-brand>
+                                              일이삼사오육칠팔구십일이삼사
+                                            </el-brand>
+                                            <el-item-name-txt>
+                                              일이삼사오육칠팔구십일이삼사오육칠
+                                            </el-item-name-txt>
+                                          </el-item-name>
+                                        </el-item-txt>
+                                      </a>
+                                    </el-order-product-item-detail>
+                                  </td>
+                                  <td>2025.12.31</td>
+                                  <td>
+                                    <el-reward>
+                                      <img
+                                        src="./images/badge-h14-reward.svg"
+                                        alt="리워드"
+                                      />
+                                      1,004,700
+                                    </el-reward>
+                                  </td>
+                                  <td>1,004,700</td>
+                                  <td>
+                                    <el-sale-price> 1,004,700 </el-sale-price>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </el-order-product-item>
+
+                          <el-order-divider></el-order-divider>
+
+                          <el-order-product-article>
+                            <el-article-title>
+                              <h3 class="typo-subtitle-lg">발신 정보</h3>
+                            </el-article-title>
+                            <el-order-input-row>
+                              <el-order-input-label>
+                                발신번호
+                              </el-order-input-label>
+                              <el-order-input>
+                                <el-input>
+                                  <input
+                                    class="form-control custom-input input-type-phone"
+                                    type="text"
+                                    placeholder="발신자 번호를 입력해 주세요. (일반번호도 사용가능)"
+                                  />
+                                </el-input>
+                              </el-order-input>
+                            </el-order-input-row>
+
+                            <el-order-caution class="typo-body-sm">
+                              <el-order-caution-header>
+                                발신번호가 올바르지 않으면 발송이 실패됩니다.
+                                <a
+                                  href="https://www.officecon.co.kr/"
+                                  target="_blank"
+                                >
+                                  발송실패예시
+                                  <el-icon class="h16-arrow-right"></el-icon>
+                                </a>
+                              </el-order-caution-header>
+                              <el-marker-list>
+                                <ul>
+                                  <li>
+                                    일반번호에는 지역번호를 포함하여 등록하세요.
+                                    (02-XXXX-XXXX)
+                                  </li>
+                                  <li>
+                                    전국대표번호(1544, 1661 등)에는 지역번호
+                                    없이 입력하세요. (1544-XXXX)
+                                  </li>
+                                </ul>
+                              </el-marker-list>
+                            </el-order-caution>
+                          </el-order-product-article>
+
+                          <el-order-divider></el-order-divider>
+
+                          <el-order-product-article>
+                            <el-article-title>
+                              <h3 class="typo-subtitle-lg">수신자 편집</h3>
+                            </el-article-title>
+                            <el-order-input-row>
+                              <el-order-input-label>
+                                휴대폰번호
+                              </el-order-input-label>
+                              <el-order-input>
+                                <el-input>
+                                  <input
+                                    class="form-control custom-input input-type-mobile"
+                                    type="text"
+                                    placeholder="받으실 분 휴대폰번호를 입력해주세요."
+                                  />
+                                </el-input>
+                                <button
+                                  type="button"
+                                  class="text-black button-h43-square typo-body-sm"
+                                >
+                                  추가
+                                </button>
+                              </el-order-input>
+                            </el-order-input-row>
+                            <el-order-addressee-list>
+                              <el-order-addressee-util-bar>
+                                <button
+                                  type="button"
+                                  class="text-black button-h43-square typo-body-sm"
+                                >
+                                  복사하여 붙여넣기
+                                </button>
+                                <button
+                                  type="button"
+                                  class="text-black button-h43-square typo-body-sm"
+                                >
+                                  엑셀 업로드
+                                </button>
+                                <button
+                                  type="button"
+                                  class="text-black button-h43-square typo-body-sm"
+                                >
+                                  <el-icon class="etc-excel"></el-icon>
+                                  엑셀 양식 다운로드
+                                </button>
+                              </el-order-addressee-util-bar>
+                              <el-order-addressee-list-content>
+                                <ul class="typo-body-md"> </ul>
+                                <el-order-addressee-list-status>
+                                  <el-status-top>
+                                    <button type="button" aria-label="refresh">
+                                      <el-icon
+                                        class="h20-refresh natural-0"
+                                      ></el-icon>
+                                    </button>
+                                    <el-status-top-label class="typo-body-lg">
+                                      선택된 수신자
+                                    </el-status-top-label>
+                                    <el-status-top-count class="typo-body-sm">
+                                      <strong class="typo-heading-md">0</strong
+                                      >명
+                                    </el-status-top-count>
+                                  </el-status-top>
+                                  <el-order-divider></el-order-divider>
+                                  <el-status-bottom>
+                                    <el-status-bottom-default
+                                      class="typo-body-sm"
+                                    >
+                                      선택된 수신자로<br />모바일쿠폰을
+                                      보내드려요.
+                                      <img src="./images/letter.png" alt="" />
+                                    </el-status-bottom-default>
+                                  </el-status-bottom>
+                                </el-order-addressee-list-status>
+                              </el-order-addressee-list-content>
+                            </el-order-addressee-list>
+                          </el-order-product-article>
+
+                          <el-order-divider></el-order-divider>
+
+                          <el-order-product-article>
+                            <el-article-title>
+                              <h3 class="typo-subtitle-lg">
+                                발송메시지 만들기
+                              </h3>
+                              <el-article-title-addon>
+                                <button
+                                  type="button"
+                                  class="text-black button-h43-square typo-body-sm"
+                                >
+                                  발송문구 불러오기
+                                </button>
+                                <button
+                                  type="button"
+                                  class="text-black button-h43-square typo-body-sm"
+                                >
+                                  최근 발송문구 불러오기
+                                </button>
+                              </el-article-title-addon>
+                            </el-article-title>
+
+                            <el-order-message-create>
+                              <el-order-input-row>
+                                <el-order-input-label>
+                                  프로모션명
+                                </el-order-input-label>
+                                <el-order-input>
+                                  <el-input>
+                                    <input
+                                      class="form-control custom-input"
+                                      type="text"
+                                      placeholder="관리용 제목을 입력해 주세요. (수신자에게 발송되지 않습니다.)"
+                                    />
+                                  </el-input>
+                                  <el-order-input-length class="typo-body-sm">
+                                    (0/60)
+                                  </el-order-input-length>
+                                </el-order-input>
+                              </el-order-input-row>
+                              <el-order-input-row>
+                                <el-order-input-label>
+                                  제목
+                                </el-order-input-label>
+                                <el-order-input>
+                                  <el-input>
+                                    <input
+                                      class="form-control custom-input"
+                                      type="text"
+                                      placeholder="제목을 입력해 주세요. (예시: 오피스콘 설문조사 답례 쿠폰)"
+                                    />
+                                  </el-input>
+                                  <el-order-input-length class="typo-body-sm">
+                                    (0/20)
+                                  </el-order-input-length>
+                                </el-order-input>
+                              </el-order-input-row>
+                              <el-order-input-row>
+                                <el-order-input-label>
+                                  내용
+                                </el-order-input-label>
+                                <el-order-input class="order-textarea">
+                                  <textarea
+                                    class="form-control"
+                                    placeholder="내용을 입력해 주세요.&#13;&#10;(예시 : 오피스콘 설문조사에 응해 주셔서 진심으로 감사드립니다.)"
+                                  ></textarea>
+                                  <el-order-input-length class="typo-body-sm">
+                                    (0/250)
+                                  </el-order-input-length>
+                                </el-order-input>
+                              </el-order-input-row>
+                              <el-order-save-message>
+                                <el-checkbox class="form-check">
+                                  <input
+                                    type="checkbox"
+                                    id="checkSaveMessage-2-1"
+                                    class="form-check-input custom-checkbox"
+                                    value=""
+                                  />
+                                  <label
+                                    class="form-check-label typo-body-sm"
+                                    for="checkSaveMessage-2-1"
+                                  >
+                                    발송문구 저장
+                                  </label>
+                                </el-checkbox>
+                                <el-checkbox class="form-check">
+                                  <input
+                                    type="checkbox"
+                                    id="checkSaveMessage-2-2"
+                                    class="form-check-input custom-checkbox"
+                                    value=""
+                                  />
+                                  <label
+                                    class="form-check-label typo-body-sm"
+                                    for="checkSaveMessage-2-2"
+                                  >
+                                    발송메시지 나머지 상품 동일 적용
+                                  </label>
+                                </el-checkbox>
+                              </el-order-save-message>
+                            </el-order-message-create>
+
+                            <el-order-caution class="typo-body-sm theme-red">
+                              <el-marker-list>
+                                <ul>
+                                  <li>
+                                    기본 이용안내 사항 및 아래문구가 자동으로
+                                    추가됩니다.
+                                  </li>
+                                  <li>
+                                    본 쿠폰은 재판매 금지하며, 프로모션(B2B)
+                                    발송상품으로 유효기간 연장 및 환불
+                                    불가합니다.
+                                  </li>
+                                  <li>유효기간 내 사용(교환)바랍니다.</li>
+                                </ul>
+                              </el-marker-list>
+                            </el-order-caution>
+                          </el-order-product-article>
+                        </el-order-product>
+                      </el-order-box-content>
+                    </el-order-box-content-collapse>
+                  </el-order-box>
+
+                  <el-order-box>
+                    <el-order-box-header>
+                      <el-order-box-header-title class="typo-subtitle-lg">
+                        포인트 사용
+                      </el-order-box-header-title>
+                    </el-order-box-header>
+
+                    <el-order-box-content-collapse>
+                      <el-order-box-content>
+                        <el-order-use-incentives>
+                          <el-order-use-incentives-form>
+                            <el-incentives-form-left>
+                              <el-input>
+                                <input
+                                  class="form-control custom-input"
+                                  type="text"
+                                  placeholder=""
+                                  value="0"
+                                />
+                              </el-input>
+                              <button
+                                type="button"
+                                class="text-black button-h43-square typo-body-sm"
+                              >
+                                전액 사용
+                              </button>
+                            </el-incentives-form-left>
+                            <el-incentives-form-right>
+                              <el-my-incentives class="typo-body-sm">
+                                보유
+                                <strong>99,999,999원</strong>
+                              </el-my-incentives>
+                            </el-incentives-form-right>
+                          </el-order-use-incentives-form>
+                        </el-order-use-incentives>
+                      </el-order-box-content>
+                    </el-order-box-content-collapse>
+                  </el-order-box>
+
+                  <el-order-box>
+                    <el-order-box-header>
+                      <el-order-box-header-title class="typo-subtitle-lg">
+                        캐쉬 사용
+                      </el-order-box-header-title>
+                    </el-order-box-header>
+
+                    <el-order-box-content-collapse>
+                      <el-order-box-content>
+                        <el-order-use-incentives>
+                          <el-order-use-incentives-form>
+                            <el-incentives-form-left>
+                              <el-input>
+                                <input
+                                  class="form-control custom-input"
+                                  type="text"
+                                  placeholder=""
+                                  value="0"
+                                />
+                              </el-input>
+                              <button
+                                type="button"
+                                class="text-black button-h43-square typo-body-sm"
+                              >
+                                전액 사용
+                              </button>
+                            </el-incentives-form-left>
+                            <el-incentives-form-right>
+                              <el-my-incentives class="typo-body-sm">
+                                보유
+                                <strong>99,999,999원</strong>
+                              </el-my-incentives>
+                              <button
+                                type="button"
+                                class="button-h43-square-fill typo-body-sm color-orange"
+                              >
+                                충전
+                              </button>
+                            </el-incentives-form-right>
+                          </el-order-use-incentives-form>
+
+                          <el-order-divider></el-order-divider>
+
+                          <el-incentives-additional-cert>
+                            <el-incentives-additional-cert-label
+                              class="typo-body-lg"
+                            >
+                              캐쉬 사용 추가 인증
+                            </el-incentives-additional-cert-label>
+                            <el-incentives-additional-cert-form>
+                              <el-cert-form-item>
+                                <el-input class="width-wide">
+                                  <input
+                                    class="form-control custom-input"
+                                    type="text"
+                                    placeholder="인증 비밀번호를 입력해 주세요."
+                                    maxlength="6"
+                                  />
+                                </el-input>
+                                <button
+                                  type="button"
+                                  class="text-black button-h43-square typo-body-sm"
+                                >
+                                  확인
+                                </button>
+                              </el-cert-form-item>
+                            </el-incentives-additional-cert-form>
+                          </el-incentives-additional-cert>
+                        </el-order-use-incentives>
+                      </el-order-box-content>
+                    </el-order-box-content-collapse>
+                  </el-order-box>
+
+                  <el-order-box>
+                    <el-order-box-header>
+                      <el-order-box-header-title class="typo-subtitle-lg">
+                        캐쉬 사용
+                      </el-order-box-header-title>
+                    </el-order-box-header>
+
+                    <el-order-box-content-collapse>
+                      <el-order-box-content>
+                        <el-order-use-incentives>
+                          <el-order-use-incentives-form>
+                            <el-incentives-form-left>
+                              <el-input>
+                                <input
+                                  class="form-control custom-input"
+                                  type="text"
+                                  placeholder=""
+                                  value="0"
+                                />
+                              </el-input>
+                              <button
+                                type="button"
+                                class="text-black button-h43-square typo-body-sm"
+                              >
+                                전액 사용
+                              </button>
+                            </el-incentives-form-left>
+                            <el-incentives-form-right>
+                              <el-my-incentives class="typo-body-sm">
+                                보유
+                                <strong>99,999,999원</strong>
+                              </el-my-incentives>
+                              <button
+                                type="button"
+                                class="button-h43-square-fill typo-body-sm color-orange"
+                              >
+                                충전
+                              </button>
+                            </el-incentives-form-right>
+                          </el-order-use-incentives-form>
+
+                          <el-order-divider></el-order-divider>
+
+                          <el-incentives-additional-cert>
+                            <el-incentives-additional-cert-label
+                              class="typo-body-lg"
+                            >
+                              캐쉬 사용 추가 인증
+                            </el-incentives-additional-cert-label>
+                            <el-incentives-additional-cert-form>
+                              <el-cert-form-item>
+                                <el-input>
+                                  <input
+                                    class="form-control custom-input input-type-mobile"
+                                    type="text"
+                                    placeholder="휴대폰번호를 입력해주세요."
+                                  />
+                                </el-input>
+                                <button
+                                  type="button"
+                                  class="button-h43-square-fill typo-body-sm color-orange"
+                                >
+                                  인증번호 받기
+                                </button>
+                              </el-cert-form-item>
+                              <el-cert-form-item>
+                                <el-input class="is-invalid">
+                                  <input
+                                    class="form-control custom-input"
+                                    type="text"
+                                    placeholder="인증번호 입력"
+                                  />
+                                  <el-input-addon>
+                                    <el-timer class="typo-label-md">
+                                      09 : 50
+                                    </el-timer>
+                                  </el-input-addon>
+                                  <el-invalide-feedback class="typo-label-lg">
+                                    인증번호를 입력해 주세요.
+                                  </el-invalide-feedback>
+                                </el-input>
+                                <button
+                                  type="button"
+                                  class="text-black button-h43-square typo-body-sm"
+                                >
+                                  확인
+                                </button>
+                              </el-cert-form-item>
+                            </el-incentives-additional-cert-form>
+                          </el-incentives-additional-cert>
+
+                          <el-order-caution
+                            class="typo-body-sm theme-red weight-normal"
+                          >
+                            <el-marker-list>
+                              <ul>
+                                <li>
+                                  [마이페이지 &gt; 회원정보 수정 &gt; 휴대폰번호
+                                  변경]을 통해서 휴대폰 번호를 변경하실 수
+                                  있습니다.
+                                </li>
+                                <li>
+                                  휴대폰번호 변경이 어려운 경우 1:1문의
+                                  게시판으로 문의해 주세요.
+                                </li>
+                              </ul>
+                            </el-marker-list>
+                          </el-order-caution>
+                        </el-order-use-incentives>
+                      </el-order-box-content>
+                    </el-order-box-content-collapse>
+                  </el-order-box>
+
+                  <el-order-box>
+                    <el-order-box-header>
+                      <el-order-box-header-title class="typo-subtitle-lg">
+                        리워드 사용
+                      </el-order-box-header-title>
+                    </el-order-box-header>
+
+                    <el-order-box-content-collapse>
+                      <el-order-box-content>
+                        <el-order-use-incentives>
+                          <el-order-use-incentives-form>
+                            <el-incentives-form-left>
+                              <el-input>
+                                <input
+                                  class="form-control custom-input"
+                                  type="text"
+                                  placeholder=""
+                                  value="0"
+                                />
+                              </el-input>
+                              <button
+                                type="button"
+                                class="text-black button-h43-square typo-body-sm"
+                              >
+                                전액 사용
+                              </button>
+                            </el-incentives-form-left>
+                            <el-incentives-form-right>
+                              <el-my-incentives class="typo-body-sm">
+                                보유
+                                <strong class="color-purple"
+                                  >99,999,999리워드</strong
+                                >
+                              </el-my-incentives>
+                            </el-incentives-form-right>
+                          </el-order-use-incentives-form>
+
+                          <el-order-divider></el-order-divider>
+
+                          <el-incentives-additional-cert>
+                            <el-incentives-additional-cert-label
+                              class="typo-body-lg"
+                            >
+                              리워드 사용 추가 인증
+                            </el-incentives-additional-cert-label>
+                            <el-incentives-additional-cert-form>
+                              <el-cert-form-item>
+                                <el-input>
+                                  <input
+                                    class="form-control custom-input input-type-mobile"
+                                    type="text"
+                                    placeholder="휴대폰번호를 입력해주세요."
+                                  />
+                                </el-input>
+                                <button
+                                  type="button"
+                                  class="button-h43-square-fill typo-body-sm color-orange"
+                                >
+                                  인증번호 받기
+                                </button>
+                              </el-cert-form-item>
+                              <el-cert-form-item>
+                                <el-input>
+                                  <input
+                                    class="form-control custom-input"
+                                    type="text"
+                                    placeholder="인증번호 입력"
+                                  />
+                                  <el-input-addon>
+                                    <el-timer class="typo-label-md">
+                                      09 : 50
+                                    </el-timer>
+                                  </el-input-addon>
+                                </el-input>
+                                <button
+                                  type="button"
+                                  class="text-black button-h43-square typo-body-sm"
+                                >
+                                  확인
+                                </button>
+                              </el-cert-form-item>
+                            </el-incentives-additional-cert-form>
+                          </el-incentives-additional-cert>
+                        </el-order-use-incentives>
+                      </el-order-box-content>
+                    </el-order-box-content-collapse>
+                  </el-order-box>
+
+                  <el-order-box>
+                    <el-order-box-header>
+                      <el-order-box-header-title class="typo-subtitle-lg">
+                        리워드 사용
+                      </el-order-box-header-title>
+                    </el-order-box-header>
+
+                    <el-order-box-content-collapse>
+                      <el-order-box-content>
+                        <el-order-use-incentives>
+                          <el-order-use-incentives-form>
+                            <el-incentives-form-left>
+                              <el-input>
+                                <input
+                                  class="form-control custom-input"
+                                  type="text"
+                                  placeholder=""
+                                  value="99,999,999"
+                                />
+                              </el-input>
+                              <button
+                                type="button"
+                                class="text-black button-h43-square typo-body-sm"
+                              >
+                                사용 취소
+                              </button>
+                            </el-incentives-form-left>
+                            <el-incentives-form-right>
+                              <el-my-incentives class="typo-body-sm">
+                                보유
+                                <strong class="color-purple"
+                                  >99,999,999리워드</strong
+                                >
+                              </el-my-incentives>
+                            </el-incentives-form-right>
+                          </el-order-use-incentives-form>
+
+                          <el-order-divider></el-order-divider>
+
+                          <el-incentives-additional-cert>
+                            <el-incentives-additional-cert-label
+                              class="typo-body-lg"
+                            >
+                              리워드 사용 추가 인증
+                            </el-incentives-additional-cert-label>
+                            <el-incentives-additional-cert-form>
+                              <el-cert-form-item>
+                                <el-input class="width-wide is-invalid">
+                                  <input
+                                    class="form-control custom-input"
+                                    type="text"
+                                    placeholder="인증 비밀번호를 입력해 주세요."
+                                    maxlength="6"
+                                  />
+                                  <el-invalide-feedback class="typo-label-lg">
+                                    인증 비밀번호를 입력해 주세요.
+                                  </el-invalide-feedback>
+                                </el-input>
+                                <button
+                                  type="button"
+                                  class="text-black button-h43-square typo-body-sm"
+                                >
+                                  확인
+                                </button>
+                              </el-cert-form-item>
+                            </el-incentives-additional-cert-form>
+                          </el-incentives-additional-cert>
+                        </el-order-use-incentives>
+                      </el-order-box-content>
+                    </el-order-box-content-collapse>
+                  </el-order-box>
+
+                  <el-order-box>
+                    <el-order-box-header>
+                      <el-order-box-header-title class="typo-subtitle-lg">
+                        결제수단
+                      </el-order-box-header-title>
+                    </el-order-box-header>
+
+                    <el-order-box-content-collapse>
+                      <el-order-box-content>
+                        <el-order-payment-method>
+                          <el-order-payment-method-radios>
+                            <el-radio class="form-check">
+                              <input
+                                type="radio"
+                                class="form-check-input custom-radio"
+                                name="radioPaymentMethod"
+                                id="radioPaymentMethod-1"
+                                value=""
+                                checked
+                              />
+                              <label
+                                class="form-check-label typo-body-sm weight-em"
+                                for="radioPaymentMethod-1"
+                              >
+                                신용카드
+                              </label>
+                            </el-radio>
+                            <el-radio class="form-check">
+                              <input
+                                type="radio"
+                                class="form-check-input custom-radio"
+                                name="radioPaymentMethod"
+                                id="radioPaymentMethod-2"
+                                value=""
+                              />
+                              <label
+                                class="form-check-label typo-body-sm weight-em"
+                                for="radioPaymentMethod-2"
+                              >
+                                계좌이체
+                              </label>
+                            </el-radio>
+                            <el-radio class="form-check">
+                              <input
+                                type="radio"
+                                class="form-check-input custom-radio"
+                                name="radioPaymentMethod"
+                                id="radioPaymentMethod-3"
+                                value=""
+                                disabled
+                              />
+                              <label
+                                class="form-check-label typo-body-sm weight-em"
+                                for="radioPaymentMethod-3"
+                              >
+                                (diabled 샘플)
+                              </label>
+                            </el-radio>
+                          </el-order-payment-method-radios>
+                          <el-order-caution class="typo-body">
+                            <el-marker-list>
+                              <ul>
+                                <li>
+                                  무통장 입금은 캐쉬충전 페이지에서 가능합니다.
+                                  (마이페이지 &gt; 캐쉬 내역 &gt; [캐쉬충전]
+                                  결제 수단 가상계좌 선택)
+                                </li>
+                              </ul>
+                            </el-marker-list>
+                          </el-order-caution>
+                        </el-order-payment-method>
+                      </el-order-box-content>
+                    </el-order-box-content-collapse>
+                  </el-order-box>
+
+                  <el-order-box>
+                    <el-order-box-header>
+                      <el-order-box-header-title class="typo-subtitle-lg">
+                        약관동의
+                      </el-order-box-header-title>
+                    </el-order-box-header>
+
+                    <el-order-box-content-collapse>
+                      <el-order-box-content>
+                        <el-order-agree>
+                          <el-checkbox class="form-check">
+                            <input
+                              type="checkbox"
+                              id="checkAgreeTerms"
+                              class="form-check-input custom-checkbox"
+                              value=""
+                            />
+                            <label
+                              class="form-check-label typo-body-sm"
+                              for="checkAgreeTerms"
+                            >
+                              본 약정서에 동의합니다.
+                            </label>
+                          </el-checkbox>
+                          <el-order-agree-terms>
+                            <pre class="typo-body-sm">
+본 약정은 주식회사 즐거운(이하”회사”)이 운영하는 오피스콘(www.officecon.co.kr)에서
+제공하는 상품을 구매하는데 필요한 이용자와 회사간에 권리, 의무, 책임사항 등을 규정함을 목적으로 합니다.
+
+제 1조 [약정체결]
+이용자는 회사가 제공하는 하기의 물품에 대한 구매 약정을 체결합니다.
+
+- 이용자명(회원ID) : 정미지 ( zlmeezee )
+- 상품명 : 아메리카노(ICE)(TAKE-OUT)
+- 총 주문 금액 :0원
+- 총 발송 수량 :0건
+- 쿠폰 이용기간 : 각 상품의 유효기간 참조
+- 기타 : 기간연장 및 환불 불가
+
+제 2조 [약정체결의 성립]
+① 오피스콘은 ‘이용자’가 각자의 고객에게 무상으로 제공하는 서비스 입니다.
+② 재판매 또는 시세차익을 목적으로 구매하실 경우 부정사용으로 간주하며, 주문 취소 및 서비스 이용이 제한 됩니다.
+③ 쿠폰 구매 신청할 때, “본 약정서에 동의하십니까?”라는 물음에 이용자가 “동의”버튼을 누르면 본 약정서에 동의하는 것으로 간주합니다.
+
+제 3조 [쿠폰 사용]
+쿠폰이 일부 교환처에서 품절인 경우는 회사에서 책임지지 않습니다. 단, 제휴사 사정으로 전체 교환처에서 평균 입점율이 50% 미만으로 저조하여 수신자가 교환하지 못하는 경우에는 주문 취소 또는 등가의 상품으로 변경을 요청할 수 있습니다.
+
+제 4조 [환불 및 주문취소 등]
+다음 각호의 사유에 해당하는 경우 각 상품의 유효기간 내에, 각 발송 건에 대하여 이용자는 환불을 요청할 수 있습니다.
+1. 쿠폰 전송 시 시스템적인 장애 또는 해당 번호가 결번이거나 서비스 되고 있지 않음으로 인해 영구적으로 수신자에게 쿠폰이 정상적으로 발송되지 않는 경우
+2. 주문 시 네트워크 문제로 인해 결제만 수행되고 정상적으로 쿠폰 발송 단계를 거치지 못 한 경우
+① 정상적으로 주문 및 발송이 완료 된 이후에는 쿠폰에 대한 주문취소 또는 환불이 되지 않습니다.
+② 수신자의 전화번호를 전송자가 잘못 입력하여 쿠폰이 오발송된 경우 회사에서는 전송자의 오발송에 대해 책임지지 않습니다.
+③ 오피스콘에서 발송한 쿠폰은 유효기간 동안 쿠폰을 해당 교환처에서 사용하지 않는 경우 유효기간 이후 재사용 할 수 없으며 환불이 되지 않습니다.
+④ 쿠폰을 계좌이체의 방법으로 환불하는 경우는 10%의 수수료가 차감됩니다.(3일 이내 환불 시 수수료 없음)
+
+제 5조 [시행일자]
+이 약정은 2025년 09월 22일부터 유효합니다.
+
+계약일자 : 2025년 09월 22일
+
+이용자 : 정미지 (인)
+주식회사 즐거운 대표이사 : 임관웅 (인)</pre
+                            >
+                          </el-order-agree-terms>
+                        </el-order-agree>
+                      </el-order-box-content>
+                    </el-order-box-content-collapse>
+                  </el-order-box>
+                </el-order-content>
+              </el-split-content>
+
+              <el-split-aside>
+                <el-order-aside>
+                  <el-order-box>
+                    <el-order-box-header>
+                      <el-order-box-header-title class="typo-subtitle-lg">
+                        결제정보
+                      </el-order-box-header-title>
+                    </el-order-box-header>
+                    <el-order-box-content>
+                      <el-order-payment-info>
+                        <el-order-payment-info-items>
+                          <dl class="typo-body-sm">
+                            <dt>주문 금액</dt>
+                            <dd><strong>0</strong>원</dd>
+                          </dl>
+                          <dl class="typo-body-sm">
+                            <dt>할인</dt>
+                            <dd class="color-red"> <strong>0</strong>원 </dd>
+                          </dl>
+                          <dl class="typo-body-sm">
+                            <dt>캐쉬</dt>
+                            <dd class="color-red"> <strong>0</strong>원 </dd>
+                          </dl>
+                        </el-order-payment-info-items>
+                        <el-order-divider></el-order-divider>
+                        <el-order-payment-info-final>
+                          <dl class="typo-body-lg">
+                            <dt>최종 결제 금액</dt>
+                            <dd>
+                              <strong class="typo-subtitle-md">0</strong>원
+                            </dd>
+                          </dl>
+                        </el-order-payment-info-final>
+                      </el-order-payment-info>
+                      <button
+                        disabled
+                        type="button"
+                        class="button-h60-square-fill typo-body-lg"
+                      >
+                        결제하기
+                      </button>
+                    </el-order-box-content>
+                  </el-order-box>
+                  <el-order-box>
+                    <el-order-box-header>
+                      <el-order-box-header-title class="typo-subtitle-lg">
+                        결제정보
+                      </el-order-box-header-title>
+                    </el-order-box-header>
+                    <el-order-box-content>
+                      <el-order-payment-info>
+                        <el-order-payment-info-items>
+                          <dl class="typo-body-sm">
+                            <dt>주문 금액</dt>
+                            <dd><strong>2,244,700</strong>원</dd>
+                          </dl>
+                          <dl class="typo-body-sm">
+                            <dt>할인</dt>
+                            <dd class="color-red">
+                              <strong>-242,242</strong>원
+                            </dd>
+                          </dl>
+                          <dl class="typo-body-sm">
+                            <dt>캐쉬</dt>
+                            <dd class="color-red">
+                              <strong>-10,000</strong>원
+                            </dd>
+                          </dl>
+                          <dl class="typo-body-sm">
+                            <dt>포인트최대글자수열자</dt>
+                            <dd class="color-red">
+                              <strong>-1,000,000</strong>리워드
+                            </dd>
+                          </dl>
+                        </el-order-payment-info-items>
+                        <el-order-divider></el-order-divider>
+                        <el-order-payment-info-final>
+                          <dl class="typo-body-lg">
+                            <dt>최종 결제 금액</dt>
+                            <dd>
+                              <strong class="typo-subtitle-md">2,002,458</strong
+                              >원
+                            </dd>
+                          </dl>
+                        </el-order-payment-info-final>
+                      </el-order-payment-info>
+                      <button
+                        type="button"
+                        class="button-h60-square-fill typo-body-lg"
+                      >
+                        결제하기
+                      </button>
+                    </el-order-box-content>
+                  </el-order-box>
+                </el-order-aside>
+              </el-split-aside>
+            </el-split-container>
+          </el-content>
+        </main>
+        <!-- 종료: 컨텐츠 -->
+      </el-container>
+
+      <!-- 시작: [DEV] 웹컴포넌트
+        1. 퍼블리싱용 웹컴포넌트입니다(el-footer).
+        2. 개발 시 examples.html 참고해 주세요.
+      -->
+      <component-footer></component-footer>
+      <!-- 종료: [DEV] 웹컴포넌트 -->
+    </el-wrapper>
+
+    <button id="scrollToTopButton" type="button" aria-label="상단으로 이동">
+      <el-icon class="h32-arrow-up natural-0"></el-icon>
+    </button>
+
+    <!-- 시작: alert -->
+    <el-alert
+      class="modal fade"
+      id="el-alert"
+      tabindex="-1"
+      aria-hidden="true"
+      data-bs-keyboard="false"
+    >
+      <el-alert-dialog class="modal-dialog modal-dialog-centered">
+        <el-alert-content class="modal-content">
+          <el-alert-body class="typo-subtitle-sm">
+            얼럿 샘플입니다.
+            <br />
+            개발 시 내용이 변경됩니다.
+          </el-alert-body>
+          <el-alert-footer>
+            <button
+              type="button"
+              data-bs-dismiss="modal"
+              class="button-h50-fill typo-body-lg"
+            >
+              확인
+            </button>
+          </el-alert-footer>
+        </el-alert-content>
+      </el-alert-dialog>
+    </el-alert>
+    <!-- 종료: alert -->
+
+    <!-- 공통js: common.js -->
+    <script src="./js/pub-common.js" crossorigin="anonymous"></script>
+
+    <!-- [DEV] 웹 컴포넌트js: 개발 시 삭제해 주세요 -->
+    <script src="./js/web-components.js" crossorigin="anonymous"></script>
+  </body>
+</html>
