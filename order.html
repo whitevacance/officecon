@@ -1847,6 +1847,8 @@
 
                           <el-order-product-footer>
                             <button
+                              data-bs-toggle="modal"
+                              data-bs-target="#el-modal-preview"
                               type="button"
                               class="button-h50-stroke-login typo-body-sm"
                             >
@@ -2875,6 +2877,192 @@
     <button id="scrollToTopButton" type="button" aria-label="상단으로 이동">
       <el-icon class="h32-arrow-up natural-0"></el-icon>
     </button>
+
+    <!-- 시작: modal: 미리보기 모달 -->
+    <el-modal
+      class="modal fade el-modal-default"
+      id="el-modal-preview"
+      tabindex="-1"
+      aria-hidden="true"
+      data-bs-keyboard="false"
+    >
+      <el-modal-dialog
+        class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+      >
+        <el-modal-content class="modal-content">
+          <el-modal-close-button>
+            <button type="button" data-bs-dismiss="modal" aria-label="닫기">
+              <el-icon class="h32-closed natural-0"></el-icon>
+            </button>
+          </el-modal-close-button>
+
+          <el-modal-header class="modal-header">
+            <h3 class="typo-subtitle-lg">미리보기</h3>
+          </el-modal-header>
+
+          <el-modal-body class="modal-body">
+            <el-modal-order-preview>
+              <el-modal-templet-officecon>
+                <img src="./images/templet-officecon.png" alt="" />
+
+                <el-templet-officecon-added-image>
+                  <img
+                    src="./images/temp/sample-order-message-image.png"
+                    alt=""
+                  />
+                </el-templet-officecon-added-image>
+                <el-modal-templet-officecon-thumbnail>
+                  <img
+                    class="thumbnail-image"
+                    src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/product/20250227/20250227145823_a5b9221d-437d-4b84-b0ac-fbc6f58edf4f.jpg"
+                    alt=""
+                  />
+                  <el-bg></el-bg>
+                </el-modal-templet-officecon-thumbnail>
+                <el-modal-templet-officecon-product>
+                  <el-brand-thumbnail>
+                    <img
+                      src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                      alt="투썸플레이스"
+                    />
+                    <el-bg></el-bg>
+                  </el-brand-thumbnail>
+                  <el-item-txt class="typo-body-sm">
+                    <el-item-name>
+                      <el-brand>투썸플레이스</el-brand>
+                      <el-item-name-txt>
+                        일이삼사오육칠팔구십일이삼사오육칠일이삼사오육칠팔구십일이삼사오육칠
+                      </el-item-name-txt>
+                    </el-item-name>
+                  </el-item-txt>
+                </el-modal-templet-officecon-product>
+                <el-modal-templet-officecon-info class="typo-body-sm">
+                  <el-officecon-info-row>
+                    <el-officecon-info-label>교환처</el-officecon-info-label>
+                    <el-officecon-info-value>굽네치킨</el-officecon-info-value>
+                  </el-officecon-info-row>
+                  <el-officecon-info-row>
+                    <el-officecon-info-label>유효기간</el-officecon-info-label>
+                    <el-officecon-info-value
+                      >2024.01.23</el-officecon-info-value
+                    >
+                  </el-officecon-info-row>
+                </el-modal-templet-officecon-info>
+              </el-modal-templet-officecon>
+            </el-modal-order-preview>
+          </el-modal-body>
+        </el-modal-content>
+      </el-modal-dialog>
+    </el-modal>
+    <!-- 종료: modal: 미리보기 모달 -->
+
+    <!-- 시작: modal: 복사하여 붙여넣기 모달 -->
+    <el-modal
+      class="modal fade el-modal-default"
+      id="el-modal-copy-paste"
+      tabindex="-1"
+      aria-hidden="true"
+      data-bs-keyboard="false"
+    >
+      <el-modal-dialog
+        class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+      >
+        <el-modal-content class="modal-content">
+          <el-modal-close-button>
+            <button type="button" data-bs-dismiss="modal" aria-label="닫기">
+              <el-icon class="h32-closed natural-0"></el-icon>
+            </button>
+          </el-modal-close-button>
+
+          <el-modal-header class="modal-header">
+            <h3 class="typo-subtitle-lg center">복사하여 붙여넣기</h3>
+          </el-modal-header>
+
+          <el-modal-body class="modal-body">
+            <div style="width: 800px">
+              모달 컨텐츠 영역 - 이 영역의 width에 따라 모달의 width가
+              결정됩니다(좌우 padding은 32px).
+              <div>asdf</div>
+              <div>asdf</div>
+              <div>asdf</div>
+              <div>asdf</div>
+              <div>asdf</div>
+              <div>asdf</div>
+              <div>asdf</div>
+              <div>asdf</div>
+            </div>
+          </el-modal-body>
+
+          <el-modal-footer class="modal-footer">
+            <button
+              type="button"
+              data-bs-dismiss="modal"
+              class="button-h50-stroke typo-body-lg"
+            >
+              취소
+            </button>
+            <button type="button" class="button-h50-fill typo-body-lg">
+              확인
+            </button>
+          </el-modal-footer>
+        </el-modal-content>
+      </el-modal-dialog>
+    </el-modal>
+    <!-- 종료: modal: 복사하여 붙여넣기 모달 -->
+
+    <!-- 시작: modal: 발송문구 불러오기 모달 -->
+    <el-modal
+      class="modal fade el-modal-default"
+      id="el-modal-send-message-load"
+      tabindex="-1"
+      aria-hidden="true"
+      data-bs-keyboard="false"
+    >
+      <el-modal-dialog
+        class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+      >
+        <el-modal-content class="modal-content">
+          <el-modal-close-button>
+            <button type="button" data-bs-dismiss="modal" aria-label="닫기">
+              <el-icon class="h32-closed natural-0"></el-icon>
+            </button>
+          </el-modal-close-button>
+
+          <el-modal-header class="modal-header">
+            <h3 class="typo-subtitle-lg center">발송문구 불러오기</h3>
+          </el-modal-header>
+
+          <el-modal-body class="modal-body">
+            <div style="width: 800px">
+              모달 컨텐츠 영역 - 이 영역의 width에 따라 모달의 width가
+              결정됩니다(좌우 padding은 32px).
+              <div>asdf</div>
+              <div>asdf</div>
+              <div>asdf</div>
+              <div>asdf</div>
+              <div>asdf</div>
+              <div>asdf</div>
+              <div>asdf</div>
+              <div>asdf</div>
+            </div>
+          </el-modal-body>
+
+          <el-modal-footer class="modal-footer">
+            <button
+              type="button"
+              data-bs-dismiss="modal"
+              class="button-h50-stroke typo-body-lg"
+            >
+              취소
+            </button>
+            <button type="button" class="button-h50-fill typo-body-lg">
+              확인
+            </button>
+          </el-modal-footer>
+        </el-modal-content>
+      </el-modal-dialog>
+    </el-modal>
+    <!-- 종료: modal: 발송문구 불러오기 모달 -->
 
     <!-- 시작: alert -->
     <el-alert
