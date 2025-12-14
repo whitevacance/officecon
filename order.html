@@ -2258,11 +2258,180 @@
                               </button>
                             </el-incentives-form-left>
                             <el-incentives-form-right>
-                              포인트 사용 내용
+                              <el-my-incentives class="typo-body-sm">
+                                보유
+                                <strong>99,999,999원</strong>
+                              </el-my-incentives>
+                            </el-incentives-form-right>
+                          </el-order-use-incentives-form>
+                        </el-order-use-incentives>
+                      </el-order-box-content>
+                    </el-order-box-content-collapse>
+                  </el-order-box>
+
+                  <el-order-box>
+                    <el-order-box-header>
+                      <el-order-box-header-title class="typo-subtitle-lg">
+                        캐쉬 사용
+                      </el-order-box-header-title>
+                    </el-order-box-header>
+
+                    <el-order-box-content-collapse>
+                      <el-order-box-content>
+                        <el-order-use-incentives>
+                          <el-order-use-incentives-form>
+                            <el-incentives-form-left>
+                              <el-input>
+                                <input
+                                  class="form-control custom-input"
+                                  type="text"
+                                  placeholder=""
+                                  value="0"
+                                />
+                              </el-input>
+                              <button
+                                type="button"
+                                class="text-black button-h43-square typo-body-sm"
+                              >
+                                전액 사용
+                              </button>
+                            </el-incentives-form-left>
+                            <el-incentives-form-right>
+                              <el-my-incentives class="typo-body-sm">
+                                보유
+                                <strong>99,999,999원</strong>
+                              </el-my-incentives>
+                              <button
+                                type="button"
+                                class="button-h43-square-fill typo-body-sm color-orange"
+                              >
+                                충전
+                              </button>
                             </el-incentives-form-right>
                           </el-order-use-incentives-form>
 
                           <el-order-divider></el-order-divider>
+
+                          <el-incentives-additional-cert>
+                            <el-incentives-additional-cert-label
+                              class="typo-body-lg"
+                            >
+                              캐쉬 사용 추가 인증
+                            </el-incentives-additional-cert-label>
+                            <el-incentives-additional-cert-form>
+                              <el-cert-form-item>
+                                <el-input class="width-wide">
+                                  <input
+                                    class="form-control custom-input"
+                                    type="text"
+                                    placeholder="인증 비밀번호를 입력해 주세요."
+                                    maxlength="6"
+                                  />
+                                </el-input>
+                                <button
+                                  type="button"
+                                  class="text-black button-h43-square typo-body-sm"
+                                >
+                                  확인
+                                </button>
+                              </el-cert-form-item>
+                            </el-incentives-additional-cert-form>
+                          </el-incentives-additional-cert>
+                        </el-order-use-incentives>
+                      </el-order-box-content>
+                    </el-order-box-content-collapse>
+                  </el-order-box>
+
+                  <el-order-box>
+                    <el-order-box-header>
+                      <el-order-box-header-title class="typo-subtitle-lg">
+                        캐쉬 사용
+                      </el-order-box-header-title>
+                    </el-order-box-header>
+
+                    <el-order-box-content-collapse>
+                      <el-order-box-content>
+                        <el-order-use-incentives>
+                          <el-order-use-incentives-form>
+                            <el-incentives-form-left>
+                              <el-input>
+                                <input
+                                  class="form-control custom-input"
+                                  type="text"
+                                  placeholder=""
+                                  value="0"
+                                />
+                              </el-input>
+                              <button
+                                type="button"
+                                class="text-black button-h43-square typo-body-sm"
+                              >
+                                전액 사용
+                              </button>
+                            </el-incentives-form-left>
+                            <el-incentives-form-right>
+                              <el-my-incentives class="typo-body-sm">
+                                보유
+                                <strong>99,999,999원</strong>
+                              </el-my-incentives>
+                              <button
+                                type="button"
+                                class="button-h43-square-fill typo-body-sm color-orange"
+                              >
+                                충전
+                              </button>
+                            </el-incentives-form-right>
+                          </el-order-use-incentives-form>
+
+                          <el-order-divider></el-order-divider>
+
+                          <el-incentives-additional-cert>
+                            <el-incentives-additional-cert-label
+                              class="typo-body-lg"
+                            >
+                              캐쉬 사용 추가 인증
+                            </el-incentives-additional-cert-label>
+                            <el-incentives-additional-cert-form>
+                              <el-cert-form-item>
+                                <el-input>
+                                  <input
+                                    class="form-control custom-input input-type-mobile"
+                                    type="text"
+                                    placeholder="휴대폰번호를 입력해주세요."
+                                  />
+                                </el-input>
+                                <button
+                                  type="button"
+                                  class="button-h43-square-fill typo-body-sm color-orange"
+                                >
+                                  인증번호 받기
+                                </button>
+                              </el-cert-form-item>
+                              <el-cert-form-item>
+                                <el-input class="is-invalid">
+                                  <input
+                                    class="form-control custom-input"
+                                    type="text"
+                                    placeholder="인증번호 입력"
+                                  />
+                                  <el-input-addon>
+                                    <el-timer class="typo-label-md">
+                                      09 : 50
+                                    </el-timer>
+                                  </el-input-addon>
+                                  <el-invalide-feedback class="typo-label-lg">
+                                    인증번호를 입력해 주세요.
+                                  </el-invalide-feedback>
+                                </el-input>
+                                <button
+                                  type="button"
+                                  class="text-black button-h43-square typo-body-sm"
+                                >
+                                  확인
+                                </button>
+                              </el-cert-form-item>
+                            </el-incentives-additional-cert-form>
+                          </el-incentives-additional-cert>
 
                           <el-order-caution
                             class="typo-body-sm theme-red weight-normal"
@@ -2282,6 +2451,311 @@
                             </el-marker-list>
                           </el-order-caution>
                         </el-order-use-incentives>
+                      </el-order-box-content>
+                    </el-order-box-content-collapse>
+                  </el-order-box>
+
+                  <el-order-box>
+                    <el-order-box-header>
+                      <el-order-box-header-title class="typo-subtitle-lg">
+                        리워드 사용
+                      </el-order-box-header-title>
+                    </el-order-box-header>
+
+                    <el-order-box-content-collapse>
+                      <el-order-box-content>
+                        <el-order-use-incentives>
+                          <el-order-use-incentives-form>
+                            <el-incentives-form-left>
+                              <el-input>
+                                <input
+                                  class="form-control custom-input"
+                                  type="text"
+                                  placeholder=""
+                                  value="0"
+                                />
+                              </el-input>
+                              <button
+                                type="button"
+                                class="text-black button-h43-square typo-body-sm"
+                              >
+                                전액 사용
+                              </button>
+                            </el-incentives-form-left>
+                            <el-incentives-form-right>
+                              <el-my-incentives class="typo-body-sm">
+                                보유
+                                <strong class="color-purple"
+                                  >99,999,999리워드</strong
+                                >
+                              </el-my-incentives>
+                            </el-incentives-form-right>
+                          </el-order-use-incentives-form>
+
+                          <el-order-divider></el-order-divider>
+
+                          <el-incentives-additional-cert>
+                            <el-incentives-additional-cert-label
+                              class="typo-body-lg"
+                            >
+                              리워드 사용 추가 인증
+                            </el-incentives-additional-cert-label>
+                            <el-incentives-additional-cert-form>
+                              <el-cert-form-item>
+                                <el-input>
+                                  <input
+                                    class="form-control custom-input input-type-mobile"
+                                    type="text"
+                                    placeholder="휴대폰번호를 입력해주세요."
+                                  />
+                                </el-input>
+                                <button
+                                  type="button"
+                                  class="button-h43-square-fill typo-body-sm color-orange"
+                                >
+                                  인증번호 받기
+                                </button>
+                              </el-cert-form-item>
+                              <el-cert-form-item>
+                                <el-input>
+                                  <input
+                                    class="form-control custom-input"
+                                    type="text"
+                                    placeholder="인증번호 입력"
+                                  />
+                                  <el-input-addon>
+                                    <el-timer class="typo-label-md">
+                                      09 : 50
+                                    </el-timer>
+                                  </el-input-addon>
+                                </el-input>
+                                <button
+                                  type="button"
+                                  class="text-black button-h43-square typo-body-sm"
+                                >
+                                  확인
+                                </button>
+                              </el-cert-form-item>
+                            </el-incentives-additional-cert-form>
+                          </el-incentives-additional-cert>
+                        </el-order-use-incentives>
+                      </el-order-box-content>
+                    </el-order-box-content-collapse>
+                  </el-order-box>
+
+                  <el-order-box>
+                    <el-order-box-header>
+                      <el-order-box-header-title class="typo-subtitle-lg">
+                        리워드 사용
+                      </el-order-box-header-title>
+                    </el-order-box-header>
+
+                    <el-order-box-content-collapse>
+                      <el-order-box-content>
+                        <el-order-use-incentives>
+                          <el-order-use-incentives-form>
+                            <el-incentives-form-left>
+                              <el-input>
+                                <input
+                                  class="form-control custom-input"
+                                  type="text"
+                                  placeholder=""
+                                  value="99,999,999"
+                                />
+                              </el-input>
+                              <button
+                                type="button"
+                                class="text-black button-h43-square typo-body-sm"
+                              >
+                                사용 취소
+                              </button>
+                            </el-incentives-form-left>
+                            <el-incentives-form-right>
+                              <el-my-incentives class="typo-body-sm">
+                                보유
+                                <strong class="color-purple"
+                                  >99,999,999리워드</strong
+                                >
+                              </el-my-incentives>
+                            </el-incentives-form-right>
+                          </el-order-use-incentives-form>
+
+                          <el-order-divider></el-order-divider>
+
+                          <el-incentives-additional-cert>
+                            <el-incentives-additional-cert-label
+                              class="typo-body-lg"
+                            >
+                              리워드 사용 추가 인증
+                            </el-incentives-additional-cert-label>
+                            <el-incentives-additional-cert-form>
+                              <el-cert-form-item>
+                                <el-input class="width-wide is-invalid">
+                                  <input
+                                    class="form-control custom-input"
+                                    type="text"
+                                    placeholder="인증 비밀번호를 입력해 주세요."
+                                    maxlength="6"
+                                  />
+                                  <el-invalide-feedback class="typo-label-lg">
+                                    인증 비밀번호를 입력해 주세요.
+                                  </el-invalide-feedback>
+                                </el-input>
+                                <button
+                                  type="button"
+                                  class="text-black button-h43-square typo-body-sm"
+                                >
+                                  확인
+                                </button>
+                              </el-cert-form-item>
+                            </el-incentives-additional-cert-form>
+                          </el-incentives-additional-cert>
+                        </el-order-use-incentives>
+                      </el-order-box-content>
+                    </el-order-box-content-collapse>
+                  </el-order-box>
+
+                  <el-order-box>
+                    <el-order-box-header>
+                      <el-order-box-header-title class="typo-subtitle-lg">
+                        결제수단
+                      </el-order-box-header-title>
+                    </el-order-box-header>
+
+                    <el-order-box-content-collapse>
+                      <el-order-box-content>
+                        <el-order-payment-method>
+                          <el-order-payment-method-radios>
+                            <el-radio class="form-check">
+                              <input
+                                type="radio"
+                                class="form-check-input custom-radio"
+                                name="radioPaymentMethod"
+                                id="radioPaymentMethod-1"
+                                value=""
+                                checked
+                              />
+                              <label
+                                class="form-check-label typo-body-sm weight-em"
+                                for="radioPaymentMethod-1"
+                              >
+                                신용카드
+                              </label>
+                            </el-radio>
+                            <el-radio class="form-check">
+                              <input
+                                type="radio"
+                                class="form-check-input custom-radio"
+                                name="radioPaymentMethod"
+                                id="radioPaymentMethod-2"
+                                value=""
+                              />
+                              <label
+                                class="form-check-label typo-body-sm weight-em"
+                                for="radioPaymentMethod-2"
+                              >
+                                계좌이체
+                              </label>
+                            </el-radio>
+                            <el-radio class="form-check">
+                              <input
+                                type="radio"
+                                class="form-check-input custom-radio"
+                                name="radioPaymentMethod"
+                                id="radioPaymentMethod-3"
+                                value=""
+                                disabled
+                              />
+                              <label
+                                class="form-check-label typo-body-sm weight-em"
+                                for="radioPaymentMethod-3"
+                              >
+                                (diabled 샘플)
+                              </label>
+                            </el-radio>
+                          </el-order-payment-method-radios>
+                          <el-order-caution class="typo-body">
+                            <el-marker-list>
+                              <ul>
+                                <li>
+                                  무통장 입금은 캐쉬충전 페이지에서 가능합니다.
+                                  (마이페이지 &gt; 캐쉬 내역 &gt; [캐쉬충전]
+                                  결제 수단 가상계좌 선택)
+                                </li>
+                              </ul>
+                            </el-marker-list>
+                          </el-order-caution>
+                        </el-order-payment-method>
+                      </el-order-box-content>
+                    </el-order-box-content-collapse>
+                  </el-order-box>
+
+                  <el-order-box>
+                    <el-order-box-header>
+                      <el-order-box-header-title class="typo-subtitle-lg">
+                        약관동의
+                      </el-order-box-header-title>
+                    </el-order-box-header>
+
+                    <el-order-box-content-collapse>
+                      <el-order-box-content>
+                        <el-order-agree>
+                          <el-checkbox class="form-check">
+                            <input
+                              type="checkbox"
+                              id="checkAgreeTerms"
+                              class="form-check-input custom-checkbox"
+                              value=""
+                            />
+                            <label
+                              class="form-check-label typo-body-sm"
+                              for="checkAgreeTerms"
+                            >
+                              본 약정서에 동의합니다.
+                            </label>
+                          </el-checkbox>
+                          <el-order-agree-terms>
+                            <pre class="typo-body-sm">
+본 약정은 주식회사 즐거운(이하”회사”)이 운영하는 오피스콘(www.officecon.co.kr)에서
+제공하는 상품을 구매하는데 필요한 이용자와 회사간에 권리, 의무, 책임사항 등을 규정함을 목적으로 합니다.
+
+제 1조 [약정체결]
+이용자는 회사가 제공하는 하기의 물품에 대한 구매 약정을 체결합니다.
+
+- 이용자명(회원ID) : 정미지 ( zlmeezee )
+- 상품명 : 아메리카노(ICE)(TAKE-OUT)
+- 총 주문 금액 :0원
+- 총 발송 수량 :0건
+- 쿠폰 이용기간 : 각 상품의 유효기간 참조
+- 기타 : 기간연장 및 환불 불가
+
+제 2조 [약정체결의 성립]
+① 오피스콘은 ‘이용자’가 각자의 고객에게 무상으로 제공하는 서비스 입니다.
+② 재판매 또는 시세차익을 목적으로 구매하실 경우 부정사용으로 간주하며, 주문 취소 및 서비스 이용이 제한 됩니다.
+③ 쿠폰 구매 신청할 때, “본 약정서에 동의하십니까?”라는 물음에 이용자가 “동의”버튼을 누르면 본 약정서에 동의하는 것으로 간주합니다.
+
+제 3조 [쿠폰 사용]
+쿠폰이 일부 교환처에서 품절인 경우는 회사에서 책임지지 않습니다. 단, 제휴사 사정으로 전체 교환처에서 평균 입점율이 50% 미만으로 저조하여 수신자가 교환하지 못하는 경우에는 주문 취소 또는 등가의 상품으로 변경을 요청할 수 있습니다.
+
+제 4조 [환불 및 주문취소 등]
+다음 각호의 사유에 해당하는 경우 각 상품의 유효기간 내에, 각 발송 건에 대하여 이용자는 환불을 요청할 수 있습니다.
+1. 쿠폰 전송 시 시스템적인 장애 또는 해당 번호가 결번이거나 서비스 되고 있지 않음으로 인해 영구적으로 수신자에게 쿠폰이 정상적으로 발송되지 않는 경우
+2. 주문 시 네트워크 문제로 인해 결제만 수행되고 정상적으로 쿠폰 발송 단계를 거치지 못 한 경우
+① 정상적으로 주문 및 발송이 완료 된 이후에는 쿠폰에 대한 주문취소 또는 환불이 되지 않습니다.
+② 수신자의 전화번호를 전송자가 잘못 입력하여 쿠폰이 오발송된 경우 회사에서는 전송자의 오발송에 대해 책임지지 않습니다.
+③ 오피스콘에서 발송한 쿠폰은 유효기간 동안 쿠폰을 해당 교환처에서 사용하지 않는 경우 유효기간 이후 재사용 할 수 없으며 환불이 되지 않습니다.
+④ 쿠폰을 계좌이체의 방법으로 환불하는 경우는 10%의 수수료가 차감됩니다.(3일 이내 환불 시 수수료 없음)
+
+제 5조 [시행일자]
+이 약정은 2025년 09월 22일부터 유효합니다.
+
+계약일자 : 2025년 09월 22일
+
+이용자 : 정미지 (인)
+주식회사 즐거운 대표이사 : 임관웅 (인)</pre
+                            >
+                          </el-order-agree-terms>
+                        </el-order-agree>
                       </el-order-box-content>
                     </el-order-box-content-collapse>
                   </el-order-box>
