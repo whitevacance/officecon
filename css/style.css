@@ -7295,6 +7295,66 @@ el-order-box {
     padding: 32px;
     border-top: 1px solid var(--color-natural-80);
   }
+
+  el-order-caution {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    padding: 20px 24px;
+    background-color: var(--color-blue-10);
+    border-radius: 8px;
+
+    el-order-caution-header {
+      display: flex;
+      gap: 16px;
+      font-weight: 700 !important;
+
+      a {
+        display: flex;
+        align-items: center;
+        color: var(--color-blue-60);
+        text-decoration: underline;
+
+        el-icon {
+          background-color: var(--color-blue-60);
+        }
+      }
+    }
+
+    el-marker-list {
+      ul li {
+        font-weight: 400;
+        color: var(--color-natural-20);
+
+        &:before {
+          background-color: var(--color-natural-20);
+        }
+      }
+    }
+
+    &.theme-red {
+      padding: 16px 24px;
+      background-color: var(--color-red-10);
+
+      el-marker-list {
+        ul li {
+          color: var(--color-red-40);
+          font-weight: 600;
+
+          &:before {
+            background-color: var(--color-red-40);
+          }
+        }
+      }
+
+      &.weight-normal {
+        el-marker-list ul li {
+          font-weight: 400;
+        }
+      }
+    }
+  }
 }
 
 el-order-content {
@@ -7493,60 +7553,6 @@ el-order-content {
           & > el-input,
           & > textarea {
             width: 400px;
-          }
-        }
-      }
-
-      el-order-caution {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-        width: 100%;
-        padding: 20px 24px;
-        background-color: var(--color-blue-10);
-        border-radius: 8px;
-
-        el-order-caution-header {
-          display: flex;
-          gap: 16px;
-          font-weight: 700 !important;
-
-          a {
-            display: flex;
-            align-items: center;
-            color: var(--color-blue-60);
-            text-decoration: underline;
-
-            el-icon {
-              background-color: var(--color-blue-60);
-            }
-          }
-        }
-
-        el-marker-list {
-          ul li {
-            font-weight: 400;
-            color: var(--color-natural-20);
-
-            &:before {
-              background-color: var(--color-natural-20);
-            }
-          }
-        }
-
-        &.theme-red {
-          padding: 16px 24px;
-          background-color: var(--color-red-10);
-
-          el-marker-list {
-            ul li {
-              color: var(--color-red-40);
-              font-weight: 600;
-
-              &:before {
-                background-color: var(--color-red-40);
-              }
-            }
           }
         }
       }
@@ -7976,6 +7982,10 @@ el-order-content {
           ) {
           el-order-add-image-box-content:nth-of-type(2) {
             display: flex;
+
+            el-box-content-inner {
+              max-height: unset;
+            }
           }
         }
 
@@ -8002,6 +8012,63 @@ el-order-content {
             }
           }
         }
+      }
+    }
+  }
+
+  el-order-product-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    width: 100%;
+
+    & > button {
+      width: 160px;
+      margin: 0 auto;
+    }
+  }
+
+  el-order-use-incentives {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+
+    el-order-use-incentives-form {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+
+      el-incentives-form-left {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 8px;
+
+        el-input {
+          flex-grow: 0;
+          flex-shrink: 0;
+          width: 400px;
+
+          input.form-control.custom-input {
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 24px;
+            letter-spacing: -0.48px;
+          }
+        }
+
+        & > button {
+          min-width: 92px;
+        }
+      }
+
+      el-incentives-form-right {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 16px;
       }
     }
   }
