@@ -261,6 +261,12 @@ textarea.form-control {
     background-color: var(--color-natural-95);
   }
 }
+
+pre {
+  margin: 0;
+  padding: 0;
+  white-space: pre-wrap;
+}
 /* 종료: reset */
 
 /* 시작: 공통 > typography */
@@ -2140,9 +2146,6 @@ el-modal-pre-wrapper {
 
   pre {
     color: var(--color-natural-20);
-    margin: 0;
-    padding: 0;
-    white-space: pre-wrap;
 
     el-indent {
       display: inline-block;
@@ -8169,9 +8172,6 @@ el-order-content {
 
       pre {
         color: var(--color-natural-0);
-        margin: 0;
-        padding: 0;
-        white-space: pre-wrap;
 
         el-indent {
           display: inline-block;
@@ -8398,6 +8398,167 @@ el-modal-order-preview {
           font-weight: 600 !important;
         }
       }
+    }
+
+    el-modal-templet-officecon-barcode {
+      display: flex;
+      justify-content: center;
+      width: 207px;
+      position: absolute;
+      left: 50%;
+      top: 483px;
+      transform: translateX(-50%);
+
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  el-modal-templet-smilecon {
+    display: block;
+    width: 360px;
+    height: 647px;
+    position: relative;
+
+    & > img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    el-modal-templet-smilecon-thumbnail {
+      display: block;
+      width: 340px;
+      height: 340px;
+      overflow: hidden;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+
+      .thumbnail-image {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      el-bg {
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: var(--color-opacity-black-3);
+      }
+    }
+
+    el-modal-templet-smilecon-product {
+      display: flex;
+      gap: 13px;
+      width: 100%;
+      padding: 0 25px;
+      position: absolute;
+      left: 0;
+      top: 366px;
+
+      el-brand-thumbnail {
+        flex-grow: 0;
+        flex-shrink: 0;
+        width: 55px;
+        height: 55px;
+        overflow: hidden;
+        border-radius: 6px;
+        border: 1px solid #d9d9d9;
+
+        img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      el-item-txt {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        line-height: 1.28 !important;
+
+        el-item-name {
+          display: flex;
+          flex-direction: column;
+          gap: 1.5px;
+          width: 100%;
+
+          el-brand {
+            color: #888;
+          }
+
+          el-item-name-txt {
+            color: var(--color-natural-0);
+          }
+        }
+      }
+    }
+
+    el-modal-templet-smilecon-info {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      width: 100%;
+      padding: 0 25px;
+      position: absolute;
+      left: 0;
+      top: 453px;
+      color: var(--color-natural-0);
+      line-height: 1.28 !important;
+
+      el-smilecon-info-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+
+        el-smilecon-info-label {
+          font-weight: 600 !important;
+        }
+      }
+    }
+
+    el-modal-templet-smilecon-barcode {
+      display: flex;
+      justify-content: center;
+      width: 207px;
+      position: absolute;
+      left: 50%;
+      top: 524px;
+      transform: translateX(-50%);
+
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  el-modal-order-preview-content {
+    display: block;
+    width: 100%;
+    padding: 24px 16px;
+    background-color: var(--color-natural-95);
+
+    & > pre {
+      color: var(--color-natural-20);
     }
   }
 }
