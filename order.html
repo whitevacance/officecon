@@ -602,6 +602,8 @@
                             <el-order-addressee-list>
                               <el-order-addressee-util-bar>
                                 <button
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#el-modal-copy-paste"
                                   type="button"
                                   class="text-black button-h43-square typo-body-sm"
                                 >
@@ -854,6 +856,8 @@
                               </h3>
                               <el-article-title-addon>
                                 <button
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#el-modal-send-message-load"
                                   type="button"
                                   class="text-black button-h43-square typo-body-sm"
                                 >
@@ -2055,6 +2059,8 @@
                             <el-order-addressee-list>
                               <el-order-addressee-util-bar>
                                 <button
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#el-modal-copy-paste"
                                   type="button"
                                   class="text-black button-h43-square typo-body-sm"
                                 >
@@ -2115,6 +2121,8 @@
                               </h3>
                               <el-article-title-addon>
                                 <button
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#el-modal-send-message-load"
                                   type="button"
                                   class="text-black button-h43-square typo-body-sm"
                                 >
@@ -2851,6 +2859,8 @@
                         </el-order-payment-info-final>
                       </el-order-payment-info>
                       <button
+                        data-bs-toggle="modal"
+                        data-bs-target="#el-alert"
                         type="button"
                         class="button-h60-square-fill typo-body-lg"
                       >
@@ -3069,18 +3079,12 @@
           </el-modal-header>
 
           <el-modal-body class="modal-body">
-            <div style="width: 800px">
-              모달 컨텐츠 영역 - 이 영역의 width에 따라 모달의 width가
-              결정됩니다(좌우 padding은 32px).
-              <div>asdf</div>
-              <div>asdf</div>
-              <div>asdf</div>
-              <div>asdf</div>
-              <div>asdf</div>
-              <div>asdf</div>
-              <div>asdf</div>
-              <div>asdf</div>
-            </div>
+            <el-modal-copy-paste-content>
+              <textarea
+                class="form-control"
+                placeholder="아래와 같이 데이터를 붙여 넣어주세요. (Ctrl+V)&#13;&#10;01054345053&#13;&#10;01054345053"
+              ></textarea>
+            </el-modal-copy-paste-content>
           </el-modal-body>
 
           <el-modal-footer class="modal-footer">
@@ -3092,7 +3096,7 @@
               취소
             </button>
             <button type="button" class="button-h50-fill typo-body-lg">
-              확인
+              불러오기
             </button>
           </el-modal-footer>
         </el-modal-content>
@@ -3123,18 +3127,192 @@
           </el-modal-header>
 
           <el-modal-body class="modal-body">
-            <div style="width: 800px">
-              모달 컨텐츠 영역 - 이 영역의 width에 따라 모달의 width가
-              결정됩니다(좌우 padding은 32px).
-              <div>asdf</div>
-              <div>asdf</div>
-              <div>asdf</div>
-              <div>asdf</div>
-              <div>asdf</div>
-              <div>asdf</div>
-              <div>asdf</div>
-              <div>asdf</div>
-            </div>
+            <el-modal-send-message-load-content>
+              <el-modal-scrollable-list>
+                <el-modal-scrollable-list-header class="typo-body-sm">
+                  <el-scrollable-list-header-label>
+                    프로모션명
+                  </el-scrollable-list-header-label>
+                  <el-scrollable-list-header-aside>
+                    등록일시
+                  </el-scrollable-list-header-aside>
+                </el-modal-scrollable-list-header>
+
+                <el-modal-scrollable-list-content>
+                  <ul>
+                    <li>
+                      <el-send-message-content-item>
+                        <el-send-message-content-item-left>
+                          <el-radio class="form-check">
+                            <input
+                              type="radio"
+                              class="form-check-input custom-radio"
+                              name="radioSendMessage"
+                              id="radioSendMessage-1"
+                              value=""
+                              checked
+                            />
+                            <label
+                              class="form-check-label typo-body-sm weight-em"
+                              for="radioSendMessage-1"
+                            >
+                              일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십
+                            </label>
+                          </el-radio>
+                        </el-send-message-content-item-left>
+                        <el-send-message-content-item-right>
+                          2025.10.01
+                        </el-send-message-content-item-right>
+                      </el-send-message-content-item>
+                    </li>
+                    <li>
+                      <el-send-message-content-item>
+                        <el-send-message-content-item-left>
+                          <el-radio class="form-check">
+                            <input
+                              type="radio"
+                              class="form-check-input custom-radio"
+                              name="radioSendMessage"
+                              id="radioSendMessage-2"
+                              value=""
+                            />
+                            <label
+                              class="form-check-label typo-body-sm weight-em"
+                              for="radioSendMessage-2"
+                            >
+                              일이삼사오육칠팔구십
+                            </label>
+                          </el-radio>
+                        </el-send-message-content-item-left>
+                        <el-send-message-content-item-right>
+                          2025.10.01
+                        </el-send-message-content-item-right>
+                      </el-send-message-content-item>
+                    </li>
+                    <li>
+                      <el-send-message-content-item>
+                        <el-send-message-content-item-left>
+                          <el-radio class="form-check">
+                            <input
+                              type="radio"
+                              class="form-check-input custom-radio"
+                              name="radioSendMessage"
+                              id="radioSendMessage-3"
+                              value=""
+                            />
+                            <label
+                              class="form-check-label typo-body-sm weight-em"
+                              for="radioSendMessage-3"
+                            >
+                              일이삼사오육칠팔구십
+                            </label>
+                          </el-radio>
+                        </el-send-message-content-item-left>
+                        <el-send-message-content-item-right>
+                          2025.10.01
+                        </el-send-message-content-item-right>
+                      </el-send-message-content-item>
+                    </li>
+                    <li>
+                      <el-send-message-content-item>
+                        <el-send-message-content-item-left>
+                          <el-radio class="form-check">
+                            <input
+                              type="radio"
+                              class="form-check-input custom-radio"
+                              name="radioSendMessage"
+                              id="radioSendMessage-4"
+                              value=""
+                            />
+                            <label
+                              class="form-check-label typo-body-sm weight-em"
+                              for="radioSendMessage-4"
+                            >
+                              일이삼사오육칠팔구십
+                            </label>
+                          </el-radio>
+                        </el-send-message-content-item-left>
+                        <el-send-message-content-item-right>
+                          2025.10.01
+                        </el-send-message-content-item-right>
+                      </el-send-message-content-item>
+                    </li>
+                    <li>
+                      <el-send-message-content-item>
+                        <el-send-message-content-item-left>
+                          <el-radio class="form-check">
+                            <input
+                              type="radio"
+                              class="form-check-input custom-radio"
+                              name="radioSendMessage"
+                              id="radioSendMessage-5"
+                              value=""
+                            />
+                            <label
+                              class="form-check-label typo-body-sm weight-em"
+                              for="radioSendMessage-5"
+                            >
+                              일이삼사오육칠팔구십
+                            </label>
+                          </el-radio>
+                        </el-send-message-content-item-left>
+                        <el-send-message-content-item-right>
+                          2025.10.01
+                        </el-send-message-content-item-right>
+                      </el-send-message-content-item>
+                    </li>
+                    <li>
+                      <el-send-message-content-item>
+                        <el-send-message-content-item-left>
+                          <el-radio class="form-check">
+                            <input
+                              type="radio"
+                              class="form-check-input custom-radio"
+                              name="radioSendMessage"
+                              id="radioSendMessage-6"
+                              value=""
+                            />
+                            <label
+                              class="form-check-label typo-body-sm weight-em"
+                              for="radioSendMessage-6"
+                            >
+                              일이삼사오육칠팔구십
+                            </label>
+                          </el-radio>
+                        </el-send-message-content-item-left>
+                        <el-send-message-content-item-right>
+                          2025.10.01
+                        </el-send-message-content-item-right>
+                      </el-send-message-content-item>
+                    </li>
+                    <li>
+                      <el-send-message-content-item>
+                        <el-send-message-content-item-left>
+                          <el-radio class="form-check">
+                            <input
+                              type="radio"
+                              class="form-check-input custom-radio"
+                              name="radioSendMessage"
+                              id="radioSendMessage-7"
+                              value=""
+                            />
+                            <label
+                              class="form-check-label typo-body-sm weight-em"
+                              for="radioSendMessage-7"
+                            >
+                              일이삼사오육칠팔구십
+                            </label>
+                          </el-radio>
+                        </el-send-message-content-item-left>
+                        <el-send-message-content-item-right>
+                          2025.10.01
+                        </el-send-message-content-item-right>
+                      </el-send-message-content-item>
+                    </li>
+                  </ul>
+                </el-modal-scrollable-list-content>
+              </el-modal-scrollable-list>
+            </el-modal-send-message-load-content>
           </el-modal-body>
 
           <el-modal-footer class="modal-footer">
@@ -3146,7 +3324,7 @@
               취소
             </button>
             <button type="button" class="button-h50-fill typo-body-lg">
-              확인
+              불러오기
             </button>
           </el-modal-footer>
         </el-modal-content>
@@ -3170,6 +3348,13 @@
             개발 시 내용이 변경됩니다.
           </el-alert-body>
           <el-alert-footer>
+            <button
+              type="button"
+              data-bs-dismiss="modal"
+              class="button-h50-stroke typo-body-lg"
+            >
+              취소
+            </button>
             <button
               type="button"
               data-bs-dismiss="modal"

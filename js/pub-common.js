@@ -178,6 +178,8 @@ const initHandleModalScroll = () => {
         // 모달 내부 스크롤리스트 컨텐츠 스크롤 여부 확인
         if (targetModalScrollableListContentEl) {
           if (hasModalInnerScroll(targetModalScrollableListContentEl)) {
+            targetModalFooterEl.classList.add('shadow-top');
+
             // 스크롤 이벤트 리스너가 아직 등록되지 않았을 때만 등록
             if (!isScrollListenerAttachedForScrollableList) {
               scrollHandlerForScrollableList = () => {
@@ -188,9 +190,9 @@ const initHandleModalScroll = () => {
                   targetModalScrollableListContentEl.scrollHeight;
 
                 if (isScrollBottom) {
-                  targetModalFooterEl.classList.add('shadow-top');
-                } else {
                   targetModalFooterEl.classList.remove('shadow-top');
+                } else {
+                  targetModalFooterEl.classList.add('shadow-top');
                 }
               };
 
