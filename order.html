@@ -602,6 +602,8 @@
                             <el-order-addressee-list>
                               <el-order-addressee-util-bar>
                                 <button
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#el-modal-copy-paste"
                                   type="button"
                                   class="text-black button-h43-square typo-body-sm"
                                 >
@@ -854,6 +856,8 @@
                               </h3>
                               <el-article-title-addon>
                                 <button
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#el-modal-send-message-load"
                                   type="button"
                                   class="text-black button-h43-square typo-body-sm"
                                 >
@@ -1847,6 +1851,8 @@
 
                           <el-order-product-footer>
                             <button
+                              data-bs-toggle="modal"
+                              data-bs-target="#el-modal-preview"
                               type="button"
                               class="button-h50-stroke-login typo-body-sm"
                             >
@@ -2053,6 +2059,8 @@
                             <el-order-addressee-list>
                               <el-order-addressee-util-bar>
                                 <button
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#el-modal-copy-paste"
                                   type="button"
                                   class="text-black button-h43-square typo-body-sm"
                                 >
@@ -2113,6 +2121,8 @@
                               </h3>
                               <el-article-title-addon>
                                 <button
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#el-modal-send-message-load"
                                   type="button"
                                   class="text-black button-h43-square typo-body-sm"
                                 >
@@ -2849,6 +2859,8 @@
                         </el-order-payment-info-final>
                       </el-order-payment-info>
                       <button
+                        data-bs-toggle="modal"
+                        data-bs-target="#el-alert"
                         type="button"
                         class="button-h60-square-fill typo-body-lg"
                       >
@@ -2876,6 +2888,450 @@
       <el-icon class="h32-arrow-up natural-0"></el-icon>
     </button>
 
+    <!-- 시작: modal: 미리보기 모달 -->
+    <el-modal
+      class="modal fade el-modal-default"
+      id="el-modal-preview"
+      tabindex="-1"
+      aria-hidden="true"
+      data-bs-keyboard="false"
+    >
+      <el-modal-dialog
+        class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+      >
+        <el-modal-content class="modal-content">
+          <el-modal-close-button>
+            <button type="button" data-bs-dismiss="modal" aria-label="닫기">
+              <el-icon class="h32-closed natural-0"></el-icon>
+            </button>
+          </el-modal-close-button>
+
+          <el-modal-header class="modal-header">
+            <h3 class="typo-subtitle-lg">미리보기</h3>
+          </el-modal-header>
+
+          <el-modal-body class="modal-body">
+            <el-modal-order-preview>
+              <el-modal-templet-officecon>
+                <img src="./images/templet-officecon.png" alt="" />
+
+                <el-templet-officecon-added-image>
+                  <img
+                    src="./images/temp/sample-order-message-image.png"
+                    alt=""
+                  />
+                </el-templet-officecon-added-image>
+                <el-modal-templet-officecon-thumbnail>
+                  <img
+                    class="thumbnail-image"
+                    src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/product/20250227/20250227145823_a5b9221d-437d-4b84-b0ac-fbc6f58edf4f.jpg"
+                    alt=""
+                  />
+                  <el-bg></el-bg>
+                </el-modal-templet-officecon-thumbnail>
+                <el-modal-templet-officecon-product>
+                  <el-brand-thumbnail>
+                    <img
+                      src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                      alt="투썸플레이스"
+                    />
+                    <el-bg></el-bg>
+                  </el-brand-thumbnail>
+                  <el-item-txt class="typo-body-sm">
+                    <el-item-name>
+                      <el-brand>투썸플레이스</el-brand>
+                      <el-item-name-txt>
+                        일이삼사오육칠팔구십일이삼사오육칠일이삼사오육칠팔구십일이삼사오육칠
+                      </el-item-name-txt>
+                    </el-item-name>
+                  </el-item-txt>
+                </el-modal-templet-officecon-product>
+                <el-modal-templet-officecon-info class="typo-body-sm">
+                  <el-officecon-info-row>
+                    <el-officecon-info-label>교환처</el-officecon-info-label>
+                    <el-officecon-info-value>굽네치킨</el-officecon-info-value>
+                  </el-officecon-info-row>
+                  <el-officecon-info-row>
+                    <el-officecon-info-label>유효기간</el-officecon-info-label>
+                    <el-officecon-info-value>
+                      2024.01.23
+                    </el-officecon-info-value>
+                  </el-officecon-info-row>
+                </el-modal-templet-officecon-info>
+                <el-modal-templet-officecon-barcode>
+                  <img src="./images/temp/barcode-sample.png" alt="" />
+                </el-modal-templet-officecon-barcode>
+              </el-modal-templet-officecon>
+
+              <el-modal-templet-smilecon>
+                <img src="./images/templet-smilecon.png" alt="" />
+
+                <el-modal-templet-smilecon-thumbnail>
+                  <img
+                    class="thumbnail-image"
+                    src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/product/20250227/20250227145823_a5b9221d-437d-4b84-b0ac-fbc6f58edf4f.jpg"
+                    alt=""
+                  />
+                  <el-bg></el-bg>
+                </el-modal-templet-smilecon-thumbnail>
+                <el-modal-templet-smilecon-product>
+                  <el-brand-thumbnail>
+                    <img
+                      src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20250429/20250429172439_0971764f-bf5e-4981-b466-87595277d8dc.jpg"
+                      alt="투썸플레이스"
+                    />
+                    <el-bg></el-bg>
+                  </el-brand-thumbnail>
+                  <el-item-txt class="typo-body-md">
+                    <el-item-name>
+                      <el-brand>디저트39</el-brand>
+                      <el-item-name-txt>
+                        흑당 밀크티(대용량)흑당
+                      </el-item-name-txt>
+                    </el-item-name>
+                  </el-item-txt>
+                </el-modal-templet-smilecon-product>
+                <el-modal-templet-smilecon-info class="typo-body-md">
+                  <el-smilecon-info-row>
+                    <el-smilecon-info-label>교환처</el-smilecon-info-label>
+                    <el-smilecon-info-value>굽네치킨</el-smilecon-info-value>
+                  </el-smilecon-info-row>
+                  <el-smilecon-info-row>
+                    <el-smilecon-info-label>유효기간</el-smilecon-info-label>
+                    <el-smilecon-info-value>
+                      2024.01.23
+                    </el-smilecon-info-value>
+                  </el-smilecon-info-row>
+                </el-modal-templet-smilecon-info>
+                <el-modal-templet-smilecon-barcode>
+                  <img src="./images/temp/barcode-sample.png" alt="" />
+                </el-modal-templet-smilecon-barcode>
+              </el-modal-templet-smilecon>
+
+              <el-modal-order-preview-content>
+                <pre class="typo-body-sm">
+[Web발신]
+- 쿠폰번호 : 999999999999
+- 상품명 : [스마일기프트] 통합모바일쿠폰 5만원권
+- 교환처 : 스마일기프트 제휴 브랜드
+- 유효기간 : 2025.12.27까지
+
+▷ 내용
+본 쿠폰은 재판매 금지하며, 프로모션(B2B) 발송상품으로 
+유효기간 연장 및 환불 불가 합니다. 유효기간 내 사용(교환) 
+바랍니다.
+
+[이용안내]
+- 본 상품은 브랜드별 이용가능매장에서 사용 가능합니다.
+(이용가능 매장은 하단의 상세정보 확인)
+- 이용안내에 기재되지 않은 방문 포장 할인 / 중복 할인 적용 / 타 쿠폰 중복 사용 / 포인트 적립 / 제휴카드 할인 등은 
+브랜드사 정책에 따르오니, 사전 문의 후 사용해주시기 
+바랍니다.
+- 결제 시 모바일 쿠폰을 제시해 주시면 됩니다.
+- 분할 사용이 가능합니다.
+- 쿠폰 잔액의 60%(1만원 이하는 80%)사용 시 환불 
+가능합니다.
+- 매장에서 잔액 환불은 불가하며 잔액환불 시 즐거운 고객센터(1661-8191)로 문의하시기 바랍니다.
+- 금액 초과 시 다른 결제 수단과 함께 결제가 가능합니다.
+- 배달 이용 시 사용 불가합니다.
+- 스마일기프트APP에서 캐시로 전환 가능합니다. 
+(전환 후 쿠폰 상태로 원복 불가)
+- B2B/프로모션용으로 발송된 쿠폰은 유효기간 연장 및 
+환불 불가합니다.
+
+[이용매장안내]
+- 사용 가능 브랜드는 브랜드사 이슈에 따라 변동될 수 
+있으므로 이용 전 필수 확인 바랍니다
+- 각 브랜드별 이용가능매장은 하기 URL 통해 확인 바랍니다.
+: http://www.smile-gift.co.kr/sg/usage/info
+
+실제 수신 메시지는 단말기 기종에 따라 차이가 있으므로 
+참고용으로만 활용해주세요.</pre
+                >
+              </el-modal-order-preview-content>
+            </el-modal-order-preview>
+          </el-modal-body>
+        </el-modal-content>
+      </el-modal-dialog>
+    </el-modal>
+    <!-- 종료: modal: 미리보기 모달 -->
+
+    <!-- 시작: modal: 복사하여 붙여넣기 모달 -->
+    <el-modal
+      class="modal fade el-modal-default"
+      id="el-modal-copy-paste"
+      tabindex="-1"
+      aria-hidden="true"
+      data-bs-keyboard="false"
+    >
+      <el-modal-dialog
+        class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+      >
+        <el-modal-content class="modal-content">
+          <el-modal-close-button>
+            <button type="button" data-bs-dismiss="modal" aria-label="닫기">
+              <el-icon class="h32-closed natural-0"></el-icon>
+            </button>
+          </el-modal-close-button>
+
+          <el-modal-header class="modal-header">
+            <h3 class="typo-subtitle-lg center">복사하여 붙여넣기</h3>
+          </el-modal-header>
+
+          <el-modal-body class="modal-body">
+            <el-modal-copy-paste-content>
+              <textarea
+                class="form-control"
+                placeholder="아래와 같이 데이터를 붙여 넣어주세요. (Ctrl+V)&#13;&#10;01054345053&#13;&#10;01054345053"
+              ></textarea>
+            </el-modal-copy-paste-content>
+          </el-modal-body>
+
+          <el-modal-footer class="modal-footer">
+            <button
+              type="button"
+              data-bs-dismiss="modal"
+              class="button-h50-stroke typo-body-lg"
+            >
+              취소
+            </button>
+            <button type="button" class="button-h50-fill typo-body-lg">
+              불러오기
+            </button>
+          </el-modal-footer>
+        </el-modal-content>
+      </el-modal-dialog>
+    </el-modal>
+    <!-- 종료: modal: 복사하여 붙여넣기 모달 -->
+
+    <!-- 시작: modal: 발송문구 불러오기 모달 -->
+    <el-modal
+      class="modal fade el-modal-default"
+      id="el-modal-send-message-load"
+      tabindex="-1"
+      aria-hidden="true"
+      data-bs-keyboard="false"
+    >
+      <el-modal-dialog
+        class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+      >
+        <el-modal-content class="modal-content">
+          <el-modal-close-button>
+            <button type="button" data-bs-dismiss="modal" aria-label="닫기">
+              <el-icon class="h32-closed natural-0"></el-icon>
+            </button>
+          </el-modal-close-button>
+
+          <el-modal-header class="modal-header">
+            <h3 class="typo-subtitle-lg center">발송문구 불러오기</h3>
+          </el-modal-header>
+
+          <el-modal-body class="modal-body">
+            <el-modal-send-message-load-content>
+              <el-modal-scrollable-list>
+                <el-modal-scrollable-list-header class="typo-body-sm">
+                  <el-scrollable-list-header-label>
+                    프로모션명
+                  </el-scrollable-list-header-label>
+                  <el-scrollable-list-header-aside>
+                    등록일시
+                  </el-scrollable-list-header-aside>
+                </el-modal-scrollable-list-header>
+
+                <el-modal-scrollable-list-content>
+                  <ul>
+                    <li>
+                      <el-send-message-content-item>
+                        <el-send-message-content-item-left>
+                          <el-radio class="form-check">
+                            <input
+                              type="radio"
+                              class="form-check-input custom-radio"
+                              name="radioSendMessage"
+                              id="radioSendMessage-1"
+                              value=""
+                              checked
+                            />
+                            <label
+                              class="form-check-label typo-body-sm weight-em"
+                              for="radioSendMessage-1"
+                            >
+                              일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십
+                            </label>
+                          </el-radio>
+                        </el-send-message-content-item-left>
+                        <el-send-message-content-item-right>
+                          2025.10.01
+                        </el-send-message-content-item-right>
+                      </el-send-message-content-item>
+                    </li>
+                    <li>
+                      <el-send-message-content-item>
+                        <el-send-message-content-item-left>
+                          <el-radio class="form-check">
+                            <input
+                              type="radio"
+                              class="form-check-input custom-radio"
+                              name="radioSendMessage"
+                              id="radioSendMessage-2"
+                              value=""
+                            />
+                            <label
+                              class="form-check-label typo-body-sm weight-em"
+                              for="radioSendMessage-2"
+                            >
+                              일이삼사오육칠팔구십
+                            </label>
+                          </el-radio>
+                        </el-send-message-content-item-left>
+                        <el-send-message-content-item-right>
+                          2025.10.01
+                        </el-send-message-content-item-right>
+                      </el-send-message-content-item>
+                    </li>
+                    <li>
+                      <el-send-message-content-item>
+                        <el-send-message-content-item-left>
+                          <el-radio class="form-check">
+                            <input
+                              type="radio"
+                              class="form-check-input custom-radio"
+                              name="radioSendMessage"
+                              id="radioSendMessage-3"
+                              value=""
+                            />
+                            <label
+                              class="form-check-label typo-body-sm weight-em"
+                              for="radioSendMessage-3"
+                            >
+                              일이삼사오육칠팔구십
+                            </label>
+                          </el-radio>
+                        </el-send-message-content-item-left>
+                        <el-send-message-content-item-right>
+                          2025.10.01
+                        </el-send-message-content-item-right>
+                      </el-send-message-content-item>
+                    </li>
+                    <li>
+                      <el-send-message-content-item>
+                        <el-send-message-content-item-left>
+                          <el-radio class="form-check">
+                            <input
+                              type="radio"
+                              class="form-check-input custom-radio"
+                              name="radioSendMessage"
+                              id="radioSendMessage-4"
+                              value=""
+                            />
+                            <label
+                              class="form-check-label typo-body-sm weight-em"
+                              for="radioSendMessage-4"
+                            >
+                              일이삼사오육칠팔구십
+                            </label>
+                          </el-radio>
+                        </el-send-message-content-item-left>
+                        <el-send-message-content-item-right>
+                          2025.10.01
+                        </el-send-message-content-item-right>
+                      </el-send-message-content-item>
+                    </li>
+                    <li>
+                      <el-send-message-content-item>
+                        <el-send-message-content-item-left>
+                          <el-radio class="form-check">
+                            <input
+                              type="radio"
+                              class="form-check-input custom-radio"
+                              name="radioSendMessage"
+                              id="radioSendMessage-5"
+                              value=""
+                            />
+                            <label
+                              class="form-check-label typo-body-sm weight-em"
+                              for="radioSendMessage-5"
+                            >
+                              일이삼사오육칠팔구십
+                            </label>
+                          </el-radio>
+                        </el-send-message-content-item-left>
+                        <el-send-message-content-item-right>
+                          2025.10.01
+                        </el-send-message-content-item-right>
+                      </el-send-message-content-item>
+                    </li>
+                    <li>
+                      <el-send-message-content-item>
+                        <el-send-message-content-item-left>
+                          <el-radio class="form-check">
+                            <input
+                              type="radio"
+                              class="form-check-input custom-radio"
+                              name="radioSendMessage"
+                              id="radioSendMessage-6"
+                              value=""
+                            />
+                            <label
+                              class="form-check-label typo-body-sm weight-em"
+                              for="radioSendMessage-6"
+                            >
+                              일이삼사오육칠팔구십
+                            </label>
+                          </el-radio>
+                        </el-send-message-content-item-left>
+                        <el-send-message-content-item-right>
+                          2025.10.01
+                        </el-send-message-content-item-right>
+                      </el-send-message-content-item>
+                    </li>
+                    <li>
+                      <el-send-message-content-item>
+                        <el-send-message-content-item-left>
+                          <el-radio class="form-check">
+                            <input
+                              type="radio"
+                              class="form-check-input custom-radio"
+                              name="radioSendMessage"
+                              id="radioSendMessage-7"
+                              value=""
+                            />
+                            <label
+                              class="form-check-label typo-body-sm weight-em"
+                              for="radioSendMessage-7"
+                            >
+                              일이삼사오육칠팔구십
+                            </label>
+                          </el-radio>
+                        </el-send-message-content-item-left>
+                        <el-send-message-content-item-right>
+                          2025.10.01
+                        </el-send-message-content-item-right>
+                      </el-send-message-content-item>
+                    </li>
+                  </ul>
+                </el-modal-scrollable-list-content>
+              </el-modal-scrollable-list>
+            </el-modal-send-message-load-content>
+          </el-modal-body>
+
+          <el-modal-footer class="modal-footer">
+            <button
+              type="button"
+              data-bs-dismiss="modal"
+              class="button-h50-stroke typo-body-lg"
+            >
+              취소
+            </button>
+            <button type="button" class="button-h50-fill typo-body-lg">
+              불러오기
+            </button>
+          </el-modal-footer>
+        </el-modal-content>
+      </el-modal-dialog>
+    </el-modal>
+    <!-- 종료: modal: 발송문구 불러오기 모달 -->
+
     <!-- 시작: alert -->
     <el-alert
       class="modal fade"
@@ -2892,6 +3348,13 @@
             개발 시 내용이 변경됩니다.
           </el-alert-body>
           <el-alert-footer>
+            <button
+              type="button"
+              data-bs-dismiss="modal"
+              class="button-h50-stroke typo-body-lg"
+            >
+              취소
+            </button>
             <button
               type="button"
               data-bs-dismiss="modal"
