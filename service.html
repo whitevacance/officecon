@@ -84,12 +84,39 @@
 
               <h2 class="typo-heading-md">서비스 소개</h2>
 
-              <el-content-header-tabs>탭영역</el-content-header-tabs>
+              <el-service-tabs>
+                <button type="button" role="tab" class="typo-body-lg active">
+                  오피스콘 특장점
+                  <span class="typo-body-sm">이용자수 1위 비결</span>
+                </button>
+                <button type="button" role="tab" class="typo-body-lg">
+                  회원등급
+                </button>
+                <button type="button" role="tab" class="typo-body-lg">
+                  리워드 혜택
+                </button>
+                <button type="button" role="tab" class="typo-body-lg">
+                  발송방법안내
+                </button>
+              </el-service-tabs>
             </el-content-header-container>
           </el-content-header>
 
           <el-content>
-            <div>컨텐츠 영역</div>
+            <el-service-tabs-content>
+              <el-service-tab-panel role="tabpanel" class="active">
+                탭 내용 영역 - 오피스콘 특장점
+              </el-service-tab-panel>
+              <el-service-tab-panel role="tabpanel">
+                탭 내용 영역 - 회원등급
+              </el-service-tab-panel>
+              <el-service-tab-panel role="tabpanel">
+                탭 내용 영역 - 리워드 혜택
+              </el-service-tab-panel>
+              <el-service-tab-panel role="tabpanel">
+                탭 내용 영역 - 발송방법안내
+              </el-service-tab-panel>
+            </el-service-tabs-content>
           </el-content>
         </main>
         <!-- 종료: 컨텐츠 -->

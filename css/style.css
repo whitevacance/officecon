@@ -4110,8 +4110,8 @@ el-content-header {
       background-image: url('../images/temp/page-header-bg-reward.jpg');
 
       & > h2 {
-        min-height: 38px;
-        padding-bottom: 30px;
+        height: 68px;
+        min-height: 68px;
       }
     }
   }
@@ -4123,8 +4123,8 @@ el-content-header {
       background-image: url('../images/temp/page-header-bg-service.jpg');
 
       & > h2 {
-        min-height: 38px;
-        padding-bottom: 46px;
+        height: 85px;
+        min-height: 85px;
       }
     }
   }
@@ -4378,15 +4378,6 @@ el-content-header {
         background-color: var(--color-natural-80);
       }
     }
-  }
-
-  el-content-header-tabs {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: 6px;
-    width: 100%;
-    height: 56px;
   }
 }
 
@@ -8650,6 +8641,74 @@ el-modal-send-message-load-content {
   }
 }
 /* 종료: 주문결제 */
+
+/* 시작: 서비스 소개 */
+el-service-tabs {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 6px;
+  width: 100%;
+  height: 56px;
+
+  & > button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(225, 229, 245, 0.5);
+    border: 1px solid rgba(213, 219, 245, 0.6);
+    border-bottom: 0;
+    border-radius: 8px 8px 0 0;
+    font-weight: 600 !important;
+    color: rgba(0, 19, 70, 0.5);
+
+    & > span {
+      flex-grow: 0;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 30px;
+      padding: 0 15px;
+      color: var(--color-natural-100);
+      font-weight: 600 !important;
+      background-color: rgba(0, 19, 70, 0.5);
+      border-radius: 999px;
+    }
+
+    &.active {
+      color: var(--color-natural-0);
+      border-color: var(--color-natural-100);
+      background-color: var(--color-natural-100);
+      box-shadow: var(--color-boxShadow-5);
+
+      & > span {
+        color: var(--color-natural-100);
+        background-color: var(--color-natural-0);
+      }
+    }
+  }
+}
+
+el-service-tabs-content {
+  display: block;
+  width: 100%;
+  padding-top: 40px;
+
+  el-service-tab-panel {
+    display: none;
+    width: 100%;
+    position: relative;
+
+    &.active {
+      display: block;
+    }
+  }
+}
+/* 종료: 서비스 소개 */
 
 /* 시작: 예시 (example) */
 el-examples-article {

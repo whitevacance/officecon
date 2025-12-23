@@ -1427,6 +1427,67 @@ if (window !== undefined) {
 initTabs();
 // 종료: 탭 el-tabs
 
+// 시작: 탭 el-service-tabs
+let serviceTabsInitialized = false;
+const initServiceTabs = () => {
+  // 이미 초기화된 경우 건너뛰기
+  if (serviceTabsInitialized) {
+    return;
+  }
+
+  if (document?.body) {
+    document.body.addEventListener('click', (e) => {
+      // 클릭 시 active 처리
+      const serviceTabsButtonEl = e.target.closest('el-service-tabs > button');
+      const serviceTabsContentEl = document.querySelector(
+        'el-service-tabs-content'
+      );
+
+      if (serviceTabsButtonEl && serviceTabsContentEl) {
+        const serviceTabsEl = serviceTabsButtonEl.closest('el-service-tabs');
+        const serviceTabsButtonEls =
+          serviceTabsEl.querySelectorAll('button[role="tab"]');
+        const serviceTabsPanelEls = serviceTabsContentEl.querySelectorAll(
+          'el-service-tab-panel'
+        );
+
+        // 클릭된 탭 버튼의 인덱스 찾기
+        const clickedIndex =
+          Array.from(serviceTabsButtonEls).indexOf(serviceTabsButtonEl);
+
+        // 모든 탭 버튼에서 active 클래스 제거
+        serviceTabsButtonEls.forEach((button) => {
+          button.classList.remove('active');
+        });
+
+        // 클릭된 탭 버튼에 active 클래스 추가
+        serviceTabsButtonEl.classList.add('active');
+
+        // 모든 탭 패널에서 active 클래스 제거
+        serviceTabsPanelEls.forEach((panel) => {
+          panel.classList.remove('active');
+        });
+
+        // 해당 인덱스의 탭 패널에 active 클래스 추가
+        if (serviceTabsPanelEls[clickedIndex]) {
+          serviceTabsPanelEls[clickedIndex].classList.add('active');
+        }
+      }
+    });
+  }
+
+  // 초기화 완료 전환
+  serviceTabsInitialized = true;
+};
+
+// 전역 함수로 등록
+if (window !== undefined) {
+  window.initServiceTabs = initServiceTabs;
+}
+
+initServiceTabs();
+// 종료: 탭 el-service-tabs
+
 // 시작: 전화번호 입력 시 자동 하이픈 처리 - 일반전화와 핸드폰 번호 모두 처리
 let phoneNumberInputInitialized = false;
 const initPhoneNumberInput = () => {
