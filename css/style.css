@@ -1945,7 +1945,7 @@ el-modal.modal.el-modal-default {
         align-items: center;
         gap: 8px;
         width: 100%;
-        padding-top: 32px;
+        padding-top: 75px;
         font-weight: 700 !important;
 
         el-modal-estimate-name {
@@ -1971,7 +1971,7 @@ el-modal.modal.el-modal-default {
       justify-content: center;
       width: 100%;
       height: 186px;
-      padding-top: 56px;
+      padding-top: 71px;
 
       & > button {
         width: 130px;
@@ -6729,7 +6729,7 @@ el-cart-header {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    gap: 8px;
+    gap: 4px;
 
     & > button {
       min-width: 120px !important;
@@ -6967,12 +6967,14 @@ el-modal-estimate-request {
   flex-direction: column;
   gap: 32px;
   width: 551px;
+  padding-top: 16px;
 
   el-modal-estimate-request-info {
     display: flex;
     flex-direction: column;
     gap: 16px;
     width: 100%;
+    padding-left: 8px;
 
     el-estimate-request-row {
       display: flex;
