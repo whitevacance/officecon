@@ -6327,6 +6327,7 @@ el-intro-and-success {
 
         el-member-type-desc {
           p {
+            color: var(--color-natural-10);
             span {
               color: var(--color-blue-60);
             }
@@ -6358,6 +6359,7 @@ el-intro-and-success {
 
         el-member-type-desc {
           p {
+            color: var(--color-natural-10);
             span {
               color: var(--color-orange-officecon);
             }
