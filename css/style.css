@@ -259,6 +259,7 @@ textarea.form-control {
     cursor: default;
     border-color: var(--color-natural-70);
     background-color: var(--color-natural-95);
+    color: var(--color-natural-30);
   }
 }
 
@@ -266,6 +267,7 @@ pre {
   margin: 0;
   padding: 0;
   white-space: pre-wrap;
+  word-break: keep-all;
 }
 /* 종료: reset */
 
@@ -644,6 +646,12 @@ el-icon {
     height: 16px;
     -webkit-mask-image: url('../images/icon-h16-arrow-right.svg');
     mask-image: url('../images/icon-h16-arrow-right.svg');
+  }
+  &.h16-arrow-left {
+    width: 16px;
+    height: 16px;
+    -webkit-mask-image: url('../images/icon-h16-arrow-left.svg');
+    mask-image: url('../images/icon-h16-arrow-left.svg');
   }
   &.h16-refresh {
     width: 16px;
@@ -1358,6 +1366,7 @@ el-input {
       cursor: default;
       border-color: var(--color-natural-70);
       background-color: var(--color-natural-95);
+      color: var(--color-natural-30);
     }
   }
 
@@ -1942,7 +1951,7 @@ el-modal.modal.el-modal-default {
         align-items: center;
         gap: 8px;
         width: 100%;
-        padding-top: 32px;
+        padding-top: 75px;
         font-weight: 700 !important;
 
         el-modal-estimate-name {
@@ -1968,7 +1977,7 @@ el-modal.modal.el-modal-default {
       justify-content: center;
       width: 100%;
       height: 186px;
-      padding-top: 56px;
+      padding-top: 71px;
 
       & > button {
         width: 130px;
@@ -2281,6 +2290,7 @@ el-section-title {
   }
 
   el-section-title-addon {
+    color: var(--color-natural-20);
     span {
       color: var(--color-red-40);
     }
@@ -2800,7 +2810,7 @@ el-datepicker {
               width: 16px;
               height: 26px;
               margin: 0;
-              background-image: url('../images/icon-h26-arrow-left.svg');
+              background-image: url('../images/icon-h16-arrow-left.svg');
               background-position: 0 0;
               left: 12px;
               top: 21px;
@@ -2819,7 +2829,7 @@ el-datepicker {
               width: 16px;
               height: 26px;
               margin: 0;
-              background-image: url('../images/icon-h26-arrow-right.svg');
+              background-image: url('../images/icon-h16-arrow-right.svg');
               background-position: 0 0;
               right: 12px;
               top: 21px;
@@ -4385,7 +4395,7 @@ el-content {
   display: block;
   width: var(--layout-width);
   padding: var(--layout-padding);
-  padding-bottom: 100px;
+  padding-bottom: 200px;
   min-height: 200px;
   margin: 0 auto;
 }
@@ -6141,8 +6151,8 @@ el-login-bottom {
 el-modal-additional-cert {
   display: flex;
   flex-direction: column;
-  width: 484px;
-  padding: 0 0 50px;
+  width: 420px;
+  padding: 0 0 18px;
 
   el-additional-cert-description {
     display: block;
@@ -6325,6 +6335,7 @@ el-intro-and-success {
 
         el-member-type-desc {
           p {
+            color: var(--color-natural-10);
             span {
               color: var(--color-blue-60);
             }
@@ -6356,6 +6367,7 @@ el-intro-and-success {
 
         el-member-type-desc {
           p {
+            color: var(--color-natural-10);
             span {
               color: var(--color-orange-officecon);
             }
@@ -6652,8 +6664,9 @@ el-signup-form {
           display: flex;
           flex-direction: column;
           gap: 16px;
-          width: 100%;
-          padding-bottom: 24px;
+          width: calc(100% + 26px);
+          margin-left: -13px;
+          padding: 0 13px 24px;
           border-bottom: 1px solid var(--color-natural-80);
 
           & > h3 {
@@ -6722,7 +6735,7 @@ el-cart-header {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    gap: 8px;
+    gap: 4px;
 
     & > button {
       min-width: 120px !important;
@@ -6960,12 +6973,14 @@ el-modal-estimate-request {
   flex-direction: column;
   gap: 32px;
   width: 551px;
+  padding-top: 16px;
 
   el-modal-estimate-request-info {
     display: flex;
     flex-direction: column;
     gap: 16px;
     width: 100%;
+    padding-left: 8px;
 
     el-estimate-request-row {
       display: flex;
@@ -7161,7 +7176,7 @@ el-order-header {
         background-color: var(--color-blue-20);
         position: absolute !important;
         left: -9px;
-        top: -15px;
+        top: -13px;
         transform: translateY(-100%);
         padding: 9px 15px;
         border: 1px solid var(--color-blue-60);
@@ -7169,6 +7184,19 @@ el-order-header {
         position: relative;
 
         &:after {
+          content: '';
+          display: block;
+          width: 22px;
+          height: 17px;
+          position: absolute;
+          bottom: -6px;
+          left: 26px;
+          background-image: url('../images/bubble-tip-blue.svg');
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+        /* &:after {
           content: '';
           display: block;
           width: 6px;
@@ -7180,7 +7208,7 @@ el-order-header {
           transform: rotate(45deg) skew(6deg, 6deg);
           border-bottom: 1px solid var(--color-blue-60);
           border-right: 1px solid var(--color-blue-60);
-        }
+        } */
       }
     }
 
@@ -7216,6 +7244,20 @@ el-order-header {
             &:before {
               content: '';
               display: block;
+              width: 22px;
+              height: 17px;
+              position: absolute;
+              bottom: -6px;
+              left: 50%;
+              transform: translateX(-50%);
+              background-image: url('../images/bubble-tip-black.svg');
+              background-size: contain;
+              background-repeat: no-repeat;
+              background-position: center;
+            }
+            /* &:before {
+              content: '';
+              display: block;
               width: 6px;
               height: 6px;
               position: absolute;
@@ -7225,7 +7267,7 @@ el-order-header {
               transform: translateX(-50%) rotate(45deg) skew(6deg, 6deg);
               border-bottom: 1px solid var(--color-natural-0);
               border-right: 1px solid var(--color-natural-0);
-            }
+            } */
           }
         }
 

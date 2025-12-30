@@ -1321,9 +1321,9 @@ const initDatePicker = () => {
       const targetLayerEl = datePickerEl.querySelector('el-datepicker-layer');
 
       if (targetInputEl && targetButtonEl && targetLayerEl) {
-        // const currentTime = new Date();
-        // const currentHour = currentTime.getHours();
-        // const currentMinute = currentTime.getMinutes();
+        const currentTime = new Date();
+        const currentHour = currentTime.getHours();
+        const currentMinute = currentTime.getMinutes();
 
         const datepicker = new tui.DatePicker(targetLayerEl, {
           // date: new Date(),
@@ -1346,7 +1346,11 @@ const initDatePicker = () => {
 
           // endDate 기준: 오늘 기준 16일 후 날짜
           // const endDate = new Date(updatedTimestamp + 16 * 24 * 60 * 60 * 1000);
-          // datepicker.setRanges([[updatedTime, endDate]]);
+
+          const endDate = new Date(
+            updatedTimestamp + 99999 * 24 * 60 * 60 * 1000
+          );
+          datepicker.setRanges([[updatedTime, endDate]]);
         });
 
         targetButtonEl.addEventListener('click', () => {
@@ -1613,3 +1617,78 @@ if (window !== undefined) {
 
 initMobileNumberInput();
 // 종료: 핸드폰 번호 입력 시 자동 하이픈 처리 - 핸드폰 번호만 처리
+
+// 시작: 주문결제 > 수신자 목록 remove 처리
+let orderAddresseeListRemoveInitialized = false;
+const initOrderAddresseeListRemove = () => {
+  // 이미 초기화된 경우 건너뛰기
+  if (orderAddresseeListRemoveInitialized) {
+    return;
+  }
+
+  if (document?.body) {
+    document.body.addEventListener('click', (e) => {
+      const closeButtonEl = e.target.closest(
+        'el-order-addressee-list-content > ul button.remove'
+      );
+
+      if (closeButtonEl) {
+        const targetEl = closeButtonEl.closest(
+          'el-order-addressee-list-content > ul > li'
+        );
+
+        if (targetEl) {
+          targetEl.remove();
+        }
+      }
+    });
+
+    // 초기화 완료 전환
+    orderAddresseeListRemoveInitialized = true;
+  }
+};
+
+// 전역 함수로 등록
+if (window !== undefined) {
+  window.initOrderAddresseeListRemove = initOrderAddresseeListRemove;
+}
+
+initOrderAddresseeListRemove();
+// 종료: 주문결제 > 수신자 목록 remove 처리
+
+// 시작: 주문결제 > 이미지 추가 > 나의 이미지 - remove 처리
+let orderMyImageRemoveInitialized = false;
+const initOrderMyImageRemove = () => {
+  // 이미 초기화된 경우 건너뛰기
+  if (orderMyImageRemoveInitialized) {
+    return;
+  }
+
+  if (document?.body) {
+    document.body.addEventListener('click', (e) => {
+      const closeButtonEl = e.target.closest(
+        'el-order-add-image-box-content el-add-image-item-preview button.remove-item'
+      );
+
+      if (closeButtonEl) {
+        const targetEl = closeButtonEl.closest(
+          'el-order-add-image-box-content > el-box-content-inner > ul > li'
+        );
+        if (targetEl) {
+          targetEl.remove();
+        }
+      }
+    });
+
+    // 초기화 완료 전환
+    orderMyImageRemoveInitialized = true;
+  }
+};
+
+// 전역 함수로 등록
+if (window !== undefined) {
+  window.initOrderMyImageRemove = initOrderMyImageRemove;
+}
+
+initOrderMyImageRemove();
+// 종료: 주문결제 > 이미지 추가 > 나의 이미지 - remove 처리
