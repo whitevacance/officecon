@@ -1321,9 +1321,9 @@ const initDatePicker = () => {
       const targetLayerEl = datePickerEl.querySelector('el-datepicker-layer');
 
       if (targetInputEl && targetButtonEl && targetLayerEl) {
-        // const currentTime = new Date();
-        // const currentHour = currentTime.getHours();
-        // const currentMinute = currentTime.getMinutes();
+        const currentTime = new Date();
+        const currentHour = currentTime.getHours();
+        const currentMinute = currentTime.getMinutes();
 
         const datepicker = new tui.DatePicker(targetLayerEl, {
           // date: new Date(),
@@ -1346,7 +1346,11 @@ const initDatePicker = () => {
 
           // endDate 기준: 오늘 기준 16일 후 날짜
           // const endDate = new Date(updatedTimestamp + 16 * 24 * 60 * 60 * 1000);
-          // datepicker.setRanges([[updatedTime, endDate]]);
+
+          const endDate = new Date(
+            updatedTimestamp + 99999 * 24 * 60 * 60 * 1000
+          );
+          datepicker.setRanges([[updatedTime, endDate]]);
         });
 
         targetButtonEl.addEventListener('click', () => {
