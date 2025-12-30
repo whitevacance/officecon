@@ -43,7 +43,9 @@
 - 회원가입 - 기업: http://officecon-pub.s3-website.ap-northeast-2.amazonaws.com/signup-company.html
 - 회원가입 - 일반: http://officecon-pub.s3-website.ap-northeast-2.amazonaws.com/signup-personal.html
 - 회원가입 - 가입완료: http://officecon-pub.s3-website.ap-northeast-2.amazonaws.com/signup-success.html
-- 아이디/비밀번호 찾기: http://officecon-pub.s3-website.ap-northeast-2.amazonaws.com/find-idpw.html
+- 아이디/비밀번호 찾기 - 휴대폰 번호: http://officecon-pub.s3-website.ap-northeast-2.amazonaws.com/find-idpw.html
+- 아이디/비밀번호 찾기 - 이메일 주소: http://officecon-pub.s3-website.ap-northeast-2.amazonaws.com/find-idpw-email.html
+- 아이디/비밀번호 찾기 - 새로운 비밀번호: http://officecon-pub.s3-website.ap-northeast-2.amazonaws.com/find-idpw-change.html
 - 비밀번호 변경: http://officecon-pub.s3-website.ap-northeast-2.amazonaws.com/change-password.html
 - 장바구니: http://officecon-pub.s3-website.ap-northeast-2.amazonaws.com/cart.html
 - 장바구니 - 장바구니없음: http://officecon-pub.s3-website.ap-northeast-2.amazonaws.com/cart-empty.html
