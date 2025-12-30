@@ -2283,6 +2283,7 @@ el-section-title {
   }
 
   el-section-title-addon {
+    color: var(--color-natural-20);
     span {
       color: var(--color-red-40);
     }
