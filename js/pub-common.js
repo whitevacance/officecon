@@ -1640,7 +1640,7 @@ const initOrderAddresseeListRemove = () => {
     });
 
     // 초기화 완료 전환
-    topBannerInitialized = true;
+    orderAddresseeListRemoveInitialized = true;
   }
 };
 
@@ -1651,3 +1651,40 @@ if (window !== undefined) {
 
 initOrderAddresseeListRemove();
 // 종료: 주문결제 > 수신자 목록 remove 처리
+
+// 시작: 주문결제 > 이미지 추가 > 나의 이미지 - remove 처리
+let orderMyImageRemoveInitialized = false;
+const initOrderMyImageRemove = () => {
+  // 이미 초기화된 경우 건너뛰기
+  if (orderMyImageRemoveInitialized) {
+    return;
+  }
+
+  if (document?.body) {
+    document.body.addEventListener('click', (e) => {
+      const closeButtonEl = e.target.closest(
+        'el-order-add-image-box-content el-add-image-item-preview button.remove-item'
+      );
+
+      if (closeButtonEl) {
+        const targetEl = closeButtonEl.closest(
+          'el-order-add-image-box-content > el-box-content-inner > ul > li'
+        );
+        if (targetEl) {
+          targetEl.remove();
+        }
+      }
+    });
+
+    // 초기화 완료 전환
+    orderMyImageRemoveInitialized = true;
+  }
+};
+
+// 전역 함수로 등록
+if (window !== undefined) {
+  window.initOrderMyImageRemove = initOrderMyImageRemove;
+}
+
+initOrderMyImageRemove();
+// 종료: 주문결제 > 이미지 추가 > 나의 이미지 - remove 처리
