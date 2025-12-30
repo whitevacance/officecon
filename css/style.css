@@ -4389,7 +4389,7 @@ el-content {
   display: block;
   width: var(--layout-width);
   padding: var(--layout-padding);
-  padding-bottom: 100px;
+  padding-bottom: 200px;
   min-height: 200px;
   margin: 0 auto;
 }
