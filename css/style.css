@@ -259,6 +259,7 @@ textarea.form-control {
     cursor: default;
     border-color: var(--color-natural-70);
     background-color: var(--color-natural-95);
+    color: var(--color-natural-30);
   }
 }
 
@@ -1358,6 +1359,7 @@ el-input {
       cursor: default;
       border-color: var(--color-natural-70);
       background-color: var(--color-natural-95);
+      color: var(--color-natural-30);
     }
   }
 
