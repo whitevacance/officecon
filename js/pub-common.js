@@ -1613,3 +1613,41 @@ if (window !== undefined) {
 
 initMobileNumberInput();
 // 종료: 핸드폰 번호 입력 시 자동 하이픈 처리 - 핸드폰 번호만 처리
+
+// 시작: 주문결제 > 수신자 목록 remove 처리
+let orderAddresseeListRemoveInitialized = false;
+const initOrderAddresseeListRemove = () => {
+  // 이미 초기화된 경우 건너뛰기
+  if (orderAddresseeListRemoveInitialized) {
+    return;
+  }
+
+  if (document?.body) {
+    document.body.addEventListener('click', (e) => {
+      const closeButtonEl = e.target.closest(
+        'el-order-addressee-list-content > ul button.remove'
+      );
+
+      if (closeButtonEl) {
+        const targetEl = closeButtonEl.closest(
+          'el-order-addressee-list-content > ul > li'
+        );
+
+        if (targetEl) {
+          targetEl.remove();
+        }
+      }
+    });
+
+    // 초기화 완료 전환
+    topBannerInitialized = true;
+  }
+};
+
+// 전역 함수로 등록
+if (window !== undefined) {
+  window.initOrderAddresseeListRemove = initOrderAddresseeListRemove;
+}
+
+initOrderAddresseeListRemove();
+// 종료: 주문결제 > 수신자 목록 remove 처리
