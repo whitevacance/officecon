@@ -603,7 +603,7 @@
                               <el-order-addressee-util-bar>
                                 <button
                                   data-bs-toggle="modal"
-                                  data-bs-target="#el-modal-copy-paste"
+                                  data-bs-target="#el-modal-copy-paste-email"
                                   type="button"
                                   class="text-black button-h43-square typo-body-sm"
                                 >
@@ -2060,7 +2060,7 @@
                               <el-order-addressee-util-bar>
                                 <button
                                   data-bs-toggle="modal"
-                                  data-bs-target="#el-modal-copy-paste"
+                                  data-bs-target="#el-modal-copy-paste-phone"
                                   type="button"
                                   class="text-black button-h43-square typo-body-sm"
                                 >
@@ -3056,10 +3056,10 @@
     </el-modal>
     <!-- 종료: modal: 미리보기 모달 -->
 
-    <!-- 시작: modal: 복사하여 붙여넣기 모달 -->
+    <!-- 시작: modal: 복사하여 붙여넣기(휴대폰) 모달 -->
     <el-modal
       class="modal fade el-modal-default"
-      id="el-modal-copy-paste"
+      id="el-modal-copy-paste-phone"
       tabindex="-1"
       aria-hidden="true"
       data-bs-keyboard="false"
@@ -3102,7 +3102,55 @@
         </el-modal-content>
       </el-modal-dialog>
     </el-modal>
-    <!-- 종료: modal: 복사하여 붙여넣기 모달 -->
+    <!-- 종료: modal: 복사하여 붙여넣기(휴대폰) 모달 -->
+
+    <!-- 시작: modal: 복사하여 붙여넣기(이메일) 모달 -->
+    <el-modal
+      class="modal fade el-modal-default"
+      id="el-modal-copy-paste-email"
+      tabindex="-1"
+      aria-hidden="true"
+      data-bs-keyboard="false"
+    >
+      <el-modal-dialog
+        class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+      >
+        <el-modal-content class="modal-content">
+          <el-modal-close-button>
+            <button type="button" data-bs-dismiss="modal" aria-label="닫기">
+              <el-icon class="h32-closed natural-0"></el-icon>
+            </button>
+          </el-modal-close-button>
+
+          <el-modal-header class="modal-header">
+            <h3 class="typo-subtitle-lg center">복사하여 붙여넣기</h3>
+          </el-modal-header>
+
+          <el-modal-body class="modal-body">
+            <el-modal-copy-paste-content>
+              <textarea
+                class="form-control"
+                placeholder="아래와 같이 데이터를 붙여 넣어주세요. (Ctrl+V)&#13;&#10;abc@zlgoon.co.kr&#13;&#10;abc@zlgoon.co.kr"
+              ></textarea>
+            </el-modal-copy-paste-content>
+          </el-modal-body>
+
+          <el-modal-footer class="modal-footer">
+            <button
+              type="button"
+              data-bs-dismiss="modal"
+              class="button-h50-stroke typo-body-lg"
+            >
+              취소
+            </button>
+            <button type="button" class="button-h50-fill typo-body-lg">
+              불러오기
+            </button>
+          </el-modal-footer>
+        </el-modal-content>
+      </el-modal-dialog>
+    </el-modal>
+    <!-- 종료: modal: 복사하여 붙여넣기(이메일) 모달 -->
 
     <!-- 시작: modal: 발송문구 불러오기 모달 -->
     <el-modal
