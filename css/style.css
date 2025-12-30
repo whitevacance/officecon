@@ -6143,8 +6143,8 @@ el-login-bottom {
 el-modal-additional-cert {
   display: flex;
   flex-direction: column;
-  width: 484px;
-  padding: 0 0 50px;
+  width: 420px;
+  padding: 0 0 18px;
 
   el-additional-cert-description {
     display: block;
