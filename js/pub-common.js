@@ -1715,10 +1715,10 @@ const initRepresentativeBrandSwiper = () => {
   }
 
   const handleVideoPlay = (slideEls) => {
-    [...slideEls].forEach((slide, index) => {
+    [...slideEls].forEach((slide) => {
       if (slide.classList.contains('swiper-slide-visible')) {
         const videoEl = slide.querySelector('el-representative-brand-bg video');
-        console.log('테스트: ', index, videoEl);
+
         if (videoEl && !videoEl.classList.contains('video-played')) {
           videoEl.play();
           videoEl.classList.add('video-played');
@@ -1771,3 +1771,48 @@ if (window !== undefined) {
 
 initRepresentativeBrandSwiper();
 // 종료: el-representative-brand-swiper
+
+// 시작: 브랜드 > 브랜드 검색 > 탭 처리
+let brandSearchTabInitialized = false;
+const initBrandSearchTab = () => {
+  // 이미 초기화된 경우 건너뛰기
+  if (brandSearchTabInitialized) {
+    return;
+  }
+
+  if (document?.body) {
+    document.body.addEventListener('click', (e) => {
+      const closeButtonEl = e.target.closest(
+        'el-brand-search-bar el-brand-search-tabs button'
+      );
+
+      if (closeButtonEl) {
+        if (!closeButtonEl.classList.contains('active')) {
+          const parentEl = closeButtonEl.closest(
+            'el-brand-search-bar el-brand-search-tabs'
+          );
+
+          if (parentEl) {
+            [...parentEl.querySelectorAll('button')].forEach((button) => {
+              if (button.classList.contains('active')) {
+                button.classList.remove('active');
+              }
+            });
+          }
+          closeButtonEl.classList.add('active');
+        }
+      }
+    });
+
+    // 초기화 완료 전환
+    orderMyImageRemoveInitialized = true;
+  }
+};
+
+// 전역 함수로 등록
+if (window !== undefined) {
+  window.initBrandSearchTab = initBrandSearchTab;
+}
+
+initBrandSearchTab();
+// 종료: 브랜드 > 브랜드 검색 > 탭 처리
