@@ -9,6 +9,7 @@ let homeMainSwiperInstance = null;
 let categoryImageCarouselInstance = null;
 let homeBrandCarouselInstance = null;
 let modalNoticeSwiperInstance = null;
+let representativeBrandSwiperInstance = null;
 // 종료: global 변수
 
 // 시작: el-modal-loader
@@ -1692,3 +1693,39 @@ if (window !== undefined) {
 
 initOrderMyImageRemove();
 // 종료: 주문결제 > 이미지 추가 > 나의 이미지 - remove 처리
+
+// 시작: el-representative-brand-swiper
+const initRepresentativeBrandSwiper = () => {
+  const representativeBrandSwiperEl = document.querySelector(
+    'el-representative-brand-swiper swiper-container'
+  );
+
+  // 이미 초기화된 경우 건너뛰기
+  if (representativeBrandSwiperEl?.dataset?.initialized === 'true') {
+    return;
+  }
+
+  const representativeBrandSwiperParams = {
+    slidesPerView: 1,
+  };
+
+  if (representativeBrandSwiperEl && representativeBrandSwiperParams) {
+    Object.assign(representativeBrandSwiperEl, representativeBrandSwiperParams);
+    representativeBrandSwiperEl.initialize();
+    representativeBrandSwiperInstance =
+      representativeBrandSwiperEl?.swiper || null;
+  }
+
+  if (representativeBrandSwiperInstance) {
+    // 초기화 완료 전환
+    representativeBrandSwiperEl.dataset.initialized = 'true';
+  }
+};
+
+// 전역 함수로 등록
+if (window !== undefined) {
+  window.initRepresentativeBrandSwiper = initRepresentativeBrandSwiper;
+}
+
+initRepresentativeBrandSwiper();
+// 종료: el-representative-brand-swiper

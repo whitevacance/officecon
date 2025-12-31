@@ -8752,6 +8752,111 @@ el-service-tabs-content {
 }
 /* 종료: 서비스 소개 */
 
+/* 시작: 브랜드 */
+el-representative-brand-swiper {
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  el-representative-brand-item {
+    display: block;
+    width: 299px;
+    height: 535px;
+    overflow: hidden;
+    border-radius: 20px;
+    position: relative;
+
+    &:before {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-color: var(--color-opacity-black-50);
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    el-representative-brand-bg {
+      display: block;
+      width: 100%;
+      height: 100%;
+
+      & > img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    el-representative-brand-title {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      width: 100%;
+      padding: 36px 26px 0;
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--color-natural-100);
+
+      h3,
+      p {
+        width: 100%;
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+
+    el-representative-brand-product {
+      display: flex;
+      gap: 12px;
+      width: 271px;
+      height: 130px;
+      padding: 12px;
+      overflow: hidden;
+      border-radius: 16px;
+      background-color: var(--color-natural-100);
+      position: absolute;
+      bottom: 14px;
+      left: 14px;
+
+      el-product-thumbnail {
+        display: block;
+        flex-grow: 0;
+        flex-shrink: 0;
+        width: 106px;
+        height: 106px;
+        overflow: hidden;
+        border-radius: 7.067px;
+        position: relative;
+
+        .thumbnail-image {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        el-bg {
+          content: '';
+          display: block;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          background-color: var(--color-opacity-black-3);
+        }
+      }
+    }
+  }
+}
+/* 종료: 브랜드 */
+
 /* 시작: 예시 (example) */
 el-examples-article {
   display: flex;
