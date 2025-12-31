@@ -1717,7 +1717,12 @@ const initRepresentativeBrandSwiper = () => {
   const handleVideoPlay = (slideEls) => {
     [...slideEls].forEach((slide, index) => {
       if (slide.classList.contains('swiper-slide-visible')) {
-        console.log('테스트: ', index, slide);
+        const videoEl = slide.querySelector('el-representative-brand-bg video');
+        console.log('테스트: ', index, videoEl);
+        if (videoEl && !videoEl.classList.contains('video-played')) {
+          videoEl.play();
+          videoEl.classList.add('video-played');
+        }
       }
     });
   };
