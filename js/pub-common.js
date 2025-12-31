@@ -1748,7 +1748,6 @@ const initRepresentativeBrandSwiper = () => {
   if (representativeBrandSwiperInstance) {
     // 스와이퍼 update 완료 시
     representativeBrandSwiperInstance.on('update', () => {
-      console.log('update');
       handleVideoPlay(representativeBrandSlideEls);
     });
 
