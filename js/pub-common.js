@@ -1699,6 +1699,12 @@ const initRepresentativeBrandSwiper = () => {
   const representativeBrandSwiperEl = document.querySelector(
     'el-representative-brand-swiper swiper-container'
   );
+  const representativeBrandSwiperPrevEl = document.querySelector(
+    'el-representative-brand-swiper .nav-button.prev'
+  );
+  const representativeBrandSwiperNextEl = document.querySelector(
+    'el-representative-brand-swiper .nav-button.next'
+  );
 
   // 이미 초기화된 경우 건너뛰기
   if (representativeBrandSwiperEl?.dataset?.initialized === 'true') {
@@ -1706,7 +1712,14 @@ const initRepresentativeBrandSwiper = () => {
   }
 
   const representativeBrandSwiperParams = {
-    slidesPerView: 1,
+    slidesPerGroup: 4,
+    slidesPerView: 4,
+    spaceBetween: 14,
+    watchSlidesProgress: true,
+    navigation: {
+      nextEl: representativeBrandSwiperNextEl,
+      prevEl: representativeBrandSwiperPrevEl,
+    },
   };
 
   if (representativeBrandSwiperEl && representativeBrandSwiperParams) {
