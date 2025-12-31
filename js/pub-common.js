@@ -1699,6 +1699,9 @@ const initRepresentativeBrandSwiper = () => {
   const representativeBrandSwiperEl = document.querySelector(
     'el-representative-brand-swiper swiper-container'
   );
+  const representativeBrandSlideEls = document.querySelectorAll(
+    'el-representative-brand-swiper swiper-slide'
+  );
   const representativeBrandSwiperPrevEl = document.querySelector(
     'el-representative-brand-swiper .nav-button.prev'
   );
@@ -1710,6 +1713,14 @@ const initRepresentativeBrandSwiper = () => {
   if (representativeBrandSwiperEl?.dataset?.initialized === 'true') {
     return;
   }
+
+  const handleVideoPlay = (slideEls) => {
+    [...slideEls].forEach((slide, index) => {
+      if (slide.classList.contains('swiper-slide-visible')) {
+        console.log('테스트: ', index, slide);
+      }
+    });
+  };
 
   const representativeBrandSwiperParams = {
     slidesPerGroup: 4,
@@ -1730,8 +1741,21 @@ const initRepresentativeBrandSwiper = () => {
   }
 
   if (representativeBrandSwiperInstance) {
+    // 스와이퍼 update 완료 시
+    representativeBrandSwiperInstance.on('update', () => {
+      console.log('update');
+      handleVideoPlay(representativeBrandSlideEls);
+    });
+
+    // 슬라이드 변경 시
+    representativeBrandSwiperInstance.on('slideChangeTransitionEnd', () => {
+      handleVideoPlay(representativeBrandSlideEls);
+    });
+
     // 초기화 완료 전환
     representativeBrandSwiperEl.dataset.initialized = 'true';
+
+    representativeBrandSwiperInstance.update();
   }
 };
 
