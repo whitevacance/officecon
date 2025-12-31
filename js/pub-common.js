@@ -9,6 +9,7 @@ let homeMainSwiperInstance = null;
 let categoryImageCarouselInstance = null;
 let homeBrandCarouselInstance = null;
 let modalNoticeSwiperInstance = null;
+let representativeBrandSwiperInstance = null;
 // 종료: global 변수
 
 // 시작: el-modal-loader
@@ -1692,3 +1693,125 @@ if (window !== undefined) {
 
 initOrderMyImageRemove();
 // 종료: 주문결제 > 이미지 추가 > 나의 이미지 - remove 처리
+
+// 시작: el-representative-brand-swiper
+const initRepresentativeBrandSwiper = () => {
+  const representativeBrandSwiperEl = document.querySelector(
+    'el-representative-brand-swiper swiper-container'
+  );
+  const representativeBrandSlideEls = document.querySelectorAll(
+    'el-representative-brand-swiper swiper-slide'
+  );
+  const representativeBrandSwiperPrevEl = document.querySelector(
+    'el-representative-brand-swiper .nav-button.prev'
+  );
+  const representativeBrandSwiperNextEl = document.querySelector(
+    'el-representative-brand-swiper .nav-button.next'
+  );
+
+  // 이미 초기화된 경우 건너뛰기
+  if (representativeBrandSwiperEl?.dataset?.initialized === 'true') {
+    return;
+  }
+
+  const handleVideoPlay = (slideEls) => {
+    [...slideEls].forEach((slide) => {
+      if (slide.classList.contains('swiper-slide-visible')) {
+        const videoEl = slide.querySelector('el-representative-brand-bg video');
+
+        if (videoEl && !videoEl.classList.contains('video-played')) {
+          videoEl.play();
+          videoEl.classList.add('video-played');
+        }
+      }
+    });
+  };
+
+  const representativeBrandSwiperParams = {
+    slidesPerGroup: 4,
+    slidesPerView: 4,
+    spaceBetween: 14,
+    watchSlidesProgress: true,
+    navigation: {
+      nextEl: representativeBrandSwiperNextEl,
+      prevEl: representativeBrandSwiperPrevEl,
+    },
+  };
+
+  if (representativeBrandSwiperEl && representativeBrandSwiperParams) {
+    Object.assign(representativeBrandSwiperEl, representativeBrandSwiperParams);
+    representativeBrandSwiperEl.initialize();
+    representativeBrandSwiperInstance =
+      representativeBrandSwiperEl?.swiper || null;
+  }
+
+  if (representativeBrandSwiperInstance) {
+    // 스와이퍼 update 완료 시
+    representativeBrandSwiperInstance.on('update', () => {
+      handleVideoPlay(representativeBrandSlideEls);
+    });
+
+    // 슬라이드 변경 시
+    representativeBrandSwiperInstance.on('slideChangeTransitionEnd', () => {
+      handleVideoPlay(representativeBrandSlideEls);
+    });
+
+    // 초기화 완료 전환
+    representativeBrandSwiperEl.dataset.initialized = 'true';
+
+    representativeBrandSwiperInstance.update();
+  }
+};
+
+// 전역 함수로 등록
+if (window !== undefined) {
+  window.initRepresentativeBrandSwiper = initRepresentativeBrandSwiper;
+}
+
+initRepresentativeBrandSwiper();
+// 종료: el-representative-brand-swiper
+
+// 시작: 브랜드 > 브랜드 검색 > 탭 처리
+let brandSearchTabInitialized = false;
+const initBrandSearchTab = () => {
+  // 이미 초기화된 경우 건너뛰기
+  if (brandSearchTabInitialized) {
+    return;
+  }
+
+  if (document?.body) {
+    document.body.addEventListener('click', (e) => {
+      const closeButtonEl = e.target.closest(
+        'el-brand-search-bar el-brand-search-tabs button'
+      );
+
+      if (closeButtonEl) {
+        if (!closeButtonEl.classList.contains('active')) {
+          const parentEl = closeButtonEl.closest(
+            'el-brand-search-bar el-brand-search-tabs'
+          );
+
+          if (parentEl) {
+            [...parentEl.querySelectorAll('button')].forEach((button) => {
+              if (button.classList.contains('active')) {
+                button.classList.remove('active');
+              }
+            });
+          }
+          closeButtonEl.classList.add('active');
+        }
+      }
+    });
+
+    // 초기화 완료 전환
+    orderMyImageRemoveInitialized = true;
+  }
+};
+
+// 전역 함수로 등록
+if (window !== undefined) {
+  window.initBrandSearchTab = initBrandSearchTab;
+}
+
+initBrandSearchTab();
+// 종료: 브랜드 > 브랜드 검색 > 탭 처리

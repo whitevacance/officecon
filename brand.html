@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>브랜드 | 오피스콘</title>
+    <meta charset="UTF-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="shortcut icon" href="./images/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./images/favicon-apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="./images/favicon-android-chrome-192x192.png"
+    />
+    <link
+      rel="preload"
+      href="./fonts/Pretendard-Regular.subset.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="./fonts/Pretendard-SemiBold.subset.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="./fonts/Pretendard-Bold.subset.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link type="text/css" rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="./css/swiper.min.css" />
+    <link type="text/css" rel="stylesheet" href="./css/tui-time-picker.css" />
+    <link type="text/css" rel="stylesheet" href="./css/tui-date-picker.css" />
+    <link type="text/css" rel="stylesheet" href="./css/style.css" />
+    <script src="./js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script
+      src="./js/swiper-element-bundleswiper.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/tui-time-picker.js" crossorigin="anonymous"></script>
+    <script src="./js/tui-date-picker.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <!-- [DEV] 일반회원일 때 className: 'personal-member' -->
+    <el-wrapper>
+      <el-container>
+        <!-- 시작: [DEV] 웹컴포넌트
+          1. 퍼블리싱용 웹컴포넌트입니다.
+          2. el-top-banner, el-header-top, el-header-sticky, el-header-gnb
+          3. 개발 시 examples.html 원본을 참고해 주세요.
+         -->
+        <component-top-banner></component-top-banner>
+
+        <!-- 시작: 헤더 -->
+        <component-header-top></component-header-top>
+        <component-header-sticky></component-header-sticky>
+        <component-header-gnb></component-header-gnb>
+        <!-- 종료: 헤더 -->
+
+        <!-- 종료: [DEV] 웹컴포넌트 -->
+
+        <!-- 시작: 컨텐츠 -->
+        <main>
+          <el-content-header>
+            <el-content-header-container>
+              <!-- 시작: [DEV] 웹컴포넌트
+                1. 퍼블리싱용 웹컴포넌트입니다.
+                2. el-breadcrumb
+                3. 개발 시 examples.html 원본을 참고해 주세요.
+              -->
+              <component-breadcrumb></component-breadcrumb>
+              <!-- 종료: [DEV] 웹컴포넌트 -->
+
+              <h2 class="typo-heading-md">브랜드</h2>
+            </el-content-header-container>
+          </el-content-header>
+
+          <el-content>
+            <el-representative-brand-swiper>
+              <swiper-container init="false">
+                <swiper-slide>
+                  <el-representative-brand-item>
+                    <el-representative-brand-bg>
+                      <img src="./images/temp/brand_poster.jpg" alt="" />
+                    </el-representative-brand-bg>
+                    <el-representative-brand-title>
+                      <h3 class="typo-heading-sm">
+                        일이삼사오육칠팔구십일이삼사오육칠팔구십
+                      </h3>
+                      <p class="typo-body-lg">
+                        일이삼사오육칠팔구십일이삼사오육칠팔구십
+                      </p>
+                    </el-representative-brand-title>
+                    <el-representative-brand-product>
+                      <el-product-item class="type-row xxs">
+                        <a href="#">
+                          <el-item-thumbnail>
+                            <img
+                              class="thumbnail-image"
+                              src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/product/20250227/20250227145823_a5b9221d-437d-4b84-b0ac-fbc6f58edf4f.jpg"
+                              alt=""
+                            />
+                            <el-bg></el-bg>
+                          </el-item-thumbnail>
+                          <el-item-txt class="typo-label-lg">
+                            <el-item-name>
+                              <el-brand>스타벅스</el-brand>
+                              <el-item-name-txt>
+                                떠먹는 스트로베리 초콜릿 생크림 + 아메리카노
+                                R초콜릿 떠먹는 스트로베리 초콜릿 생크림 +
+                                아메리카노 R초콜릿
+                              </el-item-name-txt>
+                            </el-item-name>
+                            <el-item-price>
+                              <el-retail-price class="typo-label-md">
+                                999,999원
+                              </el-retail-price>
+                              <el-discount-rate class="typo-body-lg">
+                                20%
+                              </el-discount-rate>
+                              <el-sale-price class="typo-body-sm">
+                                <strong class="typo-body-lg">999,999</strong>원
+                              </el-sale-price>
+                            </el-item-price>
+                          </el-item-txt>
+                        </a>
+                      </el-product-item>
+                    </el-representative-brand-product>
+                  </el-representative-brand-item>
+                </swiper-slide>
+                <swiper-slide>
+                  <el-representative-brand-item>
+                    <el-representative-brand-bg>
+                      <video
+                        src="./images/temp/brand_mov.mp4"
+                        playsinline
+                        preload="metadata"
+                        muted
+                      ></video>
+                    </el-representative-brand-bg>
+                    <el-representative-brand-title>
+                      <h3 class="typo-heading-sm">
+                        일이삼사오육칠팔구십일이
+                      </h3>
+                      <p class="typo-body-lg">
+                        일이삼사오육칠팔구십일이삼사오육칠팔
+                      </p>
+                    </el-representative-brand-title>
+                    <el-representative-brand-product>
+                      <el-product-item class="type-row xxs">
+                        <a href="#">
+                          <el-item-thumbnail>
+                            <img
+                              class="thumbnail-image"
+                              src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/product/20250227/20250227145823_a5b9221d-437d-4b84-b0ac-fbc6f58edf4f.jpg"
+                              alt=""
+                            />
+                            <el-bg></el-bg>
+                          </el-item-thumbnail>
+                          <el-item-txt class="typo-label-lg">
+                            <el-item-name>
+                              <el-brand>스타벅스</el-brand>
+                              <el-item-name-txt>
+                                떠먹는 스트로베리 초콜릿 생크림 + 아메리카노
+                                R초콜릿 떠먹는 스트로베리 초콜릿 생크림 +
+                                아메리카노 R초콜릿
+                              </el-item-name-txt>
+                            </el-item-name>
+                            <el-item-price>
+                              <el-retail-price class="typo-label-md">
+                                999,999원
+                              </el-retail-price>
+                              <el-discount-rate class="typo-body-lg">
+                                20%
+                              </el-discount-rate>
+                              <el-sale-price class="typo-body-sm">
+                                <strong class="typo-body-lg">999,999</strong>원
+                              </el-sale-price>
+                            </el-item-price>
+                          </el-item-txt>
+                        </a>
+                      </el-product-item>
+                    </el-representative-brand-product>
+                  </el-representative-brand-item>
+                </swiper-slide>
+                <swiper-slide>
+                  <el-representative-brand-item>
+                    <el-representative-brand-bg>
+                      <img src="./images/temp/brand_poster.jpg" alt="" />
+                    </el-representative-brand-bg>
+                    <el-representative-brand-title>
+                      <h3 class="typo-heading-sm">333</h3>
+                      <p class="typo-body-lg">333333</p>
+                    </el-representative-brand-title>
+                    <el-representative-brand-product>
+                      <el-product-item class="type-row xxs">
+                        <a href="#">
+                          <el-item-thumbnail>
+                            <img
+                              class="thumbnail-image"
+                              src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/product/20250227/20250227145823_a5b9221d-437d-4b84-b0ac-fbc6f58edf4f.jpg"
+                              alt=""
+                            />
+                            <el-bg></el-bg>
+                          </el-item-thumbnail>
+                          <el-item-txt class="typo-label-lg">
+                            <el-item-name>
+                              <el-brand>스타벅스</el-brand>
+                              <el-item-name-txt>
+                                떠먹는 스트로베리 초콜릿 생크림 + 아메리카노
+                                R초콜릿 떠먹는 스트로베리 초콜릿 생크림 +
+                                아메리카노 R초콜릿
+                              </el-item-name-txt>
+                            </el-item-name>
+                            <el-item-price>
+                              <el-retail-price class="typo-label-md">
+                                999,999원
+                              </el-retail-price>
+                              <el-discount-rate class="typo-body-lg">
+                                20%
+                              </el-discount-rate>
+                              <el-sale-price class="typo-body-sm">
+                                <strong class="typo-body-lg">999,999</strong>원
+                              </el-sale-price>
+                            </el-item-price>
+                          </el-item-txt>
+                        </a>
+                      </el-product-item>
+                    </el-representative-brand-product>
+                  </el-representative-brand-item>
+                </swiper-slide>
+                <swiper-slide>
+                  <el-representative-brand-item>
+                    <el-representative-brand-bg>
+                      <img src="./images/temp/brand_poster.jpg" alt="" />
+                    </el-representative-brand-bg>
+                    <el-representative-brand-title>
+                      <h3 class="typo-heading-sm">444</h3>
+                      <p class="typo-body-lg">444444</p>
+                    </el-representative-brand-title>
+                    <el-representative-brand-product>
+                      <el-product-item class="type-row xxs">
+                        <a href="#">
+                          <el-item-thumbnail>
+                            <img
+                              class="thumbnail-image"
+                              src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/product/20250227/20250227145823_a5b9221d-437d-4b84-b0ac-fbc6f58edf4f.jpg"
+                              alt=""
+                            />
+                            <el-bg></el-bg>
+                          </el-item-thumbnail>
+                          <el-item-txt class="typo-label-lg">
+                            <el-item-name>
+                              <el-brand>스타벅스</el-brand>
+                              <el-item-name-txt>
+                                떠먹는 스트로베리 초콜릿 생크림 + 아메리카노
+                                R초콜릿 떠먹는 스트로베리 초콜릿 생크림 +
+                                아메리카노 R초콜릿
+                              </el-item-name-txt>
+                            </el-item-name>
+                            <el-item-price>
+                              <el-retail-price class="typo-label-md">
+                                999,999원
+                              </el-retail-price>
+                              <el-discount-rate class="typo-body-lg">
+                                20%
+                              </el-discount-rate>
+                              <el-sale-price class="typo-body-sm">
+                                <strong class="typo-body-lg">999,999</strong>원
+                              </el-sale-price>
+                            </el-item-price>
+                          </el-item-txt>
+                        </a>
+                      </el-product-item>
+                    </el-representative-brand-product>
+                  </el-representative-brand-item>
+                </swiper-slide>
+                <swiper-slide>
+                  <el-representative-brand-item>
+                    <el-representative-brand-bg>
+                      <video
+                        src="./images/temp/brand_mov.mp4"
+                        playsinline
+                        preload="metadata"
+                        muted
+                      ></video>
+                    </el-representative-brand-bg>
+                    <el-representative-brand-title>
+                      <h3 class="typo-heading-sm">555</h3>
+                      <p class="typo-body-lg">555555</p>
+                    </el-representative-brand-title>
+                    <el-representative-brand-product>
+                      <el-product-item class="type-row xxs">
+                        <a href="#">
+                          <el-item-thumbnail>
+                            <img
+                              class="thumbnail-image"
+                              src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/product/20250227/20250227145823_a5b9221d-437d-4b84-b0ac-fbc6f58edf4f.jpg"
+                              alt=""
+                            />
+                            <el-bg></el-bg>
+                          </el-item-thumbnail>
+                          <el-item-txt class="typo-label-lg">
+                            <el-item-name>
+                              <el-brand>스타벅스</el-brand>
+                              <el-item-name-txt>
+                                떠먹는 스트로베리 초콜릿 생크림 + 아메리카노
+                                R초콜릿 떠먹는 스트로베리 초콜릿 생크림 +
+                                아메리카노 R초콜릿
+                              </el-item-name-txt>
+                            </el-item-name>
+                            <el-item-price>
+                              <el-retail-price class="typo-label-md">
+                                999,999원
+                              </el-retail-price>
+                              <el-discount-rate class="typo-body-lg">
+                                20%
+                              </el-discount-rate>
+                              <el-sale-price class="typo-body-sm">
+                                <strong class="typo-body-lg">999,999</strong>원
+                              </el-sale-price>
+                            </el-item-price>
+                          </el-item-txt>
+                        </a>
+                      </el-product-item>
+                    </el-representative-brand-product>
+                  </el-representative-brand-item>
+                </swiper-slide>
+                <swiper-slide>
+                  <el-representative-brand-item>
+                    <el-representative-brand-bg>
+                      <video
+                        src="./images/temp/brand_mov.mp4"
+                        playsinline
+                        preload="metadata"
+                        muted
+                      ></video>
+                    </el-representative-brand-bg>
+                    <el-representative-brand-title>
+                      <h3 class="typo-heading-sm">666</h3>
+                      <p class="typo-body-lg">666666</p>
+                    </el-representative-brand-title>
+                    <el-representative-brand-product>
+                      <el-product-item class="type-row xxs">
+                        <a href="#">
+                          <el-item-thumbnail>
+                            <img
+                              class="thumbnail-image"
+                              src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/product/20250227/20250227145823_a5b9221d-437d-4b84-b0ac-fbc6f58edf4f.jpg"
+                              alt=""
+                            />
+                            <el-bg></el-bg>
+                          </el-item-thumbnail>
+                          <el-item-txt class="typo-label-lg">
+                            <el-item-name>
+                              <el-brand>스타벅스</el-brand>
+                              <el-item-name-txt>
+                                떠먹는 스트로베리 초콜릿 생크림 + 아메리카노
+                                R초콜릿 떠먹는 스트로베리 초콜릿 생크림 +
+                                아메리카노 R초콜릿
+                              </el-item-name-txt>
+                            </el-item-name>
+                            <el-item-price>
+                              <el-retail-price class="typo-label-md">
+                                999,999원
+                              </el-retail-price>
+                              <el-discount-rate class="typo-body-lg">
+                                20%
+                              </el-discount-rate>
+                              <el-sale-price class="typo-body-sm">
+                                <strong class="typo-body-lg">999,999</strong>원
+                              </el-sale-price>
+                            </el-item-price>
+                          </el-item-txt>
+                        </a>
+                      </el-product-item>
+                    </el-representative-brand-product>
+                  </el-representative-brand-item>
+                </swiper-slide>
+              </swiper-container>
+
+              <button type="button" class="nav-button prev" aria-label="이전">
+                <el-icon class="h28-arrow-left natural-0"></el-icon>
+              </button>
+              <button type="button" class="nav-button next" aria-label="이전">
+                <el-icon class="h28-arrow-right natural-0"></el-icon>
+              </button>
+            </el-representative-brand-swiper>
+
+            <el-brand-search-bar>
+              <el-brand-search-label class="typo-subtitle-md">
+                <el-icon class="h32-search natural-0"></el-icon>
+                브랜드 검색
+              </el-brand-search-label>
+              <el-brand-search-tabs>
+                <button
+                  type="button"
+                  class="button-h50-stroke typo-body-sm active"
+                >
+                  전체
+                </button>
+                <button
+                  type="button"
+                  class="text-black button-h43-round typo-body-lg"
+                >
+                  ㄱ
+                </button>
+                <button
+                  type="button"
+                  class="text-black button-h43-round typo-body-lg"
+                >
+                  ㄴ
+                </button>
+                <button
+                  type="button"
+                  class="text-black button-h43-round typo-body-lg"
+                >
+                  ㄷ
+                </button>
+                <button
+                  type="button"
+                  class="text-black button-h43-round typo-body-lg"
+                >
+                  ㄹ
+                </button>
+                <button
+                  type="button"
+                  class="text-black button-h43-round typo-body-lg"
+                >
+                  ㅁ
+                </button>
+                <button
+                  type="button"
+                  class="text-black button-h43-round typo-body-lg"
+                >
+                  ㅂ
+                </button>
+                <button
+                  type="button"
+                  class="text-black button-h43-round typo-body-lg"
+                >
+                  ㅅ
+                </button>
+                <button
+                  type="button"
+                  class="text-black button-h43-round typo-body-lg"
+                >
+                  ㅇ
+                </button>
+                <button
+                  type="button"
+                  class="text-black button-h43-round typo-body-lg"
+                >
+                  ㅈ
+                </button>
+                <button
+                  type="button"
+                  class="text-black button-h43-round typo-body-lg"
+                >
+                  ㅊ
+                </button>
+                <button
+                  type="button"
+                  class="text-black button-h43-round typo-body-lg"
+                >
+                  ㅋ
+                </button>
+                <button
+                  type="button"
+                  class="text-black button-h43-round typo-body-lg"
+                >
+                  ㅌ
+                </button>
+                <button
+                  type="button"
+                  class="text-black button-h43-round typo-body-lg"
+                >
+                  ㅍ
+                </button>
+                <button
+                  type="button"
+                  class="text-black button-h43-round typo-body-lg"
+                >
+                  ㅎ
+                </button>
+                <button type="button" class="button-h50-stroke typo-body-sm">
+                  0-9
+                </button>
+                <button type="button" class="button-h50-stroke typo-body-sm">
+                  A-Z
+                </button>
+              </el-brand-search-tabs>
+            </el-brand-search-bar>
+
+            <el-brand-search-result>
+              <ul>
+                <li>
+                  <el-brand-item>
+                    <a href="#">
+                      <el-image>
+                        <img
+                          src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20241202/20241202094052_d9015a4e-6abc-4de7-9727-ee2cc37301bc.jpg"
+                          alt="맘스터치"
+                        />
+                      </el-image>
+                      <el-label>맘스터치맘스터치맘스터치</el-label>
+                    </a>
+                  </el-brand-item>
+                </li>
+                <li>
+                  <el-brand-item>
+                    <a href="#">
+                      <el-image>
+                        <img
+                          src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20241202/20241202094052_d9015a4e-6abc-4de7-9727-ee2cc37301bc.jpg"
+                          alt="맘스터치"
+                        />
+                      </el-image>
+                      <el-label>맘스터치맘스터치맘스터치</el-label>
+                    </a>
+                  </el-brand-item>
+                </li>
+                <li>
+                  <el-brand-item>
+                    <a href="#">
+                      <el-image>
+                        <img
+                          src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20241202/20241202094052_d9015a4e-6abc-4de7-9727-ee2cc37301bc.jpg"
+                          alt="맘스터치"
+                        />
+                      </el-image>
+                      <el-label>맘스터치맘스터치맘스터치</el-label>
+                    </a>
+                  </el-brand-item>
+                </li>
+                <li>
+                  <el-brand-item>
+                    <a href="#">
+                      <el-image>
+                        <img
+                          src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20241202/20241202094052_d9015a4e-6abc-4de7-9727-ee2cc37301bc.jpg"
+                          alt="맘스터치"
+                        />
+                      </el-image>
+                      <el-label>맘스터치맘스터치맘스터치</el-label>
+                    </a>
+                  </el-brand-item>
+                </li>
+                <li>
+                  <el-brand-item>
+                    <a href="#">
+                      <el-image>
+                        <img
+                          src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20241202/20241202094052_d9015a4e-6abc-4de7-9727-ee2cc37301bc.jpg"
+                          alt="맘스터치"
+                        />
+                      </el-image>
+                      <el-label>맘스터치맘스터치맘스터치</el-label>
+                    </a>
+                  </el-brand-item>
+                </li>
+                <li>
+                  <el-brand-item>
+                    <a href="#">
+                      <el-image>
+                        <img
+                          src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20241202/20241202094052_d9015a4e-6abc-4de7-9727-ee2cc37301bc.jpg"
+                          alt="맘스터치"
+                        />
+                      </el-image>
+                      <el-label>맘스터치맘스터치맘스터치</el-label>
+                    </a>
+                  </el-brand-item>
+                </li>
+                <li>
+                  <el-brand-item>
+                    <a href="#">
+                      <el-image>
+                        <img
+                          src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20241202/20241202094052_d9015a4e-6abc-4de7-9727-ee2cc37301bc.jpg"
+                          alt="맘스터치"
+                        />
+                      </el-image>
+                      <el-label>맘스터치맘스터치맘스터치</el-label>
+                    </a>
+                  </el-brand-item>
+                </li>
+                <li>
+                  <el-brand-item>
+                    <a href="#">
+                      <el-image>
+                        <img
+                          src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20241202/20241202094052_d9015a4e-6abc-4de7-9727-ee2cc37301bc.jpg"
+                          alt="맘스터치"
+                        />
+                      </el-image>
+                      <el-label>맘스터치맘스터치맘스터치</el-label>
+                    </a>
+                  </el-brand-item>
+                </li>
+                <li>
+                  <el-brand-item>
+                    <a href="#">
+                      <el-image>
+                        <img
+                          src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20241202/20241202094052_d9015a4e-6abc-4de7-9727-ee2cc37301bc.jpg"
+                          alt="맘스터치"
+                        />
+                      </el-image>
+                      <el-label>맘스터치맘스터치맘스터치</el-label>
+                    </a>
+                  </el-brand-item>
+                </li>
+                <li>
+                  <el-brand-item>
+                    <a href="#">
+                      <el-image>
+                        <img
+                          src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20241202/20241202094052_d9015a4e-6abc-4de7-9727-ee2cc37301bc.jpg"
+                          alt="맘스터치"
+                        />
+                      </el-image>
+                      <el-label>맘스터치맘스터치맘스터치</el-label>
+                    </a>
+                  </el-brand-item>
+                </li>
+                <li>
+                  <el-brand-item>
+                    <a href="#">
+                      <el-image>
+                        <img
+                          src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20241202/20241202094052_d9015a4e-6abc-4de7-9727-ee2cc37301bc.jpg"
+                          alt="맘스터치"
+                        />
+                      </el-image>
+                      <el-label>맘스터치맘스터치맘스터치</el-label>
+                    </a>
+                  </el-brand-item>
+                </li>
+                <li>
+                  <el-brand-item>
+                    <a href="#">
+                      <el-image>
+                        <img
+                          src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20241202/20241202094052_d9015a4e-6abc-4de7-9727-ee2cc37301bc.jpg"
+                          alt="맘스터치"
+                        />
+                      </el-image>
+                      <el-label>맘스터치맘스터치맘스터치</el-label>
+                    </a>
+                  </el-brand-item>
+                </li>
+                <li>
+                  <el-brand-item>
+                    <a href="#">
+                      <el-image>
+                        <img
+                          src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/brand/20241202/20241202094052_d9015a4e-6abc-4de7-9727-ee2cc37301bc.jpg"
+                          alt="맘스터치"
+                        />
+                      </el-image>
+                      <el-label>맘스터치맘스터치맘스터치</el-label>
+                    </a>
+                  </el-brand-item>
+                </li>
+              </ul>
+            </el-brand-search-result>
+          </el-content>
+        </main>
+        <!-- 종료: 컨텐츠 -->
+      </el-container>
+
+      <!-- 시작: [DEV] 웹컴포넌트
+        1. 퍼블리싱용 웹컴포넌트입니다(el-footer).
+        2. 개발 시 examples.html 참고해 주세요.
+      -->
+      <component-footer></component-footer>
+      <!-- 종료: [DEV] 웹컴포넌트 -->
+    </el-wrapper>
+
+    <button id="scrollToTopButton" type="button" aria-label="상단으로 이동">
+      <el-icon class="h32-arrow-up natural-0"></el-icon>
+    </button>
+
+    <!-- 시작: alert -->
+    <el-alert
+      class="modal fade"
+      id="el-alert"
+      tabindex="-1"
+      aria-hidden="true"
+      data-bs-keyboard="false"
+    >
+      <el-alert-dialog class="modal-dialog modal-dialog-centered">
+        <el-alert-content class="modal-content">
+          <el-alert-body class="typo-subtitle-sm">
+            얼럿 샘플입니다.
+            <br />
+            개발 시 내용이 변경됩니다.
+          </el-alert-body>
+          <el-alert-footer>
+            <button
+              type="button"
+              data-bs-dismiss="modal"
+              class="button-h50-fill typo-body-lg"
+            >
+              확인
+            </button>
+          </el-alert-footer>
+        </el-alert-content>
+      </el-alert-dialog>
+    </el-alert>
+    <!-- 종료: alert -->
+
+    <!-- 공통js: common.js -->
+    <script src="./js/pub-common.js" crossorigin="anonymous"></script>
+
+    <!-- [DEV] 웹 컴포넌트js: 개발 시 삭제해 주세요 -->
+    <script src="./js/web-components.js" crossorigin="anonymous"></script>
+  </body>
+</html>
