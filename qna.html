@@ -90,11 +90,133 @@
             <el-qna>
               <el-qna-section>
                 <el-section-title>
-                  <h3 class="typo-subtitle-lg">사용자 정보</h3>
+                  <h3 class="typo-subtitle-lg">문의하기</h3>
                   <el-section-title-addon class="typo-body-sm">
                     <span>*</span> 필수입력사항
                   </el-section-title-addon>
                 </el-section-title>
+                <el-qna-form class="typo-body-lg">
+                  <el-qna-form-row>
+                    <el-qna-form-item>
+                      <el-qna-form-item-label>
+                        이름 <span>*</span>
+                      </el-qna-form-item-label>
+                      <el-qna-form-item-content>
+                        <el-input>
+                          <input
+                            class="form-control custom-input"
+                            type="text"
+                            placeholder="이름을 입력해 주세요."
+                          />
+                        </el-input>
+                      </el-qna-form-item-content>
+                    </el-qna-form-item>
+                    <el-qna-form-item>
+                      <el-qna-form-item-label>
+                        문의유형 <span>*</span>
+                      </el-qna-form-item-label>
+                      <el-qna-form-item-content>
+                        <el-select class="dropdown">
+                          <!-- [DEV] hidden input의 value값을 사용 -->
+                          <input type="hidden" value="" />
+                          <button
+                            type="button"
+                            class="dropdown-toggle"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                            data-bs-offset="0,-43"
+                          >
+                            <el-label>선택</el-label>
+                          </button>
+                          <ul class="dropdown-menu">
+                            <li>
+                              <span class="dropdown-header">
+                                <el-label>선택</el-label>
+                              </span>
+                            </li>
+                            <li>
+                              <button
+                                type="button"
+                                data-value="1"
+                                class="dropdown-item"
+                              >
+                                <el-label>
+                                  [기업회원] 대량구매 견적 상담
+                                </el-label>
+                              </button>
+                            </li>
+                            <li>
+                              <button
+                                type="button"
+                                data-value="2"
+                                class="dropdown-item"
+                              >
+                                <el-label>
+                                  [기업회원] 최저가보상제신고
+                                </el-label>
+                              </button>
+                            </li>
+                            <li>
+                              <button
+                                type="button"
+                                data-value="3"
+                                class="dropdown-item"
+                              >
+                                <el-label>
+                                  [API연동] 파트너링크 관련 문의
+                                </el-label>
+                              </button>
+                            </li>
+                          </ul>
+                        </el-select>
+                      </el-qna-form-item-content>
+                    </el-qna-form-item>
+                  </el-qna-form-row>
+                  <el-qna-form-row>
+                    <el-qna-form-item>
+                      <el-qna-form-item-label>
+                        이메일 <span>*</span>
+                      </el-qna-form-item-label>
+                      <el-qna-form-item-content>
+                        <el-input>
+                          <input
+                            class="form-control custom-input"
+                            type="email"
+                            placeholder="이메일을 입력해 주세요."
+                          />
+                        </el-input>
+                      </el-qna-form-item-content>
+                    </el-qna-form-item>
+                    <el-qna-form-item>
+                      <el-qna-form-item-label>연락처</el-qna-form-item-label>
+                      <el-qna-form-item-content>
+                        <el-input>
+                          <input
+                            class="form-control custom-input"
+                            type="text"
+                            placeholder="연락처를 입력해 주세요."
+                          />
+                        </el-input>
+                      </el-qna-form-item-content>
+                    </el-qna-form-item>
+                  </el-qna-form-row>
+                  <el-qna-form-row>
+                    <el-qna-form-item>
+                      <el-qna-form-item-label>
+                        제목 <span>*</span>
+                      </el-qna-form-item-label>
+                      <el-qna-form-item-content>
+                        <el-input>
+                          <input
+                            class="form-control custom-input"
+                            type="text"
+                            placeholder="제목을 입력해 주세요. (예시: 대량구매 견적 상담)"
+                          />
+                        </el-input>
+                      </el-qna-form-item-content>
+                    </el-qna-form-item>
+                  </el-qna-form-row>
+                </el-qna-form>
               </el-qna-section>
             </el-qna>
           </el-content>

@@ -1827,7 +1827,7 @@ const initCustomSelect = () => {
   if (document?.body) {
     document.body.addEventListener('click', (e) => {
       const targetOptionEl = e.target.closest(
-        'el-select.dropdown ul.dropdown-menu li button.dropdown-item'
+        'el-select.dropdown .dropdown-menu li button.dropdown-item'
       );
 
       // 셀렉트 옵션 클릭 시
@@ -1842,7 +1842,7 @@ const initCustomSelect = () => {
         const targetLabelEl = targetOptionEl.querySelector('el-label');
         const targetValue = targetOptionEl.dataset.value || '';
         const optionEls = targetSelectEl.querySelectorAll(
-          'ul.dropdown-menu li button.dropdown-item'
+          '.dropdown-menu li button.dropdown-item'
         );
 
         if (

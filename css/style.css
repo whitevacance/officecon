@@ -1597,7 +1597,22 @@ el-select {
     padding: 0;
     border-radius: 8px;
     border: 1px solid var(--color-natural-0);
+    background-color: var(--color-natural-100);
     overflow: hidden;
+
+    & > ul {
+      width: 100%;
+      max-height: 430px;
+      padding: 0;
+      overflow-x: hidden;
+      overflow-y: auto;
+      scrollbar-color: var(--color-opacity-black-30) transparent;
+      scrollbar-width: thin;
+
+      &::-webkit-scrollbar-track {
+        background: transparent;
+      }
+    }
 
     .dropdown-header {
       display: flex;
@@ -1650,6 +1665,10 @@ el-select {
 
     .dropdown-menu {
       border-radius: 10px;
+
+      & > ul {
+        max-height: 550px;
+      }
 
       .dropdown-header {
         height: 50px;
@@ -9195,12 +9214,55 @@ el-qna {
   display: flex;
   flex-direction: column;
   gap: 40px;
-  width: 100%;
+  width: 1024px;
+  margin: 0 auto;
 
   el-qna-section {
     display: flex;
     flex-direction: column;
     width: 100%;
+  }
+
+  el-qna-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+    padding: 24px 13px 0;
+
+    el-qna-form-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 58px;
+      width: 100%;
+
+      el-qna-form-item {
+        display: flex;
+        align-items: center;
+        width: 100%;
+
+        el-qna-form-item-label {
+          flex-grow: 0;
+          flex-shrink: 0;
+          display: flex;
+          align-items: center;
+          gap: 4px;
+          width: 100px;
+          font-weight: 700 !important;
+
+          span {
+            color: var(--color-red-40);
+          }
+        }
+
+        el-qna-form-item-content {
+          display: flex;
+          align-items: center;
+          width: 100%;
+        }
+      }
+    }
   }
 }
 /* 종료: 1:1문의 */
