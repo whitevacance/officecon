@@ -666,6 +666,12 @@ el-icon {
     -webkit-mask-image: url('../images/icon-h16-arrow-down.svg');
     mask-image: url('../images/icon-h16-arrow-down.svg');
   }
+  &.h16-arrow-up {
+    width: 16px;
+    height: 16px;
+    -webkit-mask-image: url('../images/icon-h16-arrow-up.svg');
+    mask-image: url('../images/icon-h16-arrow-up.svg');
+  }
   &.h16-arrow-right {
     width: 16px;
     height: 16px;
@@ -9239,7 +9245,6 @@ el-qna {
 
       el-qna-form-item {
         display: flex;
-        align-items: center;
         width: 100%;
 
         el-qna-form-item-label {
@@ -9249,6 +9254,7 @@ el-qna {
           align-items: center;
           gap: 4px;
           width: 100px;
+          height: 43px;
           font-weight: 700 !important;
 
           span {
@@ -9260,6 +9266,77 @@ el-qna {
           display: flex;
           align-items: center;
           width: 100%;
+          max-width: calc(100% - 100px);
+
+          textarea {
+            height: 300px;
+          }
+
+          el-qna-form-guide {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            padding: 16px 24px;
+            border-radius: 8px;
+            background-color: var(--color-blue-10);
+
+            li {
+              font-weight: 400;
+              color: var(--color-natural-20);
+
+              &:before {
+                background-color: var(--color-natural-20);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  el-qna-agrees {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+    padding-top: 24px;
+
+    el-qna-agree-item {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--color-natural-80);
+
+      el-checkbox {
+        position: relative;
+        left: 16px;
+      }
+
+      button {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        color: var(--color-natural-40);
+        font-weight: 600 !important;
+      }
+
+      el-qna-agree-content-collapse {
+        display: block;
+        width: 100%;
+
+        el-qna-agree-content {
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+          width: 100%;
+          padding: 24px;
+          margin-top: 12px;
+          margin-bottom: 12px;
+          border-radius: 8px;
+          background-color: var(--color-natural-95);
         }
       }
     }
