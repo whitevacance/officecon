@@ -2318,6 +2318,10 @@
                 <el-icon class="h24-card natural-0"></el-icon>
                 <el-icon class="h24-calendar"></el-icon>
                 <el-icon class="h24-calendar natural-0"></el-icon>
+                <el-icon class="h24-arrow-down"></el-icon>
+                <el-icon class="h24-arrow-down natural-0"></el-icon>
+                <el-icon class="h24-arrow-up"></el-icon>
+                <el-icon class="h24-arrow-up natural-0"></el-icon>
               </el-examples-stack>
               <h5>h26</h5>
               <el-examples-stack class="bg">
@@ -3272,6 +3276,58 @@
                 </div>
                 <div style="width: 400px">
                   <el-select class="dropdown select-h50">
+                    <!-- [DEV] hidden input의 value값을 사용 -->
+                    <input type="hidden" value="" />
+                    <button
+                      type="button"
+                      class="dropdown-toggle"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                      data-bs-offset="0,-50"
+                    >
+                      <el-label>선택 select-h50</el-label>
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <span class="dropdown-header">
+                          <el-label>선택 select-h50</el-label>
+                        </span>
+                      </li>
+                      <li>
+                        <button
+                          type="button"
+                          data-value="1"
+                          class="dropdown-item"
+                        >
+                          <el-label>
+                            <strong style="color: red">일이삼</strong>
+                            사오육칠팔구십일이삼사오육칠팔구십
+                          </el-label>
+                        </button>
+                      </li>
+                      <li>
+                        <button
+                          type="button"
+                          data-value="2"
+                          class="dropdown-item"
+                        >
+                          <el-label>222</el-label>
+                        </button>
+                      </li>
+                      <li>
+                        <button
+                          type="button"
+                          data-value="3"
+                          class="dropdown-item"
+                        >
+                          <el-label>333</el-label>
+                        </button>
+                      </li>
+                    </ul>
+                  </el-select>
+                </div>
+                <div style="width: 400px">
+                  <el-select class="dropdown select-h50 bg-gray">
                     <!-- [DEV] hidden input의 value값을 사용 -->
                     <input type="hidden" value="" />
                     <button

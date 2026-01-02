@@ -552,6 +552,18 @@ el-icon {
     -webkit-mask-image: url('../images/icon-h24-calendar.svg');
     mask-image: url('../images/icon-h24-calendar.svg');
   }
+  &.h24-arrow-down {
+    width: 24px;
+    height: 24px;
+    -webkit-mask-image: url('../images/icon-h24-arrow-down.svg');
+    mask-image: url('../images/icon-h24-arrow-down.svg');
+  }
+  &.h24-arrow-up {
+    width: 24px;
+    height: 24px;
+    -webkit-mask-image: url('../images/icon-h24-arrow-up.svg');
+    mask-image: url('../images/icon-h24-arrow-up.svg');
+  }
   &.h20-closed {
     width: 20px;
     height: 20px;
@@ -1623,11 +1635,16 @@ el-select {
   &.select-h50 {
     .dropdown-toggle {
       height: 50px;
-      padding: 0 56px 0 20px;
+      padding: 0 64px 0 20px;
       border-radius: 10px;
 
       &:after {
+        width: 24px;
+        height: 24px;
         right: 20px;
+        background-color: var(--color-natural-0);
+        -webkit-mask-image: url('../images/icon-h24-arrow-down.svg');
+        mask-image: url('../images/icon-h24-arrow-down.svg');
       }
     }
 
@@ -1653,6 +1670,16 @@ el-select {
           background-color: var(--color-natural-95) !important;
         }
       }
+    }
+  }
+
+  &.bg-gray {
+    .dropdown-toggle {
+      background-color: var(--color-natural-98);
+    }
+
+    .dropdown-menu {
+      background-color: var(--color-natural-98);
     }
   }
 }
@@ -3329,6 +3356,46 @@ el-brand-item {
   }
 }
 /* 종료: 공통 > 브랜드 아이템 */
+
+/* 시작: 예시 (example) */
+el-examples-article {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  padding: 30px 0;
+  border-bottom: 2px solid var(--color-blue-30);
+
+  el-examples-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    width: 100%;
+    padding: 16px;
+
+    &.bg {
+      background-color: #ebedf3;
+    }
+  }
+
+  el-color-chip {
+    flex-grow: 0;
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    height: fit-content;
+    padding: 8px;
+    color: rgb(129, 216, 42);
+  }
+
+  el-layer-dropdown.dropdown-menu {
+    display: block;
+    position: relative;
+  }
+}
+/* 종료: 예시 (example) */
 
 /* 시작: 레이아웃 > wrapper, container */
 el-wrapper {
@@ -9123,42 +9190,17 @@ el-brand-search-result {
 }
 /* 종료: 브랜드 */
 
-/* 시작: 예시 (example) */
-el-examples-article {
+/* 시작: 1:1문의 */
+el-qna {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 40px;
   width: 100%;
-  padding: 30px 0;
-  border-bottom: 2px solid var(--color-blue-30);
 
-  el-examples-stack {
+  el-qna-section {
     display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
+    flex-direction: column;
     width: 100%;
-    padding: 16px;
-
-    &.bg {
-      background-color: #ebedf3;
-    }
-  }
-
-  el-color-chip {
-    flex-grow: 0;
-    flex-shrink: 0;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: fit-content;
-    height: fit-content;
-    padding: 8px;
-    color: rgb(129, 216, 42);
-  }
-
-  el-layer-dropdown.dropdown-menu {
-    display: block;
-    position: relative;
   }
 }
-/* 종료: 예시 (example) */
+/* 종료: 1:1문의 */
