@@ -1621,13 +1621,10 @@ el-select {
   }
 
   &.select-h50 {
-    background-color: var(--color-natural-98);
-
     .dropdown-toggle {
       height: 50px;
       padding: 0 56px 0 20px;
       border-radius: 10px;
-      background-color: var(--color-natural-98);
 
       &:after {
         right: 20px;
@@ -1636,18 +1633,15 @@ el-select {
 
     .dropdown-menu {
       border-radius: 10px;
-      background-color: var(--color-natural-98);
 
       .dropdown-header {
         height: 50px;
         padding: 0 20px;
-        background-color: var(--color-natural-98);
       }
 
       .dropdown-item {
         height: 50px;
         padding: 0 20px;
-        background-color: var(--color-natural-98);
 
         &.active,
         &:focus,
@@ -1656,7 +1650,7 @@ el-select {
         }
 
         &:hover {
-          background-color: var(--color-natural-95);
+          background-color: var(--color-natural-95) !important;
         }
       }
     }
