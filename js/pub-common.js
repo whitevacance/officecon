@@ -1816,6 +1816,47 @@ if (window !== undefined) {
 initBrandSearchTab();
 // 종료: 브랜드 > 브랜드 검색 > 탭 처리
 
+// 시작: FAQ > 탭 처리
+let faqTabInitialized = false;
+const initFaqTab = () => {
+  // 이미 초기화된 경우 건너뛰기
+  if (faqTabInitialized) {
+    return;
+  }
+
+  if (document?.body) {
+    document.body.addEventListener('click', (e) => {
+      const closeButtonEl = e.target.closest('el-faq-tabs button');
+
+      if (closeButtonEl) {
+        if (!closeButtonEl.classList.contains('active')) {
+          const parentEl = closeButtonEl.closest('el-faq-tabs');
+
+          if (parentEl) {
+            [...parentEl.querySelectorAll('button')].forEach((button) => {
+              if (button.classList.contains('active')) {
+                button.classList.remove('active');
+              }
+            });
+          }
+          closeButtonEl.classList.add('active');
+        }
+      }
+    });
+
+    // 초기화 완료 전환
+    faqTabInitialized = true;
+  }
+};
+
+// 전역 함수로 등록
+if (window !== undefined) {
+  window.initFaqTab = initFaqTab;
+}
+
+initFaqTab();
+// 종료: FAQ > 탭 처리
+
 // 시작: 공통 > custom select
 let customSelectInitialized = false;
 const initCustomSelect = () => {
