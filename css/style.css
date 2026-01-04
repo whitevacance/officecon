@@ -9216,8 +9216,8 @@ el-brand-search-result {
 }
 /* 종료: 브랜드 */
 
-/* 시작: 1:1문의 */
-el-qna {
+/* 시작: 1:1문의 > 작성 */
+el-qna-create {
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -9390,4 +9390,107 @@ el-qna {
     }
   }
 }
-/* 종료: 1:1문의 */
+/* 종료: 1:1문의 > 작성 */
+
+/* 시작: 1:1문의 > 보기 */
+el-qna-view {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 1024px;
+  margin: 0 auto;
+
+  el-qna-title {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--color-natural-70);
+  }
+
+  el-qna-info {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+    padding: 40px 56px;
+    border-radius: 8px;
+    background-color: var(--color-natural-95);
+
+    el-qna-info-article {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      dl {
+        display: flex;
+        gap: 16px;
+
+        dt {
+          flex-grow: 0;
+          flex-shrink: 0;
+          width: 80px;
+          position: relative;
+
+          &:after {
+            content: '';
+            display: block;
+            width: 1px;
+            height: 14px;
+            background-color: var(--color-natural-60);
+            position: absolute;
+            right: 0;
+            top: 3px;
+          }
+        }
+
+        dd {
+          width: 100%;
+
+          .done {
+            color: var(--color-orange-officecon);
+          }
+        }
+      }
+
+      &:not(:first-child) {
+        border-top: 1px solid var(--color-natural-70);
+        padding-top: 24px;
+      }
+    }
+  }
+
+  el-qna-question {
+    display: block;
+    width: 100%;
+    color: var(--color-natural-10);
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--color-natural-80);
+  }
+
+  el-qna-answer {
+    display: block;
+    width: 100%;
+    color: var(--color-natural-10);
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--color-natural-80);
+
+    & > h4 {
+      font-weight: 600 !important;
+      color: var(--color-orange-officecon);
+      padding-bottom: 20px;
+    }
+  }
+
+  el-qna-cta {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    button {
+      width: 250px;
+    }
+  }
+}
+/* 종료: 1:1문의 > 보기 */
