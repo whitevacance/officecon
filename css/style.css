@@ -188,6 +188,7 @@ button,
 select,
 a {
   -webkit-tap-highlight-color: transparent;
+  outline: none;
 }
 input[type='number'] {
   -moz-appearance: textfield;
