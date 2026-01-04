@@ -9494,3 +9494,86 @@ el-qna-view {
   }
 }
 /* 종료: 1:1문의 > 보기 */
+
+/* 시작: 1:1문의 > 목록 */
+el-qna-list {
+  display: flex;
+  flex-direction: column;
+  width: 1024px;
+  margin: 0 auto;
+
+  el-qna-list-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 40px 56px;
+    background-color: var(--color-natural-95);
+    border-radius: 8px;
+
+    button {
+      width: 160px;
+    }
+  }
+
+  el-qna-list-table {
+    display: block;
+    width: 100%;
+    padding-top: 56px;
+
+    & > table {
+      margin: 0 !important;
+      border-top: 1px solid var(--color-natural-0) !important;
+    }
+
+    .col-number {
+      width: 80px;
+    }
+    .col-category {
+      width: 200px;
+    }
+    .col-title {
+      width: auto;
+    }
+    .col-etc {
+      width: 128px;
+    }
+
+    th,
+    td {
+      height: 46px;
+      padding: 12px !important;
+      text-align: center;
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 18px;
+      letter-spacing: -0.39px;
+    }
+
+    th {
+      font-weight: 600 !important;
+      border-bottom: 1px solid var(--color-natural-80) !important;
+    }
+
+    td {
+      color: var(--color-natural-20) !important;
+      border-bottom: 1px solid var(--color-natural-90) !important;
+
+      .status-waiting {
+        color: var(--color-natural-40);
+      }
+      .status-completed {
+        color: var(--color-orange-officecon);
+      }
+    }
+
+    .cell-title {
+      text-align: left;
+    }
+  }
+
+  el-pagination {
+    padding-top: 70px;
+  }
+}
+/* 종료: 1:1문의 > 목록 */

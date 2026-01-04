@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>1:1문의 | 오피스콘</title>
+    <meta charset="UTF-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="shortcut icon" href="./images/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./images/favicon-apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="./images/favicon-android-chrome-192x192.png"
+    />
+    <link
+      rel="preload"
+      href="./fonts/Pretendard-Regular.subset.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="./fonts/Pretendard-SemiBold.subset.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="./fonts/Pretendard-Bold.subset.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link type="text/css" rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="./css/swiper.min.css" />
+    <link type="text/css" rel="stylesheet" href="./css/tui-time-picker.css" />
+    <link type="text/css" rel="stylesheet" href="./css/tui-date-picker.css" />
+    <link type="text/css" rel="stylesheet" href="./css/style.css" />
+    <script src="./js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script
+      src="./js/swiper-element-bundleswiper.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/tui-time-picker.js" crossorigin="anonymous"></script>
+    <script src="./js/tui-date-picker.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <!-- [DEV] 일반회원일 때 className: 'personal-member' -->
+    <el-wrapper>
+      <el-container>
+        <!-- 시작: [DEV] 웹컴포넌트
+          1. 퍼블리싱용 웹컴포넌트입니다.
+          2. el-top-banner, el-header-top, el-header-sticky, el-header-gnb
+          3. 개발 시 examples.html 원본을 참고해 주세요.
+         -->
+        <component-top-banner></component-top-banner>
+
+        <!-- 시작: 헤더 -->
+        <component-header-top></component-header-top>
+        <component-header-sticky></component-header-sticky>
+        <component-header-gnb></component-header-gnb>
+        <!-- 종료: 헤더 -->
+
+        <!-- 종료: [DEV] 웹컴포넌트 -->
+
+        <!-- 시작: 컨텐츠 -->
+        <main>
+          <el-content-header>
+            <el-content-header-container>
+              <!-- 시작: [DEV] 웹컴포넌트
+                1. 퍼블리싱용 웹컴포넌트입니다.
+                2. el-breadcrumb
+                3. 개발 시 examples.html 원본을 참고해 주세요.
+              -->
+              <component-breadcrumb></component-breadcrumb>
+              <!-- 종료: [DEV] 웹컴포넌트 -->
+
+              <h2 class="typo-heading-md">1:1문의</h2>
+            </el-content-header-container>
+          </el-content-header>
+
+          <el-content>
+            <el-qna-list>
+              <el-qna-list-header class="typo-body-sm">
+                <p>
+                  1:1 문의는 언제든지 신청 가능하며, 접수된 내용은 빠른 시간내에
+                  답변 드리겠습니다.<br />고객센터로 상담 원하시면 1661-8197
+                  으로 문의 주세요. (평일 09:00 ~ 18:00, 점심시간 11:30 ~ 13:00)
+                </p>
+                <button
+                  type="button"
+                  class="button-h43-square-fill typo-body-sm"
+                >
+                  문의접수
+                </button>
+              </el-qna-list-header>
+
+              <el-qna-list-table>
+                <table class="table align-middle">
+                  <colgroup>
+                    <col class="col-number" />
+                    <col class="col-category" />
+                    <col class="col-title" />
+                    <col class="col-etc" />
+                    <col class="col-etc" />
+                    <col class="col-etc" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col">번호</th>
+                      <th scope="col">문의유형</th>
+                      <th scope="col" class="cell-title">제목</th>
+                      <th scope="col">문의일자</th>
+                      <th scope="col">답변상태</th>
+                      <th scope="col">답변일자</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>번호변경 재발송 문의</td>
+                      <td class="cell-title">개인정보 처리방침</td>
+                      <td>2025.12.01</td>
+                      <td><span class="status-waiting">답변대기</span></td>
+                      <td>2025.12.01</td>
+                    </tr>
+                    <tr>
+                      <td>99</td>
+                      <td>번호변경 재발송 문의</td>
+                      <td class="cell-title">개인정보 처리방침</td>
+                      <td>2025.12.01</td>
+                      <td><span class="status-completed">답변완료</span></td>
+                      <td>2025.12.01</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </el-qna-list-table>
+
+              <el-pagination>
+                <nav aria-label="Page navigation">
+                  <el-pagination-prev>
+                    <a href="#" aria-label="처음">
+                      <el-icon class="h20-chevrons-left natural-0"></el-icon>
+                    </a>
+                    <a href="#" aria-label="이전">
+                      <el-icon class="h20-arrow-left natural-0"></el-icon>
+                    </a>
+                  </el-pagination-prev>
+                  <ul class="typo-body-sm">
+                    <li class="active">
+                      <a href="#">1</a>
+                    </li>
+                    <li>
+                      <a href="#">2</a>
+                    </li>
+                    <li>
+                      <a href="#">3</a>
+                    </li>
+                    <li>
+                      <a href="#">4</a>
+                    </li>
+                    <li>
+                      <a href="#">5</a>
+                    </li>
+                    <li>
+                      <a href="#">6</a>
+                    </li>
+                    <li>
+                      <a href="#">7</a>
+                    </li>
+                    <li>
+                      <a href="#">8</a>
+                    </li>
+                    <li>
+                      <a href="#">9</a>
+                    </li>
+                    <li>
+                      <a href="#">10</a>
+                    </li>
+                  </ul>
+                  <el-pagination-next>
+                    <a href="#" aria-label="다음">
+                      <el-icon class="h20-arrow-right natural-0"></el-icon>
+                    </a>
+                    <a href="#" aria-label="마지막">
+                      <el-icon class="h20-chevrons-right natural-0"></el-icon>
+                    </a>
+                  </el-pagination-next>
+                </nav>
+              </el-pagination>
+            </el-qna-list>
+          </el-content>
+        </main>
+        <!-- 종료: 컨텐츠 -->
+      </el-container>
+
+      <!-- 시작: [DEV] 웹컴포넌트
+        1. 퍼블리싱용 웹컴포넌트입니다(el-footer).
+        2. 개발 시 examples.html 참고해 주세요.
+      -->
+      <component-footer></component-footer>
+      <!-- 종료: [DEV] 웹컴포넌트 -->
+    </el-wrapper>
+
+    <button id="scrollToTopButton" type="button" aria-label="상단으로 이동">
+      <el-icon class="h32-arrow-up natural-0"></el-icon>
+    </button>
+
+    <!-- 시작: alert -->
+    <el-alert
+      class="modal fade"
+      id="el-alert"
+      tabindex="-1"
+      aria-hidden="true"
+      data-bs-keyboard="false"
+    >
+      <el-alert-dialog class="modal-dialog modal-dialog-centered">
+        <el-alert-content class="modal-content">
+          <el-alert-body class="typo-subtitle-sm">
+            얼럿 샘플입니다.
+            <br />
+            개발 시 내용이 변경됩니다.
+          </el-alert-body>
+          <el-alert-footer>
+            <button
+              type="button"
+              data-bs-dismiss="modal"
+              class="button-h50-fill typo-body-lg"
+            >
+              확인
+            </button>
+          </el-alert-footer>
+        </el-alert-content>
+      </el-alert-dialog>
+    </el-alert>
+    <!-- 종료: alert -->
+
+    <!-- 공통js: common.js -->
+    <script src="./js/pub-common.js" crossorigin="anonymous"></script>
+
+    <!-- [DEV] 웹 컴포넌트js: 개발 시 삭제해 주세요 -->
+    <script src="./js/web-components.js" crossorigin="anonymous"></script>
+
+    <script>
+      // 시작: 모든 약관 전체 동의 checkboxAgreeAll
+      const initCheckboxAgreeAll = () => {
+        const checkboxAgreeAll = document.getElementById('checkboxAgreeAll');
+        const checkboxes = document.querySelectorAll(
+          '.checkboxAgrees .form-check-input'
+        );
+
+        // 이미 초기화된 경우 건너뛰기
+        if (checkboxAgreeAll?.dataset?.initialized === 'true') {
+          return;
+        }
+
+        const handleCheckboxAgreeAll = (e) => {
+          if (e?.target?.checked) {
+            [...checkboxes].map((checkbox) => {
+              checkbox.checked = true;
+              return () => {};
+            });
+          } else {
+            [...checkboxes].map((checkbox) => {
+              checkbox.checked = false;
+              return () => {};
+            });
+          }
+        };
+
+        if (checkboxAgreeAll) {
+          checkboxAgreeAll.addEventListener('change', handleCheckboxAgreeAll);
+        }
+
+        const handleCheckbox = (e) => {
+          const unCheckedItem = [...checkboxes].find(
+            (checkbox) => checkbox.checked === false
+          );
+          if (unCheckedItem) {
+            checkboxAgreeAll.checked = false;
+          } else {
+            checkboxAgreeAll.checked = true;
+          }
+        };
+        [...checkboxes].map((checkbox) => {
+          checkbox.addEventListener('change', handleCheckbox);
+        });
+
+        // 초기화 완료 전환
+        checkboxAgreeAll.dataset.initialized = 'true';
+      };
+      // 전역 함수로 등록
+      if (window !== undefined) {
+        window.initCheckboxAgreeAll = initCheckboxAgreeAll;
+      }
+      initCheckboxAgreeAll();
+      // 종료: 모든 약관 전체 동의 checkboxAgreeAll
+    </script>
+  </body>
+</html>
