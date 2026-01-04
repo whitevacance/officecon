@@ -9313,6 +9313,15 @@ el-qna {
       el-checkbox {
         position: relative;
         left: 16px;
+
+        label {
+          display: inline-flex;
+          gap: 4px;
+
+          span {
+            color: var(--color-natural-40);
+          }
+        }
       }
 
       button {
@@ -9321,6 +9330,24 @@ el-qna {
         gap: 4px;
         color: var(--color-natural-40);
         font-weight: 600 !important;
+
+        el-icon.h16-arrow-down {
+          display: none;
+        }
+
+        el-icon.h16-arrow-up {
+          display: inline-block;
+        }
+
+        &.collapsed {
+          el-icon.h16-arrow-down {
+            display: inline-block;
+          }
+
+          el-icon.h16-arrow-up {
+            display: none;
+          }
+        }
       }
 
       el-qna-agree-content-collapse {
@@ -9337,8 +9364,28 @@ el-qna {
           margin-bottom: 12px;
           border-radius: 8px;
           background-color: var(--color-natural-95);
+
+          & > pre {
+            color: var(--color-natural-20);
+
+            strong {
+              font-weight: 700 !important;
+              color: var(--color-orange-officecon);
+            }
+          }
         }
       }
+    }
+  }
+
+  el-qna-cta {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-top: 8px;
+
+    button {
+      width: 250px;
     }
   }
 }

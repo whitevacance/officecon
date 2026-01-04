@@ -543,13 +543,13 @@
                     <el-checkbox class="form-check size-xl">
                       <input
                         type="checkbox"
-                        id="checkAgreeAll"
+                        id="checkboxAgreeAll"
                         class="form-check-input custom-checkbox"
                         value=""
                       />
                       <label
                         class="form-check-label typo-body-lg"
-                        for="checkAgreeAll"
+                        for="checkboxAgreeAll"
                       >
                         모든 약관 전체 동의
                       </label>
@@ -558,18 +558,18 @@
                 </el-section-title>
                 <el-qna-agrees>
                   <el-qna-agree-item>
-                    <el-checkbox class="form-check size-lg">
+                    <el-checkbox class="form-check size-lg checkboxAgrees">
                       <input
                         type="checkbox"
-                        id="checkAgree1"
+                        id="checkboxAgree1"
                         class="form-check-input custom-checkbox"
                         value=""
                       />
                       <label
                         class="form-check-label typo-body-md"
-                        for="checkAgree1"
+                        for="checkboxAgree1"
                       >
-                        개인정보 수집 이용동의
+                        개인정보 수집 이용동의 <span>(필수)</span>
                       </label>
                     </el-checkbox>
                     <button
@@ -577,7 +577,7 @@
                       aria-label="toogle box"
                       data-bs-toggle="collapse"
                       data-bs-target="#collapse-agree-content-1"
-                      class="typo-body-sm"
+                      class="typo-body-sm collapsed"
                     >
                       약관보기
                       <el-icon class="h16-arrow-down natural-40"></el-icon>
@@ -587,22 +587,29 @@
                       class="collapse"
                       id="collapse-agree-content-1"
                     >
-                      <el-qna-agree-content>asdfasdfsdaf</el-qna-agree-content>
+                      <el-qna-agree-content>
+                        <pre class="typo-body-sm">
+<strong>※ 오피스콘 1:1 문의 시 아래와 같이 수집하며, 개인정보 수집 필수에 대해 동의를 거부하실 수 있습니다. (단, 동의 거부 시 1:1 문의 서비스가 제한됩니다.)</strong>
+
+- 개인정보 수집ㆍ이용 목적 : 고객센터 온라인 상담 (1:1 문의 신청)
+- 수집하는 개인정보의 항목 : 이름(단, 회원인 경우 제외), 이메일, 문의 내용
+- 개인정보 보유 및 이용기간 : <strong>법령에 따른 보존기간에 따라 문의일로부터 3년</strong></pre>
+                      </el-qna-agree-content>
                     </el-qna-agree-content-collapse>
                   </el-qna-agree-item>
                   <el-qna-agree-item>
-                    <el-checkbox class="form-check size-lg">
+                    <el-checkbox class="form-check size-lg checkboxAgrees">
                       <input
                         type="checkbox"
-                        id="checkAgree2"
+                        id="checkboxAgree2"
                         class="form-check-input custom-checkbox"
                         value=""
                       />
                       <label
                         class="form-check-label typo-body-md"
-                        for="checkAgree2"
+                        for="checkboxAgree2"
                       >
-                        개인정보 수집 이용동의
+                        개인정보 수집 이용동의 <span>(선택)</span>
                       </label>
                     </el-checkbox>
                     <button
@@ -610,7 +617,7 @@
                       aria-label="toogle box"
                       data-bs-toggle="collapse"
                       data-bs-target="#collapse-agree-content-2"
-                      class="typo-body-sm"
+                      class="typo-body-sm collapsed"
                     >
                       약관보기
                       <el-icon class="h16-arrow-down natural-40"></el-icon>
@@ -620,11 +627,27 @@
                       class="collapse"
                       id="collapse-agree-content-2"
                     >
-                      <el-qna-agree-content>asdfasdfsdaf</el-qna-agree-content>
+                      <el-qna-agree-content>
+                        <pre class="typo-body-sm">
+<strong>※ 오피스콘 1:1 문의 시 아래와 같이 수집하며, 개인정보 수집 필수에 대해 동의를 거부하실 수 있습니다. (단, 동의 거부 시 1:1 문의 서비스가 제한됩니다.)</strong>
+
+- 개인정보 수집ㆍ이용 목적 : 고객센터 온라인 상담 (1:1 문의 신청)
+- 수집하는 개인정보의 항목 : 이름(단, 회원인 경우 제외), 이메일, 문의 내용
+- 개인정보 보유 및 이용기간 : <strong>법령에 따른 보존기간에 따라 문의일로부터 3년</strong></pre>
+                      </el-qna-agree-content>
                     </el-qna-agree-content-collapse>
                   </el-qna-agree-item>
                 </el-qna-agrees>
               </el-qna-section>
+
+              <el-qna-cta>
+                <button
+                  type="button"
+                  class="button-h60-square-fill typo-body-lg"
+                >
+                  등록하기
+                </button>
+              </el-qna-cta>
             </el-qna>
           </el-content>
         </main>
@@ -677,5 +700,61 @@
 
     <!-- [DEV] 웹 컴포넌트js: 개발 시 삭제해 주세요 -->
     <script src="./js/web-components.js" crossorigin="anonymous"></script>
+
+    <script>
+      // 시작: 모든 약관 전체 동의 checkboxAgreeAll
+      const initCheckboxAgreeAll = () => {
+        const checkboxAgreeAll = document.getElementById('checkboxAgreeAll');
+        const checkboxes = document.querySelectorAll(
+          '.checkboxAgrees .form-check-input'
+        );
+
+        // 이미 초기화된 경우 건너뛰기
+        if (checkboxAgreeAll?.dataset?.initialized === 'true') {
+          return;
+        }
+
+        const handleCheckboxAgreeAll = (e) => {
+          if (e?.target?.checked) {
+            [...checkboxes].map((checkbox) => {
+              checkbox.checked = true;
+              return () => {};
+            });
+          } else {
+            [...checkboxes].map((checkbox) => {
+              checkbox.checked = false;
+              return () => {};
+            });
+          }
+        };
+
+        if (checkboxAgreeAll) {
+          checkboxAgreeAll.addEventListener('change', handleCheckboxAgreeAll);
+        }
+
+        const handleCheckbox = (e) => {
+          const unCheckedItem = [...checkboxes].find(
+            (checkbox) => checkbox.checked === false
+          );
+          if (unCheckedItem) {
+            checkboxAgreeAll.checked = false;
+          } else {
+            checkboxAgreeAll.checked = true;
+          }
+        };
+        [...checkboxes].map((checkbox) => {
+          checkbox.addEventListener('change', handleCheckbox);
+        });
+
+        // 초기화 완료 전환
+        checkboxAgreeAll.dataset.initialized = 'true';
+      };
+      // 전역 함수로 등록
+      if (window !== undefined) {
+        window.initCheckboxAgreeAll = initCheckboxAgreeAll;
+      }
+      initCheckboxAgreeAll();
+      // 종료: 모든 약관 전체 동의 checkboxAgreeAll
+    </script>
   </body>
 </html>
