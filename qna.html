@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>1:1문의 | 오피스콘</title>
+    <meta charset="UTF-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="shortcut icon" href="./images/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./images/favicon-apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="./images/favicon-android-chrome-192x192.png"
+    />
+    <link
+      rel="preload"
+      href="./fonts/Pretendard-Regular.subset.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="./fonts/Pretendard-SemiBold.subset.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="./fonts/Pretendard-Bold.subset.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link type="text/css" rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="./css/swiper.min.css" />
+    <link type="text/css" rel="stylesheet" href="./css/tui-time-picker.css" />
+    <link type="text/css" rel="stylesheet" href="./css/tui-date-picker.css" />
+    <link type="text/css" rel="stylesheet" href="./css/style.css" />
+    <script src="./js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script
+      src="./js/swiper-element-bundleswiper.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/tui-time-picker.js" crossorigin="anonymous"></script>
+    <script src="./js/tui-date-picker.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <!-- [DEV] 일반회원일 때 className: 'personal-member' -->
+    <el-wrapper>
+      <el-container>
+        <!-- 시작: [DEV] 웹컴포넌트
+          1. 퍼블리싱용 웹컴포넌트입니다.
+          2. el-top-banner, el-header-top, el-header-sticky, el-header-gnb
+          3. 개발 시 examples.html 원본을 참고해 주세요.
+         -->
+        <component-top-banner></component-top-banner>
+
+        <!-- 시작: 헤더 -->
+        <component-header-top></component-header-top>
+        <component-header-sticky></component-header-sticky>
+        <component-header-gnb></component-header-gnb>
+        <!-- 종료: 헤더 -->
+
+        <!-- 종료: [DEV] 웹컴포넌트 -->
+
+        <!-- 시작: 컨텐츠 -->
+        <main>
+          <el-content-header>
+            <el-content-header-container>
+              <!-- 시작: [DEV] 웹컴포넌트
+                1. 퍼블리싱용 웹컴포넌트입니다.
+                2. el-breadcrumb
+                3. 개발 시 examples.html 원본을 참고해 주세요.
+              -->
+              <component-breadcrumb></component-breadcrumb>
+              <!-- 종료: [DEV] 웹컴포넌트 -->
+
+              <h2 class="typo-heading-md">1:1문의</h2>
+            </el-content-header-container>
+          </el-content-header>
+
+          <el-content>
+            <el-qna>
+              <el-qna-section>
+                <el-section-title>
+                  <h3 class="typo-subtitle-lg">문의하기</h3>
+                  <el-section-title-addon class="typo-body-sm">
+                    <span>*</span> 필수입력사항
+                  </el-section-title-addon>
+                </el-section-title>
+                <el-qna-form class="typo-body-lg">
+                  <el-qna-form-row>
+                    <el-qna-form-item>
+                      <el-qna-form-item-label>
+                        이름 <span>*</span>
+                      </el-qna-form-item-label>
+                      <el-qna-form-item-content>
+                        <el-input>
+                          <input
+                            class="form-control custom-input"
+                            type="text"
+                            placeholder="이름을 입력해 주세요."
+                          />
+                        </el-input>
+                      </el-qna-form-item-content>
+                    </el-qna-form-item>
+                    <el-qna-form-item>
+                      <el-qna-form-item-label>
+                        문의유형 <span>*</span>
+                      </el-qna-form-item-label>
+                      <el-qna-form-item-content>
+                        <el-select class="dropdown">
+                          <!-- [DEV] hidden input의 value값을 사용 -->
+                          <input type="hidden" value="" />
+                          <button
+                            type="button"
+                            class="dropdown-toggle"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                            data-bs-offset="0,-43"
+                          >
+                            <el-label>선택</el-label>
+                          </button>
+                          <el-select-options class="dropdown-menu">
+                            <ul>
+                              <li>
+                                <span class="dropdown-header">
+                                  <el-label>선택</el-label>
+                                </span>
+                              </li>
+                              <li>
+                                <button
+                                  type="button"
+                                  data-value="1"
+                                  class="dropdown-item"
+                                >
+                                  <el-label>
+                                    [기업회원] 대량구매 견적 상담
+                                  </el-label>
+                                </button>
+                              </li>
+                              <li>
+                                <button
+                                  type="button"
+                                  data-value="2"
+                                  class="dropdown-item"
+                                >
+                                  <el-label>
+                                    [기업회원] 최저가보상제신고
+                                  </el-label>
+                                </button>
+                              </li>
+                              <li>
+                                <button
+                                  type="button"
+                                  data-value="3"
+                                  class="dropdown-item"
+                                >
+                                  <el-label>
+                                    [API연동] 파트너링크 관련 문의
+                                  </el-label>
+                                </button>
+                              </li>
+                              <li>
+                                <button
+                                  type="button"
+                                  data-value="4"
+                                  class="dropdown-item"
+                                >
+                                  <el-label>444</el-label>
+                                </button>
+                              </li>
+                              <li>
+                                <button
+                                  type="button"
+                                  data-value="5"
+                                  class="dropdown-item"
+                                >
+                                  <el-label>555</el-label>
+                                </button>
+                              </li>
+                              <li>
+                                <button
+                                  type="button"
+                                  data-value="6"
+                                  class="dropdown-item"
+                                >
+                                  <el-label>666</el-label>
+                                </button>
+                              </li>
+                              <li>
+                                <button
+                                  type="button"
+                                  data-value="7"
+                                  class="dropdown-item"
+                                >
+                                  <el-label>777</el-label>
+                                </button>
+                              </li>
+                              <li>
+                                <button
+                                  type="button"
+                                  data-value="8"
+                                  class="dropdown-item"
+                                >
+                                  <el-label>888</el-label>
+                                </button>
+                              </li>
+                              <li>
+                                <button
+                                  type="button"
+                                  data-value="9"
+                                  class="dropdown-item"
+                                >
+                                  <el-label>999</el-label>
+                                </button>
+                              </li>
+                              <li>
+                                <button
+                                  type="button"
+                                  data-value="10"
+                                  class="dropdown-item"
+                                >
+                                  <el-label>10</el-label>
+                                </button>
+                              </li>
+                            </ul>
+                          </el-select-options>
+                        </el-select>
+                      </el-qna-form-item-content>
+                    </el-qna-form-item>
+                  </el-qna-form-row>
+                  <el-qna-form-row>
+                    <el-qna-form-item>
+                      <el-qna-form-item-label> 사용자 </el-qna-form-item-label>
+                      <el-qna-form-item-content>
+                        <el-input>
+                          <input
+                            disabled
+                            class="form-control custom-input"
+                            type="text"
+                            placeholder="이름을 입력해 주세요."
+                            value="officecon01"
+                          />
+                        </el-input>
+                      </el-qna-form-item-content>
+                    </el-qna-form-item>
+                    <el-qna-form-item>
+                      <el-qna-form-item-label>
+                        문의유형 <span>*</span>
+                      </el-qna-form-item-label>
+                      <el-qna-form-item-content>
+                        <el-select class="dropdown">
+                          <!-- [DEV] hidden input의 value값을 사용 -->
+                          <input type="hidden" value="" />
+                          <button
+                            type="button"
+                            class="dropdown-toggle"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                            data-bs-offset="0,-43"
+                          >
+                            <el-label>선택</el-label>
+                          </button>
+                          <el-select-options class="dropdown-menu">
+                            <ul>
+                              <li>
+                                <span class="dropdown-header">
+                                  <el-label>선택</el-label>
+                                </span>
+                              </li>
+                              <li>
+                                <button
+                                  type="button"
+                                  data-value="1"
+                                  class="dropdown-item"
+                                >
+                                  <el-label>
+                                    [기업회원] 대량구매 견적 상담
+                                  </el-label>
+                                </button>
+                              </li>
+                              <li>
+                                <button
+                                  type="button"
+                                  data-value="2"
+                                  class="dropdown-item"
+                                >
+                                  <el-label>
+                                    [기업회원] 최저가보상제신고
+                                  </el-label>
+                                </button>
+                              </li>
+                            </ul>
+                          </el-select-options>
+                        </el-select>
+                      </el-qna-form-item-content>
+                    </el-qna-form-item>
+                  </el-qna-form-row>
+                  <el-qna-form-row>
+                    <el-qna-form-item>
+                      <el-qna-form-item-label>
+                        이메일 <span>*</span>
+                      </el-qna-form-item-label>
+                      <el-qna-form-item-content>
+                        <el-input>
+                          <input
+                            class="form-control custom-input"
+                            type="email"
+                            placeholder="이메일을 입력해 주세요."
+                          />
+                        </el-input>
+                      </el-qna-form-item-content>
+                    </el-qna-form-item>
+                    <el-qna-form-item>
+                      <el-qna-form-item-label>연락처</el-qna-form-item-label>
+                      <el-qna-form-item-content>
+                        <el-input>
+                          <input
+                            class="form-control custom-input input-type-phone"
+                            type="text"
+                            placeholder="연락처를 입력해 주세요."
+                          />
+                        </el-input>
+                      </el-qna-form-item-content>
+                    </el-qna-form-item>
+                  </el-qna-form-row>
+                  <el-qna-form-row>
+                    <el-qna-form-item>
+                      <el-qna-form-item-label>
+                        주문선택
+                      </el-qna-form-item-label>
+                      <el-qna-form-item-content>
+                        <el-select class="dropdown">
+                          <!-- [DEV] hidden input의 value값을 사용 -->
+                          <input type="hidden" value="" />
+                          <button
+                            type="button"
+                            class="dropdown-toggle"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                            data-bs-offset="0,-43"
+                          >
+                            <el-label>주문하신 상품을 선택해 주세요.</el-label>
+                          </button>
+                          <el-select-options class="dropdown-menu">
+                            <ul>
+                              <li>
+                                <span class="dropdown-header">
+                                  <el-label>
+                                    주문하신 상품을 선택해 주세요.
+                                  </el-label>
+                                </span>
+                              </li>
+                              <li>
+                                <button
+                                  type="button"
+                                  data-value="1"
+                                  class="dropdown-item"
+                                >
+                                  <el-label>
+                                    <strong>주문번호</strong> :
+                                    20251212142218461619
+                                    <strong>주문일자</strong> : 2025.12.12 14:22
+                                    <strong>상품명</strong> :
+                                    [즐거운가족]CJ기프트카드 5만원권
+                                  </el-label>
+                                </button>
+                              </li>
+                              <li>
+                                <button
+                                  type="button"
+                                  data-value="2"
+                                  class="dropdown-item"
+                                >
+                                  <el-label>
+                                    <strong>주문번호</strong> :
+                                    20251115180149704353
+                                    <strong>주문일자</strong> : 2025.11.15 18:02
+                                    <strong>상품명</strong> : [11월기획] [우리
+                                    우정 포에버] 자바칩 프라푸치노 2잔 + 진한
+                                    가나슈 9 레이어 케이크 자바칩 프라푸치노 2잔
+                                    + 진한 가나슈 9 레이어 케이크
+                                  </el-label>
+                                </button>
+                              </li>
+                              <li>
+                                <button
+                                  type="button"
+                                  data-value="3"
+                                  class="dropdown-item"
+                                >
+                                  <el-label>333</el-label>
+                                </button>
+                              </li>
+                              <li>
+                                <button
+                                  type="button"
+                                  data-value="4"
+                                  class="dropdown-item"
+                                >
+                                  <el-label>444</el-label>
+                                </button>
+                              </li>
+                              <li>
+                                <button
+                                  type="button"
+                                  data-value="5"
+                                  class="dropdown-item"
+                                >
+                                  <el-label>555</el-label>
+                                </button>
+                              </li>
+                              <li>
+                                <button
+                                  type="button"
+                                  data-value="6"
+                                  class="dropdown-item"
+                                >
+                                  <el-label>666</el-label>
+                                </button>
+                              </li>
+                              <li>
+                                <button
+                                  type="button"
+                                  data-value="7"
+                                  class="dropdown-item"
+                                >
+                                  <el-label>777</el-label>
+                                </button>
+                              </li>
+                              <li>
+                                <button
+                                  type="button"
+                                  data-value="8"
+                                  class="dropdown-item"
+                                >
+                                  <el-label>888</el-label>
+                                </button>
+                              </li>
+                              <li>
+                                <button
+                                  type="button"
+                                  data-value="9"
+                                  class="dropdown-item"
+                                >
+                                  <el-label>999</el-label>
+                                </button>
+                              </li>
+                              <li>
+                                <button
+                                  type="button"
+                                  data-value="10"
+                                  class="dropdown-item"
+                                >
+                                  <el-label>10</el-label>
+                                </button>
+                              </li>
+                            </ul>
+                          </el-select-options>
+                        </el-select>
+                      </el-qna-form-item-content>
+                    </el-qna-form-item>
+                  </el-qna-form-row>
+                  <el-qna-form-row>
+                    <el-qna-form-item>
+                      <el-qna-form-item-label>
+                        제목 <span>*</span>
+                      </el-qna-form-item-label>
+                      <el-qna-form-item-content>
+                        <el-input>
+                          <input
+                            class="form-control custom-input"
+                            type="text"
+                            placeholder="제목을 입력해 주세요. (예시: 대량구매 견적 상담)"
+                          />
+                        </el-input>
+                      </el-qna-form-item-content>
+                    </el-qna-form-item>
+                  </el-qna-form-row>
+                  <el-qna-form-row>
+                    <el-qna-form-item>
+                      <el-qna-form-item-label>
+                        내용 <span>*</span>
+                      </el-qna-form-item-label>
+                      <el-qna-form-item-content>
+                        <textarea
+                          disabled
+                          class="form-control"
+                          placeholder="질문유형을 선택 해 주세요."
+                        ></textarea>
+                      </el-qna-form-item-content>
+                    </el-qna-form-item>
+                  </el-qna-form-row>
+                  <el-qna-form-row>
+                    <el-qna-form-item>
+                      <el-qna-form-item-label>
+                        내용 <span>*</span>
+                      </el-qna-form-item-label>
+                      <el-qna-form-item-content>
+                        <textarea
+                          class="form-control"
+                          placeholder=""
+                        ></textarea>
+                      </el-qna-form-item-content>
+                    </el-qna-form-item>
+                  </el-qna-form-row>
+                  <el-qna-form-row>
+                    <el-qna-form-item>
+                      <el-qna-form-item-label></el-qna-form-item-label>
+                      <el-qna-form-item-content>
+                        <el-qna-form-guide>
+                          <el-marker-list>
+                            <ul>
+                              <li>
+                                문의하신 내용의 답변은 회원님이 작성한 이메일을
+                                통해 확인하실 수 있습니다.
+                              </li>
+                              <li>
+                                회원이신 경우 로그인 하시면 주문하신 내용을 통해
+                                상세 문의가 가능합니다.
+                              </li>
+                            </ul>
+                          </el-marker-list>
+                        </el-qna-form-guide>
+                      </el-qna-form-item-content>
+                    </el-qna-form-item>
+                  </el-qna-form-row>
+                </el-qna-form>
+              </el-qna-section>
+
+              <el-qna-section>
+                <el-section-title>
+                  <h3 class="typo-subtitle-lg">약관 동의</h3>
+                  <el-section-title-addon>
+                    <el-checkbox class="form-check size-xl">
+                      <input
+                        type="checkbox"
+                        id="checkboxAgreeAll"
+                        class="form-check-input custom-checkbox"
+                        value=""
+                      />
+                      <label
+                        class="form-check-label typo-body-lg"
+                        for="checkboxAgreeAll"
+                      >
+                        모든 약관 전체 동의
+                      </label>
+                    </el-checkbox>
+                  </el-section-title-addon>
+                </el-section-title>
+                <el-qna-agrees>
+                  <el-qna-agree-item>
+                    <el-checkbox class="form-check size-lg checkboxAgrees">
+                      <input
+                        type="checkbox"
+                        id="checkboxAgree1"
+                        class="form-check-input custom-checkbox"
+                        value=""
+                      />
+                      <label
+                        class="form-check-label typo-body-md"
+                        for="checkboxAgree1"
+                      >
+                        개인정보 수집 이용동의 <span>(필수)</span>
+                      </label>
+                    </el-checkbox>
+                    <button
+                      type="button"
+                      aria-label="toogle box"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapse-agree-content-1"
+                      class="typo-body-sm collapsed"
+                    >
+                      약관보기
+                      <el-icon class="h16-arrow-down natural-40"></el-icon>
+                      <el-icon class="h16-arrow-up natural-40"></el-icon>
+                    </button>
+                    <el-qna-agree-content-collapse
+                      class="collapse"
+                      id="collapse-agree-content-1"
+                    >
+                      <el-qna-agree-content>
+                        <pre class="typo-body-sm">
+<strong>※ 오피스콘 1:1 문의 시 아래와 같이 수집하며, 개인정보 수집 필수에 대해 동의를 거부하실 수 있습니다. (단, 동의 거부 시 1:1 문의 서비스가 제한됩니다.)</strong>
+
+- 개인정보 수집ㆍ이용 목적 : 고객센터 온라인 상담 (1:1 문의 신청)
+- 수집하는 개인정보의 항목 : 이름(단, 회원인 경우 제외), 이메일, 문의 내용
+- 개인정보 보유 및 이용기간 : <strong>법령에 따른 보존기간에 따라 문의일로부터 3년</strong></pre>
+                      </el-qna-agree-content>
+                    </el-qna-agree-content-collapse>
+                  </el-qna-agree-item>
+                  <el-qna-agree-item>
+                    <el-checkbox class="form-check size-lg checkboxAgrees">
+                      <input
+                        type="checkbox"
+                        id="checkboxAgree2"
+                        class="form-check-input custom-checkbox"
+                        value=""
+                      />
+                      <label
+                        class="form-check-label typo-body-md"
+                        for="checkboxAgree2"
+                      >
+                        개인정보 수집 이용동의 <span>(선택)</span>
+                      </label>
+                    </el-checkbox>
+                    <button
+                      type="button"
+                      aria-label="toogle box"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapse-agree-content-2"
+                      class="typo-body-sm collapsed"
+                    >
+                      약관보기
+                      <el-icon class="h16-arrow-down natural-40"></el-icon>
+                      <el-icon class="h16-arrow-up natural-40"></el-icon>
+                    </button>
+                    <el-qna-agree-content-collapse
+                      class="collapse"
+                      id="collapse-agree-content-2"
+                    >
+                      <el-qna-agree-content>
+                        <pre class="typo-body-sm">
+<strong>※ 오피스콘 1:1 문의 시 아래와 같이 수집하며, 개인정보 수집 필수에 대해 동의를 거부하실 수 있습니다. (단, 동의 거부 시 1:1 문의 서비스가 제한됩니다.)</strong>
+
+- 개인정보 수집ㆍ이용 목적 : 고객센터 온라인 상담 (1:1 문의 신청)
+- 수집하는 개인정보의 항목 : 이름(단, 회원인 경우 제외), 이메일, 문의 내용
+- 개인정보 보유 및 이용기간 : <strong>법령에 따른 보존기간에 따라 문의일로부터 3년</strong></pre>
+                      </el-qna-agree-content>
+                    </el-qna-agree-content-collapse>
+                  </el-qna-agree-item>
+                </el-qna-agrees>
+              </el-qna-section>
+
+              <el-qna-cta>
+                <button
+                  type="button"
+                  class="button-h60-square-fill typo-body-lg"
+                >
+                  등록하기
+                </button>
+              </el-qna-cta>
+            </el-qna>
+          </el-content>
+        </main>
+        <!-- 종료: 컨텐츠 -->
+      </el-container>
+
+      <!-- 시작: [DEV] 웹컴포넌트
+        1. 퍼블리싱용 웹컴포넌트입니다(el-footer).
+        2. 개발 시 examples.html 참고해 주세요.
+      -->
+      <component-footer></component-footer>
+      <!-- 종료: [DEV] 웹컴포넌트 -->
+    </el-wrapper>
+
+    <button id="scrollToTopButton" type="button" aria-label="상단으로 이동">
+      <el-icon class="h32-arrow-up natural-0"></el-icon>
+    </button>
+
+    <!-- 시작: alert -->
+    <el-alert
+      class="modal fade"
+      id="el-alert"
+      tabindex="-1"
+      aria-hidden="true"
+      data-bs-keyboard="false"
+    >
+      <el-alert-dialog class="modal-dialog modal-dialog-centered">
+        <el-alert-content class="modal-content">
+          <el-alert-body class="typo-subtitle-sm">
+            얼럿 샘플입니다.
+            <br />
+            개발 시 내용이 변경됩니다.
+          </el-alert-body>
+          <el-alert-footer>
+            <button
+              type="button"
+              data-bs-dismiss="modal"
+              class="button-h50-fill typo-body-lg"
+            >
+              확인
+            </button>
+          </el-alert-footer>
+        </el-alert-content>
+      </el-alert-dialog>
+    </el-alert>
+    <!-- 종료: alert -->
+
+    <!-- 공통js: common.js -->
+    <script src="./js/pub-common.js" crossorigin="anonymous"></script>
+
+    <!-- [DEV] 웹 컴포넌트js: 개발 시 삭제해 주세요 -->
+    <script src="./js/web-components.js" crossorigin="anonymous"></script>
+
+    <script>
+      // 시작: 모든 약관 전체 동의 checkboxAgreeAll
+      const initCheckboxAgreeAll = () => {
+        const checkboxAgreeAll = document.getElementById('checkboxAgreeAll');
+        const checkboxes = document.querySelectorAll(
+          '.checkboxAgrees .form-check-input'
+        );
+
+        // 이미 초기화된 경우 건너뛰기
+        if (checkboxAgreeAll?.dataset?.initialized === 'true') {
+          return;
+        }
+
+        const handleCheckboxAgreeAll = (e) => {
+          if (e?.target?.checked) {
+            [...checkboxes].map((checkbox) => {
+              checkbox.checked = true;
+              return () => {};
+            });
+          } else {
+            [...checkboxes].map((checkbox) => {
+              checkbox.checked = false;
+              return () => {};
+            });
+          }
+        };
+
+        if (checkboxAgreeAll) {
+          checkboxAgreeAll.addEventListener('change', handleCheckboxAgreeAll);
+        }
+
+        const handleCheckbox = (e) => {
+          const unCheckedItem = [...checkboxes].find(
+            (checkbox) => checkbox.checked === false
+          );
+          if (unCheckedItem) {
+            checkboxAgreeAll.checked = false;
+          } else {
+            checkboxAgreeAll.checked = true;
+          }
+        };
+        [...checkboxes].map((checkbox) => {
+          checkbox.addEventListener('change', handleCheckbox);
+        });
+
+        // 초기화 완료 전환
+        checkboxAgreeAll.dataset.initialized = 'true';
+      };
+      // 전역 함수로 등록
+      if (window !== undefined) {
+        window.initCheckboxAgreeAll = initCheckboxAgreeAll;
+      }
+      initCheckboxAgreeAll();
+      // 종료: 모든 약관 전체 동의 checkboxAgreeAll
+    </script>
+  </body>
+</html>

@@ -2248,6 +2248,8 @@
               <el-examples-stack class="bg">
                 <el-icon class="h16-arrow-down"></el-icon>
                 <el-icon class="h16-arrow-down natural-0"></el-icon>
+                <el-icon class="h16-arrow-up"></el-icon>
+                <el-icon class="h16-arrow-up natural-0"></el-icon>
                 <el-icon class="h16-arrow-right"></el-icon>
                 <el-icon class="h16-arrow-right natural-0"></el-icon>
                 <el-icon class="h16-arrow-left"></el-icon>
@@ -2318,6 +2320,10 @@
                 <el-icon class="h24-card natural-0"></el-icon>
                 <el-icon class="h24-calendar"></el-icon>
                 <el-icon class="h24-calendar natural-0"></el-icon>
+                <el-icon class="h24-arrow-down"></el-icon>
+                <el-icon class="h24-arrow-down natural-0"></el-icon>
+                <el-icon class="h24-arrow-up"></el-icon>
+                <el-icon class="h24-arrow-up natural-0"></el-icon>
               </el-examples-stack>
               <h5>h26</h5>
               <el-examples-stack class="bg">
@@ -3214,6 +3220,306 @@
                     rows="3"
                     placeholder="내용을 입력해 주세요.&#13;&#10;(예시 : 오피스콘 설문조사에 응해 주셔서 진심으로 감사드립니다.)"
                   ></textarea>
+                </div>
+              </el-examples-stack>
+              <h4>select</h4>
+              <el-examples-stack>
+                <div style="width: 200px">
+                  <el-select class="dropdown">
+                    <!-- [DEV] hidden input의 value값을 사용 -->
+                    <input type="hidden" value="" />
+                    <button
+                      type="button"
+                      class="dropdown-toggle"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                      data-bs-offset="0,-43"
+                    >
+                      <el-label>선택 select-h43</el-label>
+                    </button>
+                    <el-select-options class="dropdown-menu">
+                      <ul>
+                        <li>
+                          <span class="dropdown-header">
+                            <el-label>선택 select-h43</el-label>
+                          </span>
+                        </li>
+                        <li>
+                          <button
+                            type="button"
+                            data-value="1"
+                            class="dropdown-item"
+                          >
+                            <el-label>
+                              <strong style="color: red">일이삼</strong>
+                              사오육칠팔구십일이삼사오육칠팔구십
+                            </el-label>
+                          </button>
+                        </li>
+                        <li>
+                          <button
+                            type="button"
+                            data-value="2"
+                            class="dropdown-item"
+                          >
+                            <el-label>222</el-label>
+                          </button>
+                        </li>
+                        <li>
+                          <button
+                            type="button"
+                            data-value="3"
+                            class="dropdown-item"
+                          >
+                            <el-label>333</el-label>
+                          </button>
+                        </li>
+                        <li>
+                          <button
+                            type="button"
+                            data-value="4"
+                            class="dropdown-item"
+                          >
+                            <el-label>444</el-label>
+                          </button>
+                        </li>
+                        <li>
+                          <button
+                            type="button"
+                            data-value="5"
+                            class="dropdown-item"
+                          >
+                            <el-label>555</el-label>
+                          </button>
+                        </li>
+                        <li>
+                          <button
+                            type="button"
+                            data-value="6"
+                            class="dropdown-item"
+                          >
+                            <el-label>666</el-label>
+                          </button>
+                        </li>
+                        <li>
+                          <button
+                            type="button"
+                            data-value="7"
+                            class="dropdown-item"
+                          >
+                            <el-label>777</el-label>
+                          </button>
+                        </li>
+                        <li>
+                          <button
+                            type="button"
+                            data-value="8"
+                            class="dropdown-item"
+                          >
+                            <el-label>888</el-label>
+                          </button>
+                        </li>
+                        <li>
+                          <button
+                            type="button"
+                            data-value="9"
+                            class="dropdown-item"
+                          >
+                            <el-label>999</el-label>
+                          </button>
+                        </li>
+                        <li>
+                          <button
+                            type="button"
+                            data-value="10"
+                            class="dropdown-item"
+                          >
+                            <el-label>10</el-label>
+                          </button>
+                        </li>
+                      </ul>
+                    </el-select-options>
+                  </el-select>
+                </div>
+                <div style="width: 400px">
+                  <el-select class="dropdown select-h50">
+                    <!-- [DEV] hidden input의 value값을 사용 -->
+                    <input type="hidden" value="" />
+                    <button
+                      type="button"
+                      class="dropdown-toggle"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                      data-bs-offset="0,-50"
+                    >
+                      <el-label>선택 select-h50</el-label>
+                    </button>
+                    <el-select-options class="dropdown-menu">
+                      <ul>
+                        <li>
+                          <span class="dropdown-header">
+                            <el-label>선택 select-h50</el-label>
+                          </span>
+                        </li>
+                        <li>
+                          <button
+                            type="button"
+                            data-value="1"
+                            class="dropdown-item"
+                          >
+                            <el-label>
+                              <strong style="color: red">일이삼</strong>
+                              사오육칠팔구십일이삼사오육칠팔구십
+                            </el-label>
+                          </button>
+                        </li>
+                        <li>
+                          <button
+                            type="button"
+                            data-value="2"
+                            class="dropdown-item"
+                          >
+                            <el-label>222</el-label>
+                          </button>
+                        </li>
+                        <li>
+                          <button
+                            type="button"
+                            data-value="3"
+                            class="dropdown-item"
+                          >
+                            <el-label>333</el-label>
+                          </button>
+                        </li>
+                      </ul>
+                    </el-select-options>
+                  </el-select>
+                </div>
+                <div style="width: 400px">
+                  <el-select class="dropdown select-h50 bg-gray">
+                    <!-- [DEV] hidden input의 value값을 사용 -->
+                    <input type="hidden" value="" />
+                    <button
+                      type="button"
+                      class="dropdown-toggle"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                      data-bs-offset="0,-50"
+                    >
+                      <el-label>선택 select-h50</el-label>
+                    </button>
+                    <el-select-options class="dropdown-menu">
+                      <ul>
+                        <li>
+                          <span class="dropdown-header">
+                            <el-label>선택 select-h50</el-label>
+                          </span>
+                        </li>
+                        <li>
+                          <button
+                            type="button"
+                            data-value="1"
+                            class="dropdown-item"
+                          >
+                            <el-label>
+                              <strong style="color: red">일이삼</strong>
+                              사오육칠팔구십일이삼사오육칠팔구십
+                            </el-label>
+                          </button>
+                        </li>
+                        <li>
+                          <button
+                            type="button"
+                            data-value="2"
+                            class="dropdown-item"
+                          >
+                            <el-label>222</el-label>
+                          </button>
+                        </li>
+                        <li>
+                          <button
+                            type="button"
+                            data-value="3"
+                            class="dropdown-item"
+                          >
+                            <el-label>333</el-label>
+                          </button>
+                        </li>
+                        <li>
+                          <button
+                            type="button"
+                            data-value="4"
+                            class="dropdown-item"
+                          >
+                            <el-label>444</el-label>
+                          </button>
+                        </li>
+                        <li>
+                          <button
+                            type="button"
+                            data-value="5"
+                            class="dropdown-item"
+                          >
+                            <el-label>555</el-label>
+                          </button>
+                        </li>
+                        <li>
+                          <button
+                            type="button"
+                            data-value="6"
+                            class="dropdown-item"
+                          >
+                            <el-label>666</el-label>
+                          </button>
+                        </li>
+                        <li>
+                          <button
+                            type="button"
+                            data-value="7"
+                            class="dropdown-item"
+                          >
+                            <el-label>777</el-label>
+                          </button>
+                        </li>
+                        <li>
+                          <button
+                            type="button"
+                            data-value="8"
+                            class="dropdown-item"
+                          >
+                            <el-label>888</el-label>
+                          </button>
+                        </li>
+                        <li>
+                          <button
+                            type="button"
+                            data-value="9"
+                            class="dropdown-item"
+                          >
+                            <el-label>999</el-label>
+                          </button>
+                        </li>
+                        <li>
+                          <button
+                            type="button"
+                            data-value="10"
+                            class="dropdown-item"
+                          >
+                            <el-label>10</el-label>
+                          </button>
+                        </li>
+                        <li>
+                          <button
+                            type="button"
+                            data-value="11"
+                            class="dropdown-item"
+                          >
+                            <el-label>11</el-label>
+                          </button>
+                        </li>
+                      </ul>
+                    </el-select-options>
+                  </el-select>
                 </div>
               </el-examples-stack>
             </el-examples-article>

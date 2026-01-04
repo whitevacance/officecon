@@ -1815,3 +1815,63 @@ if (window !== undefined) {
 
 initBrandSearchTab();
 // 종료: 브랜드 > 브랜드 검색 > 탭 처리
+
+// 시작: 공통 > custom select
+let customSelectInitialized = false;
+const initCustomSelect = () => {
+  // 이미 초기화된 경우 건너뛰기
+  if (customSelectInitialized) {
+    return;
+  }
+
+  if (document?.body) {
+    document.body.addEventListener('click', (e) => {
+      const targetOptionEl = e.target.closest(
+        'el-select.dropdown .dropdown-menu li button.dropdown-item'
+      );
+
+      // 셀렉트 옵션 클릭 시
+      if (targetOptionEl) {
+        const targetSelectEl = targetOptionEl.closest('el-select.dropdown');
+        const targetInputEl = targetSelectEl.querySelector(
+          'input[type="hidden"]'
+        );
+        const selectedLabelEl = targetSelectEl.querySelector(
+          'button.dropdown-toggle el-label'
+        );
+        const targetLabelEl = targetOptionEl.querySelector('el-label');
+        const targetValue = targetOptionEl.dataset.value || '';
+        const optionEls = targetSelectEl.querySelectorAll(
+          '.dropdown-menu li button.dropdown-item'
+        );
+
+        if (
+          targetSelectEl &&
+          targetInputEl &&
+          selectedLabelEl &&
+          targetLabelEl
+        ) {
+          selectedLabelEl.innerHTML = targetLabelEl.innerHTML;
+          targetInputEl.value = targetValue;
+
+          [...optionEls].forEach((optionEl) => {
+            optionEl.classList.remove('active');
+          });
+
+          targetOptionEl.classList.add('active');
+        }
+      }
+    });
+
+    // 초기화 완료 전환
+    customSelectInitialized = true;
+  }
+};
+
+// 전역 함수로 등록
+if (window !== undefined) {
+  window.initCustomSelect = initCustomSelect;
+}
+
+initCustomSelect();
+// 종료: 공통 > custom select
