@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
   <head>
-    <title>공지사항 | 오피스콘</title>
+    <title>FAQ | 오피스콘</title>
     <meta charset="UTF-8" />
     <meta name="format-detection" content="telephone=no" />
     <link rel="shortcut icon" href="./images/favicon.ico" />
@@ -82,12 +82,12 @@
               <component-breadcrumb></component-breadcrumb>
               <!-- 종료: [DEV] 웹컴포넌트 -->
 
-              <h2 class="typo-heading-md">공지사항</h2>
+              <h2 class="typo-heading-md">FAQ</h2>
             </el-content-header-container>
           </el-content-header>
 
           <el-content>
-            <el-notice-list>
+            <el-faq>
               <el-board-list-search>
                 <el-board-category>
                   <el-select class="dropdown">
@@ -152,66 +152,126 @@
                 </button>
               </el-board-list-search>
 
-              <el-notice-list-table>
-                <table class="table align-middle table-hover">
-                  <colgroup>
-                    <col class="col-number" />
-                    <col class="col-title" />
-                    <col class="col-date" />
-                  </colgroup>
-                  <thead>
-                    <tr>
-                      <th scope="col">번호</th>
-                      <th scope="col" class="cell-title">제목</th>
-                      <th scope="col">등록일</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr class="empty">
-                      <td colspan="3">
-                        <el-board-list-empty class="typo-label-lg">
-                          <el-icon class="etc-file-text"></el-icon>
-                          등록된 게시물이 없습니다.
-                        </el-board-list-empty>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>📢</td>
-                      <td class="cell-title">
-                        <a href="#">
-                          [공지] 오피스콘 이용약관 개정 안내 (시행일 연기)
-                        </a>
-                      </td>
-                      <td>2025.12.01</td>
-                    </tr>
-                    <tr>
-                      <td>📢</td>
-                      <td class="cell-title">
-                        <a href="#">
-                          [★공지] 카드사별 결제 인증 방법 안내드립니다.
-                        </a>
-                      </td>
-                      <td>2025.12.01</td>
-                    </tr>
-                    <tr>
-                      <td>999</td>
-                      <td class="cell-title">
-                        <a href="#"> [판매중단] 세븐일레븐, 유니클로 </a>
-                      </td>
-                      <td>2025.12.01</td>
-                    </tr>
-                    <tr>
-                      <td>998</td>
-                      <td class="cell-title">
-                        <a href="#">
-                          [안내] 신세계상품권 유효기간 5년 상품 입점
-                        </a>
-                      </td>
-                      <td>2025.12.01</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </el-notice-list-table>
+              <el-faq-tabs>
+                <button
+                  type="button"
+                  class="button-h50-stroke typo-body-lg active"
+                >
+                  TOP 10
+                </button>
+                <button type="button" class="button-h50-stroke typo-body-lg">
+                  전체
+                </button>
+                <button type="button" class="button-h50-stroke typo-body-lg">
+                  회원
+                </button>
+                <button type="button" class="button-h50-stroke typo-body-lg">
+                  발송
+                </button>
+                <button type="button" class="button-h50-stroke typo-body-lg">
+                  결제
+                </button>
+                <button type="button" class="button-h50-stroke typo-body-lg">
+                  증빙
+                </button>
+                <button type="button" class="button-h50-stroke typo-body-lg">
+                  상품권
+                </button>
+                <button type="button" class="button-h50-stroke typo-body-lg">
+                  상품정보
+                </button>
+                <button type="button" class="button-h50-stroke typo-body-lg">
+                  기타
+                </button>
+              </el-faq-tabs>
+
+              <el-faq-list>
+                <ul>
+                  <li>
+                    <el-board-list-empty class="typo-label-lg">
+                      <el-icon class="etc-file-text"></el-icon>
+                      등록된 게시물이 없습니다.
+                    </el-board-list-empty>
+                  </li>
+                  <li>
+                    <!-- [DEV] data-bs-toggle값은 게시물의 고유한 id값을 사용 -->
+                    <button
+                      class="collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#faq-1"
+                    >
+                      <el-faq-list-left>
+                        <el-faq-list-category>
+                          <el-faq-list-chip class="typo-label-lg">
+                            기타
+                          </el-faq-list-chip>
+                        </el-faq-list-category>
+                        <el-faq-list-title class="typo-body-lg">
+                          <el-faq-list-title-prefix>
+                            Q.
+                          </el-faq-list-title-prefix>
+                          <el-faq-list-title-text>
+                            [중요] 캐쉬/리워드 사용 시 비밀번호 설정 방법
+                          </el-faq-list-title-text>
+                        </el-faq-list-title>
+                      </el-faq-list-left>
+                      <el-icon class="h20-arrow-up natural-0"></el-icon>
+                    </button>
+
+                    <!-- [DEV] id값은 게시물의 고유한 id값을 사용 -->
+                    <el-faq-answer-collapse id="faq-1" class="collapse">
+                      <el-faq-answer>
+                        <el-faq-answer-content-prefix class="typo-subtitle-sm">
+                          A.
+                        </el-faq-answer-content-prefix>
+                        <el-faq-answer-content class="typo-body-sm">
+                          faq 내용 영역
+                        </el-faq-answer-content>
+                      </el-faq-answer>
+                    </el-faq-answer-collapse>
+                  </li>
+                  <li>
+                    <!-- [DEV] data-bs-toggle값은 게시물의 고유한 id값을 사용 -->
+                    <button
+                      class="collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#faq-2"
+                    >
+                      <el-faq-list-left>
+                        <el-faq-list-category>
+                          <el-faq-list-chip class="typo-label-lg">
+                            상품권
+                          </el-faq-list-chip>
+                        </el-faq-list-category>
+                        <el-faq-list-title class="typo-body-lg">
+                          <el-faq-list-title-prefix>
+                            Q.
+                          </el-faq-list-title-prefix>
+                          <el-faq-list-title-text>
+                            상품권/주유권 구매 한도 초과라고 뜨는데, 어떻게 해야
+                            하나요?
+                          </el-faq-list-title-text>
+                        </el-faq-list-title>
+                      </el-faq-list-left>
+                      <el-icon class="h20-arrow-up natural-0"></el-icon>
+                    </button>
+
+                    <!-- [DEV] id값은 게시물의 고유한 id값을 사용 -->
+                    <el-faq-answer-collapse id="faq-2" class="collapse">
+                      <el-faq-answer>
+                        <el-faq-answer-content-prefix class="typo-subtitle-sm">
+                          A.
+                        </el-faq-answer-content-prefix>
+                        <el-faq-answer-content class="typo-body-sm">
+                          faq 내용 영역
+                        </el-faq-answer-content>
+                      </el-faq-answer>
+                    </el-faq-answer-collapse>
+                  </li>
+                </ul>
+              </el-faq-list>
 
               <el-pagination>
                 <nav aria-label="Page navigation">
@@ -265,7 +325,7 @@
                   </el-pagination-next>
                 </nav>
               </el-pagination>
-            </el-notice-list>
+            </el-faq>
           </el-content>
         </main>
         <!-- 종료: 컨텐츠 -->
