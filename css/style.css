@@ -9623,6 +9623,10 @@ el-qna-list {
       color: var(--color-natural-20) !important;
       border-bottom: 1px solid var(--color-natural-90) !important;
 
+      a {
+        color: var(--color-natural-20) !important;
+      }
+
       .status-waiting {
         color: var(--color-natural-40);
       }
