@@ -3055,7 +3055,8 @@ el-datepicker {
             padding-top: 19px;
             padding-bottom: 12px;
 
-            .tui-calendar-btn-prev-month:after {
+            .tui-calendar-btn-prev-month:after,
+            .tui-calendar-btn-prev-year:after {
               width: 16px;
               height: 26px;
               margin: 0;
@@ -3074,7 +3075,8 @@ el-datepicker {
               color: var(--color-natural-0);
             }
 
-            .tui-calendar-btn-next-month:after {
+            .tui-calendar-btn-next-month:after,
+            .tui-calendar-btn-next-year:after {
               width: 16px;
               height: 26px;
               margin: 0;
