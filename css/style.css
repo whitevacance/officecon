@@ -9488,6 +9488,14 @@ el-qna-view {
     width: 100%;
     padding-bottom: 32px;
     border-bottom: 1px solid var(--color-natural-70);
+
+    & > h3 {
+      width: 1008px;
+      display: block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
   }
 
   el-qna-info {
@@ -9650,6 +9658,17 @@ el-qna-list {
       .status-completed {
         color: var(--color-orange-officecon);
       }
+
+      &.cell-title {
+        padding-right: 8px !important;
+        & > div {
+          width: 340px;
+          display: block;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+      }
     }
 
     .cell-title {
@@ -9734,6 +9753,14 @@ el-notice-list {
         line-height: 24px;
         letter-spacing: -0.48px;
         color: var(--color-natural-0) !important;
+
+        & > div {
+          width: 540px;
+          display: block;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
       }
 
       &:last-of-type {
@@ -9772,6 +9799,14 @@ el-notice-view {
     & > h3 {
       display: flex;
       gap: 8px;
+
+      & > span {
+        width: 810px;
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
     }
 
     el-notice-date {
@@ -9814,6 +9849,14 @@ el-notice-view {
             el-notice-file-label {
               font-weight: 700;
               color: var(--color-natural-30);
+            }
+
+            & > div {
+              width: 850px;
+              display: block;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
             }
           }
 
@@ -9931,6 +9974,15 @@ el-faq {
               width: 100%;
               padding: 0 24px;
               font-weight: 600 !important;
+
+              el-faq-list-title-text {
+                text-align: left;
+                width: 670px;
+                display: block;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+              }
             }
           }
         }
