@@ -9735,6 +9735,8 @@ el-notice-list {
 
     .cell-title {
       text-align: left;
+      padding-left: 40px !important;
+      padding-right: 40px !important;
     }
   }
 
