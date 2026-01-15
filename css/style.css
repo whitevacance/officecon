@@ -9947,7 +9947,7 @@ el-faq {
             display: flex;
             gap: 16px;
             width: 100%;
-            padding: 40px 116px;
+            padding: 40px 149px 40px 116px;
             background-color: var(--color-natural-98);
 
             el-faq-answer-content-prefix {
