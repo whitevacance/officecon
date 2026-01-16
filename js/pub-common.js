@@ -1728,6 +1728,7 @@ const initRepresentativeBrandSwiper = () => {
   };
 
   const representativeBrandSwiperParams = {
+    loop: true,
     slidesPerGroup: 4,
     slidesPerView: 4,
     spaceBetween: 14,
