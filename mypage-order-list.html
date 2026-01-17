@@ -51,6 +51,7 @@
     <script src="./js/tui-time-picker.js" crossorigin="anonymous"></script>
     <script src="./js/tui-date-picker.js" crossorigin="anonymous"></script>
   </head>
+
   <body>
     <!-- [DEV] 일반회원일 때 className: 'personal-member' -->
     <el-wrapper>
@@ -81,14 +82,239 @@
               -->
               <component-breadcrumb></component-breadcrumb>
               <!-- 종료: [DEV] 웹컴포넌트 -->
-
-              <h2 class="typo-heading-md">주문/발송 내역</h2>
             </el-content-header-container>
           </el-content-header>
 
           <el-content>
             <el-mypage>
-              <el-mypage-header>마이페이지 헤더</el-mypage-header>
+              <!-- 시작: [등급 정보] 일반 -->
+              <el-mypage-grade class="grade-common">
+                <el-grade-info>
+                  <el-grade-info-content>
+                    <el-grade-info-image>
+                      <img src="./images/badge-grade-common.png" alt="" />
+                    </el-grade-info-image>
+                    <el-grade-info-detail>
+                      <h4 class="typo-subtitle-md">
+                        <strong>홍길동</strong>님 오피스콘에 오신 것을
+                        환영합니다!
+                      </h4>
+                      <el-grade-info-detail-content class="typo-body-sm">
+                        <p>
+                          일반회원은 등급별 할인 혜택을 제공하지 않습니다.
+                        </p>
+                        <p>
+                          오른쪽 [기업회원전환] 버튼을 통해 회원을 전환하시면
+                        </p>
+                        <p>등급별 할인 혜택을 제공받으실 수 있습니다. 🧡</p>
+                      </el-grade-info-detail-content>
+                    </el-grade-info-detail>
+                  </el-grade-info-content>
+                  <el-grade-info-addon>
+                    <button
+                      type="button"
+                      class="text-black button-h43-round typo-body-sm"
+                    >
+                      회원정보수정
+                    </button>
+                    <button
+                      type="button"
+                      class="text-black button-h43-round typo-body-sm"
+                    >
+                      기업회원전환
+                    </button>
+                  </el-grade-info-addon>
+                </el-grade-info>
+                <el-grade-cash>
+                  <h4 class="typo-subtitle-md">나의 캐쉬</h4>
+                  <el-grade-cash-content>
+                    <el-grade-cash-date class="typo-body-sm">
+                      소멸 예정일
+                      <strong>2030.10.17</strong>
+                    </el-grade-cash-date>
+                    <el-grade-cash-amount>
+                      <span class="typo-body-sm">
+                        <strong class="typo-heading-md">999,999,990</strong>원
+                      </span>
+                      <button
+                        type="button"
+                        class="button-h43-round typo-body-sm color-orange"
+                      >
+                        충전
+                      </button>
+                    </el-grade-cash-amount>
+                  </el-grade-cash-content>
+                </el-grade-cash>
+              </el-mypage-grade>
+              <!-- 종료: [등급 정보] 일반 -->
+
+              <!-- 시작: [등급 정보] 패밀리 -->
+              <el-mypage-grade class="grade-family">
+                <el-grade-info>
+                  <el-grade-info-content>
+                    <el-grade-info-image>
+                      <img src="./images/badge-grade-family.png" alt="" />
+                    </el-grade-info-image>
+                    <el-grade-info-detail>
+                      <h4 class="typo-subtitle-md">
+                        <strong>홍길동</strong>님의 등급은
+                        <strong class="current-grade">즐거운가족</strong>입니다.
+                      </h4>
+                      <el-grade-info-detail-content class="typo-body-sm">
+                        <p>항상 오피스콘과 함께 해주셔서 감사합니다.</p>
+                        <p>더 나은 경험을 드릴 수 있도록 노력하겠습니다.</p>
+                        <p>오늘도 즐거운 하루 되세요! 🧡</p>
+                      </el-grade-info-detail-content>
+                    </el-grade-info-detail>
+                  </el-grade-info-content>
+                  <el-grade-info-addon>
+                    <button
+                      type="button"
+                      class="text-black button-h43-round typo-body-sm"
+                    >
+                      회원정보수정
+                    </button>
+                  </el-grade-info-addon>
+                </el-grade-info>
+                <el-grade-cash>
+                  <h4 class="typo-subtitle-md">나의 캐쉬</h4>
+                  <el-grade-cash-content>
+                    <el-grade-cash-date class="typo-body-sm">
+                      소멸 예정일
+                      <strong>2030.10.17</strong>
+                    </el-grade-cash-date>
+                    <el-grade-cash-amount>
+                      <span class="typo-body-sm">
+                        <strong class="typo-heading-md">999,999,990</strong>원
+                      </span>
+                      <button
+                        type="button"
+                        class="button-h43-round typo-body-sm color-orange"
+                      >
+                        충전
+                      </button>
+                    </el-grade-cash-amount>
+                  </el-grade-cash-content>
+                </el-grade-cash>
+              </el-mypage-grade>
+              <!-- 종료: [등급 정보] 패밀리 -->
+
+              <!-- 시작: [등급 정보] 실버 -->
+              <el-mypage-grade class="grade-silver">
+                <el-grade-info>
+                  <el-grade-info-content>
+                    <el-grade-info-image>
+                      <img src="./images/badge-grade-silver.png" alt="" />
+                    </el-grade-info-image>
+                    <el-grade-info-detail>
+                      <h4 class="typo-subtitle-md">
+                        <strong>홍길동</strong>님의 등급은
+                        <strong class="current-grade">SILVER</strong>입니다.
+                      </h4>
+                      <el-grade-info-detail-content class="typo-body-sm">
+                        <p>골드 등급까지 <strong>26일</strong> 남았습니다.</p>
+                        <p
+                          >골드 등급까지
+                          <strong>3,000,000원</strong> 남았습니다.</p
+                        >
+                        <p
+                          >골드 등급 시 <strong>9%</strong> 할인율로
+                          적용됩니다</p
+                        >
+                      </el-grade-info-detail-content>
+                    </el-grade-info-detail>
+                  </el-grade-info-content>
+                  <el-grade-info-addon>
+                    <button
+                      type="button"
+                      class="text-black button-h43-round typo-body-sm"
+                    >
+                      회원정보수정
+                    </button>
+                  </el-grade-info-addon>
+                </el-grade-info>
+                <el-grade-cash>
+                  <h4 class="typo-subtitle-md">나의 캐쉬</h4>
+                  <el-grade-cash-content>
+                    <el-grade-cash-date class="typo-body-sm">
+                      소멸 예정일
+                      <strong>2030.10.17</strong>
+                    </el-grade-cash-date>
+                    <el-grade-cash-amount>
+                      <span class="typo-body-sm">
+                        <strong class="typo-heading-md">999,999,990</strong>원
+                      </span>
+                      <button
+                        type="button"
+                        class="button-h43-round typo-body-sm color-orange"
+                      >
+                        충전
+                      </button>
+                    </el-grade-cash-amount>
+                  </el-grade-cash-content>
+                </el-grade-cash>
+              </el-mypage-grade>
+              <!-- 종료: [등급 정보] 실버 -->
+
+              <!-- 시작: [등급 정보] 파트너 실버 -->
+              <el-mypage-grade class="grade-silver">
+                <el-grade-info>
+                  <el-grade-info-content>
+                    <el-grade-info-image>
+                      <img src="./images/badge-grade-silver.png" alt="" />
+                    </el-grade-info-image>
+                    <el-grade-info-detail>
+                      <h4 class="typo-subtitle-md">
+                        <strong>홍길동</strong>님의 등급은
+                        <strong class="current-grade">SILVER</strong>입니다.
+                      </h4>
+                      <el-grade-info-detail-content class="typo-body-sm">
+                        <p>골드 등급까지 <strong>26일</strong> 남았습니다.</p>
+                        <p
+                          >골드 등급까지
+                          <strong>3,000,000원</strong> 남았습니다.</p
+                        >
+                        <p
+                          >골드 등급 시 <strong>9%</strong> 할인율로
+                          적용됩니다</p
+                        >
+                      </el-grade-info-detail-content>
+                    </el-grade-info-detail>
+                  </el-grade-info-content>
+                </el-grade-info>
+                <el-grade-etc>
+                  <h4 class="typo-subtitle-md">일이삼사오육칠팔구십</h4>
+                  <el-grade-etc-content>
+                    <el-grade-etc-amount>
+                      <span class="typo-body-sm">
+                        <strong class="typo-heading-md">999,999,990</strong>원
+                      </span>
+                    </el-grade-etc-amount>
+                  </el-grade-etc-content>
+                </el-grade-etc>
+                <el-grade-cash>
+                  <h4 class="typo-subtitle-md">나의 캐쉬</h4>
+                  <el-grade-cash-content>
+                    <el-grade-cash-date class="typo-body-sm">
+                      소멸 예정일
+                      <strong>2030.10.17</strong>
+                    </el-grade-cash-date>
+                    <el-grade-cash-amount>
+                      <span class="typo-body-sm">
+                        <strong class="typo-heading-md">999,999,990</strong>원
+                      </span>
+                      <button
+                        type="button"
+                        class="button-h43-round typo-body-sm color-orange"
+                      >
+                        충전
+                      </button>
+                    </el-grade-cash-amount>
+                  </el-grade-cash-content>
+                </el-grade-cash>
+              </el-mypage-grade>
+              <!-- 종료: [등급 정보] 파트너 실버 -->
+
               <el-mypage-container>
                 <el-mypage-nav>
                   <el-section-title>
@@ -99,14 +325,10 @@
                       <h4 class="typo-subtitle-sm">쇼핑 내역</h4>
                       <ul>
                         <li>
-                          <a href="#">
-                            주문/발송 내역
-                          </a>
+                          <a href="#"> 주문/발송 내역 </a>
                         </li>
                         <li>
-                          <a href="#">
-                            취소/환불 내역
-                          </a>
+                          <a href="#"> 취소/환불 내역 </a>
                         </li>
                       </ul>
                     </li>
@@ -114,14 +336,10 @@
                       <h4 class="typo-subtitle-sm">캐쉬/리워드 내역</h4>
                       <ul>
                         <li>
-                          <a href="#">
-                            캐쉬 내역
-                          </a>
+                          <a href="#"> 캐쉬 내역 </a>
                         </li>
                         <li>
-                          <a href="#">
-                            리워드 내역
-                          </a>
+                          <a href="#"> 리워드 내역 </a>
                         </li>
                       </ul>
                     </li>
@@ -129,14 +347,10 @@
                       <h4 class="typo-subtitle-sm">서브회원</h4>
                       <ul>
                         <li>
-                          <a href="#">
-                            서브회원 관리
-                          </a>
+                          <a href="#"> 서브회원 관리 </a>
                         </li>
                         <li>
-                          <a href="#">
-                            서브회원 주문/발송 내역
-                          </a>
+                          <a href="#"> 서브회원 주문/발송 내역 </a>
                         </li>
                       </ul>
                     </li>
@@ -144,9 +358,7 @@
                       <h4 class="typo-subtitle-sm">발송관리</h4>
                       <ul>
                         <li>
-                          <a href="#">
-                            발송문구 관리
-                          </a>
+                          <a href="#"> 발송문구 관리 </a>
                         </li>
                       </ul>
                     </li>
@@ -154,33 +366,32 @@
                       <h4 class="typo-subtitle-sm">나의정보</h4>
                       <ul>
                         <li>
-                          <a href="#">
-                            인증 IP 관리
-                          </a>
+                          <a href="#"> 인증 IP 관리 </a>
                         </li>
                         <li>
-                          <a href="#">
-                            회원정보 수정
-                          </a>
+                          <a href="#"> 회원정보 수정 </a>
                         </li>
                         <li>
-                          <a href="#">
-                            회원 탈퇴
-                          </a>
+                          <a href="#"> 회원 탈퇴 </a>
                         </li>
                       </ul>
                     </li>
                   </ul>
                 </el-mypage-nav>
-                <el-mypage-content>
+                <el-mypage-section>
                   <el-section-title>
-                    <h3 class="typo-subtitle-lg">제목</h3>
-                    <el-section-title-addon class="typo-body-sm">
-                      <span>*</span> 필수입력사항
-                    </el-section-title-addon>
+                    <h3 class="typo-subtitle-lg">주문/발송 내역</h3>
+                    <!-- <el-section-title-addon class="typo-body-sm">
+                      <button
+                        type="button"
+                        class="button-h43-square typo-body-sm text-black"
+                      >
+                        주문/발송 수정가이드
+                      </button>
+                    </el-section-title-addon> -->
                   </el-section-title>
-                  컨텐츠
-                </el-mypage-content>
+                  <el-mypage-content>컨텐츠</el-mypage-content>
+                </el-mypage-section>
               </el-mypage-container>
             </el-mypage>
           </el-content>
