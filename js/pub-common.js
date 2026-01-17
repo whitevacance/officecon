@@ -1917,3 +1917,50 @@ if (window !== undefined) {
 
 initCustomSelect();
 // 종료: 공통 > custom select
+
+// 시작: 공통 > el-input-file
+let inputFileInitialized = false;
+const initInputFile = () => {
+  // 이미 초기화된 경우 건너뛰기
+  if (inputFileInitialized) {
+    return;
+  }
+
+  if (document?.body) {
+    // input file change 이벤트 처리
+    document.body.addEventListener('change', (e) => {
+      if (e.target.type === 'file') {
+        const targetInputEl = e.target;
+        const targetLabelEl = targetInputEl.closest('el-input-file label');
+
+        if (targetLabelEl) {
+          const fileNameEl = targetLabelEl.querySelector('el-input-file-name');
+
+          if (fileNameEl) {
+            // 선택된 파일이 있는지 확인
+            if (targetInputEl.files && targetInputEl.files.length > 0) {
+              const fileName = targetInputEl.files[0].name;
+              fileNameEl.textContent = fileName;
+              fileNameEl.classList.add('active');
+            } else {
+              // 파일이 없을 때
+              fileNameEl.textContent = '선택된 파일 없음';
+              fileNameEl.classList.remove('active');
+            }
+          }
+        }
+      }
+    });
+
+    // 초기화 완료 전환
+    inputFileInitialized = true;
+  }
+};
+
+// 전역 함수로 등록
+if (window !== undefined) {
+  window.initInputFile = initInputFile;
+}
+
+initInputFile();
+// 종료: 공통 > el-input-file

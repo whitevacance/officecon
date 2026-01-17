@@ -3168,6 +3168,39 @@
               </el-examples-stack>
               <el-examples-stack>
                 <div style="width: 300px">
+                  <el-input-file>
+                    <label>
+                      <input type="file" value="" />
+                      <el-input-file-button class="typo-label-md">
+                        <el-icon class="etc-doc"></el-icon>
+                        파일 선택
+                      </el-input-file-button>
+                      <el-input-file-name class="typo-body-sm">
+                        선택된 파일 없음
+                      </el-input-file-name>
+                    </label>
+                  </el-input-file>
+                </div>
+                <div style="width: 300px">
+                  <el-input-file class="is-invalid">
+                    <label>
+                      <input type="file" value="" />
+                      <el-input-file-button class="typo-label-md">
+                        <el-icon class="etc-doc"></el-icon>
+                        파일 선택
+                      </el-input-file-button>
+                      <el-input-file-name class="typo-body-sm">
+                        선택된 파일 없음
+                      </el-input-file-name>
+                    </label>
+                    <el-invalide-feedback class="typo-label-lg">
+                      필수 입력 항목입니다.
+                    </el-invalide-feedback>
+                  </el-input-file>
+                </div>
+              </el-examples-stack>
+              <el-examples-stack>
+                <div style="width: 300px">
                   높이 50px
                   <el-input class="input-h50">
                     <input
