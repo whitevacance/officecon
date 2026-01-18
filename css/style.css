@@ -2322,6 +2322,57 @@ el-modal.modal.el-modal-default {
     height: 186px;
     padding-top: 56px;
   }
+
+  &.transaction-download-modal {
+    el-modal-body {
+      el-modal-estimate-document {
+        el-transaction-download-top {
+          display: flex;
+          align-items: center;
+          width: 100%;
+          padding: 12px 0;
+          border-top: 2px solid var(--color-natural-0);
+          color: var(--color-natural-20);
+
+          dl {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            width: 100%;
+            padding: 0 20px;
+
+            &:first-of-type {
+              border-right: 1px solid var(--color-natural-80);
+            }
+          }
+        }
+
+        el-modal-estimate-caution {
+          padding-top: 0;
+          border-bottom: 0;
+        }
+
+        el-estimate-document-products {
+          & > table.table {
+            thead th {
+              &:first-of-type {
+                text-align: center;
+              }
+            }
+
+            tbody {
+              td:first-of-type {
+                text-align: center;
+              }
+              td:nth-of-type(3) {
+                text-align: left;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 el-modal-notice {
@@ -3718,6 +3769,20 @@ el-filter-box {
   }
 }
 /* 종료: 공통 > 필터박스 */
+
+/* 시작: 공통 > el-infto-box */
+el-info-box {
+  display: block;
+  width: 100%;
+  padding: 16px 24px;
+  border-radius: 8px;
+  background-color: var(--color-blue-10);
+
+  &.bg-gray {
+    background-color: var(--color-natural-98);
+  }
+}
+/* 종료: 공통 > el-infto-box */
 
 /* 시작: 예시 (example) */
 el-examples-article {
@@ -10559,6 +10624,10 @@ el-mypage {
       }
     }
   }
+
+  el-pagination {
+    padding-top: 80px;
+  }
 }
 
 #el-modal-company-member-conversion {
@@ -10570,14 +10639,6 @@ el-mypage {
       flex-direction: column;
       gap: 32px;
       width: 480px;
-
-      el-info-box {
-        display: block;
-        width: 100%;
-        padding: 16px 24px;
-        border-radius: 8px;
-        background-color: var(--color-blue-10);
-      }
     }
 
     el-agrees {
@@ -10706,13 +10767,116 @@ el-mypage {
         }
       }
     }
+  }
+}
 
-    el-charge-caution {
-      display: block;
-      padding: 16px 24px;
-      border-radius: 8px;
-      background-color: var(--color-blue-10);
+el-table-util-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  min-height: 44px;
+  padding-bottom: 1px;
+  margin-bottom: 16px;
+
+  el-table-util-left {
+    flex-grow: 0;
+    flex-shrink: 0;
+    span {
+      font-weight: 700 !important;
+    }
+  }
+
+  el-table-util-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 6px;
+  }
+}
+
+el-mypage-table {
+  display: block;
+  width: 100%;
+
+  & > table {
+    margin: 0 !important;
+    border-top: 1px solid var(--color-natural-0) !important;
+
+    th,
+    td {
+      border-bottom: 1px solid var(--color-natural-80) !important;
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 18px;
+      letter-spacing: -0.39px;
+      color: var(--color-natural-20) !important;
+      vertical-align: middle;
+      height: 46px;
+      padding: 12px 16px !important;
+      text-align: center;
+
+      &.align-left {
+        text-align: left;
+      }
+    }
+
+    th {
+      font-weight: 600;
+      color: var(--color-natural-0) !important;
     }
   }
 }
 /* 종료: 마이페이지 - 공통 */
+
+/* 시작: 마이페이지 > 주문/발송 내역 */
+el-mypage-info-box {
+  display: block;
+  padding-top: 16px;
+
+  el-info-box {
+    el-marker-list {
+      ul {
+        li {
+          strong {
+            font-weight: 600 !important;
+          }
+
+          &.color-red {
+            &:before {
+              background-color: var(--color-natural-20) !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+el-modal-transaction-print {
+  display: block;
+  width: 400px;
+}
+
+el-mypage-order-list {
+  display: block;
+  width: 100%;
+  padding-top: 32px;
+
+  el-mypage-order-list-date-range {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 4px;
+
+    el-datepicker {
+      flex-grow: 0;
+      flex-shrink: 0;
+      width: 130px;
+    }
+  }
+
+  el-mypage-table.mypage-order-list-table {
+  }
+}
+/* 종료: 마이페이지 > 주문/발송 내역 */

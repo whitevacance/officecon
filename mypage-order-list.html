@@ -603,7 +603,7 @@
                           </el-date-tabs>
 
                           <el-date-input class="typo-body-sm">
-                            <!-- [DEV] instance를 개별로 사용하기 위한 datepicker -->
+                            <!-- [DEV] instance를 개별로 사용하는 datepicker -->
                             <el-datepicker id="datepicker-start-1">
                               <el-input
                                 class="tui-datepicker-input tui-datetime-input tui-has-focus"
@@ -627,12 +627,12 @@
                                   </button>
                                 </el-input-addon>
                               </el-input>
-                              <!-- [DEV] instance를 개별로 사용하기 위한 layer-->
+                              <!-- [DEV] instance를 개별로 사용하는 layer-->
                               <el-datepicker-layer-custom></el-datepicker-layer-custom>
                             </el-datepicker>
                             ~
 
-                            <!-- [DEV] instance를 개별로 사용하기 위한 datepicker -->
+                            <!-- [DEV] instance를 개별로 사용하는 datepicker -->
                             <el-datepicker id="datepicker-end-1">
                               <el-input
                                 class="tui-datepicker-input tui-datetime-input tui-has-focus"
@@ -656,7 +656,7 @@
                                   </button>
                                 </el-input-addon>
                               </el-input>
-                              <!-- [DEV] instance를 개별로 사용하기 위한 layer-->
+                              <!-- [DEV] instance를 개별로 사용하는 layer-->
                               <el-datepicker-layer-custom></el-datepicker-layer-custom>
                             </el-datepicker>
                           </el-date-input>
@@ -670,6 +670,209 @@
                         </dd>
                       </dl>
                     </el-filter-box>
+
+                    <el-mypage-info-box>
+                      <el-info-box>
+                        <el-marker-list class="weight-regular color-gray">
+                          <ul>
+                            <li>
+                              주문 후 정상적으로 발송된 쿠폰에 대해 구매일로부터
+                              7일이내에만 환불이 가능합니다.
+                            </li>
+                            <li>
+                              전송결과는 수신인의 통신 환경에 따라 최대
+                              25시간까지 소요 될 수 있습니다.
+                            </li>
+                            <li class="color-red">
+                              <strong>
+                                상품권은 주문/발송 시 관리자 승인 후 업무시간
+                                1시간 이내 즉시 및 예약 발송이 가능합니다.
+                              </strong>
+                            </li>
+                            <li>
+                              주문번호별 본인 인증된 휴대폰번호로 최초 발송실패
+                              알림문자 1회만 전송됩니다. 알림문자 수신거절은
+                              나의정보수정에서 해제 가능합니다.
+                            </li>
+                          </ul>
+                        </el-marker-list>
+                      </el-info-box>
+                    </el-mypage-info-box>
+
+                    <el-mypage-order-list>
+                      <el-table-util-bar>
+                        <el-table-util-left>
+                          <span class="typo-subtitle-sm">총 10건</span>
+                        </el-table-util-left>
+                        <el-table-util-right>
+                          <el-mypage-order-list-date-range class="typo-body-sm">
+                            <!-- [DEV] instance를 개별로 사용하는 datepicker -->
+                            <el-datepicker id="datepicker-start-2">
+                              <el-input
+                                class="tui-datepicker-input tui-datetime-input tui-has-focus"
+                              >
+                                <input
+                                  class="form-control custom-input datepicker-input"
+                                  type="text"
+                                  placeholder="시작 날짜"
+                                  value=""
+                                  aria-label="Date"
+                                />
+                                <el-input-addon>
+                                  <button
+                                    type="button"
+                                    class="button-calendar"
+                                    aria-label="calendar"
+                                  >
+                                    <el-icon
+                                      class="h24-calendar natural-0"
+                                    ></el-icon>
+                                  </button>
+                                </el-input-addon>
+                              </el-input>
+                              <!-- [DEV] instance를 개별로 사용하는 layer-->
+                              <el-datepicker-layer-custom></el-datepicker-layer-custom>
+                            </el-datepicker>
+                            ~
+
+                            <!-- [DEV] instance를 개별로 사용하는 datepicker -->
+                            <el-datepicker id="datepicker-end-2">
+                              <el-input
+                                class="tui-datepicker-input tui-datetime-input tui-has-focus"
+                              >
+                                <input
+                                  class="form-control custom-input datepicker-input"
+                                  type="text"
+                                  placeholder="종료 날짜"
+                                  value=""
+                                  aria-label="Date"
+                                />
+                                <el-input-addon>
+                                  <button
+                                    type="button"
+                                    class="button-calendar"
+                                    aria-label="calendar"
+                                  >
+                                    <el-icon
+                                      class="h24-calendar natural-0"
+                                    ></el-icon>
+                                  </button>
+                                </el-input-addon>
+                              </el-input>
+                              <!-- [DEV] instance를 개별로 사용하는 layer-->
+                              <el-datepicker-layer-custom></el-datepicker-layer-custom>
+                            </el-datepicker>
+                          </el-mypage-order-list-date-range>
+                          <button
+                            type="button"
+                            class="text-black button-h43-square typo-body-sm"
+                          >
+                            발송결과 합계
+                          </button>
+                          <button
+                            type="button"
+                            data-bs-toggle="modal"
+                            data-bs-target="#el-modal-transaction-print"
+                            class="text-black button-h43-square typo-body-sm"
+                          >
+                            거래명세서 합계
+                          </button>
+                        </el-table-util-right>
+                      </el-table-util-bar>
+
+                      <el-mypage-table class="mypage-order-list-table">
+                        <table class="table align-middle">
+                          <colgroup>
+                            <col class="col-number" />
+                            <col class="col-title" />
+                            <col class="col-date" />
+                          </colgroup>
+                          <thead>
+                            <tr>
+                              <th scope="col">번호</th>
+                              <th scope="col" class="align-left">제목</th>
+                              <th scope="col">등록일</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <!-- <tr class="empty">
+                              <td colspan="3">
+                                <el-board-list-empty class="typo-label-lg">
+                                  <el-icon class="etc-file-text"></el-icon>
+                                  등록된 게시물이 없습니다.
+                                </el-board-list-empty>
+                              </td>
+                            </tr> -->
+                            <tr>
+                              <td>111</td>
+                              <td class="align-left">aasdfasdfsadf</td>
+                              <td>2025.12.01</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </el-mypage-table>
+
+                      <el-pagination>
+                        <nav aria-label="Page navigation">
+                          <el-pagination-prev>
+                            <a href="#" aria-label="처음">
+                              <el-icon
+                                class="h20-chevrons-left natural-0"
+                              ></el-icon>
+                            </a>
+                            <a href="#" aria-label="이전">
+                              <el-icon
+                                class="h20-arrow-left natural-0"
+                              ></el-icon>
+                            </a>
+                          </el-pagination-prev>
+                          <ul class="typo-body-sm">
+                            <li class="active">
+                              <a href="#">1</a>
+                            </li>
+                            <li>
+                              <a href="#">2</a>
+                            </li>
+                            <li>
+                              <a href="#">3</a>
+                            </li>
+                            <li>
+                              <a href="#">4</a>
+                            </li>
+                            <li>
+                              <a href="#">5</a>
+                            </li>
+                            <li>
+                              <a href="#">6</a>
+                            </li>
+                            <li>
+                              <a href="#">7</a>
+                            </li>
+                            <li>
+                              <a href="#">8</a>
+                            </li>
+                            <li>
+                              <a href="#">9</a>
+                            </li>
+                            <li>
+                              <a href="#">10</a>
+                            </li>
+                          </ul>
+                          <el-pagination-next>
+                            <a href="#" aria-label="다음">
+                              <el-icon
+                                class="h20-arrow-right natural-0"
+                              ></el-icon>
+                            </a>
+                            <a href="#" aria-label="마지막">
+                              <el-icon
+                                class="h20-chevrons-right natural-0"
+                              ></el-icon>
+                            </a>
+                          </el-pagination-next>
+                        </nav>
+                      </el-pagination>
+                    </el-mypage-order-list>
                   </el-mypage-content>
                 </el-mypage-section>
               </el-mypage-container>
@@ -783,7 +986,7 @@
                 </el-radio>
               </el-charge-method>
 
-              <el-charge-caution>
+              <el-info-box>
                 <el-marker-list class="weight-regular color-gray">
                   <ul>
                     <li> 보유 캐쉬 한도는 100,000,000원 입니다. </li>
@@ -805,7 +1008,7 @@
                     </li>
                   </ul>
                 </el-marker-list>
-              </el-charge-caution>
+              </el-info-box>
             </el-modal-cash-charge>
           </el-modal-body>
 
@@ -825,6 +1028,277 @@
       </el-modal-dialog>
     </el-modal>
     <!-- 종료: modal: 캐쉬충전 -->
+
+    <!-- 시작: modal: 전자거래명세서 출력 -->
+    <el-modal
+      class="modal fade el-modal-default"
+      id="el-modal-transaction-print"
+      tabindex="-1"
+      aria-hidden="true"
+      data-bs-keyboard="false"
+    >
+      <el-modal-dialog
+        class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+      >
+        <el-modal-content class="modal-content">
+          <el-modal-close-button>
+            <button type="button" data-bs-dismiss="modal" aria-label="닫기">
+              <el-icon class="h32-closed natural-0"></el-icon>
+            </button>
+          </el-modal-close-button>
+
+          <el-modal-header class="modal-header">
+            <h3 class="typo-subtitle-lg center">전자거래명세서 출력</h3>
+          </el-modal-header>
+
+          <el-modal-body class="modal-body">
+            <el-modal-transaction-print>
+              <el-modal-form>
+                <el-form-row>
+                  <el-form-label class="typo-body-md">상호명</el-form-label>
+                  <el-form-content>
+                    <el-input class="is-invalid">
+                      <input
+                        class="form-control custom-input"
+                        type="text"
+                        placeholder="상호명을 입력해 주세요."
+                        value=""
+                      />
+                      <el-invalide-feedback class="typo-label-lg">
+                        필수 입력 항목입니다.
+                      </el-invalide-feedback>
+                    </el-input>
+                  </el-form-content>
+                </el-form-row>
+                <el-form-row>
+                  <el-form-label class="typo-body-md">담당자명</el-form-label>
+                  <el-form-content>
+                    <el-input>
+                      <input
+                        class="form-control custom-input"
+                        type="text"
+                        placeholder="담당자명을 입력해 주세요."
+                        value=""
+                      />
+                    </el-input>
+                  </el-form-content>
+                </el-form-row>
+              </el-modal-form>
+            </el-modal-transaction-print>
+          </el-modal-body>
+
+          <el-modal-footer class="modal-footer">
+            <button
+              type="button"
+              data-bs-dismiss="modal"
+              class="button-h50-stroke typo-body-lg"
+            >
+              취소
+            </button>
+            <button
+              type="button"
+              data-bs-target="#el-modal-estimate-download"
+              data-bs-toggle="modal"
+              class="button-h50-fill typo-body-lg"
+            >
+              다음
+            </button>
+          </el-modal-footer>
+        </el-modal-content>
+      </el-modal-dialog>
+    </el-modal>
+    <!-- 종료: modal: 전자거래명세서 출력 -->
+
+    <!-- 시작: modal: 전자거래명세서 다운로드 모달 -->
+    <el-modal
+      class="modal fade el-modal-default transaction-download-modal"
+      id="el-modal-estimate-download"
+      tabindex="-1"
+      aria-hidden="true"
+      data-bs-keyboard="false"
+    >
+      <el-modal-dialog
+        class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+      >
+        <el-modal-content class="modal-content">
+          <el-modal-close-button>
+            <button type="button" data-bs-dismiss="modal" aria-label="닫기">
+              <el-icon class="h32-closed natural-0"></el-icon>
+            </button>
+          </el-modal-close-button>
+
+          <el-modal-header class="modal-header"> </el-modal-header>
+
+          <el-modal-body class="modal-body">
+            <el-modal-estimate-document>
+              <h2 class="typo-heading-md estimate-document-title">
+                전자거래명세서
+              </h2>
+
+              <el-transaction-download-top class="typo-label-lg">
+                <dl>
+                  <dt>발급번호</dt>
+                  <dd>DFKWDKJFWLF3573224357354_1</dd>
+                </dl>
+                <dl>
+                  <dt>주문번호</dt>
+                  <dd>2025121845436857.351</dd>
+                </dl>
+              </el-transaction-download-top>
+
+              <el-estimate-document-info>
+                <table class="table align-middle">
+                  <colgroup>
+                    <col class="col-th" />
+                    <col class="col-td" />
+                    <col class="col-th" />
+                    <col class="col-td" />
+                    <col class="col-th" />
+                    <col class="col-auto" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col" colspan="4">공급자</th>
+                      <th scope="col" colspan="2">공급받는자</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">사업자번호</th>
+                      <td colspan="3">104-86-33511</td>
+                      <th scope="row">사업자번호</th>
+                      <td>141-12-12311</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">상호</th>
+                      <td>주식회사 즐거운</td>
+                      <th scope="row">대표</th>
+                      <td>임관웅</td>
+                      <th scope="row">상호</th>
+                      <td>티젠</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">주소</th>
+                      <td colspan="3">
+                        서울특별시 강남구 논현로 111길 23 (논현동, 즐거운 빌딩)
+                      </td>
+                      <th
+                        scope="row"
+                        rowspan="2"
+                        style="border-bottom: 1px solid var(--color-natural-90)"
+                        >담당자</th
+                      >
+                      <td rowspan="2">티젠</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">업태</th>
+                      <td>서비스</td>
+                      <th scope="row">업태</th>
+                      <td>전자상거래</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </el-estimate-document-info>
+
+              <el-modal-estimate-caution>
+                <el-marker-list class="weight-regular color-gray">
+                  <ul>
+                    <li>
+                      거래명세서는 결제 및 발송완료 되었음을 증명하는 용도로만
+                      활용 가능합니다.
+                    </li>
+                    <li>
+                      소득공제용 영수증 및 매입 세금계산서로 활용할 수 없습니다.
+                    </li>
+                  </ul>
+                </el-marker-list>
+                <el-marker-list class="weight-regular color-gray">
+                  <ul>
+                    <li>
+                      거래명세서는 세무상의 지출 증빙 효력이 없으므로 법적
+                      증빙자료로 사용할 수 없습니다.
+                    </li>
+                    <li>
+                      상기 내역은 조회 시점을 기준으로 결제 및 발송완료 된 결제
+                      금액에 대하여 발급됩니다.
+                    </li>
+                  </ul>
+                </el-marker-list>
+              </el-modal-estimate-caution>
+
+              <el-estimate-document-products>
+                <h3 class="typo-subtitle-sm">상세내역</h3>
+                <table class="table align-middle">
+                  <colgroup>
+                    <col style="width: 80px" />
+                    <col style="width: 142px" />
+                    <col style="width: auto" />
+                    <col style="width: 142px" />
+                    <col style="width: 142px" />
+                    <col style="width: 142px" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col">번호</th>
+                      <th scope="col">거래일자</th>
+                      <th scope="col">상품명</th>
+                      <th scope="col">공급가액</th>
+                      <th scope="col">수량</th>
+                      <th scope="col">거래금액</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>01</td>
+                      <td>2025.12.18</td>
+                      <td>
+                        [일이삼사오육칠팔구십일이삼사]
+                        일이삼사오육칠팔구십일이삼사오육칠
+                      </td>
+                      <td>9,999,999원</td>
+                      <td>9,999,999</td>
+                      <td>9,999,999,999원</td>
+                    </tr>
+                    <tr>
+                      <td>01</td>
+                      <td>2025.12.18</td>
+                      <td> [일이삼사오육칠팔구십일이삼사] 일이삼사오 </td>
+                      <td>9,999,999원</td>
+                      <td>9,999,999</td>
+                      <td>9,999,999,999원</td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <th scope="row" colspan="4">TOTAL</th>
+                      <td>9,999,999개</td>
+                      <td>9,999,999,999원</td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </el-estimate-document-products>
+
+              <el-modal-estimate-signature class="typo-subtitle-lg">
+                <el-modal-estimate-date>
+                  2025년 11월 11일
+                </el-modal-estimate-date>
+                <el-modal-estimate-name>
+                  주식회사 즐거운 대표이사 임관웅
+                  <img src="./images/ceo-stamp.png" alt="" />
+                </el-modal-estimate-name>
+              </el-modal-estimate-signature>
+            </el-modal-estimate-document>
+
+            <el-modal-estimate-cta>
+              <button type="button" class="button-h50-fill typo-body-lg">
+                다운로드
+              </button>
+            </el-modal-estimate-cta>
+          </el-modal-body>
+        </el-modal-content>
+      </el-modal-dialog>
+    </el-modal>
+    <!-- 종료: modal: 전자거래명세서 다운로드 모달 -->
 
     <!-- 시작: modal: 기업 회원 전환 신청 -->
     <el-modal
