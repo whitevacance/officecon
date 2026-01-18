@@ -1348,7 +1348,7 @@
             <h3 class="typo-subtitle-lg">전송결과 안내</h3>
           </el-modal-header>
 
-          <el-modal-body class="modal-body">
+          <el-modal-body class="modal-body scroll-shadow">
             <el-modal-send-result-guide class="typo-label-lg">
               <el-send-result-guide-box>
                 <h4 class="typo-body-sm">
@@ -1383,6 +1383,78 @@
                   통신할 수 없는 지역에 있는 경우, 휴대폰 데이터를 꺼 놓은 경우
                   등입니다.<br />
                   발송 후 25시간 이후에 최종결과를 확인하세요.
+                </div>
+              </el-send-result-guide-box>
+              <el-send-result-guide-box>
+                <h4 class="typo-body-sm">
+                  <el-icon class="etc-success natural-0"></el-icon>
+                  성공
+                </h4>
+              </el-send-result-guide-box>
+              <el-send-result-guide-box>
+                <h4 class="typo-body-sm">
+                  <el-icon class="etc-fail natural-0"></el-icon>
+                  실패
+                </h4>
+                <div>
+                  <el-send-fail-article>
+                    <el-send-fail-article-label class="typo-label-md">
+                      주요원인
+                    </el-send-fail-article-label>
+                    <el-send-fail-article-content>
+                      <strong style="padding-right: 6px">
+                        일부 실패인 경우 </strong
+                      >수신자 문제(없는 번호, 서비스일시정지, MMS미지원 단말기
+                      등)<br />
+                      <strong style="padding-right: 6px">
+                        전체 실패인 경우 </strong
+                      >발신번호 문제(번호도용문자차단서비스 가입 등), 문구에
+                      특수기호가 포함 등
+                    </el-send-fail-article-content>
+                  </el-send-fail-article>
+                  <el-send-fail-article>
+                    <el-send-fail-article-label class="typo-label-md">
+                      대응
+                    </el-send-fail-article-label>
+                    <el-send-fail-article-content>
+                      주문상세페이지(상품정보 클릭)에서
+                      <strong>수정</strong> 버튼 클릭 후 잘못된 주문 정보<br />
+                      (발신번호, 수신번호, 문구) 수정 후
+                      <strong>재발송</strong>
+                    </el-send-fail-article-content>
+                  </el-send-fail-article>
+                  <div
+                    style="
+                      padding-top: 9px;
+                      border-top: 1px solid var(--color-natural-80);
+                    "
+                  >
+                    실패 건은 유효기간 만료 3일전 캐쉬로 자동 환불됩니다.<br />
+                    빠른 환불을 원하시거나 자동 환불을 원치 않으시면 1:1 문의
+                    게시판으로 요청 바랍니다.
+                  </div>
+                </div>
+              </el-send-result-guide-box>
+              <el-send-result-guide-box>
+                <h4 class="typo-body-sm">
+                  <el-icon class="etc-wait natural-0"></el-icon>
+                  환불대기
+                </h4>
+                <div>
+                  환불요청 후 처리를 기다리는 상태입니다.<br />
+                  환불대기 상태에서는 환불요청 철회가 불가합니다.
+                </div>
+              </el-send-result-guide-box>
+              <el-send-result-guide-box>
+                <h4 class="typo-body-sm">
+                  <el-icon class="etc-refund natural-0"></el-icon>
+                  환불
+                </h4>
+                <div>
+                  발송 실패 건이 주문 취소처리 되면 실패 건에서 환불건으로
+                  전환됩니다.<br />
+                  환불은 캐쉬로 환불 처리됩니다. (단, 대기상태에서 전체 취소 시
+                  결제수단으로 환불)
                 </div>
               </el-send-result-guide-box>
             </el-modal-send-result-guide>

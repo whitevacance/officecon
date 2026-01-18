@@ -134,6 +134,9 @@ const initHandleModalScroll = () => {
       const targetModalBodyEl = modalEl.querySelector(
         'el-modal-body.modal-body'
       );
+      const targetModalBodyScrollShadowEl = modalEl.querySelector(
+        'el-modal-body.modal-body.scroll-shadow'
+      );
       const targetModalScrollableListContentEl = modalEl.querySelector(
         'el-modal-scrollable-list-content'
       );
@@ -146,6 +149,7 @@ const initHandleModalScroll = () => {
       let scrollHandlerForScrollableList = null;
       let isScrollListenerAttached = false;
       let isScrollListenerAttachedForScrollableList = false;
+      let isScrollListenerAttachedForBodyScrollShadow = false;
 
       // 스크롤 여부 확인 및 이벤트 리스너 등록 함수
       const checkScroll = () => {
@@ -172,6 +176,49 @@ const initHandleModalScroll = () => {
               targetModalBodyEl.removeEventListener('scroll', scrollHandler);
               isScrollListenerAttached = false;
               scrollHandler = null;
+            }
+          }
+        }
+
+        // 모달 body 스크롤 여부 확인
+        if (targetModalBodyScrollShadowEl) {
+          if (hasModalInnerScroll(targetModalBodyScrollShadowEl)) {
+            targetModalFooterEl.classList.add('shadow-top');
+
+            // 스크롤 이벤트 리스너가 아직 등록되지 않았을 때만 등록
+            if (!isScrollListenerAttachedForBodyScrollShadow) {
+              scrollHandlerForBodyScrollShadow = () => {
+                // 스크롤 이벤트 처리 로직
+                const isScrollBottom =
+                  targetModalBodyScrollShadowEl.scrollTop +
+                    targetModalBodyScrollShadowEl.clientHeight >=
+                  targetModalBodyScrollShadowEl.scrollHeight;
+
+                if (isScrollBottom) {
+                  targetModalFooterEl.classList.remove('shadow-top');
+                } else {
+                  targetModalFooterEl.classList.add('shadow-top');
+                }
+              };
+
+              targetModalBodyScrollShadowEl.addEventListener(
+                'scroll',
+                scrollHandlerForBodyScrollShadow
+              );
+              isScrollListenerAttachedForBodyScrollShadow = true;
+            }
+          } else {
+            // 스크롤이 없을 때는 이벤트 리스너 제거
+            if (
+              isScrollListenerAttachedForBodyScrollShadow &&
+              scrollHandlerForBodyScrollShadow
+            ) {
+              targetModalBodyScrollShadowEl.removeEventListener(
+                'scroll',
+                scrollHandlerForBodyScrollShadow
+              );
+              isScrollListenerAttachedForBodyScrollShadow = false;
+              scrollHandlerForBodyScrollShadow = null;
             }
           }
         }
