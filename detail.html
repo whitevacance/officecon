@@ -417,6 +417,8 @@
                   <el-product-info-cta>
                     <button
                       type="button"
+                      data-bs-toggle="modal"
+                      data-bs-target="#el-modal-estimate-print"
                       class="button-h60-square typo-body-lg"
                     >
                       견적서 출력
@@ -572,6 +574,115 @@
       </el-alert-dialog>
     </el-alert>
     <!-- 종료: alert -->
+
+    <!-- 시작: modal: 견적서 출력 -->
+    <el-modal
+      class="modal fade el-modal-default"
+      id="el-modal-estimate-print"
+      tabindex="-1"
+      aria-hidden="true"
+      data-bs-keyboard="false"
+    >
+      <el-modal-dialog
+        class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+      >
+        <el-modal-content class="modal-content">
+          <el-modal-close-button>
+            <button type="button" data-bs-dismiss="modal" aria-label="닫기">
+              <el-icon class="h32-closed natural-0"></el-icon>
+            </button>
+          </el-modal-close-button>
+
+          <el-modal-header class="modal-header">
+            <h3 class="typo-subtitle-lg center">견적서 출력</h3>
+          </el-modal-header>
+
+          <el-modal-body class="modal-body">
+            <el-modal-estimate-print>
+              <el-modal-form>
+                <el-form-row>
+                  <el-form-label class="typo-body-md">
+                    사업자번호
+                  </el-form-label>
+                  <el-form-content>
+                    <el-input>
+                      <input
+                        class="form-control custom-input"
+                        type="text"
+                        placeholder="사업자 번호를 입력해 주세요."
+                        value=""
+                      />
+                    </el-input>
+                  </el-form-content>
+                </el-form-row>
+                <el-form-row>
+                  <el-form-label class="typo-body-md">상호명</el-form-label>
+                  <el-form-content>
+                    <el-input class="is-invalid">
+                      <input
+                        class="form-control custom-input"
+                        type="text"
+                        placeholder="상호명을 입력해 주세요."
+                        value=""
+                      />
+                      <el-invalide-feedback class="typo-label-lg">
+                        필수 입력 항목입니다.
+                      </el-invalide-feedback>
+                    </el-input>
+                  </el-form-content>
+                </el-form-row>
+                <el-form-row>
+                  <el-form-label class="typo-body-md">담당자명</el-form-label>
+                  <el-form-content>
+                    <el-input class="is-invalid">
+                      <input
+                        class="form-control custom-input"
+                        type="text"
+                        placeholder="담당자명을 입력해 주세요."
+                        value=""
+                      />
+                      <el-invalide-feedback class="typo-label-lg">
+                        필수 입력 항목입니다.
+                      </el-invalide-feedback>
+                    </el-input>
+                  </el-form-content>
+                </el-form-row>
+                <el-form-row>
+                  <el-form-label class="typo-body-md">상품수량</el-form-label>
+                  <el-form-content>
+                    <el-input class="is-invalid">
+                      <input
+                        class="form-control custom-input"
+                        type="text"
+                        placeholder="상품수량을 입력해 주세요."
+                        value=""
+                      />
+                      <el-invalide-feedback class="typo-label-lg">
+                        필수 입력 항목입니다.
+                      </el-invalide-feedback>
+                    </el-input>
+                  </el-form-content>
+                </el-form-row>
+              </el-modal-form>
+            </el-modal-estimate-print>
+          </el-modal-body>
+
+          <el-modal-footer class="modal-footer">
+            <button
+              type="button"
+              data-bs-dismiss="modal"
+              class="button-h50-stroke typo-body-lg"
+            >
+              취소
+            </button>
+            <button type="button" class="button-h50-fill typo-body-lg">
+              다운로드
+            </button>
+          </el-modal-footer>
+        </el-modal-content>
+      </el-modal-dialog>
+    </el-modal>
+    <!-- 종료: modal: 견적서 출력 -->
 
     <!-- 공통js: common.js -->
     <script src="./js/pub-common.js" crossorigin="anonymous"></script>

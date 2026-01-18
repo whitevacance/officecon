@@ -2379,6 +2379,20 @@
                 <el-icon class="etc-circle-cart"></el-icon>
                 <el-icon class="etc-file-text"></el-icon>
                 <el-icon class="etc-megaphone"></el-icon>
+                <el-icon class="etc-user-check"></el-icon>
+                <el-icon class="etc-user-check natural-0"></el-icon>
+                <el-icon class="etc-pending"></el-icon>
+                <el-icon class="etc-pending natural-0"></el-icon>
+                <el-icon class="etc-progress"></el-icon>
+                <el-icon class="etc-progress natural-0"></el-icon>
+                <el-icon class="etc-success"></el-icon>
+                <el-icon class="etc-success natural-0"></el-icon>
+                <el-icon class="etc-fail"></el-icon>
+                <el-icon class="etc-fail natural-0"></el-icon>
+                <el-icon class="etc-wait"></el-icon>
+                <el-icon class="etc-wait natural-0"></el-icon>
+                <el-icon class="etc-refund"></el-icon>
+                <el-icon class="etc-refund natural-0"></el-icon>
               </el-examples-stack>
             </el-examples-article>
 
@@ -2593,11 +2607,20 @@
                 >
                   button-h43-round
                 </button>
+                <button
+                  type="button"
+                  class="button-h43-round typo-body-sm color-orange"
+                >
+                  button-h43-round
+                </button>
               </el-examples-stack>
 
               <el-examples-stack>
                 <button type="button" class="button-h34-cash typo-label-md">
                   캐쉬 충전
+                </button>
+                <button type="button" class="button-h34-square typo-label-md">
+                  button-h34-square
                 </button>
               </el-examples-stack>
             </el-examples-article>
@@ -2613,7 +2636,27 @@
                       [마이페이지 &gt; 인증 IP 관리]을 통해 확인하실 수
                       있습니다.
                     </li>
+                    <li class="color-red">
+                      휴대폰번호 변경이 어려운 경우 1:1문의 게시판으로 문의해
+                      주세요.
+                    </li>
                     <li>
+                      휴대폰번호 변경이 어려운 경우 1:1문의 게시판으로 문의해
+                      주세요.
+                    </li>
+                  </ul>
+                </el-marker-list>
+              </el-examples-stack>
+              <el-examples-stack>
+                <el-marker-list class="weight-regular color-gray">
+                  <ul>
+                    <li>
+                      인증 IP 등록은 최대 10개이며, 등록 후에는 추가 인증 없이
+                      간편하게 로그인 하실 수 있습니다.<br />
+                      [마이페이지 &gt; 인증 IP 관리]을 통해 확인하실 수
+                      있습니다.
+                    </li>
+                    <li class="color-red">
                       휴대폰번호 변경이 어려운 경우 1:1문의 게시판으로 문의해
                       주세요.
                     </li>
@@ -3162,6 +3205,39 @@
               </el-examples-stack>
               <el-examples-stack>
                 <div style="width: 300px">
+                  <el-input-file>
+                    <label>
+                      <input type="file" value="" />
+                      <el-input-file-button class="typo-label-md">
+                        <el-icon class="etc-doc"></el-icon>
+                        파일 선택
+                      </el-input-file-button>
+                      <el-input-file-name class="typo-body-sm">
+                        선택된 파일 없음
+                      </el-input-file-name>
+                    </label>
+                  </el-input-file>
+                </div>
+                <div style="width: 300px">
+                  <el-input-file class="is-invalid">
+                    <label>
+                      <input type="file" value="" />
+                      <el-input-file-button class="typo-label-md">
+                        <el-icon class="etc-doc"></el-icon>
+                        파일 선택
+                      </el-input-file-button>
+                      <el-input-file-name class="typo-body-sm">
+                        선택된 파일 없음
+                      </el-input-file-name>
+                    </label>
+                    <el-invalide-feedback class="typo-label-lg">
+                      필수 입력 항목입니다.
+                    </el-invalide-feedback>
+                  </el-input-file>
+                </div>
+              </el-examples-stack>
+              <el-examples-stack>
+                <div style="width: 300px">
                   높이 50px
                   <el-input class="input-h50">
                     <input
@@ -3215,6 +3291,63 @@
                       </el-input-addon>
                     </el-input>
                     <el-datepicker-layer></el-datepicker-layer>
+                  </el-datepicker>
+                </div>
+              </el-examples-stack>
+              <h5>datepicker - instance 개별 사용</h5>
+              <el-examples-stack>
+                <div style="width: 160px">
+                  <!-- [DEV] instance를 개별로 사용하기 위한 datepicker -->
+                  <el-datepicker id="datepicker-custom-1">
+                    <el-input
+                      class="tui-datepicker-input tui-datetime-input tui-has-focus"
+                    >
+                      <input
+                        class="form-control custom-input datepicker-input"
+                        type="text"
+                        placeholder="날짜 선택1"
+                        value=""
+                        aria-label="Date"
+                      />
+                      <el-input-addon>
+                        <button
+                          type="button"
+                          class="button-calendar"
+                          aria-label="calendar"
+                        >
+                          <el-icon class="h24-calendar natural-0"></el-icon>
+                        </button>
+                      </el-input-addon>
+                    </el-input>
+                    <!-- [DEV] instance를 개별로 사용하기 위한 layer-->
+                    <el-datepicker-layer-custom></el-datepicker-layer-custom>
+                  </el-datepicker>
+                </div>
+                <div style="width: 160px">
+                  <!-- [DEV] instance를 개별로 사용하기 위한 datepicker -->
+                  <el-datepicker id="datepicker-custom-2">
+                    <el-input
+                      class="tui-datepicker-input tui-datetime-input tui-has-focus"
+                    >
+                      <input
+                        class="form-control custom-input datepicker-input"
+                        type="text"
+                        placeholder="날짜 선택2"
+                        value=""
+                        aria-label="Date"
+                      />
+                      <el-input-addon>
+                        <button
+                          type="button"
+                          class="button-calendar"
+                          aria-label="calendar"
+                        >
+                          <el-icon class="h24-calendar natural-0"></el-icon>
+                        </button>
+                      </el-input-addon>
+                    </el-input>
+                    <!-- [DEV] instance를 개별로 사용하기 위한 layer-->
+                    <el-datepicker-layer-custom></el-datepicker-layer-custom>
                   </el-datepicker>
                 </div>
               </el-examples-stack>
@@ -4912,7 +5045,7 @@
             <h3 class="typo-subtitle-lg center">공통 모달 타이틀</h3>
           </el-modal-header>
 
-          <el-modal-body class="modal-body">
+          <el-modal-body class="modal-body scroll-shadow">
             <div style="width: 800px">
               모달 컨텐츠 영역 - 이 영역의 width에 따라 모달의 width가
               결정됩니다(좌우 padding은 32px).
@@ -5175,6 +5308,41 @@
         return modalLoaderTimer;
       };
       // 종료: loader handle 샘플
+
+      // 시작: datepicker - instance 개별 사용 샘플
+      const now = new Date();
+      const oneMonthAgo = new Date(now.setMonth(now.getMonth() - 1));
+
+      const datepickerCustomInstance_1 = createDatepickerInstance({
+        targetDatePickerEl: document.querySelector('#datepicker-custom-1'),
+        options: {
+          date: oneMonthAgo,
+          input: { format: 'yyyy.MM.dd' },
+        },
+      });
+
+      const datepickerCustomInstance_2 = createDatepickerInstance({
+        targetDatePickerEl: document.querySelector('#datepicker-custom-2'),
+        options: {
+          input: { format: 'yyyy.MM.dd' },
+        },
+      });
+
+      // 'change' event 바인딩
+      if (datepickerCustomInstance_1 && datepickerCustomInstance_2) {
+        datepickerCustomInstance_1.on('change', () => {
+          datepickerCustomInstance_2.setDate(
+            datepickerCustomInstance_1.getDate()
+          );
+        });
+
+        datepickerCustomInstance_2.on('change', () => {
+          datepickerCustomInstance_1.setDate(
+            datepickerCustomInstance_2.getDate()
+          );
+        });
+      }
+      // 종료: datepicker - instance 개별 사용 샘플
     </script>
   </body>
 </html>

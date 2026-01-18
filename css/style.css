@@ -830,6 +830,48 @@ el-icon {
     background-color: transparent;
     background-size: cover;
   }
+  &.etc-user-check {
+    width: 20px;
+    height: 22px;
+    -webkit-mask-image: url('../images/icon-etc-user-check.svg');
+    mask-image: url('../images/icon-etc-user-check.svg');
+  }
+  &.etc-pending {
+    width: 20px;
+    height: 20px;
+    -webkit-mask-image: url('../images/icon-etc-pending.svg');
+    mask-image: url('../images/icon-etc-pending.svg');
+  }
+  &.etc-progress {
+    width: 20px;
+    height: 20px;
+    -webkit-mask-image: url('../images/icon-etc-progress.svg');
+    mask-image: url('../images/icon-etc-progress.svg');
+  }
+  &.etc-success {
+    width: 20px;
+    height: 20px;
+    -webkit-mask-image: url('../images/icon-etc-success.svg');
+    mask-image: url('../images/icon-etc-success.svg');
+  }
+  &.etc-fail {
+    width: 20px;
+    height: 20px;
+    -webkit-mask-image: url('../images/icon-etc-fail.svg');
+    mask-image: url('../images/icon-etc-fail.svg');
+  }
+  &.etc-wait {
+    width: 20px;
+    height: 20px;
+    -webkit-mask-image: url('../images/icon-etc-wait.svg');
+    mask-image: url('../images/icon-etc-wait.svg');
+  }
+  &.etc-refund {
+    width: 20px;
+    height: 20px;
+    -webkit-mask-image: url('../images/icon-etc-refund.svg');
+    mask-image: url('../images/icon-etc-refund.svg');
+  }
 }
 /* 종료: 공통 > icon */
 
@@ -1305,6 +1347,31 @@ button {
     }
   }
 
+  &.button-h43-round {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    min-width: 0px;
+    height: 43px;
+    padding: 0 20px;
+    border-radius: 9999px;
+    border: 1px solid var(--color-natural-70);
+    background-color: var(--color-natural-100);
+    overflow: hidden;
+    color: var(--color-natural-40);
+
+    &.text-black {
+      color: var(--color-natural-0);
+    }
+
+    &.color-orange {
+      border: 1px solid var(--color-orange-officecon);
+      background-color: var(--color-orange-officecon);
+      color: var(--color-natural-100);
+    }
+  }
+
   &.button-h34-cash {
     display: inline-flex;
     align-items: center;
@@ -1319,19 +1386,19 @@ button {
     overflow: hidden;
   }
 
-  &.button-h43-round {
+  &.button-h34-square {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     font-weight: 600;
     min-width: 0px;
-    height: 43px;
-    padding: 0 20px;
-    border-radius: 9999px;
+    height: 34px;
+    padding: 0 5px;
+    border-radius: 4px;
     border: 1px solid var(--color-natural-70);
     background-color: var(--color-natural-100);
     overflow: hidden;
-    color: var(--color-natural-40);
+    color: var(--color-natural-30);
 
     &.text-black {
       color: var(--color-natural-0);
@@ -1571,6 +1638,80 @@ el-input {
   }
 }
 /* 종료: 공통 > input */
+
+/* 시작: 공통 > el-input-file */
+el-input-file {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+  position: relative;
+
+  input[type='file'] {
+    display: none;
+  }
+
+  label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    width: 100%;
+    height: 60px;
+    border-radius: 8px;
+    border: 1px solid var(--color-natural-95);
+    background-color: var(--color-natural-95);
+    color: var(--color-natural-0);
+    padding: 0 14px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: -0.42px;
+
+    el-input-file-button {
+      flex-grow: 0;
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      height: 34px;
+      padding: 0 11px;
+      border: 1px solid var(--color-natural-70);
+      background-color: var(--color-natural-100);
+      border-radius: 4px;
+      font-weight: 600 !important;
+      color: var(--color-natural-30);
+    }
+
+    el-input-file-name {
+      display: block;
+      width: 100%;
+      color: var(--color-natural-40);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      &.active {
+        color: var(--color-natural-20);
+      }
+    }
+  }
+
+  el-invalide-feedback {
+    display: none;
+    color: var(--color-red-40);
+    padding: 4px 0 0 4px;
+    font-weight: 600 !important;
+  }
+
+  &.is-invalid {
+    el-invalide-feedback {
+      display: block;
+    }
+  }
+}
+/* 종료: 공통 > el-input-file */
 
 /* 시작: 공통 > select */
 el-select {
@@ -2015,7 +2156,8 @@ el-modal.modal.el-modal-default {
   }
 }
 
-#el-modal-estimate-download {
+#el-modal-estimate-download,
+el-modal.el-modal-estimate-download {
   el-modal-content.modal-content {
     padding-bottom: 0 !important;
   }
@@ -2241,6 +2383,57 @@ el-modal.modal.el-modal-default {
   el-modal-footer.modal-footer {
     height: 186px;
     padding-top: 56px;
+  }
+
+  &.transaction-download-modal {
+    el-modal-body {
+      el-modal-estimate-document {
+        el-transaction-download-top {
+          display: flex;
+          align-items: center;
+          width: 100%;
+          padding: 12px 0;
+          border-top: 2px solid var(--color-natural-0);
+          color: var(--color-natural-20);
+
+          dl {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            width: 100%;
+            padding: 0 20px;
+
+            &:first-of-type {
+              border-right: 1px solid var(--color-natural-80);
+            }
+          }
+        }
+
+        el-modal-estimate-caution {
+          padding-top: 0;
+          border-bottom: 0;
+        }
+
+        el-estimate-document-products {
+          & > table.table {
+            thead th {
+              &:first-of-type {
+                text-align: center;
+              }
+            }
+
+            tbody {
+              td:first-of-type {
+                text-align: center;
+              }
+              td:nth-of-type(3) {
+                text-align: left;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
 
@@ -2550,6 +2743,17 @@ el-section-title {
   }
 }
 /* 종료: 공통 > el-section-title */
+
+/* 시작: 공통 > subtitle-text */
+.subtitle-text {
+  padding: 10px 0 9px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: -0.48px;
+  color: var(--color-natural-0);
+}
+/* 종료: 공통 > subtitle-text */
 
 /* 시작: 공통 > el-products-empty */
 el-products-empty {
@@ -3038,7 +3242,6 @@ el-datepicker {
   width: 100%;
   padding: 0;
   position: relative;
-  z-index: 10;
 
   .tui-datepicker-input {
     width: 100%;
@@ -3058,6 +3261,7 @@ el-datepicker {
     border: 0;
     border-radius: 8px;
     overflow: hidden;
+    z-index: 10;
 
     .tui-datepicker-type-date {
       width: 256px;
@@ -3257,6 +3461,34 @@ el-marker-list {
         position: absolute;
         left: 0;
         top: 9px;
+      }
+
+      &.color-red {
+        color: var(--color-red-40) !important;
+
+        &:before {
+          background-color: var(--color-red-40) !important;
+        }
+      }
+    }
+  }
+
+  &.weight-regular {
+    & > ul {
+      & > li {
+        font-weight: 400;
+      }
+    }
+  }
+
+  &.color-gray {
+    & > ul {
+      & > li {
+        color: var(--color-natural-20);
+
+        &:before {
+          background-color: var(--color-natural-20);
+        }
       }
     }
   }
@@ -3475,6 +3707,144 @@ el-board-list-empty {
   color: var(--color-natural-20) !important;
 }
 /* 종료: 공통 > 게시글 목록 검색결과 없음 */
+
+/* 시작: 공통 > 모달팝업 내 입력 폼 */
+el-modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+
+  el-form-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+
+    el-form-label {
+      align-self: flex-start;
+      flex-grow: 0;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      width: 110px;
+      height: 43px;
+      font-weight: 600 !important;
+      position: relative;
+      span {
+        color: var(--color-red-40);
+      }
+    }
+
+    el-form-content {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0px 8px;
+      width: calc(100% - 124px);
+    }
+
+    &.height-60 {
+      el-form-label {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 0;
+        height: 60px;
+      }
+
+      el-form-label-addon {
+        color: var(--color-natural-40);
+      }
+    }
+  }
+}
+/* 종료: 공통 > 모달팝업 내 입력 폼 */
+
+/* 시작: 공통 > 필터 박스 */
+el-filter-box {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  padding: 24px 56px;
+  background-color: var(--color-natural-95);
+  border-radius: 8px;
+
+  & > dl {
+    display: flex;
+    align-items: center;
+
+    & > dt {
+      flex-grow: 0;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      width: 84px;
+      height: 43px;
+      padding-right: 8px;
+      font-weight: 600 !important;
+    }
+
+    & > dd {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      width: 100%;
+      height: 43px;
+
+      & > el-select {
+        width: 120px;
+      }
+
+      el-date-tabs {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+
+        & > button {
+          font-weight: 400 !important;
+
+          &.active {
+            font-weight: 600 !important;
+            border-color: var(--color-natural-0) !important;
+          }
+        }
+      }
+
+      el-date-input {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+
+        el-datepicker {
+          width: 130px;
+        }
+      }
+
+      & > button.button-h43-square-fill {
+        width: 70px;
+        margin-left: -8px;
+      }
+    }
+  }
+}
+/* 종료: 공통 > 필터박스 */
+
+/* 시작: 공통 > el-infto-box */
+el-info-box {
+  display: block;
+  width: 100%;
+  padding: 16px 24px;
+  border-radius: 8px;
+  background-color: var(--color-blue-10);
+
+  &.bg-gray {
+    background-color: var(--color-natural-98);
+  }
+}
+/* 종료: 공통 > el-infto-box */
 
 /* 시작: 예시 (example) */
 el-examples-article {
@@ -6434,6 +6804,11 @@ el-product-description {
   & > article {
     color: var(--color-natural-30);
   }
+}
+
+el-modal-estimate-print {
+  display: block;
+  width: 400px;
 }
 /* 종료: 상품 상세 */
 
@@ -9445,8 +9820,11 @@ el-qna-create {
       }
 
       el-qna-agree-content-collapse {
-        display: block;
         width: 100%;
+
+        &.show {
+          display: block;
+        }
 
         el-qna-agree-content {
           display: flex;
@@ -10036,3 +10414,734 @@ el-faq {
   }
 }
 /* 종료: FAQ */
+
+/* 시작: 마이페이지 - 공통 */
+el-mypage {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+
+  el-section-title {
+    height: 80px;
+    align-items: center;
+  }
+
+  el-mypage-grade {
+    display: flex;
+    width: 100%;
+    min-height: 204px;
+    padding: 29px 8px 29px 32px;
+    border-radius: 24px;
+    background-color: var(--color-natural-95);
+
+    el-grade-info {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      width: 100%;
+      padding-right: 30px;
+
+      el-grade-info-content {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        width: 100%;
+        min-height: 100%;
+
+        el-grade-info-image {
+          flex-grow: 0;
+          flex-shrink: 0;
+          display: block;
+          width: 160px;
+          position: relative;
+
+          & > img {
+            display: block;
+            width: 160px;
+            height: auto;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+          }
+        }
+
+        el-grade-info-detail {
+          display: flex;
+          flex-direction: column;
+          gap: 14px;
+          width: 100%;
+
+          .current-grade {
+            padding-right: 2px;
+          }
+
+          el-grade-info-detail-content {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            width: 100%;
+            color: var(--color-natural-20);
+
+            strong {
+              color: var(--color-natural-0);
+            }
+          }
+        }
+      }
+
+      el-grade-info-addon {
+        flex-grow: 0;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        width: fit-content;
+        min-width: 119px;
+        height: 100%;
+        padding: 11px 0;
+      }
+    }
+
+    el-grade-cash {
+      flex-grow: 0;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 6px;
+      width: 364px;
+      padding: 19px 40px 10px 40px;
+      border-left: 1px solid var(--color-natural-70);
+
+      & > h4 {
+        font-weight: 700 !important;
+      }
+
+      el-grade-cash-content {
+        display: flex;
+        flex-direction: column;
+        gap: 1px;
+
+        el-grade-cash-date {
+          display: flex;
+          align-items: center;
+          gap: 4px;
+          color: var(--color-natural-20);
+
+          & > strong {
+            color: var(--color-natural-0);
+          }
+        }
+
+        el-grade-cash-amount {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
+
+          & > span {
+            display: flex;
+            align-items: baseline;
+            gap: 3px;
+          }
+
+          & > button {
+            flex-grow: 0;
+            flex-shrink: 0;
+          }
+        }
+      }
+    }
+
+    el-grade-etc {
+      flex-grow: 0;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 6px;
+      width: 276px;
+      padding: 19px 40px 12px 40px;
+      border-left: 1px solid var(--color-natural-70);
+
+      & > h4 {
+        font-weight: 700 !important;
+      }
+
+      el-grade-etc-content {
+        display: flex;
+        flex-direction: column;
+        gap: 1px;
+
+        el-grade-etc-amount {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
+
+          & > span {
+            display: flex;
+            align-items: baseline;
+            gap: 3px;
+          }
+
+          & > button {
+            flex-grow: 0;
+            flex-shrink: 0;
+          }
+        }
+      }
+    }
+
+    &.grade-family {
+      el-grade-info {
+        el-grade-info-content {
+          el-grade-info-detail {
+            .current-grade {
+              color: var(--color-orange-officecon);
+            }
+          }
+        }
+      }
+    }
+
+    &.grade-silver {
+      el-grade-info {
+        el-grade-info-content {
+          el-grade-info-detail {
+            .current-grade {
+              color: var(--color-level-silver);
+            }
+          }
+        }
+      }
+    }
+
+    &.grade-gold {
+      el-grade-info {
+        el-grade-info-content {
+          el-grade-info-detail {
+            .current-grade {
+              color: var(--color-level-gold);
+            }
+          }
+        }
+      }
+    }
+
+    &.grade-diamond {
+      el-grade-info {
+        el-grade-info-content {
+          el-grade-info-detail {
+            .current-grade {
+              color: var(--color-level-diamond);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  el-mypage-container {
+    display: flex;
+    gap: 50px;
+    width: 100%;
+
+    el-mypage-nav {
+      flex-grow: 0;
+      flex-shrink: 0;
+      width: 160px;
+
+      & > ul > li {
+        padding: 20px 0;
+        border-bottom: 1px solid var(--color-natural-90);
+
+        & > h4 {
+          padding: 12px 0;
+          font-weight: 700 !important;
+        }
+
+        & > ul > li {
+          padding: 8px 0;
+
+          & > a {
+            font-weight: 600 !important;
+            color: var(--color-natural-20) !important;
+          }
+        }
+      }
+    }
+
+    el-mypage-section {
+      display: block;
+      width: 100%;
+
+      el-mypage-content {
+        display: block;
+        width: 100%;
+        margin-top: 32px;
+      }
+    }
+  }
+
+  el-pagination {
+    padding-top: 80px;
+  }
+}
+
+#el-modal-company-member-conversion {
+  el-modal-body.modal-body {
+    max-height: 624px;
+
+    el-modal-company-member-conversion {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      width: 480px;
+    }
+
+    el-agrees {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      width: 100%;
+      padding-top: 24px;
+
+      el-agree-item {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding-bottom: 12px;
+        border-bottom: 1px solid var(--color-natural-80);
+
+        el-checkbox {
+          position: relative;
+          left: 16px;
+
+          label {
+            display: inline-flex;
+            gap: 4px;
+
+            span {
+              color: var(--color-natural-40);
+            }
+          }
+        }
+
+        button {
+          display: flex;
+          align-items: center;
+          gap: 4px;
+          color: var(--color-natural-40);
+          font-weight: 600 !important;
+
+          el-icon.h16-arrow-down {
+            display: none;
+          }
+
+          el-icon.h16-arrow-up {
+            display: inline-block;
+          }
+
+          &.collapsed {
+            el-icon.h16-arrow-down {
+              display: inline-block;
+            }
+
+            el-icon.h16-arrow-up {
+              display: none;
+            }
+          }
+        }
+
+        el-agree-content-collapse {
+          width: 100%;
+
+          &.show {
+            display: block;
+          }
+
+          el-agree-content {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            width: 100%;
+            padding: 24px;
+            margin-top: 12px;
+            margin-bottom: 12px;
+            border-radius: 8px;
+            background-color: var(--color-natural-95);
+
+            & > pre {
+              color: var(--color-natural-20);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+#el-modal-cash-charge {
+  el-modal-cash-charge {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 500px;
+
+    el-charge-amount {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      width: 100%;
+      padding: 32px 0;
+      background-color: var(--color-natural-95);
+      border-radius: 8px;
+
+      el-charge-amount-title {
+        color: var(--color-natural-10);
+      }
+
+      el-charge-amount-content {
+        display: flex;
+        align-items: flex-end;
+        gap: 10px;
+        width: 363px;
+        color: var(--color-natural-0);
+      }
+    }
+
+    el-charge-method {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      width: 100%;
+
+      .form-check-label {
+        span {
+          color: var(--color-orange-officecon);
+        }
+      }
+    }
+  }
+}
+
+el-table-util-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  min-height: 44px;
+  padding-bottom: 1px;
+  margin-bottom: 16px;
+
+  el-table-util-left {
+    flex-grow: 0;
+    flex-shrink: 0;
+    span {
+      font-weight: 700 !important;
+    }
+  }
+
+  el-table-util-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 6px;
+  }
+}
+
+el-mypage-table {
+  display: block;
+  width: 100%;
+
+  & > table {
+    margin: 0 !important;
+    border: 0 !important;
+
+    th,
+    td {
+      border-bottom: 1px solid var(--color-natural-80) !important;
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 18px;
+      letter-spacing: -0.39px;
+      color: var(--color-natural-20) !important;
+      vertical-align: middle;
+      height: 46px;
+      padding: 12px 16px !important;
+      text-align: center;
+
+      &.align-left {
+        text-align: left;
+      }
+    }
+
+    th {
+      font-weight: 600;
+      color: var(--color-natural-0) !important;
+    }
+
+    thead {
+      th {
+        border-top: 1px solid var(--color-natural-0) !important;
+      }
+    }
+  }
+}
+
+el-mypage-product {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  width: 331px;
+  white-space: normal;
+  position: relative;
+
+  el-item-thumbnail {
+    flex-grow: 0;
+    flex-shrink: 0;
+    aspect-ratio: 1 / 1;
+    display: block;
+    width: 120px;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+
+    .thumbnail-image {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    el-bg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: var(--color-opacity-black-3);
+    }
+  }
+
+  el-item-txt {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+
+    el-item-promotion {
+      color: var(--color-natural-40);
+    }
+
+    el-item-name {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      a {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        width: 100%;
+
+        el-brand {
+          font-weight: 700 !important;
+        }
+
+        el-item-name-txt {
+          color: var(--color-natural-0);
+        }
+      }
+    }
+  }
+}
+/* 종료: 마이페이지 - 공통 */
+
+/* 시작: 마이페이지 > 주문/발송 내역 */
+el-mypage-info-box {
+  display: block;
+  padding-top: 16px;
+
+  el-info-box {
+    el-marker-list {
+      ul {
+        li {
+          strong {
+            font-weight: 600 !important;
+          }
+
+          &.color-red {
+            &:before {
+              background-color: var(--color-natural-20) !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+el-modal-transaction-print {
+  display: block;
+  width: 400px;
+}
+
+el-mypage-order-list {
+  display: block;
+  width: 100%;
+  padding-top: 32px;
+
+  el-mypage-order-list-date-range {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 4px;
+
+    el-datepicker {
+      flex-grow: 0;
+      flex-shrink: 0;
+      width: 130px;
+    }
+  }
+
+  el-mypage-table.mypage-order-list-table {
+    .col-auto {
+      width: auto;
+    }
+    .col-90 {
+      width: 90px;
+    }
+    .col-110 {
+      width: 110px;
+    }
+
+    & > table {
+      th {
+        padding: 12px 9px !important;
+      }
+
+      td {
+        padding: 20px 9px !important;
+      }
+
+      .button-order-result {
+        width: 16px;
+        height: 16px;
+        padding: 0;
+        margin-left: 4px;
+        color: var(--color-natural-30);
+        border: 1px solid var(--color-natural-70);
+        background-color: var(--color-natural-90);
+        border-radius: 50%;
+        overflow: hidden;
+      }
+    }
+
+    el-mypage-table-send-result {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      width: 92px;
+      margin: 0 auto;
+
+      el-mypage-table-send-result-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+
+        & > div {
+          color: var(--color-natural-0);
+
+          strong {
+            font-weight: 600 !important;
+          }
+        }
+      }
+    }
+
+    el-mypage-table-action-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      width: 64px;
+      margin: 0 auto;
+    }
+  }
+}
+
+#el-modal-send-result-guide {
+  el-modal-scrollable-list-content {
+    display: block;
+    width: 100%;
+    max-height: 100%;
+    position: relative;
+    overflow: auto;
+    scrollbar-color: var(--color-opacity-black-30) transparent;
+    scrollbar-width: thin;
+    scrollbar-gutter: stable;
+  }
+
+  el-modal-send-result-guide {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 536px;
+
+    el-send-result-guide-box {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      width: 100%;
+      padding: 20px 24px;
+      background-color: var(--color-natural-95);
+      border-radius: 8px;
+      color: var(--color-natural-0);
+
+      & > h4 {
+        font-weight: 700 !important;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      el-send-fail-article {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        padding-top: 7px;
+
+        el-send-fail-article-label {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 6px 12px;
+          border-radius: 999px;
+          background-color: var(--color-natural-30);
+          color: var(--color-natural-100);
+          font-weight: 700 !important;
+        }
+
+        el-send-fail-article-content {
+          display: block;
+          width: 100%;
+          padding-bottom: 9px;
+        }
+      }
+    }
+  }
+}
+/* 종료: 마이페이지 > 주문/발송 내역 */

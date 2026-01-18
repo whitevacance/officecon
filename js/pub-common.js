@@ -134,6 +134,9 @@ const initHandleModalScroll = () => {
       const targetModalBodyEl = modalEl.querySelector(
         'el-modal-body.modal-body'
       );
+      const targetModalBodyScrollShadowEl = modalEl.querySelector(
+        'el-modal-body.modal-body.scroll-shadow'
+      );
       const targetModalScrollableListContentEl = modalEl.querySelector(
         'el-modal-scrollable-list-content'
       );
@@ -146,6 +149,7 @@ const initHandleModalScroll = () => {
       let scrollHandlerForScrollableList = null;
       let isScrollListenerAttached = false;
       let isScrollListenerAttachedForScrollableList = false;
+      let isScrollListenerAttachedForBodyScrollShadow = false;
 
       // 스크롤 여부 확인 및 이벤트 리스너 등록 함수
       const checkScroll = () => {
@@ -172,6 +176,49 @@ const initHandleModalScroll = () => {
               targetModalBodyEl.removeEventListener('scroll', scrollHandler);
               isScrollListenerAttached = false;
               scrollHandler = null;
+            }
+          }
+        }
+
+        // 모달 body 스크롤 여부 확인
+        if (targetModalBodyScrollShadowEl) {
+          if (hasModalInnerScroll(targetModalBodyScrollShadowEl)) {
+            targetModalFooterEl.classList.add('shadow-top');
+
+            // 스크롤 이벤트 리스너가 아직 등록되지 않았을 때만 등록
+            if (!isScrollListenerAttachedForBodyScrollShadow) {
+              scrollHandlerForBodyScrollShadow = () => {
+                // 스크롤 이벤트 처리 로직
+                const isScrollBottom =
+                  targetModalBodyScrollShadowEl.scrollTop +
+                    targetModalBodyScrollShadowEl.clientHeight >=
+                  targetModalBodyScrollShadowEl.scrollHeight;
+
+                if (isScrollBottom) {
+                  targetModalFooterEl.classList.remove('shadow-top');
+                } else {
+                  targetModalFooterEl.classList.add('shadow-top');
+                }
+              };
+
+              targetModalBodyScrollShadowEl.addEventListener(
+                'scroll',
+                scrollHandlerForBodyScrollShadow
+              );
+              isScrollListenerAttachedForBodyScrollShadow = true;
+            }
+          } else {
+            // 스크롤이 없을 때는 이벤트 리스너 제거
+            if (
+              isScrollListenerAttachedForBodyScrollShadow &&
+              scrollHandlerForBodyScrollShadow
+            ) {
+              targetModalBodyScrollShadowEl.removeEventListener(
+                'scroll',
+                scrollHandlerForBodyScrollShadow
+              );
+              isScrollListenerAttachedForBodyScrollShadow = false;
+              scrollHandlerForBodyScrollShadow = null;
             }
           }
         }
@@ -1374,6 +1421,50 @@ if (window !== undefined) {
 initDatePicker();
 // 종료: date picker
 
+// 시작: date picker - instance 생성 함수
+let createDatepickerInstance;
+if (!createDatepickerInstance) {
+  createDatepickerInstance = ({ targetDatePickerEl, options }) => {
+    if (targetDatePickerEl && tui?.DatePicker) {
+      const targetInputEl =
+        targetDatePickerEl.querySelector('.datepicker-input');
+      const targetButtonEl =
+        targetDatePickerEl.querySelector('.button-calendar');
+      const targetLayerEl = targetDatePickerEl.querySelector(
+        'el-datepicker-layer-custom'
+      );
+
+      if (options && targetInputEl && targetButtonEl && targetLayerEl) {
+        const { input, ...restOptions } = options;
+        const datepicker = new tui.DatePicker(targetLayerEl, {
+          input: {
+            element: targetInputEl,
+            ...input,
+          },
+          ...restOptions,
+        });
+
+        targetButtonEl.addEventListener('click', () => {
+          targetInputEl.focus();
+          datepicker.open();
+        });
+
+        return datepicker;
+      }
+
+      return null;
+    }
+
+    return null;
+  };
+}
+
+// 전역 함수로 등록
+if (window !== undefined) {
+  window.createDatepickerInstance = createDatepickerInstance;
+}
+// 종료: date picker - instance 생성 함수
+
 // 시작: 탭 el-tabs
 let tabsInitialized = false;
 const initTabs = () => {
@@ -1858,6 +1949,47 @@ if (window !== undefined) {
 initFaqTab();
 // 종료: FAQ > 탭 처리
 
+// 시작: 기간 선택 탭 처리
+let dateTabInitialized = false;
+const initDateTab = () => {
+  // 이미 초기화된 경우 건너뛰기
+  if (dateTabInitialized) {
+    return;
+  }
+
+  if (document?.body) {
+    document.body.addEventListener('click', (e) => {
+      const closeButtonEl = e.target.closest('el-date-tabs button');
+
+      if (closeButtonEl) {
+        if (!closeButtonEl.classList.contains('active')) {
+          const parentEl = closeButtonEl.closest('el-date-tabs');
+
+          if (parentEl) {
+            [...parentEl.querySelectorAll('button')].forEach((button) => {
+              if (button.classList.contains('active')) {
+                button.classList.remove('active');
+              }
+            });
+          }
+          closeButtonEl.classList.add('active');
+        }
+      }
+    });
+
+    // 초기화 완료 전환
+    dateTabInitialized = true;
+  }
+};
+
+// 전역 함수로 등록
+if (window !== undefined) {
+  window.initDateTab = initDateTab;
+}
+
+initDateTab();
+// 종료: 기간 선택 탭 처리
+
 // 시작: 공통 > custom select
 let customSelectInitialized = false;
 const initCustomSelect = () => {
@@ -1917,3 +2049,50 @@ if (window !== undefined) {
 
 initCustomSelect();
 // 종료: 공통 > custom select
+
+// 시작: 공통 > el-input-file
+let inputFileInitialized = false;
+const initInputFile = () => {
+  // 이미 초기화된 경우 건너뛰기
+  if (inputFileInitialized) {
+    return;
+  }
+
+  if (document?.body) {
+    // input file change 이벤트 처리
+    document.body.addEventListener('change', (e) => {
+      if (e.target.type === 'file') {
+        const targetInputEl = e.target;
+        const targetLabelEl = targetInputEl.closest('el-input-file label');
+
+        if (targetLabelEl) {
+          const fileNameEl = targetLabelEl.querySelector('el-input-file-name');
+
+          if (fileNameEl) {
+            // 선택된 파일이 있는지 확인
+            if (targetInputEl.files && targetInputEl.files.length > 0) {
+              const fileName = targetInputEl.files[0].name;
+              fileNameEl.textContent = fileName;
+              fileNameEl.classList.add('active');
+            } else {
+              // 파일이 없을 때
+              fileNameEl.textContent = '선택된 파일 없음';
+              fileNameEl.classList.remove('active');
+            }
+          }
+        }
+      }
+    });
+
+    // 초기화 완료 전환
+    inputFileInitialized = true;
+  }
+};
+
+// 전역 함수로 등록
+if (window !== undefined) {
+  window.initInputFile = initInputFile;
+}
+
+initInputFile();
+// 종료: 공통 > el-input-file
