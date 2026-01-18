@@ -3290,7 +3290,7 @@
                         type="text"
                         placeholder="날짜 선택1"
                         value=""
-                        aria-label="Date-Time"
+                        aria-label="Date"
                       />
                       <el-input-addon>
                         <button
@@ -3317,7 +3317,7 @@
                         type="text"
                         placeholder="날짜 선택2"
                         value=""
-                        aria-label="Date-Time"
+                        aria-label="Date"
                       />
                       <el-input-addon>
                         <button
@@ -5293,9 +5293,13 @@
       // 종료: loader handle 샘플
 
       // 시작: datepicker - instance 개별 사용 샘플
+      const now = new Date();
+      const oneMonthAgo = new Date(now.setMonth(now.getMonth() - 1));
+
       const datepickerCustomInstance_1 = createDatepickerInstance({
         targetDatePickerEl: document.querySelector('#datepicker-custom-1'),
         options: {
+          date: oneMonthAgo,
           input: { format: 'yyyy.MM.dd' },
         },
       });

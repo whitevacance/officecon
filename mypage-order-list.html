@@ -568,35 +568,99 @@
                             <button
                               type="button"
                               class="text-black button-h43-square typo-body-sm"
+                              onclick="datepickerInstanceStartDate_1.setDate(new Date());"
                             >
                               오늘
                             </button>
                             <button
                               type="button"
                               class="text-black button-h43-square typo-body-sm"
+                              onclick="datepickerInstanceStartDate_1.setDate(threeDaysAgo);"
                             >
                               3일
                             </button>
                             <button
                               type="button"
                               class="text-black button-h43-square typo-body-sm"
+                              onclick="datepickerInstanceStartDate_1.setDate(oneWeekAgo);"
                             >
                               1주일
                             </button>
                             <button
                               type="button"
                               class="text-black button-h43-square typo-body-sm active"
+                              onclick="datepickerInstanceStartDate_1.setDate(oneMonthAgo);"
                             >
                               1개월
                             </button>
                             <button
                               type="button"
                               class="text-black button-h43-square typo-body-sm"
+                              onclick="datepickerInstanceStartDate_1.setDate(threeMonthsAgo);"
                             >
                               3개월
                             </button>
                           </el-date-tabs>
-                          <el-date-input>asdf</el-date-input>
+
+                          <el-date-input class="typo-body-sm">
+                            <!-- [DEV] instance를 개별로 사용하기 위한 datepicker -->
+                            <el-datepicker id="datepicker-start-1">
+                              <el-input
+                                class="tui-datepicker-input tui-datetime-input tui-has-focus"
+                              >
+                                <input
+                                  class="form-control custom-input datepicker-input"
+                                  type="text"
+                                  placeholder="시작 날짜"
+                                  value=""
+                                  aria-label="Date"
+                                />
+                                <el-input-addon>
+                                  <button
+                                    type="button"
+                                    class="button-calendar"
+                                    aria-label="calendar"
+                                  >
+                                    <el-icon
+                                      class="h24-calendar natural-0"
+                                    ></el-icon>
+                                  </button>
+                                </el-input-addon>
+                              </el-input>
+                              <!-- [DEV] instance를 개별로 사용하기 위한 layer-->
+                              <el-datepicker-layer-custom></el-datepicker-layer-custom>
+                            </el-datepicker>
+                            ~
+
+                            <!-- [DEV] instance를 개별로 사용하기 위한 datepicker -->
+                            <el-datepicker id="datepicker-end-1">
+                              <el-input
+                                class="tui-datepicker-input tui-datetime-input tui-has-focus"
+                              >
+                                <input
+                                  class="form-control custom-input datepicker-input"
+                                  type="text"
+                                  placeholder="종료 날짜"
+                                  value=""
+                                  aria-label="Date"
+                                />
+                                <el-input-addon>
+                                  <button
+                                    type="button"
+                                    class="button-calendar"
+                                    aria-label="calendar"
+                                  >
+                                    <el-icon
+                                      class="h24-calendar natural-0"
+                                    ></el-icon>
+                                  </button>
+                                </el-input-addon>
+                              </el-input>
+                              <!-- [DEV] instance를 개별로 사용하기 위한 layer-->
+                              <el-datepicker-layer-custom></el-datepicker-layer-custom>
+                            </el-datepicker>
+                          </el-date-input>
+
                           <button
                             type="button"
                             class="button-h43-square-fill typo-body-sm"
@@ -1194,5 +1258,44 @@
 
     <!-- [DEV] 웹 컴포넌트js: 개발 시 삭제해 주세요 -->
     <script src="./js/web-components.js" crossorigin="anonymous"></script>
+
+    <script>
+      // 시작: datepicker - 필터 기간 선택
+      const now = new Date();
+      const threeDaysAgo = new Date(now.setDate(now.getDate() - 3));
+      const oneWeekAgo = new Date(now.setDate(now.getDate() - 7));
+      const oneMonthAgo = new Date(now.setMonth(now.getMonth() - 1));
+      const threeMonthsAgo = new Date(now.setMonth(now.getMonth() - 3));
+
+      const elDateTabButtons = document.querySelectorAll('el-date-tabs button');
+
+      const datepickerInstanceStartDate_1 = createDatepickerInstance({
+        targetDatePickerEl: document.querySelector('#datepicker-start-1'),
+        options: {
+          date: oneMonthAgo,
+          input: { format: 'yyyy.MM.dd' },
+        },
+      });
+
+      const datepickerInstanceStartDate_2 = createDatepickerInstance({
+        targetDatePickerEl: document.querySelector('#datepicker-start-2'),
+        options: {
+          date: oneMonthAgo,
+          input: { format: 'yyyy.MM.dd' },
+        },
+      });
+
+      // event 바인딩
+      if (datepickerInstanceStartDate_1) {
+        datepickerInstanceStartDate_1.on('change', () => {
+          if (datepickerInstanceStartDate_1.isOpened()) {
+            elDateTabButtons.forEach((button) => {
+              button.classList.remove('active');
+            });
+          }
+        });
+      }
+      // 종료: datepicker - 필터 기간 선택
+    </script>
   </body>
 </html>

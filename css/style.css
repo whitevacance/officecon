@@ -3704,6 +3704,10 @@ el-filter-box {
         display: flex;
         align-items: center;
         gap: 4px;
+
+        el-datepicker {
+          width: 130px;
+        }
       }
 
       & > button.button-h43-square-fill {
