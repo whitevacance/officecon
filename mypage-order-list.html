@@ -783,20 +783,41 @@
                       <el-mypage-table class="mypage-order-list-table">
                         <table class="table align-middle">
                           <colgroup>
-                            <col class="col-number" />
-                            <col class="col-title" />
-                            <col class="col-date" />
+                            <col class="col-90" />
+                            <col class="col-auto" />
+                            <col class="col-90" />
+                            <col class="col-90" />
+                            <col class="col-90" />
+                            <col class="col-90" />
+                            <col class="col-104" />
+                            <col class="col-90" />
                           </colgroup>
                           <thead>
                             <tr>
-                              <th scope="col">번호</th>
-                              <th scope="col" class="align-left">제목</th>
-                              <th scope="col">등록일</th>
+                              <th scope="col">주문일시</th>
+                              <th scope="col" class="align-left">
+                                주문 상세 정보
+                              </th>
+                              <th scope="col">발송방법</th>
+                              <th scope="col">주문금액</th>
+                              <th scope="col">예약 발송일시</th>
+                              <th scope="col">최초 발송일시</th>
+                              <th scope="col">
+                                전송결과<button
+                                  type="button"
+                                  data-bs-target="#el-modal-send-result-guide"
+                                  data-bs-toggle="modal"
+                                  class="button-order-result typo-label-sm"
+                                >
+                                  ?
+                                </button>
+                              </th>
+                              <th scope="col">발송결과/증빙</th>
                             </tr>
                           </thead>
                           <tbody>
                             <!-- <tr class="empty">
-                              <td colspan="3">
+                              <td colspan="8">
                                 <el-board-list-empty class="typo-label-lg">
                                   <el-icon class="etc-file-text"></el-icon>
                                   등록된 게시물이 없습니다.
@@ -804,9 +825,14 @@
                               </td>
                             </tr> -->
                             <tr>
-                              <td>111</td>
+                              <td>2025.02.15<br />10:20</td>
                               <td class="align-left">aasdfasdfsadf</td>
-                              <td>2025.12.01</td>
+                              <td>알림톡</td>
+                              <td>9,999,999</td>
+                              <td>2025.02.15<br />10:20</td>
+                              <td>2025.02.15<br />10:20</td>
+                              <td>asdfdsaf</td>
+                              <td>aa</td>
                             </tr>
                           </tbody>
                         </table>
@@ -1299,6 +1325,82 @@
       </el-modal-dialog>
     </el-modal>
     <!-- 종료: modal: 전자거래명세서 다운로드 모달 -->
+
+    <!-- 시작: modal: 전송결과 안내 모달 -->
+    <el-modal
+      class="modal fade el-modal-default"
+      id="el-modal-send-result-guide"
+      tabindex="-1"
+      aria-hidden="true"
+      data-bs-keyboard="false"
+    >
+      <el-modal-dialog
+        class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+      >
+        <el-modal-content class="modal-content">
+          <el-modal-close-button>
+            <button type="button" data-bs-dismiss="modal" aria-label="닫기">
+              <el-icon class="h32-closed natural-0"></el-icon>
+            </button>
+          </el-modal-close-button>
+
+          <el-modal-header class="modal-header">
+            <h3 class="typo-subtitle-lg">전송결과 안내</h3>
+          </el-modal-header>
+
+          <el-modal-body class="modal-body">
+            <el-modal-send-result-guide class="typo-label-lg">
+              <el-send-result-guide-box>
+                <h4 class="typo-body-sm">
+                  <el-icon class="etc-user-check natural-0"></el-icon>
+                  승인대기
+                </h4>
+                <div>
+                  주문 결제 후 관리자 승인을 기다리는 상태입니다. (업무시간
+                  1시간 이내 처리)
+                </div>
+              </el-send-result-guide-box>
+              <el-send-result-guide-box>
+                <h4 class="typo-body-sm">
+                  <el-icon class="etc-pending natural-0"></el-icon>
+                  발송대기
+                </h4>
+                <div>
+                  예약 발송 주문 또는 발송 지연(일시적으로 발송량이 몰리는 경우)
+                  상태입니다.
+                </div>
+              </el-send-result-guide-box>
+              <el-send-result-guide-box>
+                <h4 class="typo-body-sm">
+                  <el-icon class="etc-progress natural-0"></el-icon>
+                  발송중
+                </h4>
+                <div>
+                  쿠폰 및 메시지를 통신사로 전달 후 수신 결과를 기다리는
+                  중입니다.<br />
+                  발송 결과는 최대 25시간까지 소요될 수 있으며 대표적인 사유는
+                  휴대폰이 꺼져있는 경우,<br />
+                  통신할 수 없는 지역에 있는 경우, 휴대폰 데이터를 꺼 놓은 경우
+                  등입니다.<br />
+                  발송 후 25시간 이후에 최종결과를 확인하세요.
+                </div>
+              </el-send-result-guide-box>
+            </el-modal-send-result-guide>
+          </el-modal-body>
+
+          <el-modal-footer class="modal-footer">
+            <button
+              type="button"
+              data-bs-dismiss="modal"
+              class="button-h50-fill typo-body-lg"
+            >
+              확인
+            </button>
+          </el-modal-footer>
+        </el-modal-content>
+      </el-modal-dialog>
+    </el-modal>
+    <!-- 종료: modal: 전송결과 안내 모달 -->
 
     <!-- 시작: modal: 기업 회원 전환 신청 -->
     <el-modal

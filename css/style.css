@@ -830,6 +830,48 @@ el-icon {
     background-color: transparent;
     background-size: cover;
   }
+  &.etc-user-check {
+    width: 20px;
+    height: 22px;
+    -webkit-mask-image: url('../images/icon-etc-user-check.svg');
+    mask-image: url('../images/icon-etc-user-check.svg');
+  }
+  &.etc-pending {
+    width: 20px;
+    height: 20px;
+    -webkit-mask-image: url('../images/icon-etc-pending.svg');
+    mask-image: url('../images/icon-etc-pending.svg');
+  }
+  &.etc-progress {
+    width: 20px;
+    height: 20px;
+    -webkit-mask-image: url('../images/icon-etc-progress.svg');
+    mask-image: url('../images/icon-etc-progress.svg');
+  }
+  &.etc-success {
+    width: 20px;
+    height: 20px;
+    -webkit-mask-image: url('../images/icon-etc-success.svg');
+    mask-image: url('../images/icon-etc-success.svg');
+  }
+  &.etc-fail {
+    width: 20px;
+    height: 20px;
+    -webkit-mask-image: url('../images/icon-etc-fail.svg');
+    mask-image: url('../images/icon-etc-fail.svg');
+  }
+  &.etc-wait {
+    width: 20px;
+    height: 20px;
+    -webkit-mask-image: url('../images/icon-etc-wait.svg');
+    mask-image: url('../images/icon-etc-wait.svg');
+  }
+  &.etc-refund {
+    width: 20px;
+    height: 20px;
+    -webkit-mask-image: url('../images/icon-etc-refund.svg');
+    mask-image: url('../images/icon-etc-refund.svg');
+  }
 }
 /* 종료: 공통 > icon */
 
@@ -10801,7 +10843,7 @@ el-mypage-table {
 
   & > table {
     margin: 0 !important;
-    border-top: 1px solid var(--color-natural-0) !important;
+    border: 0 !important;
 
     th,
     td {
@@ -10824,6 +10866,12 @@ el-mypage-table {
     th {
       font-weight: 600;
       color: var(--color-natural-0) !important;
+    }
+
+    thead {
+      th {
+        border-top: 1px solid var(--color-natural-0) !important;
+      }
     }
   }
 }
@@ -10877,6 +10925,62 @@ el-mypage-order-list {
   }
 
   el-mypage-table.mypage-order-list-table {
+    .col-auto {
+      width: auto;
+    }
+    .col-90 {
+      width: 90px;
+    }
+    .col-104 {
+      width: 104px;
+    }
+
+    & > table {
+      th {
+        padding: 12px 9px !important;
+      }
+
+      td {
+        padding: 20px 9px !important;
+      }
+
+      .button-order-result {
+        width: 16px;
+        height: 16px;
+        padding: 0;
+        margin-left: 4px;
+        color: var(--color-natural-30);
+        border: 1px solid var(--color-natural-70);
+        background-color: var(--color-natural-90);
+        border-radius: 50%;
+        overflow: hidden;
+      }
+    }
+  }
+}
+
+el-modal-send-result-guide {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 536px;
+
+  el-send-result-guide-box {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    padding: 20px 24px;
+    background-color: var(--color-natural-95);
+    border-radius: 8px;
+    color: var(--color-natural-0);
+
+    & > h4 {
+      font-weight: 700 !important;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
   }
 }
 /* 종료: 마이페이지 > 주문/발송 내역 */
