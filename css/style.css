@@ -3556,6 +3556,60 @@ el-board-list-empty {
 }
 /* 종료: 공통 > 게시글 목록 검색결과 없음 */
 
+/* 시작: 공통 > 모달팝업 내 입력 폼 */
+el-modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+
+  el-form-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+
+    el-form-label {
+      align-self: flex-start;
+      flex-grow: 0;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      width: 110px;
+      height: 43px;
+      font-weight: 600 !important;
+      position: relative;
+      span {
+        color: var(--color-red-40);
+      }
+    }
+
+    el-form-content {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0px 8px;
+      width: calc(100% - 124px);
+    }
+
+    &.height-60 {
+      el-form-label {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 0;
+        height: 60px;
+      }
+
+      el-form-label-addon {
+        color: var(--color-natural-40);
+      }
+    }
+  }
+}
+/* 종료: 공통 > 모달팝업 내 입력 폼 */
+
 /* 시작: 예시 (example) */
 el-examples-article {
   display: flex;
@@ -6514,6 +6568,11 @@ el-product-description {
   & > article {
     color: var(--color-natural-30);
   }
+}
+
+el-modal-estimate-print {
+  display: block;
+  width: 400px;
 }
 /* 종료: 상품 상세 */
 
@@ -10416,58 +10475,6 @@ el-company-member-conversion {
             background-color: var(--color-natural-20);
           }
         }
-      }
-    }
-  }
-}
-
-el-mypage-modal-form {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  width: 100%;
-
-  el-form-row {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    width: 100%;
-
-    el-form-label {
-      align-self: flex-start;
-      flex-grow: 0;
-      flex-shrink: 0;
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      width: 110px;
-      height: 43px;
-      font-weight: 600 !important;
-      position: relative;
-      span {
-        color: var(--color-red-40);
-      }
-    }
-
-    el-form-content {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 0px 8px;
-      width: calc(100% - 124px);
-    }
-
-    &.height-60 {
-      el-form-label {
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
-        gap: 0;
-        height: 60px;
-      }
-
-      el-form-label-addon {
-        color: var(--color-natural-40);
       }
     }
   }
