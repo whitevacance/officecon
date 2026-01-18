@@ -2631,6 +2631,17 @@ el-section-title {
 }
 /* 종료: 공통 > el-section-title */
 
+/* 시작: 공통 > subtitle-text */
+.subtitle-text {
+  padding: 10px 0 9px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: -0.48px;
+  color: var(--color-natural-0);
+}
+/* 종료: 공통 > subtitle-text */
+
 /* 시작: 공통 > el-products-empty */
 el-products-empty {
   display: flex;
@@ -3337,6 +3348,34 @@ el-marker-list {
         position: absolute;
         left: 0;
         top: 9px;
+      }
+
+      &.color-red {
+        color: var(--color-red-40) !important;
+
+        &:before {
+          background-color: var(--color-red-40) !important;
+        }
+      }
+    }
+  }
+
+  &.weight-regular {
+    & > ul {
+      & > li {
+        font-weight: 400;
+      }
+    }
+  }
+
+  &.color-gray {
+    & > ul {
+      & > li {
+        color: var(--color-natural-20);
+
+        &:before {
+          background-color: var(--color-natural-20);
+        }
       }
     }
   }
@@ -10452,37 +10491,24 @@ el-mypage {
   }
 }
 
-el-company-member-conversion {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-  width: 480px;
-
-  el-info-box {
-    display: block;
-    width: 100%;
-    padding: 16px 24px;
-    border-radius: 8px;
-    background-color: var(--color-blue-10);
-
-    el-marker-list {
-      ul {
-        li {
-          font-weight: 400;
-          color: var(--color-natural-20);
-
-          &:before {
-            background-color: var(--color-natural-20);
-          }
-        }
-      }
-    }
-  }
-}
-
 #el-modal-company-member-conversion {
   el-modal-body.modal-body {
     max-height: 624px;
+
+    el-modal-company-member-conversion {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      width: 480px;
+
+      el-info-box {
+        display: block;
+        width: 100%;
+        padding: 16px 24px;
+        border-radius: 8px;
+        background-color: var(--color-blue-10);
+      }
+    }
 
     el-agrees {
       display: flex;
@@ -10564,6 +10590,58 @@ el-company-member-conversion {
           }
         }
       }
+    }
+  }
+}
+
+#el-modal-cash-charge {
+  el-modal-cash-charge {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 500px;
+
+    el-charge-amount {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      width: 100%;
+      padding: 32px 0;
+      background-color: var(--color-natural-95);
+      border-radius: 8px;
+
+      el-charge-amount-title {
+        color: var(--color-natural-10);
+      }
+
+      el-charge-amount-content {
+        display: flex;
+        align-items: flex-end;
+        gap: 10px;
+        width: 363px;
+        color: var(--color-natural-0);
+      }
+    }
+
+    el-charge-method {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      width: 100%;
+
+      .form-check-label {
+        span {
+          color: var(--color-orange-officecon);
+        }
+      }
+    }
+
+    el-charge-caution {
+      display: block;
+      padding: 16px 24px;
+      border-radius: 8px;
+      background-color: var(--color-blue-10);
     }
   }
 }
