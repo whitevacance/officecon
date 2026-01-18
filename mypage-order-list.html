@@ -568,35 +568,35 @@
                             <button
                               type="button"
                               class="text-black button-h43-square typo-body-sm"
-                              onclick="datepickerInstanceStartDate_1.setDate(new Date());"
+                              onclick="handleDateNow();"
                             >
                               오늘
                             </button>
                             <button
                               type="button"
                               class="text-black button-h43-square typo-body-sm"
-                              onclick="datepickerInstanceStartDate_1.setDate(threeDaysAgo);"
+                              onclick="handleDateThreeDaysAgo();"
                             >
                               3일
                             </button>
                             <button
                               type="button"
                               class="text-black button-h43-square typo-body-sm"
-                              onclick="datepickerInstanceStartDate_1.setDate(oneWeekAgo);"
+                              onclick="handleDateOneWeekAgo();"
                             >
                               1주일
                             </button>
                             <button
                               type="button"
                               class="text-black button-h43-square typo-body-sm active"
-                              onclick="datepickerInstanceStartDate_1.setDate(oneMonthAgo);"
+                              onclick="handleDateOneMonthAgo();"
                             >
                               1개월
                             </button>
                             <button
                               type="button"
                               class="text-black button-h43-square typo-body-sm"
-                              onclick="datepickerInstanceStartDate_1.setDate(threeMonthsAgo);"
+                              onclick="handleDateThreeMonthsAgo();"
                             >
                               3개월
                             </button>
@@ -1262,18 +1262,18 @@
     <script>
       // 시작: datepicker - 필터 기간 선택
       const now = new Date();
-      const threeDaysAgo = new Date(now.setDate(now.getDate() - 3));
-      const oneWeekAgo = new Date(now.setDate(now.getDate() - 7));
-      const oneMonthAgo = new Date(now.setMonth(now.getMonth() - 1));
-      const threeMonthsAgo = new Date(now.setMonth(now.getMonth() - 3));
-
+      const threeDaysAgo = new Date().setDate(new Date().getDate() - 3);
+      const oneWeekAgo = new Date().setDate(new Date().getDate() - 7);
+      const oneMonthAgo = new Date().setMonth(new Date().getMonth() - 1);
+      const threeMonthsAgo = new Date().setMonth(new Date().getMonth() - 3);
       const elDateTabButtons = document.querySelectorAll('el-date-tabs button');
+      const DATE_FORMAT = 'yyyy.MM.dd';
 
       const datepickerInstanceStartDate_1 = createDatepickerInstance({
         targetDatePickerEl: document.querySelector('#datepicker-start-1'),
         options: {
           date: oneMonthAgo,
-          input: { format: 'yyyy.MM.dd' },
+          input: { format: DATE_FORMAT },
         },
       });
 
@@ -1281,14 +1281,143 @@
         targetDatePickerEl: document.querySelector('#datepicker-start-2'),
         options: {
           date: oneMonthAgo,
-          input: { format: 'yyyy.MM.dd' },
+          input: { format: DATE_FORMAT },
         },
       });
+
+      const datepickerInstanceEndDate_1 = createDatepickerInstance({
+        targetDatePickerEl: document.querySelector('#datepicker-end-1'),
+        options: {
+          date: now,
+          input: { format: DATE_FORMAT },
+        },
+      });
+
+      const datepickerInstanceEndDate_2 = createDatepickerInstance({
+        targetDatePickerEl: document.querySelector('#datepicker-end-2'),
+        options: {
+          date: now,
+          input: { format: DATE_FORMAT },
+        },
+      });
+
+      const handleEndDateNow = () => {
+        if (datepickerInstanceEndDate_1) {
+          datepickerInstanceEndDate_1.setDate(new Date());
+        }
+        if (datepickerInstanceEndDate_2) {
+          datepickerInstanceEndDate_2.setDate(new Date());
+        }
+      };
+
+      const handleDateNow = () => {
+        if (datepickerInstanceStartDate_1) {
+          datepickerInstanceStartDate_1.setDate(new Date());
+        }
+        if (datepickerInstanceStartDate_2) {
+          datepickerInstanceStartDate_2.setDate(new Date());
+        }
+        handleEndDateNow();
+      };
+
+      const handleDateThreeDaysAgo = () => {
+        if (datepickerInstanceStartDate_1) {
+          datepickerInstanceStartDate_1.setDate(threeDaysAgo);
+        }
+        if (datepickerInstanceStartDate_2) {
+          datepickerInstanceStartDate_2.setDate(threeDaysAgo);
+        }
+        handleEndDateNow();
+      };
+
+      const handleDateOneWeekAgo = () => {
+        if (datepickerInstanceStartDate_1) {
+          datepickerInstanceStartDate_1.setDate(oneWeekAgo);
+        }
+        if (datepickerInstanceStartDate_2) {
+          datepickerInstanceStartDate_2.setDate(oneWeekAgo);
+        }
+        handleEndDateNow();
+      };
+
+      const handleDateOneMonthAgo = () => {
+        if (datepickerInstanceStartDate_1) {
+          datepickerInstanceStartDate_1.setDate(oneMonthAgo);
+        }
+        if (datepickerInstanceStartDate_2) {
+          datepickerInstanceStartDate_2.setDate(oneMonthAgo);
+        }
+        handleEndDateNow();
+      };
+
+      const handleDateThreeMonthsAgo = () => {
+        if (datepickerInstanceStartDate_1) {
+          datepickerInstanceStartDate_1.setDate(threeMonthsAgo);
+        }
+        if (datepickerInstanceStartDate_2) {
+          datepickerInstanceStartDate_2.setDate(threeMonthsAgo);
+        }
+        handleEndDateNow();
+      };
 
       // event 바인딩
       if (datepickerInstanceStartDate_1) {
         datepickerInstanceStartDate_1.on('change', () => {
           if (datepickerInstanceStartDate_1.isOpened()) {
+            if (datepickerInstanceStartDate_2) {
+              datepickerInstanceStartDate_2.setDate(
+                datepickerInstanceStartDate_1.getDate()
+              );
+            }
+
+            elDateTabButtons.forEach((button) => {
+              button.classList.remove('active');
+            });
+          }
+        });
+      }
+
+      if (datepickerInstanceStartDate_2) {
+        datepickerInstanceStartDate_2.on('change', () => {
+          if (datepickerInstanceStartDate_2.isOpened()) {
+            if (datepickerInstanceStartDate_1) {
+              datepickerInstanceStartDate_1.setDate(
+                datepickerInstanceStartDate_2.getDate()
+              );
+            }
+
+            elDateTabButtons.forEach((button) => {
+              button.classList.remove('active');
+            });
+          }
+        });
+      }
+
+      if (datepickerInstanceEndDate_1) {
+        datepickerInstanceEndDate_1.on('change', () => {
+          if (datepickerInstanceEndDate_1.isOpened()) {
+            if (datepickerInstanceEndDate_2) {
+              datepickerInstanceEndDate_2.setDate(
+                datepickerInstanceEndDate_1.getDate()
+              );
+            }
+
+            elDateTabButtons.forEach((button) => {
+              button.classList.remove('active');
+            });
+          }
+        });
+      }
+
+      if (datepickerInstanceEndDate_2) {
+        datepickerInstanceEndDate_2.on('change', () => {
+          if (datepickerInstanceEndDate_2.isOpened()) {
+            if (datepickerInstanceEndDate_1) {
+              datepickerInstanceEndDate_1.setDate(
+                datepickerInstanceEndDate_2.getDate()
+              );
+            }
+
             elDateTabButtons.forEach((button) => {
               button.classList.remove('active');
             });
