@@ -3129,7 +3129,6 @@ el-datepicker {
   width: 100%;
   padding: 0;
   position: relative;
-  z-index: 10;
 
   .tui-datepicker-input {
     width: 100%;
@@ -3149,6 +3148,7 @@ el-datepicker {
     border: 0;
     border-radius: 8px;
     overflow: hidden;
+    z-index: 10;
 
     .tui-datepicker-type-date {
       width: 256px;
@@ -3685,7 +3685,7 @@ el-filter-box {
         width: 120px;
       }
 
-      el-select-date {
+      el-date-tabs {
         display: flex;
         align-items: center;
         gap: 4px;
@@ -3698,6 +3698,17 @@ el-filter-box {
             border-color: var(--color-natural-0) !important;
           }
         }
+      }
+
+      el-date-input {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+
+      & > button.button-h43-square-fill {
+        width: 70px;
+        margin-left: -8px;
       }
     }
   }

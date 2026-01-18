@@ -3277,6 +3277,63 @@
                   </el-datepicker>
                 </div>
               </el-examples-stack>
+              <h5>datepicker - instance 개별 사용</h5>
+              <el-examples-stack>
+                <div style="width: 160px">
+                  <!-- [DEV] instance를 개별로 사용하기 위한 datepicker -->
+                  <el-datepicker id="datepicker-custom-1">
+                    <el-input
+                      class="tui-datepicker-input tui-datetime-input tui-has-focus"
+                    >
+                      <input
+                        class="form-control custom-input datepicker-input"
+                        type="text"
+                        placeholder="날짜 선택1"
+                        value=""
+                        aria-label="Date-Time"
+                      />
+                      <el-input-addon>
+                        <button
+                          type="button"
+                          class="button-calendar"
+                          aria-label="calendar"
+                        >
+                          <el-icon class="h24-calendar natural-0"></el-icon>
+                        </button>
+                      </el-input-addon>
+                    </el-input>
+                    <!-- [DEV] instance를 개별로 사용하기 위한 layer-->
+                    <el-datepicker-layer-custom></el-datepicker-layer-custom>
+                  </el-datepicker>
+                </div>
+                <div style="width: 160px">
+                  <!-- [DEV] instance를 개별로 사용하기 위한 datepicker -->
+                  <el-datepicker id="datepicker-custom-2">
+                    <el-input
+                      class="tui-datepicker-input tui-datetime-input tui-has-focus"
+                    >
+                      <input
+                        class="form-control custom-input datepicker-input"
+                        type="text"
+                        placeholder="날짜 선택2"
+                        value=""
+                        aria-label="Date-Time"
+                      />
+                      <el-input-addon>
+                        <button
+                          type="button"
+                          class="button-calendar"
+                          aria-label="calendar"
+                        >
+                          <el-icon class="h24-calendar natural-0"></el-icon>
+                        </button>
+                      </el-input-addon>
+                    </el-input>
+                    <!-- [DEV] instance를 개별로 사용하기 위한 layer-->
+                    <el-datepicker-layer-custom></el-datepicker-layer-custom>
+                  </el-datepicker>
+                </div>
+              </el-examples-stack>
               <h4>textarea</h4>
               <el-examples-stack>
                 <div style="width: 400px">
@@ -5234,6 +5291,37 @@
         return modalLoaderTimer;
       };
       // 종료: loader handle 샘플
+
+      // 시작: datepicker - instance 개별 사용 샘플
+      const datepickerCustomInstance_1 = createDatepickerInstance({
+        targetDatePickerEl: document.querySelector('#datepicker-custom-1'),
+        options: {
+          input: { format: 'yyyy.MM.dd' },
+        },
+      });
+
+      const datepickerCustomInstance_2 = createDatepickerInstance({
+        targetDatePickerEl: document.querySelector('#datepicker-custom-2'),
+        options: {
+          input: { format: 'yyyy.MM.dd' },
+        },
+      });
+
+      // 'change' event 바인딩
+      if (datepickerCustomInstance_1 && datepickerCustomInstance_2) {
+        datepickerCustomInstance_1.on('change', () => {
+          datepickerCustomInstance_2.setDate(
+            datepickerCustomInstance_1.getDate()
+          );
+        });
+
+        datepickerCustomInstance_2.on('change', () => {
+          datepickerCustomInstance_1.setDate(
+            datepickerCustomInstance_2.getDate()
+          );
+        });
+      }
+      // 종료: datepicker - instance 개별 사용 샘플
     </script>
   </body>
 </html>
