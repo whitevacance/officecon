@@ -11145,3 +11145,153 @@ el-mypage-order-list {
   }
 }
 /* 종료: 마이페이지 > 주문/발송 내역 */
+
+/* 시작: 마이페이지 > 주문 상세 */
+el-order-view-select {
+  display: block;
+  width: 100%;
+
+  & > el-select {
+    & > button.dropdown-toggle {
+      el-label {
+        font-weight: 600 !important;
+      }
+    }
+
+    .active-bold {
+      .dropdown-item {
+        &.active {
+          font-weight: 600 !important;
+        }
+      }
+    }
+  }
+}
+
+el-order-view-product {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  padding-top: 40px;
+
+  el-order-view-product-title {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+
+    & > span {
+      color: var(--color-natural-20);
+    }
+  }
+
+  el-order-view-product-content {
+    display: flex;
+    width: 100%;
+    padding: 24px 0;
+    border-top: 1px solid var(--color-natural-80);
+    border-bottom: 1px solid var(--color-natural-80);
+
+    el-order-view-product-link {
+      display: flex;
+      align-items: center;
+      width: 100%;
+    }
+
+    el-order-view-product-price {
+      flex-grow: 0;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      width: 247px;
+      border-left: 1px solid var(--color-natural-80);
+
+      el-discount-rate {
+        font-weight: 700 !important;
+        color: var(--color-red-40);
+      }
+
+      el-sale-price {
+        font-weight: 700 !important;
+      }
+
+      el-original-price {
+        color: var(--color-natural-30);
+      }
+    }
+
+    el-order-view-product-action {
+      flex-grow: 0;
+      flex-shrink: 0;
+      display: flex;
+      width: 228px;
+      align-items: center;
+      justify-content: center;
+      border-left: 1px solid var(--color-natural-80);
+
+      & > button {
+        width: 147px;
+      }
+    }
+  }
+}
+
+el-modal-send-message {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 536px;
+  padding: 24px;
+  background-color: var(--color-blue-10);
+  border-radius: 8px;
+
+  el-modal-send-message-top {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+
+    & > h3 {
+      font-weight: 700 !important;
+    }
+  }
+
+  el-modal-send-message-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    padding-top: 24px;
+    border-top: 1px solid var(--color-natural-70);
+
+    dl {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      width: 100%;
+
+      dt {
+        flex-grow: 0;
+        flex-shrink: 0;
+        width: 90px;
+        font-weight: 700 !important;
+        position: relative;
+
+        &:after {
+          content: '';
+          display: block;
+          width: 1px;
+          height: 14px;
+          background-color: var(--color-natural-60);
+          position: absolute;
+          right: 0;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+    }
+  }
+}
+/* 종료: 마이페이지 > 주문 상세 */
