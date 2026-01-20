@@ -61,3 +61,25 @@
 - 1:1문의 > 뷰: http://officecon-pub.s3-website.ap-northeast-2.amazonaws.com/qna-view.html
 - 1:1문의 > 작성: http://officecon-pub.s3-website.ap-northeast-2.amazonaws.com/qna-create.html
 - FAQ: http://officecon-pub.s3-website.ap-northeast-2.amazonaws.com/faq-list.html
+
+### 3-2차
+
+- 마이페이지 > 쇼핑내역 > 주문/발송 내역 > 리스트: http://officecon-pub.s3-website.ap-northeast-2.amazonaws.com/mypage-order-list.html
+- 마이페이지 > 쇼핑내역 > 주문/발송 내역 > 뷰:
+- 마이페이지 > 쇼핑내역 > 주문/발송 내역 > 수정:
+- 마이페이지 > 쇼핑내역 > 취소/환불 내역:
+- 마이페이지 > 캐시/리워드 내역 > 캐시 내역:
+- 마이페이지 > 캐시/리워드 내역 > 캐시 내역 > 캐쉬 충전(카드):
+- 마이페이지 > 캐시/리워드 내역 > 캐시 결제내역:
+- 마이페이지 > 캐시/리워드 내역 > 리워드 내역:
+- 마이페이지 > 발송관리 > 리스트:
+- 마이페이지 > 발송관리 > 작성(수정):
+- 마이페이지 > 서브회원 > 서브회원 관리 > 리스트:
+- 마이페이지 > 서브회원 > 서브회원 관리 > 등록:
+- 마이페이지 > 서브회원 > 서브회원 주문/발송 내역:
+- 마이페이지 > 나의 정보 > 인증 IP관리:
+- 마이페이지 > 나의 정보 > 회원정보 수정(기업회원):
+- 마이페이지 > 나의 정보 > 회원정보 수정(일반회원):
+- 마이페이지 > 나의 정보 > 회원 탈퇴:
+- 파트너링크: http://officecon-pub.s3-website.ap-northeast-2.amazonaws.com/partner.html
+- 서비스 이용약관:
