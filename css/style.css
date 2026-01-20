@@ -9679,6 +9679,14 @@ el-brand-search-result {
     & > li {
       flex-grow: 0;
       flex-shrink: 0;
+
+      el-brand-item {
+        a {
+          el-label {
+            line-height: 20px;
+          }
+        }
+      }
     }
   }
 }
@@ -9880,11 +9888,7 @@ el-qna-view {
     border-bottom: 1px solid var(--color-natural-70);
 
     & > h3 {
-      width: 1008px;
       display: block;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
     }
   }
 
@@ -10049,6 +10053,11 @@ el-qna-list {
         color: var(--color-orange-officecon);
       }
 
+      &.cell-category {
+        padding-left: 18px !important;
+        padding-right: 18px !important;
+      }
+
       &.cell-title {
         padding-right: 8px !important;
         & > div {
@@ -10145,11 +10154,7 @@ el-notice-list {
         color: var(--color-natural-0) !important;
 
         & > div {
-          width: 540px;
           display: block;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          white-space: nowrap;
         }
       }
 
@@ -10191,11 +10196,7 @@ el-notice-view {
       gap: 8px;
 
       & > span {
-        width: 810px;
         display: block;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
       }
     }
 
@@ -10367,11 +10368,7 @@ el-faq {
 
               el-faq-list-title-text {
                 text-align: left;
-                width: 670px;
                 display: block;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                white-space: nowrap;
               }
             }
           }
