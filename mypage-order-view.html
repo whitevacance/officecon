@@ -550,7 +550,10 @@
                           </table>
                         </el-mypage-table>
                       </el-order-view-sent-table-header>
-                      <el-order-view-sent-table-body>
+                      <el-order-view-sent-table-body
+                        id="el-order-view-sent-table-body"
+                        data-overlayscrollbars-initialize
+                      >
                         <el-mypage-table class="mypage-order-view-sent-table">
                           <table class="table align-middle">
                             <colgroup>
@@ -575,6 +578,19 @@
                             </tbody>
                           </table>
                         </el-mypage-table>
+                        <script>
+                          const { OverlayScrollbars } = OverlayScrollbarsGlobal;
+                          const overlayScrollbarsExample = OverlayScrollbars(
+                            document.querySelector(
+                              '#el-order-view-sent-table-body'
+                            ),
+                            {
+                              scrollbars: {
+                                clickScroll: true,
+                              },
+                            }
+                          );
+                        </script>
                       </el-order-view-sent-table-body>
                     </el-order-view-sent-list>
                   </el-mypage-content>
