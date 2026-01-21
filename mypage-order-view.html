@@ -944,16 +944,169 @@
                   <el-tabs-content>
                     <el-tab-panel role="tabpanel" class="active">
                       <el-modal-resend-success>
-                        <el-modal-resend-result-header>
-                          <el-header-checkbox>1</el-header-checkbox>
-                          <el-header-email>이메일 주소</el-header-email>
-                          <el-header-mobile>휴대폰번호</el-header-mobile>
-                          <el-header-count>재발송</el-header-count>
+                        <el-modal-resend-result-header class="typo-label-lg">
+                          <el-cell-checkbox>
+                            <el-checkbox>
+                              <input
+                                type="checkbox"
+                                class="form-check-input custom-checkbox"
+                                value=""
+                              />
+                            </el-checkbox>
+                          </el-cell-checkbox>
+                          <el-cell-email>이메일 주소</el-cell-email>
+                          <el-cell-mobile>휴대폰번호</el-cell-mobile>
+                          <el-cell-count>재발송</el-cell-count>
                         </el-modal-resend-result-header>
+
+                        <el-modal-resend-result-body class="typo-label-lg">
+                          <ul>
+                            <li>
+                              <el-cell-checkbox>
+                                <el-checkbox>
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input custom-checkbox"
+                                    value=""
+                                  />
+                                </el-checkbox>
+                              </el-cell-checkbox>
+                              <el-cell-email>
+                                ui-validation@mockserver.dev
+                              </el-cell-email>
+                              <el-cell-mobile>010-0000-0000</el-cell-mobile>
+                              <el-cell-count>99회</el-cell-count>
+                            </li>
+                            <li>
+                              <el-cell-checkbox>
+                                <el-checkbox>
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input custom-checkbox"
+                                    value=""
+                                  />
+                                </el-checkbox>
+                              </el-cell-checkbox>
+                              <el-cell-email>
+                                ui-validation@mockserver.dev
+                              </el-cell-email>
+                              <el-cell-mobile>010-0000-0000</el-cell-mobile>
+                              <el-cell-count>99회</el-cell-count>
+                            </li>
+                            <li>
+                              <el-cell-checkbox>
+                                <el-checkbox>
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input custom-checkbox"
+                                    value=""
+                                  />
+                                </el-checkbox>
+                              </el-cell-checkbox>
+                              <el-cell-email>
+                                ui-validation@mockserver.dev
+                              </el-cell-email>
+                              <el-cell-mobile>010-0000-0000</el-cell-mobile>
+                              <el-cell-count>99회</el-cell-count>
+                            </li>
+                            <li>
+                              <el-cell-checkbox>
+                                <el-checkbox>
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input custom-checkbox"
+                                    value=""
+                                  />
+                                </el-checkbox>
+                              </el-cell-checkbox>
+                              <el-cell-email>
+                                ui-validation@mockserver.dev
+                              </el-cell-email>
+                              <el-cell-mobile>010-0000-0000</el-cell-mobile>
+                              <el-cell-count>99회</el-cell-count>
+                            </li>
+                            <li>
+                              <el-cell-checkbox>
+                                <el-checkbox>
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input custom-checkbox"
+                                    value=""
+                                  />
+                                </el-checkbox>
+                              </el-cell-checkbox>
+                              <el-cell-email>
+                                ui-validation@mockserver.dev
+                              </el-cell-email>
+                              <el-cell-mobile>010-0000-0000</el-cell-mobile>
+                              <el-cell-count>99회</el-cell-count>
+                            </li>
+                            <li>
+                              <el-cell-checkbox>
+                                <el-checkbox>
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input custom-checkbox"
+                                    value=""
+                                  />
+                                </el-checkbox>
+                              </el-cell-checkbox>
+                              <el-cell-email>
+                                ui-validation@mockserver.dev
+                              </el-cell-email>
+                              <el-cell-mobile>010-0000-0000</el-cell-mobile>
+                              <el-cell-count>99회</el-cell-count>
+                            </li>
+                          </ul>
+                        </el-modal-resend-result-body>
+                        <el-modal-resend-current class="typo-label-lg">
+                          <div>선택된 수신자 <strong>2</strong>명</div>
+                          <button
+                            type="button"
+                            class="button-h34-square typo-label-md"
+                          >
+                            선택해제
+                          </button>
+                        </el-modal-resend-current>
                       </el-modal-resend-success>
                     </el-tab-panel>
                     <el-tab-panel role="tabpanel">
-                      <el-modal-resend-failed>222</el-modal-resend-failed>
+                      <el-modal-resend-failed>
+                        <el-modal-resend-result-header class="typo-label-lg">
+                          <el-cell-checkbox>
+                            <el-checkbox>
+                              <input
+                                type="checkbox"
+                                class="form-check-input custom-checkbox"
+                                value=""
+                              />
+                            </el-checkbox>
+                          </el-cell-checkbox>
+                          <el-cell-email>이메일 주소</el-cell-email>
+                          <el-cell-mobile>휴대폰번호</el-cell-mobile>
+                          <el-cell-count>재발송</el-cell-count>
+                        </el-modal-resend-result-header>
+
+                        <el-modal-resend-result-body class="typo-label-lg">
+                          <ul>
+                            <li>
+                              <el-board-list-empty class="typo-label-lg">
+                                <el-icon class="etc-file-text"></el-icon>
+                                정보가 없습니다.
+                              </el-board-list-empty>
+                            </li>
+                          </ul>
+                        </el-modal-resend-result-body>
+                        <el-modal-resend-current class="typo-label-lg">
+                          <div>선택된 수신자 <strong>0</strong>명</div>
+                          <button
+                            type="button"
+                            class="button-h34-square typo-label-md"
+                          >
+                            선택해제
+                          </button>
+                        </el-modal-resend-current>
+                      </el-modal-resend-failed>
                     </el-tab-panel>
                   </el-tabs-content>
                 </el-tabs>

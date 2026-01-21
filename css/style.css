@@ -11424,15 +11424,108 @@ el-modal-resend {
     width: 100%;
     padding-top: 24px;
 
+    el-cell-checkbox {
+      flex-grow: 0;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      padding: 0 16px;
+    }
+
+    el-cell-email {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      padding: 0 16px;
+    }
+
+    el-cell-mobile {
+      flex-grow: 0;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 124px;
+      padding: 0 16px;
+    }
+
+    el-cell-count {
+      flex-grow: 0;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 70px;
+      padding: 0 16px;
+    }
+
     el-modal-resend-result-header {
       display: flex;
       align-items: center;
-      gap: 8px;
       width: 100%;
       height: 43px;
+      padding: 0 8px;
       border-radius: 10px;
       border: 1px solid var(--color-natural-80);
       background-color: var(--color-natural-95);
+      color: var(--color-natural-30);
+      font-weight: 600 !important;
+      overflow: auto;
+      scrollbar-color: transparent transparent;
+      scrollbar-width: thin;
+      scrollbar-gutter: stable;
+    }
+
+    el-modal-resend-result-body {
+      display: block;
+      width: 100%;
+      max-height: 215px;
+      position: relative;
+      overflow: auto;
+      scrollbar-color: var(--color-opacity-black-30) transparent;
+      scrollbar-width: thin;
+      scrollbar-gutter: stable;
+
+      & > ul {
+        width: 100%;
+        padding: 0 8px;
+
+        & > li {
+          display: flex;
+          align-items: center;
+          width: 100%;
+          min-height: 43px;
+          padding: 10px 0;
+          border-bottom: 1px solid var(--color-natural-80);
+        }
+      }
+
+      el-board-list-empty {
+        height: 194px;
+      }
+    }
+
+    el-modal-resend-current {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      width: 100%;
+      padding: 8px 8px 0;
+      color: var(--color-natural-20);
+      overflow: auto;
+      scrollbar-color: transparent transparent;
+      scrollbar-width: thin;
+      scrollbar-gutter: stable;
+
+      strong {
+        color: var(--color-orange-officecon);
+      }
+
+      & > button {
+        width: 64px;
+      }
     }
 
     el-modal-resend-success {
