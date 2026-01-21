@@ -948,6 +948,7 @@
                           <el-cell-checkbox>
                             <el-checkbox>
                               <input
+                                id="successCheckboxAll"
                                 type="checkbox"
                                 class="form-check-input custom-checkbox"
                                 value=""
@@ -1062,6 +1063,7 @@
                         <el-modal-resend-current class="typo-label-lg">
                           <div>선택된 수신자 <strong>2</strong>명</div>
                           <button
+                            id="successUnCheckAllButton"
                             type="button"
                             class="button-h34-square typo-label-md"
                           >
@@ -1076,6 +1078,7 @@
                           <el-cell-checkbox>
                             <el-checkbox>
                               <input
+                                id="failedCheckboxAll"
                                 type="checkbox"
                                 class="form-check-input custom-checkbox"
                                 value=""
@@ -1100,6 +1103,7 @@
                         <el-modal-resend-current class="typo-label-lg">
                           <div>선택된 수신자 <strong>0</strong>명</div>
                           <button
+                            id="failedUnCheckAllButton"
                             type="button"
                             class="button-h34-square typo-label-md"
                           >
@@ -1580,5 +1584,147 @@
 
     <!-- [DEV] 웹 컴포넌트js: 개발 시 삭제해 주세요 -->
     <script src="./js/web-components.js" crossorigin="anonymous"></script>
+
+    <script>
+      // 시작: 이메일 재발송 성공 전체 선택 successCheckboxAll
+      const initSuccessCheckboxAll = () => {
+        const checkboxAll = document.getElementById('successCheckboxAll');
+        const uncheckAllButton = document.getElementById(
+          'successUnCheckAllButton'
+        );
+        const checkboxes = document.querySelectorAll(
+          'el-modal-resend-success el-modal-resend-result-body .form-check-input'
+        );
+
+        // 이미 초기화된 경우 건너뛰기
+        if (checkboxAll?.dataset?.initialized === 'true') {
+          return;
+        }
+
+        const handleCheckAll = (e) => {
+          if (e?.target?.checked) {
+            [...checkboxes].map((checkbox) => {
+              checkbox.checked = true;
+              return () => {};
+            });
+          } else {
+            [...checkboxes].map((checkbox) => {
+              checkbox.checked = false;
+              return () => {};
+            });
+          }
+        };
+
+        if (checkboxAll) {
+          checkboxAll.addEventListener('change', handleCheckAll);
+        }
+
+        const handleCheckbox = (e) => {
+          const unCheckedItem = [...checkboxes].find(
+            (checkbox) => checkbox.checked === false
+          );
+          if (unCheckedItem) {
+            checkboxAll.checked = false;
+          } else {
+            checkboxAll.checked = true;
+          }
+        };
+        [...checkboxes].map((checkbox) => {
+          checkbox.addEventListener('change', handleCheckbox);
+        });
+
+        const handleUnCheckAll = () => {
+          checkboxAll.checked = false;
+          [...checkboxes].map((checkbox) => {
+            checkbox.checked = false;
+            return () => {
+              checkbox.checked = false;
+            };
+          });
+        };
+
+        if (uncheckAllButton) {
+          uncheckAllButton.addEventListener('click', handleUnCheckAll);
+        }
+        // 초기화 완료 전환
+        checkboxAll.dataset.initialized = 'true';
+      };
+      // 전역 함수로 등록
+      if (window !== undefined) {
+        window.initSuccessCheckboxAll = initSuccessCheckboxAll;
+      }
+      initSuccessCheckboxAll();
+      // 종료: 이메일 재발송 성공 전체 선택 successCheckboxAll
+
+      // 시작: 이메일 재발송 실패 전체 선택 failedCheckboxAll
+      const initFailedCheckboxAll = () => {
+        const checkboxAll = document.getElementById('failedCheckboxAll');
+        const uncheckAllButton = document.getElementById(
+          'failedUnCheckAllButton'
+        );
+        const checkboxes = document.querySelectorAll(
+          'el-modal-resend-failed el-modal-resend-result-body .form-check-input'
+        );
+
+        // 이미 초기화된 경우 건너뛰기
+        if (checkboxAll?.dataset?.initialized === 'true') {
+          return;
+        }
+
+        const handleCheckAll = (e) => {
+          if (e?.target?.checked) {
+            [...checkboxes].map((checkbox) => {
+              checkbox.checked = true;
+              return () => {};
+            });
+          } else {
+            [...checkboxes].map((checkbox) => {
+              checkbox.checked = false;
+              return () => {};
+            });
+          }
+        };
+
+        if (checkboxAll) {
+          checkboxAll.addEventListener('change', handleCheckAll);
+        }
+
+        const handleCheckbox = (e) => {
+          const unCheckedItem = [...checkboxes].find(
+            (checkbox) => checkbox.checked === false
+          );
+          if (unCheckedItem) {
+            checkboxAll.checked = false;
+          } else {
+            checkboxAll.checked = true;
+          }
+        };
+        [...checkboxes].map((checkbox) => {
+          checkbox.addEventListener('change', handleCheckbox);
+        });
+
+        const handleUnCheckAll = () => {
+          checkboxAll.checked = false;
+          [...checkboxes].map((checkbox) => {
+            checkbox.checked = false;
+            return () => {
+              checkbox.checked = false;
+            };
+          });
+        };
+
+        if (uncheckAllButton) {
+          uncheckAllButton.addEventListener('click', handleUnCheckAll);
+        }
+        // 초기화 완료 전환
+        checkboxAll.dataset.initialized = 'true';
+      };
+      // 전역 함수로 등록
+      if (window !== undefined) {
+        window.initFailedCheckboxAll = initFailedCheckboxAll;
+      }
+      initFailedCheckboxAll();
+      // 종료: 이메일 재발송 실패 전체 선택 failedCheckboxAll
+    </script>
   </body>
 </html>
