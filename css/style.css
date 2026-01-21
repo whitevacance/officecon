@@ -3586,6 +3586,39 @@ el-tabs {
       }
     }
   }
+
+  &.border-rounded {
+    el-tabs-nav {
+      gap: 8px;
+      height: 50px;
+
+      &:before {
+        height: 1px;
+        background-color: var(--color-natural-0);
+        z-index: 1;
+      }
+
+      & > button {
+        background-color: var(--color-natural-95);
+        border-radius: 8px 8px 0 0;
+        border: 1px solid var(--color-natural-70);
+        border-bottom: 0px;
+        font-weight: 700 !important;
+        color: var(--color-natural-40);
+
+        &.active {
+          z-index: 2;
+          border-color: var(--color-natural-0);
+          background-color: var(--color-natural-100);
+          color: var(--color-natural-0);
+
+          &:before {
+            display: none;
+          }
+        }
+      }
+    }
+  }
 }
 /* 종료: 공통 > 탭메뉴 */
 
@@ -11317,16 +11350,102 @@ el-order-view-sent-list {
   el-order-view-sent-table-header {
     display: block;
     width: 100%;
+
+    .col-auto {
+      width: auto;
+    }
+    .col-82 {
+      width: 82px;
+    }
+    .col-90 {
+      width: 90px;
+    }
+    .col-114 {
+      width: 114px;
+    }
+    .col-118 {
+      width: 118px;
+    }
+    .col-132 {
+      width: 132px;
+    }
   }
 
   el-order-view-sent-table-body {
     display: block;
     width: 100%;
-    max-height: 400px;
+    max-height: 231px;
     overflow: auto;
     scrollbar-color: var(--color-opacity-black-30) transparent;
     scrollbar-width: thin;
     scrollbar-gutter: stable;
+
+    .col-auto {
+      width: auto;
+    }
+    .col-82 {
+      width: 82px;
+    }
+    .col-90 {
+      width: 90px;
+    }
+    .col-114 {
+      width: 114px;
+    }
+    .col-118 {
+      width: 118px;
+    }
+    .col-132 {
+      width: 132px;
+    }
+  }
+}
+
+el-modal-resend {
+  display: block;
+  width: 480px;
+
+  el-modal-resend-search {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-top: 16px;
+
+    & > button {
+      flex-grow: 0;
+      flex-shrink: 0;
+      padding: 0 !important;
+      width: 43px;
+    }
+  }
+
+  el-modal-resend-search-result {
+    display: block;
+    width: 100%;
+    padding-top: 24px;
+
+    el-modal-resend-result-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      width: 100%;
+      height: 43px;
+      border-radius: 10px;
+      border: 1px solid var(--color-natural-80);
+      background-color: var(--color-natural-95);
+    }
+
+    el-modal-resend-success {
+      display: block;
+      width: 100%;
+      padding-top: 16px;
+    }
+
+    el-modal-resend-failed {
+      display: block;
+      width: 100%;
+      padding-top: 16px;
+    }
   }
 }
 /* 종료: 마이페이지 > 주문 상세 */

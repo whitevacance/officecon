@@ -486,6 +486,8 @@
                         <el-table-util-right>
                           <button
                             type="button"
+                            data-bs-target="#el-modal-email-resend"
+                            data-bs-toggle="modal"
                             class="text-black button-h43-square typo-body-sm"
                           >
                             재발송
@@ -516,35 +518,24 @@
                           <table class="table align-middle">
                             <colgroup>
                               <col class="col-90" />
+                              <col class="col-118" />
                               <col class="col-auto" />
-                              <col class="col-90" />
-                              <col class="col-90" />
-                              <col class="col-90" />
-                              <col class="col-90" />
-                              <col class="col-110" />
-                              <col class="col-90" />
+                              <col class="col-114" />
+                              <col class="col-132" />
+                              <col class="col-132" />
+                              <col class="col-132" />
+                              <col class="col-82" />
                             </colgroup>
                             <thead>
                               <tr>
-                                <th scope="col">주문일시</th>
-                                <th scope="col" class="align-left">
-                                  주문 상세 정보
-                                </th>
-                                <th scope="col">발송방법</th>
-                                <th scope="col">주문금액</th>
-                                <th scope="col">예약 발송일시</th>
+                                <th scope="col">번호</th>
+                                <th scope="col">휴대폰번호</th>
+                                <th scope="col">이메일</th>
+                                <th scope="col">쿠폰번호</th>
                                 <th scope="col">최초 발송일시</th>
-                                <th scope="col">
-                                  전송결과<button
-                                    type="button"
-                                    data-bs-target="#el-modal-send-result-guide"
-                                    data-bs-toggle="modal"
-                                    class="button-order-result typo-label-sm"
-                                  >
-                                    ?
-                                  </button>
-                                </th>
-                                <th scope="col">발송결과/증빙</th>
+                                <th scope="col">최종 발송일시</th>
+                                <th scope="col">최초 수신 성공일시</th>
+                                <th scope="col">상태</th>
                               </tr>
                             </thead>
                           </table>
@@ -558,15 +549,75 @@
                           <table class="table align-middle">
                             <colgroup>
                               <col class="col-90" />
+                              <col class="col-118" />
                               <col class="col-auto" />
-                              <col class="col-90" />
-                              <col class="col-90" />
-                              <col class="col-90" />
-                              <col class="col-90" />
-                              <col class="col-110" />
-                              <col class="col-90" />
+                              <col class="col-114" />
+                              <col class="col-132" />
+                              <col class="col-132" />
+                              <col class="col-132" />
+                              <col class="col-82" />
                             </colgroup>
                             <tbody>
+                              <tr>
+                                <td>1</td>
+                                <td>010-9999-****</td>
+                                <td>chuch****@naver.com</td>
+                                <td>92259375****</td>
+                                <td>2025.06.26 06:55</td>
+                                <td>2025.06.26 06:55</td>
+                                <td>2025.06.26 06:55</td>
+                                <td>성공</td>
+                              </tr>
+                              <tr>
+                                <td>2</td>
+                                <td>010-9999-****</td>
+                                <td>chuch****@naver.com</td>
+                                <td>92259375****</td>
+                                <td>2025.06.26 06:55</td>
+                                <td>2025.06.26 06:55</td>
+                                <td>2025.06.26 06:55</td>
+                                <td>환불대기</td>
+                              </tr>
+                              <tr>
+                                <td>3</td>
+                                <td>010-9999-****</td>
+                                <td>chuch****@naver.com</td>
+                                <td>92259375****</td>
+                                <td>2025.06.26 06:55</td>
+                                <td>2025.06.26 06:55</td>
+                                <td>2025.06.26 06:55</td>
+                                <td>환불대기</td>
+                              </tr>
+                              <tr>
+                                <td>4</td>
+                                <td>010-9999-****</td>
+                                <td>chuch****@naver.com</td>
+                                <td>92259375****</td>
+                                <td>2025.06.26 06:55</td>
+                                <td>2025.06.26 06:55</td>
+                                <td>2025.06.26 06:55</td>
+                                <td>환불대기</td>
+                              </tr>
+                              <tr>
+                                <td>5</td>
+                                <td>010-9999-****</td>
+                                <td>chuch****@naver.com</td>
+                                <td>92259375****</td>
+                                <td>2025.06.26 06:55</td>
+                                <td>2025.06.26 06:55</td>
+                                <td>2025.06.26 06:55</td>
+                                <td>환불대기</td>
+                              </tr>
+                              <tr>
+                                <td>6</td>
+                                <td>010-9999-****</td>
+                                <td>chuch****@naver.com</td>
+                                <td>92259375****</td>
+                                <td>2025.06.26 06:55</td>
+                                <td>2025.06.26 06:55</td>
+                                <td>2025.06.26 06:55</td>
+                                <td>환불대기</td>
+                              </tr>
                               <tr class="empty">
                                 <td colspan="8">
                                   <el-board-list-empty class="typo-label-lg">
@@ -770,7 +821,7 @@
                 </el-radio>
               </el-charge-method>
 
-              <el-charge-caution>
+              <el-info-box>
                 <el-marker-list class="weight-regular color-gray">
                   <ul>
                     <li> 보유 캐쉬 한도는 100,000,000원 입니다. </li>
@@ -792,7 +843,7 @@
                     </li>
                   </ul>
                 </el-marker-list>
-              </el-charge-caution>
+              </el-info-box>
             </el-modal-cash-charge>
           </el-modal-body>
 
@@ -812,6 +863,137 @@
       </el-modal-dialog>
     </el-modal>
     <!-- 종료: modal: 캐쉬충전 -->
+
+    <!-- 시작: modal: 이메일 재발송 -->
+    <el-modal
+      class="modal fade el-modal-default"
+      id="el-modal-email-resend"
+      tabindex="-1"
+      aria-hidden="true"
+      data-bs-keyboard="false"
+    >
+      <el-modal-dialog
+        class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+      >
+        <el-modal-content class="modal-content">
+          <el-modal-close-button>
+            <button type="button" data-bs-dismiss="modal" aria-label="닫기">
+              <el-icon class="h32-closed natural-0"></el-icon>
+            </button>
+          </el-modal-close-button>
+
+          <el-modal-header class="modal-header">
+            <h3 class="typo-subtitle-lg center">이메일 재발송</h3>
+          </el-modal-header>
+
+          <el-modal-body class="modal-body">
+            <el-modal-resend>
+              <el-info-box>
+                <el-marker-list class="weight-regular color-gray">
+                  <ul>
+                    <li>이메일 재발송은 주소당 최대 3회까지 가능합니다.</li>
+                    <li>
+                      문자 재발송은 번호당 최대 3회까지 무료로 제공하며 최초
+                      1회는 기존타입 (MMS/LMS)으로, 이후 2회는 바코드가 없는
+                      단문(SMS)형태로 발송 됩니다.
+                    </li>
+                    <li>휴대폰번호가 존재하면 문자 재발송이 진행 됩니다.</li>
+                  </ul>
+                </el-marker-list>
+              </el-info-box>
+
+              <el-modal-resend-search>
+                <el-input>
+                  <input
+                    class="form-control custom-input"
+                    type="email"
+                    placeholder="이메일 주소 입력"
+                    value=""
+                  />
+                </el-input>
+                <el-input>
+                  <input
+                    class="form-control custom-input input-type-mobile"
+                    type="text"
+                    placeholder="휴대폰번호 입력"
+                    value=""
+                  />
+                </el-input>
+                <button
+                  type="button"
+                  class="text-black button-h43-square typo-body-sm"
+                >
+                  <el-icon class="h24-search natural-0"></el-icon>
+                </button>
+              </el-modal-resend-search>
+
+              <el-modal-resend-search-result>
+                <el-tabs class="border-rounded">
+                  <el-tabs-nav>
+                    <button
+                      type="button"
+                      role="tab"
+                      class="typo-body-sm active"
+                    >
+                      성공
+                    </button>
+                    <button type="button" role="tab" class="typo-body-sm">
+                      실패
+                    </button>
+                  </el-tabs-nav>
+                  <el-tabs-content>
+                    <el-tab-panel role="tabpanel" class="active">
+                      <el-modal-resend-success>
+                        <el-modal-resend-result-header>
+                          <el-header-checkbox>1</el-header-checkbox>
+                          <el-header-email>이메일 주소</el-header-email>
+                          <el-header-mobile>휴대폰번호</el-header-mobile>
+                          <el-header-count>재발송</el-header-count>
+                        </el-modal-resend-result-header>
+                      </el-modal-resend-success>
+                    </el-tab-panel>
+                    <el-tab-panel role="tabpanel">
+                      <el-modal-resend-failed>222</el-modal-resend-failed>
+                    </el-tab-panel>
+                  </el-tabs-content>
+                </el-tabs>
+              </el-modal-resend-search-result>
+
+              <!-- <el-charge-amount class="typo-body-sm">
+                <el-charge-amount-title>
+                  충전하실 금액을 입력해 주세요.
+                </el-charge-amount-title>
+                <el-charge-amount-content>
+                  <el-input>
+                    <input
+                      class="form-control custom-input"
+                      type="text"
+                      placeholder="충전하실 금액을 입력해 주세요."
+                      value=""
+                    />
+                  </el-input>
+                  원
+                </el-charge-amount-content>
+              </el-charge-amount> -->
+            </el-modal-resend>
+          </el-modal-body>
+
+          <el-modal-footer class="modal-footer">
+            <button
+              type="button"
+              data-bs-dismiss="modal"
+              class="button-h50-stroke typo-body-lg"
+            >
+              취소
+            </button>
+            <button type="button" class="button-h50-fill typo-body-lg">
+              재발송
+            </button>
+          </el-modal-footer>
+        </el-modal-content>
+      </el-modal-dialog>
+    </el-modal>
+    <!-- 종료: modal: 이메일 재발송 -->
 
     <!-- 시작: modal: 기업 회원 전환 신청 -->
     <el-modal
