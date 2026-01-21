@@ -42,6 +42,11 @@
     <link type="text/css" rel="stylesheet" href="./css/swiper.min.css" />
     <link type="text/css" rel="stylesheet" href="./css/tui-time-picker.css" />
     <link type="text/css" rel="stylesheet" href="./css/tui-date-picker.css" />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="./css/overlayscrollbars.min.css"
+    />
     <link type="text/css" rel="stylesheet" href="./css/style.css" />
     <script src="./js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script
@@ -50,6 +55,10 @@
     ></script>
     <script src="./js/tui-time-picker.js" crossorigin="anonymous"></script>
     <script src="./js/tui-date-picker.js" crossorigin="anonymous"></script>
+    <script
+      src="./js/overlayscrollbars.browser.es6.min.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
 
   <body>
@@ -468,6 +477,106 @@
                         </el-order-view-product-action>
                       </el-order-view-product-content>
                     </el-order-view-product>
+
+                    <el-order-view-sent-list>
+                      <el-table-util-bar>
+                        <el-table-util-left>
+                          <span class="typo-subtitle-sm">발송내역</span>
+                        </el-table-util-left>
+                        <el-table-util-right>
+                          <button
+                            type="button"
+                            class="text-black button-h43-square typo-body-sm"
+                          >
+                            재발송
+                          </button>
+                          <button
+                            type="button"
+                            class="text-black button-h43-square typo-body-sm"
+                          >
+                            전체 취소 요청
+                          </button>
+                          <button
+                            type="button"
+                            class="text-black button-h43-square typo-body-sm"
+                          >
+                            부분 취소 요청
+                          </button>
+                          <button
+                            type="button"
+                            class="text-black button-h43-square typo-body-sm"
+                          >
+                            수정
+                          </button>
+                        </el-table-util-right>
+                      </el-table-util-bar>
+
+                      <el-order-view-sent-table-header>
+                        <el-mypage-table class="mypage-order-view-sent-table">
+                          <table class="table align-middle">
+                            <colgroup>
+                              <col class="col-90" />
+                              <col class="col-auto" />
+                              <col class="col-90" />
+                              <col class="col-90" />
+                              <col class="col-90" />
+                              <col class="col-90" />
+                              <col class="col-110" />
+                              <col class="col-90" />
+                            </colgroup>
+                            <thead>
+                              <tr>
+                                <th scope="col">주문일시</th>
+                                <th scope="col" class="align-left">
+                                  주문 상세 정보
+                                </th>
+                                <th scope="col">발송방법</th>
+                                <th scope="col">주문금액</th>
+                                <th scope="col">예약 발송일시</th>
+                                <th scope="col">최초 발송일시</th>
+                                <th scope="col">
+                                  전송결과<button
+                                    type="button"
+                                    data-bs-target="#el-modal-send-result-guide"
+                                    data-bs-toggle="modal"
+                                    class="button-order-result typo-label-sm"
+                                  >
+                                    ?
+                                  </button>
+                                </th>
+                                <th scope="col">발송결과/증빙</th>
+                              </tr>
+                            </thead>
+                          </table>
+                        </el-mypage-table>
+                      </el-order-view-sent-table-header>
+                      <el-order-view-sent-table-body>
+                        <el-mypage-table class="mypage-order-view-sent-table">
+                          <table class="table align-middle">
+                            <colgroup>
+                              <col class="col-90" />
+                              <col class="col-auto" />
+                              <col class="col-90" />
+                              <col class="col-90" />
+                              <col class="col-90" />
+                              <col class="col-90" />
+                              <col class="col-110" />
+                              <col class="col-90" />
+                            </colgroup>
+                            <tbody>
+                              <tr class="empty">
+                                <td colspan="8">
+                                  <el-board-list-empty class="typo-label-lg">
+                                    <el-icon class="etc-file-text"></el-icon>
+                                    주문/발송 내역이 없습니다.
+                                  </el-board-list-empty>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </el-mypage-table>
+                      </el-order-view-sent-table-body>
+                    </el-order-view-sent-list>
                   </el-mypage-content>
                 </el-mypage-section>
               </el-mypage-container>

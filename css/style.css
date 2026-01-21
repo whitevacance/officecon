@@ -11291,4 +11291,25 @@ el-modal-send-message {
     }
   }
 }
+
+el-order-view-sent-list {
+  display: block;
+  width: 100%;
+  padding-top: 64px;
+
+  el-order-view-sent-table-header {
+    display: block;
+    width: 100%;
+  }
+
+  el-order-view-sent-table-body {
+    display: block;
+    width: 100%;
+    max-height: 200px;
+    overflow: auto;
+    scrollbar-color: var(--color-opacity-black-30) transparent;
+    scrollbar-width: thin;
+    scrollbar-gutter: stable;
+  }
+}
 /* 종료: 마이페이지 > 주문 상세 */
