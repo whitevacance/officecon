@@ -11461,6 +11461,22 @@ el-modal-resend {
       padding: 0 16px;
     }
 
+    &.sms-result {
+      el-cell-mobile {
+        flex-grow: 1;
+        flex-shrink: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 0 16px;
+      }
+
+      el-cell-count {
+        width: 130px;
+      }
+    }
+
     el-modal-resend-result-header {
       display: flex;
       align-items: center;

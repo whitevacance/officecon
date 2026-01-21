@@ -486,6 +486,14 @@
                         <el-table-util-right>
                           <button
                             type="button"
+                            data-bs-target="#el-modal-sms-resend"
+                            data-bs-toggle="modal"
+                            class="text-black button-h43-square typo-body-sm"
+                          >
+                            (임시)재발송:sms
+                          </button>
+                          <button
+                            type="button"
                             data-bs-target="#el-modal-email-resend"
                             data-bs-toggle="modal"
                             class="text-black button-h43-square typo-body-sm"
@@ -948,7 +956,7 @@
                           <el-cell-checkbox>
                             <el-checkbox>
                               <input
-                                id="successCheckboxAll"
+                                id="successEmailCheckboxAll"
                                 type="checkbox"
                                 class="form-check-input custom-checkbox"
                                 value=""
@@ -1063,7 +1071,7 @@
                         <el-modal-resend-current class="typo-label-lg">
                           <div>선택된 수신자 <strong>2</strong>명</div>
                           <button
-                            id="successUnCheckAllButton"
+                            id="successEmailUnCheckAllButton"
                             type="button"
                             class="button-h34-square typo-label-md"
                           >
@@ -1078,7 +1086,7 @@
                           <el-cell-checkbox>
                             <el-checkbox>
                               <input
-                                id="failedCheckboxAll"
+                                id="failedEmailCheckboxAll"
                                 type="checkbox"
                                 class="form-check-input custom-checkbox"
                                 value=""
@@ -1103,7 +1111,7 @@
                         <el-modal-resend-current class="typo-label-lg">
                           <div>선택된 수신자 <strong>0</strong>명</div>
                           <button
-                            id="failedUnCheckAllButton"
+                            id="failedEmailUnCheckAllButton"
                             type="button"
                             class="button-h34-square typo-label-md"
                           >
@@ -1115,23 +1123,6 @@
                   </el-tabs-content>
                 </el-tabs>
               </el-modal-resend-search-result>
-
-              <!-- <el-charge-amount class="typo-body-sm">
-                <el-charge-amount-title>
-                  충전하실 금액을 입력해 주세요.
-                </el-charge-amount-title>
-                <el-charge-amount-content>
-                  <el-input>
-                    <input
-                      class="form-control custom-input"
-                      type="text"
-                      placeholder="충전하실 금액을 입력해 주세요."
-                      value=""
-                    />
-                  </el-input>
-                  원
-                </el-charge-amount-content>
-              </el-charge-amount> -->
             </el-modal-resend>
           </el-modal-body>
 
@@ -1151,6 +1142,247 @@
       </el-modal-dialog>
     </el-modal>
     <!-- 종료: modal: 이메일 재발송 -->
+
+    <!-- 시작: modal: 문자 재발송 -->
+    <el-modal
+      class="modal fade el-modal-default"
+      id="el-modal-sms-resend"
+      tabindex="-1"
+      aria-hidden="true"
+      data-bs-keyboard="false"
+    >
+      <el-modal-dialog
+        class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+      >
+        <el-modal-content class="modal-content">
+          <el-modal-close-button>
+            <button type="button" data-bs-dismiss="modal" aria-label="닫기">
+              <el-icon class="h32-closed natural-0"></el-icon>
+            </button>
+          </el-modal-close-button>
+
+          <el-modal-header class="modal-header">
+            <h3 class="typo-subtitle-lg center">문자 재발송</h3>
+          </el-modal-header>
+
+          <el-modal-body class="modal-body">
+            <el-modal-resend>
+              <el-info-box>
+                <el-marker-list class="weight-regular color-gray">
+                  <ul>
+                    <li>
+                      재발송은 번호당 최대 3회까지 무료로 제공하며 최초 1회는
+                      기존타입 (MMS/LMS)으로, 이후 2회는 바코드가 없는
+                      단문(SMS)형태로 발송 됩니다.
+                    </li>
+                  </ul>
+                </el-marker-list>
+              </el-info-box>
+
+              <el-modal-resend-search>
+                <el-input>
+                  <input
+                    class="form-control custom-input input-type-mobile"
+                    type="text"
+                    placeholder="휴대폰번호 입력"
+                    value=""
+                  />
+                </el-input>
+                <button
+                  type="button"
+                  class="text-black button-h43-square typo-body-sm"
+                >
+                  <el-icon class="h24-search natural-0"></el-icon>
+                </button>
+              </el-modal-resend-search>
+
+              <el-modal-resend-search-result class="sms-result">
+                <el-tabs class="border-rounded">
+                  <el-tabs-nav>
+                    <button
+                      type="button"
+                      role="tab"
+                      class="typo-body-sm active"
+                    >
+                      성공
+                    </button>
+                    <button type="button" role="tab" class="typo-body-sm">
+                      실패
+                    </button>
+                  </el-tabs-nav>
+                  <el-tabs-content>
+                    <el-tab-panel role="tabpanel" class="active">
+                      <el-modal-resend-success>
+                        <el-modal-resend-result-header class="typo-label-lg">
+                          <el-cell-checkbox>
+                            <el-checkbox>
+                              <input
+                                id="successSmsCheckboxAll"
+                                type="checkbox"
+                                class="form-check-input custom-checkbox"
+                                value=""
+                              />
+                            </el-checkbox>
+                          </el-cell-checkbox>
+                          <el-cell-mobile>휴대폰번호</el-cell-mobile>
+                          <el-cell-count>재발송</el-cell-count>
+                        </el-modal-resend-result-header>
+
+                        <el-modal-resend-result-body class="typo-label-lg">
+                          <ul>
+                            <li>
+                              <el-cell-checkbox>
+                                <el-checkbox>
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input custom-checkbox"
+                                    value=""
+                                  />
+                                </el-checkbox>
+                              </el-cell-checkbox>
+                              <el-cell-mobile>010-0000-0000</el-cell-mobile>
+                              <el-cell-count>99회</el-cell-count>
+                            </li>
+                            <li>
+                              <el-cell-checkbox>
+                                <el-checkbox>
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input custom-checkbox"
+                                    value=""
+                                  />
+                                </el-checkbox>
+                              </el-cell-checkbox>
+                              <el-cell-mobile>010-0000-0000</el-cell-mobile>
+                              <el-cell-count>99회</el-cell-count>
+                            </li>
+                            <li>
+                              <el-cell-checkbox>
+                                <el-checkbox>
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input custom-checkbox"
+                                    value=""
+                                  />
+                                </el-checkbox>
+                              </el-cell-checkbox>
+                              <el-cell-mobile>010-0000-0000</el-cell-mobile>
+                              <el-cell-count>99회</el-cell-count>
+                            </li>
+                            <li>
+                              <el-cell-checkbox>
+                                <el-checkbox>
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input custom-checkbox"
+                                    value=""
+                                  />
+                                </el-checkbox>
+                              </el-cell-checkbox>
+                              <el-cell-mobile>010-0000-0000</el-cell-mobile>
+                              <el-cell-count>99회</el-cell-count>
+                            </li>
+                            <li>
+                              <el-cell-checkbox>
+                                <el-checkbox>
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input custom-checkbox"
+                                    value=""
+                                  />
+                                </el-checkbox>
+                              </el-cell-checkbox>
+                              <el-cell-mobile>010-0000-0000</el-cell-mobile>
+                              <el-cell-count>99회</el-cell-count>
+                            </li>
+                            <li>
+                              <el-cell-checkbox>
+                                <el-checkbox>
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input custom-checkbox"
+                                    value=""
+                                  />
+                                </el-checkbox>
+                              </el-cell-checkbox>
+                              <el-cell-mobile>010-0000-0000</el-cell-mobile>
+                              <el-cell-count>99회</el-cell-count>
+                            </li>
+                          </ul>
+                        </el-modal-resend-result-body>
+                        <el-modal-resend-current class="typo-label-lg">
+                          <div>선택된 수신자 <strong>2</strong>명</div>
+                          <button
+                            id="successSmsUnCheckAllButton"
+                            type="button"
+                            class="button-h34-square typo-label-md"
+                          >
+                            선택해제
+                          </button>
+                        </el-modal-resend-current>
+                      </el-modal-resend-success>
+                    </el-tab-panel>
+                    <el-tab-panel role="tabpanel">
+                      <el-modal-resend-failed>
+                        <el-modal-resend-result-header class="typo-label-lg">
+                          <el-cell-checkbox>
+                            <el-checkbox>
+                              <input
+                                id="failedSmsCheckboxAll"
+                                type="checkbox"
+                                class="form-check-input custom-checkbox"
+                                value=""
+                              />
+                            </el-checkbox>
+                          </el-cell-checkbox>
+                          <el-cell-mobile>휴대폰번호</el-cell-mobile>
+                          <el-cell-count>재발송</el-cell-count>
+                        </el-modal-resend-result-header>
+
+                        <el-modal-resend-result-body class="typo-label-lg">
+                          <ul>
+                            <li>
+                              <el-board-list-empty class="typo-label-lg">
+                                <el-icon class="etc-file-text"></el-icon>
+                                정보가 없습니다.
+                              </el-board-list-empty>
+                            </li>
+                          </ul>
+                        </el-modal-resend-result-body>
+                        <el-modal-resend-current class="typo-label-lg">
+                          <div>선택된 수신자 <strong>0</strong>명</div>
+                          <button
+                            id="failedSmsUnCheckAllButton"
+                            type="button"
+                            class="button-h34-square typo-label-md"
+                          >
+                            선택해제
+                          </button>
+                        </el-modal-resend-current>
+                      </el-modal-resend-failed>
+                    </el-tab-panel>
+                  </el-tabs-content>
+                </el-tabs>
+              </el-modal-resend-search-result>
+            </el-modal-resend>
+          </el-modal-body>
+
+          <el-modal-footer class="modal-footer">
+            <button
+              type="button"
+              data-bs-dismiss="modal"
+              class="button-h50-stroke typo-body-lg"
+            >
+              취소
+            </button>
+            <button type="button" class="button-h50-fill typo-body-lg">
+              재발송
+            </button>
+          </el-modal-footer>
+        </el-modal-content>
+      </el-modal-dialog>
+    </el-modal>
+    <!-- 종료: modal: 문자 재발송 -->
 
     <!-- 시작: modal: 기업 회원 전환 신청 -->
     <el-modal
@@ -1586,14 +1818,14 @@
     <script src="./js/web-components.js" crossorigin="anonymous"></script>
 
     <script>
-      // 시작: 이메일 재발송 성공 전체 선택 successCheckboxAll
-      const initSuccessCheckboxAll = () => {
-        const checkboxAll = document.getElementById('successCheckboxAll');
+      // 시작: 이메일 재발송 성공 전체 선택 successEmailCheckboxAll
+      const initSuccessEmailCheckboxAll = () => {
+        const checkboxAll = document.getElementById('successEmailCheckboxAll');
         const uncheckAllButton = document.getElementById(
-          'successUnCheckAllButton'
+          'successEmailUnCheckAllButton'
         );
         const checkboxes = document.querySelectorAll(
-          'el-modal-resend-success el-modal-resend-result-body .form-check-input'
+          '#el-modal-email-resend el-modal-resend-success el-modal-resend-result-body .form-check-input'
         );
 
         // 이미 초기화된 경우 건너뛰기
@@ -1620,6 +1852,7 @@
         }
 
         const handleCheckbox = (e) => {
+          if (!checkboxAll) return;
           const unCheckedItem = [...checkboxes].find(
             (checkbox) => checkbox.checked === false
           );
@@ -1634,6 +1867,7 @@
         });
 
         const handleUnCheckAll = () => {
+          if (!checkboxAll) return;
           checkboxAll.checked = false;
           [...checkboxes].map((checkbox) => {
             checkbox.checked = false;
@@ -1647,23 +1881,25 @@
           uncheckAllButton.addEventListener('click', handleUnCheckAll);
         }
         // 초기화 완료 전환
-        checkboxAll.dataset.initialized = 'true';
+        if (checkboxAll) {
+          checkboxAll.dataset.initialized = 'true';
+        }
       };
       // 전역 함수로 등록
       if (window !== undefined) {
-        window.initSuccessCheckboxAll = initSuccessCheckboxAll;
+        window.initSuccessEmailCheckboxAll = initSuccessEmailCheckboxAll;
       }
-      initSuccessCheckboxAll();
-      // 종료: 이메일 재발송 성공 전체 선택 successCheckboxAll
+      initSuccessEmailCheckboxAll();
+      // 종료: 이메일 재발송 성공 전체 선택 successEmailCheckboxAll
 
-      // 시작: 이메일 재발송 실패 전체 선택 failedCheckboxAll
-      const initFailedCheckboxAll = () => {
-        const checkboxAll = document.getElementById('failedCheckboxAll');
+      // 시작: 이메일 재발송 실패 전체 선택 failedEmailCheckboxAll
+      const initFailedEmailCheckboxAll = () => {
+        const checkboxAll = document.getElementById('failedEmailCheckboxAll');
         const uncheckAllButton = document.getElementById(
-          'failedUnCheckAllButton'
+          'failedEmailUnCheckAllButton'
         );
         const checkboxes = document.querySelectorAll(
-          'el-modal-resend-failed el-modal-resend-result-body .form-check-input'
+          '#el-modal-email-resend el-modal-resend-failed el-modal-resend-result-body .form-check-input'
         );
 
         // 이미 초기화된 경우 건너뛰기
@@ -1690,6 +1926,7 @@
         }
 
         const handleCheckbox = (e) => {
+          if (!checkboxAll) return;
           const unCheckedItem = [...checkboxes].find(
             (checkbox) => checkbox.checked === false
           );
@@ -1704,6 +1941,7 @@
         });
 
         const handleUnCheckAll = () => {
+          if (!checkboxAll) return;
           checkboxAll.checked = false;
           [...checkboxes].map((checkbox) => {
             checkbox.checked = false;
@@ -1717,14 +1955,164 @@
           uncheckAllButton.addEventListener('click', handleUnCheckAll);
         }
         // 초기화 완료 전환
-        checkboxAll.dataset.initialized = 'true';
+        if (checkboxAll) {
+          checkboxAll.dataset.initialized = 'true';
+        }
       };
       // 전역 함수로 등록
       if (window !== undefined) {
-        window.initFailedCheckboxAll = initFailedCheckboxAll;
+        window.initFailedEmailCheckboxAll = initFailedEmailCheckboxAll;
       }
-      initFailedCheckboxAll();
-      // 종료: 이메일 재발송 실패 전체 선택 failedCheckboxAll
+      initFailedEmailCheckboxAll();
+      // 종료: 이메일 재발송 실패 전체 선택 failedEmailCheckboxAll
+
+      // 시작: 문자 재발송 성공 전체 선택 successSmsCheckboxAll
+      const initSuccessSmsCheckboxAll = () => {
+        const checkboxAll = document.getElementById('successSmsCheckboxAll');
+        const uncheckAllButton = document.getElementById(
+          'successSmsUnCheckAllButton'
+        );
+        const checkboxes = document.querySelectorAll(
+          '#el-modal-sms-resend el-modal-resend-success el-modal-resend-result-body .form-check-input'
+        );
+
+        // 이미 초기화된 경우 건너뛰기
+        if (checkboxAll?.dataset?.initialized === 'true') {
+          return;
+        }
+
+        const handleCheckAll = (e) => {
+          if (e?.target?.checked) {
+            [...checkboxes].map((checkbox) => {
+              checkbox.checked = true;
+              return () => {};
+            });
+          } else {
+            [...checkboxes].map((checkbox) => {
+              checkbox.checked = false;
+              return () => {};
+            });
+          }
+        };
+
+        if (checkboxAll) {
+          checkboxAll.addEventListener('change', handleCheckAll);
+        }
+
+        const handleCheckbox = (e) => {
+          if (!checkboxAll) return;
+          const unCheckedItem = [...checkboxes].find(
+            (checkbox) => checkbox.checked === false
+          );
+          if (unCheckedItem) {
+            checkboxAll.checked = false;
+          } else {
+            checkboxAll.checked = true;
+          }
+        };
+        [...checkboxes].map((checkbox) => {
+          checkbox.addEventListener('change', handleCheckbox);
+        });
+
+        const handleUnCheckAll = () => {
+          if (!checkboxAll) return;
+          checkboxAll.checked = false;
+          [...checkboxes].map((checkbox) => {
+            checkbox.checked = false;
+            return () => {
+              checkbox.checked = false;
+            };
+          });
+        };
+
+        if (uncheckAllButton) {
+          uncheckAllButton.addEventListener('click', handleUnCheckAll);
+        }
+        // 초기화 완료 전환
+        if (checkboxAll) {
+          checkboxAll.dataset.initialized = 'true';
+        }
+      };
+      // 전역 함수로 등록
+      if (window !== undefined) {
+        window.initSuccessSmsCheckboxAll = initSuccessSmsCheckboxAll;
+      }
+      initSuccessSmsCheckboxAll();
+      // 종료: 문자 재발송 성공 전체 선택 successSmsCheckboxAll
+
+      // 시작: 문자 재발송 실패 전체 선택 failedSmsCheckboxAll
+      const initFailedSmsCheckboxAll = () => {
+        const checkboxAll = document.getElementById('failedSmsCheckboxAll');
+        const uncheckAllButton = document.getElementById(
+          'failedSmsUnCheckAllButton'
+        );
+        const checkboxes = document.querySelectorAll(
+          '#el-modal-sms-resend el-modal-resend-failed el-modal-resend-result-body .form-check-input'
+        );
+
+        // 이미 초기화된 경우 건너뛰기
+        if (checkboxAll?.dataset?.initialized === 'true') {
+          return;
+        }
+
+        const handleCheckAll = (e) => {
+          if (e?.target?.checked) {
+            [...checkboxes].map((checkbox) => {
+              checkbox.checked = true;
+              return () => {};
+            });
+          } else {
+            [...checkboxes].map((checkbox) => {
+              checkbox.checked = false;
+              return () => {};
+            });
+          }
+        };
+
+        if (checkboxAll) {
+          checkboxAll.addEventListener('change', handleCheckAll);
+        }
+
+        const handleCheckbox = (e) => {
+          if (!checkboxAll) return;
+          const unCheckedItem = [...checkboxes].find(
+            (checkbox) => checkbox.checked === false
+          );
+          if (unCheckedItem) {
+            checkboxAll.checked = false;
+          } else {
+            checkboxAll.checked = true;
+          }
+        };
+        [...checkboxes].map((checkbox) => {
+          checkbox.addEventListener('change', handleCheckbox);
+        });
+
+        const handleUnCheckAll = () => {
+          if (!checkboxAll) return;
+          checkboxAll.checked = false;
+          [...checkboxes].map((checkbox) => {
+            checkbox.checked = false;
+            return () => {
+              checkbox.checked = false;
+            };
+          });
+        };
+
+        if (uncheckAllButton) {
+          uncheckAllButton.addEventListener('click', handleUnCheckAll);
+        }
+        // 초기화 완료 전환
+        if (checkboxAll) {
+          checkboxAll.dataset.initialized = 'true';
+        }
+      };
+      // 전역 함수로 등록
+      if (window !== undefined) {
+        window.initFailedSmsCheckboxAll = initFailedSmsCheckboxAll;
+      }
+      initFailedSmsCheckboxAll();
+      // 종료: 문자 재발송 실패 전체 선택 failedSmsCheckboxAll
     </script>
   </body>
 </html>
