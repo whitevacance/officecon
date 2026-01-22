@@ -683,51 +683,6 @@
                             >
                               수정
                             </button>
-                            <!-- <el-tooltip-white>
-                              <el-tooltip-white-header class="typo-subtitle-sm">
-                                수정
-                              </el-tooltip-white-header>
-                              <el-tooltip-white-body class="typo-body-sm">
-                                <el-tooltip-white-body-padding>
-                                  <el-marker-list class="weight-regular">
-                                    <ul>
-                                      <li>
-                                        <strong>예약주문</strong> : 발신번호,
-                                        문자메시지, 수신자정보(휴대폰/이메일)
-                                        수정가능
-                                        <div>
-                                          <strong>- 발송건수 변경불가</strong>
-                                        </div>
-                                      </li>
-                                      <li>
-                                        <strong>발송완료</strong> : 발신번호,
-                                        문자메시지 수정 가능
-                                        <div>
-                                          - 알림톡 발송 문자 메시지, 발송건수,
-                                          수신자 정보(휴대폰/이메일) 변경불가
-                                        </div>
-                                        <div>
-                                          - 수신자 오 발송건 고객센터 1:1문의
-                                          상담 요청
-                                        </div>
-                                      </li>
-                                      <li>
-                                        <strong>발송실패</strong> : 발신번호,
-                                        문자메시지, 수신자정보(휴대폰/이메일)
-                                        수정가능
-                                        <div>
-                                          - 알림톡 발송 문자 메시지, 발송건수,
-                                          변경불가
-                                        </div>
-                                        <div>
-                                          - 수정 후 재발송까지 완료 바랍니다.
-                                        </div>
-                                      </li>
-                                    </ul>
-                                  </el-marker-list>
-                                </el-tooltip-white-body-padding>
-                              </el-tooltip-white-body>
-                            </el-tooltip-white> -->
                           </el-tooltip-wrapper>
                         </el-table-util-right>
                       </el-table-util-bar>
@@ -890,6 +845,20 @@
                         </script>
                       </el-order-view-sent-table-body>
                     </el-order-view-sent-list>
+
+                    <el-order-view-sent-result>
+                      <el-order-view-sent-result-title class="typo-subtitle-sm">
+                        전송 결과
+                        <button
+                          type="button"
+                          data-bs-target="#el-modal-send-result-guide"
+                          data-bs-toggle="modal"
+                          class="typo-body-sm"
+                          >?</button
+                        >
+                      </el-order-view-sent-result-title>
+                      <div>내용</div>
+                    </el-order-view-sent-result>
                   </el-mypage-content>
                 </el-mypage-section>
               </el-mypage-container>
@@ -946,6 +915,154 @@
       </el-alert-dialog>
     </el-alert>
     <!-- 종료: alert -->
+
+    <!-- 시작: modal: 전송결과 안내 모달 -->
+    <el-modal
+      class="modal fade el-modal-default"
+      id="el-modal-send-result-guide"
+      tabindex="-1"
+      aria-hidden="true"
+      data-bs-keyboard="false"
+    >
+      <el-modal-dialog
+        class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+      >
+        <el-modal-content class="modal-content">
+          <el-modal-close-button>
+            <button type="button" data-bs-dismiss="modal" aria-label="닫기">
+              <el-icon class="h32-closed natural-0"></el-icon>
+            </button>
+          </el-modal-close-button>
+
+          <el-modal-header class="modal-header">
+            <h3 class="typo-subtitle-lg">전송결과 안내</h3>
+          </el-modal-header>
+
+          <el-modal-body class="modal-body scroll-shadow">
+            <el-modal-send-result-guide class="typo-label-lg">
+              <el-send-result-guide-box>
+                <h4 class="typo-body-sm">
+                  <el-icon class="etc-user-check natural-0"></el-icon>
+                  승인대기
+                </h4>
+                <div>
+                  주문 결제 후 관리자 승인을 기다리는 상태입니다. (업무시간
+                  1시간 이내 처리)
+                </div>
+              </el-send-result-guide-box>
+              <el-send-result-guide-box>
+                <h4 class="typo-body-sm">
+                  <el-icon class="etc-pending natural-0"></el-icon>
+                  발송대기
+                </h4>
+                <div>
+                  예약 발송 주문 또는 발송 지연(일시적으로 발송량이 몰리는 경우)
+                  상태입니다.
+                </div>
+              </el-send-result-guide-box>
+              <el-send-result-guide-box>
+                <h4 class="typo-body-sm">
+                  <el-icon class="etc-progress natural-0"></el-icon>
+                  발송중
+                </h4>
+                <div>
+                  쿠폰 및 메시지를 통신사로 전달 후 수신 결과를 기다리는
+                  중입니다.<br />
+                  발송 결과는 최대 25시간까지 소요될 수 있으며 대표적인 사유는
+                  휴대폰이 꺼져있는 경우,<br />
+                  통신할 수 없는 지역에 있는 경우, 휴대폰 데이터를 꺼 놓은 경우
+                  등입니다.<br />
+                  발송 후 25시간 이후에 최종결과를 확인하세요.
+                </div>
+              </el-send-result-guide-box>
+              <el-send-result-guide-box>
+                <h4 class="typo-body-sm">
+                  <el-icon class="etc-success natural-0"></el-icon>
+                  성공
+                </h4>
+              </el-send-result-guide-box>
+              <el-send-result-guide-box>
+                <h4 class="typo-body-sm">
+                  <el-icon class="etc-fail natural-0"></el-icon>
+                  실패
+                </h4>
+                <div>
+                  <el-send-fail-article>
+                    <el-send-fail-article-label class="typo-label-md">
+                      주요원인
+                    </el-send-fail-article-label>
+                    <el-send-fail-article-content>
+                      <strong style="padding-right: 6px">
+                        일부 실패인 경우 </strong
+                      >수신자 문제(없는 번호, 서비스일시정지, MMS미지원 단말기
+                      등)<br />
+                      <strong style="padding-right: 6px">
+                        전체 실패인 경우 </strong
+                      >발신번호 문제(번호도용문자차단서비스 가입 등), 문구에
+                      특수기호가 포함 등
+                    </el-send-fail-article-content>
+                  </el-send-fail-article>
+                  <el-send-fail-article>
+                    <el-send-fail-article-label class="typo-label-md">
+                      대응
+                    </el-send-fail-article-label>
+                    <el-send-fail-article-content>
+                      주문상세페이지(상품정보 클릭)에서
+                      <strong>수정</strong> 버튼 클릭 후 잘못된 주문 정보<br />
+                      (발신번호, 수신번호, 문구) 수정 후
+                      <strong>재발송</strong>
+                    </el-send-fail-article-content>
+                  </el-send-fail-article>
+                  <div
+                    style="
+                      padding-top: 9px;
+                      border-top: 1px solid var(--color-natural-80);
+                    "
+                  >
+                    실패 건은 유효기간 만료 3일전 캐쉬로 자동 환불됩니다.<br />
+                    빠른 환불을 원하시거나 자동 환불을 원치 않으시면 1:1 문의
+                    게시판으로 요청 바랍니다.
+                  </div>
+                </div>
+              </el-send-result-guide-box>
+              <el-send-result-guide-box>
+                <h4 class="typo-body-sm">
+                  <el-icon class="etc-wait natural-0"></el-icon>
+                  환불대기
+                </h4>
+                <div>
+                  환불요청 후 처리를 기다리는 상태입니다.<br />
+                  환불대기 상태에서는 환불요청 철회가 불가합니다.
+                </div>
+              </el-send-result-guide-box>
+              <el-send-result-guide-box>
+                <h4 class="typo-body-sm">
+                  <el-icon class="etc-refund natural-0"></el-icon>
+                  환불
+                </h4>
+                <div>
+                  발송 실패 건이 주문 취소처리 되면 실패 건에서 환불건으로
+                  전환됩니다.<br />
+                  환불은 캐쉬로 환불 처리됩니다. (단, 대기상태에서 전체 취소 시
+                  결제수단으로 환불)
+                </div>
+              </el-send-result-guide-box>
+            </el-modal-send-result-guide>
+          </el-modal-body>
+
+          <el-modal-footer class="modal-footer">
+            <button
+              type="button"
+              data-bs-dismiss="modal"
+              class="button-h50-fill typo-body-lg"
+            >
+              확인
+            </button>
+          </el-modal-footer>
+        </el-modal-content>
+      </el-modal-dialog>
+    </el-modal>
+    <!-- 종료: modal: 전송결과 안내 모달 -->
 
     <!-- 시작: modal: 발송 메세지 모달 -->
     <el-modal
