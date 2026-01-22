@@ -2748,6 +2748,37 @@
             </el-examples-article>
 
             <el-examples-article>
+              <h2>tooltip</h2>
+              <el-examples-stack>
+                <el-tooltip-wrapper
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  data-bs-fallback-placements="[]"
+                  data-bs-offset="[0, 18]"
+                  data-bs-trigger="hover"
+                  data-bs-html="true"
+                  data-bs-custom-class="custom-tooltip"
+                  data-bs-title="
+                  <div class='el-tooltip-white'>
+                    <div
+                      class='el-tooltip-white-header typo-subtitle-sm'
+                    >
+                      제목
+                    </div>
+                    <div class='el-tooltip-white-body typo-body-sm'>
+                      툴팁 내용
+                    </div>
+                  </div>
+                  "
+                >
+                  <button type="button" class="button-h50-stroke typo-body-lg">
+                    hover 시 tooltip이 노출
+                  </button>
+                </el-tooltip-wrapper>
+              </el-examples-stack>
+            </el-examples-article>
+
+            <el-examples-article>
               <h2>모달 팝업</h2>
               <el-examples-stack>
                 <button
