@@ -857,8 +857,65 @@
                           >?</button
                         >
                       </el-order-view-sent-result-title>
-                      <div>내용</div>
+                      <ul class="el-order-view-sent-result-list typo-body-sm">
+                        <li>
+                          전체
+                          <div><strong>9,999</strong>건</div>
+                        </li>
+                        <li>
+                          승인대기
+                          <div><strong>9,999</strong>건</div>
+                        </li>
+                        <li>
+                          발송대기
+                          <div><strong>9,999</strong>건</div>
+                        </li>
+                        <li>
+                          발송중
+                          <div><strong>9,999</strong>건</div>
+                        </li>
+                        <li>
+                          성공
+                          <div><strong>9,999</strong>건</div>
+                        </li>
+                        <li>
+                          실패
+                          <div><strong>9,999</strong>건</div>
+                        </li>
+                        <li>
+                          환불대기
+                          <div><strong>9,999</strong>건</div>
+                        </li>
+                        <li>
+                          환불
+                          <div><strong>9,999</strong>건</div>
+                        </li>
+                      </ul>
+                      <el-info-box class="bg-gray">
+                        <el-marker-list class="weight-regular color-gray">
+                          <ul>
+                            <li>
+                              전송결과는 수신인의 통신 환경에 따라 최대
+                              25시간까지 소요 될 수 있습니다.
+                            </li>
+                            <li>
+                              주문번호별 본인 인증된 휴대폰번호로 최초 발송실패
+                              알림문자 1회만 전송됩니다.
+                            </li>
+                            <li>
+                              발송실패 알림문자 수신을 원치 않으실 경우
+                              나의정보수정에서 해제 가능합니다.
+                            </li>
+                            <li>
+                              환불 또는 환불대기 상태인 경우 재발송 및 발송정보
+                              수정이 불가합니다.
+                            </li>
+                          </ul>
+                        </el-marker-list>
+                      </el-info-box>
                     </el-order-view-sent-result>
+
+                    <el-order-view-payment></el-order-view-payment>
                   </el-mypage-content>
                 </el-mypage-section>
               </el-mypage-container>

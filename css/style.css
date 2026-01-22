@@ -11745,7 +11745,7 @@ el-modal-cancel-all {
 el-order-view-sent-result {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 20px;
   padding-top: 47px;
 
   el-order-view-sent-result-title {
@@ -11773,5 +11773,36 @@ el-order-view-sent-result {
       letter-spacing: -0.454px;
     }
   }
+
+  .el-order-view-sent-result-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px 0px;
+    width: calc(100% + 6px);
+
+    li {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: calc(25% - 6px);
+      height: 41px;
+      margin-right: 6px;
+      gap: 4px;
+      border-radius: 4px;
+      background-color: var(--color-blue-10);
+      color: var(--color-natural-20);
+
+      & > div {
+        color: var(--color-natural-0);
+
+        strong {
+          font-weight: 600 !important;
+        }
+      }
+    }
+  }
+}
+
+el-order-view-payment {
 }
 /* 종료: 마이페이지 > 주문 상세 */
