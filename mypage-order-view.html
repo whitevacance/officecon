@@ -484,52 +484,180 @@
                           <span class="typo-subtitle-sm">발송내역</span>
                         </el-table-util-left>
                         <el-table-util-right>
-                          <button
-                            type="button"
-                            data-bs-target="#modal-sms-resend"
-                            data-bs-toggle="modal"
-                            class="text-black button-h43-square typo-body-sm"
+                          <el-tooltip-wrapper
+                            data-bs-toggle="tooltip"
+                            data-bs-placement="top"
+                            data-bs-offset="[0, 18]"
+                            data-bs-trigger="click"
+                            data-bs-html="true"
+                            data-bs-custom-class="custom-tooltip"
+                            data-bs-title="
+                            <div class='el-tooltip-white'>
+                              <div
+                                class='el-tooltip-white-header typo-subtitle-sm'
+                              >
+                                재발송
+                              </div>
+                              <div class='el-tooltip-white-body typo-body-sm'>
+                                수신자별 선택 재발송 무상 3회 제공 (최초
+                                재발송은 원 발송타입으로, 2회 부터는 SMS타입으로
+                                발송)
+                              </div>
+                            </div>
+                            "
                           >
-                            (임시)재발송:sms
-                          </button>
-                          <button
-                            type="button"
-                            data-bs-target="#modal-email-resend"
-                            data-bs-toggle="modal"
-                            class="text-black button-h43-square typo-body-sm"
-                          >
-                            재발송
-                          </button>
-                          <button
-                            type="button"
-                            data-bs-target="#modal-cancel-all"
-                            data-bs-toggle="modal"
-                            class="text-black button-h43-square typo-body-sm"
-                          >
-                            전체 취소 요청
-                          </button>
-                          <button
-                            type="button"
-                            data-bs-target="#modal-cancel-partial-reward"
-                            data-bs-toggle="modal"
-                            class="text-black button-h43-square typo-body-sm"
-                          >
-                            (임시)부분 취소 요청:리워드
-                          </button>
-                          <button
-                            type="button"
-                            data-bs-target="#modal-cancel-partial"
-                            data-bs-toggle="modal"
-                            class="text-black button-h43-square typo-body-sm"
-                          >
-                            부분 취소 요청
-                          </button>
-                          <button
-                            type="button"
-                            class="text-black button-h43-square typo-body-sm"
-                          >
-                            수정
-                          </button>
+                            <button
+                              type="button"
+                              data-bs-target="#modal-sms-resend"
+                              data-bs-toggle="modal"
+                              class="text-black button-h43-square typo-body-sm"
+                            >
+                              (임시)재발송:sms
+                            </button>
+                          </el-tooltip-wrapper>
+
+                          <!-- <el-tooltip-wrapper>
+                            <button
+                              type="button"
+                              data-bs-target="#modal-sms-resend"
+                              data-bs-toggle="modal"
+                              class="text-black button-h43-square typo-body-sm"
+                            >
+                              (임시)재발송:sms
+                            </button>
+                            <div class="el-tooltip-white">
+                              <div
+                                class="el-tooltip-white-header typo-subtitle-sm"
+                              >
+                                재발송
+                              </div>
+                              <div class="el-tooltip-white-body typo-body-sm">
+                                수신자별 선택 재발송 무상 3회 제공 (최초
+                                재발송은 원 발송타입으로, 2회 부터는 SMS타입으로
+                                발송)
+                              </div>
+                            </div>
+                          </el-tooltip-wrapper> -->
+
+                          <el-tooltip-wrapper>
+                            <button
+                              type="button"
+                              data-bs-target="#modal-email-resend"
+                              data-bs-toggle="modal"
+                              class="text-black button-h43-square typo-body-sm"
+                            >
+                              재발송
+                            </button>
+                            <!-- <el-tooltip-white>
+                              <el-tooltip-white-header class="typo-subtitle-sm">
+                                재발송
+                              </el-tooltip-white-header>
+                              <el-tooltip-white-body class="typo-body-sm">
+                                수신자별 선택 재발송 무상 3회 제공 (최초
+                                재발송은 원 발송타입으로, 2회 부터는 SMS타입으로
+                                발송)
+                              </el-tooltip-white-body>
+                            </el-tooltip-white> -->
+                          </el-tooltip-wrapper>
+                          <el-tooltip-wrapper>
+                            <button
+                              type="button"
+                              data-bs-target="#modal-cancel-all"
+                              data-bs-toggle="modal"
+                              class="text-black button-h43-square typo-body-sm"
+                            >
+                              전체 취소 요청
+                            </button>
+                          </el-tooltip-wrapper>
+                          <el-tooltip-wrapper>
+                            <button
+                              type="button"
+                              data-bs-target="#modal-cancel-partial-reward"
+                              data-bs-toggle="modal"
+                              class="text-black button-h43-square typo-body-sm"
+                            >
+                              (임시)부분 취소 요청:리워드
+                            </button>
+                            <!-- <el-tooltip-white>
+                              <el-tooltip-white-header class="typo-subtitle-sm">
+                                부분취소
+                              </el-tooltip-white-header>
+                              <el-tooltip-white-body class="typo-body-sm">
+                                주문일 기준 7일이내 취소 가능
+                              </el-tooltip-white-body>
+                            </el-tooltip-white> -->
+                          </el-tooltip-wrapper>
+                          <el-tooltip-wrapper>
+                            <button
+                              type="button"
+                              data-bs-target="#modal-cancel-partial"
+                              data-bs-toggle="modal"
+                              class="text-black button-h43-square typo-body-sm"
+                            >
+                              부분 취소 요청
+                            </button>
+                            <!-- <el-tooltip-white>
+                              <el-tooltip-white-header class="typo-subtitle-sm">
+                                부분취소
+                              </el-tooltip-white-header>
+                              <el-tooltip-white-body class="typo-body-sm">
+                                주문일 기준 7일이내 취소 가능
+                              </el-tooltip-white-body>
+                            </el-tooltip-white> -->
+                          </el-tooltip-wrapper>
+                          <el-tooltip-wrapper>
+                            <button
+                              type="button"
+                              class="text-black button-h43-square typo-body-sm"
+                            >
+                              수정
+                            </button>
+                            <!-- <el-tooltip-white>
+                              <el-tooltip-white-header class="typo-subtitle-sm">
+                                수정
+                              </el-tooltip-white-header>
+                              <el-tooltip-white-body class="typo-body-sm">
+                                <el-tooltip-white-body-padding>
+                                  <el-marker-list class="weight-regular">
+                                    <ul>
+                                      <li>
+                                        <strong>예약주문</strong> : 발신번호,
+                                        문자메시지, 수신자정보(휴대폰/이메일)
+                                        수정가능
+                                        <div>
+                                          <strong>- 발송건수 변경불가</strong>
+                                        </div>
+                                      </li>
+                                      <li>
+                                        <strong>발송완료</strong> : 발신번호,
+                                        문자메시지 수정 가능
+                                        <div>
+                                          - 알림톡 발송 문자 메시지, 발송건수,
+                                          수신자 정보(휴대폰/이메일) 변경불가
+                                        </div>
+                                        <div>
+                                          - 수신자 오 발송건 고객센터 1:1문의
+                                          상담 요청
+                                        </div>
+                                      </li>
+                                      <li>
+                                        <strong>발송실패</strong> : 발신번호,
+                                        문자메시지, 수신자정보(휴대폰/이메일)
+                                        수정가능
+                                        <div>
+                                          - 알림톡 발송 문자 메시지, 발송건수,
+                                          변경불가
+                                        </div>
+                                        <div>
+                                          - 수정 후 재발송까지 완료 바랍니다.
+                                        </div>
+                                      </li>
+                                    </ul>
+                                  </el-marker-list>
+                                </el-tooltip-white-body-padding>
+                              </el-tooltip-white-body>
+                            </el-tooltip-white> -->
+                          </el-tooltip-wrapper>
                         </el-table-util-right>
                       </el-table-util-bar>
 
@@ -596,7 +724,30 @@
                                 <td>2025.06.26 06:55</td>
                                 <td>2025.06.26 06:55</td>
                                 <td>2025.06.26 06:55</td>
-                                <td>환불대기</td>
+                                <td>
+                                  <el-tooltip-wrapper
+                                    data-bs-toggle="tooltip"
+                                    data-bs-placement="top"
+                                    data-bs-offset="[0, 18]"
+                                    data-bs-trigger="click"
+                                    data-bs-html="true"
+                                    data-bs-custom-class="custom-tooltip"
+                                    data-bs-title="
+                                    <div class='el-tooltip-white width-180'>
+                                      <div
+                                        class='el-tooltip-white-header typo-subtitle-sm'
+                                      >
+                                        수신실패
+                                      </div>
+                                      <div class='el-tooltip-white-body typo-body-sm'>
+                                        수신실패로 환불
+                                      </div>
+                                    </div>
+                                    "
+                                  >
+                                    환불
+                                  </el-tooltip-wrapper>
+                                </td>
                               </tr>
                               <tr>
                                 <td>3</td>

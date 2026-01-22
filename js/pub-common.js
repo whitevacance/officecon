@@ -12,6 +12,15 @@ let modalNoticeSwiperInstance = null;
 let representativeBrandSwiperInstance = null;
 // 종료: global 변수
 
+// 시작: tooltip 전역 초기화
+const tooltipTriggerList = document.querySelectorAll(
+  '[data-bs-toggle="tooltip"]'
+);
+const tooltipList = [...tooltipTriggerList].map(
+  (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
+);
+// 종료: tooltip 전역 초기화
+
 // 시작: el-modal-loader
 const initModalLoader = () => {
   const modalLoaderEl = document.querySelector('el-modal-loader');
