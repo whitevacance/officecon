@@ -11249,7 +11249,7 @@ el-mypage-order-list {
   }
 }
 
-#el-modal-send-result-guide {
+.el-modal-guide-templet {
   el-modal-scrollable-list-content {
     display: block;
     width: 100%;
@@ -11261,13 +11261,13 @@ el-mypage-order-list {
     scrollbar-gutter: stable;
   }
 
-  el-modal-send-result-guide {
+  el-modal-guide {
     display: flex;
     flex-direction: column;
     gap: 8px;
     width: 536px;
 
-    el-send-result-guide-box {
+    el-modal-guide-box {
       display: flex;
       flex-direction: column;
       gap: 8px;

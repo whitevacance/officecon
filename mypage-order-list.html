@@ -1594,7 +1594,7 @@
 
     <!-- 시작: modal: 전송결과 안내 모달 -->
     <el-modal
-      class="modal fade el-modal-default"
+      class="modal fade el-modal-default el-modal-guide-templet"
       id="el-modal-send-result-guide"
       tabindex="-1"
       aria-hidden="true"
@@ -1615,8 +1615,8 @@
           </el-modal-header>
 
           <el-modal-body class="modal-body scroll-shadow">
-            <el-modal-send-result-guide class="typo-label-lg">
-              <el-send-result-guide-box>
+            <el-modal-guide class="typo-label-lg">
+              <el-modal-guide-box>
                 <h4 class="typo-body-sm">
                   <el-icon class="etc-user-check natural-0"></el-icon>
                   승인대기
@@ -1625,8 +1625,8 @@
                   주문 결제 후 관리자 승인을 기다리는 상태입니다. (업무시간
                   1시간 이내 처리)
                 </div>
-              </el-send-result-guide-box>
-              <el-send-result-guide-box>
+              </el-modal-guide-box>
+              <el-modal-guide-box>
                 <h4 class="typo-body-sm">
                   <el-icon class="etc-pending natural-0"></el-icon>
                   발송대기
@@ -1635,8 +1635,8 @@
                   예약 발송 주문 또는 발송 지연(일시적으로 발송량이 몰리는 경우)
                   상태입니다.
                 </div>
-              </el-send-result-guide-box>
-              <el-send-result-guide-box>
+              </el-modal-guide-box>
+              <el-modal-guide-box>
                 <h4 class="typo-body-sm">
                   <el-icon class="etc-progress natural-0"></el-icon>
                   발송중
@@ -1650,14 +1650,14 @@
                   등입니다.<br />
                   발송 후 25시간 이후에 최종결과를 확인하세요.
                 </div>
-              </el-send-result-guide-box>
-              <el-send-result-guide-box>
+              </el-modal-guide-box>
+              <el-modal-guide-box>
                 <h4 class="typo-body-sm">
                   <el-icon class="etc-success natural-0"></el-icon>
                   성공
                 </h4>
-              </el-send-result-guide-box>
-              <el-send-result-guide-box>
+              </el-modal-guide-box>
+              <el-modal-guide-box>
                 <h4 class="typo-body-sm">
                   <el-icon class="etc-fail natural-0"></el-icon>
                   실패
@@ -1700,8 +1700,8 @@
                     게시판으로 요청 바랍니다.
                   </div>
                 </div>
-              </el-send-result-guide-box>
-              <el-send-result-guide-box>
+              </el-modal-guide-box>
+              <el-modal-guide-box>
                 <h4 class="typo-body-sm">
                   <el-icon class="etc-wait natural-0"></el-icon>
                   환불대기
@@ -1710,8 +1710,8 @@
                   환불요청 후 처리를 기다리는 상태입니다.<br />
                   환불대기 상태에서는 환불요청 철회가 불가합니다.
                 </div>
-              </el-send-result-guide-box>
-              <el-send-result-guide-box>
+              </el-modal-guide-box>
+              <el-modal-guide-box>
                 <h4 class="typo-body-sm">
                   <el-icon class="etc-refund natural-0"></el-icon>
                   환불
@@ -1722,8 +1722,8 @@
                   환불은 캐쉬로 환불 처리됩니다. (단, 대기상태에서 전체 취소 시
                   결제수단으로 환불)
                 </div>
-              </el-send-result-guide-box>
-            </el-modal-send-result-guide>
+              </el-modal-guide-box>
+            </el-modal-guide>
           </el-modal-body>
 
           <el-modal-footer class="modal-footer">
