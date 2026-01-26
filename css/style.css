@@ -8788,7 +8788,7 @@ el-mypage-content {
           gap: 6px;
 
           & > el-input,
-          & > textarea {
+          & > textarea.form-control {
             width: 620px;
           }
 
@@ -8821,6 +8821,15 @@ el-mypage-content {
           gap: 39px;
           width: 100%;
           padding-left: 135px;
+        }
+
+        &.modify {
+          el-order-input {
+            & > el-input,
+            & > textarea.form-control {
+              width: 764px;
+            }
+          }
         }
       }
 
@@ -9093,6 +9102,18 @@ el-mypage-content {
     flex-direction: column;
     gap: 32px;
     width: 100%;
+
+    el-order-product-footer-buttons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding-bottom: 24px;
+
+      & > button {
+        width: 160px;
+      }
+    }
 
     & > button {
       width: 160px;
@@ -12067,5 +12088,12 @@ el-agree-send-fail {
       background-color: var(--color-blue-60);
     }
   }
+}
+
+el-mypage-modify {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
 }
 /* 종료: 마이페이지 > 주문/발송 수정 */
