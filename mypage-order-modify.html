@@ -278,13 +278,11 @@
                                   <col class="col-fix" />
                                   <col class="col-fix" />
                                   <col class="col-fix" />
-                                  <col class="col-fix" />
                                 </colgroup>
                                 <thead>
                                   <tr>
                                     <th scope="col">상품정보</th>
                                     <th scope="col">유효기간</th>
-                                    <th scope="col">지급 리워드</th>
                                     <th scope="col">정상가</th>
                                     <th scope="col">판매가</th>
                                   </tr>
@@ -317,18 +315,9 @@
                                       </el-order-product-item-detail>
                                     </td>
                                     <td>2025.12.31</td>
-                                    <td>
-                                      <el-reward>
-                                        <img
-                                          src="./images/badge-h14-reward.svg"
-                                          alt="리워드"
-                                        />
-                                        1,004,700
-                                      </el-reward>
-                                    </td>
                                     <td>1,004,700</td>
                                     <td>
-                                      <el-sale-price> 1,004,700 </el-sale-price>
+                                      <el-sale-price>1,004,700</el-sale-price>
                                     </td>
                                   </tr>
                                 </tbody>
@@ -343,13 +332,11 @@
                                   <col class="col-fix" />
                                   <col class="col-fix" />
                                   <col class="col-fix" />
-                                  <col class="col-fix" />
                                 </colgroup>
                                 <thead>
                                   <tr>
                                     <th scope="col">상품정보</th>
                                     <th scope="col">유효기간</th>
-                                    <th scope="col">지급 리워드</th>
                                     <th scope="col">정상가</th>
                                     <th scope="col">판매가</th>
                                   </tr>
@@ -383,19 +370,10 @@
                                     </td>
                                     <td>2025.12.31</td>
                                     <td>
-                                      <el-reward>
-                                        <img
-                                          src="./images/badge-h14-reward.svg"
-                                          alt="리워드"
-                                        />
+                                      <el-line-through>
                                         1,004,700
-                                      </el-reward>
+                                      </el-line-through>
                                     </td>
-                                    <td
-                                      ><el-line-through
-                                        >1,004,700</el-line-through
-                                      ></td
-                                    >
                                     <td>
                                       <el-sale-price>
                                         <el-badge-discount
@@ -416,6 +394,16 @@
                             <el-order-product-article>
                               <el-article-title>
                                 <h3 class="typo-subtitle-lg">발신 정보</h3>
+                                <el-article-title-addon
+                                  class="justify-content-start"
+                                >
+                                  <button
+                                    type="button"
+                                    class="button-h43-square-fill typo-body-sm color-orange"
+                                  >
+                                    수정적용
+                                  </button>
+                                </el-article-title-addon>
                               </el-article-title>
                               <el-order-input-row>
                                 <el-order-input-label>
@@ -431,48 +419,31 @@
                                   </el-input>
                                 </el-order-input>
                               </el-order-input-row>
-                              <el-order-input-row>
-                                <el-order-input-label>
-                                  발신번호
-                                </el-order-input-label>
-                                <el-order-input>
-                                  <el-input class="is-invalid">
-                                    <input
-                                      class="form-control custom-input input-type-phone"
-                                      type="text"
-                                      placeholder="발신자 번호를 입력해 주세요. (일반번호도 사용가능)"
-                                    />
-                                    <el-invalide-feedback class="typo-label-lg">
-                                      올바른 발신 번호를 입력해 주세요.
-                                    </el-invalide-feedback>
-                                  </el-input>
-                                </el-order-input>
-                              </el-order-input-row>
-
-                              <el-order-caution class="typo-body-sm">
-                                <el-order-caution-header>
-                                  발신번호가 올바르지 않으면 발송이 실패됩니다.
-                                  <a
-                                    href="https://www.officecon.co.kr/"
-                                    target="_blank"
+                              <el-agree-send-fail class="typo-body-sm">
+                                <el-checkbox class="form-check">
+                                  <input
+                                    type="checkbox"
+                                    id="checkSendFail"
+                                    class="form-check-input custom-checkbox"
+                                    value=""
+                                    checked
+                                  />
+                                  <label
+                                    class="form-check-label typo-body-sm"
+                                    for="checkSendFail"
                                   >
-                                    발송실패예시
-                                    <el-icon class="h16-arrow-right"></el-icon>
-                                  </a>
-                                </el-order-caution-header>
-                                <el-marker-list>
-                                  <ul>
-                                    <li>
-                                      일반번호에는 지역번호를 포함하여
-                                      등록하세요. (02-XXXX-XXXX)
-                                    </li>
-                                    <li>
-                                      전국대표번호(1544, 1661 등)에는 지역번호
-                                      없이 입력하세요. (1544-XXXX)
-                                    </li>
-                                  </ul>
-                                </el-marker-list>
-                              </el-order-caution>
+                                    휴대폰번호 규칙 미 준수 시 이동통신사에 의해
+                                    발송실패 할 수 있습니다.
+                                  </label>
+                                </el-checkbox>
+                                <a
+                                  href="https://www.officecon.co.kr/"
+                                  target="_blank"
+                                >
+                                  발송실패예시
+                                  <el-icon class="h16-arrow-right"></el-icon>
+                                </a>
+                              </el-agree-send-fail>
 
                               <el-order-input-row>
                                 <el-order-input-label>
@@ -488,35 +459,6 @@
                                   </el-input>
                                 </el-order-input>
                               </el-order-input-row>
-                              <el-order-input-row>
-                                <el-order-input-label>
-                                  발신메일주소
-                                </el-order-input-label>
-                                <el-order-input>
-                                  <el-input class="is-invalid">
-                                    <input
-                                      class="form-control custom-input"
-                                      type="email"
-                                      placeholder="발신자 이메일 주소를 입력해 주세요."
-                                    />
-                                    <el-invalide-feedback class="typo-label-lg">
-                                      입력하신 메일 도메인은 발송이 불가합니다.
-                                    </el-invalide-feedback>
-                                  </el-input>
-                                </el-order-input>
-                              </el-order-input-row>
-
-                              <el-order-caution class="typo-body-sm theme-red">
-                                <el-marker-list>
-                                  <ul>
-                                    <li>
-                                      구글 메일 정책에 따라 @gmail.com 또는
-                                      @googlemail.com으로는 발송하실 수
-                                      없습니다.
-                                    </li>
-                                  </ul>
-                                </el-marker-list>
-                              </el-order-caution>
 
                               <el-order-input-row>
                                 <el-order-input-label>
@@ -540,134 +482,55 @@
                               <el-article-title>
                                 <h3 class="typo-subtitle-lg">수신자 편집</h3>
                               </el-article-title>
-                              <el-order-input-row>
-                                <el-order-input-label>
-                                  휴대폰번호
-                                </el-order-input-label>
-                                <el-order-input>
-                                  <el-input>
-                                    <input
-                                      class="form-control custom-input input-type-mobile"
-                                      type="text"
-                                      placeholder="받으실 분 휴대폰번호를 입력해주세요."
-                                    />
-                                  </el-input>
-                                  <button
-                                    type="button"
-                                    class="text-black button-h43-square typo-body-sm"
-                                  >
-                                    추가
-                                  </button>
-                                </el-order-input>
-                              </el-order-input-row>
-                              <el-order-input-row>
-                                <el-order-input-label>
-                                  휴대폰번호
-                                </el-order-input-label>
-                                <el-order-input>
-                                  <el-input class="is-invalid">
-                                    <input
-                                      class="form-control custom-input input-type-mobile"
-                                      type="text"
-                                      placeholder="받으실 분 휴대폰번호를 입력해주세요."
-                                    />
-                                    <el-invalide-feedback class="typo-label-lg">
-                                      필수 입력 항목입니다.
-                                    </el-invalide-feedback>
-                                  </el-input>
-                                  <button
-                                    type="button"
-                                    class="text-black button-h43-square typo-body-sm"
-                                  >
-                                    추가
-                                  </button>
-                                </el-order-input>
-                              </el-order-input-row>
-                              <el-order-input-row>
-                                <el-order-input-label>
-                                  이메일 주소
-                                </el-order-input-label>
-                                <el-order-input>
-                                  <el-input>
-                                    <input
-                                      class="form-control custom-input"
-                                      type="email"
-                                      placeholder="받으실 분 이메일주소를 입력해주세요."
-                                    />
-                                  </el-input>
-                                  <button
-                                    type="button"
-                                    class="text-black button-h43-square typo-body-sm"
-                                  >
-                                    추가
-                                  </button>
-                                </el-order-input>
-                              </el-order-input-row>
-                              <el-order-input-row>
-                                <el-order-input-label>
-                                  이메일 주소
-                                </el-order-input-label>
-                                <el-order-input>
-                                  <el-input class="is-invalid">
-                                    <input
-                                      class="form-control custom-input"
-                                      type="email"
-                                      placeholder="받으실 분 이메일주소를 입력해주세요."
-                                    />
-                                    <el-invalide-feedback class="typo-label-lg">
-                                      필수 입력 항목입니다.
-                                    </el-invalide-feedback>
-                                  </el-input>
-                                  <button
-                                    type="button"
-                                    class="text-black button-h43-square typo-body-sm"
-                                  >
-                                    추가
-                                  </button>
-                                </el-order-input>
-                              </el-order-input-row>
+
                               <el-order-addressee-list>
-                                <el-order-addressee-util-bar>
-                                  <button
-                                    data-bs-toggle="modal"
-                                    data-bs-target="#el-modal-copy-paste-email"
-                                    type="button"
-                                    class="text-black button-h43-square typo-body-sm"
-                                  >
-                                    복사하여 붙여넣기
-                                  </button>
-                                  <button
-                                    type="button"
-                                    class="text-black button-h43-square typo-body-sm"
-                                  >
-                                    엑셀 업로드
-                                  </button>
-                                  <button
-                                    type="button"
-                                    class="text-black button-h43-square typo-body-sm"
-                                  >
-                                    <el-icon class="etc-excel"></el-icon>
-                                    엑셀 양식 다운로드
-                                  </button>
-                                </el-order-addressee-util-bar>
                                 <el-order-addressee-list-content>
-                                  <ul class="typo-body-md"> </ul>
+                                  <ul class="typo-body-md bg-gray">
+                                    <li>
+                                      <el-order-addressee-modify>
+                                        <el-input>
+                                          <input
+                                            class="form-control custom-input input-type-mobile"
+                                            type="text"
+                                            placeholder="휴대폰번호 입력"
+                                            value="010-1212-1212"
+                                          />
+                                        </el-input>
+                                        <button
+                                          type="button"
+                                          class="button-h43-square-fill typo-body-sm color-orange"
+                                        >
+                                          수정적용
+                                        </button>
+                                      </el-order-addressee-modify>
+                                    </li>
+                                    <li>
+                                      <el-order-addressee-modify>
+                                        <el-input>
+                                          <input
+                                            class="form-control custom-input input-type-mobile"
+                                            type="text"
+                                            placeholder="휴대폰번호 입력"
+                                            value="010-1212-1212"
+                                          />
+                                        </el-input>
+                                        <button
+                                          type="button"
+                                          class="button-h43-square-fill typo-body-sm color-orange"
+                                        >
+                                          수정적용
+                                        </button>
+                                      </el-order-addressee-modify>
+                                    </li>
+                                  </ul>
                                   <el-order-addressee-list-status>
                                     <el-status-top>
-                                      <button
-                                        type="button"
-                                        aria-label="refresh"
-                                      >
-                                        <el-icon
-                                          class="h20-refresh natural-0"
-                                        ></el-icon>
-                                      </button>
                                       <el-status-top-label class="typo-body-lg">
-                                        선택된 수신자
+                                        변경가능 수신자
                                       </el-status-top-label>
                                       <el-status-top-count class="typo-body-sm">
-                                        <strong class="typo-heading-md"
-                                          >0</strong
+                                        <strong class="typo-heading-md">
+                                          2 </strong
                                         >명
                                       </el-status-top-count>
                                     </el-status-top>
@@ -683,201 +546,61 @@
                                     </el-status-bottom>
                                   </el-order-addressee-list-status>
                                 </el-order-addressee-list-content>
+
                                 <el-order-addressee-list-content>
-                                  <ul class="typo-body-md">
-                                    <li>
-                                      010-6730-4442 (1건)
-                                      <button
-                                        type="button"
-                                        class="remove"
-                                        aria-label="remove"
-                                      >
-                                        <el-icon class="h16-closed"></el-icon>
-                                      </button>
-                                    </li>
-                                    <li>
-                                      010-6730-4442 (1건)
-                                      <button
-                                        type="button"
-                                        class="remove"
-                                        aria-label="remove"
-                                      >
-                                        <el-icon class="h16-closed"></el-icon>
-                                      </button>
-                                    </li>
-                                    <li>
-                                      010-6730-4442 (1건)
-                                      <button
-                                        type="button"
-                                        class="remove"
-                                        aria-label="remove"
-                                      >
-                                        <el-icon class="h16-closed"></el-icon>
-                                      </button>
-                                    </li>
-                                    <li>
-                                      010-6730-4442 (1건)
-                                      <button
-                                        type="button"
-                                        class="remove"
-                                        aria-label="remove"
-                                      >
-                                        <el-icon class="h16-closed"></el-icon>
-                                      </button>
-                                    </li>
-                                    <li>
-                                      010-6730-4442 (1건)
-                                      <button
-                                        type="button"
-                                        class="remove"
-                                        aria-label="remove"
-                                      >
-                                        <el-icon class="h16-closed"></el-icon>
-                                      </button>
-                                    </li>
-                                    <li>
-                                      010-6730-4442 (1건)
-                                      <button
-                                        type="button"
-                                        class="remove"
-                                        aria-label="remove"
-                                      >
-                                        <el-icon class="h16-closed"></el-icon>
-                                      </button>
-                                    </li>
-                                    <li>
-                                      010-6730-4442 (1건)
-                                      <button
-                                        type="button"
-                                        class="remove"
-                                        aria-label="remove"
-                                      >
-                                        <el-icon class="h16-closed"></el-icon>
-                                      </button>
-                                    </li>
-                                    <li>
-                                      010-6730-4442 (1건)
-                                      <button
-                                        type="button"
-                                        class="remove"
-                                        aria-label="remove"
-                                      >
-                                        <el-icon class="h16-closed"></el-icon>
-                                      </button>
-                                    </li>
-                                    <li>
-                                      010-6730-4442 (1건)
-                                      <button
-                                        type="button"
-                                        class="remove"
-                                        aria-label="remove"
-                                      >
-                                        <el-icon class="h16-closed"></el-icon>
-                                      </button>
-                                    </li>
-                                    <li>
-                                      010-6730-4442 (1건)
-                                      <button
-                                        type="button"
-                                        class="remove"
-                                        aria-label="remove"
-                                      >
-                                        <el-icon class="h16-closed"></el-icon>
-                                      </button>
-                                    </li>
+                                  <ul class="typo-body-md bg-gray">
+                                    <li>010-6730-4442</li>
+                                    <li>010-6730-4442</li>
                                   </ul>
                                   <el-order-addressee-list-status>
                                     <el-status-top>
-                                      <button
-                                        type="button"
-                                        aria-label="refresh"
-                                      >
-                                        <el-icon
-                                          class="h20-refresh natural-0"
-                                        ></el-icon>
-                                      </button>
                                       <el-status-top-label class="typo-body-lg">
-                                        선택된 수신자
+                                        변경가능 수신자
                                       </el-status-top-label>
                                       <el-status-top-count class="typo-body-sm">
-                                        <strong class="typo-heading-md"
-                                          >9,999,999</strong
+                                        <strong class="typo-heading-md">
+                                          0 </strong
                                         >명
                                       </el-status-top-count>
                                     </el-status-top>
                                     <el-order-divider></el-order-divider>
                                     <el-status-bottom>
-                                      <ul class="typo-body-sm">
-                                        <li>
-                                          <el-status-bottom-item-label>
-                                            현재 주문가능 수량
-                                          </el-status-bottom-item-label>
-                                          <strong>9,423개</strong>
-                                        </li>
-                                        <li>
-                                          <el-status-bottom-item-label>
-                                            ID당 주문 가능 수량
-                                          </el-status-bottom-item-label>
-                                          <strong>9,423개</strong>
-                                        </li>
-                                      </ul>
+                                      <el-status-bottom-default
+                                        class="typo-body-sm"
+                                      >
+                                        선택된 수신자로<br />모바일쿠폰을
+                                        보내드려요.
+                                        <img src="./images/letter.png" alt="" />
+                                      </el-status-bottom-default>
                                     </el-status-bottom>
                                   </el-order-addressee-list-status>
                                 </el-order-addressee-list-content>
+
                                 <el-order-addressee-list-content>
-                                  <ul class="typo-body-md">
-                                    <li>
-                                      abcf@zlgoon.co.kr (1건)
-                                      <button
-                                        type="button"
-                                        class="remove"
-                                        aria-label="remove"
-                                      >
-                                        <el-icon class="h16-closed"></el-icon>
-                                      </button>
-                                    </li>
+                                  <ul class="typo-body-md bg-gray">
+                                    <li>abcf@zlgoon.co.kr</li>
+                                    <li>abcf@zlgoon.co.kr</li>
                                   </ul>
                                   <el-order-addressee-list-status>
                                     <el-status-top>
-                                      <button
-                                        type="button"
-                                        aria-label="refresh"
-                                      >
-                                        <el-icon
-                                          class="h20-refresh natural-0"
-                                        ></el-icon>
-                                      </button>
                                       <el-status-top-label class="typo-body-lg">
-                                        선택된 수신자
+                                        변경가능 수신자
                                       </el-status-top-label>
                                       <el-status-top-count class="typo-body-sm">
-                                        <strong class="typo-heading-md"
-                                          >9,999,999</strong
+                                        <strong class="typo-heading-md">
+                                          0 </strong
                                         >명
                                       </el-status-top-count>
                                     </el-status-top>
                                     <el-order-divider></el-order-divider>
                                     <el-status-bottom>
-                                      <ul class="typo-body-sm">
-                                        <li>
-                                          <el-status-bottom-item-label>
-                                            현재 주문가능 수량
-                                          </el-status-bottom-item-label>
-                                          <strong>9,423개</strong>
-                                        </li>
-                                        <li>
-                                          <el-status-bottom-item-label>
-                                            일일 주문가능 수량
-                                          </el-status-bottom-item-label>
-                                          <strong>9,423개</strong>
-                                        </li>
-                                        <li>
-                                          <el-status-bottom-item-label>
-                                            ID당 주문 가능 수량
-                                          </el-status-bottom-item-label>
-                                          <strong>9,423개</strong>
-                                        </li>
-                                      </ul>
+                                      <el-status-bottom-default
+                                        class="typo-body-sm"
+                                      >
+                                        선택된 수신자로<br />모바일쿠폰을
+                                        보내드려요.
+                                        <img src="./images/letter.png" alt="" />
+                                      </el-status-bottom-default>
                                     </el-status-bottom>
                                   </el-order-addressee-list-status>
                                 </el-order-addressee-list-content>
