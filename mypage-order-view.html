@@ -915,7 +915,63 @@
                       </el-info-box>
                     </el-order-view-sent-result>
 
-                    <el-order-view-payment></el-order-view-payment>
+                    <el-order-view-payment>
+                      <el-order-view-payment-title class="typo-subtitle-sm">
+                        결제 정보
+                        <button
+                          type="button"
+                          class="text-black button-h43-square typo-body-sm"
+                        >
+                          영수증
+                        </button>
+                      </el-order-view-payment-title>
+                      <el-order-view-payment-content>
+                        <el-order-view-payment-info class="typo-body-sm">
+                          <el-order-view-payment-info-label>
+                            결제 수단
+                          </el-order-view-payment-info-label>
+                          <ul>
+                            <li>카드결제(삼성카드) + 캐쉬 +포인트</li>
+                            <li>주문 일시 (2025.11.12 09:14)</li>
+                          </ul>
+                        </el-order-view-payment-info>
+                        <el-order-view-payment-price class="typo-body-sm">
+                          <dl>
+                            <dt>주문금액</dt>
+                            <dd>999,999,999</dd>
+                          </dl>
+                          <dl>
+                            <dt>할인</dt>
+                            <dd class="color-red">-999,999,999</dd>
+                          </dl>
+                          <dl>
+                            <dt>캐쉬</dt>
+                            <dd class="color-red">-999,999,999</dd>
+                          </dl>
+                          <dl>
+                            <dt>일이삼사오육칠팔구십</dt>
+                            <dd class="color-red">-999,999,999</dd>
+                          </dl>
+                          <dl>
+                            <dt>리워드</dt>
+                            <dd class="color-red">-999,999,999</dd>
+                          </dl>
+                          <dl class="size-lg typo-subtitle-sm">
+                            <dt>최종 결제 금액</dt>
+                            <dd>999,999,999</dd>
+                          </dl>
+                        </el-order-view-payment-price>
+                      </el-order-view-payment-content>
+                    </el-order-view-payment>
+
+                    <el-order-view-cta>
+                      <button
+                        type="button"
+                        class="button-h50-square-fill typo-body-sm"
+                      >
+                        <span>목록</span>
+                      </button>
+                    </el-order-view-cta>
                   </el-mypage-content>
                 </el-mypage-section>
               </el-mypage-container>
