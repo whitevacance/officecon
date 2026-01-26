@@ -8404,7 +8404,8 @@ el-order-box {
   }
 }
 
-el-order-content {
+el-order-content,
+el-mypage-content {
   display: flex;
   flex-direction: column;
   gap: 24px;
