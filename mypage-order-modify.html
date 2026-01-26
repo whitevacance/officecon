@@ -1,0 +1,2212 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>주문/발송 수정 | 오피스콘</title>
+    <meta charset="UTF-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="shortcut icon" href="./images/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./images/favicon-apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="./images/favicon-android-chrome-192x192.png"
+    />
+    <link
+      rel="preload"
+      href="./fonts/Pretendard-Regular.subset.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="./fonts/Pretendard-SemiBold.subset.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="./fonts/Pretendard-Bold.subset.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link type="text/css" rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="./css/swiper.min.css" />
+    <link type="text/css" rel="stylesheet" href="./css/tui-time-picker.css" />
+    <link type="text/css" rel="stylesheet" href="./css/tui-date-picker.css" />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="./css/overlayscrollbars.min.css"
+    />
+    <link type="text/css" rel="stylesheet" href="./css/style.css" />
+    <script src="./js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script
+      src="./js/swiper-element-bundleswiper.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/tui-time-picker.js" crossorigin="anonymous"></script>
+    <script src="./js/tui-date-picker.js" crossorigin="anonymous"></script>
+    <script
+      src="./js/overlayscrollbars.browser.es6.min.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <!-- [DEV] 일반회원일 때 className: 'personal-member' -->
+    <el-wrapper>
+      <el-container>
+        <!-- 시작: [DEV] 웹컴포넌트
+          1. 퍼블리싱용 웹컴포넌트입니다.
+          2. el-top-banner, el-header-top, el-header-sticky, el-header-gnb
+          3. 개발 시 examples.html 원본을 참고해 주세요.
+         -->
+        <component-top-banner></component-top-banner>
+
+        <!-- 시작: 헤더 -->
+        <component-header-top></component-header-top>
+        <component-header-sticky></component-header-sticky>
+        <component-header-gnb></component-header-gnb>
+        <!-- 종료: 헤더 -->
+
+        <!-- 종료: [DEV] 웹컴포넌트 -->
+
+        <!-- 시작: 컨텐츠 -->
+        <main>
+          <el-content-header>
+            <el-content-header-container>
+              <!-- 시작: [DEV] 웹컴포넌트
+                1. 퍼블리싱용 웹컴포넌트입니다.
+                2. el-breadcrumb
+                3. 개발 시 examples.html 원본을 참고해 주세요.
+              -->
+              <component-breadcrumb></component-breadcrumb>
+              <!-- 종료: [DEV] 웹컴포넌트 -->
+            </el-content-header-container>
+          </el-content-header>
+
+          <el-content>
+            <el-mypage>
+              <!-- 시작: [등급 정보] 일반 -->
+              <el-mypage-grade class="grade-common">
+                <el-grade-info>
+                  <el-grade-info-content>
+                    <el-grade-info-image>
+                      <img src="./images/badge-grade-common.png" alt="" />
+                    </el-grade-info-image>
+                    <el-grade-info-detail>
+                      <h4 class="typo-subtitle-md">
+                        <strong>홍길동</strong>님 오피스콘에 오신 것을
+                        환영합니다!
+                      </h4>
+                      <el-grade-info-detail-content class="typo-body-sm">
+                        <p>
+                          일반회원은 등급별 할인 혜택을 제공하지 않습니다.
+                        </p>
+                        <p>
+                          오른쪽 [기업회원전환] 버튼을 통해 회원을 전환하시면
+                        </p>
+                        <p>등급별 할인 혜택을 제공받으실 수 있습니다. 🧡</p>
+                      </el-grade-info-detail-content>
+                    </el-grade-info-detail>
+                  </el-grade-info-content>
+                  <el-grade-info-addon>
+                    <button
+                      type="button"
+                      class="text-black button-h43-round typo-body-sm"
+                    >
+                      회원정보수정
+                    </button>
+                    <button
+                      type="button"
+                      data-bs-toggle="modal"
+                      data-bs-target="#el-modal-company-member-conversion"
+                      class="text-black button-h43-round typo-body-sm"
+                    >
+                      기업회원전환
+                    </button>
+                  </el-grade-info-addon>
+                </el-grade-info>
+                <el-grade-cash>
+                  <h4 class="typo-subtitle-md">나의 캐쉬</h4>
+                  <el-grade-cash-content>
+                    <el-grade-cash-date class="typo-body-sm">
+                      소멸 예정일
+                      <strong>2030.10.17</strong>
+                    </el-grade-cash-date>
+                    <el-grade-cash-amount>
+                      <span class="typo-body-sm">
+                        <strong class="typo-heading-md">999,999,990</strong>원
+                      </span>
+                      <button
+                        type="button"
+                        data-bs-toggle="modal"
+                        data-bs-target="#el-modal-cash-charge"
+                        class="button-h43-round typo-body-sm color-orange"
+                      >
+                        충전
+                      </button>
+                    </el-grade-cash-amount>
+                  </el-grade-cash-content>
+                </el-grade-cash>
+              </el-mypage-grade>
+              <!-- 종료: [등급 정보] 일반 -->
+
+              <el-mypage-container>
+                <el-mypage-nav>
+                  <el-section-title>
+                    <h3 class="typo-subtitle-lg">마이페이지</h3>
+                  </el-section-title>
+                  <ul class="typo-body-lg">
+                    <li>
+                      <h4 class="typo-subtitle-sm">쇼핑 내역</h4>
+                      <ul>
+                        <li>
+                          <a href="#"> 주문/발송 내역 </a>
+                        </li>
+                        <li>
+                          <a href="#"> 취소/환불 내역 </a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <h4 class="typo-subtitle-sm">캐쉬/리워드 내역</h4>
+                      <ul>
+                        <li>
+                          <a href="#"> 캐쉬 내역 </a>
+                        </li>
+                        <li>
+                          <a href="#"> 리워드 내역 </a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <h4 class="typo-subtitle-sm">서브회원</h4>
+                      <ul>
+                        <li>
+                          <a href="#"> 서브회원 관리 </a>
+                        </li>
+                        <li>
+                          <a href="#"> 서브회원 주문/발송 내역 </a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <h4 class="typo-subtitle-sm">발송관리</h4>
+                      <ul>
+                        <li>
+                          <a href="#"> 발송문구 관리 </a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <h4 class="typo-subtitle-sm">나의정보</h4>
+                      <ul>
+                        <li>
+                          <a href="#"> 인증 IP 관리 </a>
+                        </li>
+                        <li>
+                          <a href="#"> 회원정보 수정 </a>
+                        </li>
+                        <li>
+                          <a href="#"> 회원 탈퇴 </a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </el-mypage-nav>
+                <el-mypage-section>
+                  <el-section-title>
+                    <h3 class="typo-subtitle-lg">주문/발송 수정</h3>
+                    <el-section-title-addon class="typo-body-sm">
+                      <button
+                        type="button"
+                        data-bs-target="#el-modal-order-modify-guide"
+                        data-bs-toggle="modal"
+                        class="button-h43-square typo-body-sm text-black"
+                      >
+                        주문/발송 수정가이드
+                      </button>
+                    </el-section-title-addon>
+                  </el-section-title>
+
+                  <el-mypage-content>
+                    <el-mypage-modify>
+                      <el-order-box>
+                        <el-order-box-header>
+                          <el-order-box-header-title class="typo-subtitle-lg">
+                            주문상품 1
+                          </el-order-box-header-title>
+
+                          <!-- [DEV] 개발 시 data-bs-target의 값에
+                             '#collapse-box-content-{인덱스}' 를 사용해 주세요.
+                         -->
+                          <button
+                            type="button"
+                            aria-label="toogle box"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapse-box-content-0"
+                          >
+                            <el-icon class="h32-plus natural-0"></el-icon>
+                            <el-icon class="h32-minus natural-0"></el-icon>
+                          </button>
+                        </el-order-box-header>
+
+                        <!-- [DEV] 개발 시 id 값에
+                             'collapse-box-content-{인덱스}'를 사용해 주세요.
+                         -->
+                        <el-order-box-content-collapse
+                          class="collapse show"
+                          id="collapse-box-content-0"
+                        >
+                          <el-order-box-content>
+                            <el-order-product>
+                              <el-order-product-item>
+                                <table
+                                  class="table align-middle table-borderless"
+                                >
+                                  <colgroup>
+                                    <col class="col-auto" />
+                                    <col class="col-fix" />
+                                    <col class="col-fix" />
+                                    <col class="col-fix" />
+                                  </colgroup>
+                                  <thead>
+                                    <tr>
+                                      <th scope="col">상품정보</th>
+                                      <th scope="col">유효기간</th>
+                                      <th scope="col">정상가</th>
+                                      <th scope="col">판매가</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <td>
+                                        <el-order-product-item-detail>
+                                          <a href="#">
+                                            <el-item-thumbnail>
+                                              <img
+                                                class="thumbnail-image"
+                                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/product/20250227/20250227145823_a5b9221d-437d-4b84-b0ac-fbc6f58edf4f.jpg"
+                                                alt=""
+                                              />
+                                              <el-bg></el-bg>
+                                            </el-item-thumbnail>
+
+                                            <el-item-txt class="typo-body-sm">
+                                              <el-item-name>
+                                                <el-brand>
+                                                  일이삼사오육칠팔구십일이삼사
+                                                </el-brand>
+                                                <el-item-name-txt>
+                                                  일이삼사오육칠팔구십일이삼사오육칠
+                                                </el-item-name-txt>
+                                              </el-item-name>
+                                            </el-item-txt>
+                                          </a>
+                                        </el-order-product-item-detail>
+                                      </td>
+                                      <td>2025.12.31</td>
+                                      <td>1,004,700</td>
+                                      <td>
+                                        <el-sale-price>1,004,700</el-sale-price>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </el-order-product-item>
+                              <el-order-product-item>
+                                <table
+                                  class="table align-middle table-borderless"
+                                >
+                                  <colgroup>
+                                    <col class="col-auto" />
+                                    <col class="col-fix" />
+                                    <col class="col-fix" />
+                                    <col class="col-fix" />
+                                  </colgroup>
+                                  <thead>
+                                    <tr>
+                                      <th scope="col">상품정보</th>
+                                      <th scope="col">유효기간</th>
+                                      <th scope="col">정상가</th>
+                                      <th scope="col">판매가</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <td>
+                                        <el-order-product-item-detail>
+                                          <a href="#">
+                                            <el-item-thumbnail>
+                                              <img
+                                                class="thumbnail-image"
+                                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/product/20250227/20250227145823_a5b9221d-437d-4b84-b0ac-fbc6f58edf4f.jpg"
+                                                alt=""
+                                              />
+                                              <el-bg></el-bg>
+                                            </el-item-thumbnail>
+
+                                            <el-item-txt class="typo-body-sm">
+                                              <el-item-name>
+                                                <el-brand>
+                                                  일이삼사오육칠팔구십일이삼사
+                                                </el-brand>
+                                                <el-item-name-txt>
+                                                  일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일
+                                                </el-item-name-txt>
+                                              </el-item-name>
+                                            </el-item-txt>
+                                          </a>
+                                        </el-order-product-item-detail>
+                                      </td>
+                                      <td>2025.12.31</td>
+                                      <td>
+                                        <el-line-through>
+                                          1,004,700
+                                        </el-line-through>
+                                      </td>
+                                      <td>
+                                        <el-sale-price>
+                                          <el-badge-discount
+                                            class="typo-label-sm"
+                                          >
+                                            3%
+                                          </el-badge-discount>
+                                          1,004,700
+                                        </el-sale-price>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </el-order-product-item>
+
+                              <el-order-divider></el-order-divider>
+
+                              <el-order-product-article>
+                                <el-article-title>
+                                  <h3 class="typo-subtitle-lg">발신 정보</h3>
+                                  <el-article-title-addon
+                                    class="justify-content-start"
+                                  >
+                                    <button
+                                      type="button"
+                                      class="button-h43-square-fill typo-body-sm color-orange"
+                                    >
+                                      수정적용
+                                    </button>
+                                  </el-article-title-addon>
+                                </el-article-title>
+                                <el-order-input-row>
+                                  <el-order-input-label>
+                                    발신번호
+                                  </el-order-input-label>
+                                  <el-order-input>
+                                    <el-input>
+                                      <input
+                                        class="form-control custom-input input-type-phone"
+                                        type="text"
+                                        placeholder="발신자 번호를 입력해 주세요. (일반번호도 사용가능)"
+                                        value="010-1212-1212"
+                                      />
+                                    </el-input>
+                                  </el-order-input>
+                                </el-order-input-row>
+                                <el-agree-send-fail class="typo-body-sm">
+                                  <el-checkbox class="form-check">
+                                    <input
+                                      type="checkbox"
+                                      id="checkSendFail"
+                                      class="form-check-input custom-checkbox"
+                                      value=""
+                                      checked
+                                    />
+                                    <label
+                                      class="form-check-label typo-body-sm"
+                                      for="checkSendFail"
+                                    >
+                                      휴대폰번호 규칙 미 준수 시 이동통신사에
+                                      의해 발송실패 할 수 있습니다.
+                                    </label>
+                                  </el-checkbox>
+                                  <a
+                                    href="https://www.officecon.co.kr/"
+                                    target="_blank"
+                                  >
+                                    발송실패예시
+                                    <el-icon class="h16-arrow-right"></el-icon>
+                                  </a>
+                                </el-agree-send-fail>
+
+                                <el-order-input-row>
+                                  <el-order-input-label>
+                                    발신메일주소
+                                  </el-order-input-label>
+                                  <el-order-input>
+                                    <el-input>
+                                      <input
+                                        class="form-control custom-input"
+                                        type="email"
+                                        placeholder="발신자 이메일 주소를 입력해 주세요."
+                                        value="abcf@zlgoon.co.kr"
+                                      />
+                                    </el-input>
+                                  </el-order-input>
+                                </el-order-input-row>
+
+                                <el-order-input-row>
+                                  <el-order-input-label>
+                                    발신메일이름
+                                  </el-order-input-label>
+                                  <el-order-input>
+                                    <el-input>
+                                      <input
+                                        class="form-control custom-input"
+                                        type="text"
+                                        placeholder="발신자 이름을 입력해 주세요."
+                                        value="홍길동"
+                                      />
+                                    </el-input>
+                                  </el-order-input>
+                                </el-order-input-row>
+                              </el-order-product-article>
+
+                              <el-order-divider></el-order-divider>
+
+                              <el-order-product-article>
+                                <el-article-title>
+                                  <h3 class="typo-subtitle-lg">수신자 편집</h3>
+                                </el-article-title>
+
+                                <el-order-addressee-list>
+                                  <el-order-addressee-list-content>
+                                    <ul class="typo-body-md bg-gray">
+                                      <li>
+                                        <el-order-addressee-modify>
+                                          <el-input>
+                                            <input
+                                              class="form-control custom-input input-type-mobile"
+                                              type="text"
+                                              placeholder="휴대폰번호 입력"
+                                              value="010-1212-1212"
+                                            />
+                                          </el-input>
+                                          <button
+                                            type="button"
+                                            class="button-h43-square-fill typo-body-sm color-orange"
+                                          >
+                                            수정적용
+                                          </button>
+                                        </el-order-addressee-modify>
+                                      </li>
+                                      <li>
+                                        <el-order-addressee-modify>
+                                          <el-input>
+                                            <input
+                                              class="form-control custom-input input-type-mobile"
+                                              type="text"
+                                              placeholder="휴대폰번호 입력"
+                                              value="010-1212-1212"
+                                            />
+                                          </el-input>
+                                          <button
+                                            type="button"
+                                            class="button-h43-square-fill typo-body-sm color-orange"
+                                          >
+                                            수정적용
+                                          </button>
+                                        </el-order-addressee-modify>
+                                      </li>
+                                    </ul>
+                                    <el-order-addressee-list-status>
+                                      <el-status-top>
+                                        <el-status-top-label
+                                          class="typo-body-lg"
+                                        >
+                                          변경가능 수신자
+                                        </el-status-top-label>
+                                        <el-status-top-count
+                                          class="typo-body-sm"
+                                        >
+                                          <strong class="typo-heading-md">
+                                            2 </strong
+                                          >명
+                                        </el-status-top-count>
+                                      </el-status-top>
+                                      <el-order-divider></el-order-divider>
+                                      <el-status-bottom>
+                                        <el-status-bottom-default
+                                          class="typo-body-sm"
+                                        >
+                                          선택된 수신자로<br />모바일쿠폰을
+                                          보내드려요.
+                                          <img
+                                            src="./images/letter.png"
+                                            alt=""
+                                          />
+                                        </el-status-bottom-default>
+                                      </el-status-bottom>
+                                    </el-order-addressee-list-status>
+                                  </el-order-addressee-list-content>
+
+                                  <el-order-addressee-list-content>
+                                    <ul class="typo-body-md bg-gray">
+                                      <li>
+                                        <el-order-addressee-modify>
+                                          <el-input>
+                                            <input
+                                              class="form-control custom-input"
+                                              type="email"
+                                              placeholder="이메일 주소 입력"
+                                              value="abcf@zlgoon.co.kr"
+                                            />
+                                          </el-input>
+                                          <button
+                                            type="button"
+                                            class="button-h43-square-fill typo-body-sm color-orange"
+                                          >
+                                            수정적용
+                                          </button>
+                                        </el-order-addressee-modify>
+                                      </li>
+                                      <li>
+                                        <el-order-addressee-modify>
+                                          <el-input>
+                                            <input
+                                              class="form-control custom-input"
+                                              type="email"
+                                              placeholder="이메일 주소 입력"
+                                              value="abcf@zlgoon.co.kr"
+                                            />
+                                          </el-input>
+                                          <button
+                                            type="button"
+                                            class="button-h43-square-fill typo-body-sm color-orange"
+                                          >
+                                            수정적용
+                                          </button>
+                                        </el-order-addressee-modify>
+                                      </li>
+                                    </ul>
+                                    <el-order-addressee-list-status>
+                                      <el-status-top>
+                                        <el-status-top-label
+                                          class="typo-body-lg"
+                                        >
+                                          변경가능 수신자
+                                        </el-status-top-label>
+                                        <el-status-top-count
+                                          class="typo-body-sm"
+                                        >
+                                          <strong class="typo-heading-md">
+                                            2 </strong
+                                          >명
+                                        </el-status-top-count>
+                                      </el-status-top>
+                                      <el-order-divider></el-order-divider>
+                                      <el-status-bottom>
+                                        <el-status-bottom-default
+                                          class="typo-body-sm"
+                                        >
+                                          선택된 수신자로<br />모바일쿠폰을
+                                          보내드려요.
+                                          <img
+                                            src="./images/letter.png"
+                                            alt=""
+                                          />
+                                        </el-status-bottom-default>
+                                      </el-status-bottom>
+                                    </el-order-addressee-list-status>
+                                  </el-order-addressee-list-content>
+
+                                  <el-order-addressee-list-content>
+                                    <ul class="typo-body-md bg-gray">
+                                      <li>010-6730-4442</li>
+                                      <li>010-6730-4442</li>
+                                    </ul>
+                                    <el-order-addressee-list-status>
+                                      <el-status-top>
+                                        <el-status-top-label
+                                          class="typo-body-lg"
+                                        >
+                                          변경가능 수신자
+                                        </el-status-top-label>
+                                        <el-status-top-count
+                                          class="typo-body-sm"
+                                        >
+                                          <strong class="typo-heading-md">
+                                            0 </strong
+                                          >명
+                                        </el-status-top-count>
+                                      </el-status-top>
+                                      <el-order-divider></el-order-divider>
+                                      <el-status-bottom>
+                                        <el-status-bottom-default
+                                          class="typo-body-sm"
+                                        >
+                                          선택된 수신자로<br />모바일쿠폰을
+                                          보내드려요.
+                                          <img
+                                            src="./images/letter.png"
+                                            alt=""
+                                          />
+                                        </el-status-bottom-default>
+                                      </el-status-bottom>
+                                    </el-order-addressee-list-status>
+                                  </el-order-addressee-list-content>
+
+                                  <el-order-addressee-list-content>
+                                    <ul class="typo-body-md bg-gray">
+                                      <li>abcf@zlgoon.co.kr</li>
+                                      <li>abcf@zlgoon.co.kr</li>
+                                    </ul>
+                                    <el-order-addressee-list-status>
+                                      <el-status-top>
+                                        <el-status-top-label
+                                          class="typo-body-lg"
+                                        >
+                                          변경가능 수신자
+                                        </el-status-top-label>
+                                        <el-status-top-count
+                                          class="typo-body-sm"
+                                        >
+                                          <strong class="typo-heading-md">
+                                            0 </strong
+                                          >명
+                                        </el-status-top-count>
+                                      </el-status-top>
+                                      <el-order-divider></el-order-divider>
+                                      <el-status-bottom>
+                                        <el-status-bottom-default
+                                          class="typo-body-sm"
+                                        >
+                                          선택된 수신자로<br />모바일쿠폰을
+                                          보내드려요.
+                                          <img
+                                            src="./images/letter.png"
+                                            alt=""
+                                          />
+                                        </el-status-bottom-default>
+                                      </el-status-bottom>
+                                    </el-order-addressee-list-status>
+                                  </el-order-addressee-list-content>
+                                </el-order-addressee-list>
+                              </el-order-product-article>
+
+                              <el-order-divider></el-order-divider>
+
+                              <el-order-product-article>
+                                <el-article-title>
+                                  <h3 class="typo-subtitle-lg">
+                                    발송메시지 만들기
+                                  </h3>
+                                  <el-article-title-addon>
+                                    <button
+                                      type="button"
+                                      class="button-h43-square-fill typo-body-sm color-orange"
+                                    >
+                                      수정적용
+                                    </button>
+                                  </el-article-title-addon>
+                                </el-article-title>
+
+                                <el-order-message-create class="modify">
+                                  <el-order-input-row>
+                                    <el-order-input-label>
+                                      프로모션명
+                                    </el-order-input-label>
+                                    <el-order-input>
+                                      <el-input>
+                                        <input
+                                          class="form-control custom-input"
+                                          type="text"
+                                          placeholder="관리용 제목을 입력해 주세요. (수신자에게 발송되지 않습니다.)"
+                                          value="수능이벤트"
+                                        />
+                                      </el-input>
+                                      <el-order-input-length
+                                        class="typo-body-sm"
+                                      >
+                                        (0/60)
+                                      </el-order-input-length>
+                                    </el-order-input>
+                                  </el-order-input-row>
+                                  <el-order-input-row>
+                                    <el-order-input-label>
+                                      제목
+                                    </el-order-input-label>
+                                    <el-order-input>
+                                      <el-input>
+                                        <input
+                                          class="form-control custom-input"
+                                          type="text"
+                                          placeholder="제목을 입력해 주세요. (예시: 오피스콘 설문조사 답례 쿠폰)"
+                                          value="수능이벤트 수능이벤트"
+                                        />
+                                      </el-input>
+                                      <el-order-input-length
+                                        class="typo-body-sm"
+                                      >
+                                        (0/20)
+                                      </el-order-input-length>
+                                    </el-order-input>
+                                  </el-order-input-row>
+                                  <el-order-input-row>
+                                    <el-order-input-label>
+                                      내용
+                                    </el-order-input-label>
+                                    <el-order-input class="order-textarea">
+                                      <textarea
+                                        class="form-control"
+                                        placeholder="내용을 입력해 주세요.&#13;&#10;(예시 : 오피스콘 설문조사에 응해 주셔서 진심으로 감사드립니다.)"
+                                      >
+수능이벤트 수능이벤트</textarea
+                                      >
+                                      <el-order-input-length
+                                        class="typo-body-sm"
+                                      >
+                                        (0/250)
+                                      </el-order-input-length>
+                                    </el-order-input>
+                                  </el-order-input-row>
+
+                                  <el-order-input-row>
+                                    <el-order-input-label>
+                                      프로모션명
+                                    </el-order-input-label>
+                                    <el-order-input>
+                                      <el-input>
+                                        <input
+                                          disabled
+                                          class="form-control custom-input"
+                                          type="text"
+                                          placeholder="관리용 제목을 입력해 주세요. (수신자에게 발송되지 않습니다.)"
+                                          value="수능이벤트"
+                                        />
+                                      </el-input>
+                                      <el-order-input-length
+                                        class="typo-body-sm"
+                                      >
+                                        (0/60)
+                                      </el-order-input-length>
+                                    </el-order-input>
+                                  </el-order-input-row>
+                                  <el-order-input-row>
+                                    <el-order-input-label>
+                                      제목
+                                    </el-order-input-label>
+                                    <el-order-input>
+                                      <el-input>
+                                        <input
+                                          disabled
+                                          class="form-control custom-input"
+                                          type="text"
+                                          placeholder="제목을 입력해 주세요. (예시: 오피스콘 설문조사 답례 쿠폰)"
+                                          value="수능이벤트 수능이벤트"
+                                        />
+                                      </el-input>
+                                      <el-order-input-length
+                                        class="typo-body-sm"
+                                      >
+                                        (0/20)
+                                      </el-order-input-length>
+                                    </el-order-input>
+                                  </el-order-input-row>
+                                  <el-order-input-row>
+                                    <el-order-input-label>
+                                      내용
+                                    </el-order-input-label>
+                                    <el-order-input class="order-textarea">
+                                      <textarea
+                                        disabled
+                                        class="form-control"
+                                        placeholder="내용을 입력해 주세요.&#13;&#10;(예시 : 오피스콘 설문조사에 응해 주셔서 진심으로 감사드립니다.)"
+                                      >
+수능이벤트 수능이벤트</textarea
+                                      >
+                                      <el-order-input-length
+                                        class="typo-body-sm"
+                                      >
+                                        (0/250)
+                                      </el-order-input-length>
+                                    </el-order-input>
+                                  </el-order-input-row>
+                                </el-order-message-create>
+                              </el-order-product-article>
+
+                              <el-order-divider></el-order-divider>
+
+                              <el-order-product-footer>
+                                <el-order-product-footer-buttons>
+                                  <button
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#el-modal-preview"
+                                    type="button"
+                                    class="button-h50-stroke-login typo-body-sm"
+                                  >
+                                    <span>미리보기</span>
+                                  </button>
+                                  <button
+                                    type="button"
+                                    class="button-h50-square-fill typo-body-sm"
+                                  >
+                                    <span>돌아가기</span>
+                                  </button>
+                                </el-order-product-footer-buttons>
+                              </el-order-product-footer>
+                            </el-order-product>
+                          </el-order-box-content>
+                        </el-order-box-content-collapse>
+                      </el-order-box>
+
+                      <el-order-box>
+                        <el-order-box-header>
+                          <el-order-box-header-title class="typo-subtitle-lg">
+                            주문상품 2
+                          </el-order-box-header-title>
+
+                          <!-- [DEV] 개발 시 data-bs-target의 값에
+                             '#collapse-box-content-{인덱스}' 를 사용해 주세요.
+                         -->
+                          <button
+                            type="button"
+                            aria-label="toogle box"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapse-box-content-1"
+                          >
+                            <el-icon class="h32-plus natural-0"></el-icon>
+                            <el-icon class="h32-minus natural-0"></el-icon>
+                          </button>
+                        </el-order-box-header>
+
+                        <!-- [DEV] 개발 시 id 값에
+                             'collapse-box-content-{인덱스}'를 사용해 주세요.
+                         -->
+                        <el-order-box-content-collapse
+                          class="collapse show"
+                          id="collapse-box-content-1"
+                        >
+                          <el-order-box-content>
+                            <el-order-product>
+                              <el-order-product-item>
+                                <table
+                                  class="table align-middle table-borderless"
+                                >
+                                  <colgroup>
+                                    <col class="col-auto" />
+                                    <col class="col-fix" />
+                                    <col class="col-fix" />
+                                    <col class="col-fix" />
+                                  </colgroup>
+                                  <thead>
+                                    <tr>
+                                      <th scope="col">상품정보</th>
+                                      <th scope="col">유효기간</th>
+                                      <th scope="col">정상가</th>
+                                      <th scope="col">판매가</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <td>
+                                        <el-order-product-item-detail>
+                                          <a href="#">
+                                            <el-item-thumbnail>
+                                              <img
+                                                class="thumbnail-image"
+                                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/product/20250227/20250227145823_a5b9221d-437d-4b84-b0ac-fbc6f58edf4f.jpg"
+                                                alt=""
+                                              />
+                                              <el-bg></el-bg>
+                                            </el-item-thumbnail>
+
+                                            <el-item-txt class="typo-body-sm">
+                                              <el-item-name>
+                                                <el-brand>
+                                                  일이삼사오육칠팔구십일이삼사
+                                                </el-brand>
+                                                <el-item-name-txt>
+                                                  일이삼사오육칠팔구십일이삼사오육칠
+                                                </el-item-name-txt>
+                                              </el-item-name>
+                                            </el-item-txt>
+                                          </a>
+                                        </el-order-product-item-detail>
+                                      </td>
+                                      <td>2025.12.31</td>
+                                      <td>1,004,700</td>
+                                      <td>
+                                        <el-sale-price>1,004,700</el-sale-price>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </el-order-product-item>
+                              <el-order-product-item>
+                                <table
+                                  class="table align-middle table-borderless"
+                                >
+                                  <colgroup>
+                                    <col class="col-auto" />
+                                    <col class="col-fix" />
+                                    <col class="col-fix" />
+                                    <col class="col-fix" />
+                                  </colgroup>
+                                  <thead>
+                                    <tr>
+                                      <th scope="col">상품정보</th>
+                                      <th scope="col">유효기간</th>
+                                      <th scope="col">정상가</th>
+                                      <th scope="col">판매가</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <td>
+                                        <el-order-product-item-detail>
+                                          <a href="#">
+                                            <el-item-thumbnail>
+                                              <img
+                                                class="thumbnail-image"
+                                                src="https://www.officecon.co.kr/common/file/download?uploadFullPath=/product/20250227/20250227145823_a5b9221d-437d-4b84-b0ac-fbc6f58edf4f.jpg"
+                                                alt=""
+                                              />
+                                              <el-bg></el-bg>
+                                            </el-item-thumbnail>
+
+                                            <el-item-txt class="typo-body-sm">
+                                              <el-item-name>
+                                                <el-brand>
+                                                  일이삼사오육칠팔구십일이삼사
+                                                </el-brand>
+                                                <el-item-name-txt>
+                                                  일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일
+                                                </el-item-name-txt>
+                                              </el-item-name>
+                                            </el-item-txt>
+                                          </a>
+                                        </el-order-product-item-detail>
+                                      </td>
+                                      <td>2025.12.31</td>
+                                      <td>
+                                        <el-line-through>
+                                          1,004,700
+                                        </el-line-through>
+                                      </td>
+                                      <td>
+                                        <el-sale-price>
+                                          <el-badge-discount
+                                            class="typo-label-sm"
+                                          >
+                                            3%
+                                          </el-badge-discount>
+                                          1,004,700
+                                        </el-sale-price>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </el-order-product-item>
+
+                              <el-order-divider></el-order-divider>
+
+                              <el-order-product-article>
+                                <el-article-title>
+                                  <h3 class="typo-subtitle-lg">발신 정보</h3>
+                                  <el-article-title-addon
+                                    class="justify-content-start"
+                                  >
+                                    <button
+                                      type="button"
+                                      class="button-h43-square-fill typo-body-sm color-orange"
+                                    >
+                                      수정적용
+                                    </button>
+                                  </el-article-title-addon>
+                                </el-article-title>
+                                <el-order-input-row>
+                                  <el-order-input-label>
+                                    발신번호
+                                  </el-order-input-label>
+                                  <el-order-input>
+                                    <el-input>
+                                      <input
+                                        class="form-control custom-input input-type-phone"
+                                        type="text"
+                                        placeholder="발신자 번호를 입력해 주세요. (일반번호도 사용가능)"
+                                        value="010-1212-1212"
+                                      />
+                                    </el-input>
+                                  </el-order-input>
+                                </el-order-input-row>
+                                <el-agree-send-fail class="typo-body-sm">
+                                  <el-checkbox class="form-check">
+                                    <input
+                                      type="checkbox"
+                                      id="checkSendFail"
+                                      class="form-check-input custom-checkbox"
+                                      value=""
+                                      checked
+                                    />
+                                    <label
+                                      class="form-check-label typo-body-sm"
+                                      for="checkSendFail"
+                                    >
+                                      휴대폰번호 규칙 미 준수 시 이동통신사에
+                                      의해 발송실패 할 수 있습니다.
+                                    </label>
+                                  </el-checkbox>
+                                  <a
+                                    href="https://www.officecon.co.kr/"
+                                    target="_blank"
+                                  >
+                                    발송실패예시
+                                    <el-icon class="h16-arrow-right"></el-icon>
+                                  </a>
+                                </el-agree-send-fail>
+
+                                <el-order-input-row>
+                                  <el-order-input-label>
+                                    발신메일주소
+                                  </el-order-input-label>
+                                  <el-order-input>
+                                    <el-input>
+                                      <input
+                                        class="form-control custom-input"
+                                        type="email"
+                                        placeholder="발신자 이메일 주소를 입력해 주세요."
+                                        value="abcf@zlgoon.co.kr"
+                                      />
+                                    </el-input>
+                                  </el-order-input>
+                                </el-order-input-row>
+
+                                <el-order-input-row>
+                                  <el-order-input-label>
+                                    발신메일이름
+                                  </el-order-input-label>
+                                  <el-order-input>
+                                    <el-input>
+                                      <input
+                                        class="form-control custom-input"
+                                        type="text"
+                                        placeholder="발신자 이름을 입력해 주세요."
+                                        value="홍길동"
+                                      />
+                                    </el-input>
+                                  </el-order-input>
+                                </el-order-input-row>
+                              </el-order-product-article>
+
+                              <el-order-divider></el-order-divider>
+
+                              <el-order-product-article>
+                                <el-article-title>
+                                  <h3 class="typo-subtitle-lg">수신자 편집</h3>
+                                </el-article-title>
+
+                                <el-order-addressee-list>
+                                  <el-order-addressee-list-content>
+                                    <ul class="typo-body-md bg-gray">
+                                      <li>
+                                        <el-order-addressee-modify>
+                                          <el-input>
+                                            <input
+                                              class="form-control custom-input input-type-mobile"
+                                              type="text"
+                                              placeholder="휴대폰번호 입력"
+                                              value="010-1212-1212"
+                                            />
+                                          </el-input>
+                                          <button
+                                            type="button"
+                                            class="button-h43-square-fill typo-body-sm color-orange"
+                                          >
+                                            수정적용
+                                          </button>
+                                        </el-order-addressee-modify>
+                                      </li>
+                                      <li>
+                                        <el-order-addressee-modify>
+                                          <el-input>
+                                            <input
+                                              class="form-control custom-input input-type-mobile"
+                                              type="text"
+                                              placeholder="휴대폰번호 입력"
+                                              value="010-1212-1212"
+                                            />
+                                          </el-input>
+                                          <button
+                                            type="button"
+                                            class="button-h43-square-fill typo-body-sm color-orange"
+                                          >
+                                            수정적용
+                                          </button>
+                                        </el-order-addressee-modify>
+                                      </li>
+                                      <li>
+                                        <el-order-addressee-modify>
+                                          <el-input>
+                                            <input
+                                              class="form-control custom-input input-type-mobile"
+                                              type="text"
+                                              placeholder="휴대폰번호 입력"
+                                              value="010-1212-1212"
+                                            />
+                                          </el-input>
+                                          <button
+                                            type="button"
+                                            class="button-h43-square-fill typo-body-sm color-orange"
+                                          >
+                                            수정적용
+                                          </button>
+                                        </el-order-addressee-modify>
+                                      </li>
+                                      <li>
+                                        <el-order-addressee-modify>
+                                          <el-input>
+                                            <input
+                                              class="form-control custom-input input-type-mobile"
+                                              type="text"
+                                              placeholder="휴대폰번호 입력"
+                                              value="010-1212-1212"
+                                            />
+                                          </el-input>
+                                          <button
+                                            type="button"
+                                            class="button-h43-square-fill typo-body-sm color-orange"
+                                          >
+                                            수정적용
+                                          </button>
+                                        </el-order-addressee-modify>
+                                      </li>
+                                      <li>
+                                        <el-order-addressee-modify>
+                                          <el-input>
+                                            <input
+                                              class="form-control custom-input input-type-mobile"
+                                              type="text"
+                                              placeholder="휴대폰번호 입력"
+                                              value="010-1212-1212"
+                                            />
+                                          </el-input>
+                                          <button
+                                            type="button"
+                                            class="button-h43-square-fill typo-body-sm color-orange"
+                                          >
+                                            수정적용
+                                          </button>
+                                        </el-order-addressee-modify>
+                                      </li>
+                                    </ul>
+                                    <el-order-addressee-list-status>
+                                      <el-status-top>
+                                        <el-status-top-label
+                                          class="typo-body-lg"
+                                        >
+                                          변경가능 수신자
+                                        </el-status-top-label>
+                                        <el-status-top-count
+                                          class="typo-body-sm"
+                                        >
+                                          <strong class="typo-heading-md">
+                                            2 </strong
+                                          >명
+                                        </el-status-top-count>
+                                      </el-status-top>
+                                      <el-order-divider></el-order-divider>
+                                      <el-status-bottom>
+                                        <el-status-bottom-default
+                                          class="typo-body-sm"
+                                        >
+                                          선택된 수신자로<br />모바일쿠폰을
+                                          보내드려요.
+                                          <img
+                                            src="./images/letter.png"
+                                            alt=""
+                                          />
+                                        </el-status-bottom-default>
+                                      </el-status-bottom>
+                                    </el-order-addressee-list-status>
+                                  </el-order-addressee-list-content>
+
+                                  <el-order-addressee-list-content>
+                                    <ul class="typo-body-md bg-gray">
+                                      <li>
+                                        <el-order-addressee-modify>
+                                          <el-input>
+                                            <input
+                                              class="form-control custom-input"
+                                              type="email"
+                                              placeholder="이메일 주소 입력"
+                                              value="abcf@zlgoon.co.kr"
+                                            />
+                                          </el-input>
+                                          <button
+                                            type="button"
+                                            class="button-h43-square-fill typo-body-sm color-orange"
+                                          >
+                                            수정적용
+                                          </button>
+                                        </el-order-addressee-modify>
+                                      </li>
+                                      <li>
+                                        <el-order-addressee-modify>
+                                          <el-input>
+                                            <input
+                                              class="form-control custom-input"
+                                              type="email"
+                                              placeholder="이메일 주소 입력"
+                                              value="abcf@zlgoon.co.kr"
+                                            />
+                                          </el-input>
+                                          <button
+                                            type="button"
+                                            class="button-h43-square-fill typo-body-sm color-orange"
+                                          >
+                                            수정적용
+                                          </button>
+                                        </el-order-addressee-modify>
+                                      </li>
+                                      <li>
+                                        <el-order-addressee-modify>
+                                          <el-input>
+                                            <input
+                                              class="form-control custom-input"
+                                              type="email"
+                                              placeholder="이메일 주소 입력"
+                                              value="abcf@zlgoon.co.kr"
+                                            />
+                                          </el-input>
+                                          <button
+                                            type="button"
+                                            class="button-h43-square-fill typo-body-sm color-orange"
+                                          >
+                                            수정적용
+                                          </button>
+                                        </el-order-addressee-modify>
+                                      </li>
+                                      <li>
+                                        <el-order-addressee-modify>
+                                          <el-input>
+                                            <input
+                                              class="form-control custom-input"
+                                              type="email"
+                                              placeholder="이메일 주소 입력"
+                                              value="abcf@zlgoon.co.kr"
+                                            />
+                                          </el-input>
+                                          <button
+                                            type="button"
+                                            class="button-h43-square-fill typo-body-sm color-orange"
+                                          >
+                                            수정적용
+                                          </button>
+                                        </el-order-addressee-modify>
+                                      </li>
+                                      <li>
+                                        <el-order-addressee-modify>
+                                          <el-input>
+                                            <input
+                                              class="form-control custom-input"
+                                              type="email"
+                                              placeholder="이메일 주소 입력"
+                                              value="abcf@zlgoon.co.kr"
+                                            />
+                                          </el-input>
+                                          <button
+                                            type="button"
+                                            class="button-h43-square-fill typo-body-sm color-orange"
+                                          >
+                                            수정적용
+                                          </button>
+                                        </el-order-addressee-modify>
+                                      </li>
+                                    </ul>
+                                    <el-order-addressee-list-status>
+                                      <el-status-top>
+                                        <el-status-top-label
+                                          class="typo-body-lg"
+                                        >
+                                          변경가능 수신자
+                                        </el-status-top-label>
+                                        <el-status-top-count
+                                          class="typo-body-sm"
+                                        >
+                                          <strong class="typo-heading-md">
+                                            2 </strong
+                                          >명
+                                        </el-status-top-count>
+                                      </el-status-top>
+                                      <el-order-divider></el-order-divider>
+                                      <el-status-bottom>
+                                        <el-status-bottom-default
+                                          class="typo-body-sm"
+                                        >
+                                          선택된 수신자로<br />모바일쿠폰을
+                                          보내드려요.
+                                          <img
+                                            src="./images/letter.png"
+                                            alt=""
+                                          />
+                                        </el-status-bottom-default>
+                                      </el-status-bottom>
+                                    </el-order-addressee-list-status>
+                                  </el-order-addressee-list-content>
+
+                                  <el-order-addressee-list-content>
+                                    <ul class="typo-body-md bg-gray">
+                                      <li>010-6730-4442</li>
+                                      <li>010-6730-4442</li>
+                                      <li>010-6730-4442</li>
+                                      <li>010-6730-4442</li>
+                                      <li>010-6730-4442</li>
+                                      <li>010-6730-4442</li>
+                                      <li>010-6730-4442</li>
+                                      <li>010-6730-4442</li>
+                                    </ul>
+                                    <el-order-addressee-list-status>
+                                      <el-status-top>
+                                        <el-status-top-label
+                                          class="typo-body-lg"
+                                        >
+                                          변경가능 수신자
+                                        </el-status-top-label>
+                                        <el-status-top-count
+                                          class="typo-body-sm"
+                                        >
+                                          <strong class="typo-heading-md">
+                                            0 </strong
+                                          >명
+                                        </el-status-top-count>
+                                      </el-status-top>
+                                      <el-order-divider></el-order-divider>
+                                      <el-status-bottom>
+                                        <el-status-bottom-default
+                                          class="typo-body-sm"
+                                        >
+                                          선택된 수신자로<br />모바일쿠폰을
+                                          보내드려요.
+                                          <img
+                                            src="./images/letter.png"
+                                            alt=""
+                                          />
+                                        </el-status-bottom-default>
+                                      </el-status-bottom>
+                                    </el-order-addressee-list-status>
+                                  </el-order-addressee-list-content>
+
+                                  <el-order-addressee-list-content>
+                                    <ul class="typo-body-md bg-gray">
+                                      <li>abcf@zlgoon.co.kr</li>
+                                      <li>abcf@zlgoon.co.kr</li>
+                                      <li>abcf@zlgoon.co.kr</li>
+                                      <li>abcf@zlgoon.co.kr</li>
+                                      <li>abcf@zlgoon.co.kr</li>
+                                      <li>abcf@zlgoon.co.kr</li>
+                                      <li>abcf@zlgoon.co.kr</li>
+                                      <li>abcf@zlgoon.co.kr</li>
+                                    </ul>
+                                    <el-order-addressee-list-status>
+                                      <el-status-top>
+                                        <el-status-top-label
+                                          class="typo-body-lg"
+                                        >
+                                          변경가능 수신자
+                                        </el-status-top-label>
+                                        <el-status-top-count
+                                          class="typo-body-sm"
+                                        >
+                                          <strong class="typo-heading-md">
+                                            0 </strong
+                                          >명
+                                        </el-status-top-count>
+                                      </el-status-top>
+                                      <el-order-divider></el-order-divider>
+                                      <el-status-bottom>
+                                        <el-status-bottom-default
+                                          class="typo-body-sm"
+                                        >
+                                          선택된 수신자로<br />모바일쿠폰을
+                                          보내드려요.
+                                          <img
+                                            src="./images/letter.png"
+                                            alt=""
+                                          />
+                                        </el-status-bottom-default>
+                                      </el-status-bottom>
+                                    </el-order-addressee-list-status>
+                                  </el-order-addressee-list-content>
+                                </el-order-addressee-list>
+                              </el-order-product-article>
+
+                              <el-order-divider></el-order-divider>
+
+                              <el-order-product-article>
+                                <el-article-title>
+                                  <h3 class="typo-subtitle-lg">
+                                    발송메시지 만들기
+                                  </h3>
+                                  <el-article-title-addon>
+                                    <button
+                                      type="button"
+                                      class="button-h43-square-fill typo-body-sm color-orange"
+                                    >
+                                      수정적용
+                                    </button>
+                                  </el-article-title-addon>
+                                </el-article-title>
+
+                                <el-order-message-create class="modify">
+                                  <el-order-input-row>
+                                    <el-order-input-label>
+                                      프로모션명
+                                    </el-order-input-label>
+                                    <el-order-input>
+                                      <el-input>
+                                        <input
+                                          class="form-control custom-input"
+                                          type="text"
+                                          placeholder="관리용 제목을 입력해 주세요. (수신자에게 발송되지 않습니다.)"
+                                          value="수능이벤트"
+                                        />
+                                      </el-input>
+                                      <el-order-input-length
+                                        class="typo-body-sm"
+                                      >
+                                        (0/60)
+                                      </el-order-input-length>
+                                    </el-order-input>
+                                  </el-order-input-row>
+                                  <el-order-input-row>
+                                    <el-order-input-label>
+                                      제목
+                                    </el-order-input-label>
+                                    <el-order-input>
+                                      <el-input>
+                                        <input
+                                          class="form-control custom-input"
+                                          type="text"
+                                          placeholder="제목을 입력해 주세요. (예시: 오피스콘 설문조사 답례 쿠폰)"
+                                          value="수능이벤트 수능이벤트"
+                                        />
+                                      </el-input>
+                                      <el-order-input-length
+                                        class="typo-body-sm"
+                                      >
+                                        (0/20)
+                                      </el-order-input-length>
+                                    </el-order-input>
+                                  </el-order-input-row>
+                                  <el-order-input-row>
+                                    <el-order-input-label>
+                                      내용
+                                    </el-order-input-label>
+                                    <el-order-input class="order-textarea">
+                                      <textarea
+                                        class="form-control"
+                                        placeholder="내용을 입력해 주세요.&#13;&#10;(예시 : 오피스콘 설문조사에 응해 주셔서 진심으로 감사드립니다.)"
+                                      >
+수능이벤트 수능이벤트</textarea
+                                      >
+                                      <el-order-input-length
+                                        class="typo-body-sm"
+                                      >
+                                        (0/250)
+                                      </el-order-input-length>
+                                    </el-order-input>
+                                  </el-order-input-row>
+                                </el-order-message-create>
+                              </el-order-product-article>
+
+                              <el-order-divider></el-order-divider>
+
+                              <el-order-product-footer>
+                                <el-order-product-footer-buttons>
+                                  <button
+                                    type="button"
+                                    class="button-h50-square-fill typo-body-sm"
+                                  >
+                                    <span>돌아가기</span>
+                                  </button>
+                                </el-order-product-footer-buttons>
+                              </el-order-product-footer>
+                            </el-order-product>
+                          </el-order-box-content>
+                        </el-order-box-content-collapse>
+                      </el-order-box>
+                    </el-mypage-modify>
+                  </el-mypage-content>
+                </el-mypage-section>
+              </el-mypage-container>
+            </el-mypage>
+          </el-content>
+        </main>
+        <!-- 종료: 컨텐츠 -->
+      </el-container>
+
+      <!-- 시작: [DEV] 웹컴포넌트
+        1. 퍼블리싱용 웹컴포넌트입니다(el-footer).
+        2. 개발 시 examples.html 참고해 주세요.
+      -->
+      <component-footer></component-footer>
+      <!-- 종료: [DEV] 웹컴포넌트 -->
+    </el-wrapper>
+
+    <button id="scrollToTopButton" type="button" aria-label="상단으로 이동">
+      <el-icon class="h32-arrow-up natural-0"></el-icon>
+    </button>
+
+    <!-- 시작: alert -->
+    <el-alert
+      class="modal fade"
+      id="el-alert"
+      tabindex="-1"
+      aria-hidden="true"
+      data-bs-keyboard="false"
+    >
+      <el-alert-dialog class="modal-dialog modal-dialog-centered">
+        <el-alert-content class="modal-content">
+          <el-alert-body class="typo-subtitle-sm">
+            얼럿 샘플입니다.
+            <br />
+            개발 시 내용이 변경됩니다.
+          </el-alert-body>
+          <el-alert-footer>
+            <button
+              type="button"
+              data-bs-dismiss="modal"
+              class="button-h50-fill typo-body-lg"
+            >
+              확인
+            </button>
+          </el-alert-footer>
+        </el-alert-content>
+      </el-alert-dialog>
+    </el-alert>
+    <!-- 종료: alert -->
+
+    <!-- 시작: modal: 주문/발송 수정 가이드 모달 -->
+    <el-modal
+      class="modal fade el-modal-default el-modal-guide-templet"
+      id="el-modal-order-modify-guide"
+      tabindex="-1"
+      aria-hidden="true"
+      data-bs-keyboard="false"
+    >
+      <el-modal-dialog
+        class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+      >
+        <el-modal-content class="modal-content">
+          <el-modal-close-button>
+            <button type="button" data-bs-dismiss="modal" aria-label="닫기">
+              <el-icon class="h32-closed natural-0"></el-icon>
+            </button>
+          </el-modal-close-button>
+
+          <el-modal-header class="modal-header">
+            <h3 class="typo-subtitle-lg">주문/발송 수정가이드</h3>
+          </el-modal-header>
+
+          <el-modal-body class="modal-body scroll-shadow">
+            <el-modal-guide class="typo-label-lg">
+              <el-modal-guide-box>
+                <h4 class="typo-body-sm">
+                  <el-icon class="etc-pending natural-0"></el-icon>
+                  예약주문
+                </h4>
+                <div>
+                  발신번호, 문자메세지, 수신자 정보 수정 가능<br />
+                  발송건수 변경 불가
+                </div>
+              </el-modal-guide-box>
+              <el-modal-guide-box>
+                <h4 class="typo-body-sm">
+                  <el-icon class="etc-success natural-0"></el-icon>
+                  발송완료 주문
+                </h4>
+                <div>
+                  발신번호, 문자메세지 수정 가능<br />
+                  단, 알림톡 타입 발송인 경우 문자 메세지, 수신자 정보, 발송
+                  건수 변경 불가<br />
+                  수신자 오발송의 경우 고객센터로 별도 문의
+                </div>
+              </el-modal-guide-box>
+              <el-modal-guide-box>
+                <h4 class="typo-body-sm">
+                  <el-icon class="etc-fail natural-0"></el-icon>
+                  발송실패 주문
+                </h4>
+                <div>
+                  발신번호, 문자메세지, 수신자 정보 수정 가능<br />
+                  단, 알림톡 타입 발송인 경우 문자 메세지, 발송 건수 변경
+                  불가<br />
+                  수정 후 재발송 처리 필요
+                </div>
+              </el-modal-guide-box>
+            </el-modal-guide>
+          </el-modal-body>
+
+          <el-modal-footer class="modal-footer">
+            <button
+              type="button"
+              data-bs-dismiss="modal"
+              class="button-h50-fill typo-body-lg"
+            >
+              확인
+            </button>
+          </el-modal-footer>
+        </el-modal-content>
+      </el-modal-dialog>
+    </el-modal>
+    <!-- 종료: modal: 주문/발송 수정 가이드 모달 -->
+
+    <!-- 시작: modal: 캐쉬충전 -->
+    <el-modal
+      class="modal fade el-modal-default"
+      id="el-modal-cash-charge"
+      tabindex="-1"
+      aria-hidden="true"
+      data-bs-keyboard="false"
+    >
+      <el-modal-dialog
+        class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+      >
+        <el-modal-content class="modal-content">
+          <el-modal-close-button>
+            <button type="button" data-bs-dismiss="modal" aria-label="닫기">
+              <el-icon class="h32-closed natural-0"></el-icon>
+            </button>
+          </el-modal-close-button>
+
+          <el-modal-header class="modal-header">
+            <h3 class="typo-subtitle-lg center">캐쉬충전</h3>
+          </el-modal-header>
+
+          <el-modal-body class="modal-body">
+            <el-modal-cash-charge>
+              <el-charge-amount class="typo-body-sm">
+                <el-charge-amount-title>
+                  충전하실 금액을 입력해 주세요.
+                </el-charge-amount-title>
+                <el-charge-amount-content>
+                  <el-input>
+                    <input
+                      class="form-control custom-input"
+                      type="text"
+                      placeholder="충전하실 금액을 입력해 주세요."
+                      value=""
+                    />
+                  </el-input>
+                  원
+                </el-charge-amount-content>
+              </el-charge-amount>
+
+              <el-charge-method>
+                <el-charge-method-title class="subtitle-text">
+                  결제수단
+                </el-charge-method-title>
+                <el-radio class="form-check">
+                  <input
+                    type="radio"
+                    class="form-check-input custom-radio"
+                    name="cashChargeMethod"
+                    id="cashChargeMethod"
+                    value=""
+                    checked
+                  />
+                  <label
+                    class="form-check-label typo-body-sm"
+                    for="cashChargeMethod"
+                  >
+                    가상계좌 <span>(무통장입금, 1일 최대 2천만원)</span>
+                  </label>
+                </el-radio>
+              </el-charge-method>
+
+              <el-charge-caution>
+                <el-marker-list class="weight-regular color-gray">
+                  <ul>
+                    <li> 보유 캐쉬 한도는 100,000,000원 입니다. </li>
+                    <li> 1회 충전금액은 10,000원부터 가능합니다. </li>
+                    <li> 가상계좌 발급은 1일 한도 최대 20,000,000원입니다. </li>
+                    <li class="color-red">
+                      한도보다 더 큰 금액의 충전이 필요하신 경우
+                      고객센터(1661-8197)로 문의주세요.
+                    </li>
+                    <li> 1원 단위는 충전이 불가합니다. </li>
+                    <li>
+                      가상계좌로 주문 후 캐쉬 내역 &gt; 가상계좌 발급내역에서
+                      상세 정보 확인 가능합니다.
+                    </li>
+                    <li>
+                      오피스콘 가상계좌를 자금세탁 등의 부정사용 목적으로 의심
+                      될 경우, 경고 없이 관련 기관(경찰, 금융감독원)에 신고 처리
+                      될 수 있습니다.
+                    </li>
+                  </ul>
+                </el-marker-list>
+              </el-charge-caution>
+            </el-modal-cash-charge>
+          </el-modal-body>
+
+          <el-modal-footer class="modal-footer">
+            <button
+              type="button"
+              data-bs-dismiss="modal"
+              class="button-h50-stroke typo-body-lg"
+            >
+              취소
+            </button>
+            <button type="button" class="button-h50-fill typo-body-lg">
+              충전
+            </button>
+          </el-modal-footer>
+        </el-modal-content>
+      </el-modal-dialog>
+    </el-modal>
+    <!-- 종료: modal: 캐쉬충전 -->
+
+    <!-- 시작: modal: 기업 회원 전환 신청 -->
+    <el-modal
+      class="modal fade el-modal-default"
+      id="el-modal-company-member-conversion"
+      tabindex="-1"
+      aria-hidden="true"
+      data-bs-keyboard="false"
+    >
+      <el-modal-dialog
+        class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+      >
+        <el-modal-content class="modal-content">
+          <el-modal-close-button>
+            <button type="button" data-bs-dismiss="modal" aria-label="닫기">
+              <el-icon class="h32-closed natural-0"></el-icon>
+            </button>
+          </el-modal-close-button>
+
+          <el-modal-header class="modal-header">
+            <h3 class="typo-subtitle-lg center">기업 회원 전환 신청</h3>
+          </el-modal-header>
+
+          <el-modal-body class="modal-body">
+            <el-modal-company-member-conversion>
+              <el-info-box>
+                <el-marker-list class="weight-regular color-gray">
+                  <ul>
+                    <li>
+                      관리자 승인 후 전환되며, 승인처리는 영업일 기준 24시간
+                      이내에 처리됩니다.
+                    </li>
+                  </ul>
+                </el-marker-list>
+              </el-info-box>
+
+              <el-modal-form>
+                <el-form-row>
+                  <el-form-label class="typo-body-md">
+                    사업자번호<span>*</span>
+                  </el-form-label>
+                  <el-form-content>
+                    <el-input>
+                      <input
+                        class="form-control custom-input"
+                        type="text"
+                        placeholder="사업자 번호를 입력해 주세요."
+                        value=""
+                      />
+                    </el-input>
+                  </el-form-content>
+                </el-form-row>
+                <el-form-row>
+                  <el-form-label class="typo-body-md">
+                    상호명<span>*</span>
+                  </el-form-label>
+                  <el-form-content>
+                    <el-input>
+                      <input
+                        class="form-control custom-input"
+                        type="text"
+                        placeholder="상호명을 입력해 주세요."
+                        value=""
+                      />
+                    </el-input>
+                  </el-form-content>
+                </el-form-row>
+                <el-form-row>
+                  <el-form-label class="typo-body-md">
+                    대표자명<span>*</span>
+                  </el-form-label>
+                  <el-form-content>
+                    <el-input class="is-invalid">
+                      <input
+                        class="form-control custom-input"
+                        type="text"
+                        placeholder="대표자명을 입력해 주세요."
+                        value=""
+                      />
+                      <el-invalide-feedback class="typo-label-lg">
+                        필수 입력 항목입니다.
+                      </el-invalide-feedback>
+                    </el-input>
+                  </el-form-content>
+                </el-form-row>
+                <el-form-row class="height-60">
+                  <el-form-label class="typo-body-md">
+                    사업자 등록증 첨부
+                    <el-form-label-addon class="typo-body-sm">
+                      (2MB 이하)
+                    </el-form-label-addon>
+                  </el-form-label>
+                  <el-form-content>
+                    <el-input-file class="is-invalid">
+                      <label>
+                        <input type="file" value="" />
+                        <el-input-file-button class="typo-label-md">
+                          <el-icon class="etc-doc"></el-icon>
+                          파일 선택
+                        </el-input-file-button>
+                        <el-input-file-name class="typo-body-sm">
+                          선택된 파일 없음
+                        </el-input-file-name>
+                      </label>
+                      <el-invalide-feedback class="typo-label-lg">
+                        필수 입력 항목입니다.
+                      </el-invalide-feedback>
+                    </el-input-file>
+                  </el-form-content>
+                </el-form-row>
+              </el-modal-form>
+
+              <el-agrees>
+                <el-agree-item>
+                  <el-checkbox class="form-check size-lg">
+                    <input
+                      type="checkbox"
+                      id="checkboxCompanyMemberConversion"
+                      class="form-check-input custom-checkbox"
+                      value=""
+                    />
+                    <label
+                      class="form-check-label typo-body-md"
+                      for="checkboxCompanyMemberConversion"
+                    >
+                      기업회원 서비스 이용 약관 동의
+                    </label>
+                  </el-checkbox>
+                  <button
+                    type="button"
+                    aria-label="toogle box"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseCompanyMemberConversion"
+                    class="typo-body-sm collapsed"
+                  >
+                    약관보기
+                    <el-icon class="h16-arrow-down natural-40"></el-icon>
+                    <el-icon class="h16-arrow-up natural-40"></el-icon>
+                  </button>
+                  <el-agree-content-collapse
+                    class="collapse"
+                    id="collapseCompanyMemberConversion"
+                  >
+                    <el-agree-content>
+                      <pre class="typo-body-sm">
+<strong>제 1 조 (목 적)</strong>
+이 서비스 약관은 (주)즐거운 (이하 "회사"라 합니다)가 제공하는 오피스콘 서비스를 이용하는데 필요한 이용자와 회사간의 권리 및 의무 기타 제반사항을 규정함을 목적으로 합니다.
+
+<strong>제 2 조 (용어의 정의)</strong>
+① 이 약관에서 사용하는 용어의 정의는 다음과 같습니다.
+1. “오피스콘 서비스” (이하 '서비스') 라 함은 회사가 제공하는 사이트를 통해서 모바일 쿠폰 등의 선물을 구매하여 상대방에게 전송하고, 쿠폰을 수신한 고객이 지정된 상품으로 교환할 수 있는 서비스를 의미합니다.
+2. “쿠폰”이라 함은 교환처에서 판매하는 일정한 상품을 전송자가, 교환코드, 바코드, 유효기간, 제공상품 등의 정보가 기입된 교환권을 수신자에게 전송하고, 이 쿠폰을 수신자가 해당 교환처에서 연계된 상품으로 교환할 수 있는 서비스쿠폰을 말합니다.
+3. “이용자”라 함은 본 약관에 따라 회사가 제공하는 서비스를 제공받는 “회원” 및 “비회원”을 말합니다.
+4. “수신자”라 함은 서비스를 통해 전송한 쿠폰을 이용자로부터 전송 받은 자를 말합니다.5. “회원”은 서비스에 접속하여 이 약관에 동의하고 서비스에서 아이디(ID)와 비밀번호(PASSWORD)를 발급받은 이용자를 말합니다.
+6. “비회원”이란 회원 등록을 하지 않고, 회사가 제공하는 서비스를 이용하는 자를 말합니다.
+7. "전송자"란 쿠폰을 구매하여 수신자에게 전송하는 자를 말합니다.
+8. ”수신자"란 쿠폰을 전송자로부터 받아 상품으로 교환할 수 있는 권한을 가진 자를 말합니다.
+9. "교환처"란 쿠폰을 상품으로 교환할 수 있는 장소(온라인/오프라인)를 말합니다.
+10. "발행일"이란 쿠폰 발송이 이루어진 날을 말합니다.
+11. “캐쉬”란 이용자가 신용카드∙계좌이체 등의 결제수단으로 선 결제하여 쿠폰 사이트 내부에서 구매할 때 사용할 수 있는 포인트를 말합니다.
+12. “환불”이라 함은 환불 신청 건에 한해 결제한 상품대금을 현금 또는 캐쉬로 지급하는 것을 말합니다.
+13. “정산”이라 함은 이용자가 쿠폰 발송 금액에 대한 상품 대금을 회사에 지급하는 것과 지급한 금액의 증명 자료를 주고 받는 업무를 말합니다.
+14. “발송취소”라 함은 수신자가 정상적으로 쿠폰을 수신하지 못하고 실패된 경우 발송을 취소하는 것 말합니다.
+② 이 약관에서 사용하는 용어의 정의는 제1항에서 정하는 것을 제외하고는 관계법령, 상관례 및 서비스별 안내에서 정하는 바에 의합니다.
+
+<strong>제 3 조 (약관의 효력 및 변경)</strong>
+① 이 약관은 서비스를 이용하고자 하는 모든 이용자에게 그 효력을 발생합니다.
+② 이 약관의 내용은 서비스 화면에 게시하거나 기타의 방법으로 이용자에게 공지하고, 이에 동의한 이용자가 서비스를 이용함으로써 효력이 발생합니다.
+③ 회사는 필요하다고 인정되는 경우 이 약관을 변경할 수 있으며, 약관을 변경할 때에는 적용일자와 변경내용, 변경사유 등을 밝혀그 적용일자로부터 7일 전부터 제2항과 같은 방법으로 공시합니다. 다만, 이용자의 권리 또는 의무에 관한 중요한 규정을 변경하거나 이용자에게 불리하게 약관의 내용을 변경하는 경우에는 최소한 그 적용일자로부터 30일 전에 공시합니다.
+④ 회사가 전항에 따라 이용자에게 통지하면서 공지∙고지일로부터 개정약관 시행일 7일 후까지 거부의사를 표시하지 아니하면 승인한 것으로 본다는 뜻을 명확하게 고지하였음에도 의사표시가 없는 경우에는 변경된 약관을 승인한 것으로 봅니다. 이용자가 개정약관에 동의하지 않을 경우 본 이용계약을 해지할 수 있습니다.
+
+<strong>제 4 조 (약관 외 준칙)</strong>
+이 약관에 명시되지 않은 사항에 대해서는 전기통신기본법, 전기통신사업법, 전자상거래 등에 관한 소비자보호에 관한 법률 등 관계법령 및 회사가 정한 서비스의 세부이용지침 등의 규정에 의합니다.
+
+<strong>제 5 조 (이용계약의 성립)</strong>
+① 오피스콘은 제2조 제1항 제3호의 ‘이용자’가 각자의 고객에게 쿠폰을 제공하는 서비스입니다.
+② 서비스 이용을 신청할 때 이용약관 버튼에 체크하고 가입신청 버튼을 누르면 약관에 동의하는 것으로 간주합니다.
+
+<strong>제 6 조 (서비스 이용 제한)</strong>
+① 회사는 다음 각 호 중 어느 하나에 해당하는 경우 서비스 이용을 제한하거나 이용 신청에 대해서 승인 거절 또는 승인을 취소할 수 있습니다.
+1. 기술상 서비스 제공이 불가능한 경우
+2. 제13조 이용자의 의무 중 하나 또는 그 이상을 위반하는 경우
+3. 회사의 서비스 정책 또는 본 이용약관에 위반하여 서비스를 이용하고자 하는 경우
+4. 회사가 의도하지 않은 방법으로 서비스를 이용하거나, 회사에 손실을 끼치는 경우
+5. 서비스의 시스템을 무단으로 침범하거나 비정상적으로 접근한 경우
+6. 하나의 ID를 복수 개의 사업자 또는 개인이 공동으로 사용하는 경우
+7. 부정결제가 의심되는 경우
+8. 이용자의 쿠폰 구매 목적이 명백하게 사회질서 및 미풍양속에 반하는 경우
+9. 사전 동의 없이 서비스를 도용(자체 이미지 제작, 유효기간 임의 조정 등)하는 경우
+10.이용자가 서비스를 통해 할인 구매한 상품을 오픈마켓이나 다른 판매 사이트를 통해 상업적으로 이를 재판매 하는 경우
+11. 기타 회사가 정한 요건을 충족하지 아니한 경우
+② 회사는 제 1 항의 규정에 의하여 서비스 이용을 정지하는 경우, 그 사실을 당해 이용자에게 통지합니다. 다만 미리 통지하는 것이 곤란한 경우에는 이용정지 후 통지할 수 있습니다.
+
+<strong>제 7 조 회원 가입</strong>
+① 이용자는 회사가 정한 가입양식에 따라 회원정보를 기입한 후 이 약관에 동의한다는 의사표시를 함으로써 회원가입을 신청합니다. 회사는 이러한 신청에 있어 전문기관을 통한 실명확인 및 본인인증을 요청할 수 있습니다.
+② 회사는 제1항과 같이 회원으로 가입할 것을 신청한 이용자 중 다음 각 호에 해당하지 않는 한 회원으로 등록합니다. 회사가 회원가입신청의 승인을 거부하거나 유보하는 경우 원칙적으로 이를 회원에게 알립니다.
+1. 필수자료 및 정보를 제출하지 않거나 허위로 제출하는 경우
+2. 상품 등의 대금, 기타 서비스 이용과 관련하여 회원이 부담하는 채무를 기일에 지급하지 않는 경우
+3. 다른 사람의 서비스 이용을 방해하거나 정보를 도용하는 등 전자상거래 질서를 위협하는 경우
+4. 서비스를 이용함에 있어서 법령 또는 이 약관이 금지하거나 공서양속에 반하는 행위를 하는 경우
+5. 기타 회사의 정상적인 영업활동 및 서비스 운영을 고의로 방해하는 행위를 하는 경우
+6. 회사의 서비스 정책 또는 본 이용약관에 위반하여 서비스를 이용하고자 하는 경우
+5. 해외 사업자인 경우 및 18세 미만의 개인사업자인 경우
+6. 계약을 해지했던 이용자가 다시 신청을 하는 경우
+7. 기타 관련 법령이나 회사가 정한 조건에 위배되는 행위를 한 경우
+8. 기타 회사가 관련법령 등을 기준으로 하여 명백하게 사회질서 및 미풍양속에 반할 우려가 있음을 인정하는 경우
+③ 회원가입계약의 성립시기는 회사의 승낙이 이용신청자에게 도달한 시점으로 합니다.
+④ 회원은 회원가입시 등록한 사항에 변경이 있는 경우 상당한 기간 이내에 회사에 대하여 회원정보 수정 등의 방법으로 그 변경사항을 알려야 합니다.
+
+<strong>제 8 조 (회원 탈퇴 및 자격 상실 등)</strong>
+① 회원은 회사에 언제든지 탈퇴를 요청할 수 있으며, 회사는 즉시 회원탈퇴를 처리합니다. 단, 예약 발송 대기 상태인 경우에는 예약 발송 취소 및 발송 완료 이후 탈퇴가 가능하며, 리워드 등 회원으로서의 모든 혜택은 소멸됩니다.
+② 회원이 다음 각 호의 사유에 해당하는 경우, 회사는 회원자격을 제한 및 정지시킬 수 있습니다.
+1.가입신청시에 허위 내용을 등록하거나 타인의 정보를 도용한 경우
+2.사이트를 이용하여 구입한 재화 등의 대금, 기타 사이트 이용에 관련하여 회원이 부담하는 채무를 기일에 지급하지 않는 경우
+3.다른 사람의 사이트 이용을 방해하거나 그 정보를 도용하는 등 전자상거래 질서를 위협하는 경우
+4.사이트를 이용하여 법령 또는 이 약관이 금지하거나 공서양속에 반하는 행위를 하는 경우
+③ 회사가 회원 자격을 제한•정지시킨 후 동일한 행위가 2회 이상 반복되거나 15일 이내에 그 사유가 시정되지 아니하는 경우 회사는 회원자격을 상실시킬 수 있습니다.
+④ 회사가 회원자격을 상실시키는 경우에는 회원등록을 말소합니다. 이 경우 회원에게 이를 통지하고, 회원등록 말소 전에 최소한 30일 이상의 기간을 정하여 소명할 기회를 부여합니다.
+
+<strong>제 9 조 (이용계약의 해지)</strong>
+① 서비스 이용계약을 해지하고자 하는 회원은 회사에 언제든지 서비스 탈퇴를 요청할 수 있으며, 회사는 즉시 회원 탈퇴 처리합니다. 단, 예약 발송 대기 상태인 경우에는 예약 발송 취소 및 발송 완료 이후 탈퇴가 가능합니다.
+② 회원이 다음 각호의 사유에 해당하는 경우 회사는 회원 자격을 제한 및 정지시킬 수 있습니다.
+1. 가입 신청 시에 허위 내용을 기재한 경우
+2. 상품 등의 대금, 기타 서비스 이용과 관련하여 회원이 부담하는 채무를 기일에 지급하지 않는 경우
+3. 다른 사람의 서비스 이용을 방해하거나 정보를 도용하는 등 전자상거래 질서를 위협하는 경우
+4. 서비스를 이용함에 있어서 법령 또는 이 약관이 금지하거나 공서양속에 반하는 행위를 하는 경우
+5. 기타 회사의 정상적인 영업활동 및 서비스 운영을 고의로 방해하는 행위를 하는 경우
+③ 회사는 회원이 이 약관 및 개별 서비스 이용약관을 위반한 경우 경고, 일시적 이용정지, 영구적 이용정지 등의 단계로 서비스 사용을 제한하거나 이용계약을 해지할 수 있고, 이로 인하여 서비스 운영에 손해가 발생한 경우 이에 대한 민, 형사상 책임도 물을 수 있습니다.
+④ 회원은 제3항에 따른 서비스 이용정지, 기타 서비스 이용과 관련된 이용 제한에 대해 회사가 정한 절차에 따라 이의신청을 할 수 있으며, 회사는 회원의 이의신청이 정당하다고 판단되면 즉시 서비스 이용을 재개합니다.
+⑤ 이용자가 서비스를 이용하는 도중, 연속하여 이(2)년 동안 서비스에 log-in한 기록이 없는 경우 회사는 이용자의 회원자격을 상실시킬 수 있습니다.
+⑥ 제8조 2항에 따라 서비스 이용 승인이 취소되는 경우 잔액 여부와 상관없이 해당 이용자의 캐쉬는 소멸되어 타인에게 양도할 수 없으며, 수신자가 미사용하여 유효 기간이 만료된 오피스콘에 대한 전송자 자동 환불 서비스 등을 받을 수 없습니다.
+
+<strong>제 10 조 (서비스의 이용시간)</strong>
+① 서비스의 이용은 연중무휴 1일 24시간을 원칙으로 합니다. 다만, 회사의 업무상이나 기술상의 이유로 서비스가 일지 중지될 수 있고, 또한 운영 상의 목적으로 회사가 정한 기간에는 서비스가 일시 중지될 수 있습니다. 이러한 경우 회사는 사전에 이를 공지하며, 부득이한 경우 사후 통보할 수 있습니다.
+② 회사는 서비스를 일정 범위로 분할하여 각 범위 별로 이용 가능한 시간을 별도로 정할 수 있으며 이 경우 그 내용을 공지합니다.
+
+<strong>제 11조 (회사의 의무)</strong>
+① 회사는 법령과 이 약관이 금지하거나 공서양속에 반하는 행위를 하지 않으며 이 약관이 정하는 바에 따라 지속적이고, 안정적으로 상품 등을 제공하는데 최선을 다하여야 합니다.
+② 회사는 회원이 안전하게 서비스를 이용할 수 있도록 회원의 개인정보(신용정보 포함)보호를 위한 보안시스템을 갖추어야 하며, 개인정보취급방침을 공시하고 준수합니다.
+③ 회사는 이용자가 원하지 않는 영리목적의 광고성 전자우편을 발송하지 않습니다.
+④ 회사는 회원으로부터 제기되는 의견이나 불만이 정당하다고 객관적으로 인정될 경우에는 적절한 절차를 거쳐 즉시 처리하여야 합니다. 다만, 즉시 처리가 곤란한 경우에는 회원에게 그 사유와 처리일정을 통보하여야 합니다.
+
+<strong>제 12 조 (회원의 ID 및 비밀번호에 대한 의무)</strong>
+① ID와 비밀번호에 관한 관리책임은 회원에게 있으며, 이를 소홀히 하여 발생한 모든 민∙형사상의 책임은 회원 자신에게 있습니다.
+② 회원은 자신의 ID 및 비밀번호를 제3자에게 이용하게 해서는 안됩니다.
+③ 회원이 자신의 ID 및 비밀번호를 도난당하거나 제3자가 사용하고 있음을 인지한 경우에는 즉시 회사에 통보하고 회사의 안내가 있는 경우에는 그에 따라야 합니다.
+④ 회원이 제3항에 따른 통지를 하지 않거나 회사의 조치에 응하지 아니하여 발생하는 모든 불이익에 대한 책임은 회원에게 있습니다.
+
+<strong>제 13 조 (이용자의 의무)</strong>
+① 이용자는 상품 등을 구매하기 전에 반드시 회사가 제공하는 상품 등의 상세 내용과 거래의 조건을 정확하게 확인한 후 구매를 신청하여야 합니다. 구매하려는 상품 등의 상세 내용과 거래의 조건을 확인하지 않고 구매하여 발생하는 손해에 대하여 이용자가 책임을 부담합니다.
+② 이용자는 본인이 발송한 오피스콘 수신자로부터 접수되는 고객 문의 및 클레임 등을 직접 처리 합니다.
+③ 이용자는 서비스를 이용할 때 다음 각 호의 행위를 하여서는 아니 됩니다.
+1. 부정하게 서비스에 접속하여 사용하는 행위
+2. 회사의 서비스 정보를 이용하여 얻은 정보를 회사의 사전 승낙 없이 복제 또는 유통시키거나 상업적으로 이용하는 행위
+3. 타인의 명예를 손상시키거나 불이익을 주는 행위
+4. 회사의 저작권, 제3자의 저작권 등 기타 권리를 침해하는 행위
+5. 공공질서 및 미풍양속에 위반되는 내용 등을 타인에게 유포하는 행위
+6. 서비스 운영을 고의로 방해하거나 서비스의 안정적 운영을 방해할 수 있는 정보 및 수신자의 명시적인 수신거부의사에 반하여 광고성 정보를 전송하는 행위
+7. 서비스에 게시된 정보를 변경하는 행위
+8. 관련 법령에 의하여 그 전송 또는 게시가 금지되는 정보(컴퓨터 프로그램 포함)의 전송 또는 게시 행위
+9. 회사의 직원이나 서비스 운영자를 가장하거나 사칭하여 SMS 발송 또는 연락을 취하는 행위
+10. 스토킹(stalking) 등 다른 이용자를 괴롭히는 행위
+11. 서비스를 통해 할인 구매한 상품을 다른 판매 채널을 통해 재판매 하는 행위.
+12. 시세 차익 등을 목적으로 직접 구매하여 사용하는 행위.
+13. 불법스팸을 전송하는 행위
+14. 서비스를 부정한 결제방식으로 사용하는 행위
+15. 아이디를 판매하거나 돌려쓰는 행위
+16. 본 약관에 따라 회사와 합의된 서비스 이용 목적 이외로 사용하는 경우
+17. 기타 불법적이거나 부당한 행위
+④ 이용자는 관계 법령, 본 약관의 규정, 이용안내 및 서비스상에 공지한 주의사항, 회사가 통지하는 사항 등을 준수하여야 하며, 기타 회사의 업무에 방해되는 행위를 하여서는 아니 됩니다.
+⑤ 이용자가 본 조의 의무에 위반하여 발생한 영업 활동의 결과 및 손실, 관계 기관에 의한 구속 등 법적 조치 등에 관해서는 회사가 책임을 지지 않습니다.
+⑥ 이용자는 이용자 가입 시 입력한 사항이 변경되었을 경우 즉시 이용자 정보 관리페이지에서 이를 변경하여야 합니다. 이 경우 회사는 이용자가 이용자정보를 변경하지 아니하여 발생한 손해에 대하여 책임을 부담하지 아니합니다.
+⑦ 이용자가 본 조의 의무를 위반하는 경우에 회사는 오피스콘 서비스의 이용 제한 및 환불을 거부할 수 있습니다.
+
+<strong>제 14 조 (회원의 아이디와 비밀번호에 대한 의무)</strong>
+① 회원은 아이디(ID)와 비밀번호(PASSWORD)를 철저히 관리해야 하며, 관리소홀, 부정사용 등에 의하여 발생하는 모든 결과에 대한 책임은 회원 본인이 부담하며, 회사는 이에 대해 어떠한 책임도 부담하지 않습니다.
+② 회원은 본인의 아이디(ID)와 비밀번호(PASSWORD)를 제3자에게 이용하게 해서는 안 되며, 회원 본인의 아이디(ID)와 비밀번호(PASSWORD)를 도난 당하거나 제3자가 사용하고 있음을 알았을 때에는 즉시 비밀번호(PASSWORD)를 변경해야 하며, 해당 사실을 회사에 통지하고 회사가 안내하는 바를 따라야 합니다.
+
+<strong>제 15 조 (회사의 면책)</strong>
+① 회사는 천재지변 또는 이에 준하는 불가항력으로 인하여 서비스를 제공할 수 없는 경우에는 서비스 제공에 관한 책임이 면제됩니다.
+② 회사 또는 제조사의 사정으로 인하여 상품 등의 수량을 확보하지 못하여 상품 등을 공급하지 못할 수 있으며, 이 경우 회사는 회원에게 상품공급이 어렵다는 점을 3회 이상 고지한 후 환불 및 회사에서 정한 추가보상을 진행합니다.
+③ 회사는 회원의 귀책사유로 인한 서비스 이용의 장애에 대하여 책임을 지지 않습니다.
+④ 회사는 회원이 서비스를 이용하여 기대하는 수익을 상실한 것에 대하여 책임을 지지 않으며, 그 밖의 서비스를 통하여 얻은 자료로 인한 손해에 관하여 책임을 지지 않습니다.
+⑤ 회사는 회원이 게재한 정보, 자료, 사실의 신뢰도, 정확성 등 내용에 관해서는 책임을 지지 않습니다.
+⑥ 회사는 회원간 또는 회원과 제3자 상호간에 회사의 서비스를 매개로 하여 거래 등을 한 경우에는 책임이 면제됩니다.
+⑦ 회사는 무료로 제공되는 서비스 이용과 관련하여 관련법에 특별한 규정이 없는 한 책임을 지지 않습니다.
+
+<strong>​제 16 조 (이용자의 개인정보보호)</strong>
+① 회사는 회원의 개인정보 수집시 서비스제공을 위하여 필요한 범위에서 최소한의 개인정보를 수집합니다.
+② 회사는 회원가입시 구매계약이행에 필요한 정보를 미리 수집하지 않습니다. 다만, 관련 법령상 의무이행을 위하여 구매계약 이전에 본인확인이 필요한 경우로서 최소한의 특정 개인정보를 수집하는 경우에는 그러하지 아니합니다.
+③ 회사는 회원의 개인정보를 수집•이용하는 때에는 당해 회원에게 그 목적을 고지하고 동의를 받습니다.
+④ 회사는 수집된 개인정보를 목적외의 용도로 이용할 수 없으며, 새로운 이용목적이 발생한 경우 또는 제3자에게 제공하는 경우에는 이용•제공단계에서 당해 회원에게 그 목적을 고지하고 동의를 받습니다. 다만, 관련 법령에 달리 정함이 있는 경우에는 예외로 합니다.
+⑤ 회사가 제2항과 제3항에 의해 회원의 동의를 받아야 하는 경우에는 개인정보 관리 책임자의 신원(소속, 성명 및 전화번호, 기타 연락처), 정보의 수집목적 및 이용목적, 제3자에 대한 정보제공 관련사항(제공받은 자, 제공목적 및 제공할 정보의 내용) 등 『정보통신망 이용촉진 및 정보보호 등에 관한 법률』 에서 규정한 사항을 미리 명시하거나 고지해야 하며 회원은 언제든지 이 동의를 철회할 수 있습니다.
+⑥ 회원은 언제든지 회사가 가지고 있는 자신의 개인정보에 대해 열람 및 오류 정정을 요구할 수 있으며 회사는 이에 대해 지체 없이 필요한 조치를 취할 의무를 집니다. 회원이 오류의 정정을 요구한 경우에는 회사는 그 오류를 정정할 때까지 당해 개인정보를 이용하지 않습니다.
+⑦ 회사는 개인정보 보호를 위하여 회원의 개인정보를 취급하는 자를 최소한으로 제한하여야 하며 신용카드, 은행계좌 등을 포함한 회원의 개인정보의 분실, 도난, 유출, 동의 없는 제3자 제공, 변조 등으로 인한 이용자의 손해에 대하여 모든 책임을 집니다.
+⑧ 회사는 개인정보의 수집•이용•제공에 관한 동의란을 미리 선택한 것으로 설정해두지 않습니다. 또한 개인정보의 수집•이용•제공에 관한 동의거절시 제한되는 서비스를 구체적으로 명시하고, 필수수집항목이 아닌 개인정보의 수집•이용•제공에 관한 회원의 동의 거절을 이유로 회원가입 등 서비스 제공을 제한하거나 거절하지 않습니다.
+⑨ 회사의 사이트(제2조 제1항에서 정한 범위 내) 이외의 링크된 사이트에서는 회사의 개인정보취급방침이 적용되지 않습니다. 링크된 사이트 및 상품 등을 제공하는 제3자의 개인정보 취급과 관련하여서는 해당 사이트 및 제3자의 개인정보취급방침을 확인할 책임이 회원에게 있으며, 회사는 이에 대하여 책임을 부담하지 않습니다.
+⑩ 회사는 다음과 같은 경우에 법이 허용하는 범위 내에서 회원의 개인정보를 제3자에게 제공할 수 있습니다.
+1.수사기관이나 기타 정부기관으로부터 정보제공을 요청 받은 경우
+2.회원이 법령을 위반하는 등의 부정행위를 확인하기 위해 필요한 경우
+3.판매자 또는 배송업체 등에게 거래 및 배송 등에 필요한 최소한의 회원의 정보(성명, 주소, 전화번호)를 제공하는 경우
+4.구매가 성사된 때에 그 이행을 위하여 필요한 경우와 구매가 종료된 이후에도 반품, 교환, 환불, 취소 등을 위하여 필요한 경우
+5.기타 법률에 의해 요구되는 경우
+⑪ 회사가 수집하는 이용자의 개인 정보 및 개인 정보의 이용목적은 다음 각 호와 같습니다.
+1. 성명, 연계 정보 (CI/DI), 생년월일, 성별, 휴대전화 번호, 계좌번호, 회사명, 부서정보, 담당자정보: 서비스의 이용에 따르는 본인확인, 민원사항 처리, 회원의 서비스 이용 통계 및 설문 등
+2. 주소 : 상품과 경품 배송을 위한 배송지 확인 등
+3. 휴대전화 번호, 이메일 주소 : 고지사항 전달, 본인 의사 확인, 불만 처리 등 원활한 의사소통 경로의 확보, 새로운 서비스/신상품이나 이벤트 정보 안내
+
+<strong>​제 17 조 (개인 정보의 보유기간 및 이용기간)</strong>
+① 이용자의 개인 정보는 회사가 서비스를 제공하는 기간 동안에 한하여 보유 및 이용합니다.
+② 다음 각 호에 모두 해당하는 경우 회사는 지체 없이 이용자의 개인 정보를 복구할 수 없는 방법으로 삭제하여 파기합니다.
+1. 이용자가 회원에서 탈퇴하거나 개인 정보 이용목적을 달성한 경우
+2. 1년 이내에 오피스콘 사이트에 로그인한 이력이 없는 경우
+3. 5년 이내에 쿠폰을 전송하거나 수신 또는 이용한 이력이 없는 경우
+4. 5년 이내에 캐쉬를 구매하거나 이용한 이력이 없는 경우
+③ 개인 정보의 유효기간은 이용자가 당사의 서비스를 이용하지 않은 최근의 기록(로그인)으로부터 기산 되며, 전자상거래 법 제6조 제3항 및 동 법 시행령 제6조 제1항에 따라 5년으로 설정됩니다.
+④ 국세기본법, 법인세법, 부가가치세법 기타 관계법령의 규정에 의하여 보존할 필요성이 있는 경우에는 관계법령에 따라 보존합니다.
+
+<strong>​제 18 조 (개인 정보의 위탁)</strong>
+회사는 수집된 개인 정보의 취급 및 관리 등의 업무를 스스로 수행함을 원칙으로 하나, 필요한 경우 업무의 일부 또는 전부를 회사가 선정한 회사에 위탁할 수 있습니다.
+
+<strong>​제 19 조 (관리책임)</strong>
+① 이용자는 서비스 이용을 위한 이용자 ID, 비밀번호의 관리에 대한 책임, 본인 ID의 제3자에 의한 부정사용 등 이용자의 고의•과실로 인해 발생하는 모든 불이익에 대한 책임을 부담합니다. 단, 이것이 회사의 고의•과실로 인하여 야기된 경우는 회사가 책임을 부담합니다.
+② 회사는 서비스 제공을 위하여 이용자가 발송한 쿠폰의 발송내역과 수신내역을 열람할 수 있습니다. 단, 회사는 이용자가 수발신 내역 및 이용자 고객의 휴대전화 번호 등을 별도로 관리하거나 이용하지 아니하며, 이용자 관리화면의 발송내역, 이용자 고객의 휴대전화 번호 등에 대한 관리 책임은 이용자에게 있습니다.
+③ 이용자의 고의 또는 과실로 쿠폰 전송내역 또는 수신내역이 노출되어 발생하는 손해에 대해 회사는 책임을 지지 않습니다.
+④ 시스템 오류 등 회사의 책임으로 쿠폰이 발송되지 않거나 잘못 발송된 경우를 제외하고는 발송에 대한 책임은 이용자에게 있습니다.
+⑤ 이용자는 쿠폰 전송내역 및 수신자의 수신내역을 1년 동안 확인이 가능합니다
+
+<strong>제 20 조 (서비스의 제공 및 변경)</strong>
+① 회사는 다음과 같은 서비스를 제공합니다.
+1. 전자상거래 서비스(통신판매 중개 서비스 포함) 및 부수 서비스
+2. 기타 회사가 정하는 서비스 또는 업무
+② 회사는 변경될 서비스의 내용 및 제공 일자를 이용자에게 통지하고 서비스를 변경하여 제공할 수 있습니다.
+③ 회사가 통제할 수 없는 사유로 인한 서비스의 중단(회사의 고의, 과실이 없는 디스크 장애, 시스템 다운 등)으로 인하여 사전 통지가 불가능한 경우에는 사후 통지하거나 통지가 이루어지지 않을 수 있습니다.
+
+<strong>제 21 조 (서비스 이용절차)</strong>
+① 본 약관 제7조에 따라 서비스 이용자는 http://www.officecon.co.kr에 접속하여 회원가입 한 이용자 아이디 및 비밀번호를 입력하고 로그인 합니다.
+② 이용자는 오피스콘 발송 메뉴에서 원하는 물품 및 수량을 선택한 후 확인을 선택합니다.
+③ 이용자는 해당 금액에 대하여 결제를 신청합니다. 결제 방법은 신용카드, 계좌이체의 방법을 선택합니다.
+④ 구매결제가 완료되면 이용자는 구매한 쿠폰에 대하여 이용자의 수신자들에게 발송할 수 있습니다.
+
+<strong>​제 22 조 (서비스의 중단)</strong>
+① 회사는 다음 각 호에 해당하는 경우 서비스의 전부 또는 일부를 제한하거나 중지할 수 있습니다.
+1. 서비스 용 설비의 보수 등 공사로 인한 부득이한 경우2. 정전, 제반 설비의 장애 또는 이용량의 폭주 등으로 정상적인 서비스 이용에 지장이 있는 경우3. 교환처와의 계약 종료 등과 같은 회사의 제반 사정으로 서비스를 유지할 수 없는 경우4. 천재지변, 국가비상사태 등 불가항력적 사유가 있는 경우5. 기타 서비스를 유지할 수 없는 중대한 사유가 발생한 경우
+② 본조 제1항에 의한 서비스 중단의 경우 회사는 게시판이나 전자우편 등의 방법으로 중단 사실을 이용자에게 사전에 통지합니다. 이때, 전자우편 수신을 거부한 이용자의 경우나 회사가 통제할 수 없는 사유로 인한 서비스의 중단(회사의 고의, 과실이 없는 디스크 장애, 시스템다운 등)으로 인하여 사전 통지가 불가능한 경우에는 회사가 책임을 지지 않습니다.
+③ 제1항의 서비스 중단으로 인하여 발생한 이용자의 손해에 대하여 회사는 고의 또는 과실이 없는 한 책임을 부담하지 않습니다.
+
+<strong>​제 23 조 (서비스 종료)</strong>
+회사가 서비스를 종료하고자 할 경우, 회사는 종료하고자 하는 날로부터 1개월 이전에 이용자에게 공지한 후 서비스를 종료할 수 있습니다.
+
+<strong>​제 24 조 (서비스 이용료)</strong>
+① 이용자가 쿠폰을 선구매(선결제) 하는 방식으로 정산이 이뤄집니다. 이 때, 정산 기준이 되는 상품 단가는 이용자별 등급에 따른 할인율을 적용한 가격이 됩니다.
+② 이용자 등급은 3개월 동안의 이용 실적을 기준으로 3등급으로 구분하며 매월 1일에 등급이 자동 반영 됩니다. (각 등급별 할인율과 산정 기준은 해당 페이지를 참고하시기 바랍니다)
+③ 이용자 등급 정책은 회사에 의해 변경 될 수 있습니다.
+
+<strong>​제 25 조 (쿠폰 사용)</strong>
+① 제휴사 정책 변경(판매종료, 매가변경) 등으로 기간을 연장할 수 없거나 지정상품이 품절되어 수신자의 요청이 있을 경우에는 수신자에게 구매금액으로 환불 처리됩니다. (환불규정은 제26조에 따름)
+
+<storng>​제 26 조 (환불 및 주문취소 등)</storng>
+① 다음 각호의 사유에 해당하는 경우 상품 유효기간 내에서 이용자는 주문을 취소하거나 회사에 환불을 요청할 수 있습니다.
+1. 쿠폰 전송 시 시스템적인 장애 또는 해당 번호가 결번이거나 서비스되고 있지 않음으로 인해 영구적으로 수신자에게 쿠폰이 정상적으로 발송되지 않는 경우
+2. 주문 시 Network 문제로 인해 결제만 수행되고 정상적으로 쿠폰 발송 단계를 거치지 못 한 경우
+② 주문 후 쿠폰이 발송 성공 된 이후에는 쿠폰에 대한 기간 연장, 주문취소 또는 환불이 되지 않습니다.
+③ 수신자의 전화번호를 전송자가 잘못 입력하여 쿠폰이 오발송된 후 수신자에 의해 쿠폰이 교환된 경우 회사에서는 전송자의 오발송에 대해 책임지지 않습니다.
+④ 쿠폰의 유효기간 및 유효기간 연장에 대하여는 오피스콘 이용약관의 관련 규정을 준용합니다.
+⑤ 계좌이체로 환불하는 경우는 환불수수료 10% (충전/지급 된지 3일 이내인 경우 환불수수료 없음)가 차감됩니다.
+⑥ 환불 요청 후 약 2주 후에 회원이 고객센터에 전달한 입금 희망 계좌로 환불됩니다. 회원이 환불을 요청했을 때 회사는 회원에게 본인 인증 및 환불 계좌 관련 자료를 요구할 수 있으며, 회원은 이에 협조해야 합니다.
+
+<strong>제 27 조 (캐쉬)</strong>
+① 캐쉬는 최소 10,000원부터 충전할 수 있으며, 캐쉬 1원은 현금 1원의 의미를 지닙니다.
+② 회원이 보유할 수 있는 최대 캐쉬는 100,000,000원입니다.
+③ 캐쉬 충전은 1회 최대 100,000,000원으로 제한됩니다.
+④ 충전(지급)된 일로 부터 3일이상 경과 후 환불 요청시, 10%의 환불 수수료가 부과 됩니다.(3일 이내 환불 수수료 없음)
+⑤ 캐쉬는 일부환불이 불가능하며, 전체환불만 가능합니다.
+⑥ 캐쉬 환불은 요청일로부터 최대 2주가 소요될 수 있습니다.
+⑦ 캐쉬는 마지막이용(충전, 환불, 사용, 지급 등)으로 부터 5년 동안 한차례도 이용하지 않을 경우 자동으로 소멸됩니다.
+
+<strong>제 28 조 (리워드)</strong>
+① 리워드는 구매된 상품의 유효기간이 만료되었을 때, 각 상품에 지정된 적립율에 따라 지급되며, 발송이 완료된 건에 대해서만 지급됩니다. (리워드가 없는 상품의 경우에는 지급되지 않습니다.)
+② 리워드는 현금으로 환불되지 않습니다.
+③ 리워드는 회원 탈퇴 시에 환불이 불가능합니다.
+④리워드는 마지막이용(적립, 사용, 지급 등)으로 부터 1년 동안 한차례도 이용하지 않을 경우 자동으로 소멸됩니다.
+
+<strong>제 29 조 (손해 배상)</strong>
+① 이용자가 본 약관을 위반하거나 불법행위로 인하여 발생하는 모든 문제는 이용자에게 책임이 있습니다. 이로 인해 발생한 회사, 수신자 또는 제3자의 손해에 대하여 이용자는 손해액 전액을 배상하여야 합니다.
+② 회사는 이용자가 서비스를 이용함으로 기대되는 교환율이나 서비스를 통해 얻은 정보로부터 발생한 또는 발생 가능한 손익에 대해서는 책임지지 않습니다.
+③ 본조 제1항으로 회사가 수신자 또는 제3자로부터 손해배상 청구 또는 소송을 비롯한 각종 이의제기를 받는 경우 당해 이용자는 자신의 책임과 비용으로 회사를 면책시켜야 하며, 회사가 면책되지 못한 경우 당해 이용자는 그로 인하여 회사에 발생한 모든 손해를 배상하여야 합니다.
+
+<strong>​제 30 조 (면책사항)</strong>
+① 회사는 천재지변 또는 이에 준하는 불가항력으로 인하여 서비스를 제공할 수 없는 경우에는 서비스 제공에 관한 책임이 면제됩니다.
+② 회사는 이용자의 귀책사유로 인한 서비스의 이용장애에 대하여 책임을 지지 않습니다.
+③ 회사는 이용자 상호간 또는 이용자와 제3자 상호간에 서비스를 매개로 발생한 분쟁에 대해서는 개입할 의무가 없으며 이로 인한 손해를 배상할 책임도 없습니다.
+
+<strong>​제 31 조 (양도금지)</strong>
+이용자와 회사는 이 약관상의 지위 또는 권리•의무의 전부 또는 일부를 제3자에게 양도•위임하거나 담보 제공 등의 목적으로 처분할 수 없습니다.
+
+<strong>​제 32 조 (관할법원)</strong>
+① 서비스 이용과 관련하여 회사와 이용자 사이에 분쟁이 발생한 경우, 회사와 이용자는 분쟁의 해결을 위해 성실히 협의합니다.
+② 본조 제1항의 협의에서도 분쟁이 해결되지 않을 경우 양 당사자는 민사소송법상의 관할법원에 소를 제기할 수 있습니다.
+③ 서비스 이용 및 본 약관과 관련하여 발생하는 분쟁에 대해서는 대한민국의 법률을 적용합니다.
+
+
+
+본 서비스 이용약관은 2018년 1월 5일부터 유효합니다.</pre>
+                    </el-agree-content>
+                  </el-agree-content-collapse>
+                </el-agree-item>
+              </el-agrees>
+            </el-modal-company-member-conversion>
+          </el-modal-body>
+
+          <el-modal-footer class="modal-footer">
+            <button
+              type="button"
+              data-bs-dismiss="modal"
+              class="button-h50-stroke typo-body-lg"
+            >
+              취소
+            </button>
+            <button type="button" class="button-h50-fill typo-body-lg">
+              등록
+            </button>
+          </el-modal-footer>
+        </el-modal-content>
+      </el-modal-dialog>
+    </el-modal>
+    <!-- 종료: modal: 기업 회원 전환 신청 -->
+
+    <!-- 공통js: common.js -->
+    <script src="./js/pub-common.js" crossorigin="anonymous"></script>
+
+    <!-- [DEV] 웹 컴포넌트js: 개발 시 삭제해 주세요 -->
+    <script src="./js/web-components.js" crossorigin="anonymous"></script>
+  </body>
+</html>

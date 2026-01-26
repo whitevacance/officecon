@@ -8404,7 +8404,8 @@ el-order-box {
   }
 }
 
-el-order-content {
+el-order-content,
+el-mypage-content {
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -8562,6 +8563,7 @@ el-order-content {
         display: flex;
         justify-content: space-between;
         width: 100%;
+        position: relative;
 
         & > h3 {
           font-weight: 700 !important;
@@ -8572,6 +8574,11 @@ el-order-content {
           align-items: center;
           justify-content: flex-end;
           gap: 8px;
+
+          &.justify-content-start {
+            width: 829px;
+            justify-content: flex-start;
+          }
         }
       }
 
@@ -8644,6 +8651,10 @@ el-order-content {
             scrollbar-gutter: stable;
             color: var(--color-natural-20);
 
+            &.bg-gray {
+              background-color: var(--color-natural-95);
+            }
+
             & > li {
               display: flex;
               align-items: center;
@@ -8660,6 +8671,20 @@ el-order-content {
                 border-radius: 50% !important;
                 background-color: var(--color-natural-40) !important;
                 overflow: hidden !important;
+              }
+
+              el-order-addressee-modify {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                width: 396px;
+
+                & > button {
+                  flex-grow: 0;
+                  flex-shrink: 0;
+                  width: 88px;
+                  padding: 0 !important;
+                }
               }
             }
           }
@@ -8763,7 +8788,7 @@ el-order-content {
           gap: 6px;
 
           & > el-input,
-          & > textarea {
+          & > textarea.form-control {
             width: 620px;
           }
 
@@ -8796,6 +8821,15 @@ el-order-content {
           gap: 39px;
           width: 100%;
           padding-left: 135px;
+        }
+
+        &.modify {
+          el-order-input {
+            & > el-input,
+            & > textarea.form-control {
+              width: 764px;
+            }
+          }
         }
       }
 
@@ -9068,6 +9102,18 @@ el-order-content {
     flex-direction: column;
     gap: 32px;
     width: 100%;
+
+    el-order-product-footer-buttons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding-bottom: 24px;
+
+      & > button {
+        width: 160px;
+      }
+    }
 
     & > button {
       width: 160px;
@@ -11249,7 +11295,7 @@ el-mypage-order-list {
   }
 }
 
-#el-modal-send-result-guide {
+.el-modal-guide-templet {
   el-modal-scrollable-list-content {
     display: block;
     width: 100%;
@@ -11261,13 +11307,13 @@ el-mypage-order-list {
     scrollbar-gutter: stable;
   }
 
-  el-modal-send-result-guide {
+  el-modal-guide {
     display: flex;
     flex-direction: column;
     gap: 8px;
     width: 536px;
 
-    el-send-result-guide-box {
+    el-modal-guide-box {
       display: flex;
       flex-direction: column;
       gap: 8px;
@@ -12021,3 +12067,33 @@ el-modal-cancel-detail {
   }
 }
 /* 종료: 마이페이지 > 취소/환불내역 */
+
+/* 시작: 마이페이지 > 주문/발송 수정 */
+el-agree-send-fail {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 0 0 0 135px;
+  margin-top: -16px;
+
+  a {
+    display: flex;
+    align-items: center;
+    color: var(--color-blue-60);
+    text-decoration: underline;
+    font-weight: 700 !important;
+
+    el-icon {
+      background-color: var(--color-blue-60);
+    }
+  }
+}
+
+el-mypage-modify {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+/* 종료: 마이페이지 > 주문/발송 수정 */
