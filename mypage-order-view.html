@@ -42,6 +42,11 @@
     <link type="text/css" rel="stylesheet" href="./css/swiper.min.css" />
     <link type="text/css" rel="stylesheet" href="./css/tui-time-picker.css" />
     <link type="text/css" rel="stylesheet" href="./css/tui-date-picker.css" />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="./css/overlayscrollbars.min.css"
+    />
     <link type="text/css" rel="stylesheet" href="./css/style.css" />
     <script src="./js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script
@@ -50,6 +55,10 @@
     ></script>
     <script src="./js/tui-time-picker.js" crossorigin="anonymous"></script>
     <script src="./js/tui-date-picker.js" crossorigin="anonymous"></script>
+    <script
+      src="./js/overlayscrollbars.browser.es6.min.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
 
   <body>
@@ -459,7 +468,7 @@
                         <el-order-view-product-action>
                           <button
                             type="button"
-                            data-bs-target="#el-modal-send-message"
+                            data-bs-target="#modal-send-message"
                             data-bs-toggle="modal"
                             class="button-h50-square typo-body-sm"
                           >
@@ -468,6 +477,501 @@
                         </el-order-view-product-action>
                       </el-order-view-product-content>
                     </el-order-view-product>
+
+                    <el-order-view-sent-list>
+                      <el-table-util-bar>
+                        <el-table-util-left>
+                          <span class="typo-subtitle-sm">발송내역</span>
+                        </el-table-util-left>
+                        <el-table-util-right>
+                          <el-tooltip-wrapper
+                            data-bs-toggle="tooltip"
+                            data-bs-placement="top"
+                            data-bs-fallback-placements="[]"
+                            data-bs-offset="[0, 18]"
+                            data-bs-trigger="hover"
+                            data-bs-html="true"
+                            data-bs-custom-class="custom-tooltip"
+                            data-bs-title="
+                            <div class='el-tooltip-white'>
+                              <div
+                                class='el-tooltip-white-header typo-subtitle-sm'
+                              >
+                                재발송
+                              </div>
+                              <div class='el-tooltip-white-body typo-body-sm'>
+                                수신자별 선택 재발송 무상 3회 제공 (최초
+                                재발송은 원 발송타입으로, 2회 부터는 SMS타입으로
+                                발송)
+                              </div>
+                            </div>
+                            "
+                          >
+                            <button
+                              type="button"
+                              data-bs-target="#modal-sms-resend"
+                              data-bs-toggle="modal"
+                              class="text-black button-h43-square typo-body-sm"
+                            >
+                              (임시)재발송:sms
+                            </button>
+                          </el-tooltip-wrapper>
+
+                          <el-tooltip-wrapper
+                            data-bs-toggle="tooltip"
+                            data-bs-placement="top"
+                            data-bs-fallback-placements="[]"
+                            data-bs-offset="[0, 18]"
+                            data-bs-trigger="hover"
+                            data-bs-html="true"
+                            data-bs-custom-class="custom-tooltip"
+                            data-bs-title="
+                            <div class='el-tooltip-white'>
+                              <div
+                                class='el-tooltip-white-header typo-subtitle-sm'
+                              >
+                                재발송
+                              </div>
+                              <div class='el-tooltip-white-body typo-body-sm'>
+                                수신자별 선택 재발송 무상 3회 제공 (최초
+                                재발송은 원 발송타입으로, 2회 부터는 SMS타입으로
+                                발송)
+                              </div>
+                            </div>
+                            "
+                          >
+                            <button
+                              type="button"
+                              data-bs-target="#modal-email-resend"
+                              data-bs-toggle="modal"
+                              class="text-black button-h43-square typo-body-sm"
+                            >
+                              재발송
+                            </button>
+                          </el-tooltip-wrapper>
+                          <el-tooltip-wrapper>
+                            <button
+                              type="button"
+                              data-bs-target="#modal-cancel-all"
+                              data-bs-toggle="modal"
+                              class="text-black button-h43-square typo-body-sm"
+                            >
+                              전체 취소 요청
+                            </button>
+                          </el-tooltip-wrapper>
+                          <el-tooltip-wrapper
+                            data-bs-toggle="tooltip"
+                            data-bs-placement="top"
+                            data-bs-fallback-placements="[]"
+                            data-bs-offset="[0, 18]"
+                            data-bs-trigger="hover"
+                            data-bs-html="true"
+                            data-bs-custom-class="custom-tooltip"
+                            data-bs-title="
+                            <div class='el-tooltip-white'>
+                              <div
+                                class='el-tooltip-white-header typo-subtitle-sm'
+                              >
+                                부분취소
+                              </div>
+                              <div class='el-tooltip-white-body typo-body-sm'>
+                                주문일 기준 7일이내 취소 가능
+                              </div>
+                            </div>
+                            "
+                          >
+                            <button
+                              type="button"
+                              data-bs-target="#modal-cancel-partial-reward"
+                              data-bs-toggle="modal"
+                              class="text-black button-h43-square typo-body-sm"
+                            >
+                              (임시)부분 취소 요청:리워드
+                            </button>
+                          </el-tooltip-wrapper>
+                          <el-tooltip-wrapper
+                            data-bs-toggle="tooltip"
+                            data-bs-placement="top"
+                            data-bs-fallback-placements="[]"
+                            data-bs-offset="[0, 18]"
+                            data-bs-trigger="hover"
+                            data-bs-html="true"
+                            data-bs-custom-class="custom-tooltip"
+                            data-bs-title="
+                            <div class='el-tooltip-white'>
+                              <div
+                                class='el-tooltip-white-header typo-subtitle-sm'
+                              >
+                                부분취소
+                              </div>
+                              <div class='el-tooltip-white-body typo-body-sm'>
+                                주문일 기준 7일이내 취소 가능
+                              </div>
+                            </div>
+                            "
+                          >
+                            <button
+                              type="button"
+                              data-bs-target="#modal-cancel-partial"
+                              data-bs-toggle="modal"
+                              class="text-black button-h43-square typo-body-sm"
+                            >
+                              부분 취소 요청
+                            </button>
+                          </el-tooltip-wrapper>
+                          <el-tooltip-wrapper
+                            data-bs-toggle="tooltip"
+                            data-bs-placement="top"
+                            data-bs-fallback-placements="[]"
+                            data-bs-offset="[0, 18]"
+                            data-bs-trigger="hover"
+                            data-bs-html="true"
+                            data-bs-custom-class="custom-tooltip"
+                            data-bs-title="
+                            <div class='el-tooltip-white'>
+                              <div
+                                class='el-tooltip-white-header typo-subtitle-sm'
+                              >
+                                수정
+                              </div>
+                              <div class='el-tooltip-white-body typo-body-sm'>
+                                <div class='el-tooltip-white-body-padding'>
+                                  <div class='el-marker-list weight-regular'>
+                                    <ul>
+                                      <li>
+                                        <strong>예약주문</strong> : 발신번호,
+                                        문자메시지, 수신자정보(휴대폰/이메일)
+                                        수정가능
+                                        <div>
+                                          <strong>- 발송건수 변경불가</strong>
+                                        </div>
+                                      </li>
+                                      <li>
+                                        <strong>발송완료</strong> : 발신번호,
+                                        문자메시지 수정 가능
+                                        <div>
+                                          - 알림톡 발송 문자 메시지, 발송건수,
+                                          수신자 정보(휴대폰/이메일) 변경불가
+                                        </div>
+                                        <div>
+                                          - 수신자 오 발송건 고객센터 1:1문의
+                                          상담 요청
+                                        </div>
+                                      </li>
+                                      <li>
+                                        <strong>발송실패</strong> : 발신번호,
+                                        문자메시지, 수신자정보(휴대폰/이메일)
+                                        수정가능
+                                        <div>
+                                          - 알림톡 발송 문자 메시지, 발송건수,
+                                          변경불가
+                                        </div>
+                                        <div>
+                                          - 수정 후 재발송까지 완료 바랍니다.
+                                        </div>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            "
+                          >
+                            <button
+                              type="button"
+                              class="text-black button-h43-square typo-body-sm"
+                            >
+                              수정
+                            </button>
+                          </el-tooltip-wrapper>
+                        </el-table-util-right>
+                      </el-table-util-bar>
+
+                      <el-order-view-sent-table-header>
+                        <el-mypage-table class="mypage-order-view-sent-table">
+                          <table class="table align-middle">
+                            <colgroup>
+                              <col class="col-90" />
+                              <col class="col-118" />
+                              <col class="col-auto" />
+                              <col class="col-114" />
+                              <col class="col-132" />
+                              <col class="col-132" />
+                              <col class="col-132" />
+                              <col class="col-82" />
+                            </colgroup>
+                            <thead>
+                              <tr>
+                                <th scope="col">번호</th>
+                                <th scope="col">휴대폰번호</th>
+                                <th scope="col">이메일</th>
+                                <th scope="col">쿠폰번호</th>
+                                <th scope="col">최초 발송일시</th>
+                                <th scope="col">최종 발송일시</th>
+                                <th scope="col">최초 수신 성공일시</th>
+                                <th scope="col">상태</th>
+                              </tr>
+                            </thead>
+                          </table>
+                        </el-mypage-table>
+                      </el-order-view-sent-table-header>
+                      <el-order-view-sent-table-body
+                        id="el-order-view-sent-table-body"
+                        data-overlayscrollbars-initialize
+                      >
+                        <el-mypage-table class="mypage-order-view-sent-table">
+                          <table class="table align-middle">
+                            <colgroup>
+                              <col class="col-90" />
+                              <col class="col-118" />
+                              <col class="col-auto" />
+                              <col class="col-114" />
+                              <col class="col-132" />
+                              <col class="col-132" />
+                              <col class="col-132" />
+                              <col class="col-82" />
+                            </colgroup>
+                            <tbody>
+                              <tr>
+                                <td>1</td>
+                                <td>010-9999-****</td>
+                                <td>chuch****@naver.com</td>
+                                <td>92259375****</td>
+                                <td>2025.06.26 06:55</td>
+                                <td>2025.06.26 06:55</td>
+                                <td>2025.06.26 06:55</td>
+                                <td>성공</td>
+                              </tr>
+                              <tr>
+                                <td>2</td>
+                                <td>010-9999-****</td>
+                                <td>chuch****@naver.com</td>
+                                <td>92259375****</td>
+                                <td>2025.06.26 06:55</td>
+                                <td>2025.06.26 06:55</td>
+                                <td>2025.06.26 06:55</td>
+                                <td>
+                                  환불
+                                  <el-tooltip-wrapper
+                                    data-bs-toggle="tooltip"
+                                    data-bs-placement="top"
+                                    data-bs-fallback-placements="[]"
+                                    data-bs-offset="[0, 14]"
+                                    data-bs-trigger="hover"
+                                    data-bs-html="true"
+                                    data-bs-custom-class="custom-tooltip"
+                                    data-bs-title="
+                                    <div class='el-tooltip-white width-180'>
+                                      <div
+                                        class='el-tooltip-white-header typo-subtitle-sm'
+                                      >
+                                        수신실패
+                                      </div>
+                                      <div class='el-tooltip-white-body typo-body-sm'>
+                                        수신실패로 환불
+                                      </div>
+                                    </div>
+                                    "
+                                  >
+                                    <el-question-mark-for-tooltip>
+                                      ?
+                                    </el-question-mark-for-tooltip>
+                                  </el-tooltip-wrapper>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>3</td>
+                                <td>010-9999-****</td>
+                                <td>chuch****@naver.com</td>
+                                <td>92259375****</td>
+                                <td>2025.06.26 06:55</td>
+                                <td>2025.06.26 06:55</td>
+                                <td>2025.06.26 06:55</td>
+                                <td>환불대기</td>
+                              </tr>
+                              <tr>
+                                <td>4</td>
+                                <td>010-9999-****</td>
+                                <td>chuch****@naver.com</td>
+                                <td>92259375****</td>
+                                <td>2025.06.26 06:55</td>
+                                <td>2025.06.26 06:55</td>
+                                <td>2025.06.26 06:55</td>
+                                <td>환불대기</td>
+                              </tr>
+                              <tr>
+                                <td>5</td>
+                                <td>010-9999-****</td>
+                                <td>chuch****@naver.com</td>
+                                <td>92259375****</td>
+                                <td>2025.06.26 06:55</td>
+                                <td>2025.06.26 06:55</td>
+                                <td>2025.06.26 06:55</td>
+                                <td>환불대기</td>
+                              </tr>
+                              <tr>
+                                <td>6</td>
+                                <td>010-9999-****</td>
+                                <td>chuch****@naver.com</td>
+                                <td>92259375****</td>
+                                <td>2025.06.26 06:55</td>
+                                <td>2025.06.26 06:55</td>
+                                <td>2025.06.26 06:55</td>
+                                <td>환불대기</td>
+                              </tr>
+                              <tr class="empty">
+                                <td colspan="8">
+                                  <el-board-list-empty class="typo-label-lg">
+                                    <el-icon class="etc-file-text"></el-icon>
+                                    주문/발송 내역이 없습니다.
+                                  </el-board-list-empty>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </el-mypage-table>
+                        <script>
+                          const { OverlayScrollbars } = OverlayScrollbarsGlobal;
+                          const overlayScrollbarsExample = OverlayScrollbars(
+                            document.querySelector(
+                              '#el-order-view-sent-table-body'
+                            ),
+                            {
+                              scrollbars: {
+                                clickScroll: true,
+                              },
+                            }
+                          );
+                        </script>
+                      </el-order-view-sent-table-body>
+                    </el-order-view-sent-list>
+
+                    <el-order-view-sent-result>
+                      <el-order-view-sent-result-title class="typo-subtitle-sm">
+                        전송 결과
+                        <button
+                          type="button"
+                          data-bs-target="#el-modal-send-result-guide"
+                          data-bs-toggle="modal"
+                          class="typo-body-sm"
+                          >?</button
+                        >
+                      </el-order-view-sent-result-title>
+                      <ul class="el-order-view-sent-result-list typo-body-sm">
+                        <li>
+                          전체
+                          <div><strong>9,999</strong>건</div>
+                        </li>
+                        <li>
+                          승인대기
+                          <div><strong>9,999</strong>건</div>
+                        </li>
+                        <li>
+                          발송대기
+                          <div><strong>9,999</strong>건</div>
+                        </li>
+                        <li>
+                          발송중
+                          <div><strong>9,999</strong>건</div>
+                        </li>
+                        <li>
+                          성공
+                          <div><strong>9,999</strong>건</div>
+                        </li>
+                        <li>
+                          실패
+                          <div><strong>9,999</strong>건</div>
+                        </li>
+                        <li>
+                          환불대기
+                          <div><strong>9,999</strong>건</div>
+                        </li>
+                        <li>
+                          환불
+                          <div><strong>9,999</strong>건</div>
+                        </li>
+                      </ul>
+                      <el-info-box class="bg-gray">
+                        <el-marker-list class="weight-regular color-gray">
+                          <ul>
+                            <li>
+                              전송결과는 수신인의 통신 환경에 따라 최대
+                              25시간까지 소요 될 수 있습니다.
+                            </li>
+                            <li>
+                              주문번호별 본인 인증된 휴대폰번호로 최초 발송실패
+                              알림문자 1회만 전송됩니다.
+                            </li>
+                            <li>
+                              발송실패 알림문자 수신을 원치 않으실 경우
+                              나의정보수정에서 해제 가능합니다.
+                            </li>
+                            <li>
+                              환불 또는 환불대기 상태인 경우 재발송 및 발송정보
+                              수정이 불가합니다.
+                            </li>
+                          </ul>
+                        </el-marker-list>
+                      </el-info-box>
+                    </el-order-view-sent-result>
+
+                    <el-order-view-payment>
+                      <el-order-view-payment-title class="typo-subtitle-sm">
+                        결제 정보
+                        <button
+                          type="button"
+                          class="text-black button-h43-square typo-body-sm"
+                        >
+                          영수증
+                        </button>
+                      </el-order-view-payment-title>
+                      <el-order-view-payment-content>
+                        <el-order-view-payment-info class="typo-body-sm">
+                          <el-order-view-payment-info-label>
+                            결제 수단
+                          </el-order-view-payment-info-label>
+                          <ul>
+                            <li>카드결제(삼성카드) + 캐쉬 +포인트</li>
+                            <li>주문 일시 (2025.11.12 09:14)</li>
+                          </ul>
+                        </el-order-view-payment-info>
+                        <el-order-view-payment-price class="typo-body-sm">
+                          <dl>
+                            <dt>주문금액</dt>
+                            <dd>999,999,999</dd>
+                          </dl>
+                          <dl>
+                            <dt>할인</dt>
+                            <dd class="color-red">-999,999,999</dd>
+                          </dl>
+                          <dl>
+                            <dt>캐쉬</dt>
+                            <dd class="color-red">-999,999,999</dd>
+                          </dl>
+                          <dl>
+                            <dt>일이삼사오육칠팔구십</dt>
+                            <dd class="color-red">-999,999,999</dd>
+                          </dl>
+                          <dl>
+                            <dt>리워드</dt>
+                            <dd class="color-red">-999,999,999</dd>
+                          </dl>
+                          <dl class="size-lg typo-subtitle-sm">
+                            <dt>최종 결제 금액</dt>
+                            <dd>999,999,999</dd>
+                          </dl>
+                        </el-order-view-payment-price>
+                      </el-order-view-payment-content>
+                    </el-order-view-payment>
+
+                    <el-order-view-cta>
+                      <button
+                        type="button"
+                        class="button-h50-square-fill typo-body-sm"
+                      >
+                        <span>목록</span>
+                      </button>
+                    </el-order-view-cta>
                   </el-mypage-content>
                 </el-mypage-section>
               </el-mypage-container>
@@ -508,6 +1012,13 @@
             <button
               type="button"
               data-bs-dismiss="modal"
+              class="button-h50-stroke typo-body-lg"
+            >
+              취소
+            </button>
+            <button
+              type="button"
+              data-bs-dismiss="modal"
               class="button-h50-fill typo-body-lg"
             >
               확인
@@ -518,10 +1029,158 @@
     </el-alert>
     <!-- 종료: alert -->
 
+    <!-- 시작: modal: 전송결과 안내 모달 -->
+    <el-modal
+      class="modal fade el-modal-default"
+      id="el-modal-send-result-guide"
+      tabindex="-1"
+      aria-hidden="true"
+      data-bs-keyboard="false"
+    >
+      <el-modal-dialog
+        class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+      >
+        <el-modal-content class="modal-content">
+          <el-modal-close-button>
+            <button type="button" data-bs-dismiss="modal" aria-label="닫기">
+              <el-icon class="h32-closed natural-0"></el-icon>
+            </button>
+          </el-modal-close-button>
+
+          <el-modal-header class="modal-header">
+            <h3 class="typo-subtitle-lg">전송결과 안내</h3>
+          </el-modal-header>
+
+          <el-modal-body class="modal-body scroll-shadow">
+            <el-modal-send-result-guide class="typo-label-lg">
+              <el-send-result-guide-box>
+                <h4 class="typo-body-sm">
+                  <el-icon class="etc-user-check natural-0"></el-icon>
+                  승인대기
+                </h4>
+                <div>
+                  주문 결제 후 관리자 승인을 기다리는 상태입니다. (업무시간
+                  1시간 이내 처리)
+                </div>
+              </el-send-result-guide-box>
+              <el-send-result-guide-box>
+                <h4 class="typo-body-sm">
+                  <el-icon class="etc-pending natural-0"></el-icon>
+                  발송대기
+                </h4>
+                <div>
+                  예약 발송 주문 또는 발송 지연(일시적으로 발송량이 몰리는 경우)
+                  상태입니다.
+                </div>
+              </el-send-result-guide-box>
+              <el-send-result-guide-box>
+                <h4 class="typo-body-sm">
+                  <el-icon class="etc-progress natural-0"></el-icon>
+                  발송중
+                </h4>
+                <div>
+                  쿠폰 및 메시지를 통신사로 전달 후 수신 결과를 기다리는
+                  중입니다.<br />
+                  발송 결과는 최대 25시간까지 소요될 수 있으며 대표적인 사유는
+                  휴대폰이 꺼져있는 경우,<br />
+                  통신할 수 없는 지역에 있는 경우, 휴대폰 데이터를 꺼 놓은 경우
+                  등입니다.<br />
+                  발송 후 25시간 이후에 최종결과를 확인하세요.
+                </div>
+              </el-send-result-guide-box>
+              <el-send-result-guide-box>
+                <h4 class="typo-body-sm">
+                  <el-icon class="etc-success natural-0"></el-icon>
+                  성공
+                </h4>
+              </el-send-result-guide-box>
+              <el-send-result-guide-box>
+                <h4 class="typo-body-sm">
+                  <el-icon class="etc-fail natural-0"></el-icon>
+                  실패
+                </h4>
+                <div>
+                  <el-send-fail-article>
+                    <el-send-fail-article-label class="typo-label-md">
+                      주요원인
+                    </el-send-fail-article-label>
+                    <el-send-fail-article-content>
+                      <strong style="padding-right: 6px">
+                        일부 실패인 경우 </strong
+                      >수신자 문제(없는 번호, 서비스일시정지, MMS미지원 단말기
+                      등)<br />
+                      <strong style="padding-right: 6px">
+                        전체 실패인 경우 </strong
+                      >발신번호 문제(번호도용문자차단서비스 가입 등), 문구에
+                      특수기호가 포함 등
+                    </el-send-fail-article-content>
+                  </el-send-fail-article>
+                  <el-send-fail-article>
+                    <el-send-fail-article-label class="typo-label-md">
+                      대응
+                    </el-send-fail-article-label>
+                    <el-send-fail-article-content>
+                      주문상세페이지(상품정보 클릭)에서
+                      <strong>수정</strong> 버튼 클릭 후 잘못된 주문 정보<br />
+                      (발신번호, 수신번호, 문구) 수정 후
+                      <strong>재발송</strong>
+                    </el-send-fail-article-content>
+                  </el-send-fail-article>
+                  <div
+                    style="
+                      padding-top: 9px;
+                      border-top: 1px solid var(--color-natural-80);
+                    "
+                  >
+                    실패 건은 유효기간 만료 3일전 캐쉬로 자동 환불됩니다.<br />
+                    빠른 환불을 원하시거나 자동 환불을 원치 않으시면 1:1 문의
+                    게시판으로 요청 바랍니다.
+                  </div>
+                </div>
+              </el-send-result-guide-box>
+              <el-send-result-guide-box>
+                <h4 class="typo-body-sm">
+                  <el-icon class="etc-wait natural-0"></el-icon>
+                  환불대기
+                </h4>
+                <div>
+                  환불요청 후 처리를 기다리는 상태입니다.<br />
+                  환불대기 상태에서는 환불요청 철회가 불가합니다.
+                </div>
+              </el-send-result-guide-box>
+              <el-send-result-guide-box>
+                <h4 class="typo-body-sm">
+                  <el-icon class="etc-refund natural-0"></el-icon>
+                  환불
+                </h4>
+                <div>
+                  발송 실패 건이 주문 취소처리 되면 실패 건에서 환불건으로
+                  전환됩니다.<br />
+                  환불은 캐쉬로 환불 처리됩니다. (단, 대기상태에서 전체 취소 시
+                  결제수단으로 환불)
+                </div>
+              </el-send-result-guide-box>
+            </el-modal-send-result-guide>
+          </el-modal-body>
+
+          <el-modal-footer class="modal-footer">
+            <button
+              type="button"
+              data-bs-dismiss="modal"
+              class="button-h50-fill typo-body-lg"
+            >
+              확인
+            </button>
+          </el-modal-footer>
+        </el-modal-content>
+      </el-modal-dialog>
+    </el-modal>
+    <!-- 종료: modal: 전송결과 안내 모달 -->
+
     <!-- 시작: modal: 발송 메세지 모달 -->
     <el-modal
       class="modal fade el-modal-default"
-      id="el-modal-send-message"
+      id="modal-send-message"
       tabindex="-1"
       aria-hidden="true"
       data-bs-keyboard="false"
@@ -645,7 +1304,7 @@
                 </el-radio>
               </el-charge-method>
 
-              <el-charge-caution>
+              <el-info-box>
                 <el-marker-list class="weight-regular color-gray">
                   <ul>
                     <li> 보유 캐쉬 한도는 100,000,000원 입니다. </li>
@@ -667,7 +1326,7 @@
                     </li>
                   </ul>
                 </el-marker-list>
-              </el-charge-caution>
+              </el-info-box>
             </el-modal-cash-charge>
           </el-modal-body>
 
@@ -687,6 +1346,1146 @@
       </el-modal-dialog>
     </el-modal>
     <!-- 종료: modal: 캐쉬충전 -->
+
+    <!-- 시작: modal: 이메일 재발송 -->
+    <el-modal
+      class="modal fade el-modal-default"
+      id="modal-email-resend"
+      tabindex="-1"
+      aria-hidden="true"
+      data-bs-keyboard="false"
+    >
+      <el-modal-dialog
+        class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+      >
+        <el-modal-content class="modal-content">
+          <el-modal-close-button>
+            <button type="button" data-bs-dismiss="modal" aria-label="닫기">
+              <el-icon class="h32-closed natural-0"></el-icon>
+            </button>
+          </el-modal-close-button>
+
+          <el-modal-header class="modal-header">
+            <h3 class="typo-subtitle-lg center">이메일 재발송</h3>
+          </el-modal-header>
+
+          <el-modal-body class="modal-body">
+            <el-modal-resend>
+              <el-info-box>
+                <el-marker-list class="weight-regular color-gray">
+                  <ul>
+                    <li>이메일 재발송은 주소당 최대 3회까지 가능합니다.</li>
+                    <li>
+                      문자 재발송은 번호당 최대 3회까지 무료로 제공하며 최초
+                      1회는 기존타입 (MMS/LMS)으로, 이후 2회는 바코드가 없는
+                      단문(SMS)형태로 발송 됩니다.
+                    </li>
+                    <li>휴대폰번호가 존재하면 문자 재발송이 진행 됩니다.</li>
+                  </ul>
+                </el-marker-list>
+              </el-info-box>
+
+              <el-modal-resend-search>
+                <el-input>
+                  <input
+                    class="form-control custom-input"
+                    type="email"
+                    placeholder="이메일 주소 입력"
+                    value=""
+                  />
+                </el-input>
+                <el-input>
+                  <input
+                    class="form-control custom-input input-type-mobile"
+                    type="text"
+                    placeholder="휴대폰번호 입력"
+                    value=""
+                  />
+                </el-input>
+                <button
+                  type="button"
+                  class="text-black button-h43-square typo-body-sm"
+                >
+                  <el-icon class="h24-search natural-0"></el-icon>
+                </button>
+              </el-modal-resend-search>
+
+              <el-modal-resend-search-result>
+                <el-tabs class="border-rounded">
+                  <el-tabs-nav>
+                    <button
+                      type="button"
+                      role="tab"
+                      class="typo-body-sm active"
+                    >
+                      성공
+                    </button>
+                    <button type="button" role="tab" class="typo-body-sm">
+                      실패
+                    </button>
+                  </el-tabs-nav>
+                  <el-tabs-content>
+                    <el-tab-panel role="tabpanel" class="active">
+                      <el-modal-resend-success id="successEmail">
+                        <el-modal-resend-result-header class="typo-label-lg">
+                          <el-cell-checkbox>
+                            <el-checkbox>
+                              <input
+                                type="checkbox"
+                                class="form-check-input custom-checkbox checkboxAll"
+                                value=""
+                              />
+                            </el-checkbox>
+                          </el-cell-checkbox>
+                          <el-cell-email>이메일 주소</el-cell-email>
+                          <el-cell-mobile>휴대폰번호</el-cell-mobile>
+                          <el-cell-count>재발송</el-cell-count>
+                        </el-modal-resend-result-header>
+
+                        <el-modal-resend-result-body class="typo-label-lg">
+                          <ul>
+                            <li>
+                              <el-cell-checkbox>
+                                <el-checkbox>
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input custom-checkbox"
+                                    value=""
+                                  />
+                                </el-checkbox>
+                              </el-cell-checkbox>
+                              <el-cell-email>
+                                ui-validation@mockserver.dev
+                              </el-cell-email>
+                              <el-cell-mobile>010-0000-0000</el-cell-mobile>
+                              <el-cell-count>99회</el-cell-count>
+                            </li>
+                            <li>
+                              <el-cell-checkbox>
+                                <el-checkbox>
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input custom-checkbox"
+                                    value=""
+                                  />
+                                </el-checkbox>
+                              </el-cell-checkbox>
+                              <el-cell-email>
+                                ui-validation@mockserver.dev
+                              </el-cell-email>
+                              <el-cell-mobile>010-0000-0000</el-cell-mobile>
+                              <el-cell-count>99회</el-cell-count>
+                            </li>
+                            <li>
+                              <el-cell-checkbox>
+                                <el-checkbox>
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input custom-checkbox"
+                                    value=""
+                                  />
+                                </el-checkbox>
+                              </el-cell-checkbox>
+                              <el-cell-email>
+                                ui-validation@mockserver.dev
+                              </el-cell-email>
+                              <el-cell-mobile>010-0000-0000</el-cell-mobile>
+                              <el-cell-count>99회</el-cell-count>
+                            </li>
+                            <li>
+                              <el-cell-checkbox>
+                                <el-checkbox>
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input custom-checkbox"
+                                    value=""
+                                  />
+                                </el-checkbox>
+                              </el-cell-checkbox>
+                              <el-cell-email>
+                                ui-validation@mockserver.dev
+                              </el-cell-email>
+                              <el-cell-mobile>010-0000-0000</el-cell-mobile>
+                              <el-cell-count>99회</el-cell-count>
+                            </li>
+                            <li>
+                              <el-cell-checkbox>
+                                <el-checkbox>
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input custom-checkbox"
+                                    value=""
+                                  />
+                                </el-checkbox>
+                              </el-cell-checkbox>
+                              <el-cell-email>
+                                ui-validation@mockserver.dev
+                              </el-cell-email>
+                              <el-cell-mobile>010-0000-0000</el-cell-mobile>
+                              <el-cell-count>99회</el-cell-count>
+                            </li>
+                            <li>
+                              <el-cell-checkbox>
+                                <el-checkbox>
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input custom-checkbox"
+                                    value=""
+                                  />
+                                </el-checkbox>
+                              </el-cell-checkbox>
+                              <el-cell-email>
+                                ui-validation@mockserver.dev
+                              </el-cell-email>
+                              <el-cell-mobile>010-0000-0000</el-cell-mobile>
+                              <el-cell-count>99회</el-cell-count>
+                            </li>
+                          </ul>
+                        </el-modal-resend-result-body>
+                        <el-modal-resend-current class="typo-label-lg">
+                          <div>선택된 수신자 <strong>2</strong>명</div>
+                          <button
+                            type="button"
+                            class="button-h34-square typo-label-md unCheckAllButton"
+                          >
+                            선택해제
+                          </button>
+                        </el-modal-resend-current>
+                      </el-modal-resend-success>
+                    </el-tab-panel>
+                    <el-tab-panel role="tabpanel">
+                      <el-modal-resend-failed id="failedEmail">
+                        <el-modal-resend-result-header class="typo-label-lg">
+                          <el-cell-checkbox>
+                            <el-checkbox>
+                              <input
+                                type="checkbox"
+                                class="form-check-input custom-checkbox checkboxAll"
+                                value=""
+                              />
+                            </el-checkbox>
+                          </el-cell-checkbox>
+                          <el-cell-email>이메일 주소</el-cell-email>
+                          <el-cell-mobile>휴대폰번호</el-cell-mobile>
+                          <el-cell-count>재발송</el-cell-count>
+                        </el-modal-resend-result-header>
+
+                        <el-modal-resend-result-body class="typo-label-lg">
+                          <ul>
+                            <li>
+                              <el-board-list-empty class="typo-label-lg">
+                                <el-icon class="etc-file-text"></el-icon>
+                                정보가 없습니다.
+                              </el-board-list-empty>
+                            </li>
+                          </ul>
+                        </el-modal-resend-result-body>
+                        <el-modal-resend-current class="typo-label-lg">
+                          <div>선택된 수신자 <strong>0</strong>명</div>
+                          <button
+                            type="button"
+                            class="button-h34-square typo-label-md unCheckAllButton"
+                          >
+                            선택해제
+                          </button>
+                        </el-modal-resend-current>
+                      </el-modal-resend-failed>
+                    </el-tab-panel>
+                  </el-tabs-content>
+                </el-tabs>
+              </el-modal-resend-search-result>
+            </el-modal-resend>
+          </el-modal-body>
+
+          <el-modal-footer class="modal-footer">
+            <button
+              type="button"
+              data-bs-dismiss="modal"
+              class="button-h50-stroke typo-body-lg"
+            >
+              취소
+            </button>
+            <button
+              type="button"
+              data-bs-toggle="modal"
+              data-bs-target="#el-alert"
+              class="button-h50-fill typo-body-lg"
+            >
+              재발송
+            </button>
+          </el-modal-footer>
+        </el-modal-content>
+      </el-modal-dialog>
+    </el-modal>
+    <!-- 종료: modal: 이메일 재발송 -->
+
+    <!-- 시작: modal: 문자 재발송 -->
+    <el-modal
+      class="modal fade el-modal-default"
+      id="modal-sms-resend"
+      tabindex="-1"
+      aria-hidden="true"
+      data-bs-keyboard="false"
+    >
+      <el-modal-dialog
+        class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+      >
+        <el-modal-content class="modal-content">
+          <el-modal-close-button>
+            <button type="button" data-bs-dismiss="modal" aria-label="닫기">
+              <el-icon class="h32-closed natural-0"></el-icon>
+            </button>
+          </el-modal-close-button>
+
+          <el-modal-header class="modal-header">
+            <h3 class="typo-subtitle-lg center">문자 재발송</h3>
+          </el-modal-header>
+
+          <el-modal-body class="modal-body">
+            <el-modal-resend>
+              <el-info-box>
+                <el-marker-list class="weight-regular color-gray">
+                  <ul>
+                    <li>
+                      재발송은 번호당 최대 3회까지 무료로 제공하며 최초 1회는
+                      기존타입 (MMS/LMS)으로, 이후 2회는 바코드가 없는
+                      단문(SMS)형태로 발송 됩니다.
+                    </li>
+                  </ul>
+                </el-marker-list>
+              </el-info-box>
+
+              <el-modal-resend-search>
+                <el-input>
+                  <input
+                    class="form-control custom-input input-type-mobile"
+                    type="text"
+                    placeholder="휴대폰번호 입력"
+                    value=""
+                  />
+                </el-input>
+                <button
+                  type="button"
+                  class="text-black button-h43-square typo-body-sm"
+                >
+                  <el-icon class="h24-search natural-0"></el-icon>
+                </button>
+              </el-modal-resend-search>
+
+              <el-modal-resend-search-result class="sms-result">
+                <el-tabs class="border-rounded">
+                  <el-tabs-nav>
+                    <button
+                      type="button"
+                      role="tab"
+                      class="typo-body-sm active"
+                    >
+                      성공
+                    </button>
+                    <button type="button" role="tab" class="typo-body-sm">
+                      실패
+                    </button>
+                  </el-tabs-nav>
+                  <el-tabs-content>
+                    <el-tab-panel role="tabpanel" class="active">
+                      <el-modal-resend-success id="successSms">
+                        <el-modal-resend-result-header class="typo-label-lg">
+                          <el-cell-checkbox>
+                            <el-checkbox>
+                              <input
+                                type="checkbox"
+                                class="form-check-input custom-checkbox checkboxAll"
+                                value=""
+                              />
+                            </el-checkbox>
+                          </el-cell-checkbox>
+                          <el-cell-mobile>휴대폰번호</el-cell-mobile>
+                          <el-cell-count>재발송</el-cell-count>
+                        </el-modal-resend-result-header>
+
+                        <el-modal-resend-result-body class="typo-label-lg">
+                          <ul>
+                            <li>
+                              <el-cell-checkbox>
+                                <el-checkbox>
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input custom-checkbox"
+                                    value=""
+                                  />
+                                </el-checkbox>
+                              </el-cell-checkbox>
+                              <el-cell-mobile>010-0000-0000</el-cell-mobile>
+                              <el-cell-count>99회</el-cell-count>
+                            </li>
+                            <li>
+                              <el-cell-checkbox>
+                                <el-checkbox>
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input custom-checkbox"
+                                    value=""
+                                  />
+                                </el-checkbox>
+                              </el-cell-checkbox>
+                              <el-cell-mobile>010-0000-0000</el-cell-mobile>
+                              <el-cell-count>99회</el-cell-count>
+                            </li>
+                            <li>
+                              <el-cell-checkbox>
+                                <el-checkbox>
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input custom-checkbox"
+                                    value=""
+                                  />
+                                </el-checkbox>
+                              </el-cell-checkbox>
+                              <el-cell-mobile>010-0000-0000</el-cell-mobile>
+                              <el-cell-count>99회</el-cell-count>
+                            </li>
+                            <li>
+                              <el-cell-checkbox>
+                                <el-checkbox>
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input custom-checkbox"
+                                    value=""
+                                  />
+                                </el-checkbox>
+                              </el-cell-checkbox>
+                              <el-cell-mobile>010-0000-0000</el-cell-mobile>
+                              <el-cell-count>99회</el-cell-count>
+                            </li>
+                            <li>
+                              <el-cell-checkbox>
+                                <el-checkbox>
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input custom-checkbox"
+                                    value=""
+                                  />
+                                </el-checkbox>
+                              </el-cell-checkbox>
+                              <el-cell-mobile>010-0000-0000</el-cell-mobile>
+                              <el-cell-count>99회</el-cell-count>
+                            </li>
+                            <li>
+                              <el-cell-checkbox>
+                                <el-checkbox>
+                                  <input
+                                    type="checkbox"
+                                    class="form-check-input custom-checkbox"
+                                    value=""
+                                  />
+                                </el-checkbox>
+                              </el-cell-checkbox>
+                              <el-cell-mobile>010-0000-0000</el-cell-mobile>
+                              <el-cell-count>99회</el-cell-count>
+                            </li>
+                          </ul>
+                        </el-modal-resend-result-body>
+                        <el-modal-resend-current class="typo-label-lg">
+                          <div>선택된 수신자 <strong>2</strong>명</div>
+                          <button
+                            type="button"
+                            class="button-h34-square typo-label-md unCheckAllButton"
+                          >
+                            선택해제
+                          </button>
+                        </el-modal-resend-current>
+                      </el-modal-resend-success>
+                    </el-tab-panel>
+                    <el-tab-panel role="tabpanel">
+                      <el-modal-resend-failed id="failedSms">
+                        <el-modal-resend-result-header class="typo-label-lg">
+                          <el-cell-checkbox>
+                            <el-checkbox>
+                              <input
+                                type="checkbox"
+                                class="form-check-input custom-checkbox checkboxAll"
+                                value=""
+                              />
+                            </el-checkbox>
+                          </el-cell-checkbox>
+                          <el-cell-mobile>휴대폰번호</el-cell-mobile>
+                          <el-cell-count>재발송</el-cell-count>
+                        </el-modal-resend-result-header>
+
+                        <el-modal-resend-result-body class="typo-label-lg">
+                          <ul>
+                            <li>
+                              <el-board-list-empty class="typo-label-lg">
+                                <el-icon class="etc-file-text"></el-icon>
+                                정보가 없습니다.
+                              </el-board-list-empty>
+                            </li>
+                          </ul>
+                        </el-modal-resend-result-body>
+                        <el-modal-resend-current class="typo-label-lg">
+                          <div>선택된 수신자 <strong>0</strong>명</div>
+                          <button
+                            type="button"
+                            class="button-h34-square typo-label-md unCheckAllButton"
+                          >
+                            선택해제
+                          </button>
+                        </el-modal-resend-current>
+                      </el-modal-resend-failed>
+                    </el-tab-panel>
+                  </el-tabs-content>
+                </el-tabs>
+              </el-modal-resend-search-result>
+            </el-modal-resend>
+          </el-modal-body>
+
+          <el-modal-footer class="modal-footer">
+            <button
+              type="button"
+              data-bs-dismiss="modal"
+              class="button-h50-stroke typo-body-lg"
+            >
+              취소
+            </button>
+            <button
+              type="button"
+              data-bs-toggle="modal"
+              data-bs-target="#el-alert"
+              class="button-h50-fill typo-body-lg"
+            >
+              재발송
+            </button>
+          </el-modal-footer>
+        </el-modal-content>
+      </el-modal-dialog>
+    </el-modal>
+    <!-- 종료: modal: 문자 재발송 -->
+
+    <!-- 시작: modal: 전체 취소 요청 -->
+    <el-modal
+      class="modal fade el-modal-default"
+      id="modal-cancel-all"
+      tabindex="-1"
+      aria-hidden="true"
+      data-bs-keyboard="false"
+    >
+      <el-modal-dialog
+        class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+      >
+        <el-modal-content class="modal-content">
+          <el-modal-close-button>
+            <button type="button" data-bs-dismiss="modal" aria-label="닫기">
+              <el-icon class="h32-closed natural-0"></el-icon>
+            </button>
+          </el-modal-close-button>
+
+          <el-modal-header class="modal-header">
+            <h3 class="typo-subtitle-lg center">전체 취소 요청</h3>
+          </el-modal-header>
+
+          <el-modal-body class="modal-body">
+            <el-modal-cancel-all>
+              <el-info-box>
+                <el-marker-list class="weight-regular color-gray">
+                  <ul>
+                    <li>
+                      전체 취소 요청만 가능하며, 선택하신 수단으로 환불됩니다.
+                    </li>
+                    <li>
+                      전체 취소 요청은 발송실패/예약발송 1시간 이전에만
+                      가능합니다.
+                    </li>
+                  </ul>
+                </el-marker-list>
+              </el-info-box>
+
+              <el-modal-cancel-payment>
+                <h4 class="typo-body-lg">결제정보</h4>
+                <el-modal-cancel-all-payment-content class="typo-body-sm">
+                  <dl>
+                    <dt>캐쉬 결제</dt>
+                    <dd>10,000</dd>
+                  </dl>
+                  <dl>
+                    <dt>카드결제 / 계좌이체</dt>
+                    <dd>10,000</dd>
+                  </dl>
+                  <dl>
+                    <dt>총 환불 금액</dt>
+                    <dd class="total-refund-amount">10,000</dd>
+                  </dl>
+                </el-modal-cancel-all-payment-content>
+              </el-modal-cancel-payment>
+              <el-modal-cancel-payment-method>
+                <el-radio class="form-check">
+                  <input
+                    type="radio"
+                    class="form-check-input custom-radio"
+                    name="cancelAllPaymentMethod"
+                    id="cancelAllPaymentMethod-1"
+                    value=""
+                    checked
+                  />
+                  <label
+                    class="form-check-label typo-body-sm weight-em"
+                    for="cancelAllPaymentMethod-1"
+                  >
+                    기존결제수단 환불
+                  </label>
+                </el-radio>
+                <el-radio class="form-check">
+                  <input
+                    type="radio"
+                    class="form-check-input custom-radio"
+                    name="cancelAllPaymentMethod"
+                    id="cancelAllPaymentMethod-2"
+                    value=""
+                  />
+                  <label
+                    class="form-check-label typo-body-sm weight-em"
+                    for="cancelAllPaymentMethod-2"
+                  >
+                    캐쉬 환불
+                  </label>
+                </el-radio>
+              </el-modal-cancel-payment-method>
+            </el-modal-cancel-all>
+          </el-modal-body>
+
+          <el-modal-footer class="modal-footer">
+            <button
+              type="button"
+              data-bs-dismiss="modal"
+              class="button-h50-stroke typo-body-lg"
+            >
+              취소
+            </button>
+            <button
+              type="button"
+              data-bs-toggle="modal"
+              data-bs-target="#el-alert"
+              class="button-h50-fill typo-body-lg"
+            >
+              환불요청
+            </button>
+          </el-modal-footer>
+        </el-modal-content>
+      </el-modal-dialog>
+    </el-modal>
+    <!-- 종료: modal: 전체 취소 요청 -->
+
+    <!-- 시작: modal: 부분 취소 요청 -->
+    <el-modal
+      class="modal fade el-modal-default"
+      id="modal-cancel-partial"
+      tabindex="-1"
+      aria-hidden="true"
+      data-bs-keyboard="false"
+    >
+      <el-modal-dialog
+        class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+      >
+        <el-modal-content class="modal-content">
+          <el-modal-close-button>
+            <button type="button" data-bs-dismiss="modal" aria-label="닫기">
+              <el-icon class="h32-closed natural-0"></el-icon>
+            </button>
+          </el-modal-close-button>
+
+          <el-modal-header class="modal-header">
+            <h3 class="typo-subtitle-lg center">취소 요청</h3>
+          </el-modal-header>
+
+          <el-modal-body class="modal-body">
+            <el-modal-resend>
+              <el-info-box>
+                <el-marker-list class="weight-regular color-gray">
+                  <ul>
+                    <li>환불 요청의 경우 선택하신 수단으로 환불됩니다.</li>
+                    <li>
+                      환불대기 상태에 있거나 교환이력이 존재하는 쿠폰은
+                      환불요청이 불가합니다.
+                    </li>
+                    <li>
+                      취소 요청이 불가능한 항목이 있는 경우
+                      고객센터(1661-8197)로 문의해주세요.
+                    </li>
+                  </ul>
+                </el-marker-list>
+              </el-info-box>
+
+              <el-modal-resend-search>
+                <el-input>
+                  <input
+                    class="form-control custom-input"
+                    type="email"
+                    placeholder="이메일 주소 입력"
+                    value=""
+                  />
+                </el-input>
+                <el-input>
+                  <input
+                    class="form-control custom-input input-type-mobile"
+                    type="text"
+                    placeholder="휴대폰번호 입력"
+                    value=""
+                  />
+                </el-input>
+                <button
+                  type="button"
+                  class="text-black button-h43-square typo-body-sm"
+                >
+                  <el-icon class="h24-search natural-0"></el-icon>
+                </button>
+              </el-modal-resend-search>
+
+              <el-modal-resend-search-result class="cancel-partial">
+                <el-modal-resend-success id="cancelPartial">
+                  <el-modal-resend-result-header class="typo-label-lg">
+                    <el-cell-checkbox>
+                      <el-checkbox>
+                        <input
+                          type="checkbox"
+                          class="form-check-input custom-checkbox checkboxAll"
+                          value=""
+                        />
+                      </el-checkbox>
+                    </el-cell-checkbox>
+                    <el-cell-email>이메일 주소</el-cell-email>
+                    <el-cell-mobile>휴대폰번호</el-cell-mobile>
+                  </el-modal-resend-result-header>
+
+                  <el-modal-resend-result-body class="typo-label-lg">
+                    <ul>
+                      <li>
+                        <el-cell-checkbox>
+                          <el-checkbox>
+                            <input
+                              type="checkbox"
+                              class="form-check-input custom-checkbox"
+                              value=""
+                            />
+                          </el-checkbox>
+                        </el-cell-checkbox>
+                        <el-cell-email>
+                          ui-validation@mockserver.dev
+                        </el-cell-email>
+                        <el-cell-mobile>010-0000-0000</el-cell-mobile>
+                      </li>
+                      <li>
+                        <el-cell-checkbox>
+                          <el-checkbox>
+                            <input
+                              type="checkbox"
+                              class="form-check-input custom-checkbox"
+                              value=""
+                            />
+                          </el-checkbox>
+                        </el-cell-checkbox>
+                        <el-cell-email>
+                          ui-validation@mockserver.dev
+                        </el-cell-email>
+                        <el-cell-mobile>010-0000-0000</el-cell-mobile>
+                      </li>
+                      <li>
+                        <el-cell-checkbox>
+                          <el-checkbox>
+                            <input
+                              type="checkbox"
+                              class="form-check-input custom-checkbox"
+                              value=""
+                            />
+                          </el-checkbox>
+                        </el-cell-checkbox>
+                        <el-cell-email>
+                          ui-validation@mockserver.dev
+                        </el-cell-email>
+                        <el-cell-mobile>010-0000-0000</el-cell-mobile>
+                      </li>
+                      <li>
+                        <el-cell-checkbox>
+                          <el-checkbox>
+                            <input
+                              type="checkbox"
+                              class="form-check-input custom-checkbox"
+                              value=""
+                            />
+                          </el-checkbox>
+                        </el-cell-checkbox>
+                        <el-cell-email>
+                          ui-validation@mockserver.dev
+                        </el-cell-email>
+                        <el-cell-mobile>010-0000-0000</el-cell-mobile>
+                      </li>
+                      <li>
+                        <el-cell-checkbox>
+                          <el-checkbox>
+                            <input
+                              type="checkbox"
+                              class="form-check-input custom-checkbox"
+                              value=""
+                            />
+                          </el-checkbox>
+                        </el-cell-checkbox>
+                        <el-cell-email>
+                          ui-validation@mockserver.dev
+                        </el-cell-email>
+                        <el-cell-mobile>010-0000-0000</el-cell-mobile>
+                      </li>
+                      <li>
+                        <el-board-list-empty class="typo-label-lg">
+                          <el-icon class="etc-file-text"></el-icon>
+                          정보가 없습니다.
+                        </el-board-list-empty>
+                      </li>
+                    </ul>
+                  </el-modal-resend-result-body>
+                  <el-modal-resend-current class="typo-label-lg">
+                    <div>선택된 수신자 <strong>2</strong>명</div>
+                    <button
+                      type="button"
+                      class="button-h34-square typo-label-md unCheckAllButton"
+                    >
+                      선택해제
+                    </button>
+                  </el-modal-resend-current>
+
+                  <el-modal-cancel-payment>
+                    <h4 class="typo-body-lg">환불 정보</h4>
+                    <el-modal-cancel-all-payment-content class="typo-body-sm">
+                      <dl>
+                        <dt>총 환불 금액</dt>
+                        <dd class="total-refund-amount">10,000</dd>
+                      </dl>
+                    </el-modal-cancel-all-payment-content>
+                  </el-modal-cancel-payment>
+                  <el-modal-cancel-payment-method>
+                    <el-radio class="form-check">
+                      <input
+                        type="radio"
+                        class="form-check-input custom-radio"
+                        name="cancelPartialPaymentMethod"
+                        id="cancelPartialPaymentMethod-1"
+                        value=""
+                        checked
+                      />
+                      <label
+                        class="form-check-label typo-body-sm weight-em"
+                        for="cancelPartialPaymentMethod-1"
+                      >
+                        기존결제수단 환불
+                      </label>
+                    </el-radio>
+                    <el-radio class="form-check">
+                      <input
+                        type="radio"
+                        class="form-check-input custom-radio"
+                        name="cancelPartialPaymentMethod"
+                        id="cancelPartialPaymentMethod-2"
+                        value=""
+                      />
+                      <label
+                        class="form-check-label typo-body-sm weight-em"
+                        for="cancelPartialPaymentMethod-2"
+                      >
+                        캐쉬 환불
+                      </label>
+                    </el-radio>
+                  </el-modal-cancel-payment-method>
+                </el-modal-resend-success>
+              </el-modal-resend-search-result>
+            </el-modal-resend>
+          </el-modal-body>
+
+          <el-modal-footer class="modal-footer">
+            <button
+              type="button"
+              data-bs-dismiss="modal"
+              class="button-h50-stroke typo-body-lg"
+            >
+              취소
+            </button>
+            <button
+              type="button"
+              data-bs-toggle="modal"
+              data-bs-target="#el-alert"
+              class="button-h50-fill typo-body-lg"
+            >
+              환불요청
+            </button>
+          </el-modal-footer>
+        </el-modal-content>
+      </el-modal-dialog>
+    </el-modal>
+    <!-- 종료: modal: 부분 취소 요청 -->
+
+    <!-- 시작: modal: 부분 취소 요청(리워드) -->
+    <el-modal
+      class="modal fade el-modal-default"
+      id="modal-cancel-partial-reward"
+      tabindex="-1"
+      aria-hidden="true"
+      data-bs-keyboard="false"
+    >
+      <el-modal-dialog
+        class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+      >
+        <el-modal-content class="modal-content">
+          <el-modal-close-button>
+            <button type="button" data-bs-dismiss="modal" aria-label="닫기">
+              <el-icon class="h32-closed natural-0"></el-icon>
+            </button>
+          </el-modal-close-button>
+
+          <el-modal-header class="modal-header">
+            <h3 class="typo-subtitle-lg center">취소 요청</h3>
+          </el-modal-header>
+
+          <el-modal-body class="modal-body">
+            <el-modal-resend>
+              <el-info-box>
+                <el-marker-list class="weight-regular color-gray">
+                  <ul>
+                    <li>환불 요청의 경우 선택하신 수단으로 환불됩니다.</li>
+                    <li>
+                      환불대기 상태에 있거나 교환이력이 존재하는 쿠폰은
+                      환불요청이 불가합니다.
+                    </li>
+                    <li>
+                      쿠폰 구매 시 지급한 리워드 회수가 불가할 경우 환불요청이
+                      불가합니다.
+                    </li>
+                    <li>
+                      취소 요청이 불가능한 항목이 있는 경우
+                      고객센터(1661-8197)로 문의해주세요.
+                    </li>
+                  </ul>
+                </el-marker-list>
+              </el-info-box>
+
+              <el-modal-resend-search>
+                <el-input>
+                  <input
+                    class="form-control custom-input"
+                    type="email"
+                    placeholder="이메일 주소 입력"
+                    value=""
+                  />
+                </el-input>
+                <el-input>
+                  <input
+                    class="form-control custom-input input-type-mobile"
+                    type="text"
+                    placeholder="휴대폰번호 입력"
+                    value=""
+                  />
+                </el-input>
+                <button
+                  type="button"
+                  class="text-black button-h43-square typo-body-sm"
+                >
+                  <el-icon class="h24-search natural-0"></el-icon>
+                </button>
+              </el-modal-resend-search>
+
+              <el-modal-resend-search-result class="cancel-partial">
+                <el-modal-resend-success id="cancelPartialReward">
+                  <el-modal-resend-result-header class="typo-label-lg">
+                    <el-cell-checkbox>
+                      <el-checkbox>
+                        <input
+                          type="checkbox"
+                          class="form-check-input custom-checkbox checkboxAll"
+                          value=""
+                        />
+                      </el-checkbox>
+                    </el-cell-checkbox>
+                    <el-cell-email>이메일 주소</el-cell-email>
+                    <el-cell-mobile>휴대폰번호</el-cell-mobile>
+                  </el-modal-resend-result-header>
+
+                  <el-modal-resend-result-body class="typo-label-lg">
+                    <ul>
+                      <li>
+                        <el-cell-checkbox>
+                          <el-checkbox>
+                            <input
+                              type="checkbox"
+                              class="form-check-input custom-checkbox"
+                              value=""
+                            />
+                          </el-checkbox>
+                        </el-cell-checkbox>
+                        <el-cell-email>
+                          ui-validation@mockserver.dev
+                        </el-cell-email>
+                        <el-cell-mobile>010-0000-0000</el-cell-mobile>
+                      </li>
+                      <li>
+                        <el-cell-checkbox>
+                          <el-checkbox>
+                            <input
+                              type="checkbox"
+                              class="form-check-input custom-checkbox"
+                              value=""
+                            />
+                          </el-checkbox>
+                        </el-cell-checkbox>
+                        <el-cell-email>
+                          ui-validation@mockserver.dev
+                        </el-cell-email>
+                        <el-cell-mobile>010-0000-0000</el-cell-mobile>
+                      </li>
+                      <li>
+                        <el-cell-checkbox>
+                          <el-checkbox>
+                            <input
+                              type="checkbox"
+                              class="form-check-input custom-checkbox"
+                              value=""
+                            />
+                          </el-checkbox>
+                        </el-cell-checkbox>
+                        <el-cell-email>
+                          ui-validation@mockserver.dev
+                        </el-cell-email>
+                        <el-cell-mobile>010-0000-0000</el-cell-mobile>
+                      </li>
+                      <li>
+                        <el-cell-checkbox>
+                          <el-checkbox>
+                            <input
+                              type="checkbox"
+                              class="form-check-input custom-checkbox"
+                              value=""
+                            />
+                          </el-checkbox>
+                        </el-cell-checkbox>
+                        <el-cell-email>
+                          ui-validation@mockserver.dev
+                        </el-cell-email>
+                        <el-cell-mobile>010-0000-0000</el-cell-mobile>
+                      </li>
+                      <li>
+                        <el-cell-checkbox>
+                          <el-checkbox>
+                            <input
+                              type="checkbox"
+                              class="form-check-input custom-checkbox"
+                              value=""
+                            />
+                          </el-checkbox>
+                        </el-cell-checkbox>
+                        <el-cell-email>
+                          ui-validation@mockserver.dev
+                        </el-cell-email>
+                        <el-cell-mobile>010-0000-0000</el-cell-mobile>
+                      </li>
+                      <li>
+                        <el-board-list-empty class="typo-label-lg">
+                          <el-icon class="etc-file-text"></el-icon>
+                          정보가 없습니다.
+                        </el-board-list-empty>
+                      </li>
+                    </ul>
+                  </el-modal-resend-result-body>
+                  <el-modal-resend-current class="typo-label-lg">
+                    <div>선택된 수신자 <strong>2</strong>명</div>
+                    <button
+                      type="button"
+                      class="button-h34-square typo-label-md unCheckAllButton"
+                    >
+                      선택해제
+                    </button>
+                  </el-modal-resend-current>
+
+                  <el-modal-cancel-payment>
+                    <h4 class="typo-body-lg">환불 정보</h4>
+                    <el-modal-cancel-all-payment-content class="typo-body-sm">
+                      <dl>
+                        <dt>총 환불 금액</dt>
+                        <dd class="total-refund-amount">10,000</dd>
+                      </dl>
+                      <dl>
+                        <dt>리워드 회수(차감) 예정 금액</dt>
+                        <dd>10,000</dd>
+                      </dl>
+                      <dl>
+                        <dt>계정 내 리워드 잔액</dt>
+                        <dd>10,000</dd>
+                      </dl>
+                    </el-modal-cancel-all-payment-content>
+                  </el-modal-cancel-payment>
+
+                  <el-marker-list style="padding-top: 6px">
+                    <ul>
+                      <li class="color-red">
+                        보유하신 리워드가 부족하여 환불이 불가합니다.
+                      </li>
+                    </ul>
+                  </el-marker-list>
+
+                  <el-modal-cancel-payment-method>
+                    <el-radio class="form-check">
+                      <input
+                        type="radio"
+                        class="form-check-input custom-radio"
+                        name="cancelPartialRewardPaymentMethod"
+                        id="cancelPartialRewardPaymentMethod-1"
+                        value=""
+                        disabled
+                      />
+                      <label
+                        class="form-check-label typo-body-sm weight-em"
+                        for="cancelPartialRewardPaymentMethod-1"
+                      >
+                        기존결제수단 환불
+                      </label>
+                    </el-radio>
+                    <el-radio class="form-check">
+                      <input
+                        type="radio"
+                        class="form-check-input custom-radio"
+                        name="cancelPartialRewardPaymentMethod"
+                        id="cancelPartialRewardPaymentMethod-2"
+                        value=""
+                        disabled
+                      />
+                      <label
+                        class="form-check-label typo-body-sm weight-em"
+                        for="cancelPartialRewardPaymentMethod-2"
+                      >
+                        캐쉬 환불
+                      </label>
+                    </el-radio>
+                  </el-modal-cancel-payment-method>
+                </el-modal-resend-success>
+              </el-modal-resend-search-result>
+            </el-modal-resend>
+          </el-modal-body>
+
+          <el-modal-footer class="modal-footer">
+            <button
+              type="button"
+              data-bs-dismiss="modal"
+              class="button-h50-stroke typo-body-lg"
+            >
+              취소
+            </button>
+            <button
+              type="button"
+              disabled
+              data-bs-toggle="modal"
+              data-bs-target="#el-alert"
+              class="button-h50-fill typo-body-lg"
+            >
+              환불요청
+            </button>
+          </el-modal-footer>
+        </el-modal-content>
+      </el-modal-dialog>
+    </el-modal>
+    <!-- 종료: modal: 부분 취소 요청(리워드) -->
 
     <!-- 시작: modal: 기업 회원 전환 신청 -->
     <el-modal
@@ -812,7 +2611,7 @@
                       class="form-check-label typo-body-md"
                       for="checkboxCompanyMemberConversion"
                     >
-                      기업회원 사비스 이용 약관 동의
+                      기업회원 서비스 이용 약관 동의
                     </label>
                   </el-checkbox>
                   <button
@@ -1120,5 +2919,101 @@
 
     <!-- [DEV] 웹 컴포넌트js: 개발 시 삭제해 주세요 -->
     <script src="./js/web-components.js" crossorigin="anonymous"></script>
+
+    <script>
+      // 시작: 재발송 체크박스 선택 핸들링
+      const initHandleCheckboxes = (targetId) => {
+        const targetElement = document.getElementById(targetId);
+        const checkboxAll = targetElement.querySelector('.checkboxAll');
+        const uncheckAllButton =
+          targetElement.querySelector('.unCheckAllButton');
+        const checkboxes = targetElement.querySelectorAll(
+          'el-modal-resend-success el-modal-resend-result-body .form-check-input'
+        );
+
+        // 이미 초기화된 경우 건너뛰기
+        if (targetElement?.dataset?.initialized === 'true') {
+          return;
+        }
+
+        if (targetElement && checkboxAll && uncheckAllButton) {
+          const handleCheckAll = (e) => {
+            if (e?.target?.checked) {
+              [...checkboxes].map((checkbox) => {
+                checkbox.checked = true;
+                return () => {};
+              });
+            } else {
+              [...checkboxes].map((checkbox) => {
+                checkbox.checked = false;
+                return () => {};
+              });
+            }
+          };
+
+          if (checkboxAll) {
+            checkboxAll.addEventListener('change', handleCheckAll);
+          }
+
+          const handleCheckbox = (e) => {
+            if (!checkboxAll) return;
+            const unCheckedItem = [...checkboxes].find(
+              (checkbox) => checkbox.checked === false
+            );
+            if (unCheckedItem) {
+              checkboxAll.checked = false;
+            } else {
+              checkboxAll.checked = true;
+            }
+          };
+          [...checkboxes].map((checkbox) => {
+            checkbox.addEventListener('change', handleCheckbox);
+          });
+
+          const handleUnCheckAll = () => {
+            if (!checkboxAll) return;
+            checkboxAll.checked = false;
+            [...checkboxes].map((checkbox) => {
+              checkbox.checked = false;
+              return () => {
+                checkbox.checked = false;
+              };
+            });
+          };
+
+          if (uncheckAllButton) {
+            uncheckAllButton.addEventListener('click', handleUnCheckAll);
+          }
+
+          // 초기화 완료 전환
+          targetElement.dataset.initialized = 'true';
+        }
+      };
+      // 종료: 재발송 체크박스 선택 핸들링
+
+      // 시작: 이메일 재발송 성공 checkbox
+      initHandleCheckboxes('successEmail');
+      // 종료: 이메일 재발송 성공 checkbox
+
+      // 시작: 이메일 재발송 실패 checkbox
+      initHandleCheckboxes('failedEmail');
+      // 종료: 이메일 재발송 실패 checkbox
+
+      // 시작: 문자 재발송 성공 checkbox
+      initHandleCheckboxes('successSms');
+      // 종료: 문자 재발송 성공 checkbox
+
+      // 시작: 문자 재발송 실패 checkbox
+      initHandleCheckboxes('failedSms');
+      // 종료: 문자 재발송 실패 checkbox
+
+      // 시작: 부분 취소 요청 checkbox
+      initHandleCheckboxes('cancelPartial');
+      // 종료: 부분 취소 요청 checkbox
+
+      // 시작: 부분 취소 요청(리워드) checkbox
+      initHandleCheckboxes('cancelPartialReward');
+      // 종료: 부분 취소 요청(리워드) checkbox
+    </script>
   </body>
 </html>

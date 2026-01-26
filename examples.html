@@ -42,6 +42,11 @@
     <link type="text/css" rel="stylesheet" href="./css/swiper.min.css" />
     <link type="text/css" rel="stylesheet" href="./css/tui-time-picker.css" />
     <link type="text/css" rel="stylesheet" href="./css/tui-date-picker.css" />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="./css/overlayscrollbars.min.css"
+    />
     <link type="text/css" rel="stylesheet" href="./css/style.css" />
     <script src="./js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script
@@ -50,6 +55,14 @@
     ></script>
     <script src="./js/tui-time-picker.js" crossorigin="anonymous"></script>
     <script src="./js/tui-date-picker.js" crossorigin="anonymous"></script>
+    <script
+      src="./js/overlayscrollbars.browser.es6.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="./js/overlayscrollbars.browser.es6.min.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <!-- [DEV] 일반회원일 때 className: 'personal-member' -->
@@ -2507,6 +2520,13 @@
                 <button type="button" class="button-h50-fill typo-body-lg">
                   h50-fill
                 </button>
+                <button
+                  type="button"
+                  disabled
+                  class="button-h50-fill typo-body-lg"
+                >
+                  h50-fill
+                </button>
                 <button type="button" class="button-h50-view-all typo-body-sm">
                   전체보기
                   <el-icon class="h16-arrow-right natural-40"></el-icon>
@@ -2724,6 +2744,37 @@
                 >
                   얼럿 호출
                 </button>
+              </el-examples-stack>
+            </el-examples-article>
+
+            <el-examples-article>
+              <h2>tooltip</h2>
+              <el-examples-stack>
+                <el-tooltip-wrapper
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  data-bs-fallback-placements="[]"
+                  data-bs-offset="[0, 18]"
+                  data-bs-trigger="hover"
+                  data-bs-html="true"
+                  data-bs-custom-class="custom-tooltip"
+                  data-bs-title="
+                  <div class='el-tooltip-white'>
+                    <div
+                      class='el-tooltip-white-header typo-subtitle-sm'
+                    >
+                      제목
+                    </div>
+                    <div class='el-tooltip-white-body typo-body-sm'>
+                      툴팁 내용
+                    </div>
+                  </div>
+                  "
+                >
+                  <button type="button" class="button-h50-stroke typo-body-lg">
+                    hover 시 tooltip이 노출
+                  </button>
+                </el-tooltip-wrapper>
               </el-examples-stack>
             </el-examples-article>
 
@@ -3710,6 +3761,28 @@
                     </el-tab-panel>
                     <el-tab-panel role="tabpanel">내용2</el-tab-panel>
                     <el-tab-panel role="tabpanel">내용3</el-tab-panel>
+                  </el-tabs-content>
+                </el-tabs>
+              </el-examples-stack>
+              <el-examples-stack style="width: 400px">
+                <el-tabs class="border-rounded">
+                  <el-tabs-nav>
+                    <button
+                      type="button"
+                      role="tab"
+                      class="typo-body-sm active"
+                    >
+                      탭1
+                    </button>
+                    <button type="button" role="tab" class="typo-body-sm">
+                      탭2
+                    </button>
+                  </el-tabs-nav>
+                  <el-tabs-content>
+                    <el-tab-panel role="tabpanel" class="active">
+                      내용1
+                    </el-tab-panel>
+                    <el-tab-panel role="tabpanel">내용2</el-tab-panel>
                   </el-tabs-content>
                 </el-tabs>
               </el-examples-stack>
@@ -4745,6 +4818,7 @@
                 </el-section-title>
               </el-examples-stack>
             </el-examples-article>
+
             <el-examples-article>
               <h2>상품리스트 - 필터 결과 없음</h2>
               <el-examples-stack>
@@ -4757,6 +4831,38 @@
                     </p>
                   </el-products-empty-content>
                 </el-products-empty>
+              </el-examples-stack>
+            </el-examples-article>
+
+            <el-examples-article>
+              <h2>overlay 스크롤바</h2>
+              <el-examples-stack>
+                <div
+                  id="overlay-scrollbars-example"
+                  data-overlayscrollbars-initialize
+                  style="width: 300px; height: 300px; overflow: auto"
+                >
+                  <div
+                    style="
+                      width: 500px;
+                      height: 500px;
+                      background: var(--color-natural-95);
+                    "
+                  >
+                    스크롤 영역
+                  </div>
+                </div>
+                <script>
+                  const { OverlayScrollbars } = OverlayScrollbarsGlobal;
+                  const overlayScrollbarsExample = OverlayScrollbars(
+                    document.querySelector('#overlay-scrollbars-example'),
+                    {
+                      scrollbars: {
+                        clickScroll: true,
+                      },
+                    }
+                  );
+                </script>
               </el-examples-stack>
             </el-examples-article>
           </el-content>
