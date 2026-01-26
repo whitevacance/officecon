@@ -4014,6 +4014,89 @@ el-question-mark-for-tooltip {
 }
 /* 종료: 공통 > tooltip */
 
+/* 시작: 공통 > 동의 영역 */
+el-agrees {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  padding-top: 24px;
+
+  el-agree-item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--color-natural-80);
+
+    el-checkbox {
+      position: relative;
+
+      label {
+        display: inline-flex;
+        gap: 4px;
+
+        span {
+          color: var(--color-natural-40);
+        }
+      }
+    }
+
+    button {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      color: var(--color-natural-40);
+      font-weight: 600 !important;
+
+      el-icon.h16-arrow-down {
+        display: none;
+      }
+
+      el-icon.h16-arrow-up {
+        display: inline-block;
+      }
+
+      &.collapsed {
+        el-icon.h16-arrow-down {
+          display: inline-block;
+        }
+
+        el-icon.h16-arrow-up {
+          display: none;
+        }
+      }
+    }
+
+    el-agree-content-collapse {
+      width: 100%;
+
+      &.show {
+        display: block;
+      }
+
+      el-agree-content {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        width: 100%;
+        padding: 24px;
+        margin-top: 12px;
+        margin-bottom: 12px;
+        border-radius: 8px;
+        background-color: var(--color-natural-95);
+
+        & > pre {
+          color: var(--color-natural-20);
+        }
+      }
+    }
+  }
+}
+/* 종료: 공통 > 동의 영역 */
+
 /* 시작: 예시 (example) */
 el-examples-article {
   display: flex;
@@ -10866,88 +10949,6 @@ el-mypage {
       flex-direction: column;
       gap: 32px;
       width: 480px;
-    }
-
-    el-agrees {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-      width: 100%;
-      padding-top: 24px;
-
-      el-agree-item {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-between;
-        width: 100%;
-        padding-bottom: 12px;
-        border-bottom: 1px solid var(--color-natural-80);
-
-        el-checkbox {
-          position: relative;
-          left: 16px;
-
-          label {
-            display: inline-flex;
-            gap: 4px;
-
-            span {
-              color: var(--color-natural-40);
-            }
-          }
-        }
-
-        button {
-          display: flex;
-          align-items: center;
-          gap: 4px;
-          color: var(--color-natural-40);
-          font-weight: 600 !important;
-
-          el-icon.h16-arrow-down {
-            display: none;
-          }
-
-          el-icon.h16-arrow-up {
-            display: inline-block;
-          }
-
-          &.collapsed {
-            el-icon.h16-arrow-down {
-              display: inline-block;
-            }
-
-            el-icon.h16-arrow-up {
-              display: none;
-            }
-          }
-        }
-
-        el-agree-content-collapse {
-          width: 100%;
-
-          &.show {
-            display: block;
-          }
-
-          el-agree-content {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-            width: 100%;
-            padding: 24px;
-            margin-top: 12px;
-            margin-bottom: 12px;
-            border-radius: 8px;
-            background-color: var(--color-natural-95);
-
-            & > pre {
-              color: var(--color-natural-20);
-            }
-          }
-        }
-      }
     }
   }
 }
