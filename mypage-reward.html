@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
   <head>
-    <title>캐쉬 내역 | 오피스콘</title>
+    <title>리워드 내역 | 오피스콘</title>
     <meta charset="UTF-8" />
     <meta name="format-detection" content="telephone=no" />
     <link rel="shortcut icon" href="./images/favicon.ico" />
@@ -226,90 +226,11 @@
                 </el-mypage-nav>
                 <el-mypage-section>
                   <el-section-title>
-                    <h3 class="typo-subtitle-lg">캐쉬 내역</h3>
+                    <h3 class="typo-subtitle-lg">리워드 내역</h3>
                   </el-section-title>
 
                   <el-mypage-content>
                     <el-mypage-cashReward>
-                      <el-mypage-cashReward-status>
-                        <el-mypage-cashReward-current>
-                          <img src="./images/badge-h14-cash.svg" alt="캐시" />
-                          <el-mypage-cashReward-current-label
-                            class="typo-body-lg"
-                          >
-                            오피스콘 보유 캐쉬
-                          </el-mypage-cashReward-current-label>
-                          <el-mypage-cashReward-current-amount
-                            class="typo-label-lg"
-                          >
-                            <strong class="typo-subtitle-sm">
-                              999,999,990
-                            </strong>
-                            원
-                          </el-mypage-cashReward-current-amount>
-                        </el-mypage-cashReward-current>
-
-                        <el-mypage-cashReward-addon>
-                          <button
-                            type="button"
-                            data-bs-toggle="modal"
-                            data-bs-target="#el-modal-cash-charge"
-                            class="button-h34-square typo-label-md text-black"
-                          >
-                            캐쉬 충전
-                          </button>
-                          <button
-                            type="button"
-                            data-bs-toggle="modal"
-                            data-bs-target="#el-alert"
-                            class="button-h34-square typo-label-md text-black"
-                          >
-                            캐쉬 환불
-                          </button>
-                          <button
-                            type="button"
-                            data-bs-target="#el-modal-virtual-account-history"
-                            data-bs-toggle="modal"
-                            class="button-h34-square typo-label-md text-black"
-                          >
-                            가상계좌 발급내역
-                          </button>
-                          <button
-                            type="button"
-                            data-bs-toggle="modal"
-                            data-bs-target="#el-modal-policy-guide"
-                            class="button-h34-square typo-label-md text-black"
-                          >
-                            정책 안내
-                          </button>
-                          <button
-                            type="button"
-                            class="button-h34-square-fill typo-label-md"
-                          >
-                            캐쉬 충전(카드)
-                          </button>
-                        </el-mypage-cashReward-addon>
-                      </el-mypage-cashReward-status>
-
-                      <el-mypage-cashReward-status>
-                        <el-mypage-cashReward-current>
-                          <img src="./images/badge-h14-cash.svg" alt="캐시" />
-                          <el-mypage-cashReward-current-label
-                            class="typo-body-lg"
-                          >
-                            오피스콘 보유 캐쉬
-                          </el-mypage-cashReward-current-label>
-                          <el-mypage-cashReward-current-amount
-                            class="typo-label-lg"
-                          >
-                            <strong class="typo-subtitle-sm">
-                              999,999,990
-                            </strong>
-                            원
-                          </el-mypage-cashReward-current-amount>
-                        </el-mypage-cashReward-current>
-                      </el-mypage-cashReward-status>
-
                       <el-mypage-cashReward-status>
                         <el-mypage-cashReward-current>
                           <img
@@ -353,9 +274,7 @@
                           <el-mypage-cashReward-current-amount
                             class="typo-label-lg"
                           >
-                            <strong class="typo-subtitle-sm">
-                              999,999,990
-                            </strong>
+                            <strong class="typo-subtitle-sm"> 0 </strong>
                             리워드
                           </el-mypage-cashReward-current-amount>
                         </el-mypage-cashReward-current>
@@ -399,7 +318,7 @@
                                         data-value="2"
                                         class="dropdown-item"
                                       >
-                                        <el-label>캐쉬 충전</el-label>
+                                        <el-label>리워드 적립</el-label>
                                       </button>
                                     </li>
                                     <li>
@@ -408,7 +327,7 @@
                                         data-value="3"
                                         class="dropdown-item"
                                       >
-                                        <el-label>캐쉬 차감</el-label>
+                                        <el-label>리워드 차감</el-label>
                                       </button>
                                     </li>
                                   </ul>
@@ -424,18 +343,16 @@
                               <col class="col-160" />
                               <col class="col-100" />
                               <col class="col-auto" />
-                              <col class="col-120" />
-                              <col class="col-120" />
-                              <col class="col-100" />
+                              <col class="col-140" />
+                              <col class="col-140" />
                             </colgroup>
                             <thead>
                               <tr>
                                 <th scope="col">일시</th>
                                 <th scope="col">구분</th>
                                 <th scope="col" class="align-left">내용</th>
-                                <th scope="col">캐쉬충전</th>
-                                <th scope="col">캐쉬차감</th>
-                                <th scope="col">영수증</th>
+                                <th scope="col">리워드 적립</th>
+                                <th scope="col">리워드 차감</th>
                               </tr>
                             </thead>
                             <tbody>
@@ -443,13 +360,13 @@
                                 <td colspan="6">
                                   <el-board-list-empty class="typo-label-lg">
                                     <el-icon class="etc-file-text"></el-icon>
-                                    캐쉬 내역이 없습니다.
+                                    리워드 내역이 없습니다.
                                   </el-board-list-empty>
                                 </td>
                               </tr>
                               <tr>
                                 <td>2025.11.27 16:51</td>
-                                <td>환불<br />(캐쉬)</td>
+                                <td>환불</td>
                                 <td class="align-left">
                                   <el-mypage-table-cashReward-content>
                                     <a href="#">20251017145732232485</a>
@@ -460,16 +377,6 @@
                                 </td>
                                 <td>999,999</td>
                                 <td>999,999</td>
-                                <td>
-                                  <el-mypage-table-action-buttons>
-                                    <button
-                                      type="button"
-                                      class="button-h34-square typo-label-md"
-                                    >
-                                      영수증
-                                    </button>
-                                  </el-mypage-table-action-buttons>
-                                </td>
                               </tr>
                               <tr>
                                 <td>2025.11.27 16:51</td>
@@ -484,17 +391,7 @@
                                   </el-mypage-table-cashReward-content>
                                 </td>
                                 <td>999,999</td>
-                                <td>999,999</td>
-                                <td>
-                                  <el-mypage-table-action-buttons>
-                                    <button
-                                      type="button"
-                                      class="button-h34-square typo-label-md"
-                                    >
-                                      영수증
-                                    </button>
-                                  </el-mypage-table-action-buttons>
-                                </td>
+                                <td></td>
                               </tr>
                               <tr>
                                 <td>2025.11.27 16:51</td>
@@ -507,9 +404,8 @@
                                     </div>
                                   </el-mypage-table-cashReward-content>
                                 </td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td> </td>
+                                <td></td>
+                                <td>999,999</td>
                               </tr>
                             </tbody>
                           </table>
@@ -609,28 +505,14 @@
       <el-alert-dialog class="modal-dialog modal-dialog-centered">
         <el-alert-content class="modal-content">
           <el-alert-body class="typo-subtitle-sm">
-            <el-certification-guide>
-              <h4 class="typo-body-lg">
-                소중한 정보 보호를 위하여 캐쉬 환불 요청시
-                <br />
-                본인인증 절차가 필요합니다.
-              </h4>
-              <el-certification-guide-myinfo class="typo-body-sm">
-                등록된 본인인증 정보
-                <strong class="typo-body-lg">010-****-5678</strong>
-              </el-certification-guide-myinfo>
-              <p class="typo-body-sm">
-                본인인증 정보 변경이 필요한 경우
-                <br />
-                고객센터 &gt; 1:1 문의 게시판을 통해 요청해 주세요.
-              </p>
-            </el-certification-guide>
+            얼럿 샘플입니다.
+            <br />
+            개발 시 내용이 변경됩니다.
           </el-alert-body>
           <el-alert-footer>
             <button
               type="button"
               data-bs-dismiss="modal"
-              onclick="bsModalCashRefundAll.show();"
               class="button-h50-fill typo-body-lg"
             >
               확인
@@ -640,631 +522,6 @@
       </el-alert-dialog>
     </el-alert>
     <!-- 종료: alert -->
-
-    <!-- 시작: modal: 캐쉬 전체 환불 -->
-    <el-modal
-      class="modal fade el-modal-default"
-      id="el-modal-cash-refund-all"
-      tabindex="-1"
-      aria-hidden="true"
-      data-bs-keyboard="false"
-    >
-      <el-modal-dialog
-        class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
-      >
-        <el-modal-content class="modal-content">
-          <el-modal-close-button>
-            <button type="button" data-bs-dismiss="modal" aria-label="닫기">
-              <el-icon class="h32-closed natural-0"></el-icon>
-            </button>
-          </el-modal-close-button>
-
-          <el-modal-header class="modal-header">
-            <h3 class="typo-subtitle-lg center">캐쉬 전체 환불</h3>
-          </el-modal-header>
-
-          <el-modal-body class="modal-body">
-            <el-modal-cash-refund-all>
-              <el-info-box>
-                <el-marker-list class="weight-regular color-gray">
-                  <ul>
-                    <li>
-                      캐쉬 증가 후 3일이 지난 경우 환불 수수료(10%)가
-                      발생합니다.
-                    </li>
-                    <li>
-                      캐쉬환불은 1,000 캐쉬 이상부터 가능합니다.<br />
-                      (환불 수수료 발생 시 환불 수수료를 포함된 실 수령 금액이
-                      1,000원 미만인 경우 환불 불가)
-                    </li>
-                    <li>
-                      유효기간 만료 환불 및 이벤트 등으로 지급받은 캐쉬는
-                      현금으로 환불이 불가합니다.
-                    </li>
-                  </ul>
-                </el-marker-list>
-              </el-info-box>
-
-              <el-mypage-cashReward-status>
-                <el-mypage-cashReward-current>
-                  <img src="./images/badge-h14-cash.svg" alt="캐시" />
-                  <el-mypage-cashReward-current-label class="typo-body-lg">
-                    오피스콘 보유 캐쉬
-                  </el-mypage-cashReward-current-label>
-                  <el-mypage-cashReward-current-amount class="typo-label-lg">
-                    <strong class="typo-subtitle-sm"> 999,999,990 </strong>
-                  </el-mypage-cashReward-current-amount>
-                </el-mypage-cashReward-current>
-              </el-mypage-cashReward-status>
-
-              <el-modal-cancel-payment>
-                <h4 class="typo-body-lg">환불 정보</h4>
-                <el-modal-cancel-all-payment-content class="typo-body-sm">
-                  <dl>
-                    <dt>환불 불가 캐쉬</dt>
-                    <dd>0</dd>
-                  </dl>
-                  <dl>
-                    <dt>환불 가능 캐쉬</dt>
-                    <dd>10,000</dd>
-                  </dl>
-                  <dl>
-                    <dt>환불 수수료</dt>
-                    <dd class="text-orange">-1,000</dd>
-                  </dl>
-                  <dl>
-                    <dt>실 수령 금액</dt>
-                    <dd class="total-refund-amount">10,000</dd>
-                  </dl>
-                </el-modal-cancel-all-payment-content>
-              </el-modal-cancel-payment>
-
-              <el-modal-form>
-                <el-form-row>
-                  <el-form-label class="typo-body-md">
-                    환불 계좌 은행명<span>*</span>
-                  </el-form-label>
-                  <el-form-content>
-                    <el-select class="dropdown">
-                      <!-- [DEV] hidden input의 value값을 사용 -->
-                      <input type="hidden" value="" />
-                      <button
-                        type="button"
-                        class="dropdown-toggle"
-                        data-bs-toggle="dropdown"
-                        aria-expanded="false"
-                        data-bs-offset="0,-43"
-                      >
-                        <el-label>선택</el-label>
-                      </button>
-                      <el-select-options class="dropdown-menu">
-                        <ul>
-                          <li>
-                            <span class="dropdown-header">
-                              <el-label>선택</el-label>
-                            </span>
-                          </li>
-                          <li>
-                            <button
-                              type="button"
-                              data-value="1"
-                              class="dropdown-item"
-                            >
-                              <el-label>111</el-label>
-                            </button>
-                          </li>
-                          <li>
-                            <button
-                              type="button"
-                              data-value="2"
-                              class="dropdown-item"
-                            >
-                              <el-label>222</el-label>
-                            </button>
-                          </li>
-                          <li>
-                            <button
-                              type="button"
-                              data-value="3"
-                              class="dropdown-item"
-                            >
-                              <el-label>333</el-label>
-                            </button>
-                          </li>
-                          <li>
-                            <button
-                              type="button"
-                              data-value="4"
-                              class="dropdown-item"
-                            >
-                              <el-label>444</el-label>
-                            </button>
-                          </li>
-                          <li>
-                            <button
-                              type="button"
-                              data-value="5"
-                              class="dropdown-item"
-                            >
-                              <el-label>555</el-label>
-                            </button>
-                          </li>
-                          <li>
-                            <button
-                              type="button"
-                              data-value="6"
-                              class="dropdown-item"
-                            >
-                              <el-label>666</el-label>
-                            </button>
-                          </li>
-                          <li>
-                            <button
-                              type="button"
-                              data-value="7"
-                              class="dropdown-item"
-                            >
-                              <el-label>777</el-label>
-                            </button>
-                          </li>
-                          <li>
-                            <button
-                              type="button"
-                              data-value="8"
-                              class="dropdown-item"
-                            >
-                              <el-label>888</el-label>
-                            </button>
-                          </li>
-                          <li>
-                            <button
-                              type="button"
-                              data-value="9"
-                              class="dropdown-item"
-                            >
-                              <el-label>999</el-label>
-                            </button>
-                          </li>
-                          <li>
-                            <button
-                              type="button"
-                              data-value="10"
-                              class="dropdown-item"
-                            >
-                              <el-label>10</el-label>
-                            </button>
-                          </li>
-                        </ul>
-                      </el-select-options>
-                    </el-select>
-                  </el-form-content>
-                </el-form-row>
-                <el-form-row>
-                  <el-form-label class="typo-body-md">
-                    환불 계좌번호<span>*</span>
-                  </el-form-label>
-                  <el-form-content>
-                    <el-input>
-                      <input
-                        class="form-control custom-input"
-                        type="text"
-                        placeholder="계좌번호를 입력해 주세요."
-                        value=""
-                      />
-                    </el-input>
-                  </el-form-content>
-                </el-form-row>
-                <el-form-row>
-                  <el-form-label class="typo-body-md">
-                    예금주<span>*</span>
-                  </el-form-label>
-                  <el-form-content>
-                    <el-input>
-                      <input
-                        class="form-control custom-input"
-                        type="text"
-                        placeholder="예금주를 입력해 주세요."
-                        value=""
-                      />
-                    </el-input>
-                  </el-form-content>
-                </el-form-row>
-                <el-form-row>
-                  <el-form-label class="typo-body-md">
-                    환불 사유
-                  </el-form-label>
-                  <el-form-content>
-                    <textarea
-                      class="form-control"
-                      placeholder="내용을 입력해 주세요."
-                    ></textarea>
-                    <el-form-textarea-length class="typo-body-sm">
-                      (0/250)
-                    </el-form-textarea-length>
-                  </el-form-content>
-                </el-form-row>
-              </el-modal-form>
-            </el-modal-cash-refund-all>
-          </el-modal-body>
-
-          <el-modal-footer class="modal-footer">
-            <button
-              type="button"
-              data-bs-dismiss="modal"
-              class="button-h50-stroke typo-body-lg"
-            >
-              취소
-            </button>
-            <button
-              type="button"
-              data-bs-dismiss="modal"
-              class="button-h50-fill typo-body-lg"
-            >
-              환불요청
-            </button>
-          </el-modal-footer>
-        </el-modal-content>
-      </el-modal-dialog>
-    </el-modal>
-    <!-- 종료: modal: 캐쉬 전체 환불 -->
-
-    <!-- 시작: modal: 정책안내 -->
-    <el-modal
-      class="modal fade el-modal-default"
-      id="el-modal-policy-guide"
-      tabindex="-1"
-      aria-hidden="true"
-      data-bs-keyboard="false"
-    >
-      <el-modal-dialog
-        class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
-      >
-        <el-modal-content class="modal-content">
-          <el-modal-close-button>
-            <button type="button" data-bs-dismiss="modal" aria-label="닫기">
-              <el-icon class="h32-closed natural-0"></el-icon>
-            </button>
-          </el-modal-close-button>
-
-          <el-modal-header class="modal-header">
-            <h3 class="typo-subtitle-lg center">정책안내</h3>
-          </el-modal-header>
-
-          <el-modal-body class="modal-body">
-            <el-modal-policy-guide>
-              <el-info-box>
-                <el-info-box-title class="typo-body-sm">
-                  캐쉬 충전/환불 유의사항
-                </el-info-box-title>
-                <el-marker-list class="weight-regular color-gray">
-                  <ul>
-                    <li>
-                      캐쉬 환불은 지급(충전,환불)후 3일이 경과된 후에는 10%의
-                      환불수수료가 발생합니다.
-                    </li>
-                    <li>가상계좌 발급은 1일 한도 최대 20,000,000원입니다.</li>
-                    <li>
-                      캐쉬 소멸 기한은 마지막 이용(충전, 사용)으로 부터
-                      5년입니다.
-                    </li>
-                    <li>1,000캐쉬 미만은 환전이 불가능합니다.</li>
-                  </ul>
-                </el-marker-list>
-              </el-info-box>
-            </el-modal-policy-guide>
-          </el-modal-body>
-
-          <el-modal-footer class="modal-footer">
-            <button
-              type="button"
-              data-bs-dismiss="modal"
-              class="button-h50-fill typo-body-lg"
-            >
-              확인
-            </button>
-          </el-modal-footer>
-        </el-modal-content>
-      </el-modal-dialog>
-    </el-modal>
-    <!-- 종료: modal: 정책안내 -->
-
-    <!-- 시작: modal: 캐쉬충전 -->
-    <el-modal
-      class="modal fade el-modal-default"
-      id="el-modal-cash-charge"
-      tabindex="-1"
-      aria-hidden="true"
-      data-bs-keyboard="false"
-    >
-      <el-modal-dialog
-        class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
-      >
-        <el-modal-content class="modal-content">
-          <el-modal-close-button>
-            <button type="button" data-bs-dismiss="modal" aria-label="닫기">
-              <el-icon class="h32-closed natural-0"></el-icon>
-            </button>
-          </el-modal-close-button>
-
-          <el-modal-header class="modal-header">
-            <h3 class="typo-subtitle-lg center">캐쉬충전</h3>
-          </el-modal-header>
-
-          <el-modal-body class="modal-body">
-            <el-modal-cash-charge>
-              <el-charge-amount class="typo-body-sm">
-                <el-charge-amount-title>
-                  충전하실 금액을 입력해 주세요.
-                </el-charge-amount-title>
-                <el-charge-amount-content>
-                  <el-input>
-                    <input
-                      class="form-control custom-input"
-                      type="text"
-                      placeholder="충전하실 금액을 입력해 주세요."
-                      value=""
-                    />
-                  </el-input>
-                  원
-                </el-charge-amount-content>
-              </el-charge-amount>
-
-              <el-charge-method>
-                <el-charge-method-title class="subtitle-text">
-                  결제수단
-                </el-charge-method-title>
-                <el-radio class="form-check">
-                  <input
-                    type="radio"
-                    class="form-check-input custom-radio"
-                    name="cashChargeMethod"
-                    id="cashChargeMethod"
-                    value=""
-                    checked
-                  />
-                  <label
-                    class="form-check-label typo-body-sm"
-                    for="cashChargeMethod"
-                  >
-                    가상계좌 <span>(무통장입금, 1일 최대 2천만원)</span>
-                  </label>
-                </el-radio>
-              </el-charge-method>
-
-              <el-info-box>
-                <el-marker-list class="weight-regular color-gray">
-                  <ul>
-                    <li> 보유 캐쉬 한도는 100,000,000원 입니다. </li>
-                    <li> 1회 충전금액은 10,000원부터 가능합니다. </li>
-                    <li> 가상계좌 발급은 1일 한도 최대 20,000,000원입니다. </li>
-                    <li class="color-red">
-                      한도보다 더 큰 금액의 충전이 필요하신 경우
-                      고객센터(1661-8197)로 문의주세요.
-                    </li>
-                    <li> 1원 단위는 충전이 불가합니다. </li>
-                    <li>
-                      가상계좌로 주문 후 캐쉬 내역 &gt; 가상계좌 발급내역에서
-                      상세 정보 확인 가능합니다.
-                    </li>
-                    <li>
-                      오피스콘 가상계좌를 자금세탁 등의 부정사용 목적으로 의심
-                      될 경우, 경고 없이 관련 기관(경찰, 금융감독원)에 신고 처리
-                      될 수 있습니다.
-                    </li>
-                  </ul>
-                </el-marker-list>
-              </el-info-box>
-            </el-modal-cash-charge>
-          </el-modal-body>
-
-          <el-modal-footer class="modal-footer">
-            <button
-              type="button"
-              data-bs-dismiss="modal"
-              class="button-h50-stroke typo-body-lg"
-            >
-              취소
-            </button>
-            <button type="button" class="button-h50-fill typo-body-lg">
-              충전
-            </button>
-          </el-modal-footer>
-        </el-modal-content>
-      </el-modal-dialog>
-    </el-modal>
-    <!-- 종료: modal: 캐쉬충전 -->
-
-    <!-- 시작: modal: 가상 계좌 발급내역 -->
-    <el-modal
-      class="modal fade el-modal-default"
-      id="el-modal-virtual-account-history"
-      tabindex="-1"
-      aria-hidden="true"
-      data-bs-keyboard="false"
-    >
-      <el-modal-dialog
-        class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
-      >
-        <el-modal-content class="modal-content">
-          <el-modal-close-button>
-            <button type="button" data-bs-dismiss="modal" aria-label="닫기">
-              <el-icon class="h32-closed natural-0"></el-icon>
-            </button>
-          </el-modal-close-button>
-
-          <el-modal-header class="modal-header">
-            <h3 class="typo-subtitle-lg center">가상 계좌 발급내역</h3>
-          </el-modal-header>
-
-          <el-modal-body class="modal-body">
-            <el-modal-virtual-account-history>
-              <el-modal-virtual-account-history-header class="typo-label-lg">
-                <el-cell-index>번호</el-cell-index>
-                <el-cell-bank-name>은행명</el-cell-bank-name>
-                <el-cell-bank-account>가상 계좌 번호</el-cell-bank-account>
-                <el-cell-bank-account-holder>
-                  예금주
-                </el-cell-bank-account-holder>
-                <el-cell-amount>입금액</el-cell-amount>
-                <el-cell-deposit-date>발행일자</el-cell-deposit-date>
-                <el-cell-expire-date>만료일자</el-cell-expire-date>
-                <el-cell-status>상태</el-cell-status>
-              </el-modal-virtual-account-history-header>
-
-              <el-modal-virtual-account-history-body
-                class="typo-label-lg el-modal-scrollable-list-content"
-              >
-                <ul>
-                  <li>
-                    <el-cell-index>00</el-cell-index>
-                    <el-cell-bank-name>ㅇㅇ은행</el-cell-bank-name>
-                    <el-cell-bank-account>000-0000-000000</el-cell-bank-account>
-                    <el-cell-bank-account-holder>
-                      홍길동
-                    </el-cell-bank-account-holder>
-                    <el-cell-amount>9,999,999</el-cell-amount>
-                    <el-cell-deposit-date>2025.09.09</el-cell-deposit-date>
-                    <el-cell-expire-date>2025.09.09</el-cell-expire-date>
-                    <el-cell-status>상태</el-cell-status>
-                  </li>
-                  <li>
-                    <el-cell-index>00</el-cell-index>
-                    <el-cell-bank-name>ㅇㅇ은행</el-cell-bank-name>
-                    <el-cell-bank-account>000-0000-000000</el-cell-bank-account>
-                    <el-cell-bank-account-holder>
-                      홍길동
-                    </el-cell-bank-account-holder>
-                    <el-cell-amount>9,999,999</el-cell-amount>
-                    <el-cell-deposit-date>2025.09.09</el-cell-deposit-date>
-                    <el-cell-expire-date>2025.09.09</el-cell-expire-date>
-                    <el-cell-status>상태</el-cell-status>
-                  </li>
-                  <li>
-                    <el-cell-index>00</el-cell-index>
-                    <el-cell-bank-name>ㅇㅇ은행</el-cell-bank-name>
-                    <el-cell-bank-account>000-0000-000000</el-cell-bank-account>
-                    <el-cell-bank-account-holder>
-                      홍길동
-                    </el-cell-bank-account-holder>
-                    <el-cell-amount>9,999,999</el-cell-amount>
-                    <el-cell-deposit-date>2025.09.09</el-cell-deposit-date>
-                    <el-cell-expire-date>2025.09.09</el-cell-expire-date>
-                    <el-cell-status>상태</el-cell-status>
-                  </li>
-                  <li>
-                    <el-cell-index>00</el-cell-index>
-                    <el-cell-bank-name>ㅇㅇ은행</el-cell-bank-name>
-                    <el-cell-bank-account>000-0000-000000</el-cell-bank-account>
-                    <el-cell-bank-account-holder>
-                      홍길동
-                    </el-cell-bank-account-holder>
-                    <el-cell-amount>9,999,999</el-cell-amount>
-                    <el-cell-deposit-date>2025.09.09</el-cell-deposit-date>
-                    <el-cell-expire-date>2025.09.09</el-cell-expire-date>
-                    <el-cell-status>상태</el-cell-status>
-                  </li>
-                  <li>
-                    <el-cell-index>00</el-cell-index>
-                    <el-cell-bank-name>ㅇㅇ은행</el-cell-bank-name>
-                    <el-cell-bank-account>000-0000-000000</el-cell-bank-account>
-                    <el-cell-bank-account-holder>
-                      홍길동
-                    </el-cell-bank-account-holder>
-                    <el-cell-amount>9,999,999</el-cell-amount>
-                    <el-cell-deposit-date>2025.09.09</el-cell-deposit-date>
-                    <el-cell-expire-date>2025.09.09</el-cell-expire-date>
-                    <el-cell-status>상태</el-cell-status>
-                  </li>
-                  <li>
-                    <el-cell-index>00</el-cell-index>
-                    <el-cell-bank-name>ㅇㅇ은행</el-cell-bank-name>
-                    <el-cell-bank-account>000-0000-000000</el-cell-bank-account>
-                    <el-cell-bank-account-holder>
-                      홍길동
-                    </el-cell-bank-account-holder>
-                    <el-cell-amount>9,999,999</el-cell-amount>
-                    <el-cell-deposit-date>2025.09.09</el-cell-deposit-date>
-                    <el-cell-expire-date>2025.09.09</el-cell-expire-date>
-                    <el-cell-status>상태</el-cell-status>
-                  </li>
-                  <li>
-                    <el-cell-index>00</el-cell-index>
-                    <el-cell-bank-name>ㅇㅇ은행</el-cell-bank-name>
-                    <el-cell-bank-account>000-0000-000000</el-cell-bank-account>
-                    <el-cell-bank-account-holder>
-                      홍길동
-                    </el-cell-bank-account-holder>
-                    <el-cell-amount>9,999,999</el-cell-amount>
-                    <el-cell-deposit-date>2025.09.09</el-cell-deposit-date>
-                    <el-cell-expire-date>2025.09.09</el-cell-expire-date>
-                    <el-cell-status>상태</el-cell-status>
-                  </li>
-                  <li>
-                    <el-cell-index>00</el-cell-index>
-                    <el-cell-bank-name>ㅇㅇ은행</el-cell-bank-name>
-                    <el-cell-bank-account>000-0000-000000</el-cell-bank-account>
-                    <el-cell-bank-account-holder>
-                      홍길동
-                    </el-cell-bank-account-holder>
-                    <el-cell-amount>9,999,999</el-cell-amount>
-                    <el-cell-deposit-date>2025.09.09</el-cell-deposit-date>
-                    <el-cell-expire-date>2025.09.09</el-cell-expire-date>
-                    <el-cell-status>상태</el-cell-status>
-                  </li>
-                  <li>
-                    <el-cell-index>00</el-cell-index>
-                    <el-cell-bank-name>ㅇㅇ은행</el-cell-bank-name>
-                    <el-cell-bank-account>000-0000-000000</el-cell-bank-account>
-                    <el-cell-bank-account-holder>
-                      홍길동
-                    </el-cell-bank-account-holder>
-                    <el-cell-amount>9,999,999</el-cell-amount>
-                    <el-cell-deposit-date>2025.09.09</el-cell-deposit-date>
-                    <el-cell-expire-date>2025.09.09</el-cell-expire-date>
-                    <el-cell-status>상태</el-cell-status>
-                  </li>
-                  <li>
-                    <el-cell-index>00</el-cell-index>
-                    <el-cell-bank-name>ㅇㅇ은행</el-cell-bank-name>
-                    <el-cell-bank-account>000-0000-000000</el-cell-bank-account>
-                    <el-cell-bank-account-holder>
-                      홍길동
-                    </el-cell-bank-account-holder>
-                    <el-cell-amount>9,999,999</el-cell-amount>
-                    <el-cell-deposit-date>2025.09.09</el-cell-deposit-date>
-                    <el-cell-expire-date>2025.09.09</el-cell-expire-date>
-                    <el-cell-status>상태</el-cell-status>
-                  </li>
-                  <li>
-                    <el-cell-index>00</el-cell-index>
-                    <el-cell-bank-name>ㅇㅇ은행</el-cell-bank-name>
-                    <el-cell-bank-account>000-0000-000000</el-cell-bank-account>
-                    <el-cell-bank-account-holder>
-                      홍길동
-                    </el-cell-bank-account-holder>
-                    <el-cell-amount>9,999,999</el-cell-amount>
-                    <el-cell-deposit-date>2025.09.09</el-cell-deposit-date>
-                    <el-cell-expire-date>2025.09.09</el-cell-expire-date>
-                    <el-cell-status>상태</el-cell-status>
-                  </li>
-                </ul>
-              </el-modal-virtual-account-history-body>
-            </el-modal-virtual-account-history>
-          </el-modal-body>
-
-          <el-modal-footer class="modal-footer">
-            <button
-              type="button"
-              data-bs-dismiss="modal"
-              class="button-h50-fill typo-body-lg"
-            >
-              확인
-            </button>
-          </el-modal-footer>
-        </el-modal-content>
-      </el-modal-dialog>
-    </el-modal>
-    <!-- 종료: modal: 가상 계좌 발급내역 -->
 
     <!-- 시작: modal: 기업 회원 전환 신청 -->
     <el-modal
@@ -1698,20 +955,5 @@
 
     <!-- [DEV] 웹 컴포넌트js: 개발 시 삭제해 주세요 -->
     <script src="./js/web-components.js" crossorigin="anonymous"></script>
-
-    <script>
-      // 페이지 로드 시 캐쉬 전체 환불 bootstrap 인스턴스 생성
-      let bsModalCashRefundAll;
-      const initModalCashRefundAll = (targetEl) => {
-        if (targetEl) {
-          bsModalCashRefundAll = new bootstrap.Modal(targetEl);
-        }
-      };
-
-      const modalCashRefundAllEl = document.querySelector(
-        '#el-modal-cash-refund-all'
-      );
-      initModalCashRefundAll(modalCashRefundAllEl);
-    </script>
   </body>
 </html>

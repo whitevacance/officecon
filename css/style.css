@@ -12379,7 +12379,7 @@ el-mypage-cashReward-list {
 
   el-mypage-cashReward-filter {
     display: block;
-    width: 120px;
+    width: 122px;
   }
 
   .mypage-cashReward-list-table table.table {
@@ -12391,6 +12391,9 @@ el-mypage-cashReward-list {
     }
     .col-120 {
       width: 120px;
+    }
+    .col-140 {
+      width: 140px;
     }
     .col-160 {
       width: 160px;
