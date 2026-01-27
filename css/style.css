@@ -3831,6 +3831,48 @@ el-modal-form {
 }
 /* 종료: 공통 > 모달팝업 내 입력 폼 */
 
+/* 시작: 공통 > 레이블이 있는 입력 폼 */
+el-form-with-label {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  padding: 0 16px;
+
+  el-form-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+
+    el-form-label {
+      align-self: flex-start;
+      flex-grow: 0;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      width: 142px;
+      height: 43px;
+      font-weight: 600 !important;
+      position: relative;
+      span {
+        color: var(--color-red-40);
+      }
+    }
+
+    el-form-content {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0px 8px;
+      width: 100%;
+      /* width: calc(100% - 154px); */
+    }
+  }
+}
+/* 종료: 공통 > 레이블이 있는 입력 폼 */
+
 /* 시작: 공통 > 필터 박스 */
 el-filter-box {
   display: flex;
@@ -12413,6 +12455,50 @@ el-mypage-cashReward-list {
         width: 100%;
         word-break: keep-all;
       }
+    }
+  }
+}
+
+el-mypage-cash-charge {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  width: 100%;
+
+  el-mypage-cash-charge-article {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+
+    el-mypage-cash-charge-title {
+      display: block;
+      padding-bottom: 16px;
+      font-weight: 700 !important;
+      border-bottom: 1px solid var(--color-natural-80);
+    }
+
+    el-form-with-label {
+      width: 588px;
+      gap: 8px;
+
+      el-form-row {
+        el-form-label {
+          font-weight: 700 !important;
+          color: var(--color-natural-20);
+        }
+      }
+    }
+  }
+
+  el-mypage-cash-charge-cta {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-top: 32px;
+
+    button {
+      width: 134px;
     }
   }
 }
