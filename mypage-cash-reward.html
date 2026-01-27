@@ -360,6 +360,222 @@
                           </el-mypage-cashReward-current-amount>
                         </el-mypage-cashReward-current>
                       </el-mypage-cashReward-status>
+
+                      <el-mypage-cashReward-list>
+                        <el-table-util-bar>
+                          <el-table-util-left>
+                            <span class="typo-subtitle-sm">총 10건</span>
+                          </el-table-util-left>
+                          <el-table-util-right>
+                            <el-mypage-cashReward-filter>
+                              <el-select class="dropdown">
+                                <!-- [DEV] hidden input의 value값을 사용 -->
+                                <input type="hidden" value="" />
+                                <button
+                                  type="button"
+                                  class="dropdown-toggle"
+                                  data-bs-toggle="dropdown"
+                                  aria-expanded="false"
+                                  data-bs-offset="0,-43"
+                                >
+                                  <el-label>전체</el-label>
+                                </button>
+                                <el-select-options
+                                  class="dropdown-menu active-bold"
+                                >
+                                  <ul>
+                                    <li>
+                                      <button
+                                        type="button"
+                                        data-value="1"
+                                        class="dropdown-item active"
+                                      >
+                                        <el-label>전체</el-label>
+                                      </button>
+                                    </li>
+                                    <li>
+                                      <button
+                                        type="button"
+                                        data-value="2"
+                                        class="dropdown-item"
+                                      >
+                                        <el-label>캐쉬 충전</el-label>
+                                      </button>
+                                    </li>
+                                    <li>
+                                      <button
+                                        type="button"
+                                        data-value="3"
+                                        class="dropdown-item"
+                                      >
+                                        <el-label>캐쉬 차감</el-label>
+                                      </button>
+                                    </li>
+                                  </ul>
+                                </el-select-options>
+                              </el-select>
+                            </el-mypage-cashReward-filter>
+                          </el-table-util-right>
+                        </el-table-util-bar>
+
+                        <el-mypage-table class="mypage-cashReward-list-table">
+                          <table class="table align-middle">
+                            <colgroup>
+                              <col class="col-160" />
+                              <col class="col-100" />
+                              <col class="col-auto" />
+                              <col class="col-120" />
+                              <col class="col-120" />
+                              <col class="col-100" />
+                            </colgroup>
+                            <thead>
+                              <tr>
+                                <th scope="col">일시</th>
+                                <th scope="col">구분</th>
+                                <th scope="col" class="align-left">내용</th>
+                                <th scope="col">캐쉬충전</th>
+                                <th scope="col">캐쉬차감</th>
+                                <th scope="col">영수증</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr class="empty">
+                                <td colspan="6">
+                                  <el-board-list-empty class="typo-label-lg">
+                                    <el-icon class="etc-file-text"></el-icon>
+                                    캐쉬 내역이 없습니다.
+                                  </el-board-list-empty>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>2025.11.27 16:51</td>
+                                <td>환불<br />(캐쉬)</td>
+                                <td class="align-left">
+                                  <el-mypage-table-cashReward-content>
+                                    <a href="#">20251017145732232485</a>
+                                    <div>
+                                      [컴포즈커피] 아메리카노(ICE)(TAKE-OUT)
+                                    </div>
+                                  </el-mypage-table-cashReward-content>
+                                </td>
+                                <td>999,999</td>
+                                <td>999,999</td>
+                                <td>
+                                  <el-mypage-table-action-buttons>
+                                    <button
+                                      type="button"
+                                      class="button-h34-square typo-label-md"
+                                    >
+                                      영수증
+                                    </button>
+                                  </el-mypage-table-action-buttons>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>2025.11.27 16:51</td>
+                                <td>수동지급</td>
+                                <td class="align-left">
+                                  <el-mypage-table-cashReward-content>
+                                    <div>
+                                      주문번호 20240509091755487615(wjd8601)쿠폰
+                                      사용처리 불가로 인한 주문취소 캐쉬
+                                      환불5건, 오피스콘에서 발송대행으로 처리
+                                    </div>
+                                  </el-mypage-table-cashReward-content>
+                                </td>
+                                <td>999,999</td>
+                                <td>999,999</td>
+                                <td>
+                                  <el-mypage-table-action-buttons>
+                                    <button
+                                      type="button"
+                                      class="button-h34-square typo-label-md"
+                                    >
+                                      영수증
+                                    </button>
+                                  </el-mypage-table-action-buttons>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>2025.11.27 16:51</td>
+                                <td>사용</td>
+                                <td class="align-left">
+                                  <el-mypage-table-cashReward-content>
+                                    <a href="#">20251017145732232485</a>
+                                    <div>
+                                      [컴포즈커피] 아메리카노(ICE)(TAKE-OUT)
+                                    </div>
+                                  </el-mypage-table-cashReward-content>
+                                </td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td> </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </el-mypage-table>
+
+                        <el-pagination>
+                          <nav aria-label="Page navigation">
+                            <el-pagination-prev>
+                              <a href="#" aria-label="처음">
+                                <el-icon
+                                  class="h20-chevrons-left natural-0"
+                                ></el-icon>
+                              </a>
+                              <a href="#" aria-label="이전">
+                                <el-icon
+                                  class="h20-arrow-left natural-0"
+                                ></el-icon>
+                              </a>
+                            </el-pagination-prev>
+                            <ul class="typo-body-sm">
+                              <li class="active">
+                                <a href="#">1</a>
+                              </li>
+                              <li>
+                                <a href="#">2</a>
+                              </li>
+                              <li>
+                                <a href="#">3</a>
+                              </li>
+                              <li>
+                                <a href="#">4</a>
+                              </li>
+                              <li>
+                                <a href="#">5</a>
+                              </li>
+                              <li>
+                                <a href="#">6</a>
+                              </li>
+                              <li>
+                                <a href="#">7</a>
+                              </li>
+                              <li>
+                                <a href="#">8</a>
+                              </li>
+                              <li>
+                                <a href="#">9</a>
+                              </li>
+                              <li>
+                                <a href="#">10</a>
+                              </li>
+                            </ul>
+                            <el-pagination-next>
+                              <a href="#" aria-label="다음">
+                                <el-icon
+                                  class="h20-arrow-right natural-0"
+                                ></el-icon>
+                              </a>
+                              <a href="#" aria-label="마지막">
+                                <el-icon
+                                  class="h20-chevrons-right natural-0"
+                                ></el-icon>
+                              </a>
+                            </el-pagination-next>
+                          </nav>
+                        </el-pagination>
+                      </el-mypage-cashReward-list>
                     </el-mypage-cashReward>
                   </el-mypage-content>
                 </el-mypage-section>

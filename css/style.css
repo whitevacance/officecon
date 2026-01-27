@@ -11139,6 +11139,14 @@ el-mypage-table {
         border-top: 1px solid var(--color-natural-0) !important;
       }
     }
+
+    el-mypage-table-action-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      width: 64px;
+      margin: 0 auto;
+    }
   }
 }
 
@@ -11317,14 +11325,6 @@ el-mypage-order-list {
           }
         }
       }
-    }
-
-    el-mypage-table-action-buttons {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-      width: 64px;
-      margin: 0 auto;
     }
   }
 }
@@ -12369,6 +12369,48 @@ el-modal-cash-refund-all {
 
   el-modal-form {
     padding-top: 24px;
+  }
+}
+
+el-mypage-cashReward-list {
+  display: block;
+  width: 100%;
+  padding-top: 32px;
+
+  el-mypage-cashReward-filter {
+    display: block;
+    width: 120px;
+  }
+
+  .mypage-cashReward-list-table table.table {
+    .col-auto {
+      width: auto;
+    }
+    .col-100 {
+      width: 100px;
+    }
+    .col-120 {
+      width: 120px;
+    }
+    .col-160 {
+      width: 160px;
+    }
+
+    el-mypage-table-cashReward-content {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+
+      a {
+        color: var(--color-natural-20);
+        text-decoration: underline;
+      }
+
+      & > div {
+        width: 100%;
+        word-break: keep-all;
+      }
+    }
   }
 }
 /* 종료: 마이페이지 > 캐쉬/리워드 내역 */
