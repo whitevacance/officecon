@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
   <head>
-    <title>발송문구 관리 | 오피스콘</title>
+    <title>발송문구 편집 | 오피스콘</title>
     <meta charset="UTF-8" />
     <meta name="format-detection" content="telephone=no" />
     <link rel="shortcut icon" href="./images/favicon.ico" />
@@ -229,171 +229,133 @@
                 </el-mypage-nav>
                 <el-mypage-section>
                   <el-section-title>
-                    <h3 class="typo-subtitle-lg">발송문구 관리</h3>
+                    <h3 class="typo-subtitle-lg">발송문구 편집</h3>
                   </el-section-title>
 
                   <el-mypage-content>
-                    <el-mypage-message-list>
-                      <el-table-util-bar>
-                        <el-table-util-left>
-                          <span class="typo-subtitle-sm">총 10개</span>
-                        </el-table-util-left>
-                        <el-table-util-right>
-                          <button
-                            id="uncheckAllButton"
-                            type="button"
-                            class="text-black button-h43-square typo-body-sm"
-                          >
-                            선택해제
-                          </button>
-                          <button
-                            type="button"
-                            class="text-black button-h43-square typo-body-sm"
-                          >
-                            선택삭제
-                          </button>
-                          <button
-                            type="button"
-                            class="button-h43-square-fill typo-body-sm"
-                          >
-                            발송문구 등록
-                          </button>
-                        </el-table-util-right>
-                      </el-table-util-bar>
+                    <el-mypage-message-edit>
+                      <el-form-with-label>
+                        <el-form-row>
+                          <el-form-label class="typo-body-lg">
+                            프로모션명<span>*</span>
+                          </el-form-label>
+                          <el-form-content>
+                            <el-input>
+                              <input
+                                class="form-control custom-input"
+                                type="text"
+                                placeholder="관리용 제목을 입력해 주세요."
+                                value=""
+                              />
+                            </el-input>
+                            <el-form-input-length class="typo-body-sm">
+                              (0/60)
+                            </el-form-input-length>
+                          </el-form-content>
+                        </el-form-row>
+                        <el-form-row>
+                          <el-form-label class="typo-body-lg">
+                            프로모션명<span>*</span>
+                          </el-form-label>
+                          <el-form-content>
+                            <el-input class="is-invalid">
+                              <input
+                                class="form-control custom-input"
+                                type="text"
+                                placeholder="관리용 제목을 입력해 주세요."
+                                value=""
+                              />
+                              <el-invalide-feedback class="typo-label-lg">
+                                필수 입력 항목입니다.
+                              </el-invalide-feedback>
+                            </el-input>
+                            <el-form-input-length class="typo-body-sm">
+                              (0/60)
+                            </el-form-input-length>
+                          </el-form-content>
+                        </el-form-row>
+                        <el-form-row>
+                          <el-form-label class="typo-body-lg">
+                            제목<span>*</span>
+                          </el-form-label>
+                          <el-form-content>
+                            <el-input>
+                              <input
+                                class="form-control custom-input"
+                                type="text"
+                                placeholder="제목을 입력해 주세요."
+                                value=""
+                              />
+                            </el-input>
+                            <el-form-input-length class="typo-body-sm">
+                              (0/20)
+                            </el-form-input-length>
+                          </el-form-content>
+                        </el-form-row>
+                        <el-form-row>
+                          <el-form-label class="typo-body-lg">
+                            내용<span>*</span>
+                          </el-form-label>
+                          <el-form-content>
+                            <el-form-textarea>
+                              <textarea
+                                class="form-control"
+                                placeholder="내용을 입력해 주세요."
+                              ></textarea>
+                            </el-form-textarea>
+                            <el-form-textarea-length class="typo-body-sm">
+                              (0/250)
+                            </el-form-textarea-length>
+                          </el-form-content>
+                        </el-form-row>
+                        <el-form-row>
+                          <el-form-label class="typo-body-lg">
+                            내용<span>*</span>
+                          </el-form-label>
+                          <el-form-content>
+                            <el-form-textarea class="is-invalid">
+                              <textarea
+                                class="form-control"
+                                placeholder="내용을 입력해 주세요."
+                              ></textarea>
+                              <el-invalide-feedback class="typo-label-lg">
+                                필수 입력 항목입니다.
+                              </el-invalide-feedback>
+                            </el-form-textarea>
+                            <el-form-textarea-length class="typo-body-sm">
+                              (0/250)
+                            </el-form-textarea-length>
+                          </el-form-content>
+                        </el-form-row>
+                      </el-form-with-label>
 
-                      <el-mypage-table class="mypage-message-list-table">
-                        <table class="table align-middle">
-                          <colgroup>
-                            <col class="col-80" />
-                            <col class="col-80" />
-                            <col class="col-auto" />
-                            <col class="col-200" />
-                          </colgroup>
-                          <thead>
-                            <tr>
-                              <th scope="col">
-                                <el-checkbox>
-                                  <input
-                                    id="checkboxAll"
-                                    type="checkbox"
-                                    class="form-check-input custom-checkbox"
-                                    value=""
-                                  />
-                                </el-checkbox>
-                              </th>
-                              <th scope="col">번호</th>
-                              <th scope="col" class="align-left">
-                                프로모션 명
-                              </th>
-                              <th scope="col">등록일시</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr class="empty">
-                              <td colspan="4">
-                                <el-board-list-empty class="typo-label-lg">
-                                  <el-icon class="etc-file-text"></el-icon>
-                                  발송문구가 없습니다.
-                                </el-board-list-empty>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <el-checkbox class="message-checkbox">
-                                  <input
-                                    type="checkbox"
-                                    class="form-check-input custom-checkbox"
-                                    value=""
-                                  />
-                                </el-checkbox>
-                              </td>
-                              <td>00</td>
-                              <td class="align-left">
-                                <a href="#">신규 상품 발송 테스트</a>
-                              </td>
-                              <td>2025.11.20 12:11</td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <el-checkbox class="message-checkbox">
-                                  <input
-                                    type="checkbox"
-                                    class="form-check-input custom-checkbox"
-                                    value=""
-                                  />
-                                </el-checkbox>
-                              </td>
-                              <td>00</td>
-                              <td class="align-left">
-                                <a href="#">신규 상품 발송 테스트</a>
-                              </td>
-                              <td>2025.11.20 12:11</td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </el-mypage-table>
-
-                      <el-pagination>
-                        <nav aria-label="Page navigation">
-                          <el-pagination-prev>
-                            <a href="#" aria-label="처음">
-                              <el-icon
-                                class="h20-chevrons-left natural-0"
-                              ></el-icon>
-                            </a>
-                            <a href="#" aria-label="이전">
-                              <el-icon
-                                class="h20-arrow-left natural-0"
-                              ></el-icon>
-                            </a>
-                          </el-pagination-prev>
-                          <ul class="typo-body-sm">
-                            <li class="active">
-                              <a href="#">1</a>
-                            </li>
-                            <li>
-                              <a href="#">2</a>
-                            </li>
-                            <li>
-                              <a href="#">3</a>
-                            </li>
-                            <li>
-                              <a href="#">4</a>
-                            </li>
-                            <li>
-                              <a href="#">5</a>
-                            </li>
-                            <li>
-                              <a href="#">6</a>
-                            </li>
-                            <li>
-                              <a href="#">7</a>
-                            </li>
-                            <li>
-                              <a href="#">8</a>
-                            </li>
-                            <li>
-                              <a href="#">9</a>
-                            </li>
-                            <li>
-                              <a href="#">10</a>
-                            </li>
-                          </ul>
-                          <el-pagination-next>
-                            <a href="#" aria-label="다음">
-                              <el-icon
-                                class="h20-arrow-right natural-0"
-                              ></el-icon>
-                            </a>
-                            <a href="#" aria-label="마지막">
-                              <el-icon
-                                class="h20-chevrons-right natural-0"
-                              ></el-icon>
-                            </a>
-                          </el-pagination-next>
-                        </nav>
-                      </el-pagination>
-                    </el-mypage-message-list>
+                      <el-mypage-message-edit-cta>
+                        <button
+                          type="button"
+                          class="border-black button-h50-square typo-body-sm"
+                        >
+                          <span>삭제</span>
+                        </button>
+                        <button
+                          type="button"
+                          class="border-black button-h50-square typo-body-sm"
+                        >
+                          <span>목록</span>
+                        </button>
+                        <button
+                          type="button"
+                          class="button-h50-square-fill typo-body-sm"
+                        >
+                          <span>등록</span>
+                        </button>
+                        <button
+                          type="button"
+                          class="button-h50-square-fill typo-body-sm"
+                        >
+                          <span>수정</span>
+                        </button>
+                      </el-mypage-message-edit-cta>
+                    </el-mypage-message-edit>
                   </el-mypage-content>
                 </el-mypage-section>
               </el-mypage-container>
@@ -982,74 +944,5 @@
 
     <!-- [DEV] 웹 컴포넌트js: 개발 시 삭제해 주세요 -->
     <script src="./js/web-components.js" crossorigin="anonymous"></script>
-
-    <script>
-      // 시작: 발송문구 전체 선택
-      const initHandleCheckbox = () => {
-        const checkboxAll = document.getElementById('checkboxAll');
-        const checkboxes = document.querySelectorAll(
-          '.message-checkbox .form-check-input'
-        );
-        const uncheckAllButton = document.getElementById('uncheckAllButton');
-
-        // 이미 초기화된 경우 건너뛰기
-        if (checkboxAll?.dataset?.initialized === 'true') {
-          return;
-        }
-
-        const handleCheckAll = (e) => {
-          if (e?.target?.checked) {
-            [...checkboxes].map((checkbox) => {
-              checkbox.checked = true;
-              return () => {};
-            });
-          } else {
-            [...checkboxes].map((checkbox) => {
-              checkbox.checked = false;
-              return () => {};
-            });
-          }
-        };
-
-        const handleUncheckAll = () => {
-          checkboxAll.checked = false;
-          [...checkboxes].map((checkbox) => {
-            checkbox.checked = false;
-            return () => {};
-          });
-        };
-
-        if (checkboxAll) {
-          checkboxAll.addEventListener('change', handleCheckAll);
-        }
-
-        if (uncheckAllButton) {
-          uncheckAllButton.addEventListener('click', handleUncheckAll);
-        }
-
-        const handleCheckbox = (e) => {
-          const unCheckedItem = [...checkboxes].find(
-            (checkbox) => checkbox.checked === false
-          );
-          if (unCheckedItem) {
-            checkboxAll.checked = false;
-          } else {
-            checkboxAll.checked = true;
-          }
-        };
-        [...checkboxes].map((checkbox) => {
-          checkbox.addEventListener('change', handleCheckbox);
-        });
-
-        // 초기화 완료 전환
-        checkboxAll.dataset.initialized = 'true';
-      };
-      // 전역 함수로 등록
-      if (window !== undefined) {
-        window.initHandleCheckbox = initHandleCheckbox;
-      }
-      initHandleCheckbox();
-      // 종료: 발송문구 전체 선택
-    </script>
   </body>
 </html>
