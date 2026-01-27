@@ -3433,6 +3433,48 @@
               <h4>select</h4>
               <el-examples-stack>
                 <div style="width: 200px">
+                  <el-select class="dropdown select-h34">
+                    <!-- [DEV] hidden input의 value값을 사용 -->
+                    <input type="hidden" value="" />
+                    <button
+                      type="button"
+                      class="dropdown-toggle"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                      data-bs-offset="0,-34"
+                    >
+                      <el-label>선택 select-h34</el-label>
+                    </button>
+                    <el-select-options class="dropdown-menu active-bold">
+                      <ul>
+                        <li>
+                          <span class="dropdown-header">
+                            <el-label>선택 select-h34</el-label>
+                          </span>
+                        </li>
+                        <li>
+                          <button
+                            type="button"
+                            data-value="1"
+                            class="dropdown-item"
+                          >
+                            <el-label>옵션1</el-label>
+                          </button>
+                        </li>
+                        <li>
+                          <button
+                            type="button"
+                            data-value="2"
+                            class="dropdown-item"
+                          >
+                            <el-label>옵션2</el-label>
+                          </button>
+                        </li>
+                      </ul>
+                    </el-select-options>
+                  </el-select>
+                </div>
+                <div style="width: 200px">
                   <el-select class="dropdown">
                     <!-- [DEV] hidden input의 value값을 사용 -->
                     <input type="hidden" value="" />

@@ -1853,8 +1853,9 @@ el-select {
 
     &.active-bold {
       .dropdown-item {
-        &.active {
-          font-weight: 700;
+        &.active,
+        &.active * {
+          font-weight: 700 !important;
         }
       }
     }
@@ -1891,6 +1892,58 @@ el-select {
       .dropdown-item {
         height: 50px;
         padding: 0 20px;
+
+        &.active,
+        &:focus,
+        &:active {
+          background-color: var(--color-natural-90) !important;
+        }
+
+        &:hover {
+          background-color: var(--color-natural-95) !important;
+        }
+      }
+    }
+  }
+
+  &.select-h34 {
+    el-label {
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 16px;
+      letter-spacing: -0.36px;
+    }
+
+    .dropdown-toggle {
+      height: 34px;
+      padding: 0 24px 0 14px;
+      border-radius: 8px;
+
+      &:after {
+        width: 16px;
+        height: 16px;
+        right: 6px;
+        background-color: var(--color-natural-40);
+        -webkit-mask-image: url('../images/icon-h16-arrow-down.svg');
+        mask-image: url('../images/icon-h16-arrow-down.svg');
+      }
+    }
+
+    .dropdown-menu {
+      border-radius: 8px;
+
+      & > ul {
+        max-height: 340px;
+      }
+
+      .dropdown-header {
+        height: 34px;
+        padding: 0 14px;
+      }
+
+      .dropdown-item {
+        height: 34px;
+        padding: 0 14px;
 
         &.active,
         &:focus,
@@ -12272,6 +12325,50 @@ el-mypage-cashReward-status {
         font-weight: 700 !important;
       }
     }
+
+    el-mypage-cashReward-summary {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 4px;
+
+      dl {
+        display: flex;
+        align-items: center;
+        gap: 3px;
+        position: relative;
+
+        dt {
+          font-weight: 400 !important;
+          color: var(--color-natural-20);
+        }
+
+        dd {
+          color: var(--color-natural-0);
+          font-weight: 700 !important;
+        }
+      }
+
+      el-mypage-cashReward-sub-member {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 17px;
+
+        dl:last-of-type {
+          &::after {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 1px;
+            height: 16px;
+            background-color: var(--color-natural-60);
+          }
+        }
+      }
+    }
   }
 }
 
@@ -12638,3 +12735,63 @@ el-mypage-message-edit {
   }
 }
 /* 종료: 마이페이지 > 발송문구 관리 */
+
+/* 시작: 마이페이지 > 서브회원 관리 */
+el-sub-member {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+
+  el-sub-member-list {
+    display: block;
+    width: 100%;
+
+    .sub-member-list-table table.table {
+      .col-auto {
+        width: auto;
+      }
+      .col-80 {
+        width: 80px;
+      }
+      .col-106 {
+        width: 106px;
+      }
+      .col-122 {
+        width: 122px;
+      }
+      .col-150 {
+        width: 160px;
+      }
+      .col-160 {
+        width: 160px;
+      }
+      .col-200 {
+        width: 160px;
+      }
+
+      th,
+      td {
+        color: var(--color-natural-0) !important;
+      }
+
+      el-mypage-table-action-buttons {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 4px;
+        width: 100%;
+
+        & > el-select {
+          width: 72px;
+        }
+
+        & > button {
+          width: auto;
+          min-width: 53px;
+        }
+      }
+    }
+  }
+}
+/* 종료: 마이페이지 > 서브회원 관리 */
