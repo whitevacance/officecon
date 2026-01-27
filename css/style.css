@@ -3800,6 +3800,18 @@ el-modal-form {
       align-items: center;
       gap: 0px 8px;
       width: calc(100% - 124px);
+
+      textarea {
+        height: 120px;
+      }
+
+      el-form-textarea-length {
+        display: block;
+        width: 100%;
+        padding-top: 2px;
+        text-align: right;
+        color: var(--color-natural-40);
+      }
     }
 
     &.height-60 {
@@ -11792,6 +11804,10 @@ el-modal-cancel-payment {
       .total-refund-amount {
         font-weight: 700 !important;
       }
+
+      .text-orange {
+        color: var(--color-orange-officecon);
+      }
     }
   }
 }
@@ -12339,6 +12355,20 @@ el-certification-guide {
 
   & > p {
     color: var(--color-natural-20);
+  }
+}
+
+el-modal-cash-refund-all {
+  display: block;
+  width: 500px;
+
+  el-mypage-cashReward-status {
+    margin-top: 16px;
+    min-height: 66px;
+  }
+
+  el-modal-form {
+    padding-top: 24px;
   }
 }
 /* 종료: 마이페이지 > 캐쉬/리워드 내역 */

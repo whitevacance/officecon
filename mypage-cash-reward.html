@@ -448,39 +448,227 @@
           </el-modal-header>
 
           <el-modal-body class="modal-body">
-            <el-modal-cancel-all>
+            <el-modal-cash-refund-all>
               <el-info-box>
                 <el-marker-list class="weight-regular color-gray">
                   <ul>
                     <li>
-                      전체 취소 요청만 가능하며, 선택하신 수단으로 환불됩니다.
+                      캐쉬 증가 후 3일이 지난 경우 환불 수수료(10%)가
+                      발생합니다.
                     </li>
                     <li>
-                      전체 취소 요청은 발송실패/예약발송 1시간 이전에만
-                      가능합니다.
+                      캐쉬환불은 1,000 캐쉬 이상부터 가능합니다.<br />
+                      (환불 수수료 발생 시 환불 수수료를 포함된 실 수령 금액이
+                      1,000원 미만인 경우 환불 불가)
+                    </li>
+                    <li>
+                      유효기간 만료 환불 및 이벤트 등으로 지급받은 캐쉬는
+                      현금으로 환불이 불가합니다.
                     </li>
                   </ul>
                 </el-marker-list>
               </el-info-box>
 
+              <el-mypage-cashReward-status>
+                <el-mypage-cashReward-current>
+                  <img src="./images/badge-h14-cash.svg" alt="캐시" />
+                  <el-mypage-cashReward-current-label class="typo-body-lg">
+                    오피스콘 보유 캐쉬
+                  </el-mypage-cashReward-current-label>
+                  <el-mypage-cashReward-current-amount class="typo-label-lg">
+                    <strong class="typo-subtitle-sm"> 999,999,990 </strong>
+                  </el-mypage-cashReward-current-amount>
+                </el-mypage-cashReward-current>
+              </el-mypage-cashReward-status>
+
               <el-modal-cancel-payment>
-                <h4 class="typo-body-lg">결제정보</h4>
+                <h4 class="typo-body-lg">환불 정보</h4>
                 <el-modal-cancel-all-payment-content class="typo-body-sm">
                   <dl>
-                    <dt>캐쉬 결제</dt>
+                    <dt>환불 불가 캐쉬</dt>
+                    <dd>0</dd>
+                  </dl>
+                  <dl>
+                    <dt>환불 가능 캐쉬</dt>
                     <dd>10,000</dd>
                   </dl>
                   <dl>
-                    <dt>카드결제 / 계좌이체</dt>
-                    <dd>10,000</dd>
+                    <dt>환불 수수료</dt>
+                    <dd class="text-orange">-1,000</dd>
                   </dl>
                   <dl>
-                    <dt>총 환불 금액</dt>
+                    <dt>실 수령 금액</dt>
                     <dd class="total-refund-amount">10,000</dd>
                   </dl>
                 </el-modal-cancel-all-payment-content>
               </el-modal-cancel-payment>
-            </el-modal-cancel-all>
+
+              <el-modal-form>
+                <el-form-row>
+                  <el-form-label class="typo-body-md">
+                    환불 계좌 은행명<span>*</span>
+                  </el-form-label>
+                  <el-form-content>
+                    <el-select class="dropdown">
+                      <!-- [DEV] hidden input의 value값을 사용 -->
+                      <input type="hidden" value="" />
+                      <button
+                        type="button"
+                        class="dropdown-toggle"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                        data-bs-offset="0,-43"
+                      >
+                        <el-label>선택</el-label>
+                      </button>
+                      <el-select-options class="dropdown-menu">
+                        <ul>
+                          <li>
+                            <span class="dropdown-header">
+                              <el-label>선택</el-label>
+                            </span>
+                          </li>
+                          <li>
+                            <button
+                              type="button"
+                              data-value="1"
+                              class="dropdown-item"
+                            >
+                              <el-label>111</el-label>
+                            </button>
+                          </li>
+                          <li>
+                            <button
+                              type="button"
+                              data-value="2"
+                              class="dropdown-item"
+                            >
+                              <el-label>222</el-label>
+                            </button>
+                          </li>
+                          <li>
+                            <button
+                              type="button"
+                              data-value="3"
+                              class="dropdown-item"
+                            >
+                              <el-label>333</el-label>
+                            </button>
+                          </li>
+                          <li>
+                            <button
+                              type="button"
+                              data-value="4"
+                              class="dropdown-item"
+                            >
+                              <el-label>444</el-label>
+                            </button>
+                          </li>
+                          <li>
+                            <button
+                              type="button"
+                              data-value="5"
+                              class="dropdown-item"
+                            >
+                              <el-label>555</el-label>
+                            </button>
+                          </li>
+                          <li>
+                            <button
+                              type="button"
+                              data-value="6"
+                              class="dropdown-item"
+                            >
+                              <el-label>666</el-label>
+                            </button>
+                          </li>
+                          <li>
+                            <button
+                              type="button"
+                              data-value="7"
+                              class="dropdown-item"
+                            >
+                              <el-label>777</el-label>
+                            </button>
+                          </li>
+                          <li>
+                            <button
+                              type="button"
+                              data-value="8"
+                              class="dropdown-item"
+                            >
+                              <el-label>888</el-label>
+                            </button>
+                          </li>
+                          <li>
+                            <button
+                              type="button"
+                              data-value="9"
+                              class="dropdown-item"
+                            >
+                              <el-label>999</el-label>
+                            </button>
+                          </li>
+                          <li>
+                            <button
+                              type="button"
+                              data-value="10"
+                              class="dropdown-item"
+                            >
+                              <el-label>10</el-label>
+                            </button>
+                          </li>
+                        </ul>
+                      </el-select-options>
+                    </el-select>
+                  </el-form-content>
+                </el-form-row>
+                <el-form-row>
+                  <el-form-label class="typo-body-md">
+                    환불 계좌번호<span>*</span>
+                  </el-form-label>
+                  <el-form-content>
+                    <el-input>
+                      <input
+                        class="form-control custom-input"
+                        type="text"
+                        placeholder="계좌번호를 입력해 주세요."
+                        value=""
+                      />
+                    </el-input>
+                  </el-form-content>
+                </el-form-row>
+                <el-form-row>
+                  <el-form-label class="typo-body-md">
+                    예금주<span>*</span>
+                  </el-form-label>
+                  <el-form-content>
+                    <el-input>
+                      <input
+                        class="form-control custom-input"
+                        type="text"
+                        placeholder="예금주를 입력해 주세요."
+                        value=""
+                      />
+                    </el-input>
+                  </el-form-content>
+                </el-form-row>
+                <el-form-row>
+                  <el-form-label class="typo-body-md">
+                    환불 사유
+                  </el-form-label>
+                  <el-form-content>
+                    <textarea
+                      class="form-control"
+                      placeholder="내용을 입력해 주세요."
+                    ></textarea>
+                    <el-form-textarea-length class="typo-body-sm">
+                      (0/250)
+                    </el-form-textarea-length>
+                  </el-form-content>
+                </el-form-row>
+              </el-modal-form>
+            </el-modal-cash-refund-all>
           </el-modal-body>
 
           <el-modal-footer class="modal-footer">
