@@ -231,7 +231,7 @@
 
                   <el-mypage-content>
                     <el-mypage-cashReward>
-                      <el-mypage-cashReward-header>
+                      <el-mypage-cashReward-status>
                         <el-mypage-cashReward-current>
                           <img src="./images/badge-h14-cash.svg" alt="캐시" />
                           <el-mypage-cashReward-current-label
@@ -289,9 +289,9 @@
                             캐쉬 충전(카드)
                           </button>
                         </el-mypage-cashReward-addon>
-                      </el-mypage-cashReward-header>
+                      </el-mypage-cashReward-status>
 
-                      <el-mypage-cashReward-header>
+                      <el-mypage-cashReward-status>
                         <el-mypage-cashReward-current>
                           <img src="./images/badge-h14-cash.svg" alt="캐시" />
                           <el-mypage-cashReward-current-label
@@ -308,9 +308,9 @@
                             원
                           </el-mypage-cashReward-current-amount>
                         </el-mypage-cashReward-current>
-                      </el-mypage-cashReward-header>
+                      </el-mypage-cashReward-status>
 
-                      <el-mypage-cashReward-header>
+                      <el-mypage-cashReward-status>
                         <el-mypage-cashReward-current>
                           <img
                             src="./images/badge-h14-reward.svg"
@@ -337,9 +337,9 @@
                             <strong>2030.10.17</strong>
                           </el-mypage-cashReward-dueDate>
                         </el-mypage-cashReward-addon>
-                      </el-mypage-cashReward-header>
+                      </el-mypage-cashReward-status>
 
-                      <el-mypage-cashReward-header>
+                      <el-mypage-cashReward-status>
                         <el-mypage-cashReward-current>
                           <img
                             src="./images/badge-h14-reward.svg"
@@ -359,7 +359,7 @@
                             리워드
                           </el-mypage-cashReward-current-amount>
                         </el-mypage-cashReward-current>
-                      </el-mypage-cashReward-header>
+                      </el-mypage-cashReward-status>
                     </el-mypage-cashReward>
                   </el-mypage-content>
                 </el-mypage-section>
@@ -414,6 +414,7 @@
             <button
               type="button"
               data-bs-dismiss="modal"
+              onclick="bsModalCashRefundAll.show();"
               class="button-h50-fill typo-body-lg"
             >
               확인
@@ -423,6 +424,85 @@
       </el-alert-dialog>
     </el-alert>
     <!-- 종료: alert -->
+
+    <!-- 시작: modal: 캐쉬 전체 환불 -->
+    <el-modal
+      class="modal fade el-modal-default"
+      id="el-modal-cash-refund-all"
+      tabindex="-1"
+      aria-hidden="true"
+      data-bs-keyboard="false"
+    >
+      <el-modal-dialog
+        class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+      >
+        <el-modal-content class="modal-content">
+          <el-modal-close-button>
+            <button type="button" data-bs-dismiss="modal" aria-label="닫기">
+              <el-icon class="h32-closed natural-0"></el-icon>
+            </button>
+          </el-modal-close-button>
+
+          <el-modal-header class="modal-header">
+            <h3 class="typo-subtitle-lg center">캐쉬 전체 환불</h3>
+          </el-modal-header>
+
+          <el-modal-body class="modal-body">
+            <el-modal-cancel-all>
+              <el-info-box>
+                <el-marker-list class="weight-regular color-gray">
+                  <ul>
+                    <li>
+                      전체 취소 요청만 가능하며, 선택하신 수단으로 환불됩니다.
+                    </li>
+                    <li>
+                      전체 취소 요청은 발송실패/예약발송 1시간 이전에만
+                      가능합니다.
+                    </li>
+                  </ul>
+                </el-marker-list>
+              </el-info-box>
+
+              <el-modal-cancel-payment>
+                <h4 class="typo-body-lg">결제정보</h4>
+                <el-modal-cancel-all-payment-content class="typo-body-sm">
+                  <dl>
+                    <dt>캐쉬 결제</dt>
+                    <dd>10,000</dd>
+                  </dl>
+                  <dl>
+                    <dt>카드결제 / 계좌이체</dt>
+                    <dd>10,000</dd>
+                  </dl>
+                  <dl>
+                    <dt>총 환불 금액</dt>
+                    <dd class="total-refund-amount">10,000</dd>
+                  </dl>
+                </el-modal-cancel-all-payment-content>
+              </el-modal-cancel-payment>
+            </el-modal-cancel-all>
+          </el-modal-body>
+
+          <el-modal-footer class="modal-footer">
+            <button
+              type="button"
+              data-bs-dismiss="modal"
+              class="button-h50-stroke typo-body-lg"
+            >
+              취소
+            </button>
+            <button
+              type="button"
+              data-bs-dismiss="modal"
+              class="button-h50-fill typo-body-lg"
+            >
+              환불요청
+            </button>
+          </el-modal-footer>
+        </el-modal-content>
+      </el-modal-dialog>
+    </el-modal>
+    <!-- 종료: modal: 캐쉬 전체 환불 -->
 
     <!-- 시작: modal: 정책안내 -->
     <el-modal
@@ -1214,5 +1294,20 @@
 
     <!-- [DEV] 웹 컴포넌트js: 개발 시 삭제해 주세요 -->
     <script src="./js/web-components.js" crossorigin="anonymous"></script>
+
+    <script>
+      // 페이지 로드 시 캐쉬 전체 환불 bootstrap 인스턴스 생성
+      let bsModalCashRefundAll;
+      const initModalCashRefundAll = (targetEl) => {
+        if (targetEl) {
+          bsModalCashRefundAll = new bootstrap.Modal(targetEl);
+        }
+      };
+
+      const modalCashRefundAllEl = document.querySelector(
+        '#el-modal-cash-refund-all'
+      );
+      initModalCashRefundAll(modalCashRefundAllEl);
+    </script>
   </body>
 </html>

@@ -12126,60 +12126,60 @@ el-mypage-cashReward {
   flex-direction: column;
   gap: 32px;
   width: 100%;
+}
 
-  el-mypage-cashReward-header {
+el-mypage-cashReward-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  width: 100%;
+  min-height: 74px;
+  border-radius: 8px;
+  background-color: var(--color-natural-95);
+  padding: 20px 32px;
+
+  el-mypage-cashReward-current {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 16px;
-    width: 100%;
-    min-height: 74px;
-    border-radius: 8px;
-    background-color: var(--color-natural-95);
-    padding: 20px 32px;
 
-    el-mypage-cashReward-current {
+    el-mypage-cashReward-current-label {
+      font-weight: 600 !important;
+      padding-left: 8px;
+    }
+
+    el-mypage-cashReward-current-amount {
       display: flex;
       align-items: center;
+      gap: 2px;
+      padding-left: 12px;
+    }
+  }
 
-      el-mypage-cashReward-current-label {
-        font-weight: 600 !important;
-        padding-left: 8px;
-      }
+  &:has(el-mypage-cashReward-addon) {
+    justify-content: space-between;
+  }
 
-      el-mypage-cashReward-current-amount {
-        display: flex;
-        align-items: center;
-        gap: 2px;
-        padding-left: 12px;
-      }
+  el-mypage-cashReward-addon {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 6px;
+
+    button {
+      width: 110px;
     }
 
-    &:has(el-mypage-cashReward-addon) {
-      justify-content: space-between;
-    }
-
-    el-mypage-cashReward-addon {
+    el-mypage-cashReward-dueDate {
       display: flex;
       align-items: center;
       justify-content: flex-end;
-      gap: 6px;
+      gap: 3px;
+      color: var(--color-natural-20);
 
-      button {
-        width: 110px;
-      }
-
-      el-mypage-cashReward-dueDate {
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        gap: 3px;
-        color: var(--color-natural-20);
-
-        strong {
-          color: var(--color-natural-0);
-          font-weight: 700 !important;
-        }
+      strong {
+        color: var(--color-natural-0);
+        font-weight: 700 !important;
       }
     }
   }
@@ -12335,9 +12335,8 @@ el-certification-guide {
       color: var(--color-natural-0);
       font-weight: 700 !important;
     }
-
   }
-  
+
   & > p {
     color: var(--color-natural-20);
   }
