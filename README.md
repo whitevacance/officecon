@@ -65,9 +65,9 @@
 ### 3-2차
 
 - 마이페이지 > 쇼핑내역 > 주문/발송 내역 > 리스트: http://officecon-pub.s3-website.ap-northeast-2.amazonaws.com/mypage-order-list.html
-- 마이페이지 > 쇼핑내역 > 주문/발송 내역 > 뷰:
-- 마이페이지 > 쇼핑내역 > 주문/발송 내역 > 수정:
-- 마이페이지 > 쇼핑내역 > 취소/환불 내역:
+- 마이페이지 > 쇼핑내역 > 주문/발송 내역 > 뷰: http://officecon-pub.s3-website.ap-northeast-2.amazonaws.com/mypage-order-view.html
+- 마이페이지 > 쇼핑내역 > 주문/발송 내역 > 수정: http://officecon-pub.s3-website.ap-northeast-2.amazonaws.com/mypage-order-modify.html
+- 마이페이지 > 쇼핑내역 > 취소/환불 내역: http://officecon-pub.s3-website.ap-northeast-2.amazonaws.com/mypage-order-cancel.html
 - 마이페이지 > 캐시/리워드 내역 > 캐시 내역:
 - 마이페이지 > 캐시/리워드 내역 > 캐시 내역 > 캐쉬 충전(카드):
 - 마이페이지 > 캐시/리워드 내역 > 캐시 결제내역:
