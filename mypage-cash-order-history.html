@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
   <head>
-    <title>취소/환불내역 | 오피스콘</title>
+    <title>캐쉬 결제내역 | 오피스콘</title>
     <meta charset="UTF-8" />
     <meta name="format-detection" content="telephone=no" />
     <link rel="shortcut icon" href="./images/favicon.ico" />
@@ -229,13 +229,13 @@
                 </el-mypage-nav>
                 <el-mypage-section>
                   <el-section-title>
-                    <h3 class="typo-subtitle-lg">취소/환불내역</h3>
+                    <h3 class="typo-subtitle-lg">캐쉬 결제내역</h3>
                   </el-section-title>
 
                   <el-mypage-content>
                     <el-filter-box>
                       <dl>
-                        <dt>주문기간</dt>
+                        <dt>결제 기간</dt>
                         <dd>
                           <el-date-tabs>
                             <button
@@ -344,88 +344,130 @@
                       </dl>
                     </el-filter-box>
 
-                    <el-mypage-cancel-list>
+                    <el-cash-order-history-list>
                       <el-table-util-bar>
                         <el-table-util-left>
                           <span class="typo-subtitle-sm">총 10건</span>
                         </el-table-util-left>
+                        <el-table-util-right>
+                          <el-table-util-filter>
+                            <el-select class="dropdown">
+                              <!-- [DEV] hidden input의 value값을 사용 -->
+                              <input type="hidden" value="" />
+                              <button
+                                type="button"
+                                class="dropdown-toggle"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                                data-bs-offset="0,-43"
+                              >
+                                <el-label>전체</el-label>
+                              </button>
+                              <el-select-options
+                                class="dropdown-menu active-bold"
+                              >
+                                <ul>
+                                  <li>
+                                    <button
+                                      type="button"
+                                      data-value="1"
+                                      class="dropdown-item active"
+                                    >
+                                      <el-label>전체</el-label>
+                                    </button>
+                                  </li>
+                                  <li>
+                                    <button
+                                      type="button"
+                                      data-value="2"
+                                      class="dropdown-item"
+                                    >
+                                      <el-label>결제 취소</el-label>
+                                    </button>
+                                  </li>
+                                  <li>
+                                    <button
+                                      type="button"
+                                      data-value="3"
+                                      class="dropdown-item"
+                                    >
+                                      <el-label>결제 성공</el-label>
+                                    </button>
+                                  </li>
+                                </ul>
+                              </el-select-options>
+                            </el-select>
+                          </el-table-util-filter>
+                        </el-table-util-right>
                       </el-table-util-bar>
 
-                      <el-mypage-table class="mypage-cancel-list-table">
+                      <el-mypage-table class="mypage-cash-order-history-table">
                         <table class="table align-middle">
                           <colgroup>
-                            <col class="col-80" />
+                            <col class="col-160" />
+                            <col class="col-190" />
                             <col class="col-auto" />
-                            <col class="col-100" />
-                            <col class="col-80" />
-                            <col class="col-120" />
-                            <col class="col-120" />
-                            <col class="col-120" />
                             <col class="col-140" />
-                            <col class="col-80" />
+                            <col class="col-180" />
+                            <col class="col-120" />
                           </colgroup>
                           <thead>
                             <tr>
-                              <th scope="col">번호</th>
+                              <th scope="col">결제일시(취소일시)</th>
                               <th scope="col">주문번호</th>
+                              <th scope="col" class="align-left">상품명</th>
                               <th scope="col">구분</th>
-                              <th scope="col">결제수단</th>
-                              <th scope="col">총 환불금액</th>
-                              <th scope="col">결제 취소 금액</th>
-                              <th scope="col">캐쉬(리워드) 환불금액</th>
-                              <th scope="col">요청일시</th>
-                              <th scope="col">환불내역</th>
+                              <th scope="col">결제금액</th>
+                              <th scope="col">영수증</th>
                             </tr>
                           </thead>
                           <tbody>
                             <tr class="empty">
-                              <td colspan="9">
+                              <td colspan="6">
                                 <el-board-list-empty class="typo-label-lg">
                                   <el-icon class="etc-file-text"></el-icon>
-                                  취소/환불내역이 없습니다.
+                                  결제내역이 없습니다.
                                 </el-board-list-empty>
                               </td>
                             </tr>
                             <tr>
-                              <td>00</td>
-                              <td>20251209123456776978</td>
-                              <td>전체 취소</td>
-                              <td>캐쉬</td>
-                              <td>999,999</td>
-                              <td>999,999</td>
-                              <td>999,999</td>
-                              <td>2025.12.09 10:14</td>
+                              <td>
+                                2025.12.24 09:21<br />
+                                (2025.12.24 09:25)
+                              </td>
+                              <td>E2512456768348768</td>
+                              <td class="align-left">테스트 취소 진행</td>
+                              <td>결제취소</td>
+                              <td>-20,000</td>
                               <td>
                                 <el-mypage-table-action-buttons>
                                   <button
                                     type="button"
-                                    data-bs-target="#el-modal-cancel-detail"
-                                    data-bs-toggle="modal"
                                     class="button-h34-square typo-label-md"
                                   >
-                                    확인
+                                    영수증
                                   </button>
                                 </el-mypage-table-action-buttons>
                               </td>
                             </tr>
                             <tr>
-                              <td>00</td>
-                              <td>20251209123456776978</td>
-                              <td>전체 취소</td>
-                              <td>캐쉬</td>
-                              <td>999,999</td>
-                              <td>999,999</td>
-                              <td>999,999</td>
-                              <td>2025.12.09 10:14</td>
+                              <td>
+                                2025.12.24 09:21<br />
+                                (2025.12.24 09:25)
+                              </td>
+                              <td>E2512456768348768</td>
+                              <td class="align-left">
+                                일이삼사오육칠팔구십일이삼사오육칠팔구십
+                              </td>
+                              <td>결제성공</td>
+                              <td>999,999,990</td>
                               <td>
                                 <el-mypage-table-action-buttons>
                                   <button
                                     type="button"
-                                    data-bs-target="#el-modal-cancel-detail"
-                                    data-bs-toggle="modal"
                                     class="button-h34-square typo-label-md"
                                   >
-                                    확인
+                                    영수증
                                   </button>
                                 </el-mypage-table-action-buttons>
                               </td>
@@ -494,7 +536,7 @@
                           </el-pagination-next>
                         </nav>
                       </el-pagination>
-                    </el-mypage-cancel-list>
+                    </el-cash-order-history-list>
                   </el-mypage-content>
                 </el-mypage-section>
               </el-mypage-container>
@@ -544,94 +586,6 @@
       </el-alert-dialog>
     </el-alert>
     <!-- 종료: alert -->
-
-    <!-- 시작: modal: 취소 상세 내역 -->
-    <el-modal
-      class="modal fade el-modal-default"
-      id="el-modal-cancel-detail"
-      tabindex="-1"
-      aria-hidden="true"
-      data-bs-keyboard="false"
-    >
-      <el-modal-dialog
-        class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
-      >
-        <el-modal-content class="modal-content">
-          <el-modal-close-button>
-            <button type="button" data-bs-dismiss="modal" aria-label="닫기">
-              <el-icon class="h32-closed natural-0"></el-icon>
-            </button>
-          </el-modal-close-button>
-
-          <el-modal-header class="modal-header">
-            <h3 class="typo-subtitle-lg center">취소 상세 내역</h3>
-          </el-modal-header>
-
-          <el-modal-body class="modal-body">
-            <el-modal-cancel-detail>
-              <el-modal-cancel-detail-header class="typo-label-lg">
-                <el-cell-index>번호</el-cell-index>
-                <el-cell-email>이메일 주소</el-cell-email>
-                <el-cell-mobile>휴대폰번호</el-cell-mobile>
-              </el-modal-cancel-detail-header>
-
-              <el-modal-cancel-detail-body
-                class="typo-label-lg el-modal-scrollable-list-content"
-              >
-                <ul>
-                  <li>
-                    <el-cell-index>1</el-cell-index>
-                    <el-cell-email>officecon02@zlgoon.co.kr</el-cell-email>
-                    <el-cell-mobile>010-0000-0000</el-cell-mobile>
-                  </li>
-                  <li>
-                    <el-cell-index>1</el-cell-index>
-                    <el-cell-email>officecon02@zlgoon.co.kr</el-cell-email>
-                    <el-cell-mobile>010-0000-0000</el-cell-mobile>
-                  </li>
-                  <li>
-                    <el-cell-index>1</el-cell-index>
-                    <el-cell-email>officecon02@zlgoon.co.kr</el-cell-email>
-                    <el-cell-mobile>010-0000-0000</el-cell-mobile>
-                  </li>
-                  <li>
-                    <el-cell-index>1</el-cell-index>
-                    <el-cell-email>officecon02@zlgoon.co.kr</el-cell-email>
-                    <el-cell-mobile>010-0000-0000</el-cell-mobile>
-                  </li>
-                  <li>
-                    <el-cell-index>1</el-cell-index>
-                    <el-cell-email>officecon02@zlgoon.co.kr</el-cell-email>
-                    <el-cell-mobile>010-0000-0000</el-cell-mobile>
-                  </li>
-                  <li>
-                    <el-cell-index>1</el-cell-index>
-                    <el-cell-email>officecon02@zlgoon.co.kr</el-cell-email>
-                    <el-cell-mobile>010-0000-0000</el-cell-mobile>
-                  </li>
-                  <li>
-                    <el-cell-index>1</el-cell-index>
-                    <el-cell-email>officecon02@zlgoon.co.kr</el-cell-email>
-                    <el-cell-mobile>010-0000-0000</el-cell-mobile>
-                  </li>
-                </ul>
-              </el-modal-cancel-detail-body>
-            </el-modal-cancel-detail>
-          </el-modal-body>
-
-          <el-modal-footer class="modal-footer">
-            <button
-              type="button"
-              data-bs-dismiss="modal"
-              class="button-h50-fill typo-body-lg"
-            >
-              확인
-            </button>
-          </el-modal-footer>
-        </el-modal-content>
-      </el-modal-dialog>
-    </el-modal>
-    <!-- 종료: modal: 취소 상세 내역 -->
 
     <!-- 시작: modal: 캐쉬충전 -->
     <el-modal

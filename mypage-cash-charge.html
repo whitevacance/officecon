@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
   <head>
-    <title>취소/환불내역 | 오피스콘</title>
+    <title>캐쉬 충전(카드) | 오피스콘</title>
     <meta charset="UTF-8" />
     <meta name="format-detection" content="telephone=no" />
     <link rel="shortcut icon" href="./images/favicon.ico" />
@@ -229,272 +229,145 @@
                 </el-mypage-nav>
                 <el-mypage-section>
                   <el-section-title>
-                    <h3 class="typo-subtitle-lg">취소/환불내역</h3>
+                    <h3 class="typo-subtitle-lg">캐쉬 충전(카드)</h3>
                   </el-section-title>
 
                   <el-mypage-content>
-                    <el-filter-box>
-                      <dl>
-                        <dt>주문기간</dt>
-                        <dd>
-                          <el-date-tabs>
-                            <button
-                              type="button"
-                              class="text-black button-h43-square typo-body-sm"
-                              onclick="handleDateNow();"
-                            >
-                              오늘
-                            </button>
-                            <button
-                              type="button"
-                              class="text-black button-h43-square typo-body-sm"
-                              onclick="handleDateThreeDaysAgo();"
-                            >
-                              3일
-                            </button>
-                            <button
-                              type="button"
-                              class="text-black button-h43-square typo-body-sm"
-                              onclick="handleDateOneWeekAgo();"
-                            >
-                              1주일
-                            </button>
-                            <button
-                              type="button"
-                              class="text-black button-h43-square typo-body-sm active"
-                              onclick="handleDateOneMonthAgo();"
-                            >
-                              1개월
-                            </button>
-                            <button
-                              type="button"
-                              class="text-black button-h43-square typo-body-sm"
-                              onclick="handleDateThreeMonthsAgo();"
-                            >
-                              3개월
-                            </button>
-                          </el-date-tabs>
-
-                          <el-date-input class="typo-body-sm">
-                            <!-- [DEV] instance를 개별로 사용하는 datepicker -->
-                            <el-datepicker id="datepicker-start-1">
-                              <el-input
-                                class="tui-datepicker-input tui-datetime-input tui-has-focus"
-                              >
+                    <el-mypage-cash-charge>
+                      <el-mypage-cash-charge-article>
+                        <el-mypage-cash-charge-title class="typo-subtitle-sm">
+                          충전 정보
+                        </el-mypage-cash-charge-title>
+                        <el-form-with-label>
+                          <el-form-row>
+                            <el-form-label class="typo-body-sm">
+                              상호명(이름)<span>*</span>
+                            </el-form-label>
+                            <el-form-content>
+                              <el-input>
                                 <input
-                                  class="form-control custom-input datepicker-input"
+                                  disabled
+                                  class="form-control custom-input"
                                   type="text"
-                                  placeholder="시작 날짜"
-                                  value=""
-                                  aria-label="Date"
+                                  placeholder="상호명을 입력해 주세요."
+                                  value="주식회사 오피스콘"
                                 />
-                                <el-input-addon>
-                                  <button
-                                    type="button"
-                                    class="button-calendar"
-                                    aria-label="calendar"
-                                  >
-                                    <el-icon
-                                      class="h24-calendar natural-0"
-                                    ></el-icon>
-                                  </button>
-                                </el-input-addon>
                               </el-input>
-                              <!-- [DEV] instance를 개별로 사용하는 layer-->
-                              <el-datepicker-layer-custom></el-datepicker-layer-custom>
-                            </el-datepicker>
-                            ~
-
-                            <!-- [DEV] instance를 개별로 사용하는 datepicker -->
-                            <el-datepicker id="datepicker-end-1">
-                              <el-input
-                                class="tui-datepicker-input tui-datetime-input tui-has-focus"
-                              >
+                            </el-form-content>
+                          </el-form-row>
+                          <el-form-row>
+                            <el-form-label class="typo-body-sm">
+                              담당자명<span>*</span>
+                            </el-form-label>
+                            <el-form-content>
+                              <el-input>
                                 <input
-                                  class="form-control custom-input datepicker-input"
+                                  class="form-control custom-input"
                                   type="text"
-                                  placeholder="종료 날짜"
+                                  placeholder="담당자명을 입력해 주세요."
                                   value=""
-                                  aria-label="Date"
                                 />
-                                <el-input-addon>
-                                  <button
-                                    type="button"
-                                    class="button-calendar"
-                                    aria-label="calendar"
-                                  >
-                                    <el-icon
-                                      class="h24-calendar natural-0"
-                                    ></el-icon>
-                                  </button>
-                                </el-input-addon>
                               </el-input>
-                              <!-- [DEV] instance를 개별로 사용하는 layer-->
-                              <el-datepicker-layer-custom></el-datepicker-layer-custom>
-                            </el-datepicker>
-                          </el-date-input>
+                            </el-form-content>
+                          </el-form-row>
+                          <el-form-row>
+                            <el-form-label class="typo-body-sm">
+                              담당자명<span>*</span>
+                            </el-form-label>
+                            <el-form-content>
+                              <el-input class="is-invalid">
+                                <input
+                                  class="form-control custom-input"
+                                  type="text"
+                                  placeholder="담당자명을 입력해 주세요."
+                                  value=""
+                                />
+                                <el-invalide-feedback class="typo-label-lg">
+                                  필수 입력 항목입니다.
+                                </el-invalide-feedback>
+                              </el-input>
+                            </el-form-content>
+                          </el-form-row>
+                          <el-form-row>
+                            <el-form-label class="typo-body-sm">
+                              연락처<span>*</span>
+                            </el-form-label>
+                            <el-form-content>
+                              <el-input>
+                                <input
+                                  class="form-control custom-input"
+                                  type="text"
+                                  placeholder="연락처를 입력해 주세요."
+                                  value=""
+                                />
+                              </el-input>
+                            </el-form-content>
+                          </el-form-row>
+                          <el-form-row>
+                            <el-form-label class="typo-body-sm">
+                              이메일<span>*</span>
+                            </el-form-label>
+                            <el-form-content>
+                              <el-input>
+                                <input
+                                  class="form-control custom-input"
+                                  type="email"
+                                  placeholder="이메일을 입력해 주세요."
+                                  value=""
+                                />
+                              </el-input>
+                            </el-form-content>
+                          </el-form-row>
+                        </el-form-with-label>
+                      </el-mypage-cash-charge-article>
 
-                          <button
-                            type="button"
-                            class="button-h43-square-fill typo-body-sm"
-                          >
-                            검색
-                          </button>
-                        </dd>
-                      </dl>
-                    </el-filter-box>
+                      <el-mypage-cash-charge-article>
+                        <el-mypage-cash-charge-title class="typo-subtitle-sm">
+                          걸제 정보
+                        </el-mypage-cash-charge-title>
+                        <el-form-with-label>
+                          <el-form-row>
+                            <el-form-label class="typo-body-sm">
+                              상품명<span>*</span>
+                            </el-form-label>
+                            <el-form-content>
+                              <el-input>
+                                <input
+                                  class="form-control custom-input"
+                                  type="text"
+                                  placeholder="상품명을 입력해 주세요.(예시: 모바일 쿠폰 구매)"
+                                  value=""
+                                />
+                              </el-input>
+                            </el-form-content>
+                          </el-form-row>
+                          <el-form-row>
+                            <el-form-label class="typo-body-sm">
+                              결제금액<span>*</span>
+                            </el-form-label>
+                            <el-form-content>
+                              <el-input>
+                                <input
+                                  class="form-control custom-input"
+                                  type="text"
+                                  placeholder="결제금액을 입력해 주세요.(최소 1,000원)"
+                                  value=""
+                                />
+                              </el-input>
+                            </el-form-content>
+                          </el-form-row>
+                        </el-form-with-label>
+                      </el-mypage-cash-charge-article>
 
-                    <el-mypage-cancel-list>
-                      <el-table-util-bar>
-                        <el-table-util-left>
-                          <span class="typo-subtitle-sm">총 10건</span>
-                        </el-table-util-left>
-                      </el-table-util-bar>
-
-                      <el-mypage-table class="mypage-cancel-list-table">
-                        <table class="table align-middle">
-                          <colgroup>
-                            <col class="col-80" />
-                            <col class="col-auto" />
-                            <col class="col-100" />
-                            <col class="col-80" />
-                            <col class="col-120" />
-                            <col class="col-120" />
-                            <col class="col-120" />
-                            <col class="col-140" />
-                            <col class="col-80" />
-                          </colgroup>
-                          <thead>
-                            <tr>
-                              <th scope="col">번호</th>
-                              <th scope="col">주문번호</th>
-                              <th scope="col">구분</th>
-                              <th scope="col">결제수단</th>
-                              <th scope="col">총 환불금액</th>
-                              <th scope="col">결제 취소 금액</th>
-                              <th scope="col">캐쉬(리워드) 환불금액</th>
-                              <th scope="col">요청일시</th>
-                              <th scope="col">환불내역</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr class="empty">
-                              <td colspan="9">
-                                <el-board-list-empty class="typo-label-lg">
-                                  <el-icon class="etc-file-text"></el-icon>
-                                  취소/환불내역이 없습니다.
-                                </el-board-list-empty>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>00</td>
-                              <td>20251209123456776978</td>
-                              <td>전체 취소</td>
-                              <td>캐쉬</td>
-                              <td>999,999</td>
-                              <td>999,999</td>
-                              <td>999,999</td>
-                              <td>2025.12.09 10:14</td>
-                              <td>
-                                <el-mypage-table-action-buttons>
-                                  <button
-                                    type="button"
-                                    data-bs-target="#el-modal-cancel-detail"
-                                    data-bs-toggle="modal"
-                                    class="button-h34-square typo-label-md"
-                                  >
-                                    확인
-                                  </button>
-                                </el-mypage-table-action-buttons>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>00</td>
-                              <td>20251209123456776978</td>
-                              <td>전체 취소</td>
-                              <td>캐쉬</td>
-                              <td>999,999</td>
-                              <td>999,999</td>
-                              <td>999,999</td>
-                              <td>2025.12.09 10:14</td>
-                              <td>
-                                <el-mypage-table-action-buttons>
-                                  <button
-                                    type="button"
-                                    data-bs-target="#el-modal-cancel-detail"
-                                    data-bs-toggle="modal"
-                                    class="button-h34-square typo-label-md"
-                                  >
-                                    확인
-                                  </button>
-                                </el-mypage-table-action-buttons>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </el-mypage-table>
-
-                      <el-pagination>
-                        <nav aria-label="Page navigation">
-                          <el-pagination-prev>
-                            <a href="#" aria-label="처음">
-                              <el-icon
-                                class="h20-chevrons-left natural-0"
-                              ></el-icon>
-                            </a>
-                            <a href="#" aria-label="이전">
-                              <el-icon
-                                class="h20-arrow-left natural-0"
-                              ></el-icon>
-                            </a>
-                          </el-pagination-prev>
-                          <ul class="typo-body-sm">
-                            <li class="active">
-                              <a href="#">1</a>
-                            </li>
-                            <li>
-                              <a href="#">2</a>
-                            </li>
-                            <li>
-                              <a href="#">3</a>
-                            </li>
-                            <li>
-                              <a href="#">4</a>
-                            </li>
-                            <li>
-                              <a href="#">5</a>
-                            </li>
-                            <li>
-                              <a href="#">6</a>
-                            </li>
-                            <li>
-                              <a href="#">7</a>
-                            </li>
-                            <li>
-                              <a href="#">8</a>
-                            </li>
-                            <li>
-                              <a href="#">9</a>
-                            </li>
-                            <li>
-                              <a href="#">10</a>
-                            </li>
-                          </ul>
-                          <el-pagination-next>
-                            <a href="#" aria-label="다음">
-                              <el-icon
-                                class="h20-arrow-right natural-0"
-                              ></el-icon>
-                            </a>
-                            <a href="#" aria-label="마지막">
-                              <el-icon
-                                class="h20-chevrons-right natural-0"
-                              ></el-icon>
-                            </a>
-                          </el-pagination-next>
-                        </nav>
-                      </el-pagination>
-                    </el-mypage-cancel-list>
+                      <el-mypage-cash-charge-cta>
+                        <button
+                          type="button"
+                          class="button-h50-square-fill typo-body-sm"
+                        >
+                          <span>결제하기</span>
+                        </button>
+                      </el-mypage-cash-charge-cta>
+                    </el-mypage-cash-charge>
                   </el-mypage-content>
                 </el-mypage-section>
               </el-mypage-container>
@@ -544,94 +417,6 @@
       </el-alert-dialog>
     </el-alert>
     <!-- 종료: alert -->
-
-    <!-- 시작: modal: 취소 상세 내역 -->
-    <el-modal
-      class="modal fade el-modal-default"
-      id="el-modal-cancel-detail"
-      tabindex="-1"
-      aria-hidden="true"
-      data-bs-keyboard="false"
-    >
-      <el-modal-dialog
-        class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
-      >
-        <el-modal-content class="modal-content">
-          <el-modal-close-button>
-            <button type="button" data-bs-dismiss="modal" aria-label="닫기">
-              <el-icon class="h32-closed natural-0"></el-icon>
-            </button>
-          </el-modal-close-button>
-
-          <el-modal-header class="modal-header">
-            <h3 class="typo-subtitle-lg center">취소 상세 내역</h3>
-          </el-modal-header>
-
-          <el-modal-body class="modal-body">
-            <el-modal-cancel-detail>
-              <el-modal-cancel-detail-header class="typo-label-lg">
-                <el-cell-index>번호</el-cell-index>
-                <el-cell-email>이메일 주소</el-cell-email>
-                <el-cell-mobile>휴대폰번호</el-cell-mobile>
-              </el-modal-cancel-detail-header>
-
-              <el-modal-cancel-detail-body
-                class="typo-label-lg el-modal-scrollable-list-content"
-              >
-                <ul>
-                  <li>
-                    <el-cell-index>1</el-cell-index>
-                    <el-cell-email>officecon02@zlgoon.co.kr</el-cell-email>
-                    <el-cell-mobile>010-0000-0000</el-cell-mobile>
-                  </li>
-                  <li>
-                    <el-cell-index>1</el-cell-index>
-                    <el-cell-email>officecon02@zlgoon.co.kr</el-cell-email>
-                    <el-cell-mobile>010-0000-0000</el-cell-mobile>
-                  </li>
-                  <li>
-                    <el-cell-index>1</el-cell-index>
-                    <el-cell-email>officecon02@zlgoon.co.kr</el-cell-email>
-                    <el-cell-mobile>010-0000-0000</el-cell-mobile>
-                  </li>
-                  <li>
-                    <el-cell-index>1</el-cell-index>
-                    <el-cell-email>officecon02@zlgoon.co.kr</el-cell-email>
-                    <el-cell-mobile>010-0000-0000</el-cell-mobile>
-                  </li>
-                  <li>
-                    <el-cell-index>1</el-cell-index>
-                    <el-cell-email>officecon02@zlgoon.co.kr</el-cell-email>
-                    <el-cell-mobile>010-0000-0000</el-cell-mobile>
-                  </li>
-                  <li>
-                    <el-cell-index>1</el-cell-index>
-                    <el-cell-email>officecon02@zlgoon.co.kr</el-cell-email>
-                    <el-cell-mobile>010-0000-0000</el-cell-mobile>
-                  </li>
-                  <li>
-                    <el-cell-index>1</el-cell-index>
-                    <el-cell-email>officecon02@zlgoon.co.kr</el-cell-email>
-                    <el-cell-mobile>010-0000-0000</el-cell-mobile>
-                  </li>
-                </ul>
-              </el-modal-cancel-detail-body>
-            </el-modal-cancel-detail>
-          </el-modal-body>
-
-          <el-modal-footer class="modal-footer">
-            <button
-              type="button"
-              data-bs-dismiss="modal"
-              class="button-h50-fill typo-body-lg"
-            >
-              확인
-            </button>
-          </el-modal-footer>
-        </el-modal-content>
-      </el-modal-dialog>
-    </el-modal>
-    <!-- 종료: modal: 취소 상세 내역 -->
 
     <!-- 시작: modal: 캐쉬충전 -->
     <el-modal
@@ -1171,95 +956,5 @@
 
     <!-- [DEV] 웹 컴포넌트js: 개발 시 삭제해 주세요 -->
     <script src="./js/web-components.js" crossorigin="anonymous"></script>
-
-    <script>
-      // 시작: datepicker - 필터 기간 선택
-      const now = new Date();
-      const threeDaysAgo = new Date().setDate(new Date().getDate() - 3);
-      const oneWeekAgo = new Date().setDate(new Date().getDate() - 7);
-      const oneMonthAgo = new Date().setMonth(new Date().getMonth() - 1);
-      const threeMonthsAgo = new Date().setMonth(new Date().getMonth() - 3);
-      const elDateTabButtons = document.querySelectorAll('el-date-tabs button');
-      const DATE_FORMAT = 'yyyy.MM.dd';
-
-      const datepickerInstanceStartDate_1 = createDatepickerInstance({
-        targetDatePickerEl: document.querySelector('#datepicker-start-1'),
-        options: {
-          date: oneMonthAgo,
-          input: { format: DATE_FORMAT },
-        },
-      });
-
-      const datepickerInstanceEndDate_1 = createDatepickerInstance({
-        targetDatePickerEl: document.querySelector('#datepicker-end-1'),
-        options: {
-          date: now,
-          input: { format: DATE_FORMAT },
-        },
-      });
-
-      const handleEndDateNow = () => {
-        if (datepickerInstanceEndDate_1) {
-          datepickerInstanceEndDate_1.setDate(new Date());
-        }
-      };
-
-      const handleDateNow = () => {
-        if (datepickerInstanceStartDate_1) {
-          datepickerInstanceStartDate_1.setDate(new Date());
-        }
-        handleEndDateNow();
-      };
-
-      const handleDateThreeDaysAgo = () => {
-        if (datepickerInstanceStartDate_1) {
-          datepickerInstanceStartDate_1.setDate(threeDaysAgo);
-        }
-        handleEndDateNow();
-      };
-
-      const handleDateOneWeekAgo = () => {
-        if (datepickerInstanceStartDate_1) {
-          datepickerInstanceStartDate_1.setDate(oneWeekAgo);
-        }
-        handleEndDateNow();
-      };
-
-      const handleDateOneMonthAgo = () => {
-        if (datepickerInstanceStartDate_1) {
-          datepickerInstanceStartDate_1.setDate(oneMonthAgo);
-        }
-        handleEndDateNow();
-      };
-
-      const handleDateThreeMonthsAgo = () => {
-        if (datepickerInstanceStartDate_1) {
-          datepickerInstanceStartDate_1.setDate(threeMonthsAgo);
-        }
-        handleEndDateNow();
-      };
-
-      // event 바인딩
-      if (datepickerInstanceStartDate_1) {
-        datepickerInstanceStartDate_1.on('change', () => {
-          if (datepickerInstanceStartDate_1.isOpened()) {
-            elDateTabButtons.forEach((button) => {
-              button.classList.remove('active');
-            });
-          }
-        });
-      }
-
-      if (datepickerInstanceEndDate_1) {
-        datepickerInstanceEndDate_1.on('change', () => {
-          if (datepickerInstanceEndDate_1.isOpened()) {
-            elDateTabButtons.forEach((button) => {
-              button.classList.remove('active');
-            });
-          }
-        });
-      }
-      // 종료: datepicker - 필터 기간 선택
-    </script>
   </body>
 </html>

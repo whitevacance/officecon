@@ -3800,6 +3800,18 @@ el-modal-form {
       align-items: center;
       gap: 0px 8px;
       width: calc(100% - 124px);
+
+      textarea {
+        height: 120px;
+      }
+
+      el-form-textarea-length {
+        display: block;
+        width: 100%;
+        padding-top: 2px;
+        text-align: right;
+        color: var(--color-natural-40);
+      }
     }
 
     &.height-60 {
@@ -3818,6 +3830,48 @@ el-modal-form {
   }
 }
 /* 종료: 공통 > 모달팝업 내 입력 폼 */
+
+/* 시작: 공통 > 레이블이 있는 입력 폼 */
+el-form-with-label {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  padding: 0 16px;
+
+  el-form-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+
+    el-form-label {
+      align-self: flex-start;
+      flex-grow: 0;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      width: 142px;
+      height: 43px;
+      font-weight: 600 !important;
+      position: relative;
+      span {
+        color: var(--color-red-40);
+      }
+    }
+
+    el-form-content {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0px 8px;
+      width: 100%;
+      /* width: calc(100% - 154px); */
+    }
+  }
+}
+/* 종료: 공통 > 레이블이 있는 입력 폼 */
 
 /* 시작: 공통 > 필터 박스 */
 el-filter-box {
@@ -11089,6 +11143,11 @@ el-table-util-bar {
     align-items: center;
     gap: 6px;
   }
+
+  el-table-util-filter {
+    display: block;
+    width: 122px;
+  }
 }
 
 el-mypage-table {
@@ -11126,6 +11185,14 @@ el-mypage-table {
       th {
         border-top: 1px solid var(--color-natural-0) !important;
       }
+    }
+
+    el-mypage-table-action-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      width: 64px;
+      margin: 0 auto;
     }
   }
 }
@@ -11305,14 +11372,6 @@ el-mypage-order-list {
           }
         }
       }
-    }
-
-    el-mypage-table-action-buttons {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-      width: 64px;
-      margin: 0 auto;
     }
   }
 }
@@ -11791,6 +11850,10 @@ el-modal-cancel-payment {
 
       .total-refund-amount {
         font-weight: 700 !important;
+      }
+
+      .text-orange {
+        color: var(--color-orange-officecon);
       }
     }
   }
@@ -12339,6 +12402,131 @@ el-certification-guide {
 
   & > p {
     color: var(--color-natural-20);
+  }
+}
+
+el-modal-cash-refund-all {
+  display: block;
+  width: 500px;
+
+  el-mypage-cashReward-status {
+    margin-top: 16px;
+    min-height: 66px;
+  }
+
+  el-modal-form {
+    padding-top: 24px;
+  }
+}
+
+el-mypage-cashReward-list {
+  display: block;
+  width: 100%;
+  padding-top: 32px;
+
+  .mypage-cashReward-list-table table.table {
+    .col-auto {
+      width: auto;
+    }
+    .col-100 {
+      width: 100px;
+    }
+    .col-120 {
+      width: 120px;
+    }
+    .col-140 {
+      width: 140px;
+    }
+    .col-160 {
+      width: 160px;
+    }
+
+    el-mypage-table-cashReward-content {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+
+      a {
+        color: var(--color-natural-20);
+        text-decoration: underline;
+      }
+
+      & > div {
+        width: 100%;
+        word-break: keep-all;
+      }
+    }
+  }
+}
+
+el-mypage-cash-charge {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  width: 100%;
+
+  el-mypage-cash-charge-article {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+
+    el-mypage-cash-charge-title {
+      display: block;
+      padding-bottom: 16px;
+      font-weight: 700 !important;
+      border-bottom: 1px solid var(--color-natural-80);
+    }
+
+    el-form-with-label {
+      width: 588px;
+      gap: 8px;
+
+      el-form-row {
+        el-form-label {
+          font-weight: 700 !important;
+          color: var(--color-natural-20);
+        }
+      }
+    }
+  }
+
+  el-mypage-cash-charge-cta {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-top: 32px;
+
+    button {
+      width: 134px;
+    }
+  }
+}
+
+el-cash-order-history-list {
+  display: block;
+  width: 100%;
+  padding-top: 32px;
+
+  .mypage-cash-order-history-table table.table {
+    .col-auto {
+      width: auto;
+    }
+    .col-120 {
+      width: 120px;
+    }
+    .col-140 {
+      width: 140px;
+    }
+    .col-160 {
+      width: 160px;
+    }
+    .col-180 {
+      width: 180px;
+    }
+    .col-190 {
+      width: 190px;
+    }
   }
 }
 /* 종료: 마이페이지 > 캐쉬/리워드 내역 */
