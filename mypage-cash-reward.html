@@ -260,18 +260,24 @@
                           </button>
                           <button
                             type="button"
+                            data-bs-toggle="modal"
+                            data-bs-target="#el-alert"
                             class="button-h34-square typo-label-md text-black"
                           >
                             캐쉬 환불
                           </button>
                           <button
                             type="button"
+                            data-bs-target="#el-modal-virtual-account-history"
+                            data-bs-toggle="modal"
                             class="button-h34-square typo-label-md text-black"
                           >
                             가상계좌 발급내역
                           </button>
                           <button
                             type="button"
+                            data-bs-toggle="modal"
+                            data-bs-target="#el-modal-policy-guide"
                             class="button-h34-square typo-label-md text-black"
                           >
                             정책 안내
@@ -387,9 +393,22 @@
       <el-alert-dialog class="modal-dialog modal-dialog-centered">
         <el-alert-content class="modal-content">
           <el-alert-body class="typo-subtitle-sm">
-            얼럿 샘플입니다.
-            <br />
-            개발 시 내용이 변경됩니다.
+            <el-certification-guide>
+              <h4 class="typo-body-lg">
+                소중한 정보 보호를 위하여 캐쉬 환불 요청시
+                <br />
+                본인인증 절차가 필요합니다.
+              </h4>
+              <el-certification-guide-myinfo class="typo-body-sm">
+                등록된 본인인증 정보
+                <strong class="typo-body-lg">010-****-5678</strong>
+              </el-certification-guide-myinfo>
+              <p class="typo-body-sm">
+                본인인증 정보 변경이 필요한 경우
+                <br />
+                고객센터 &gt; 1:1 문의 게시판을 통해 요청해 주세요.
+              </p>
+            </el-certification-guide>
           </el-alert-body>
           <el-alert-footer>
             <button
@@ -404,6 +423,66 @@
       </el-alert-dialog>
     </el-alert>
     <!-- 종료: alert -->
+
+    <!-- 시작: modal: 정책안내 -->
+    <el-modal
+      class="modal fade el-modal-default"
+      id="el-modal-policy-guide"
+      tabindex="-1"
+      aria-hidden="true"
+      data-bs-keyboard="false"
+    >
+      <el-modal-dialog
+        class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+      >
+        <el-modal-content class="modal-content">
+          <el-modal-close-button>
+            <button type="button" data-bs-dismiss="modal" aria-label="닫기">
+              <el-icon class="h32-closed natural-0"></el-icon>
+            </button>
+          </el-modal-close-button>
+
+          <el-modal-header class="modal-header">
+            <h3 class="typo-subtitle-lg center">정책안내</h3>
+          </el-modal-header>
+
+          <el-modal-body class="modal-body">
+            <el-modal-policy-guide>
+              <el-info-box>
+                <el-info-box-title class="typo-body-sm">
+                  캐쉬 충전/환불 유의사항
+                </el-info-box-title>
+                <el-marker-list class="weight-regular color-gray">
+                  <ul>
+                    <li>
+                      캐쉬 환불은 지급(충전,환불)후 3일이 경과된 후에는 10%의
+                      환불수수료가 발생합니다.
+                    </li>
+                    <li>가상계좌 발급은 1일 한도 최대 20,000,000원입니다.</li>
+                    <li>
+                      캐쉬 소멸 기한은 마지막 이용(충전, 사용)으로 부터
+                      5년입니다.
+                    </li>
+                    <li>1,000캐쉬 미만은 환전이 불가능합니다.</li>
+                  </ul>
+                </el-marker-list>
+              </el-info-box>
+            </el-modal-policy-guide>
+          </el-modal-body>
+
+          <el-modal-footer class="modal-footer">
+            <button
+              type="button"
+              data-bs-dismiss="modal"
+              class="button-h50-fill typo-body-lg"
+            >
+              확인
+            </button>
+          </el-modal-footer>
+        </el-modal-content>
+      </el-modal-dialog>
+    </el-modal>
+    <!-- 종료: modal: 정책안내 -->
 
     <!-- 시작: modal: 캐쉬충전 -->
     <el-modal
@@ -468,7 +547,7 @@
                 </el-radio>
               </el-charge-method>
 
-              <el-charge-caution>
+              <el-info-box>
                 <el-marker-list class="weight-regular color-gray">
                   <ul>
                     <li> 보유 캐쉬 한도는 100,000,000원 입니다. </li>
@@ -490,7 +569,7 @@
                     </li>
                   </ul>
                 </el-marker-list>
-              </el-charge-caution>
+              </el-info-box>
             </el-modal-cash-charge>
           </el-modal-body>
 
@@ -510,6 +589,198 @@
       </el-modal-dialog>
     </el-modal>
     <!-- 종료: modal: 캐쉬충전 -->
+
+    <!-- 시작: modal: 가상 계좌 발급내역 -->
+    <el-modal
+      class="modal fade el-modal-default"
+      id="el-modal-virtual-account-history"
+      tabindex="-1"
+      aria-hidden="true"
+      data-bs-keyboard="false"
+    >
+      <el-modal-dialog
+        class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+      >
+        <el-modal-content class="modal-content">
+          <el-modal-close-button>
+            <button type="button" data-bs-dismiss="modal" aria-label="닫기">
+              <el-icon class="h32-closed natural-0"></el-icon>
+            </button>
+          </el-modal-close-button>
+
+          <el-modal-header class="modal-header">
+            <h3 class="typo-subtitle-lg center">가상 계좌 발급내역</h3>
+          </el-modal-header>
+
+          <el-modal-body class="modal-body">
+            <el-modal-virtual-account-history>
+              <el-modal-virtual-account-history-header class="typo-label-lg">
+                <el-cell-index>번호</el-cell-index>
+                <el-cell-bank-name>은행명</el-cell-bank-name>
+                <el-cell-bank-account>가상 계좌 번호</el-cell-bank-account>
+                <el-cell-bank-account-holder>
+                  예금주
+                </el-cell-bank-account-holder>
+                <el-cell-amount>입금액</el-cell-amount>
+                <el-cell-deposit-date>발행일자</el-cell-deposit-date>
+                <el-cell-expire-date>만료일자</el-cell-expire-date>
+                <el-cell-status>상태</el-cell-status>
+              </el-modal-virtual-account-history-header>
+
+              <el-modal-virtual-account-history-body
+                class="typo-label-lg el-modal-scrollable-list-content"
+              >
+                <ul>
+                  <li>
+                    <el-cell-index>00</el-cell-index>
+                    <el-cell-bank-name>ㅇㅇ은행</el-cell-bank-name>
+                    <el-cell-bank-account>000-0000-000000</el-cell-bank-account>
+                    <el-cell-bank-account-holder>
+                      홍길동
+                    </el-cell-bank-account-holder>
+                    <el-cell-amount>9,999,999</el-cell-amount>
+                    <el-cell-deposit-date>2025.09.09</el-cell-deposit-date>
+                    <el-cell-expire-date>2025.09.09</el-cell-expire-date>
+                    <el-cell-status>상태</el-cell-status>
+                  </li>
+                  <li>
+                    <el-cell-index>00</el-cell-index>
+                    <el-cell-bank-name>ㅇㅇ은행</el-cell-bank-name>
+                    <el-cell-bank-account>000-0000-000000</el-cell-bank-account>
+                    <el-cell-bank-account-holder>
+                      홍길동
+                    </el-cell-bank-account-holder>
+                    <el-cell-amount>9,999,999</el-cell-amount>
+                    <el-cell-deposit-date>2025.09.09</el-cell-deposit-date>
+                    <el-cell-expire-date>2025.09.09</el-cell-expire-date>
+                    <el-cell-status>상태</el-cell-status>
+                  </li>
+                  <li>
+                    <el-cell-index>00</el-cell-index>
+                    <el-cell-bank-name>ㅇㅇ은행</el-cell-bank-name>
+                    <el-cell-bank-account>000-0000-000000</el-cell-bank-account>
+                    <el-cell-bank-account-holder>
+                      홍길동
+                    </el-cell-bank-account-holder>
+                    <el-cell-amount>9,999,999</el-cell-amount>
+                    <el-cell-deposit-date>2025.09.09</el-cell-deposit-date>
+                    <el-cell-expire-date>2025.09.09</el-cell-expire-date>
+                    <el-cell-status>상태</el-cell-status>
+                  </li>
+                  <li>
+                    <el-cell-index>00</el-cell-index>
+                    <el-cell-bank-name>ㅇㅇ은행</el-cell-bank-name>
+                    <el-cell-bank-account>000-0000-000000</el-cell-bank-account>
+                    <el-cell-bank-account-holder>
+                      홍길동
+                    </el-cell-bank-account-holder>
+                    <el-cell-amount>9,999,999</el-cell-amount>
+                    <el-cell-deposit-date>2025.09.09</el-cell-deposit-date>
+                    <el-cell-expire-date>2025.09.09</el-cell-expire-date>
+                    <el-cell-status>상태</el-cell-status>
+                  </li>
+                  <li>
+                    <el-cell-index>00</el-cell-index>
+                    <el-cell-bank-name>ㅇㅇ은행</el-cell-bank-name>
+                    <el-cell-bank-account>000-0000-000000</el-cell-bank-account>
+                    <el-cell-bank-account-holder>
+                      홍길동
+                    </el-cell-bank-account-holder>
+                    <el-cell-amount>9,999,999</el-cell-amount>
+                    <el-cell-deposit-date>2025.09.09</el-cell-deposit-date>
+                    <el-cell-expire-date>2025.09.09</el-cell-expire-date>
+                    <el-cell-status>상태</el-cell-status>
+                  </li>
+                  <li>
+                    <el-cell-index>00</el-cell-index>
+                    <el-cell-bank-name>ㅇㅇ은행</el-cell-bank-name>
+                    <el-cell-bank-account>000-0000-000000</el-cell-bank-account>
+                    <el-cell-bank-account-holder>
+                      홍길동
+                    </el-cell-bank-account-holder>
+                    <el-cell-amount>9,999,999</el-cell-amount>
+                    <el-cell-deposit-date>2025.09.09</el-cell-deposit-date>
+                    <el-cell-expire-date>2025.09.09</el-cell-expire-date>
+                    <el-cell-status>상태</el-cell-status>
+                  </li>
+                  <li>
+                    <el-cell-index>00</el-cell-index>
+                    <el-cell-bank-name>ㅇㅇ은행</el-cell-bank-name>
+                    <el-cell-bank-account>000-0000-000000</el-cell-bank-account>
+                    <el-cell-bank-account-holder>
+                      홍길동
+                    </el-cell-bank-account-holder>
+                    <el-cell-amount>9,999,999</el-cell-amount>
+                    <el-cell-deposit-date>2025.09.09</el-cell-deposit-date>
+                    <el-cell-expire-date>2025.09.09</el-cell-expire-date>
+                    <el-cell-status>상태</el-cell-status>
+                  </li>
+                  <li>
+                    <el-cell-index>00</el-cell-index>
+                    <el-cell-bank-name>ㅇㅇ은행</el-cell-bank-name>
+                    <el-cell-bank-account>000-0000-000000</el-cell-bank-account>
+                    <el-cell-bank-account-holder>
+                      홍길동
+                    </el-cell-bank-account-holder>
+                    <el-cell-amount>9,999,999</el-cell-amount>
+                    <el-cell-deposit-date>2025.09.09</el-cell-deposit-date>
+                    <el-cell-expire-date>2025.09.09</el-cell-expire-date>
+                    <el-cell-status>상태</el-cell-status>
+                  </li>
+                  <li>
+                    <el-cell-index>00</el-cell-index>
+                    <el-cell-bank-name>ㅇㅇ은행</el-cell-bank-name>
+                    <el-cell-bank-account>000-0000-000000</el-cell-bank-account>
+                    <el-cell-bank-account-holder>
+                      홍길동
+                    </el-cell-bank-account-holder>
+                    <el-cell-amount>9,999,999</el-cell-amount>
+                    <el-cell-deposit-date>2025.09.09</el-cell-deposit-date>
+                    <el-cell-expire-date>2025.09.09</el-cell-expire-date>
+                    <el-cell-status>상태</el-cell-status>
+                  </li>
+                  <li>
+                    <el-cell-index>00</el-cell-index>
+                    <el-cell-bank-name>ㅇㅇ은행</el-cell-bank-name>
+                    <el-cell-bank-account>000-0000-000000</el-cell-bank-account>
+                    <el-cell-bank-account-holder>
+                      홍길동
+                    </el-cell-bank-account-holder>
+                    <el-cell-amount>9,999,999</el-cell-amount>
+                    <el-cell-deposit-date>2025.09.09</el-cell-deposit-date>
+                    <el-cell-expire-date>2025.09.09</el-cell-expire-date>
+                    <el-cell-status>상태</el-cell-status>
+                  </li>
+                  <li>
+                    <el-cell-index>00</el-cell-index>
+                    <el-cell-bank-name>ㅇㅇ은행</el-cell-bank-name>
+                    <el-cell-bank-account>000-0000-000000</el-cell-bank-account>
+                    <el-cell-bank-account-holder>
+                      홍길동
+                    </el-cell-bank-account-holder>
+                    <el-cell-amount>9,999,999</el-cell-amount>
+                    <el-cell-deposit-date>2025.09.09</el-cell-deposit-date>
+                    <el-cell-expire-date>2025.09.09</el-cell-expire-date>
+                    <el-cell-status>상태</el-cell-status>
+                  </li>
+                </ul>
+              </el-modal-virtual-account-history-body>
+            </el-modal-virtual-account-history>
+          </el-modal-body>
+
+          <el-modal-footer class="modal-footer">
+            <button
+              type="button"
+              data-bs-dismiss="modal"
+              class="button-h50-fill typo-body-lg"
+            >
+              확인
+            </button>
+          </el-modal-footer>
+        </el-modal-content>
+      </el-modal-dialog>
+    </el-modal>
+    <!-- 종료: modal: 가상 계좌 발급내역 -->
 
     <!-- 시작: modal: 기업 회원 전환 신청 -->
     <el-modal

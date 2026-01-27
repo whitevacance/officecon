@@ -119,7 +119,7 @@ if (window !== undefined) {
 initModalEstimateDownload();
 // 종료: el-modal-estimate-download
 
-// 시작: handel modal scroll
+// 시작: handle modal scroll
 const hasModalInnerScroll = (targetEl) => {
   if (!targetEl) {
     return false;
@@ -148,6 +148,9 @@ const initHandleModalScroll = () => {
       );
       const targetModalScrollableListContentEl = modalEl.querySelector(
         'el-modal-scrollable-list-content'
+      );
+      const targetModalScrollableListContentEl2 = modalEl.querySelector(
+        '.el-modal-scrollable-list-content'
       );
       const targetModalFooterEl = modalEl.querySelector(
         'el-modal-footer.modal-footer'
@@ -233,8 +236,16 @@ const initHandleModalScroll = () => {
         }
 
         // 모달 내부 스크롤리스트 컨텐츠 스크롤 여부 확인
-        if (targetModalScrollableListContentEl) {
-          if (hasModalInnerScroll(targetModalScrollableListContentEl)) {
+        if (
+          targetModalScrollableListContentEl ||
+          targetModalScrollableListContentEl2
+        ) {
+          if (
+            hasModalInnerScroll(
+              targetModalScrollableListContentEl ||
+                targetModalScrollableListContentEl2
+            )
+          ) {
             targetModalFooterEl.classList.add('shadow-top');
 
             // 스크롤 이벤트 리스너가 아직 등록되지 않았을 때만 등록
@@ -242,9 +253,18 @@ const initHandleModalScroll = () => {
               scrollHandlerForScrollableList = () => {
                 // 스크롤 이벤트 처리 로직
                 const isScrollBottom =
-                  targetModalScrollableListContentEl.scrollTop +
-                    targetModalScrollableListContentEl.clientHeight >=
-                  targetModalScrollableListContentEl.scrollHeight;
+                  (
+                    targetModalScrollableListContentEl ||
+                    targetModalScrollableListContentEl2
+                  ).scrollTop +
+                    (
+                      targetModalScrollableListContentEl ||
+                      targetModalScrollableListContentEl2
+                    ).clientHeight >=
+                  (
+                    targetModalScrollableListContentEl ||
+                    targetModalScrollableListContentEl2
+                  ).scrollHeight;
 
                 if (isScrollBottom) {
                   targetModalFooterEl.classList.remove('shadow-top');
@@ -253,10 +273,10 @@ const initHandleModalScroll = () => {
                 }
               };
 
-              targetModalScrollableListContentEl.addEventListener(
-                'scroll',
-                scrollHandlerForScrollableList
-              );
+              (
+                targetModalScrollableListContentEl ||
+                targetModalScrollableListContentEl2
+              ).addEventListener('scroll', scrollHandlerForScrollableList);
               isScrollListenerAttachedForScrollableList = true;
             }
           } else {
@@ -265,10 +285,10 @@ const initHandleModalScroll = () => {
               isScrollListenerAttachedForScrollableList &&
               scrollHandlerForScrollableList
             ) {
-              targetModalScrollableListContentEl.removeEventListener(
-                'scroll',
-                scrollHandlerForScrollableList
-              );
+              (
+                targetModalScrollableListContentEl ||
+                targetModalScrollableListContentEl2
+              ).removeEventListener('scroll', scrollHandlerForScrollableList);
               isScrollListenerAttachedForScrollableList = false;
               scrollHandlerForScrollableList = null;
             }
@@ -311,12 +331,13 @@ const initHandleModalScroll = () => {
           if (
             isScrollListenerAttachedForScrollableList &&
             scrollHandlerForScrollableList &&
-            targetModalScrollableListContentEl
+            (targetModalScrollableListContentEl ||
+              targetModalScrollableListContentEl2)
           ) {
-            targetModalScrollableListContentEl.removeEventListener(
-              'scroll',
-              scrollHandlerForScrollableList
-            );
+            (
+              targetModalScrollableListContentEl ||
+              targetModalScrollableListContentEl2
+            ).removeEventListener('scroll', scrollHandlerForScrollableList);
             isScrollListenerAttachedForScrollableList = false;
             scrollHandlerForScrollableList = null;
           }
@@ -335,7 +356,7 @@ if (window !== undefined) {
 }
 
 initHandleModalScroll();
-// 종료: el-modal-default
+// 종료: handle modal scroll
 
 // 시작: el-alert
 const initAlert = () => {

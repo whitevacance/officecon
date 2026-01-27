@@ -572,7 +572,9 @@
                 <el-cell-mobile>휴대폰번호</el-cell-mobile>
               </el-modal-cancel-detail-header>
 
-              <el-modal-cancel-detail-body class="typo-label-lg">
+              <el-modal-cancel-detail-body
+                class="typo-label-lg el-modal-scrollable-list-content"
+              >
                 <ul>
                   <li>
                     <el-cell-index>1</el-cell-index>
@@ -691,7 +693,7 @@
                 </el-radio>
               </el-charge-method>
 
-              <el-charge-caution>
+              <el-info-box>
                 <el-marker-list class="weight-regular color-gray">
                   <ul>
                     <li> 보유 캐쉬 한도는 100,000,000원 입니다. </li>
@@ -713,7 +715,7 @@
                     </li>
                   </ul>
                 </el-marker-list>
-              </el-charge-caution>
+              </el-info-box>
             </el-modal-cash-charge>
           </el-modal-body>
 

@@ -3900,6 +3900,13 @@ el-info-box {
   &.bg-gray {
     background-color: var(--color-natural-98);
   }
+
+  el-info-box-title {
+    display: block;
+    width: 100%;
+    font-weight: 700 !important;
+    margin-bottom: 8px;
+  }
 }
 /* 종료: 공통 > el-infto-box */
 
@@ -11056,13 +11063,6 @@ el-mypage {
         }
       }
     }
-
-    el-charge-caution {
-      display: block;
-      padding: 16px 24px;
-      border-radius: 8px;
-      background-color: var(--color-blue-10);
-    }
   }
 }
 
@@ -12182,6 +12182,164 @@ el-mypage-cashReward {
         }
       }
     }
+  }
+}
+
+el-modal-virtual-account-history {
+  display: block;
+  width: 900px;
+
+  el-cell-index {
+    flex-grow: 0;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    padding: 0 16px;
+  }
+  el-cell-bank-name {
+    flex-grow: 0;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    padding: 0 16px;
+  }
+  el-cell-bank-account {
+    flex-grow: 0;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    padding: 0 16px;
+  }
+  el-cell-bank-account-holder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0 16px;
+  }
+  el-cell-amount {
+    flex-grow: 0;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    padding: 0 16px;
+  }
+  el-cell-deposit-date {
+    flex-grow: 0;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    padding: 0 16px;
+  }
+  el-cell-expire-date {
+    flex-grow: 0;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    padding: 0 16px;
+  }
+  el-cell-status {
+    flex-grow: 0;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    padding: 0 16px;
+  }
+
+  el-modal-virtual-account-history-header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 43px;
+    border-radius: 10px;
+    border: 1px solid var(--color-natural-80);
+    background-color: var(--color-natural-95);
+    color: var(--color-natural-30);
+    font-weight: 600 !important;
+    overflow: auto;
+    scrollbar-color: transparent transparent;
+    scrollbar-width: thin;
+    scrollbar-gutter: stable;
+  }
+
+  el-modal-virtual-account-history-body {
+    display: block;
+    width: 100%;
+    max-height: 430px;
+    position: relative;
+    overflow: auto;
+    scrollbar-color: var(--color-opacity-black-30) transparent;
+    scrollbar-width: thin;
+    scrollbar-gutter: stable;
+
+    & > ul {
+      width: 100%;
+
+      & > li {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        min-height: 43px;
+        padding: 10px 0;
+        border-bottom: 1px solid var(--color-natural-80);
+      }
+    }
+
+    el-board-list-empty {
+      height: 194px;
+    }
+  }
+}
+
+el-modal-policy-guide {
+  display: block;
+  width: 508px;
+}
+
+el-certification-guide {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 280px;
+
+  & > h4 {
+    font-weight: 700 !important;
+  }
+
+  el-certification-guide-myinfo {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    color: var(--color-natural-20);
+    padding: 24px 32px;
+    border-radius: 8px;
+    background-color: var(--color-natural-95);
+    font-weight: 600 !important;
+
+    strong {
+      color: var(--color-natural-0);
+      font-weight: 700 !important;
+    }
+
+  }
+  
+  & > p {
+    color: var(--color-natural-20);
   }
 }
 /* 종료: 마이페이지 > 캐쉬/리워드 내역 */
