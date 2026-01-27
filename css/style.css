@@ -12530,3 +12530,22 @@ el-cash-order-history-list {
   }
 }
 /* 종료: 마이페이지 > 캐쉬/리워드 내역 */
+
+/* 시작: 마이페이지 > 발송문구 관리 */
+el-mypage-message-list {
+  display: block;
+  width: 100%;
+
+  .mypage-message-list-table table.table {
+    .col-auto {
+      width: auto;
+    }
+    .col-80 {
+      width: 80px;
+    }
+    .col-200 {
+      width: 200px;
+    }
+  }
+}
+/* 종료: 마이페이지 > 발송문구 관리 */
