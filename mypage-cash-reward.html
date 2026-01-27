@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
   <head>
-    <title>취소/환불내역 | 오피스콘</title>
+    <title>캐쉬 내역 | 오피스콘</title>
     <meta charset="UTF-8" />
     <meta name="format-detection" content="telephone=no" />
     <link rel="shortcut icon" href="./images/favicon.ico" />
@@ -226,272 +226,141 @@
                 </el-mypage-nav>
                 <el-mypage-section>
                   <el-section-title>
-                    <h3 class="typo-subtitle-lg">취소/환불내역</h3>
+                    <h3 class="typo-subtitle-lg">캐쉬 내역</h3>
                   </el-section-title>
 
                   <el-mypage-content>
-                    <el-filter-box>
-                      <dl>
-                        <dt>주문기간</dt>
-                        <dd>
-                          <el-date-tabs>
-                            <button
-                              type="button"
-                              class="text-black button-h43-square typo-body-sm"
-                              onclick="handleDateNow();"
-                            >
-                              오늘
-                            </button>
-                            <button
-                              type="button"
-                              class="text-black button-h43-square typo-body-sm"
-                              onclick="handleDateThreeDaysAgo();"
-                            >
-                              3일
-                            </button>
-                            <button
-                              type="button"
-                              class="text-black button-h43-square typo-body-sm"
-                              onclick="handleDateOneWeekAgo();"
-                            >
-                              1주일
-                            </button>
-                            <button
-                              type="button"
-                              class="text-black button-h43-square typo-body-sm active"
-                              onclick="handleDateOneMonthAgo();"
-                            >
-                              1개월
-                            </button>
-                            <button
-                              type="button"
-                              class="text-black button-h43-square typo-body-sm"
-                              onclick="handleDateThreeMonthsAgo();"
-                            >
-                              3개월
-                            </button>
-                          </el-date-tabs>
+                    <el-mypage-cashReward>
+                      <el-mypage-cashReward-status>
+                        <el-mypage-cashReward-current>
+                          <img src="./images/badge-h14-cash.svg" alt="캐시" />
+                          <el-mypage-cashReward-current-label
+                            class="typo-body-lg"
+                          >
+                            오피스콘 보유 캐쉬
+                          </el-mypage-cashReward-current-label>
+                          <el-mypage-cashReward-current-amount
+                            class="typo-label-lg"
+                          >
+                            <strong class="typo-subtitle-sm">
+                              999,999,990
+                            </strong>
+                            원
+                          </el-mypage-cashReward-current-amount>
+                        </el-mypage-cashReward-current>
 
-                          <el-date-input class="typo-body-sm">
-                            <!-- [DEV] instance를 개별로 사용하는 datepicker -->
-                            <el-datepicker id="datepicker-start-1">
-                              <el-input
-                                class="tui-datepicker-input tui-datetime-input tui-has-focus"
-                              >
-                                <input
-                                  class="form-control custom-input datepicker-input"
-                                  type="text"
-                                  placeholder="시작 날짜"
-                                  value=""
-                                  aria-label="Date"
-                                />
-                                <el-input-addon>
-                                  <button
-                                    type="button"
-                                    class="button-calendar"
-                                    aria-label="calendar"
-                                  >
-                                    <el-icon
-                                      class="h24-calendar natural-0"
-                                    ></el-icon>
-                                  </button>
-                                </el-input-addon>
-                              </el-input>
-                              <!-- [DEV] instance를 개별로 사용하는 layer-->
-                              <el-datepicker-layer-custom></el-datepicker-layer-custom>
-                            </el-datepicker>
-                            ~
-
-                            <!-- [DEV] instance를 개별로 사용하는 datepicker -->
-                            <el-datepicker id="datepicker-end-1">
-                              <el-input
-                                class="tui-datepicker-input tui-datetime-input tui-has-focus"
-                              >
-                                <input
-                                  class="form-control custom-input datepicker-input"
-                                  type="text"
-                                  placeholder="종료 날짜"
-                                  value=""
-                                  aria-label="Date"
-                                />
-                                <el-input-addon>
-                                  <button
-                                    type="button"
-                                    class="button-calendar"
-                                    aria-label="calendar"
-                                  >
-                                    <el-icon
-                                      class="h24-calendar natural-0"
-                                    ></el-icon>
-                                  </button>
-                                </el-input-addon>
-                              </el-input>
-                              <!-- [DEV] instance를 개별로 사용하는 layer-->
-                              <el-datepicker-layer-custom></el-datepicker-layer-custom>
-                            </el-datepicker>
-                          </el-date-input>
-
+                        <el-mypage-cashReward-addon>
                           <button
                             type="button"
-                            class="button-h43-square-fill typo-body-sm"
+                            data-bs-toggle="modal"
+                            data-bs-target="#el-modal-cash-charge"
+                            class="button-h34-square typo-label-md text-black"
                           >
-                            검색
+                            캐쉬 충전
                           </button>
-                        </dd>
-                      </dl>
-                    </el-filter-box>
+                          <button
+                            type="button"
+                            data-bs-toggle="modal"
+                            data-bs-target="#el-alert"
+                            class="button-h34-square typo-label-md text-black"
+                          >
+                            캐쉬 환불
+                          </button>
+                          <button
+                            type="button"
+                            data-bs-target="#el-modal-virtual-account-history"
+                            data-bs-toggle="modal"
+                            class="button-h34-square typo-label-md text-black"
+                          >
+                            가상계좌 발급내역
+                          </button>
+                          <button
+                            type="button"
+                            data-bs-toggle="modal"
+                            data-bs-target="#el-modal-policy-guide"
+                            class="button-h34-square typo-label-md text-black"
+                          >
+                            정책 안내
+                          </button>
+                          <button
+                            type="button"
+                            class="button-h34-square-fill typo-label-md"
+                          >
+                            캐쉬 충전(카드)
+                          </button>
+                        </el-mypage-cashReward-addon>
+                      </el-mypage-cashReward-status>
 
-                    <el-mypage-cancel-list>
-                      <el-table-util-bar>
-                        <el-table-util-left>
-                          <span class="typo-subtitle-sm">총 10건</span>
-                        </el-table-util-left>
-                      </el-table-util-bar>
+                      <el-mypage-cashReward-status>
+                        <el-mypage-cashReward-current>
+                          <img src="./images/badge-h14-cash.svg" alt="캐시" />
+                          <el-mypage-cashReward-current-label
+                            class="typo-body-lg"
+                          >
+                            오피스콘 보유 캐쉬
+                          </el-mypage-cashReward-current-label>
+                          <el-mypage-cashReward-current-amount
+                            class="typo-label-lg"
+                          >
+                            <strong class="typo-subtitle-sm">
+                              999,999,990
+                            </strong>
+                            원
+                          </el-mypage-cashReward-current-amount>
+                        </el-mypage-cashReward-current>
+                      </el-mypage-cashReward-status>
 
-                      <el-mypage-table class="mypage-cancel-list-table">
-                        <table class="table align-middle">
-                          <colgroup>
-                            <col class="col-80" />
-                            <col class="col-auto" />
-                            <col class="col-100" />
-                            <col class="col-80" />
-                            <col class="col-120" />
-                            <col class="col-120" />
-                            <col class="col-120" />
-                            <col class="col-140" />
-                            <col class="col-80" />
-                          </colgroup>
-                          <thead>
-                            <tr>
-                              <th scope="col">번호</th>
-                              <th scope="col">주문번호</th>
-                              <th scope="col">구분</th>
-                              <th scope="col">결제수단</th>
-                              <th scope="col">총 환불금액</th>
-                              <th scope="col">결제 취소 금액</th>
-                              <th scope="col">캐쉬(리워드) 환불금액</th>
-                              <th scope="col">요청일시</th>
-                              <th scope="col">환불내역</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr class="empty">
-                              <td colspan="9">
-                                <el-board-list-empty class="typo-label-lg">
-                                  <el-icon class="etc-file-text"></el-icon>
-                                  취소/환불내역이 없습니다.
-                                </el-board-list-empty>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>00</td>
-                              <td>20251209123456776978</td>
-                              <td>전체 취소</td>
-                              <td>캐쉬</td>
-                              <td>999,999</td>
-                              <td>999,999</td>
-                              <td>999,999</td>
-                              <td>2025.12.09 10:14</td>
-                              <td>
-                                <el-mypage-table-action-buttons>
-                                  <button
-                                    type="button"
-                                    data-bs-target="#el-modal-cancel-detail"
-                                    data-bs-toggle="modal"
-                                    class="button-h34-square typo-label-md"
-                                  >
-                                    확인
-                                  </button>
-                                </el-mypage-table-action-buttons>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>00</td>
-                              <td>20251209123456776978</td>
-                              <td>전체 취소</td>
-                              <td>캐쉬</td>
-                              <td>999,999</td>
-                              <td>999,999</td>
-                              <td>999,999</td>
-                              <td>2025.12.09 10:14</td>
-                              <td>
-                                <el-mypage-table-action-buttons>
-                                  <button
-                                    type="button"
-                                    data-bs-target="#el-modal-cancel-detail"
-                                    data-bs-toggle="modal"
-                                    class="button-h34-square typo-label-md"
-                                  >
-                                    확인
-                                  </button>
-                                </el-mypage-table-action-buttons>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </el-mypage-table>
+                      <el-mypage-cashReward-status>
+                        <el-mypage-cashReward-current>
+                          <img
+                            src="./images/badge-h14-reward.svg"
+                            alt="리워드"
+                          />
+                          <el-mypage-cashReward-current-label
+                            class="typo-body-lg"
+                          >
+                            오피스콘 보유 리워드
+                          </el-mypage-cashReward-current-label>
+                          <el-mypage-cashReward-current-amount
+                            class="typo-label-lg"
+                          >
+                            <strong class="typo-subtitle-sm">
+                              999,999,990
+                            </strong>
+                            리워드
+                          </el-mypage-cashReward-current-amount>
+                        </el-mypage-cashReward-current>
 
-                      <el-pagination>
-                        <nav aria-label="Page navigation">
-                          <el-pagination-prev>
-                            <a href="#" aria-label="처음">
-                              <el-icon
-                                class="h20-chevrons-left natural-0"
-                              ></el-icon>
-                            </a>
-                            <a href="#" aria-label="이전">
-                              <el-icon
-                                class="h20-arrow-left natural-0"
-                              ></el-icon>
-                            </a>
-                          </el-pagination-prev>
-                          <ul class="typo-body-sm">
-                            <li class="active">
-                              <a href="#">1</a>
-                            </li>
-                            <li>
-                              <a href="#">2</a>
-                            </li>
-                            <li>
-                              <a href="#">3</a>
-                            </li>
-                            <li>
-                              <a href="#">4</a>
-                            </li>
-                            <li>
-                              <a href="#">5</a>
-                            </li>
-                            <li>
-                              <a href="#">6</a>
-                            </li>
-                            <li>
-                              <a href="#">7</a>
-                            </li>
-                            <li>
-                              <a href="#">8</a>
-                            </li>
-                            <li>
-                              <a href="#">9</a>
-                            </li>
-                            <li>
-                              <a href="#">10</a>
-                            </li>
-                          </ul>
-                          <el-pagination-next>
-                            <a href="#" aria-label="다음">
-                              <el-icon
-                                class="h20-arrow-right natural-0"
-                              ></el-icon>
-                            </a>
-                            <a href="#" aria-label="마지막">
-                              <el-icon
-                                class="h20-chevrons-right natural-0"
-                              ></el-icon>
-                            </a>
-                          </el-pagination-next>
-                        </nav>
-                      </el-pagination>
-                    </el-mypage-cancel-list>
+                        <el-mypage-cashReward-addon>
+                          <el-mypage-cashReward-dueDate class="typo-body-sm">
+                            소멸 예정일
+                            <strong>2030.10.17</strong>
+                          </el-mypage-cashReward-dueDate>
+                        </el-mypage-cashReward-addon>
+                      </el-mypage-cashReward-status>
+
+                      <el-mypage-cashReward-status>
+                        <el-mypage-cashReward-current>
+                          <img
+                            src="./images/badge-h14-reward.svg"
+                            alt="리워드"
+                          />
+                          <el-mypage-cashReward-current-label
+                            class="typo-body-lg"
+                          >
+                            오피스콘 보유 리워드
+                          </el-mypage-cashReward-current-label>
+                          <el-mypage-cashReward-current-amount
+                            class="typo-label-lg"
+                          >
+                            <strong class="typo-subtitle-sm">
+                              999,999,990
+                            </strong>
+                            리워드
+                          </el-mypage-cashReward-current-amount>
+                        </el-mypage-cashReward-current>
+                      </el-mypage-cashReward-status>
+                    </el-mypage-cashReward>
                   </el-mypage-content>
                 </el-mypage-section>
               </el-mypage-container>
@@ -524,14 +393,28 @@
       <el-alert-dialog class="modal-dialog modal-dialog-centered">
         <el-alert-content class="modal-content">
           <el-alert-body class="typo-subtitle-sm">
-            얼럿 샘플입니다.
-            <br />
-            개발 시 내용이 변경됩니다.
+            <el-certification-guide>
+              <h4 class="typo-body-lg">
+                소중한 정보 보호를 위하여 캐쉬 환불 요청시
+                <br />
+                본인인증 절차가 필요합니다.
+              </h4>
+              <el-certification-guide-myinfo class="typo-body-sm">
+                등록된 본인인증 정보
+                <strong class="typo-body-lg">010-****-5678</strong>
+              </el-certification-guide-myinfo>
+              <p class="typo-body-sm">
+                본인인증 정보 변경이 필요한 경우
+                <br />
+                고객센터 &gt; 1:1 문의 게시판을 통해 요청해 주세요.
+              </p>
+            </el-certification-guide>
           </el-alert-body>
           <el-alert-footer>
             <button
               type="button"
               data-bs-dismiss="modal"
+              onclick="bsModalCashRefundAll.show();"
               class="button-h50-fill typo-body-lg"
             >
               확인
@@ -542,10 +425,10 @@
     </el-alert>
     <!-- 종료: alert -->
 
-    <!-- 시작: modal: 취소 상세 내역 -->
+    <!-- 시작: modal: 캐쉬 전체 환불 -->
     <el-modal
       class="modal fade el-modal-default"
-      id="el-modal-cancel-detail"
+      id="el-modal-cash-refund-all"
       tabindex="-1"
       aria-hidden="true"
       data-bs-keyboard="false"
@@ -561,59 +444,110 @@
           </el-modal-close-button>
 
           <el-modal-header class="modal-header">
-            <h3 class="typo-subtitle-lg center">취소 상세 내역</h3>
+            <h3 class="typo-subtitle-lg center">캐쉬 전체 환불</h3>
           </el-modal-header>
 
           <el-modal-body class="modal-body">
-            <el-modal-cancel-detail>
-              <el-modal-cancel-detail-header class="typo-label-lg">
-                <el-cell-index>번호</el-cell-index>
-                <el-cell-email>이메일 주소</el-cell-email>
-                <el-cell-mobile>휴대폰번호</el-cell-mobile>
-              </el-modal-cancel-detail-header>
+            <el-modal-cancel-all>
+              <el-info-box>
+                <el-marker-list class="weight-regular color-gray">
+                  <ul>
+                    <li>
+                      전체 취소 요청만 가능하며, 선택하신 수단으로 환불됩니다.
+                    </li>
+                    <li>
+                      전체 취소 요청은 발송실패/예약발송 1시간 이전에만
+                      가능합니다.
+                    </li>
+                  </ul>
+                </el-marker-list>
+              </el-info-box>
 
-              <el-modal-cancel-detail-body
-                class="typo-label-lg el-modal-scrollable-list-content"
-              >
-                <ul>
-                  <li>
-                    <el-cell-index>1</el-cell-index>
-                    <el-cell-email>officecon02@zlgoon.co.kr</el-cell-email>
-                    <el-cell-mobile>010-0000-0000</el-cell-mobile>
-                  </li>
-                  <li>
-                    <el-cell-index>1</el-cell-index>
-                    <el-cell-email>officecon02@zlgoon.co.kr</el-cell-email>
-                    <el-cell-mobile>010-0000-0000</el-cell-mobile>
-                  </li>
-                  <li>
-                    <el-cell-index>1</el-cell-index>
-                    <el-cell-email>officecon02@zlgoon.co.kr</el-cell-email>
-                    <el-cell-mobile>010-0000-0000</el-cell-mobile>
-                  </li>
-                  <li>
-                    <el-cell-index>1</el-cell-index>
-                    <el-cell-email>officecon02@zlgoon.co.kr</el-cell-email>
-                    <el-cell-mobile>010-0000-0000</el-cell-mobile>
-                  </li>
-                  <li>
-                    <el-cell-index>1</el-cell-index>
-                    <el-cell-email>officecon02@zlgoon.co.kr</el-cell-email>
-                    <el-cell-mobile>010-0000-0000</el-cell-mobile>
-                  </li>
-                  <li>
-                    <el-cell-index>1</el-cell-index>
-                    <el-cell-email>officecon02@zlgoon.co.kr</el-cell-email>
-                    <el-cell-mobile>010-0000-0000</el-cell-mobile>
-                  </li>
-                  <li>
-                    <el-cell-index>1</el-cell-index>
-                    <el-cell-email>officecon02@zlgoon.co.kr</el-cell-email>
-                    <el-cell-mobile>010-0000-0000</el-cell-mobile>
-                  </li>
-                </ul>
-              </el-modal-cancel-detail-body>
-            </el-modal-cancel-detail>
+              <el-modal-cancel-payment>
+                <h4 class="typo-body-lg">결제정보</h4>
+                <el-modal-cancel-all-payment-content class="typo-body-sm">
+                  <dl>
+                    <dt>캐쉬 결제</dt>
+                    <dd>10,000</dd>
+                  </dl>
+                  <dl>
+                    <dt>카드결제 / 계좌이체</dt>
+                    <dd>10,000</dd>
+                  </dl>
+                  <dl>
+                    <dt>총 환불 금액</dt>
+                    <dd class="total-refund-amount">10,000</dd>
+                  </dl>
+                </el-modal-cancel-all-payment-content>
+              </el-modal-cancel-payment>
+            </el-modal-cancel-all>
+          </el-modal-body>
+
+          <el-modal-footer class="modal-footer">
+            <button
+              type="button"
+              data-bs-dismiss="modal"
+              class="button-h50-stroke typo-body-lg"
+            >
+              취소
+            </button>
+            <button
+              type="button"
+              data-bs-dismiss="modal"
+              class="button-h50-fill typo-body-lg"
+            >
+              환불요청
+            </button>
+          </el-modal-footer>
+        </el-modal-content>
+      </el-modal-dialog>
+    </el-modal>
+    <!-- 종료: modal: 캐쉬 전체 환불 -->
+
+    <!-- 시작: modal: 정책안내 -->
+    <el-modal
+      class="modal fade el-modal-default"
+      id="el-modal-policy-guide"
+      tabindex="-1"
+      aria-hidden="true"
+      data-bs-keyboard="false"
+    >
+      <el-modal-dialog
+        class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+      >
+        <el-modal-content class="modal-content">
+          <el-modal-close-button>
+            <button type="button" data-bs-dismiss="modal" aria-label="닫기">
+              <el-icon class="h32-closed natural-0"></el-icon>
+            </button>
+          </el-modal-close-button>
+
+          <el-modal-header class="modal-header">
+            <h3 class="typo-subtitle-lg center">정책안내</h3>
+          </el-modal-header>
+
+          <el-modal-body class="modal-body">
+            <el-modal-policy-guide>
+              <el-info-box>
+                <el-info-box-title class="typo-body-sm">
+                  캐쉬 충전/환불 유의사항
+                </el-info-box-title>
+                <el-marker-list class="weight-regular color-gray">
+                  <ul>
+                    <li>
+                      캐쉬 환불은 지급(충전,환불)후 3일이 경과된 후에는 10%의
+                      환불수수료가 발생합니다.
+                    </li>
+                    <li>가상계좌 발급은 1일 한도 최대 20,000,000원입니다.</li>
+                    <li>
+                      캐쉬 소멸 기한은 마지막 이용(충전, 사용)으로 부터
+                      5년입니다.
+                    </li>
+                    <li>1,000캐쉬 미만은 환전이 불가능합니다.</li>
+                  </ul>
+                </el-marker-list>
+              </el-info-box>
+            </el-modal-policy-guide>
           </el-modal-body>
 
           <el-modal-footer class="modal-footer">
@@ -628,7 +562,7 @@
         </el-modal-content>
       </el-modal-dialog>
     </el-modal>
-    <!-- 종료: modal: 취소 상세 내역 -->
+    <!-- 종료: modal: 정책안내 -->
 
     <!-- 시작: modal: 캐쉬충전 -->
     <el-modal
@@ -735,6 +669,198 @@
       </el-modal-dialog>
     </el-modal>
     <!-- 종료: modal: 캐쉬충전 -->
+
+    <!-- 시작: modal: 가상 계좌 발급내역 -->
+    <el-modal
+      class="modal fade el-modal-default"
+      id="el-modal-virtual-account-history"
+      tabindex="-1"
+      aria-hidden="true"
+      data-bs-keyboard="false"
+    >
+      <el-modal-dialog
+        class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+      >
+        <el-modal-content class="modal-content">
+          <el-modal-close-button>
+            <button type="button" data-bs-dismiss="modal" aria-label="닫기">
+              <el-icon class="h32-closed natural-0"></el-icon>
+            </button>
+          </el-modal-close-button>
+
+          <el-modal-header class="modal-header">
+            <h3 class="typo-subtitle-lg center">가상 계좌 발급내역</h3>
+          </el-modal-header>
+
+          <el-modal-body class="modal-body">
+            <el-modal-virtual-account-history>
+              <el-modal-virtual-account-history-header class="typo-label-lg">
+                <el-cell-index>번호</el-cell-index>
+                <el-cell-bank-name>은행명</el-cell-bank-name>
+                <el-cell-bank-account>가상 계좌 번호</el-cell-bank-account>
+                <el-cell-bank-account-holder>
+                  예금주
+                </el-cell-bank-account-holder>
+                <el-cell-amount>입금액</el-cell-amount>
+                <el-cell-deposit-date>발행일자</el-cell-deposit-date>
+                <el-cell-expire-date>만료일자</el-cell-expire-date>
+                <el-cell-status>상태</el-cell-status>
+              </el-modal-virtual-account-history-header>
+
+              <el-modal-virtual-account-history-body
+                class="typo-label-lg el-modal-scrollable-list-content"
+              >
+                <ul>
+                  <li>
+                    <el-cell-index>00</el-cell-index>
+                    <el-cell-bank-name>ㅇㅇ은행</el-cell-bank-name>
+                    <el-cell-bank-account>000-0000-000000</el-cell-bank-account>
+                    <el-cell-bank-account-holder>
+                      홍길동
+                    </el-cell-bank-account-holder>
+                    <el-cell-amount>9,999,999</el-cell-amount>
+                    <el-cell-deposit-date>2025.09.09</el-cell-deposit-date>
+                    <el-cell-expire-date>2025.09.09</el-cell-expire-date>
+                    <el-cell-status>상태</el-cell-status>
+                  </li>
+                  <li>
+                    <el-cell-index>00</el-cell-index>
+                    <el-cell-bank-name>ㅇㅇ은행</el-cell-bank-name>
+                    <el-cell-bank-account>000-0000-000000</el-cell-bank-account>
+                    <el-cell-bank-account-holder>
+                      홍길동
+                    </el-cell-bank-account-holder>
+                    <el-cell-amount>9,999,999</el-cell-amount>
+                    <el-cell-deposit-date>2025.09.09</el-cell-deposit-date>
+                    <el-cell-expire-date>2025.09.09</el-cell-expire-date>
+                    <el-cell-status>상태</el-cell-status>
+                  </li>
+                  <li>
+                    <el-cell-index>00</el-cell-index>
+                    <el-cell-bank-name>ㅇㅇ은행</el-cell-bank-name>
+                    <el-cell-bank-account>000-0000-000000</el-cell-bank-account>
+                    <el-cell-bank-account-holder>
+                      홍길동
+                    </el-cell-bank-account-holder>
+                    <el-cell-amount>9,999,999</el-cell-amount>
+                    <el-cell-deposit-date>2025.09.09</el-cell-deposit-date>
+                    <el-cell-expire-date>2025.09.09</el-cell-expire-date>
+                    <el-cell-status>상태</el-cell-status>
+                  </li>
+                  <li>
+                    <el-cell-index>00</el-cell-index>
+                    <el-cell-bank-name>ㅇㅇ은행</el-cell-bank-name>
+                    <el-cell-bank-account>000-0000-000000</el-cell-bank-account>
+                    <el-cell-bank-account-holder>
+                      홍길동
+                    </el-cell-bank-account-holder>
+                    <el-cell-amount>9,999,999</el-cell-amount>
+                    <el-cell-deposit-date>2025.09.09</el-cell-deposit-date>
+                    <el-cell-expire-date>2025.09.09</el-cell-expire-date>
+                    <el-cell-status>상태</el-cell-status>
+                  </li>
+                  <li>
+                    <el-cell-index>00</el-cell-index>
+                    <el-cell-bank-name>ㅇㅇ은행</el-cell-bank-name>
+                    <el-cell-bank-account>000-0000-000000</el-cell-bank-account>
+                    <el-cell-bank-account-holder>
+                      홍길동
+                    </el-cell-bank-account-holder>
+                    <el-cell-amount>9,999,999</el-cell-amount>
+                    <el-cell-deposit-date>2025.09.09</el-cell-deposit-date>
+                    <el-cell-expire-date>2025.09.09</el-cell-expire-date>
+                    <el-cell-status>상태</el-cell-status>
+                  </li>
+                  <li>
+                    <el-cell-index>00</el-cell-index>
+                    <el-cell-bank-name>ㅇㅇ은행</el-cell-bank-name>
+                    <el-cell-bank-account>000-0000-000000</el-cell-bank-account>
+                    <el-cell-bank-account-holder>
+                      홍길동
+                    </el-cell-bank-account-holder>
+                    <el-cell-amount>9,999,999</el-cell-amount>
+                    <el-cell-deposit-date>2025.09.09</el-cell-deposit-date>
+                    <el-cell-expire-date>2025.09.09</el-cell-expire-date>
+                    <el-cell-status>상태</el-cell-status>
+                  </li>
+                  <li>
+                    <el-cell-index>00</el-cell-index>
+                    <el-cell-bank-name>ㅇㅇ은행</el-cell-bank-name>
+                    <el-cell-bank-account>000-0000-000000</el-cell-bank-account>
+                    <el-cell-bank-account-holder>
+                      홍길동
+                    </el-cell-bank-account-holder>
+                    <el-cell-amount>9,999,999</el-cell-amount>
+                    <el-cell-deposit-date>2025.09.09</el-cell-deposit-date>
+                    <el-cell-expire-date>2025.09.09</el-cell-expire-date>
+                    <el-cell-status>상태</el-cell-status>
+                  </li>
+                  <li>
+                    <el-cell-index>00</el-cell-index>
+                    <el-cell-bank-name>ㅇㅇ은행</el-cell-bank-name>
+                    <el-cell-bank-account>000-0000-000000</el-cell-bank-account>
+                    <el-cell-bank-account-holder>
+                      홍길동
+                    </el-cell-bank-account-holder>
+                    <el-cell-amount>9,999,999</el-cell-amount>
+                    <el-cell-deposit-date>2025.09.09</el-cell-deposit-date>
+                    <el-cell-expire-date>2025.09.09</el-cell-expire-date>
+                    <el-cell-status>상태</el-cell-status>
+                  </li>
+                  <li>
+                    <el-cell-index>00</el-cell-index>
+                    <el-cell-bank-name>ㅇㅇ은행</el-cell-bank-name>
+                    <el-cell-bank-account>000-0000-000000</el-cell-bank-account>
+                    <el-cell-bank-account-holder>
+                      홍길동
+                    </el-cell-bank-account-holder>
+                    <el-cell-amount>9,999,999</el-cell-amount>
+                    <el-cell-deposit-date>2025.09.09</el-cell-deposit-date>
+                    <el-cell-expire-date>2025.09.09</el-cell-expire-date>
+                    <el-cell-status>상태</el-cell-status>
+                  </li>
+                  <li>
+                    <el-cell-index>00</el-cell-index>
+                    <el-cell-bank-name>ㅇㅇ은행</el-cell-bank-name>
+                    <el-cell-bank-account>000-0000-000000</el-cell-bank-account>
+                    <el-cell-bank-account-holder>
+                      홍길동
+                    </el-cell-bank-account-holder>
+                    <el-cell-amount>9,999,999</el-cell-amount>
+                    <el-cell-deposit-date>2025.09.09</el-cell-deposit-date>
+                    <el-cell-expire-date>2025.09.09</el-cell-expire-date>
+                    <el-cell-status>상태</el-cell-status>
+                  </li>
+                  <li>
+                    <el-cell-index>00</el-cell-index>
+                    <el-cell-bank-name>ㅇㅇ은행</el-cell-bank-name>
+                    <el-cell-bank-account>000-0000-000000</el-cell-bank-account>
+                    <el-cell-bank-account-holder>
+                      홍길동
+                    </el-cell-bank-account-holder>
+                    <el-cell-amount>9,999,999</el-cell-amount>
+                    <el-cell-deposit-date>2025.09.09</el-cell-deposit-date>
+                    <el-cell-expire-date>2025.09.09</el-cell-expire-date>
+                    <el-cell-status>상태</el-cell-status>
+                  </li>
+                </ul>
+              </el-modal-virtual-account-history-body>
+            </el-modal-virtual-account-history>
+          </el-modal-body>
+
+          <el-modal-footer class="modal-footer">
+            <button
+              type="button"
+              data-bs-dismiss="modal"
+              class="button-h50-fill typo-body-lg"
+            >
+              확인
+            </button>
+          </el-modal-footer>
+        </el-modal-content>
+      </el-modal-dialog>
+    </el-modal>
+    <!-- 종료: modal: 가상 계좌 발급내역 -->
 
     <!-- 시작: modal: 기업 회원 전환 신청 -->
     <el-modal
@@ -1170,93 +1296,18 @@
     <script src="./js/web-components.js" crossorigin="anonymous"></script>
 
     <script>
-      // 시작: datepicker - 필터 기간 선택
-      const now = new Date();
-      const threeDaysAgo = new Date().setDate(new Date().getDate() - 3);
-      const oneWeekAgo = new Date().setDate(new Date().getDate() - 7);
-      const oneMonthAgo = new Date().setMonth(new Date().getMonth() - 1);
-      const threeMonthsAgo = new Date().setMonth(new Date().getMonth() - 3);
-      const elDateTabButtons = document.querySelectorAll('el-date-tabs button');
-      const DATE_FORMAT = 'yyyy.MM.dd';
-
-      const datepickerInstanceStartDate_1 = createDatepickerInstance({
-        targetDatePickerEl: document.querySelector('#datepicker-start-1'),
-        options: {
-          date: oneMonthAgo,
-          input: { format: DATE_FORMAT },
-        },
-      });
-
-      const datepickerInstanceEndDate_1 = createDatepickerInstance({
-        targetDatePickerEl: document.querySelector('#datepicker-end-1'),
-        options: {
-          date: now,
-          input: { format: DATE_FORMAT },
-        },
-      });
-
-      const handleEndDateNow = () => {
-        if (datepickerInstanceEndDate_1) {
-          datepickerInstanceEndDate_1.setDate(new Date());
+      // 페이지 로드 시 캐쉬 전체 환불 bootstrap 인스턴스 생성
+      let bsModalCashRefundAll;
+      const initModalCashRefundAll = (targetEl) => {
+        if (targetEl) {
+          bsModalCashRefundAll = new bootstrap.Modal(targetEl);
         }
       };
 
-      const handleDateNow = () => {
-        if (datepickerInstanceStartDate_1) {
-          datepickerInstanceStartDate_1.setDate(new Date());
-        }
-        handleEndDateNow();
-      };
-
-      const handleDateThreeDaysAgo = () => {
-        if (datepickerInstanceStartDate_1) {
-          datepickerInstanceStartDate_1.setDate(threeDaysAgo);
-        }
-        handleEndDateNow();
-      };
-
-      const handleDateOneWeekAgo = () => {
-        if (datepickerInstanceStartDate_1) {
-          datepickerInstanceStartDate_1.setDate(oneWeekAgo);
-        }
-        handleEndDateNow();
-      };
-
-      const handleDateOneMonthAgo = () => {
-        if (datepickerInstanceStartDate_1) {
-          datepickerInstanceStartDate_1.setDate(oneMonthAgo);
-        }
-        handleEndDateNow();
-      };
-
-      const handleDateThreeMonthsAgo = () => {
-        if (datepickerInstanceStartDate_1) {
-          datepickerInstanceStartDate_1.setDate(threeMonthsAgo);
-        }
-        handleEndDateNow();
-      };
-
-      // event 바인딩
-      if (datepickerInstanceStartDate_1) {
-        datepickerInstanceStartDate_1.on('change', () => {
-          if (datepickerInstanceStartDate_1.isOpened()) {
-            elDateTabButtons.forEach((button) => {
-              button.classList.remove('active');
-            });
-          }
-        });
-      }
-
-      if (datepickerInstanceEndDate_1) {
-        datepickerInstanceEndDate_1.on('change', () => {
-          if (datepickerInstanceEndDate_1.isOpened()) {
-            elDateTabButtons.forEach((button) => {
-              button.classList.remove('active');
-            });
-          }
-        });
-      }
-      // 종료: datepicker - 필터 기간 선택
+      const modalCashRefundAllEl = document.querySelector(
+        '#el-modal-cash-refund-all'
+      );
+      initModalCashRefundAll(modalCashRefundAllEl);
     </script>
   </body>
 </html>
