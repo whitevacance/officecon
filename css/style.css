@@ -11143,6 +11143,11 @@ el-table-util-bar {
     align-items: center;
     gap: 6px;
   }
+
+  el-table-util-filter {
+    display: block;
+    width: 122px;
+  }
 }
 
 el-mypage-table {
@@ -12419,11 +12424,6 @@ el-mypage-cashReward-list {
   width: 100%;
   padding-top: 32px;
 
-  el-mypage-cashReward-filter {
-    display: block;
-    width: 122px;
-  }
-
   .mypage-cashReward-list-table table.table {
     .col-auto {
       width: auto;
@@ -12499,6 +12499,33 @@ el-mypage-cash-charge {
 
     button {
       width: 134px;
+    }
+  }
+}
+
+el-cash-order-history-list {
+  display: block;
+  width: 100%;
+  padding-top: 32px;
+
+  .mypage-cash-order-history-table table.table {
+    .col-auto {
+      width: auto;
+    }
+    .col-120 {
+      width: 120px;
+    }
+    .col-140 {
+      width: 140px;
+    }
+    .col-160 {
+      width: 160px;
+    }
+    .col-180 {
+      width: 180px;
+    }
+    .col-190 {
+      width: 190px;
     }
   }
 }
