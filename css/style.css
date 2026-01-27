@@ -1214,6 +1214,10 @@ button {
     border: 1px solid var(--color-natural-70);
     background-color: var(--color-natural-100);
     overflow: hidden;
+
+    &.border-black {
+      border-color: var(--color-natural-0);
+    }
   }
 
   &.button-h50-square-fill {
@@ -3867,7 +3871,30 @@ el-form-with-label {
       align-items: center;
       gap: 0px 8px;
       width: 100%;
-      /* width: calc(100% - 154px); */
+
+      el-form-textarea {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        width: fit-content;
+
+        el-invalide-feedback {
+          display: none;
+          padding: 4px 0 0 4px;
+          color: var(--color-red-40);
+          font-weight: 600 !important;
+        }
+
+        &.is-invalid {
+          textarea.form-control {
+            border-color: var(--color-red-40);
+          }
+
+          el-invalide-feedback {
+            display: block;
+          }
+        }
+      }
     }
   }
 }
@@ -12530,3 +12557,84 @@ el-cash-order-history-list {
   }
 }
 /* 종료: 마이페이지 > 캐쉬/리워드 내역 */
+
+/* 시작: 마이페이지 > 발송문구 관리 */
+el-mypage-message-list {
+  display: block;
+  width: 100%;
+
+  .mypage-message-list-table table.table {
+    .col-auto {
+      width: auto;
+    }
+    .col-80 {
+      width: 80px;
+    }
+    .col-200 {
+      width: 200px;
+    }
+
+    th,
+    td {
+      color: var(--color-natural-0) !important;
+    }
+  }
+}
+
+el-mypage-message-edit {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+
+  el-form-with-label {
+    el-form-row {
+      el-form-content {
+        & > el-input,
+        & textarea.form-control {
+          width: 772px;
+        }
+
+        & textarea {
+          height: 220px;
+        }
+
+        el-form-input-length {
+          flex-grow: 0;
+          flex-shrink: 0;
+          align-self: flex-end;
+          display: flex;
+          align-items: center;
+          width: 62px;
+          height: 43px;
+          color: var(--color-natural-40);
+        }
+
+        el-form-textarea-length {
+          flex-grow: 0;
+          flex-shrink: 0;
+          align-self: flex-end;
+          display: flex;
+          align-items: center;
+          width: 62px;
+          color: var(--color-natural-40);
+        }
+      }
+    }
+  }
+
+  el-mypage-message-edit-cta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding-top: 64px;
+    border-top: 1px solid var(--color-natural-80);
+
+    button {
+      width: 134px;
+    }
+  }
+}
+/* 종료: 마이페이지 > 발송문구 관리 */
