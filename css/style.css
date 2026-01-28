@@ -3925,6 +3925,19 @@ el-form-with-label {
       gap: 0px 8px;
       width: 100%;
 
+      el-input-wrap {
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+        width: 100%;
+      }
+
+      el-form-input-footer {
+        display: block;
+        width: 100%;
+        padding-top: 8px;
+      }
+
       el-form-textarea {
         display: flex;
         flex-direction: column;
@@ -12903,6 +12916,21 @@ el-modal-pay-cash {
 
   el-modal-form {
     padding-top: 32px;
+  }
+}
+
+el-mypage-sub-member-regist {
+  display: block;
+  width: 100%;
+
+  el-form-with-label {
+    el-form-row {
+      el-form-content {
+        el-input {
+          width: 400px;
+        }
+      }
+    }
   }
 }
 /* 종료: 마이페이지 > 서브회원 관리 */
