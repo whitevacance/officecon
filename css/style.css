@@ -3976,9 +3976,40 @@ el-filter-box {
   background-color: var(--color-natural-95);
   border-radius: 8px;
 
-  & > dl {
+  el-filter-box-column-2 {
     display: flex;
     align-items: center;
+    gap: 24px;
+    width: 100%;
+    /* width: 813px; */
+
+    dl {
+      width: fit-content;
+
+      & > dd {
+        & > el-input {
+          width: 280px;
+        }
+
+        & > button {
+          flex-grow: 0;
+          flex-shrink: 0;
+          width: 70px;
+        }
+      }
+
+      &:last-of-type {
+        dt {
+          width: 67px;
+        }
+      }
+    }
+  }
+
+  dl {
+    display: flex;
+    align-items: center;
+    width: 100%;
 
     & > dt {
       flex-grow: 0;
@@ -11382,14 +11413,15 @@ el-mypage-product {
         flex-direction: column;
         gap: 2px;
         width: 100%;
+      }
 
-        el-brand {
-          font-weight: 700 !important;
-        }
+      el-brand {
+        font-weight: 700 !important;
+        color: var(--color-natural-0);
+      }
 
-        el-item-name-txt {
-          color: var(--color-natural-0);
-        }
+      el-item-name-txt {
+        color: var(--color-natural-0);
       }
     }
   }
@@ -11447,20 +11479,26 @@ el-mypage-order-list {
     .col-auto {
       width: auto;
     }
+    .col-80 {
+      width: 80px;
+    }
     .col-90 {
       width: 90px;
     }
     .col-110 {
       width: 110px;
     }
+    .col-120 {
+      width: 120px;
+    }
 
     & > table {
       th {
-        padding: 12px 9px !important;
+        padding: 12px 8px !important;
       }
 
       td {
-        padding: 20px 9px !important;
+        padding: 20px 8px !important;
       }
 
       .button-order-result {
