@@ -1853,8 +1853,9 @@ el-select {
 
     &.active-bold {
       .dropdown-item {
-        &.active {
-          font-weight: 700;
+        &.active,
+        &.active * {
+          font-weight: 700 !important;
         }
       }
     }
@@ -1891,6 +1892,58 @@ el-select {
       .dropdown-item {
         height: 50px;
         padding: 0 20px;
+
+        &.active,
+        &:focus,
+        &:active {
+          background-color: var(--color-natural-90) !important;
+        }
+
+        &:hover {
+          background-color: var(--color-natural-95) !important;
+        }
+      }
+    }
+  }
+
+  &.select-h34 {
+    el-label {
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 16px;
+      letter-spacing: -0.36px;
+    }
+
+    .dropdown-toggle {
+      height: 34px;
+      padding: 0 24px 0 14px;
+      border-radius: 8px;
+
+      &:after {
+        width: 16px;
+        height: 16px;
+        right: 6px;
+        background-color: var(--color-natural-40);
+        -webkit-mask-image: url('../images/icon-h16-arrow-down.svg');
+        mask-image: url('../images/icon-h16-arrow-down.svg');
+      }
+    }
+
+    .dropdown-menu {
+      border-radius: 8px;
+
+      & > ul {
+        max-height: 340px;
+      }
+
+      .dropdown-header {
+        height: 34px;
+        padding: 0 14px;
+      }
+
+      .dropdown-item {
+        height: 34px;
+        padding: 0 14px;
 
         &.active,
         &:focus,
@@ -3872,6 +3925,19 @@ el-form-with-label {
       gap: 0px 8px;
       width: 100%;
 
+      el-input-wrap {
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+        width: 100%;
+      }
+
+      el-form-input-footer {
+        display: block;
+        width: 100%;
+        padding-top: 8px;
+      }
+
       el-form-textarea {
         display: flex;
         flex-direction: column;
@@ -3910,9 +3976,40 @@ el-filter-box {
   background-color: var(--color-natural-95);
   border-radius: 8px;
 
-  & > dl {
+  el-filter-box-column-2 {
     display: flex;
     align-items: center;
+    gap: 24px;
+    width: 100%;
+    /* width: 813px; */
+
+    dl {
+      width: fit-content;
+
+      & > dd {
+        & > el-input {
+          width: 280px;
+        }
+
+        & > button {
+          flex-grow: 0;
+          flex-shrink: 0;
+          width: 70px;
+        }
+      }
+
+      &:last-of-type {
+        dt {
+          width: 67px;
+        }
+      }
+    }
+  }
+
+  dl {
+    display: flex;
+    align-items: center;
+    width: 100%;
 
     & > dt {
       flex-grow: 0;
@@ -4199,6 +4296,38 @@ el-agrees {
   }
 }
 /* 종료: 공통 > 동의 영역 */
+
+/* 시작: 공통 > pre 내부 table */
+table.pre-table {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+
+  thead {
+    th {
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 16px;
+      letter-spacing: -0.36px;
+      padding: 12px;
+      border: 1px solid var(--color-natural-70);
+      background-color: var(--color-natural-70);
+    }
+  }
+
+  tbody {
+    td {
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 18px;
+      letter-spacing: -0.39px;
+      padding: 12px;
+      border: 1px solid var(--color-natural-70);
+      background-color: var(--color-natural-98);
+    }
+  }
+}
+/* 종료: 공통 > pre 내부 table */
 
 /* 시작: 예시 (example) */
 el-examples-article {
@@ -11284,14 +11413,15 @@ el-mypage-product {
         flex-direction: column;
         gap: 2px;
         width: 100%;
+      }
 
-        el-brand {
-          font-weight: 700 !important;
-        }
+      el-brand {
+        font-weight: 700 !important;
+        color: var(--color-natural-0);
+      }
 
-        el-item-name-txt {
-          color: var(--color-natural-0);
-        }
+      el-item-name-txt {
+        color: var(--color-natural-0);
       }
     }
   }
@@ -11349,20 +11479,26 @@ el-mypage-order-list {
     .col-auto {
       width: auto;
     }
+    .col-80 {
+      width: 80px;
+    }
     .col-90 {
       width: 90px;
     }
     .col-110 {
       width: 110px;
     }
+    .col-120 {
+      width: 120px;
+    }
 
     & > table {
       th {
-        padding: 12px 9px !important;
+        padding: 12px 8px !important;
       }
 
       td {
-        padding: 20px 9px !important;
+        padding: 20px 8px !important;
       }
 
       .button-order-result {
@@ -12272,6 +12408,50 @@ el-mypage-cashReward-status {
         font-weight: 700 !important;
       }
     }
+
+    el-mypage-cashReward-summary {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 4px;
+
+      dl {
+        display: flex;
+        align-items: center;
+        gap: 3px;
+        position: relative;
+
+        dt {
+          font-weight: 400 !important;
+          color: var(--color-natural-20);
+        }
+
+        dd {
+          color: var(--color-natural-0);
+          font-weight: 700 !important;
+        }
+      }
+
+      el-mypage-cashReward-sub-member {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 17px;
+
+        dl:last-of-type {
+          &::after {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 1px;
+            height: 16px;
+            background-color: var(--color-natural-60);
+          }
+        }
+      }
+    }
   }
 }
 
@@ -12638,3 +12818,296 @@ el-mypage-message-edit {
   }
 }
 /* 종료: 마이페이지 > 발송문구 관리 */
+
+/* 시작: 마이페이지 > 서브회원 관리 */
+el-sub-member {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+
+  el-sub-member-list {
+    display: block;
+    width: 100%;
+
+    .sub-member-list-table table.table {
+      .col-auto {
+        width: auto;
+      }
+      .col-80 {
+        width: 80px;
+      }
+      .col-106 {
+        width: 106px;
+      }
+      .col-122 {
+        width: 122px;
+      }
+      .col-150 {
+        width: 160px;
+      }
+      .col-160 {
+        width: 160px;
+      }
+      .col-200 {
+        width: 160px;
+      }
+
+      th,
+      td {
+        color: var(--color-natural-0) !important;
+      }
+
+      el-mypage-table-action-buttons {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 4px;
+        width: 100%;
+
+        & > el-select {
+          width: 72px;
+        }
+
+        & > button {
+          width: auto;
+          min-width: 53px;
+        }
+      }
+    }
+  }
+}
+
+el-modal-cash-history {
+  display: block;
+  width: 640px;
+
+  el-cell-index {
+    flex-grow: 0;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    padding: 0 16px;
+  }
+  el-cell-amount {
+    flex-grow: 0;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    padding: 0 16px;
+  }
+  el-cell-type {
+    flex-grow: 0;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    padding: 0 16px;
+  }
+  el-cell-reason {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 0 14px;
+  }
+  el-cell-date {
+    flex-grow: 0;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    padding: 0 16px;
+  }
+
+  el-modal-cash-history-header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 43px;
+    border-radius: 10px;
+    border: 1px solid var(--color-natural-80);
+    background-color: var(--color-natural-95);
+    color: var(--color-natural-30);
+    font-weight: 600 !important;
+    overflow: auto;
+    scrollbar-color: transparent transparent;
+    scrollbar-width: thin;
+    scrollbar-gutter: stable;
+  }
+
+  el-modal-cash-history-body {
+    display: block;
+    width: 100%;
+    max-height: 430px;
+    position: relative;
+    overflow: auto;
+    scrollbar-color: var(--color-opacity-black-30) transparent;
+    scrollbar-width: thin;
+    scrollbar-gutter: stable;
+
+    & > ul {
+      width: 100%;
+
+      & > li {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        min-height: 43px;
+        padding: 10px 0;
+        border-bottom: 1px solid var(--color-natural-80);
+      }
+    }
+
+    el-board-list-empty {
+      height: 194px;
+    }
+  }
+}
+
+el-modal-pay-cash {
+  display: block;
+  width: 400px;
+
+  el-mypage-cashReward-status {
+    margin-top: 16px;
+    min-height: 66px;
+  }
+
+  el-marker-list {
+    padding: 10px 10px 0;
+  }
+
+  el-modal-form {
+    padding-top: 32px;
+  }
+}
+
+el-mypage-sub-member-regist {
+  display: block;
+  width: 100%;
+
+  el-form-with-label {
+    el-form-row {
+      el-form-content {
+        el-input {
+          width: 400px;
+        }
+      }
+    }
+  }
+}
+
+el-sub-member-regist-agree {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-top: 32px;
+
+  el-sub-member-regist-agree-content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+    padding-top: 24px;
+
+    el-sub-member-regist-agree-item {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--color-natural-80);
+
+      el-checkbox {
+        position: relative;
+        left: 16px;
+
+        label {
+          display: inline-flex;
+          gap: 4px;
+
+          span {
+            color: var(--color-natural-40);
+          }
+        }
+      }
+
+      button {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        color: var(--color-natural-40);
+        font-weight: 600 !important;
+
+        el-icon.h16-arrow-down {
+          display: none;
+        }
+
+        el-icon.h16-arrow-up {
+          display: inline-block;
+        }
+
+        &.collapsed {
+          el-icon.h16-arrow-down {
+            display: inline-block;
+          }
+
+          el-icon.h16-arrow-up {
+            display: none;
+          }
+        }
+      }
+
+      el-sub-member-regist-agree-content-collapse {
+        width: 100%;
+
+        &.show {
+          display: block;
+        }
+
+        el-sub-member-regist-agree-detail {
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+          width: 100%;
+          padding: 24px;
+          margin-top: 12px;
+          margin-bottom: 12px;
+          border-radius: 8px;
+          background-color: var(--color-natural-95);
+
+          & > pre {
+            color: var(--color-natural-20);
+
+            strong {
+              font-weight: 700 !important;
+              color: var(--color-orange-officecon);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+el-sub-member-regist-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding-top: 80px;
+
+  button {
+    width: 134px;
+  }
+}
+/* 종료: 마이페이지 > 서브회원 관리 */
