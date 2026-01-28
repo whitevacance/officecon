@@ -12887,4 +12887,22 @@ el-modal-cash-history {
     }
   }
 }
+
+el-modal-pay-cash {
+  display: block;
+  width: 400px;
+
+  el-mypage-cashReward-status {
+    margin-top: 16px;
+    min-height: 66px;
+  }
+
+  el-marker-list {
+    padding: 10px 10px 0;
+  }
+
+  el-modal-form {
+    padding-top: 32px;
+  }
+}
 /* 종료: 마이페이지 > 서브회원 관리 */

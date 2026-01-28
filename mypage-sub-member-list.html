@@ -441,12 +441,16 @@
                                     </button>
                                     <button
                                       type="button"
+                                      data-bs-target="#el-modal-pay-cash"
+                                      data-bs-toggle="modal"
                                       class="button-h34-square typo-label-md"
                                     >
                                       지급
                                     </button>
                                     <button
                                       type="button"
+                                      data-bs-target="#el-modal-recall-cash"
+                                      data-bs-toggle="modal"
                                       class="button-h34-square typo-label-md"
                                     >
                                       회수
@@ -540,6 +544,272 @@
     <button id="scrollToTopButton" type="button" aria-label="상단으로 이동">
       <el-icon class="h32-arrow-up natural-0"></el-icon>
     </button>
+
+    <!-- 시작: modal: 캐쉬 지급 -->
+    <el-modal
+      class="modal fade el-modal-default"
+      id="el-modal-pay-cash"
+      tabindex="-1"
+      aria-hidden="true"
+      data-bs-keyboard="false"
+    >
+      <el-modal-dialog
+        class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+      >
+        <el-modal-content class="modal-content">
+          <el-modal-close-button>
+            <button type="button" data-bs-dismiss="modal" aria-label="닫기">
+              <el-icon class="h32-closed natural-0"></el-icon>
+            </button>
+          </el-modal-close-button>
+
+          <el-modal-header class="modal-header">
+            <h3 class="typo-subtitle-lg center">캐쉬 지급</h3>
+          </el-modal-header>
+
+          <el-modal-body class="modal-body">
+            <el-modal-pay-cash>
+              <el-mypage-cashReward-status>
+                <el-mypage-cashReward-current>
+                  <img src="./images/badge-h14-cash.svg" alt="캐시" />
+                  <el-mypage-cashReward-current-label class="typo-body-lg">
+                    지급 가능 캐쉬
+                  </el-mypage-cashReward-current-label>
+                  <el-mypage-cashReward-current-amount class="typo-label-lg">
+                    <strong class="typo-subtitle-sm"> 999,999,990 </strong>
+                  </el-mypage-cashReward-current-amount>
+                </el-mypage-cashReward-current>
+              </el-mypage-cashReward-status>
+
+              <el-marker-list>
+                <ul>
+                  <li class="color-red">
+                    유효기간 만료 환불 및 이벤트 등으로 지급받은 캐쉬는 지급
+                    불가합니다.
+                  </li>
+                </ul>
+              </el-marker-list>
+
+              <el-modal-form>
+                <el-form-row>
+                  <el-form-label class="typo-body-md">
+                    대상 서브회원
+                  </el-form-label>
+                  <el-form-content>
+                    <el-input>
+                      <input
+                        disabled
+                        class="form-control custom-input"
+                        type="text"
+                        placeholder=""
+                        value="officecon01"
+                      />
+                    </el-input>
+                  </el-form-content>
+                </el-form-row>
+                <el-form-row>
+                  <el-form-label class="typo-body-md">
+                    지급 불가 캐쉬
+                  </el-form-label>
+                  <el-form-content>
+                    <el-input>
+                      <input
+                        disabled
+                        class="form-control custom-input"
+                        type="text"
+                        placeholder=""
+                        value="0"
+                      />
+                    </el-input>
+                  </el-form-content>
+                </el-form-row>
+                <el-form-row>
+                  <el-form-label class="typo-body-md">
+                    지급 캐쉬
+                  </el-form-label>
+                  <el-form-content>
+                    <el-input>
+                      <input
+                        class="form-control custom-input"
+                        type="text"
+                        placeholder="금액을 입력해 주세요."
+                        value=""
+                      />
+                    </el-input>
+                  </el-form-content>
+                </el-form-row>
+                <el-form-row>
+                  <el-form-label class="typo-body-md">
+                    지급 사유
+                  </el-form-label>
+                  <el-form-content>
+                    <el-input>
+                      <input
+                        class="form-control custom-input"
+                        type="text"
+                        placeholder="사유를 입력해 주세요."
+                        value=""
+                      />
+                    </el-input>
+                  </el-form-content>
+                </el-form-row>
+              </el-modal-form>
+            </el-modal-pay-cash>
+          </el-modal-body>
+
+          <el-modal-footer class="modal-footer">
+            <button
+              type="button"
+              data-bs-dismiss="modal"
+              class="button-h50-stroke typo-body-lg"
+            >
+              취소
+            </button>
+            <button
+              type="button"
+              data-bs-dismiss="modal"
+              class="button-h50-fill typo-body-lg"
+            >
+              지급
+            </button>
+          </el-modal-footer>
+        </el-modal-content>
+      </el-modal-dialog>
+    </el-modal>
+    <!-- 종료: modal: 캐쉬 지급 -->
+
+    <!-- 시작: modal: 캐쉬 회수 -->
+    <el-modal
+      class="modal fade el-modal-default"
+      id="el-modal-recall-cash"
+      tabindex="-1"
+      aria-hidden="true"
+      data-bs-keyboard="false"
+    >
+      <el-modal-dialog
+        class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+      >
+        <el-modal-content class="modal-content">
+          <el-modal-close-button>
+            <button type="button" data-bs-dismiss="modal" aria-label="닫기">
+              <el-icon class="h32-closed natural-0"></el-icon>
+            </button>
+          </el-modal-close-button>
+
+          <el-modal-header class="modal-header">
+            <h3 class="typo-subtitle-lg center">캐쉬 회수</h3>
+          </el-modal-header>
+
+          <el-modal-body class="modal-body">
+            <el-modal-pay-cash>
+              <el-mypage-cashReward-status>
+                <el-mypage-cashReward-current>
+                  <img src="./images/badge-h14-cash.svg" alt="캐시" />
+                  <el-mypage-cashReward-current-label class="typo-body-lg">
+                    회수 가능 캐쉬
+                  </el-mypage-cashReward-current-label>
+                  <el-mypage-cashReward-current-amount class="typo-label-lg">
+                    <strong class="typo-subtitle-sm"> 999,999,990 </strong>
+                  </el-mypage-cashReward-current-amount>
+                </el-mypage-cashReward-current>
+              </el-mypage-cashReward-status>
+
+              <el-marker-list>
+                <ul>
+                  <li class="color-red">
+                    유효기간 만료 환불 및 이벤트 등으로 지급받은 캐쉬는 회수
+                    불가합니다.
+                  </li>
+                </ul>
+              </el-marker-list>
+
+              <el-modal-form>
+                <el-form-row>
+                  <el-form-label class="typo-body-md">
+                    대상 서브회원
+                  </el-form-label>
+                  <el-form-content>
+                    <el-input>
+                      <input
+                        disabled
+                        class="form-control custom-input"
+                        type="text"
+                        placeholder=""
+                        value="officecon01"
+                      />
+                    </el-input>
+                  </el-form-content>
+                </el-form-row>
+                <el-form-row>
+                  <el-form-label class="typo-body-md">
+                    회수 불가 캐쉬
+                  </el-form-label>
+                  <el-form-content>
+                    <el-input>
+                      <input
+                        disabled
+                        class="form-control custom-input"
+                        type="text"
+                        placeholder=""
+                        value="0"
+                      />
+                    </el-input>
+                  </el-form-content>
+                </el-form-row>
+                <el-form-row>
+                  <el-form-label class="typo-body-md">
+                    회수 캐쉬
+                  </el-form-label>
+                  <el-form-content>
+                    <el-input>
+                      <input
+                        class="form-control custom-input"
+                        type="text"
+                        placeholder="금액을 입력해 주세요."
+                        value=""
+                      />
+                    </el-input>
+                  </el-form-content>
+                </el-form-row>
+                <el-form-row>
+                  <el-form-label class="typo-body-md">
+                    회수 사유
+                  </el-form-label>
+                  <el-form-content>
+                    <el-input>
+                      <input
+                        class="form-control custom-input"
+                        type="text"
+                        placeholder="사유를 입력해 주세요."
+                        value=""
+                      />
+                    </el-input>
+                  </el-form-content>
+                </el-form-row>
+              </el-modal-form>
+            </el-modal-pay-cash>
+          </el-modal-body>
+
+          <el-modal-footer class="modal-footer">
+            <button
+              type="button"
+              data-bs-dismiss="modal"
+              class="button-h50-stroke typo-body-lg"
+            >
+              취소
+            </button>
+            <button
+              type="button"
+              data-bs-dismiss="modal"
+              class="button-h50-fill typo-body-lg"
+            >
+              회수
+            </button>
+          </el-modal-footer>
+        </el-modal-content>
+      </el-modal-dialog>
+    </el-modal>
+    <!-- 종료: modal: 캐쉬 회수 -->
 
     <!-- 시작: modal: 캐쉬 내역 -->
     <el-modal
