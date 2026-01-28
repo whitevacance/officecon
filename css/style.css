@@ -7939,6 +7939,63 @@ el-signup-form {
       width: 250px;
     }
   }
+
+  &.type-modify {
+    gap: 48px;
+
+    el-section-title {
+      height: 42px;
+      min-height: 42px;
+      padding: 0 0 16px 0;
+      border-bottom: 1px solid var(--color-natural-80);
+    }
+
+    el-signup-form-section {
+      el-signup-form-section-content {
+        padding: 0 16px;
+
+        el-signup-form-inputs {
+          el-signup-form-inputs-row {
+            el-signup-form-inputs-label {
+              color: var(--color-natural-20);
+            }
+          }
+        }
+
+        el-signup-form-caution {
+          margin-top: 0;
+          background-color: var(--color-red-10);
+
+          ul li {
+            color: var(--color-red-40);
+
+            &:before {
+              background-color: var(--color-red-40);
+            }
+          }
+        }
+
+        el-signup-form-security {
+          el-signup-form-security-row {
+            border-bottom: 0;
+            & > h3 {
+              color: var(--color-natural-20);
+            }
+          }
+
+          el-cash-cert-password {
+            margin-top: -16px;
+          }
+        }
+      }
+    }
+
+    el-signup-form-cta {
+      button {
+        width: 134px;
+      }
+    }
+  }
 }
 /* 종료: 회원가입 폼 */
 
