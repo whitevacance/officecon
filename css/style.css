@@ -4266,6 +4266,13 @@ el-agrees {
 }
 /* 종료: 공통 > 동의 영역 */
 
+/* 시작: 공통 > pre 내부 table */
+table.pre-table {
+  margin: 0;
+  padding: 0;
+}
+/* 종료: 공통 > pre 내부 table */
+
 /* 시작: 예시 (example) */
 el-examples-article {
   display: flex;
@@ -12931,6 +12938,113 @@ el-mypage-sub-member-regist {
         }
       }
     }
+  }
+}
+
+el-sub-member-regist-agree {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-top: 32px;
+
+  el-sub-member-regist-agree-content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+    padding-top: 24px;
+
+    el-sub-member-regist-agree-item {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--color-natural-80);
+
+      el-checkbox {
+        position: relative;
+        left: 16px;
+
+        label {
+          display: inline-flex;
+          gap: 4px;
+
+          span {
+            color: var(--color-natural-40);
+          }
+        }
+      }
+
+      button {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        color: var(--color-natural-40);
+        font-weight: 600 !important;
+
+        el-icon.h16-arrow-down {
+          display: none;
+        }
+
+        el-icon.h16-arrow-up {
+          display: inline-block;
+        }
+
+        &.collapsed {
+          el-icon.h16-arrow-down {
+            display: inline-block;
+          }
+
+          el-icon.h16-arrow-up {
+            display: none;
+          }
+        }
+      }
+
+      el-sub-member-regist-agree-content-collapse {
+        width: 100%;
+
+        &.show {
+          display: block;
+        }
+
+        el-sub-member-regist-agree-detail {
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+          width: 100%;
+          padding: 24px;
+          margin-top: 12px;
+          margin-bottom: 12px;
+          border-radius: 8px;
+          background-color: var(--color-natural-95);
+
+          & > pre {
+            color: var(--color-natural-20);
+
+            strong {
+              font-weight: 700 !important;
+              color: var(--color-orange-officecon);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+el-sub-member-regist-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding-top: 80px;
+
+  button {
+    width: 134px;
   }
 }
 /* 종료: 마이페이지 > 서브회원 관리 */
