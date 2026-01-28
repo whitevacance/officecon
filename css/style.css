@@ -4270,6 +4270,31 @@ el-agrees {
 table.pre-table {
   margin: 0;
   padding: 0;
+  text-align: center;
+
+  thead {
+    th {
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 16px;
+      letter-spacing: -0.36px;
+      padding: 12px;
+      border: 1px solid var(--color-natural-70);
+      background-color: var(--color-natural-70);
+    }
+  }
+
+  tbody {
+    td {
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 18px;
+      letter-spacing: -0.39px;
+      padding: 12px;
+      border: 1px solid var(--color-natural-70);
+      background-color: var(--color-natural-98);
+    }
+  }
 }
 /* 종료: 공통 > pre 내부 table */
 
