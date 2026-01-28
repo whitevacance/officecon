@@ -433,6 +433,8 @@
                                   <el-mypage-table-action-buttons>
                                     <button
                                       type="button"
+                                      data-bs-target="#el-modal-cash-history"
+                                      data-bs-toggle="modal"
                                       class="button-h34-square typo-label-md"
                                     >
                                       내역
@@ -538,6 +540,164 @@
     <button id="scrollToTopButton" type="button" aria-label="상단으로 이동">
       <el-icon class="h32-arrow-up natural-0"></el-icon>
     </button>
+
+    <!-- 시작: modal: 캐쉬 내역 -->
+    <el-modal
+      class="modal fade el-modal-default"
+      id="el-modal-cash-history"
+      tabindex="-1"
+      aria-hidden="true"
+      data-bs-keyboard="false"
+    >
+      <el-modal-dialog
+        class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+      >
+        <el-modal-content class="modal-content">
+          <el-modal-close-button>
+            <button type="button" data-bs-dismiss="modal" aria-label="닫기">
+              <el-icon class="h32-closed natural-0"></el-icon>
+            </button>
+          </el-modal-close-button>
+
+          <el-modal-header class="modal-header">
+            <h3 class="typo-subtitle-lg center">캐쉬 내역</h3>
+          </el-modal-header>
+
+          <el-modal-body class="modal-body">
+            <el-modal-cash-history>
+              <el-modal-cash-history-header class="typo-label-lg">
+                <el-cell-index>번호</el-cell-index>
+                <el-cell-amount>캐쉬</el-cell-amount>
+                <el-cell-type>구분</el-cell-type>
+                <el-cell-reason>사유</el-cell-reason>
+                <el-cell-date>일자</el-cell-date>
+              </el-modal-cash-history-header>
+
+              <el-modal-cash-history-body
+                class="typo-label-lg el-modal-scrollable-list-content"
+              >
+                <ul>
+                  <li>
+                    <el-cell-index>00</el-cell-index>
+                    <el-cell-amount>30,000</el-cell-amount>
+                    <el-cell-type>지급</el-cell-type>
+                    <el-cell-reason>대표회원 지급</el-cell-reason>
+                    <el-cell-date>2025.12.09</el-cell-date>
+                  </li>
+                  <li>
+                    <el-cell-index>00</el-cell-index>
+                    <el-cell-amount>30,000</el-cell-amount>
+                    <el-cell-type>지급</el-cell-type>
+                    <el-cell-reason>
+                      내용을입력해주세요.내용을입력해주세요.
+                    </el-cell-reason>
+                    <el-cell-date>2025.12.09</el-cell-date>
+                  </li>
+                  <li>
+                    <el-cell-index>00</el-cell-index>
+                    <el-cell-amount>30,000</el-cell-amount>
+                    <el-cell-type>지급</el-cell-type>
+                    <el-cell-reason>
+                      내용을입력해주세요.내용을입력해주세요.
+                    </el-cell-reason>
+                    <el-cell-date>2025.12.09</el-cell-date>
+                  </li>
+                  <li>
+                    <el-cell-index>00</el-cell-index>
+                    <el-cell-amount>30,000</el-cell-amount>
+                    <el-cell-type>지급</el-cell-type>
+                    <el-cell-reason>
+                      내용을입력해주세요.내용을입력해주세요.
+                    </el-cell-reason>
+                    <el-cell-date>2025.12.09</el-cell-date>
+                  </li>
+                  <li>
+                    <el-cell-index>00</el-cell-index>
+                    <el-cell-amount>30,000</el-cell-amount>
+                    <el-cell-type>지급</el-cell-type>
+                    <el-cell-reason>
+                      내용을입력해주세요.내용을입력해주세요.
+                    </el-cell-reason>
+                    <el-cell-date>2025.12.09</el-cell-date>
+                  </li>
+                  <li>
+                    <el-cell-index>00</el-cell-index>
+                    <el-cell-amount>30,000</el-cell-amount>
+                    <el-cell-type>지급</el-cell-type>
+                    <el-cell-reason>
+                      내용을입력해주세요.내용을입력해주세요.
+                    </el-cell-reason>
+                    <el-cell-date>2025.12.09</el-cell-date>
+                  </li>
+                  <li>
+                    <el-cell-index>00</el-cell-index>
+                    <el-cell-amount>30,000</el-cell-amount>
+                    <el-cell-type>지급</el-cell-type>
+                    <el-cell-reason>
+                      내용을입력해주세요.내용을입력해주세요.
+                    </el-cell-reason>
+                    <el-cell-date>2025.12.09</el-cell-date>
+                  </li>
+                  <li>
+                    <el-cell-index>00</el-cell-index>
+                    <el-cell-amount>30,000</el-cell-amount>
+                    <el-cell-type>지급</el-cell-type>
+                    <el-cell-reason>
+                      내용을입력해주세요.내용을입력해주세요.
+                    </el-cell-reason>
+                    <el-cell-date>2025.12.09</el-cell-date>
+                  </li>
+                  <li>
+                    <el-cell-index>00</el-cell-index>
+                    <el-cell-amount>30,000</el-cell-amount>
+                    <el-cell-type>지급</el-cell-type>
+                    <el-cell-reason>
+                      내용을입력해주세요.내용을입력해주세요.
+                    </el-cell-reason>
+                    <el-cell-date>2025.12.09</el-cell-date>
+                  </li>
+                  <li>
+                    <el-cell-index>00</el-cell-index>
+                    <el-cell-amount>30,000</el-cell-amount>
+                    <el-cell-type>지급</el-cell-type>
+                    <el-cell-reason>
+                      내용을입력해주세요.내용을입력해주세요.
+                    </el-cell-reason>
+                    <el-cell-date>2025.12.09</el-cell-date>
+                  </li>
+                  <li>
+                    <el-cell-index>00</el-cell-index>
+                    <el-cell-amount>30,000</el-cell-amount>
+                    <el-cell-type>지급</el-cell-type>
+                    <el-cell-reason>
+                      내용을입력해주세요.내용을입력해주세요.
+                    </el-cell-reason>
+                    <el-cell-date>2025.12.09</el-cell-date>
+                  </li>
+                  <li>
+                    <el-board-list-empty class="typo-label-lg">
+                      <el-icon class="etc-file-text"></el-icon>
+                      캐쉬 내역이 없습니다.
+                    </el-board-list-empty>
+                  </li>
+                </ul>
+              </el-modal-cash-history-body>
+            </el-modal-cash-history>
+          </el-modal-body>
+
+          <el-modal-footer class="modal-footer">
+            <button
+              type="button"
+              data-bs-dismiss="modal"
+              class="button-h50-fill typo-body-lg"
+            >
+              확인
+            </button>
+          </el-modal-footer>
+        </el-modal-content>
+      </el-modal-dialog>
+    </el-modal>
+    <!-- 종료: modal: 캐쉬 내역 -->
 
     <!-- 시작: alert -->
     <el-alert
