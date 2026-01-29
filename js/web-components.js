@@ -218,6 +218,10 @@ class ComponentHeaderSticky extends HTMLElement {
     super();
   }
 
+  static get observedAttributes() {
+    return ['remove-toggle-switch'];
+  }
+
   connectedCallback() {
     this.render();
     this.loadExternalScript();
@@ -239,6 +243,9 @@ class ComponentHeaderSticky extends HTMLElement {
   }
 
   render() {
+    const removeToggleSwitch =
+      this.getAttribute('remove-toggle-switch') || false;
+
     this.innerHTML = `
       <el-header-sticky>
         <el-header-content>
@@ -381,6 +388,11 @@ class ComponentHeaderSticky extends HTMLElement {
                   </el-search-addon>
                 </el-search-layer>
               </el-search-area>
+              
+              ${
+                removeToggleSwitch
+                  ? ''
+                  : `
               <el-theme-switch class="typo-body-sm">
                 <el-theme-switch-buttons>
                   <input
@@ -398,6 +410,8 @@ class ComponentHeaderSticky extends HTMLElement {
                   <label for="theme-personal-member">일반</label>
                 </el-theme-switch-buttons>
               </el-theme-switch>
+              `
+              }
             </el-center>
           </el-header-content-left>
           <el-header-content-right class="typo-label-md">
