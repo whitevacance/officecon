@@ -2919,7 +2919,7 @@
             <h3 class="typo-subtitle-lg">미리보기</h3>
           </el-modal-header>
 
-          <el-modal-body class="modal-body">
+          <el-modal-body data-overlayscrollbars-initialize class="modal-body">
             <el-modal-order-preview>
               <el-modal-templet-officecon>
                 <img src="./images/templet-officecon.png" alt="" />
@@ -3087,7 +3087,7 @@
             <h3 class="typo-subtitle-lg center">복사하여 붙여넣기</h3>
           </el-modal-header>
 
-          <el-modal-body class="modal-body">
+          <el-modal-body data-overlayscrollbars-initialize class="modal-body">
             <el-modal-copy-paste-content>
               <textarea
                 class="form-control"
@@ -3135,7 +3135,7 @@
             <h3 class="typo-subtitle-lg center">복사하여 붙여넣기</h3>
           </el-modal-header>
 
-          <el-modal-body class="modal-body">
+          <el-modal-body data-overlayscrollbars-initialize class="modal-body">
             <el-modal-copy-paste-content>
               <textarea
                 class="form-control"
@@ -3183,7 +3183,7 @@
             <h3 class="typo-subtitle-lg center">발송문구 불러오기</h3>
           </el-modal-header>
 
-          <el-modal-body class="modal-body">
+          <el-modal-body data-overlayscrollbars-initialize class="modal-body">
             <el-modal-send-message-load-content>
               <el-modal-scrollable-list>
                 <el-modal-scrollable-list-header class="typo-body-sm">
@@ -3195,7 +3195,10 @@
                   </el-scrollable-list-header-aside>
                 </el-modal-scrollable-list-header>
 
-                <el-modal-scrollable-list-content>
+                <el-modal-scrollable-list-content
+                  id="overlayscrollbars-el-modal-send-message-load-content"
+                  data-overlayscrollbars-initialize
+                >
                   <ul>
                     <li>
                       <el-send-message-content-item>
@@ -3368,6 +3371,19 @@
                     </li>
                   </ul>
                 </el-modal-scrollable-list-content>
+                <script>
+                  const overlayScrollbarsElModalSendMessageLoadContent =
+                    OverlayScrollbarsGlobal.OverlayScrollbars(
+                      document.querySelector(
+                        '#overlayscrollbars-el-modal-send-message-load-content'
+                      ),
+                      {
+                        scrollbars: {
+                          clickScroll: true,
+                        },
+                      }
+                    );
+                </script>
               </el-modal-scrollable-list>
             </el-modal-send-message-load-content>
           </el-modal-body>

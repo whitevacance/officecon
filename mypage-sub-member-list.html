@@ -74,7 +74,9 @@
 
         <!-- 시작: 헤더 -->
         <component-header-top></component-header-top>
-        <component-header-sticky></component-header-sticky>
+        <component-header-sticky
+          remove-toggle-switch="true"
+        ></component-header-sticky>
         <component-header-gnb></component-header-gnb>
         <!-- 종료: 헤더 -->
 
@@ -567,7 +569,7 @@
             <h3 class="typo-subtitle-lg center">캐쉬 지급</h3>
           </el-modal-header>
 
-          <el-modal-body class="modal-body">
+          <el-modal-body data-overlayscrollbars-initialize class="modal-body">
             <el-modal-pay-cash>
               <el-mypage-cashReward-status>
                 <el-mypage-cashReward-current>
@@ -700,7 +702,7 @@
             <h3 class="typo-subtitle-lg center">캐쉬 회수</h3>
           </el-modal-header>
 
-          <el-modal-body class="modal-body">
+          <el-modal-body data-overlayscrollbars-initialize class="modal-body">
             <el-modal-pay-cash>
               <el-mypage-cashReward-status>
                 <el-mypage-cashReward-current>
@@ -833,7 +835,7 @@
             <h3 class="typo-subtitle-lg center">캐쉬 내역</h3>
           </el-modal-header>
 
-          <el-modal-body class="modal-body">
+          <el-modal-body data-overlayscrollbars-initialize class="modal-body">
             <el-modal-cash-history>
               <el-modal-cash-history-header class="typo-label-lg">
                 <el-cell-index>번호</el-cell-index>
@@ -844,9 +846,11 @@
               </el-modal-cash-history-header>
 
               <el-modal-cash-history-body
+                id="overlayscrollbars-el-modal-cash-history-body"
+                data-overlayscrollbars-initialize
                 class="typo-label-lg el-modal-scrollable-list-content"
               >
-                <ul>
+                <ul class="el-modal-cash-history-body-ul">
                   <li>
                     <el-cell-index>00</el-cell-index>
                     <el-cell-amount>30,000</el-cell-amount>
@@ -952,6 +956,19 @@
                   </li>
                 </ul>
               </el-modal-cash-history-body>
+              <script>
+                const overlayScrollbarsElModalCashHistoryBody =
+                  OverlayScrollbarsGlobal.OverlayScrollbars(
+                    document.querySelector(
+                      '#overlayscrollbars-el-modal-cash-history-body'
+                    ),
+                    {
+                      scrollbars: {
+                        clickScroll: true,
+                      },
+                    }
+                  );
+              </script>
             </el-modal-cash-history>
           </el-modal-body>
 
@@ -1020,7 +1037,7 @@
             <h3 class="typo-subtitle-lg center">캐쉬충전</h3>
           </el-modal-header>
 
-          <el-modal-body class="modal-body">
+          <el-modal-body data-overlayscrollbars-initialize class="modal-body">
             <el-modal-cash-charge>
               <el-charge-amount class="typo-body-sm">
                 <el-charge-amount-title>
@@ -1126,7 +1143,7 @@
             <h3 class="typo-subtitle-lg center">기업 회원 전환 신청</h3>
           </el-modal-header>
 
-          <el-modal-body class="modal-body">
+          <el-modal-body data-overlayscrollbars-initialize class="modal-body">
             <el-modal-company-member-conversion>
               <el-info-box>
                 <el-marker-list class="weight-regular color-gray">

@@ -2190,7 +2190,8 @@ el-modal.modal {
       }
 
       el-modal-body {
-        display: block;
+        display: flex;
+        flex-direction: column;
         position: relative;
         width: fit-content;
         max-width: 100%;
@@ -2463,8 +2464,7 @@ el-modal.el-modal-estimate-download {
       display: flex;
       justify-content: center;
       width: 100%;
-      height: 186px;
-      padding-top: 71px;
+      padding: 71px 0 80px;
 
       & > button {
         width: 130px;
@@ -2499,11 +2499,6 @@ el-modal.el-modal-estimate-download {
               border-right: 1px solid var(--color-natural-80);
             }
           }
-        }
-
-        el-modal-estimate-caution {
-          padding-top: 0;
-          border-bottom: 0;
         }
 
         el-estimate-document-products {
@@ -2713,16 +2708,12 @@ el-modal-scrollable-list {
     justify-content: space-between;
     width: 100%;
     height: 52px;
-    padding: 0 8px;
+    padding: 0 7px;
     border: 1px solid var(--color-natural-80);
     border-radius: 10px;
     background-color: var(--color-natural-95);
     color: var(--color-natural-30);
     font-weight: 600 !important;
-    overflow: auto;
-    scrollbar-color: transparent transparent;
-    scrollbar-width: thin;
-    scrollbar-gutter: stable;
 
     el-scrollable-list-header-label {
       display: flex;
@@ -2744,15 +2735,13 @@ el-modal-scrollable-list {
   }
 
   el-modal-scrollable-list-content {
-    display: block;
+    display: flex;
+    flex-direction: column;
     width: 100%;
     position: relative;
     overflow: auto;
-    scrollbar-color: var(--color-opacity-black-30) transparent;
-    scrollbar-width: thin;
-    scrollbar-gutter: stable;
 
-    & > ul {
+    ul {
       width: 100%;
       padding: 0 8px;
 
@@ -8951,6 +8940,10 @@ el-mypage-content {
             scrollbar-gutter: stable;
             color: var(--color-natural-20);
 
+            &.editable {
+              padding: 20px;
+            }
+
             &.bg-gray {
               background-color: var(--color-natural-95);
             }
@@ -11608,17 +11601,6 @@ el-mypage-order-list {
 }
 
 .el-modal-guide-templet {
-  el-modal-scrollable-list-content {
-    display: block;
-    width: 100%;
-    max-height: 100%;
-    position: relative;
-    overflow: auto;
-    scrollbar-color: var(--color-opacity-black-30) transparent;
-    scrollbar-width: thin;
-    scrollbar-gutter: stable;
-  }
-
   el-modal-guide {
     display: flex;
     flex-direction: column;
@@ -11634,6 +11616,10 @@ el-mypage-order-list {
       background-color: var(--color-natural-95);
       border-radius: 8px;
       color: var(--color-natural-0);
+
+      &.bg-blue {
+        background-color: var(--color-blue-10);
+      }
 
       & > h4 {
         font-weight: 700 !important;
@@ -11853,9 +11839,6 @@ el-order-view-sent-list {
     width: 100%;
     max-height: 231px;
     overflow: auto;
-    scrollbar-color: var(--color-opacity-black-30) transparent;
-    scrollbar-width: thin;
-    scrollbar-gutter: stable;
 
     .col-auto {
       width: auto;
@@ -11967,29 +11950,23 @@ el-modal-resend {
       align-items: center;
       width: 100%;
       height: 43px;
-      padding: 0 8px;
+      padding: 0 7px;
       border-radius: 10px;
       border: 1px solid var(--color-natural-80);
       background-color: var(--color-natural-95);
       color: var(--color-natural-30);
       font-weight: 600 !important;
-      overflow: auto;
-      scrollbar-color: transparent transparent;
-      scrollbar-width: thin;
-      scrollbar-gutter: stable;
     }
 
     el-modal-resend-result-body {
-      display: block;
+      display: flex;
+      flex-direction: column;
       width: 100%;
       max-height: 215px;
       position: relative;
       overflow: auto;
-      scrollbar-color: var(--color-opacity-black-30) transparent;
-      scrollbar-width: thin;
-      scrollbar-gutter: stable;
 
-      & > ul {
+      ul {
         width: 100%;
         padding: 0 8px;
 
@@ -12015,10 +11992,6 @@ el-modal-resend {
       width: 100%;
       padding: 8px 8px 0;
       color: var(--color-natural-20);
-      overflow: auto;
-      scrollbar-color: transparent transparent;
-      scrollbar-width: thin;
-      scrollbar-gutter: stable;
 
       strong {
         color: var(--color-orange-officecon);
@@ -12129,11 +12102,11 @@ el-order-view-sent-result {
       border: 1.375px solid var(--color-natural-70);
       border-radius: 50%;
       overflow: hidden;
-      color: var(--color-natural-30);
-      font-size: 15.125px;
-      font-weight: 600;
-      line-height: 22px;
-      letter-spacing: -0.454px;
+      color: var(--color-natural-30) !important;
+      font-size: 15.125px !important;
+      font-weight: 600 !important;
+      line-height: 22px !important;
+      letter-spacing: -0.454px !important;
     }
   }
 
@@ -12299,6 +12272,8 @@ el-mypage-cancel-list {
     }
 
     el-mypage-table-action-buttons {
+      align-items: center;
+
       & > button {
         width: 53px;
       }
@@ -12343,29 +12318,25 @@ el-modal-cancel-detail {
     align-items: center;
     width: 100%;
     height: 43px;
+    padding: 0 7px;
     border-radius: 10px;
     border: 1px solid var(--color-natural-80);
     background-color: var(--color-natural-95);
     color: var(--color-natural-30);
     font-weight: 600 !important;
-    overflow: auto;
-    scrollbar-color: transparent transparent;
-    scrollbar-width: thin;
-    scrollbar-gutter: stable;
   }
 
   el-modal-cancel-detail-body {
-    display: block;
+    display: flex;
+    flex-direction: column;
     width: 100%;
     max-height: 258px;
     position: relative;
     overflow: auto;
-    scrollbar-color: var(--color-opacity-black-30) transparent;
-    scrollbar-width: thin;
-    scrollbar-gutter: stable;
 
-    & > ul {
+    ul {
       width: 100%;
+      padding: 0 8px;
 
       & > li {
         display: flex;
@@ -12603,29 +12574,25 @@ el-modal-virtual-account-history {
     align-items: center;
     width: 100%;
     height: 43px;
+    padding: 0 7px;
     border-radius: 10px;
     border: 1px solid var(--color-natural-80);
     background-color: var(--color-natural-95);
     color: var(--color-natural-30);
     font-weight: 600 !important;
-    overflow: auto;
-    scrollbar-color: transparent transparent;
-    scrollbar-width: thin;
-    scrollbar-gutter: stable;
   }
 
   el-modal-virtual-account-history-body {
-    display: block;
+    display: flex;
+    flex-direction: column;
     width: 100%;
     max-height: 430px;
     position: relative;
     overflow: auto;
-    scrollbar-color: var(--color-opacity-black-30) transparent;
-    scrollbar-width: thin;
-    scrollbar-gutter: stable;
 
-    & > ul {
+    ul {
       width: 100%;
+      padding: 0 8px;
 
       & > li {
         display: flex;
@@ -12999,29 +12966,25 @@ el-modal-cash-history {
     align-items: center;
     width: 100%;
     height: 43px;
+    padding: 0 7px;
     border-radius: 10px;
     border: 1px solid var(--color-natural-80);
     background-color: var(--color-natural-95);
     color: var(--color-natural-30);
     font-weight: 600 !important;
-    overflow: auto;
-    scrollbar-color: transparent transparent;
-    scrollbar-width: thin;
-    scrollbar-gutter: stable;
   }
 
   el-modal-cash-history-body {
-    display: block;
+    display: flex;
+    flex-direction: column;
     width: 100%;
     max-height: 430px;
     position: relative;
     overflow: auto;
-    scrollbar-color: var(--color-opacity-black-30) transparent;
-    scrollbar-width: thin;
-    scrollbar-gutter: stable;
 
-    & > ul {
+    ul.el-modal-cash-history-body-ul {
       width: 100%;
+      padding: 0 8px;
 
       & > li {
         display: flex;

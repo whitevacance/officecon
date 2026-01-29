@@ -74,7 +74,9 @@
 
         <!-- 시작: 헤더 -->
         <component-header-top></component-header-top>
-        <component-header-sticky></component-header-sticky>
+        <component-header-sticky
+          remove-toggle-switch="true"
+        ></component-header-sticky>
         <component-header-gnb></component-header-gnb>
         <!-- 종료: 헤더 -->
 
@@ -235,7 +237,7 @@
                   <el-mypage-content>
                     <el-filter-box>
                       <dl>
-                        <dt>주문기간</dt>
+                        <dt>환불요청일</dt>
                         <dd>
                           <el-date-tabs>
                             <button
@@ -545,7 +547,7 @@
     </el-alert>
     <!-- 종료: alert -->
 
-    <!-- 시작: modal: 취소 상세 내역 -->
+    <!-- 시작: modal: 환불 상세 내역 -->
     <el-modal
       class="modal fade el-modal-default"
       id="el-modal-cancel-detail"
@@ -564,10 +566,10 @@
           </el-modal-close-button>
 
           <el-modal-header class="modal-header">
-            <h3 class="typo-subtitle-lg center">취소 상세 내역</h3>
+            <h3 class="typo-subtitle-lg center">환불 상세 내역</h3>
           </el-modal-header>
 
-          <el-modal-body class="modal-body">
+          <el-modal-body data-overlayscrollbars-initialize class="modal-body">
             <el-modal-cancel-detail>
               <el-modal-cancel-detail-header class="typo-label-lg">
                 <el-cell-index>번호</el-cell-index>
@@ -576,6 +578,8 @@
               </el-modal-cancel-detail-header>
 
               <el-modal-cancel-detail-body
+                id="overlayscrollbars-el-modal-cancel-detail-body"
+                data-overlayscrollbars-initialize
                 class="typo-label-lg el-modal-scrollable-list-content"
               >
                 <ul>
@@ -616,6 +620,19 @@
                   </li>
                 </ul>
               </el-modal-cancel-detail-body>
+              <script>
+                const overlayScrollbarsElModalCancelDetailBody =
+                  OverlayScrollbarsGlobal.OverlayScrollbars(
+                    document.querySelector(
+                      '#overlayscrollbars-el-modal-cancel-detail-body'
+                    ),
+                    {
+                      scrollbars: {
+                        clickScroll: true,
+                      },
+                    }
+                  );
+              </script>
             </el-modal-cancel-detail>
           </el-modal-body>
 
@@ -631,7 +648,7 @@
         </el-modal-content>
       </el-modal-dialog>
     </el-modal>
-    <!-- 종료: modal: 취소 상세 내역 -->
+    <!-- 종료: modal: 환불 상세 내역 -->
 
     <!-- 시작: modal: 캐쉬충전 -->
     <el-modal
@@ -655,7 +672,7 @@
             <h3 class="typo-subtitle-lg center">캐쉬충전</h3>
           </el-modal-header>
 
-          <el-modal-body class="modal-body">
+          <el-modal-body data-overlayscrollbars-initialize class="modal-body">
             <el-modal-cash-charge>
               <el-charge-amount class="typo-body-sm">
                 <el-charge-amount-title>
@@ -761,7 +778,7 @@
             <h3 class="typo-subtitle-lg center">기업 회원 전환 신청</h3>
           </el-modal-header>
 
-          <el-modal-body class="modal-body">
+          <el-modal-body data-overlayscrollbars-initialize class="modal-body">
             <el-modal-company-member-conversion>
               <el-info-box>
                 <el-marker-list class="weight-regular color-gray">

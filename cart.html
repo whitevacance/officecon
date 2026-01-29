@@ -446,7 +446,7 @@
             <h3 class="typo-subtitle-lg center">견적서 출력</h3>
           </el-modal-header>
 
-          <el-modal-body class="modal-body">
+          <el-modal-body data-overlayscrollbars-initialize class="modal-body">
             <el-modal-estimate-request>
               <el-modal-estimate-request-info>
                 <el-estimate-request-row>
@@ -510,7 +510,10 @@
                     </el-scrollable-list-header-aside>
                   </el-modal-scrollable-list-header>
 
-                  <el-modal-scrollable-list-content>
+                  <el-modal-scrollable-list-content
+                    id="overlayscrollbars-el-modal-estimate-request-quantity-content"
+                    data-overlayscrollbars-initialize
+                  >
                     <ul>
                       <li>
                         <el-modal-estimate-request-product>
@@ -653,6 +656,19 @@
                       </li>
                     </ul>
                   </el-modal-scrollable-list-content>
+                  <script>
+                    const overlayScrollbarsElModalEstimateRequestQuantityContent =
+                      OverlayScrollbarsGlobal.OverlayScrollbars(
+                        document.querySelector(
+                          '#overlayscrollbars-el-modal-estimate-request-quantity-content'
+                        ),
+                        {
+                          scrollbars: {
+                            clickScroll: true,
+                          },
+                        }
+                      );
+                  </script>
                 </el-modal-scrollable-list>
               </el-modal-estimate-request-quantity>
             </el-modal-estimate-request>
@@ -708,7 +724,7 @@
 
           <el-modal-header class="modal-header"> </el-modal-header>
 
-          <el-modal-body class="modal-body">
+          <el-modal-body data-overlayscrollbars-initialize class="modal-body">
             <el-modal-estimate-document>
               <h2 class="typo-heading-md estimate-document-title">
                 오피스콘 온라인 견적서

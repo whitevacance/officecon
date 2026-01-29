@@ -74,7 +74,9 @@
 
         <!-- 시작: 헤더 -->
         <component-header-top></component-header-top>
-        <component-header-sticky></component-header-sticky>
+        <component-header-sticky
+          remove-toggle-switch="true"
+        ></component-header-sticky>
         <component-header-gnb></component-header-gnb>
         <!-- 종료: 헤더 -->
 
@@ -492,7 +494,7 @@
 
                                 <el-order-addressee-list>
                                   <el-order-addressee-list-content>
-                                    <ul class="typo-body-md bg-gray">
+                                    <ul class="typo-body-md bg-gray editable">
                                       <li>
                                         <el-order-addressee-modify>
                                           <el-input>
@@ -562,7 +564,7 @@
                                   </el-order-addressee-list-content>
 
                                   <el-order-addressee-list-content>
-                                    <ul class="typo-body-md bg-gray">
+                                    <ul class="typo-body-md bg-gray editable">
                                       <li>
                                         <el-order-addressee-modify>
                                           <el-input>
@@ -1119,7 +1121,7 @@
 
                                 <el-order-addressee-list>
                                   <el-order-addressee-list-content>
-                                    <ul class="typo-body-md bg-gray">
+                                    <ul class="typo-body-md bg-gray editable">
                                       <li>
                                         <el-order-addressee-modify>
                                           <el-input>
@@ -1243,7 +1245,7 @@
                                   </el-order-addressee-list-content>
 
                                   <el-order-addressee-list-content>
-                                    <ul class="typo-body-md bg-gray">
+                                    <ul class="typo-body-md bg-gray editable">
                                       <li>
                                         <el-order-addressee-modify>
                                           <el-input>
@@ -1620,9 +1622,12 @@
             <h3 class="typo-subtitle-lg">주문/발송 수정가이드</h3>
           </el-modal-header>
 
-          <el-modal-body class="modal-body scroll-shadow">
+          <el-modal-body
+            data-overlayscrollbars-initialize
+            class="modal-body scroll-shadow"
+          >
             <el-modal-guide class="typo-label-lg">
-              <el-modal-guide-box>
+              <el-modal-guide-box class="bg-blue">
                 <h4 class="typo-body-sm">
                   <el-icon class="etc-pending natural-0"></el-icon>
                   예약주문
@@ -1632,7 +1637,7 @@
                   발송건수 변경 불가
                 </div>
               </el-modal-guide-box>
-              <el-modal-guide-box>
+              <el-modal-guide-box class="bg-blue">
                 <h4 class="typo-body-sm">
                   <el-icon class="etc-success natural-0"></el-icon>
                   발송완료 주문
@@ -1644,7 +1649,7 @@
                   수신자 오발송의 경우 고객센터로 별도 문의
                 </div>
               </el-modal-guide-box>
-              <el-modal-guide-box>
+              <el-modal-guide-box class="bg-blue">
                 <h4 class="typo-body-sm">
                   <el-icon class="etc-fail natural-0"></el-icon>
                   발송실패 주문
@@ -1695,7 +1700,7 @@
             <h3 class="typo-subtitle-lg center">캐쉬충전</h3>
           </el-modal-header>
 
-          <el-modal-body class="modal-body">
+          <el-modal-body data-overlayscrollbars-initialize class="modal-body">
             <el-modal-cash-charge>
               <el-charge-amount class="typo-body-sm">
                 <el-charge-amount-title>
@@ -1801,7 +1806,7 @@
             <h3 class="typo-subtitle-lg center">기업 회원 전환 신청</h3>
           </el-modal-header>
 
-          <el-modal-body class="modal-body">
+          <el-modal-body data-overlayscrollbars-initialize class="modal-body">
             <el-modal-company-member-conversion>
               <el-info-box>
                 <el-marker-list class="weight-regular color-gray">

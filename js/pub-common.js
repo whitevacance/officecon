@@ -140,18 +140,34 @@ const initHandleModalScroll = () => {
       const targetModalHeaderEl = modalEl.querySelector(
         'el-modal-header.modal-header'
       );
+
       const targetModalBodyEl = modalEl.querySelector(
         'el-modal-body.modal-body'
       );
       const targetModalBodyScrollShadowEl = modalEl.querySelector(
         'el-modal-body.modal-body.scroll-shadow'
       );
+
       const targetModalScrollableListContentEl = modalEl.querySelector(
         'el-modal-scrollable-list-content'
       );
       const targetModalScrollableListContentEl2 = modalEl.querySelector(
         '.el-modal-scrollable-list-content'
       );
+      const targetModalScrollableListContentEl3 =
+        targetModalScrollableListContentEl ||
+        targetModalScrollableListContentEl2
+          ? (
+              targetModalScrollableListContentEl ||
+              targetModalScrollableListContentEl2
+            ).querySelector('[data-overlayscrollbars-viewport]')
+          : null;
+
+      const targetModalScrollableListContentEls =
+        targetModalScrollableListContentEl3 ||
+        targetModalScrollableListContentEl ||
+        targetModalScrollableListContentEl2;
+
       const targetModalFooterEl = modalEl.querySelector(
         'el-modal-footer.modal-footer'
       );
@@ -163,29 +179,50 @@ const initHandleModalScroll = () => {
       let isScrollListenerAttachedForScrollableList = false;
       let isScrollListenerAttachedForBodyScrollShadow = false;
 
+      // 오버레이 스크롤바 초기화
+      const initOverlayScrollbarForModalBody = () => {
+        if (targetModalBodyEl && OverlayScrollbarsGlobal) {
+          const overlayScrollbarsElModalBody =
+            OverlayScrollbarsGlobal.OverlayScrollbars(targetModalBodyEl, {
+              scrollbars: { clickScroll: true },
+            });
+        }
+      };
+
       // 스크롤 여부 확인 및 이벤트 리스너 등록 함수
       const checkScroll = () => {
         // 모달 body 스크롤 여부 확인
         if (targetModalBodyEl) {
-          if (hasModalInnerScroll(targetModalBodyEl)) {
+          const targetModalBodyOverlayScrollbarsEl =
+            targetModalBodyEl.querySelector(
+              '[data-overlayscrollbars-viewport]'
+            );
+
+          if (hasModalInnerScroll(targetModalBodyOverlayScrollbarsEl)) {
             // 스크롤 이벤트 리스너가 아직 등록되지 않았을 때만 등록
             if (!isScrollListenerAttached) {
               scrollHandler = () => {
                 // 스크롤 이벤트 처리 로직
-                if (targetModalBodyEl.scrollTop > 0) {
+                if (targetModalBodyOverlayScrollbarsEl.scrollTop > 0) {
                   targetModalHeaderEl.classList.add('shadow-bottom');
                 } else {
                   targetModalHeaderEl.classList.remove('shadow-bottom');
                 }
               };
 
-              targetModalBodyEl.addEventListener('scroll', scrollHandler);
+              targetModalBodyOverlayScrollbarsEl.addEventListener(
+                'scroll',
+                scrollHandler
+              );
               isScrollListenerAttached = true;
             }
           } else {
             // 스크롤이 없을 때는 이벤트 리스너 제거
             if (isScrollListenerAttached && scrollHandler) {
-              targetModalBodyEl.removeEventListener('scroll', scrollHandler);
+              targetModalBodyOverlayScrollbarsEl.removeEventListener(
+                'scroll',
+                scrollHandler
+              );
               isScrollListenerAttached = false;
               scrollHandler = null;
             }
@@ -194,7 +231,14 @@ const initHandleModalScroll = () => {
 
         // 모달 body 스크롤 여부 확인
         if (targetModalBodyScrollShadowEl) {
-          if (hasModalInnerScroll(targetModalBodyScrollShadowEl)) {
+          const targetModalBodyScrollShadowOverlayScrollbarsEl =
+            targetModalBodyScrollShadowEl.querySelector(
+              '[data-overlayscrollbars-viewport]'
+            );
+
+          if (
+            hasModalInnerScroll(targetModalBodyScrollShadowOverlayScrollbarsEl)
+          ) {
             targetModalFooterEl.classList.add('shadow-top');
 
             // 스크롤 이벤트 리스너가 아직 등록되지 않았을 때만 등록
@@ -202,9 +246,9 @@ const initHandleModalScroll = () => {
               scrollHandlerForBodyScrollShadow = () => {
                 // 스크롤 이벤트 처리 로직
                 const isScrollBottom =
-                  targetModalBodyScrollShadowEl.scrollTop +
-                    targetModalBodyScrollShadowEl.clientHeight >=
-                  targetModalBodyScrollShadowEl.scrollHeight;
+                  targetModalBodyScrollShadowOverlayScrollbarsEl.scrollTop +
+                    targetModalBodyScrollShadowOverlayScrollbarsEl.clientHeight >=
+                  targetModalBodyScrollShadowOverlayScrollbarsEl.scrollHeight;
 
                 if (isScrollBottom) {
                   targetModalFooterEl.classList.remove('shadow-top');
@@ -213,7 +257,7 @@ const initHandleModalScroll = () => {
                 }
               };
 
-              targetModalBodyScrollShadowEl.addEventListener(
+              targetModalBodyScrollShadowOverlayScrollbarsEl.addEventListener(
                 'scroll',
                 scrollHandlerForBodyScrollShadow
               );
@@ -225,7 +269,7 @@ const initHandleModalScroll = () => {
               isScrollListenerAttachedForBodyScrollShadow &&
               scrollHandlerForBodyScrollShadow
             ) {
-              targetModalBodyScrollShadowEl.removeEventListener(
+              targetModalBodyScrollShadowOverlayScrollbarsEl.removeEventListener(
                 'scroll',
                 scrollHandlerForBodyScrollShadow
               );
@@ -236,16 +280,8 @@ const initHandleModalScroll = () => {
         }
 
         // 모달 내부 스크롤리스트 컨텐츠 스크롤 여부 확인
-        if (
-          targetModalScrollableListContentEl ||
-          targetModalScrollableListContentEl2
-        ) {
-          if (
-            hasModalInnerScroll(
-              targetModalScrollableListContentEl ||
-                targetModalScrollableListContentEl2
-            )
-          ) {
+        if (targetModalScrollableListContentEls) {
+          if (hasModalInnerScroll(targetModalScrollableListContentEls)) {
             targetModalFooterEl.classList.add('shadow-top');
 
             // 스크롤 이벤트 리스너가 아직 등록되지 않았을 때만 등록
@@ -253,18 +289,9 @@ const initHandleModalScroll = () => {
               scrollHandlerForScrollableList = () => {
                 // 스크롤 이벤트 처리 로직
                 const isScrollBottom =
-                  (
-                    targetModalScrollableListContentEl ||
-                    targetModalScrollableListContentEl2
-                  ).scrollTop +
-                    (
-                      targetModalScrollableListContentEl ||
-                      targetModalScrollableListContentEl2
-                    ).clientHeight >=
-                  (
-                    targetModalScrollableListContentEl ||
-                    targetModalScrollableListContentEl2
-                  ).scrollHeight;
+                  targetModalScrollableListContentEls.scrollTop +
+                    targetModalScrollableListContentEls.clientHeight >=
+                  targetModalScrollableListContentEls.scrollHeight;
 
                 if (isScrollBottom) {
                   targetModalFooterEl.classList.remove('shadow-top');
@@ -273,10 +300,10 @@ const initHandleModalScroll = () => {
                 }
               };
 
-              (
-                targetModalScrollableListContentEl ||
-                targetModalScrollableListContentEl2
-              ).addEventListener('scroll', scrollHandlerForScrollableList);
+              targetModalScrollableListContentEls.addEventListener(
+                'scroll',
+                scrollHandlerForScrollableList
+              );
               isScrollListenerAttachedForScrollableList = true;
             }
           } else {
@@ -285,10 +312,10 @@ const initHandleModalScroll = () => {
               isScrollListenerAttachedForScrollableList &&
               scrollHandlerForScrollableList
             ) {
-              (
-                targetModalScrollableListContentEl ||
-                targetModalScrollableListContentEl2
-              ).removeEventListener('scroll', scrollHandlerForScrollableList);
+              targetModalScrollableListContentEls.removeEventListener(
+                'scroll',
+                scrollHandlerForScrollableList
+              );
               isScrollListenerAttachedForScrollableList = false;
               scrollHandlerForScrollableList = null;
             }
@@ -298,6 +325,7 @@ const initHandleModalScroll = () => {
 
       // 창 크기 조절 이벤트 리스너
       const handleResize = () => {
+        initOverlayScrollbarForModalBody();
         checkScroll();
       };
 
@@ -314,6 +342,7 @@ const initHandleModalScroll = () => {
         modalEl.addEventListener('shown.bs.modal', () => {
           // 모달이 완전히 표시된 후 스크롤 여부 확인
           setTimeout(() => {
+            initOverlayScrollbarForModalBody();
             checkScroll();
           }, 0);
         });
@@ -331,13 +360,12 @@ const initHandleModalScroll = () => {
           if (
             isScrollListenerAttachedForScrollableList &&
             scrollHandlerForScrollableList &&
-            (targetModalScrollableListContentEl ||
-              targetModalScrollableListContentEl2)
+            targetModalScrollableListContentEls
           ) {
-            (
-              targetModalScrollableListContentEl ||
-              targetModalScrollableListContentEl2
-            ).removeEventListener('scroll', scrollHandlerForScrollableList);
+            targetModalScrollableListContentEls.removeEventListener(
+              'scroll',
+              scrollHandlerForScrollableList
+            );
             isScrollListenerAttachedForScrollableList = false;
             scrollHandlerForScrollableList = null;
           }
