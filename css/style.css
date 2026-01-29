@@ -2713,10 +2713,6 @@ el-modal-scrollable-list {
     background-color: var(--color-natural-95);
     color: var(--color-natural-30);
     font-weight: 600 !important;
-    /* overflow: auto;
-    scrollbar-color: transparent transparent;
-    scrollbar-width: thin;
-    scrollbar-gutter: stable; */
 
     el-scrollable-list-header-label {
       display: flex;
@@ -2743,9 +2739,6 @@ el-modal-scrollable-list {
     width: 100%;
     position: relative;
     overflow: auto;
-    /* scrollbar-color: var(--color-opacity-black-30) transparent;
-    scrollbar-width: thin;
-    scrollbar-gutter: stable; */
 
     ul {
       width: 100%;
@@ -12324,6 +12317,7 @@ el-modal-cancel-detail {
     align-items: center;
     width: 100%;
     height: 43px;
+    padding: 0 7px;
     border-radius: 10px;
     border: 1px solid var(--color-natural-80);
     background-color: var(--color-natural-95);
@@ -12341,6 +12335,7 @@ el-modal-cancel-detail {
 
     ul {
       width: 100%;
+      padding: 0 8px;
 
       & > li {
         display: flex;
@@ -12578,6 +12573,7 @@ el-modal-virtual-account-history {
     align-items: center;
     width: 100%;
     height: 43px;
+    padding: 0 7px;
     border-radius: 10px;
     border: 1px solid var(--color-natural-80);
     background-color: var(--color-natural-95);
@@ -12595,6 +12591,7 @@ el-modal-virtual-account-history {
 
     ul {
       width: 100%;
+      padding: 0 8px;
 
       & > li {
         display: flex;
@@ -12968,6 +12965,7 @@ el-modal-cash-history {
     align-items: center;
     width: 100%;
     height: 43px;
+    padding: 0 7px;
     border-radius: 10px;
     border: 1px solid var(--color-natural-80);
     background-color: var(--color-natural-95);
@@ -12985,6 +12983,7 @@ el-modal-cash-history {
 
     ul.el-modal-cash-history-body-ul {
       width: 100%;
+      padding: 0 8px;
 
       & > li {
         display: flex;
