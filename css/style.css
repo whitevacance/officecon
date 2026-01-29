@@ -12129,11 +12129,11 @@ el-order-view-sent-result {
       border: 1.375px solid var(--color-natural-70);
       border-radius: 50%;
       overflow: hidden;
-      color: var(--color-natural-30);
-      font-size: 15.125px;
-      font-weight: 600;
-      line-height: 22px;
-      letter-spacing: -0.454px;
+      color: var(--color-natural-30) !important;
+      font-size: 15.125px !important;
+      font-weight: 600 !important;
+      line-height: 22px !important;
+      letter-spacing: -0.454px !important;
     }
   }
 
