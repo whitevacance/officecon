@@ -2463,8 +2463,7 @@ el-modal.el-modal-estimate-download {
       display: flex;
       justify-content: center;
       width: 100%;
-      height: 186px;
-      padding-top: 71px;
+      padding: 71px 0 80px;
 
       & > button {
         width: 130px;
