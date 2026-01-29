@@ -1613,6 +1613,18 @@ el-input {
     }
   }
 
+  &:has(el-input-addon > el-timer) {
+    .custom-input.form-control {
+      padding-right: 60px;
+    }
+  }
+
+  &:has(el-input-addon > button):has(el-input-addon > el-timer) {
+    .custom-input.form-control {
+      padding-right: 72px;
+    }
+  }
+
   &:has(el-input-addon > button:nth-of-type(2)) {
     .custom-input.form-control {
       padding-right: 72px;
@@ -4220,7 +4232,6 @@ el-agrees {
   flex-direction: column;
   gap: 24px;
   width: 100%;
-  padding-top: 24px;
 
   el-agree-item {
     display: flex;
@@ -7925,6 +7936,63 @@ el-signup-form {
 
     button {
       width: 250px;
+    }
+  }
+
+  &.type-modify {
+    gap: 48px;
+
+    el-section-title {
+      height: 42px;
+      min-height: 42px;
+      padding: 0 0 16px 0;
+      border-bottom: 1px solid var(--color-natural-80);
+    }
+
+    el-signup-form-section {
+      el-signup-form-section-content {
+        padding: 0 16px;
+
+        el-signup-form-inputs {
+          el-signup-form-inputs-row {
+            el-signup-form-inputs-label {
+              color: var(--color-natural-20);
+            }
+          }
+        }
+
+        el-signup-form-caution {
+          margin-top: 0;
+          background-color: var(--color-red-10);
+
+          ul li {
+            color: var(--color-red-40);
+
+            &:before {
+              background-color: var(--color-red-40);
+            }
+          }
+        }
+
+        el-signup-form-security {
+          el-signup-form-security-row {
+            border-bottom: 0;
+            & > h3 {
+              color: var(--color-natural-20);
+            }
+          }
+
+          el-cash-cert-password {
+            margin-top: -16px;
+          }
+        }
+      }
+    }
+
+    el-signup-form-cta {
+      button {
+        width: 134px;
+      }
     }
   }
 }
@@ -13111,3 +13179,85 @@ el-sub-member-regist-cta {
   }
 }
 /* 종료: 마이페이지 > 서브회원 관리 */
+
+/* 시작작: 마이페이지 > 인증 IP 관리 */
+el-mypage-ip-list {
+  display: block;
+  width: 100%;
+
+  .mypage-ip-list-table table.table {
+    .col-auto {
+      width: auto;
+    }
+    .col-80 {
+      width: 80px;
+    }
+    .col-200 {
+      width: 200px;
+    }
+    .col-335 {
+      width: 200px;
+    }
+
+    th,
+    td {
+      color: var(--color-natural-0) !important;
+    }
+  }
+}
+
+el-modal-ip-register {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 400px;
+
+  el-modal-ip-register-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: var(--color-natural-95);
+    color: var(--color-natural-20);
+
+    strong {
+      color: var(--color-natural-0);
+      font-weight: 700 !important;
+    }
+  }
+
+  el-modal-ip-register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+
+    el-modal-ip-register-form-label {
+      font-weight: 600 !important;
+    }
+
+    el-modal-ip-register-form-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+      padding-bottom: 6px;
+
+      & > button {
+        flex-grow: 0;
+        flex-shrink: 0;
+        width: 80px;
+        padding: 0 12px !important;
+      }
+    }
+  }
+
+  el-marker-list {
+    margin-top: -6px;
+    padding: 0 20px;
+  }
+}
+/* 종료: 마이페이지 > 인증 IP 관리 */
