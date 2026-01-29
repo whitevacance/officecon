@@ -4920,6 +4920,16 @@
                       scrollbars: {
                         clickScroll: true,
                       },
+                    },
+                    {
+                      scroll(osInstance, event) {
+                        console.log(
+                          'scroll',
+                          event?.target?.scrollTop,
+                          event?.target?.scrollHeight,
+                          event?.target?.clientHeight
+                        );
+                      },
                     }
                   );
                 </script>
