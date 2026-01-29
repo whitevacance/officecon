@@ -11633,6 +11633,10 @@ el-mypage-order-list {
       border-radius: 8px;
       color: var(--color-natural-0);
 
+      &.bg-blue {
+        background-color: var(--color-blue-10);
+      }
+
       & > h4 {
         font-weight: 700 !important;
         display: flex;
