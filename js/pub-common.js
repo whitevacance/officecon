@@ -146,12 +146,21 @@ const initHandleModalScroll = () => {
       const targetModalBodyScrollShadowEl = modalEl.querySelector(
         'el-modal-body.modal-body.scroll-shadow'
       );
+
       const targetModalScrollableListContentEl = modalEl.querySelector(
         'el-modal-scrollable-list-content'
       );
       const targetModalScrollableListContentEl2 = modalEl.querySelector(
         '.el-modal-scrollable-list-content'
       );
+      const targetModalScrollableListContentEl3 = modalEl.querySelector(
+        '[data-overlayscrollbars-viewport]'
+      );
+      const targetModalScrollableListContentEls =
+        targetModalScrollableListContentEl3 ||
+        targetModalScrollableListContentEl ||
+        targetModalScrollableListContentEl2;
+
       const targetModalFooterEl = modalEl.querySelector(
         'el-modal-footer.modal-footer'
       );
@@ -236,16 +245,8 @@ const initHandleModalScroll = () => {
         }
 
         // 모달 내부 스크롤리스트 컨텐츠 스크롤 여부 확인
-        if (
-          targetModalScrollableListContentEl ||
-          targetModalScrollableListContentEl2
-        ) {
-          if (
-            hasModalInnerScroll(
-              targetModalScrollableListContentEl ||
-                targetModalScrollableListContentEl2
-            )
-          ) {
+        if (targetModalScrollableListContentEls) {
+          if (hasModalInnerScroll(targetModalScrollableListContentEls)) {
             targetModalFooterEl.classList.add('shadow-top');
 
             // 스크롤 이벤트 리스너가 아직 등록되지 않았을 때만 등록
@@ -253,18 +254,9 @@ const initHandleModalScroll = () => {
               scrollHandlerForScrollableList = () => {
                 // 스크롤 이벤트 처리 로직
                 const isScrollBottom =
-                  (
-                    targetModalScrollableListContentEl ||
-                    targetModalScrollableListContentEl2
-                  ).scrollTop +
-                    (
-                      targetModalScrollableListContentEl ||
-                      targetModalScrollableListContentEl2
-                    ).clientHeight >=
-                  (
-                    targetModalScrollableListContentEl ||
-                    targetModalScrollableListContentEl2
-                  ).scrollHeight;
+                  targetModalScrollableListContentEls.scrollTop +
+                    targetModalScrollableListContentEls.clientHeight >=
+                  targetModalScrollableListContentEls.scrollHeight;
 
                 if (isScrollBottom) {
                   targetModalFooterEl.classList.remove('shadow-top');
@@ -273,10 +265,10 @@ const initHandleModalScroll = () => {
                 }
               };
 
-              (
-                targetModalScrollableListContentEl ||
-                targetModalScrollableListContentEl2
-              ).addEventListener('scroll', scrollHandlerForScrollableList);
+              targetModalScrollableListContentEls.addEventListener(
+                'scroll',
+                scrollHandlerForScrollableList
+              );
               isScrollListenerAttachedForScrollableList = true;
             }
           } else {
@@ -285,10 +277,10 @@ const initHandleModalScroll = () => {
               isScrollListenerAttachedForScrollableList &&
               scrollHandlerForScrollableList
             ) {
-              (
-                targetModalScrollableListContentEl ||
-                targetModalScrollableListContentEl2
-              ).removeEventListener('scroll', scrollHandlerForScrollableList);
+              targetModalScrollableListContentEls.removeEventListener(
+                'scroll',
+                scrollHandlerForScrollableList
+              );
               isScrollListenerAttachedForScrollableList = false;
               scrollHandlerForScrollableList = null;
             }
@@ -331,13 +323,12 @@ const initHandleModalScroll = () => {
           if (
             isScrollListenerAttachedForScrollableList &&
             scrollHandlerForScrollableList &&
-            (targetModalScrollableListContentEl ||
-              targetModalScrollableListContentEl2)
+            targetModalScrollableListContentEls
           ) {
-            (
-              targetModalScrollableListContentEl ||
-              targetModalScrollableListContentEl2
-            ).removeEventListener('scroll', scrollHandlerForScrollableList);
+            targetModalScrollableListContentEls.removeEventListener(
+              'scroll',
+              scrollHandlerForScrollableList
+            );
             isScrollListenerAttachedForScrollableList = false;
             scrollHandlerForScrollableList = null;
           }
