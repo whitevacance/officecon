@@ -2500,11 +2500,6 @@ el-modal.el-modal-estimate-download {
           }
         }
 
-        el-modal-estimate-caution {
-          padding-top: 0;
-          border-bottom: 0;
-        }
-
         el-estimate-document-products {
           & > table.table {
             thead th {
