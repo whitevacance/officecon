@@ -2190,7 +2190,8 @@ el-modal.modal {
       }
 
       el-modal-body {
-        display: block;
+        display: flex;
+        flex-direction: column;
         position: relative;
         width: fit-content;
         max-width: 100%;
