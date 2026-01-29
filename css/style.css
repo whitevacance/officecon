@@ -4232,7 +4232,6 @@ el-agrees {
   flex-direction: column;
   gap: 24px;
   width: 100%;
-  padding-top: 24px;
 
   el-agree-item {
     display: flex;
