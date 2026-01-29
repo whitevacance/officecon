@@ -68,18 +68,18 @@
 - 마이페이지 > 쇼핑내역 > 주문/발송 내역 > 뷰: http://officecon-pub.s3-website.ap-northeast-2.amazonaws.com/mypage-order-view.html
 - 마이페이지 > 쇼핑내역 > 주문/발송 내역 > 수정: http://officecon-pub.s3-website.ap-northeast-2.amazonaws.com/mypage-order-modify.html
 - 마이페이지 > 쇼핑내역 > 취소/환불 내역: http://officecon-pub.s3-website.ap-northeast-2.amazonaws.com/mypage-order-cancel.html
-- 마이페이지 > 캐시/리워드 내역 > 캐시 내역:
-- 마이페이지 > 캐시/리워드 내역 > 캐시 내역 > 캐쉬 충전(카드):
-- 마이페이지 > 캐시/리워드 내역 > 캐시 결제내역:
-- 마이페이지 > 캐시/리워드 내역 > 리워드 내역:
-- 마이페이지 > 발송관리 > 리스트:
-- 마이페이지 > 발송관리 > 작성(수정):
-- 마이페이지 > 서브회원 > 서브회원 관리 > 리스트:
-- 마이페이지 > 서브회원 > 서브회원 관리 > 등록:
-- 마이페이지 > 서브회원 > 서브회원 주문/발송 내역:
-- 마이페이지 > 나의 정보 > 인증 IP관리:
-- 마이페이지 > 나의 정보 > 회원정보 수정(기업회원):
-- 마이페이지 > 나의 정보 > 회원정보 수정(일반회원):
+- 마이페이지 > 캐시/리워드 내역 > 캐시 내역: http://officecon-pub.s3-website.ap-northeast-2.amazonaws.com/mypage-cash.html
+- 마이페이지 > 캐시/리워드 내역 > 캐시 내역 > 캐쉬 충전(카드): http://officecon-pub.s3-website.ap-northeast-2.amazonaws.com/mypage-cash-charge.html
+- 마이페이지 > 캐시/리워드 내역 > 캐시 결제내역: http://officecon-pub.s3-website.ap-northeast-2.amazonaws.com/mypage-cash-order-history.html
+- 마이페이지 > 캐시/리워드 내역 > 리워드 내역: http://officecon-pub.s3-website.ap-northeast-2.amazonaws.com/mypage-reward.html
+- 마이페이지 > 발송관리 > 리스트: http://officecon-pub.s3-website.ap-northeast-2.amazonaws.com/mypage-message-list.html
+- 마이페이지 > 발송관리 > 작성(수정): http://officecon-pub.s3-website.ap-northeast-2.amazonaws.com/mypage-message-edit.html
+- 마이페이지 > 서브회원 > 서브회원 관리 > 리스트: http://officecon-pub.s3-website.ap-northeast-2.amazonaws.com/mypage-sub-member-list.html
+- 마이페이지 > 서브회원 > 서브회원 관리 > 등록: http://officecon-pub.s3-website.ap-northeast-2.amazonaws.com/mypage-sub-member-regist.html
+- 마이페이지 > 서브회원 > 서브회원 주문/발송 내역: http://officecon-pub.s3-website.ap-northeast-2.amazonaws.com/mypage-sub-member-order-list.html
+- 마이페이지 > 나의 정보 > 인증 IP관리: http://officecon-pub.s3-website.ap-northeast-2.amazonaws.com/mypage-ip-list.html
+- 마이페이지 > 나의 정보 > 회원정보 수정(기업회원): http://officecon-pub.s3-website.ap-northeast-2.amazonaws.com/mypage-info-modify-company.html
+- 마이페이지 > 나의 정보 > 회원정보 수정(일반회원): http://officecon-pub.s3-website.ap-northeast-2.amazonaws.com/mypage-info-modify-personal.html
 - 마이페이지 > 나의 정보 > 회원 탈퇴:
 - 파트너링크: http://officecon-pub.s3-website.ap-northeast-2.amazonaws.com/partner.html
 - 서비스 이용약관:
