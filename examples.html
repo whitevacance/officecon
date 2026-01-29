@@ -4897,10 +4897,15 @@
             <el-examples-article>
               <h2>overlay 스크롤바</h2>
               <el-examples-stack>
-                <div
+                <el-div
                   id="overlay-scrollbars-example"
                   data-overlayscrollbars-initialize
-                  style="width: 300px; height: 300px; overflow: auto"
+                  style="
+                    display: flex;
+                    width: 300px;
+                    height: 300px;
+                    overflow: auto;
+                  "
                 >
                   <div
                     style="
@@ -4911,7 +4916,7 @@
                   >
                     스크롤 영역
                   </div>
-                </div>
+                </el-div>
                 <script>
                   const { OverlayScrollbars } = OverlayScrollbarsGlobal;
                   const overlayScrollbarsExample = OverlayScrollbars(
