@@ -12301,6 +12301,8 @@ el-mypage-cancel-list {
     }
 
     el-mypage-table-action-buttons {
+      align-items: center;
+
       & > button {
         width: 53px;
       }
