@@ -578,6 +578,8 @@
               </el-modal-cancel-detail-header>
 
               <el-modal-cancel-detail-body
+                id="overlayscrollbars-el-modal-cancel-detail-body"
+                data-overlayscrollbars-initialize
                 class="typo-label-lg el-modal-scrollable-list-content"
               >
                 <ul>
@@ -618,6 +620,20 @@
                   </li>
                 </ul>
               </el-modal-cancel-detail-body>
+
+              <script>
+                const overlayScrollbarsElModalCancelDetailBody =
+                  OverlayScrollbarsGlobal.OverlayScrollbars(
+                    document.querySelector(
+                      '#overlayscrollbars-el-modal-cancel-detail-body'
+                    ),
+                    {
+                      scrollbars: {
+                        clickScroll: true,
+                      },
+                    }
+                  );
+              </script>
             </el-modal-cancel-detail>
           </el-modal-body>
 

@@ -1064,6 +1064,8 @@
               </el-modal-virtual-account-history-header>
 
               <el-modal-virtual-account-history-body
+                id="overlayscrollbars-el-modal-virtual-account-history-body"
+                data-overlayscrollbars-initialize
                 class="typo-label-lg el-modal-scrollable-list-content"
               >
                 <ul>
@@ -1201,6 +1203,19 @@
                   </li>
                 </ul>
               </el-modal-virtual-account-history-body>
+              <script>
+                const overlayScrollbarsElModalVirtualAccountHistoryBody =
+                  OverlayScrollbarsGlobal.OverlayScrollbars(
+                    document.querySelector(
+                      '#overlayscrollbars-el-modal-virtual-account-history-body'
+                    ),
+                    {
+                      scrollbars: {
+                        clickScroll: true,
+                      },
+                    }
+                  );
+              </script>
             </el-modal-virtual-account-history>
           </el-modal-body>
 

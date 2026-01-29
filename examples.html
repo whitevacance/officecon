@@ -4918,25 +4918,25 @@
                   </div>
                 </el-div>
                 <script>
-                  const { OverlayScrollbars } = OverlayScrollbarsGlobal;
-                  const overlayScrollbarsExample = OverlayScrollbars(
-                    document.querySelector('#overlay-scrollbars-example'),
-                    {
-                      scrollbars: {
-                        clickScroll: true,
+                  const overlayScrollbarsExample =
+                    OverlayScrollbarsGlobal.OverlayScrollbars(
+                      document.querySelector('#overlay-scrollbars-example'),
+                      {
+                        scrollbars: {
+                          clickScroll: true,
+                        },
                       },
-                    },
-                    {
-                      scroll(osInstance, event) {
-                        console.log(
-                          'scroll',
-                          event?.target?.scrollTop,
-                          event?.target?.scrollHeight,
-                          event?.target?.clientHeight
-                        );
-                      },
-                    }
-                  );
+                      {
+                        scroll(osInstance, event) {
+                          console.log(
+                            'scroll',
+                            event?.target?.scrollTop,
+                            event?.target?.scrollHeight,
+                            event?.target?.clientHeight
+                          );
+                        },
+                      }
+                    );
 
                   const test = document.querySelector(
                     '#overlay-scrollbars-example'

@@ -2713,10 +2713,10 @@ el-modal-scrollable-list {
     background-color: var(--color-natural-95);
     color: var(--color-natural-30);
     font-weight: 600 !important;
-    overflow: auto;
+    /* overflow: auto;
     scrollbar-color: transparent transparent;
     scrollbar-width: thin;
-    scrollbar-gutter: stable;
+    scrollbar-gutter: stable; */
 
     el-scrollable-list-header-label {
       display: flex;
@@ -2738,15 +2738,16 @@ el-modal-scrollable-list {
   }
 
   el-modal-scrollable-list-content {
-    display: block;
+    display: flex;
+    flex-direction: column;
     width: 100%;
     position: relative;
     overflow: auto;
-    scrollbar-color: var(--color-opacity-black-30) transparent;
+    /* scrollbar-color: var(--color-opacity-black-30) transparent;
     scrollbar-width: thin;
-    scrollbar-gutter: stable;
+    scrollbar-gutter: stable; */
 
-    & > ul {
+    ul {
       width: 100%;
       padding: 0 8px;
 
@@ -11961,23 +11962,17 @@ el-modal-resend {
       background-color: var(--color-natural-95);
       color: var(--color-natural-30);
       font-weight: 600 !important;
-      /* overflow: auto;
-      scrollbar-color: transparent transparent;
-      scrollbar-width: thin;
-      scrollbar-gutter: stable; */
     }
 
     el-modal-resend-result-body {
-      display: block;
+      display: flex;
+      flex-direction: column;
       width: 100%;
       max-height: 215px;
       position: relative;
       overflow: auto;
-      /* scrollbar-color: var(--color-opacity-black-30) transparent;
-      scrollbar-width: thin;
-      scrollbar-gutter: stable; */
 
-      & > ul {
+      ul {
         width: 100%;
         padding: 0 8px;
 
@@ -12003,10 +11998,6 @@ el-modal-resend {
       width: 100%;
       padding: 8px 8px 0;
       color: var(--color-natural-20);
-      /* overflow: auto;
-      scrollbar-color: transparent transparent;
-      scrollbar-width: thin;
-      scrollbar-gutter: stable; */
 
       strong {
         color: var(--color-orange-officecon);
@@ -12338,23 +12329,17 @@ el-modal-cancel-detail {
     background-color: var(--color-natural-95);
     color: var(--color-natural-30);
     font-weight: 600 !important;
-    /* overflow: auto;
-    scrollbar-color: transparent transparent;
-    scrollbar-width: thin;
-    scrollbar-gutter: stable; */
   }
 
   el-modal-cancel-detail-body {
-    display: block;
+    display: flex;
+    flex-direction: column;
     width: 100%;
     max-height: 258px;
     position: relative;
     overflow: auto;
-    /* scrollbar-color: var(--color-opacity-black-30) transparent;
-    scrollbar-width: thin;
-    scrollbar-gutter: stable; */
 
-    & > ul {
+    ul {
       width: 100%;
 
       & > li {
@@ -12598,23 +12583,17 @@ el-modal-virtual-account-history {
     background-color: var(--color-natural-95);
     color: var(--color-natural-30);
     font-weight: 600 !important;
-    /* overflow: auto;
-    scrollbar-color: transparent transparent;
-    scrollbar-width: thin;
-    scrollbar-gutter: stable; */
   }
 
   el-modal-virtual-account-history-body {
-    display: block;
+    display: flex;
+    flex-direction: column;
     width: 100%;
     max-height: 430px;
     position: relative;
     overflow: auto;
-    /* scrollbar-color: var(--color-opacity-black-30) transparent;
-    scrollbar-width: thin;
-    scrollbar-gutter: stable; */
 
-    & > ul {
+    ul {
       width: 100%;
 
       & > li {
@@ -12994,20 +12973,15 @@ el-modal-cash-history {
     background-color: var(--color-natural-95);
     color: var(--color-natural-30);
     font-weight: 600 !important;
-    /* overflow: auto;
-    scrollbar-color: transparent transparent;
-    scrollbar-width: thin;
-    scrollbar-gutter: stable; */
   }
 
   el-modal-cash-history-body {
+    display: flex;
+    flex-direction: column;
     width: 100%;
     max-height: 430px;
     position: relative;
     overflow: auto;
-    /* scrollbar-color: var(--color-opacity-black-30) transparent;
-    scrollbar-width: thin;
-    scrollbar-gutter: stable; */
 
     ul.el-modal-cash-history-body-ul {
       width: 100%;

@@ -957,28 +957,17 @@
                 </ul>
               </el-modal-cash-history-body>
               <script>
-                const { OverlayScrollbars } = OverlayScrollbarsGlobal;
-                const overlayScrollbarsExample = OverlayScrollbars(
-                  document.querySelector(
-                    '#overlayscrollbars-el-modal-cash-history-body'
-                  ),
-                  {
-                    scrollbars: {
-                      clickScroll: true,
-                    },
-                  },
-                  {
-                    scroll(osInstance, event) {
-                      // console.log(
-                      //   'scroll',
-                      //   event?.target,
-                      //   event?.target?.scrollTop,
-                      //   event?.target?.scrollHeight,
-                      //   event?.target?.clientHeight
-                      // );
-                    },
-                  }
-                );
+                const overlayScrollbarsElModalCashHistoryBody =
+                  OverlayScrollbarsGlobal.OverlayScrollbars(
+                    document.querySelector(
+                      '#overlayscrollbars-el-modal-cash-history-body'
+                    ),
+                    {
+                      scrollbars: {
+                        clickScroll: true,
+                      },
+                    }
+                  );
               </script>
             </el-modal-cash-history>
           </el-modal-body>

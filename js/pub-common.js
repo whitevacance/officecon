@@ -153,9 +153,15 @@ const initHandleModalScroll = () => {
       const targetModalScrollableListContentEl2 = modalEl.querySelector(
         '.el-modal-scrollable-list-content'
       );
-      const targetModalScrollableListContentEl3 = modalEl.querySelector(
-        '[data-overlayscrollbars-viewport]'
-      );
+      const targetModalScrollableListContentEl3 =
+        targetModalScrollableListContentEl ||
+        targetModalScrollableListContentEl2
+          ? (
+              targetModalScrollableListContentEl ||
+              targetModalScrollableListContentEl2
+            ).querySelector('[data-overlayscrollbars-viewport]')
+          : null;
+
       const targetModalScrollableListContentEls =
         targetModalScrollableListContentEl3 ||
         targetModalScrollableListContentEl ||

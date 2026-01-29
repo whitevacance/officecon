@@ -3195,7 +3195,10 @@
                   </el-scrollable-list-header-aside>
                 </el-modal-scrollable-list-header>
 
-                <el-modal-scrollable-list-content>
+                <el-modal-scrollable-list-content
+                  id="overlayscrollbars-el-modal-send-message-load-content"
+                  data-overlayscrollbars-initialize
+                >
                   <ul>
                     <li>
                       <el-send-message-content-item>
@@ -3368,6 +3371,19 @@
                     </li>
                   </ul>
                 </el-modal-scrollable-list-content>
+                <script>
+                  const overlayScrollbarsElModalSendMessageLoadContent =
+                    OverlayScrollbarsGlobal.OverlayScrollbars(
+                      document.querySelector(
+                        '#overlayscrollbars-el-modal-send-message-load-content'
+                      ),
+                      {
+                        scrollbars: {
+                          clickScroll: true,
+                        },
+                      }
+                    );
+                </script>
               </el-modal-scrollable-list>
             </el-modal-send-message-load-content>
           </el-modal-body>
