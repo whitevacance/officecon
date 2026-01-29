@@ -8945,6 +8945,10 @@ el-mypage-content {
             scrollbar-gutter: stable;
             color: var(--color-natural-20);
 
+            &.editable {
+              padding: 20px;
+            }
+
             &.bg-gray {
               background-color: var(--color-natural-95);
             }
