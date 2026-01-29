@@ -4937,14 +4937,6 @@
                         },
                       }
                     );
-
-                  const test = document.querySelector(
-                    '#overlay-scrollbars-example'
-                  );
-                  console.log(
-                    '???',
-                    test.querySelector('[data-overlayscrollbars-viewport]')
-                  );
                 </script>
               </el-examples-stack>
             </el-examples-article>
@@ -5234,7 +5226,10 @@
             <h3 class="typo-subtitle-lg center">공통 모달 타이틀</h3>
           </el-modal-header>
 
-          <el-modal-body class="modal-body scroll-shadow">
+          <el-modal-body
+            data-overlayscrollbars-initialize
+            class="modal-body scroll-shadow"
+          >
             <div style="width: 800px">
               모달 컨텐츠 영역 - 이 영역의 width에 따라 모달의 width가
               결정됩니다(좌우 padding은 32px).
@@ -5286,7 +5281,7 @@
 
           <el-modal-header class="modal-header"> </el-modal-header>
 
-          <el-modal-body class="modal-body">
+          <el-modal-body data-overlayscrollbars-initialize class="modal-body">
             <el-modal-estimate-document>
               <h2 class="typo-heading-md estimate-document-title">
                 오피스콘 온라인 견적서
