@@ -97,7 +97,113 @@
           </el-content-header>
 
           <el-content>
-            <div>asdfsadf</div>
+            <el-policy>
+              <el-tabs class="border-rounded">
+                <el-tabs-nav>
+                  <button type="button" role="tab" class="typo-body-sm active">
+                    기업회원
+                  </button>
+                  <button type="button" role="tab" class="typo-body-sm">
+                    일반회원
+                  </button>
+                </el-tabs-nav>
+                <el-tabs-content>
+                  <el-tab-panel role="tabpanel" class="active">
+                    <el-policy-section>
+                      <el-policy-select>
+                        <el-select class="dropdown">
+                          <!-- [DEV] hidden input의 value값을 사용 -->
+                          <input type="hidden" value="" />
+                          <button
+                            type="button"
+                            class="dropdown-toggle"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                            data-bs-offset="0,-43"
+                          >
+                            <el-label>2025.12.22(예정)</el-label>
+                          </button>
+                          <el-select-options class="dropdown-menu active-bold">
+                            <ul>
+                              <li>
+                                <button
+                                  type="button"
+                                  data-value="1"
+                                  class="dropdown-item active"
+                                >
+                                  <el-label>2025.12.22(예정)</el-label>
+                                </button>
+                              </li>
+                              <li>
+                                <button
+                                  type="button"
+                                  data-value="1"
+                                  class="dropdown-item"
+                                >
+                                  <el-label>2025.06.17</el-label>
+                                </button>
+                              </li>
+                              <li>
+                                <button
+                                  type="button"
+                                  data-value="2"
+                                  class="dropdown-item"
+                                >
+                                  <el-label>2024.01.03</el-label>
+                                </button>
+                              </li>
+                              <li>
+                                <button
+                                  type="button"
+                                  data-value="3"
+                                  class="dropdown-item"
+                                >
+                                  <el-label>2023.12.28</el-label>
+                                </button>
+                              </li>
+                              <li>
+                                <button
+                                  type="button"
+                                  data-value="3"
+                                  class="dropdown-item"
+                                >
+                                  <el-label>2023.12.28</el-label>
+                                </button>
+                              </li>
+                              <li>
+                                <button
+                                  type="button"
+                                  data-value="3"
+                                  class="dropdown-item"
+                                >
+                                  <el-label>2023.12.28</el-label>
+                                </button>
+                              </li>
+                              <li>
+                                <button
+                                  type="button"
+                                  data-value="3"
+                                  class="dropdown-item"
+                                >
+                                  <el-label>2023.12.28</el-label>
+                                </button>
+                              </li>
+                            </ul>
+                          </el-select-options>
+                        </el-select>
+                      </el-policy-select>
+
+                      <el-policy-content>
+                        <pre class="typo-body-sm">가나다라</pre>
+                      </el-policy-content>
+                    </el-policy-section>
+                  </el-tab-panel>
+                  <el-tab-panel role="tabpanel">
+                    <el-policy-content>내용2</el-policy-content>
+                  </el-tab-panel>
+                </el-tabs-content>
+              </el-tabs>
+            </el-policy>
           </el-content>
         </main>
         <!-- 종료: 컨텐츠 -->

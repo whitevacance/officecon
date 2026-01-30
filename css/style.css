@@ -13361,3 +13361,40 @@ el-cancel-membership {
   }
 }
 /* 종료: 마이페이지 > 회원 탈퇴 */
+
+/* 시작: 서비스 이용약관 */
+el-policy {
+  display: block;
+  width: 1024px;
+  margin: 0 auto;
+
+  el-policy-section {
+    display: block;
+    width: 100%;
+    padding-top: 32px;
+
+    el-policy-select {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      width: 100%;
+
+      el-select {
+        width: 160px;
+
+        .dropdown-menu {
+          & > ul {
+            max-height: 258px;
+          }
+        }
+      }
+    }
+
+    el-policy-content {
+      display: block;
+      width: 100%;
+      padding: 40px 16px 0;
+    }
+  }
+}
+/* 종료: 서비스 이용약관 */
