@@ -13391,9 +13391,52 @@ el-policy {
     }
 
     el-policy-content {
-      display: block;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
       width: 100%;
       padding: 40px 16px 0;
+      word-break: keep-all;
+      color: var(--color-natural-20);
+
+      el-policy-article {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        width: 100%;
+
+        & > h3 {
+          color: var(--color-natural-0);
+          font-weight: 700 !important;
+        }
+
+        & > ol,
+        & > ul {
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+          width: 100%;
+
+          & > li {
+            width: 100%;
+
+            el-marker {
+              display: inline-block;
+              height: 16px;
+              font-size: 20px;
+              line-height: 16px;
+              vertical-align: middle;
+              margin-top: -2px;
+            }
+
+            ol,
+            ul {
+              width: 100%;
+              padding: 16px 0 0 24px;
+            }
+          }
+        }
+      }
     }
   }
 }
