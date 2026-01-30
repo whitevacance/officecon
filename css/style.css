@@ -710,6 +710,12 @@ el-icon {
     -webkit-mask-image: url('../images/icon-h16-check.svg');
     mask-image: url('../images/icon-h16-check.svg');
   }
+  &.h16-check-bold {
+    width: 16px;
+    height: 16px;
+    -webkit-mask-image: url('../images/icon-h16-check-bold.svg');
+    mask-image: url('../images/icon-h16-check-bold.svg');
+  }
   &.h16-clock {
     width: 16px;
     height: 16px;
@@ -798,6 +804,12 @@ el-icon {
     width: 64px;
     height: 64px;
     background-image: url('../images/icon-etc-circle-check.svg');
+    background-color: transparent;
+  }
+  &.etc-circle-exclamation {
+    width: 48px;
+    height: 48px;
+    background-image: url('../images/icon-etc-circle-exclamation.svg');
     background-color: transparent;
   }
   &.etc-doc {
@@ -1913,6 +1925,15 @@ el-select {
 
         &:hover {
           background-color: var(--color-natural-95) !important;
+        }
+      }
+
+      &.active-bold {
+        .dropdown-item {
+          &.active,
+          &.active * {
+            font-weight: 600 !important;
+          }
         }
       }
     }
@@ -13224,3 +13245,213 @@ el-modal-ip-register {
   }
 }
 /* 종료: 마이페이지 > 인증 IP 관리 */
+
+/* 시작: 마이페이지 > 회원 탈퇴 */
+el-cancel-membership {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+
+  el-cancel-membership-info {
+    display: block;
+    width: 100%;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--color-natural-80);
+
+    & > ul {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      width: 100%;
+
+      & > li {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--color-natural-20);
+
+        strong {
+          color: var(--color-natural-0);
+          font-weight: 700 !important;
+
+          &.color-red {
+            color: var(--color-red-40);
+          }
+        }
+      }
+    }
+  }
+
+  el-cancel-membership-caution {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    color: var(--color-natural-10);
+
+    p {
+      text-align: center;
+
+      strong {
+        color: var(--color-natural-0);
+        font-weight: 700 !important;
+      }
+    }
+  }
+
+  el-cancel-membership-myinfo {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+
+    el-cancel-membership-box-wrap {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      width: 100%;
+
+      el-cancel-membership-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        width: 100%;
+        padding: 40px;
+        border-radius: 8px;
+        background-color: var(--color-natural-95);
+
+        el-cancel-membership-box-label {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 8px;
+          width: 100%;
+          font-weight: 600 !important;
+        }
+
+        & > strong {
+          font-weight: 700 !important;
+        }
+
+        &.input-password {
+          flex-direction: row;
+          justify-content: center;
+          gap: 32px;
+          padding: 24px;
+
+          el-cancel-membership-box-label {
+            width: 100px;
+            font-weight: 700 !important;
+          }
+
+          el-input {
+            width: 400px;
+          }
+        }
+      }
+    }
+  }
+
+  el-cancel-membership-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    width: 100%;
+    padding-top: 80px;
+    border-top: 1px solid var(--color-natural-80);
+
+    button {
+      width: 169px;
+    }
+  }
+}
+/* 종료: 마이페이지 > 회원 탈퇴 */
+
+/* 시작: 서비스 이용약관 */
+el-policy {
+  display: block;
+  width: 1024px;
+  margin: 0 auto;
+
+  el-policy-section {
+    display: block;
+    width: 100%;
+    padding-top: 32px;
+
+    el-policy-select {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      width: 100%;
+
+      el-select {
+        width: 160px;
+
+        .dropdown-menu {
+          & > ul {
+            max-height: 258px;
+          }
+        }
+      }
+    }
+
+    el-policy-content {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      width: 100%;
+      padding: 40px 16px 0;
+      word-break: keep-all;
+      color: var(--color-natural-20);
+
+      a {
+        color: var(--color-natural-20);
+        text-decoration: underline;
+      }
+
+      el-policy-article {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        width: 100%;
+
+        & > h3 {
+          color: var(--color-natural-0);
+          font-weight: 700 !important;
+        }
+
+        & > ol,
+        & > ul {
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+          width: 100%;
+
+          & > li {
+            width: 100%;
+
+            el-marker {
+              display: inline-block;
+              height: 16px;
+              font-size: 20px;
+              line-height: 16px;
+              vertical-align: middle;
+              margin-top: -2px;
+            }
+
+            ol,
+            ul {
+              width: 100%;
+              padding: 16px 0 0 24px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+/* 종료: 서비스 이용약관 */
