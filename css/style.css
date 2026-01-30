@@ -13399,6 +13399,11 @@ el-policy {
       word-break: keep-all;
       color: var(--color-natural-20);
 
+      a {
+        color: var(--color-natural-20);
+        text-decoration: underline;
+      }
+
       el-policy-article {
         display: flex;
         flex-direction: column;
