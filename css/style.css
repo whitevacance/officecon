@@ -1927,6 +1927,15 @@ el-select {
           background-color: var(--color-natural-95) !important;
         }
       }
+
+      &.active-bold {
+        .dropdown-item {
+          &.active,
+          &.active * {
+            font-weight: 600 !important;
+          }
+        }
+      }
     }
   }
 
