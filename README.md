@@ -80,6 +80,6 @@
 - 마이페이지 > 나의 정보 > 인증 IP관리: http://officecon-pub.s3-website.ap-northeast-2.amazonaws.com/mypage-ip-list.html
 - 마이페이지 > 나의 정보 > 회원정보 수정(기업회원): http://officecon-pub.s3-website.ap-northeast-2.amazonaws.com/mypage-info-modify-company.html
 - 마이페이지 > 나의 정보 > 회원정보 수정(일반회원): http://officecon-pub.s3-website.ap-northeast-2.amazonaws.com/mypage-info-modify-personal.html
-- 마이페이지 > 나의 정보 > 회원 탈퇴:
+- 마이페이지 > 나의 정보 > 회원 탈퇴: http://officecon-pub.s3-website.ap-northeast-2.amazonaws.com/mypage-cancel-membership.html
 - 파트너링크: http://officecon-pub.s3-website.ap-northeast-2.amazonaws.com/partner.html
-- 서비스 이용약관:
+- 서비스 이용약관: http://officecon-pub.s3-website.ap-northeast-2.amazonaws.com/policy-service.html
