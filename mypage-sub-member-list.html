@@ -350,7 +350,7 @@
                               <col class="col-80" />
                               <col class="col-106" />
                               <col class="col-auto" />
-                              <col class="col-160" />
+                              <col class="col-166" />
                               <col class="col-122" />
                               <col class="col-106" />
                               <col class="col-150" />
@@ -381,7 +381,98 @@
                                 <td>00</td>
                                 <td>officecon01</td>
                                 <td>홍*동</td>
-                                <td>officecon1@zlgoon.co.kr</td>
+                                <td>
+                                  <el-ellipsis>
+                                    일이삼사오육칠팔구십일이삼사오육칠팔구십
+                                  </el-ellipsis>
+                                </td>
+                                <td>010-0000-0000</td>
+                                <td>999,999</td>
+                                <td>
+                                  <el-mypage-table-action-buttons>
+                                    <el-select class="dropdown select-h34">
+                                      <!-- [DEV] hidden input의 value값을 사용 -->
+                                      <input type="hidden" value="" />
+                                      <button
+                                        type="button"
+                                        class="dropdown-toggle"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false"
+                                        data-bs-offset="0,-34"
+                                      >
+                                        <el-label>활성</el-label>
+                                      </button>
+                                      <el-select-options
+                                        class="dropdown-menu active-bold"
+                                      >
+                                        <ul data-overlayscrollbars-initialize>
+                                          <li>
+                                            <button
+                                              type="button"
+                                              data-value="1"
+                                              class="dropdown-item active"
+                                            >
+                                              <el-label>활성</el-label>
+                                            </button>
+                                          </li>
+                                          <li>
+                                            <button
+                                              type="button"
+                                              data-value="2"
+                                              class="dropdown-item"
+                                            >
+                                              <el-label>비활성</el-label>
+                                            </button>
+                                          </li>
+                                        </ul>
+                                      </el-select-options>
+                                    </el-select>
+                                    <button
+                                      type="button"
+                                      class="button-h34-square typo-label-md"
+                                    >
+                                      적용
+                                    </button>
+                                  </el-mypage-table-action-buttons>
+                                </td>
+                                <td>
+                                  <el-mypage-table-action-buttons>
+                                    <button
+                                      type="button"
+                                      data-bs-target="#el-modal-cash-history"
+                                      data-bs-toggle="modal"
+                                      class="button-h34-square typo-label-md"
+                                    >
+                                      내역
+                                    </button>
+                                    <button
+                                      type="button"
+                                      data-bs-target="#el-modal-pay-cash"
+                                      data-bs-toggle="modal"
+                                      class="button-h34-square typo-label-md"
+                                    >
+                                      지급
+                                    </button>
+                                    <button
+                                      type="button"
+                                      data-bs-target="#el-modal-recall-cash"
+                                      data-bs-toggle="modal"
+                                      class="button-h34-square typo-label-md"
+                                    >
+                                      회수
+                                    </button>
+                                  </el-mypage-table-action-buttons>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>00</td>
+                                <td>officecon01</td>
+                                <td>홍*동</td>
+                                <td>
+                                  <el-ellipsis>
+                                    office@zlgoon.co.kr
+                                  </el-ellipsis>
+                                </td>
                                 <td>010-0000-0000</td>
                                 <td>999,999</td>
                                 <td>
