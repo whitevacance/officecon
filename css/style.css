@@ -1830,14 +1830,14 @@ el-select {
       width: 100%;
       max-height: 430px;
       padding: 0;
-      overflow-x: hidden;
+      /* overflow-x: hidden;
       overflow-y: auto;
       scrollbar-color: var(--color-opacity-black-30) transparent;
-      scrollbar-width: thin;
+      scrollbar-width: thin; */
 
-      &::-webkit-scrollbar-track {
+      /* &::-webkit-scrollbar-track {
         background: transparent;
-      }
+      } */
 
       & > li:first-of-type {
         margin-top: -1px;
