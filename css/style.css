@@ -3596,6 +3596,21 @@ el-marker-list,
       }
     }
   }
+
+  &.font-small {
+    & > ul {
+      & > li {
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 18px;
+        letter-spacing: -0.39px;
+
+        &:before {
+          top: 7px;
+        }
+      }
+    }
+  }
 }
 /* 종료: 공통 > marker list */
 
@@ -13519,3 +13534,74 @@ el-policy {
   }
 }
 /* 종료: 서비스 이용약관 */
+
+/* 시작: 파트너링크 */
+el-modal-personal-info-third-party-consent {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 520px;
+
+  el-info-box {
+    padding: 24px;
+    background-color: var(--color-natural-95) !important;
+  }
+
+  el-modal-personal-info-third-party-desc {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+
+    & > div {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      width: 100%;
+
+      dl {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 16px;
+
+        dt {
+          flex-grow: 0;
+          flex-shrink: 0;
+          width: 108px;
+          font-weight: 700;
+          color: var(--color-natural-20);
+          position: relative;
+
+          &:before {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 1px;
+            height: 14px;
+            background-color: var(--color-natural-60);
+          }
+        }
+
+        dd {
+          width: 100%;
+          font-weight: 600;
+          color: var(--color-orange-officecon);
+          position: relative;
+
+          &.color-gray {
+            color: var(--color-natural-20);
+            font-weight: 400;
+          }
+        }
+      }
+    }
+  }
+
+  el-agrees {
+    gap: 16px;
+  }
+}
+/* 종료: 파트너링크 */
