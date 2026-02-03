@@ -4318,7 +4318,7 @@ el-agrees {
 }
 /* 종료: 공통 > 동의 영역 */
 
-/* 시작: 공통 > el-ellipsis */
+/* 시작: 공통 > el-ellipsis, el-ellipsis-clamp */
 el-ellipsis {
   display: block;
   width: 100%;
@@ -4326,7 +4326,18 @@ el-ellipsis {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-/* 종료: 공통 > el-ellipsis */
+
+el-ellipsis-clamp {
+  width: 100%;
+  word-break: break-word;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+/* 종료: 공통 > el-ellipsis, el-ellipsis-clamp */
 
 /* 시작: 공통 > pre 내부 table */
 table.pre-table {
@@ -12743,11 +12754,6 @@ el-mypage-cashReward-list {
       a {
         color: var(--color-natural-20);
         text-decoration: underline;
-      }
-
-      & > div {
-        width: 100%;
-        word-break: keep-all;
       }
     }
   }
