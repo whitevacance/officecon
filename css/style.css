@@ -13536,6 +13536,12 @@ el-policy {
 /* 종료: 서비스 이용약관 */
 
 /* 시작: 파트너링크 */
+#el-modal-personal-info-third-party-consent {
+  el-modal-body.modal-body {
+    max-height: 624px;
+  }
+}
+
 el-modal-personal-info-third-party-consent {
   display: flex;
   flex-direction: column;
