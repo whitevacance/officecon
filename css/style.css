@@ -11413,6 +11413,10 @@ el-mypage-table {
       &.align-left {
         text-align: left;
       }
+
+      el-checkbox {
+        vertical-align: middle;
+      }
     }
 
     th {
@@ -12819,10 +12823,10 @@ el-mypage-message-list {
     .col-auto {
       width: auto;
     }
-    .col-80 {
-      width: 80px;
+    .col-70 {
+      width: 70px;
     }
-    .col-200 {
+    .col-180 {
       width: 200px;
     }
 
