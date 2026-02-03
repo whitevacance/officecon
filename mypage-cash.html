@@ -335,7 +335,7 @@
                                 <el-select-options
                                   class="dropdown-menu active-bold"
                                 >
-                                  <ul>
+                                  <ul data-overlayscrollbars-initialize>
                                     <li>
                                       <button
                                         type="button"
@@ -404,10 +404,12 @@
                                 <td>환불<br />(캐쉬)</td>
                                 <td class="align-left">
                                   <el-mypage-table-cashReward-content>
-                                    <a href="#">20251017145732232485</a>
-                                    <div>
-                                      [컴포즈커피] 아메리카노(ICE)(TAKE-OUT)
-                                    </div>
+                                    <el-ellipsis-clamp>
+                                      <a href="#">20251017145732232485</a>
+                                      <div>
+                                        일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십
+                                      </div>
+                                    </el-ellipsis-clamp>
                                   </el-mypage-table-cashReward-content>
                                 </td>
                                 <td>999,999</td>
@@ -428,11 +430,19 @@
                                 <td>수동지급</td>
                                 <td class="align-left">
                                   <el-mypage-table-cashReward-content>
-                                    <div>
-                                      주문번호 20240509091755487615(wjd8601)쿠폰
-                                      사용처리 불가로 인한 주문취소 캐쉬
-                                      환불5건, 오피스콘에서 발송대행으로 처리
-                                    </div>
+                                    <el-ellipsis-clamp>
+                                      <div>
+                                        일이삼사오육칠팔구십
+                                        일이삼사오육칠팔구십
+                                        일이삼사오육칠팔구십
+                                        일이삼사오육칠팔구십
+                                        일이삼사오육칠팔구십
+                                        일이삼사오육칠팔구십
+                                        일이삼사오육칠팔구십
+                                        일이삼사오육칠팔구십
+                                        일이삼사오육칠팔구십
+                                      </div>
+                                    </el-ellipsis-clamp>
                                   </el-mypage-table-cashReward-content>
                                 </td>
                                 <td>999,999</td>
@@ -453,10 +463,12 @@
                                 <td>사용</td>
                                 <td class="align-left">
                                   <el-mypage-table-cashReward-content>
-                                    <a href="#">20251017145732232485</a>
-                                    <div>
-                                      [컴포즈커피] 아메리카노(ICE)(TAKE-OUT)
-                                    </div>
+                                    <el-ellipsis-clamp>
+                                      <a href="#">20251017145732232485</a>
+                                      <div>
+                                        [컴포즈커피] 아메리카노(ICE)(TAKE-OUT)
+                                      </div>
+                                    </el-ellipsis-clamp>
                                   </el-mypage-table-cashReward-content>
                                 </td>
                                 <td>-</td>
@@ -662,7 +674,7 @@
                   </dl>
                   <dl>
                     <dt>환불 수수료</dt>
-                    <dd class="text-orange">-1,000</dd>
+                    <dd class="color-red">-1,000</dd>
                   </dl>
                   <dl>
                     <dt>실 수령 금액</dt>
@@ -685,12 +697,12 @@
                         class="dropdown-toggle"
                         data-bs-toggle="dropdown"
                         aria-expanded="false"
-                        data-bs-offset="0,-43"
+                        data-bs-display="static"
                       >
                         <el-label>선택</el-label>
                       </button>
                       <el-select-options class="dropdown-menu">
-                        <ul>
+                        <ul data-overlayscrollbars-initialize>
                           <li>
                             <span class="dropdown-header">
                               <el-label>선택</el-label>
@@ -831,7 +843,7 @@
                       placeholder="내용을 입력해 주세요."
                     ></textarea>
                     <el-form-textarea-length class="typo-body-sm">
-                      (0/250)
+                      (0/350)
                     </el-form-textarea-length>
                   </el-form-content>
                 </el-form-row>
@@ -884,7 +896,7 @@
 
           <el-modal-body data-overlayscrollbars-initialize class="modal-body">
             <el-modal-policy-guide>
-              <el-info-box>
+              <el-info-box style="padding: 20px 24px !important">
                 <el-info-box-title class="typo-body-sm">
                   캐쉬 충전/환불 유의사항
                 </el-info-box-title>
@@ -954,7 +966,7 @@
                       class="form-control custom-input"
                       type="text"
                       placeholder="충전하실 금액을 입력해 주세요."
-                      value=""
+                      value="10,000"
                     />
                   </el-input>
                   원

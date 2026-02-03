@@ -1825,19 +1825,20 @@ el-select {
     border: 1px solid var(--color-natural-0);
     background-color: var(--color-natural-100);
     overflow: hidden;
+    margin-top: -1px !important;
 
     & > ul {
       width: 100%;
       max-height: 430px;
       padding: 0;
-      overflow-x: hidden;
+      /* overflow-x: hidden;
       overflow-y: auto;
       scrollbar-color: var(--color-opacity-black-30) transparent;
-      scrollbar-width: thin;
+      scrollbar-width: thin; */
 
-      &::-webkit-scrollbar-track {
+      /* &::-webkit-scrollbar-track {
         background: transparent;
-      }
+      } */
 
       & > li:first-of-type {
         margin-top: -1px;
@@ -3569,9 +3570,9 @@ el-marker-list,
       &.color-red {
         color: var(--color-red-40) !important;
 
-        &:before {
+        /* &:before {
           background-color: var(--color-red-40) !important;
-        }
+        } */
       }
     }
   }
@@ -3848,7 +3849,7 @@ el-board-list-empty {
 el-modal-form {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 8px;
   width: 100%;
 
   el-form-row {
@@ -4317,6 +4318,27 @@ el-agrees {
   }
 }
 /* 종료: 공통 > 동의 영역 */
+
+/* 시작: 공통 > el-ellipsis, el-ellipsis-clamp */
+el-ellipsis {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+el-ellipsis-clamp {
+  width: 100%;
+  word-break: break-word;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+/* 종료: 공통 > el-ellipsis, el-ellipsis-clamp */
 
 /* 시작: 공통 > pre 내부 table */
 table.pre-table {
@@ -7964,6 +7986,8 @@ el-signup-form {
         padding: 0 16px;
 
         el-signup-form-inputs {
+          gap: 8px;
+
           el-signup-form-inputs-row {
             el-signup-form-inputs-label {
               color: var(--color-natural-20);
@@ -7985,15 +8009,13 @@ el-signup-form {
         }
 
         el-signup-form-security {
+          gap: 8px;
+
           el-signup-form-security-row {
             border-bottom: 0;
             & > h3 {
               color: var(--color-natural-20);
             }
-          }
-
-          el-cash-cert-password {
-            margin-top: -16px;
           }
         }
       }
@@ -10580,10 +10602,11 @@ el-qna-view {
   el-qna-cta {
     display: flex;
     justify-content: center;
+    gap: 10px;
     width: 100%;
 
     button {
-      width: 250px;
+      width: 200px;
     }
   }
 }
@@ -11408,9 +11431,14 @@ el-mypage-table {
       height: 46px;
       padding: 12px 16px !important;
       text-align: center;
+      max-width: 0;
 
       &.align-left {
         text-align: left;
+      }
+
+      el-checkbox {
+        vertical-align: middle;
       }
     }
 
@@ -12057,7 +12085,7 @@ el-modal-cancel-payment {
     flex-direction: column;
     gap: 13px;
     width: 100%;
-    padding: 16px 0;
+    padding: 16px 8px;
     border-top: 1px solid var(--color-natural-0);
     border-bottom: 1px solid var(--color-natural-80);
 
@@ -12077,8 +12105,8 @@ el-modal-cancel-payment {
         font-weight: 700 !important;
       }
 
-      .text-orange {
-        color: var(--color-orange-officecon);
+      .color-red {
+        color: var(--color-red-40);
       }
     }
   }
@@ -12439,6 +12467,10 @@ el-mypage-cashReward-status {
       align-items: center;
       gap: 2px;
       padding-left: 12px;
+
+      strong {
+        font-weight: 700 !important;
+      }
     }
   }
 
@@ -12679,6 +12711,17 @@ el-modal-cash-refund-all {
 
   el-modal-form {
     padding-top: 24px;
+
+    el-select {
+      .dropdown-menu {
+        margin-top: 0 !important;
+        top: 0px !important;
+
+        & > ul {
+          max-height: 215px;
+        }
+      }
+    }
   }
 }
 
@@ -12712,11 +12755,6 @@ el-mypage-cashReward-list {
       a {
         color: var(--color-natural-20);
         text-decoration: underline;
-      }
-
-      & > div {
-        width: 100%;
-        word-break: keep-all;
       }
     }
   }
@@ -12803,10 +12841,10 @@ el-mypage-message-list {
     .col-auto {
       width: auto;
     }
-    .col-80 {
-      width: 80px;
+    .col-70 {
+      width: 70px;
     }
-    .col-200 {
+    .col-180 {
       width: 200px;
     }
 
@@ -12825,6 +12863,12 @@ el-mypage-message-edit {
 
   el-form-with-label {
     el-form-row {
+      gap: 0px;
+
+      el-form-label {
+        width: 135px;
+      }
+
       el-form-content {
         & > el-input,
         & textarea.form-control {
@@ -12900,18 +12944,23 @@ el-sub-member {
         width: 122px;
       }
       .col-150 {
-        width: 160px;
+        width: 150px;
       }
-      .col-160 {
-        width: 160px;
+      .col-166 {
+        width: 166px;
       }
       .col-200 {
-        width: 160px;
+        width: 200px;
       }
 
       th,
       td {
         color: var(--color-natural-0) !important;
+        word-break: break-all;
+
+        el-ellipsis {
+          text-align: center;
+        }
       }
 
       el-mypage-table-action-buttons {
@@ -13078,6 +13127,10 @@ el-sub-member-regist-agree {
       padding-bottom: 12px;
       border-bottom: 1px solid var(--color-natural-80);
 
+      &:has(el-sub-member-regist-agree-content-collapse.show) {
+        border-bottom: 0;
+      }
+
       el-checkbox {
         position: relative;
         left: 16px;
@@ -13168,6 +13221,12 @@ el-sub-member-regist-cta {
 el-mypage-ip-list {
   display: block;
   width: 100%;
+
+  el-table-util-right {
+    button {
+      width: 110px;
+    }
+  }
 
   .mypage-ip-list-table table.table {
     .col-auto {
@@ -13267,9 +13326,14 @@ el-cancel-membership {
 
       & > li {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         gap: 8px;
         color: var(--color-natural-20);
+
+        el-icon {
+          position: relative;
+          top: 4px;
+        }
 
         strong {
           color: var(--color-natural-0);

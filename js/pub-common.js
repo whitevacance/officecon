@@ -2095,6 +2095,16 @@ const initCustomSelect = () => {
       }
     });
 
+    // overlayscrollbars 초기화 - 모든 custom select 드롭다운 메뉴에 적용
+    const customSelectScrollbarsEls = document.querySelectorAll(
+      'el-select.dropdown .dropdown-menu > ul'
+    );
+    customSelectScrollbarsEls.forEach(function (el) {
+      OverlayScrollbarsGlobal.OverlayScrollbars(el, {
+        scrollbars: { clickScroll: true },
+      });
+    });
+
     // 초기화 완료 전환
     customSelectInitialized = true;
   }
