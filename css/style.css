@@ -7985,6 +7985,8 @@ el-signup-form {
         padding: 0 16px;
 
         el-signup-form-inputs {
+          gap: 8px;
+
           el-signup-form-inputs-row {
             el-signup-form-inputs-label {
               color: var(--color-natural-20);
