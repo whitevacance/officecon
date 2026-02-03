@@ -8008,15 +8008,13 @@ el-signup-form {
         }
 
         el-signup-form-security {
+          gap: 8px;
+
           el-signup-form-security-row {
             border-bottom: 0;
             & > h3 {
               color: var(--color-natural-20);
             }
-          }
-
-          el-cash-cert-password {
-            margin-top: -16px;
           }
         }
       }
