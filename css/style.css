@@ -10580,10 +10580,11 @@ el-qna-view {
   el-qna-cta {
     display: flex;
     justify-content: center;
+    gap: 10px;
     width: 100%;
 
     button {
-      width: 250px;
+      width: 200px;
     }
   }
 }
