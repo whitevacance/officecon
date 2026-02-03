@@ -12440,6 +12440,10 @@ el-mypage-cashReward-status {
       align-items: center;
       gap: 2px;
       padding-left: 12px;
+
+      strong {
+        font-weight: 700 !important;
+      }
     }
   }
 
