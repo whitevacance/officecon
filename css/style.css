@@ -13325,9 +13325,14 @@ el-cancel-membership {
 
       & > li {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         gap: 8px;
         color: var(--color-natural-20);
+
+        el-icon {
+          position: relative;
+          top: 4px;
+        }
 
         strong {
           color: var(--color-natural-0);
