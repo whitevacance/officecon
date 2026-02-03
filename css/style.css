@@ -13221,6 +13221,12 @@ el-mypage-ip-list {
   display: block;
   width: 100%;
 
+  el-table-util-right {
+    button {
+      width: 110px;
+    }
+  }
+
   .mypage-ip-list-table table.table {
     .col-auto {
       width: auto;
