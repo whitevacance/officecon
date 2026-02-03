@@ -13126,6 +13126,10 @@ el-sub-member-regist-agree {
       padding-bottom: 12px;
       border-bottom: 1px solid var(--color-natural-80);
 
+      &:has(el-sub-member-regist-agree-content-collapse.show) {
+        border-bottom: 0;
+      }
+
       el-checkbox {
         position: relative;
         left: 16px;
