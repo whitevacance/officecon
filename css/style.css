@@ -12862,6 +12862,12 @@ el-mypage-message-edit {
 
   el-form-with-label {
     el-form-row {
+      gap: 0px;
+
+      el-form-label {
+        width: 135px;
+      }
+
       el-form-content {
         & > el-input,
         & textarea.form-control {
