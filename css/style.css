@@ -3569,9 +3569,9 @@ el-marker-list,
       &.color-red {
         color: var(--color-red-40) !important;
 
-        &:before {
+        /* &:before {
           background-color: var(--color-red-40) !important;
-        }
+        } */
       }
     }
   }
