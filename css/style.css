@@ -980,6 +980,15 @@ el-badge-period {
   font-weight: 600 !important;
   line-height: 1 !important;
   overflow: hidden;
+
+  &.size-lg {
+    height: 26px;
+    padding: 0 11px;
+  }
+
+  &.color-orange {
+    background-color: var(--color-orange-officecon);
+  }
 }
 
 el-badge-discount {
@@ -13627,3 +13636,70 @@ el-modal-personal-info-third-party-consent {
   }
 }
 /* 종료: 파트너링크 */
+
+/* 시작: 이벤트 */
+el-event-list {
+  display: block;
+  width: 100%;
+
+  & > ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+
+    & > li {
+      el-event-item {
+        display: block;
+        width: 400px;
+
+        a {
+          display: block;
+          width: 100%;
+          min-height: 332px;
+          padding: 14px 14px 4px 14px;
+          background-color: var(--color-natural-100);
+          border-radius: 10px;
+          box-shadow: var(--color-boxShadow-2);
+
+          el-event-item-image {
+            display: block;
+            width: 100%;
+            aspect-ratio: 372 / 230;
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+
+            .event-img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+
+            el-badge-period {
+              position: absolute;
+              left: 14px;
+              top: 14px;
+            }
+          }
+
+          el-event-item-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            min-height: 84px;
+            padding: 16px 0;
+
+            h3 {
+              font-weight: 700 !important;
+              padding-bottom: 2px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+/* 종료: 이벤트 */
