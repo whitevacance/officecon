@@ -8007,7 +8007,7 @@ el-signup-form {
             &.padding-bottom-8 {
               padding-bottom: 8px;
             }
-            
+
             el-signup-form-inputs-label {
               color: var(--color-natural-20);
             }
@@ -11408,6 +11408,7 @@ el-mypage {
           }
         }
       }
+    }
   }
 }
 
