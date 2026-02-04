@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>오피스콘 시스템/서버 점검 안내 | 오피스콘</title>
+    <meta charset="UTF-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="shortcut icon" href="./images/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./images/favicon-apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="./images/favicon-android-chrome-192x192.png"
+    />
+    <link
+      rel="preload"
+      href="./fonts/Pretendard-Regular.subset.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="./fonts/Pretendard-SemiBold.subset.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="./fonts/Pretendard-Bold.subset.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link type="text/css" rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="./css/swiper.min.css" />
+    <link type="text/css" rel="stylesheet" href="./css/tui-time-picker.css" />
+    <link type="text/css" rel="stylesheet" href="./css/tui-date-picker.css" />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="./css/overlayscrollbars.min.css"
+    />
+    <link type="text/css" rel="stylesheet" href="./css/style.css" />
+    <script src="./js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script
+      src="./js/swiper-element-bundleswiper.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/tui-time-picker.js" crossorigin="anonymous"></script>
+    <script src="./js/tui-date-picker.js" crossorigin="anonymous"></script>
+    <script
+      src="./js/overlayscrollbars.browser.es6.min.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- 시작: 에러 페이지 컨텐츠 -->
+    <el-error>
+      <el-error-message>
+        <el-icon class="etc-triangle-exclamation"></el-icon>
+        <el-error-message-text>
+          <h3 class="typo-heading-md">오피스콘 시스템/서버 점검 안내</h3>
+          <p class="typo-body-lg">
+            안녕하세요. 오피스콘입니다.
+            <br />
+            서비스 시스템/서버 점검 및 안정화 작업으로 사이트 이용이 잠시
+            중단됩니다.
+            <br />
+            이용에 불편을 드려 죄송합니다. 더욱 편리하고 안전한 서비스 제공으로
+            보답하겠습니다.
+          </p>
+        </el-error-message-text>
+      </el-error-message>
+      <el-error-box>
+        <div>
+          <dl>
+            <dt>
+              <el-icon class="etc-pending natural-0"></el-icon>
+              점검 기간
+            </dt>
+            <dd>2026.01.30 15:45 ~ 2026.01.30 17:00</dd>
+          </dl>
+          <dl>
+            <dt>
+              <el-icon class="etc-success natural-0"></el-icon>
+              점검 내용
+            </dt>
+            <dd>사이트 리뉴얼 및 사이트 안정화 작업</dd>
+          </dl>
+        </div>
+        <el-marker-list class="weight-regular color-gray font-small">
+          <ul>
+            <li>점검기간은 예정보다 단축되거나 지연될 수 있습니다.</li>
+            <li>
+              예정된 시간내 점검이 완료될 수 있도록 최선을 다하겠습니다.
+            </li>
+          </ul>
+        </el-marker-list>
+      </el-error-box>
+      <el-error-cta>
+        <button type="button" class="button-h60-square-fill typo-body-lg">
+          홈으로 이동
+        </button>
+      </el-error-cta>
+    </el-error>
+    <!-- 종료: 에러 페이지 컨텐츠 -->
+
+    <!-- 공통js: common.js -->
+    <script src="./js/pub-common.js" crossorigin="anonymous"></script>
+
+    <!-- [DEV] 웹 컴포넌트js: 개발 시 삭제해 주세요 -->
+    <script src="./js/web-components.js" crossorigin="anonymous"></script>
+  </body>
+</html>

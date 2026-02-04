@@ -83,3 +83,9 @@
 - 마이페이지 > 나의 정보 > 회원 탈퇴: http://officecon-pub.s3-website.ap-northeast-2.amazonaws.com/mypage-cancel-membership.html
 - 파트너링크: http://officecon-pub.s3-website.ap-northeast-2.amazonaws.com/partner.html
 - 서비스 이용약관: http://officecon-pub.s3-website.ap-northeast-2.amazonaws.com/policy-service.html
+- 이벤트 > 리스트: http://officecon-pub.s3-website.ap-northeast-2.amazonaws.com/event-list.html
+- 이벤트 > 뷰: http://officecon-pub.s3-website.ap-northeast-2.amazonaws.com/event-view.html
+- 이벤트 > 뷰(상품형): http://officecon-pub.s3-website.ap-northeast-2.amazonaws.com/event-view-products.html
+- 오류/긴급점검 > 503: http://officecon-pub.s3-website.ap-northeast-2.amazonaws.com/503.html
+- 오류/긴급점검 > 403: http://officecon-pub.s3-website.ap-northeast-2.amazonaws.com/403.html
+- 오류/긴급점검 > 404: http://officecon-pub.s3-website.ap-northeast-2.amazonaws.com/404.html
