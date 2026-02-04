@@ -891,6 +891,12 @@ el-icon {
     -webkit-mask-image: url('../images/icon-etc-refund.svg');
     mask-image: url('../images/icon-etc-refund.svg');
   }
+  &.etc-phone {
+    width: 20px;
+    height: 20px;
+    -webkit-mask-image: url('../images/icon-etc-phone.svg');
+    mask-image: url('../images/icon-etc-phone.svg');
+  }
 }
 /* 종료: 공통 > icon */
 
@@ -13908,12 +13914,83 @@ el-error {
   el-error-box {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     gap: 24px;
     width: 512px;
     padding: 40px 56px;
     background-color: var(--color-natural-95);
     border-radius: 8px;
+
+    &.size-wide {
+      width: 626px;
+    }
+
+    & > div {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      width: 100%;
+    }
+
+    dl {
+      display: flex;
+      align-items: flex-start;
+      width: 100%;
+      gap: 16px;
+
+      dt {
+        flex-grow: 0;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 12px;
+        width: 110px;
+        min-height: 24px;
+        position: relative;
+
+        &:before {
+          content: '';
+          position: absolute;
+          right: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 1px;
+          height: 18px;
+          background-color: var(--color-natural-60);
+        }
+      }
+
+      dd {
+        width: 100%;
+        min-height: 24px;
+
+        el-dd-separation {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+          width: 100%;
+
+          el-dd-divider {
+            width: 1px;
+            height: 18px;
+            background-color: var(--color-natural-60);
+          }
+        }
+      }
+
+      &.dt-border-none {
+        gap: 0;
+
+        dt {
+          width: 120px;
+
+          &:before {
+            display: none;
+          }
+        }
+      }
+    }
   }
 
   el-error-cta {

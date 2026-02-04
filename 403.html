@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
   <head>
-    <title>오피스콘 시스템/서버 점검 안내 | 오피스콘</title>
+    <title>해당 IP로는 접속할 수 없습니다. | 오피스콘</title>
     <meta charset="UTF-8" />
     <meta name="format-detection" content="telephone=no" />
     <link rel="shortcut icon" href="./images/favicon.ico" />
@@ -66,43 +66,39 @@
       <el-error-message>
         <el-icon class="etc-triangle-exclamation"></el-icon>
         <el-error-message-text>
-          <h3 class="typo-heading-md">오피스콘 시스템/서버 점검 안내</h3>
+          <h3 class="typo-heading-md">해당 IP로는 접속할 수 없습니다.</h3>
           <p class="typo-body-lg">
-            안녕하세요. 오피스콘입니다.
-            <br />
-            서비스 시스템/서버 점검 및 안정화 작업으로 사이트 이용이 잠시
-            중단됩니다.
-            <br />
-            이용에 불편을 드려 죄송합니다. 더욱 편리하고 안전한 서비스 제공으로
-            보답하겠습니다.
+            접속하신 국가에서 지원하지 않거나 차단된 IP일 수 있습니다.<br />
+            오피스콘 서비스 이용을 원하실 경우 고객센터로 문의해 주시기
+            바랍니다.
           </p>
         </el-error-message-text>
       </el-error-message>
-      <el-error-box>
+      <el-error-box class="size-wide">
         <div>
-          <dl>
+          <dl class="dt-border-none">
             <dt>
               <el-icon class="etc-pending natural-0"></el-icon>
-              점검 기간
+              운영 시간
             </dt>
-            <dd>2026.01.30 15:45 ~ 2026.01.30 17:00</dd>
+            <dd>
+              평일 09:30~18:00 (주말/공휴일 및 점심시간 11:30~13:00 제외)
+            </dd>
           </dl>
-          <dl>
+          <dl class="dt-border-none">
             <dt>
-              <el-icon class="etc-success natural-0"></el-icon>
-              점검 내용
+              <el-icon class="etc-phone natural-0"></el-icon>
+              연락처
             </dt>
-            <dd>사이트 리뉴얼 및 사이트 안정화 작업</dd>
+            <dd>
+              <el-dd-separation>
+                <div>1661-8197</div>
+                <el-dd-divider></el-dd-divider>
+                <div>officecon@zlgoon.co.kr</div>
+              </el-dd-separation>
+            </dd>
           </dl>
         </div>
-        <el-marker-list class="weight-regular color-gray font-small">
-          <ul>
-            <li>점검기간은 예정보다 단축되거나 지연될 수 있습니다.</li>
-            <li>
-              예정된 시간내 점검이 완료될 수 있도록 최선을 다하겠습니다.
-            </li>
-          </ul>
-        </el-marker-list>
       </el-error-box>
       <el-error-cta>
         <button type="button" class="button-h60-square-fill typo-body-lg">
