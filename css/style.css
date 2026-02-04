@@ -812,6 +812,12 @@ el-icon {
     background-image: url('../images/icon-etc-circle-exclamation.svg');
     background-color: transparent;
   }
+  &.etc-triangle-exclamation {
+    width: 80px;
+    height: 80px;
+    background-image: url('../images/icon-etc-triangle-exclamation.svg');
+    background-color: transparent;
+  }
   &.etc-doc {
     width: 14px;
     height: 14px;
@@ -13853,3 +13859,71 @@ el-event-view {
   }
 }
 /* 종료: 이벤트 */
+
+/* 시작: 에러페이지 */
+el-error-wrap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 100px 0 200px;
+
+  el-error {
+    min-height: 0;
+    padding: 0;
+  }
+}
+
+el-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 72px;
+  width: 100%;
+  min-height: 100dvh;
+  padding: 32px;
+
+  el-error-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    text-align: center;
+
+    el-error-message-text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+
+      p {
+        color: var(--color-natural-10);
+      }
+    }
+  }
+
+  el-error-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    width: 512px;
+    padding: 40px 56px;
+    background-color: var(--color-natural-95);
+    border-radius: 8px;
+  }
+
+  el-error-cta {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    button {
+      width: 250px;
+    }
+  }
+}
+/* 종료: 에러페이지 */
