@@ -3570,9 +3570,9 @@ el-marker-list,
       &.color-red {
         color: var(--color-red-40) !important;
 
-        /* &:before {
+        &:before {
           background-color: var(--color-red-40) !important;
-        } */
+        }
       }
     }
   }
@@ -8004,6 +8004,10 @@ el-signup-form {
           gap: 8px;
 
           el-signup-form-inputs-row {
+            &.padding-bottom-8 {
+              padding-bottom: 8px;
+            }
+            
             el-signup-form-inputs-label {
               color: var(--color-natural-20);
             }
@@ -11393,6 +11397,17 @@ el-mypage {
         }
       }
     }
+
+    el-marker-list {
+      ul {
+        li {
+          &.color-red {
+            &:before {
+              background-color: var(--color-natural-20) !important;
+            }
+          }
+        }
+      }
   }
 }
 
@@ -12859,8 +12874,8 @@ el-mypage-message-list {
     .col-70 {
       width: 70px;
     }
-    .col-180 {
-      width: 200px;
+    .col-160 {
+      width: 160px;
     }
 
     th,
