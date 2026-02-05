@@ -175,9 +175,14 @@ const initHandleModalScroll = () => {
       // 스크롤 이벤트 핸들러
       let scrollHandler = null;
       let scrollHandlerForScrollableList = null;
+      let scrollHandlerForBodyScrollShadow = null;
       let isScrollListenerAttached = false;
       let isScrollListenerAttachedForScrollableList = false;
       let isScrollListenerAttachedForBodyScrollShadow = false;
+
+      // 모달 내부 높이 변경 시 shadow 재계산용 ResizeObserver (동적 collapse 등 대응)
+      let resizeObserver = null;
+      let resizeObserverScheduled = false;
 
       // 오버레이 스크롤바 초기화
       const initOverlayScrollbarForModalBody = () => {
@@ -321,6 +326,78 @@ const initHandleModalScroll = () => {
             }
           }
         }
+
+        // 모달 내부 높이가 동적으로 변경된 후 현재 스크롤 위치 기준으로 shadow 클래스 동기화
+        if (targetModalHeaderEl) {
+          const bodyViewport = targetModalBodyEl?.querySelector(
+            '[data-overlayscrollbars-viewport]'
+          );
+          if (bodyViewport && hasModalInnerScroll(bodyViewport)) {
+            if (bodyViewport.scrollTop > 0) {
+              targetModalHeaderEl.classList.add('shadow-bottom');
+            } else {
+              targetModalHeaderEl.classList.remove('shadow-bottom');
+            }
+          } else {
+            targetModalHeaderEl.classList.remove('shadow-bottom');
+          }
+        }
+        if (targetModalFooterEl) {
+          let needFooterShadowTop = false;
+          const bodyScrollShadowViewport = targetModalBodyScrollShadowEl?.querySelector(
+            '[data-overlayscrollbars-viewport]'
+          );
+          if (
+            bodyScrollShadowViewport &&
+            hasModalInnerScroll(bodyScrollShadowViewport)
+          ) {
+            const isBottom =
+              bodyScrollShadowViewport.scrollTop +
+                bodyScrollShadowViewport.clientHeight >=
+              bodyScrollShadowViewport.scrollHeight;
+            if (!isBottom) needFooterShadowTop = true;
+          }
+          if (
+            targetModalScrollableListContentEls &&
+            hasModalInnerScroll(targetModalScrollableListContentEls)
+          ) {
+            const isScrollableListBottom =
+              targetModalScrollableListContentEls.scrollTop +
+                targetModalScrollableListContentEls.clientHeight >=
+              targetModalScrollableListContentEls.scrollHeight;
+            if (!isScrollableListBottom) needFooterShadowTop = true;
+          }
+          if (needFooterShadowTop) {
+            targetModalFooterEl.classList.add('shadow-top');
+          } else {
+            targetModalFooterEl.classList.remove('shadow-top');
+          }
+        }
+      };
+
+      // 모달 내부 스크롤 영역 크기 변경 감지 (collapse 등 동적 높이 변경 시 shadow 재계산)
+      const startResizeObserver = () => {
+        if (resizeObserver) return;
+        const runCheckScroll = () => {
+          if (resizeObserverScheduled) return;
+          resizeObserverScheduled = true;
+          requestAnimationFrame(() => {
+            resizeObserverScheduled = false;
+            checkScroll();
+          });
+        };
+        resizeObserver = new ResizeObserver(runCheckScroll);
+        if (targetModalBodyEl) resizeObserver.observe(targetModalBodyEl);
+        if (targetModalBodyScrollShadowEl)
+          resizeObserver.observe(targetModalBodyScrollShadowEl);
+        if (targetModalScrollableListContentEls)
+          resizeObserver.observe(targetModalScrollableListContentEls);
+      };
+      const stopResizeObserver = () => {
+        if (resizeObserver) {
+          resizeObserver.disconnect();
+          resizeObserver = null;
+        }
       };
 
       // 창 크기 조절 이벤트 리스너
@@ -340,20 +417,47 @@ const initHandleModalScroll = () => {
         }
 
         modalEl.addEventListener('shown.bs.modal', () => {
-          // 모달이 완전히 표시된 후 스크롤 여부 확인
+          // 모달이 완전히 표시된 후 스크롤 여부 확인 및 내부 높이 변경 감지 시작
           setTimeout(() => {
             initOverlayScrollbarForModalBody();
             checkScroll();
+            startResizeObserver();
           }, 0);
         });
 
-        // 모달이 닫힐 때 스크롤 이벤트 리스너 정리
+        // 모달이 닫힐 때 스크롤 이벤트 리스너 및 ResizeObserver 정리
         modalEl.addEventListener('hidden.bs.modal', () => {
-          // 모달 body 스크롤 이벤트 리스너 정리
+          stopResizeObserver();
+
+          // 모달 body 스크롤 이벤트 리스너 정리 (viewport 요소에서 제거)
           if (isScrollListenerAttached && scrollHandler && targetModalBodyEl) {
-            targetModalBodyEl.removeEventListener('scroll', scrollHandler);
+            const viewport = targetModalBodyEl.querySelector(
+              '[data-overlayscrollbars-viewport]'
+            );
+            if (viewport) {
+              viewport.removeEventListener('scroll', scrollHandler);
+            }
             isScrollListenerAttached = false;
             scrollHandler = null;
+          }
+
+          // 모달 body scroll-shadow 영역 스크롤 이벤트 리스너 정리
+          if (
+            isScrollListenerAttachedForBodyScrollShadow &&
+            scrollHandlerForBodyScrollShadow &&
+            targetModalBodyScrollShadowEl
+          ) {
+            const viewport = targetModalBodyScrollShadowEl.querySelector(
+              '[data-overlayscrollbars-viewport]'
+            );
+            if (viewport) {
+              viewport.removeEventListener(
+                'scroll',
+                scrollHandlerForBodyScrollShadow
+              );
+            }
+            isScrollListenerAttachedForBodyScrollShadow = false;
+            scrollHandlerForBodyScrollShadow = null;
           }
 
           // 모달 내부 스크롤리스트 컨텐츠 스크롤 이벤트 리스너 정리

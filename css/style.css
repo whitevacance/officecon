@@ -861,6 +861,12 @@ el-icon {
     -webkit-mask-image: url('../images/icon-etc-pending.svg');
     mask-image: url('../images/icon-etc-pending.svg');
   }
+  &.etc-pending-sm {
+    width: 20px;
+    height: 20px;
+    -webkit-mask-image: url('../images/icon-etc-pending-sm.svg');
+    mask-image: url('../images/icon-etc-pending-sm.svg');
+  }
   &.etc-progress {
     width: 20px;
     height: 20px;
@@ -872,6 +878,12 @@ el-icon {
     height: 20px;
     -webkit-mask-image: url('../images/icon-etc-success.svg');
     mask-image: url('../images/icon-etc-success.svg');
+  }
+  &.etc-success-sm {
+    width: 20px;
+    height: 20px;
+    -webkit-mask-image: url('../images/icon-etc-success-sm.svg');
+    mask-image: url('../images/icon-etc-success-sm.svg');
   }
   &.etc-fail {
     width: 20px;
@@ -13920,6 +13932,7 @@ el-error {
     padding: 40px 56px;
     background-color: var(--color-natural-95);
     border-radius: 8px;
+    margin-top: -32px;
 
     &.size-wide {
       width: 626px;
