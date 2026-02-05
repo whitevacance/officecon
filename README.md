@@ -19,10 +19,12 @@
 ## 작업 및 배포 가이드
 
 - html 작업 시 js파일의 CORS 이슈가 있으므로 로컬서버를 사용해야 합니다. 하위 항목의 서비스를 사용하시거나 편하신 로컬환경 구축하여 사용하셔도 무방합니다.
-  - vsCode 사용 중이시면 'live server' 익스텐션 설치하여 구동
-  - npm의 http-server 사용
+- vsCode 사용 중이시면 'live server' 익스텐션 설치하여 구동
+- npm의 http-server 사용
 
 ## 페이지 리스트
+
+공통 컴포넌트들 및 기본 레이아웃은 http://officecon-pub.s3-website.ap-northeast-2.amazonaws.com/examples.html 에 정리되어 있습니다.
 
 ### 1차
 
