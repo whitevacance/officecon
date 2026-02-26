@@ -848,6 +848,73 @@
                   </el-form-content>
                 </el-form-row>
               </el-modal-form>
+
+              <el-agrees>
+                <el-agree-item>
+                  <el-checkbox class="form-check size-lg">
+                    <input
+                      type="checkbox"
+                      id="checkboxCashRefundAll"
+                      class="form-check-input custom-checkbox"
+                      value=""
+                    />
+                    <label
+                      class="form-check-label typo-body-md"
+                      for="checkboxCashRefundAll"
+                    >
+                      개인정보 수집 이용 동의 <span>(필수)</span>
+                    </label>
+                  </el-checkbox>
+                  <button
+                    type="button"
+                    aria-label="toogle box"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseCashRefundAll"
+                    class="typo-body-sm collapsed"
+                  >
+                    약관보기
+                    <el-icon class="h16-arrow-down natural-40"></el-icon>
+                    <el-icon class="h16-arrow-up natural-40"></el-icon>
+                  </button>
+                  <el-agree-content-collapse
+                    class="collapse"
+                    id="collapseCashRefundAll"
+                  >
+                    <el-agree-content>
+                      <pre class="typo-body-sm">
+<strong>※ 광고성 정보 수신 동의를 거부하실 수 있습니다. (단, 동의 거부 시 광고 / 홍보 / 
+프로모션 / 이벤트 제공 및 안내에 제한이 있을 수 있습니다.)</strong>
+
+마케팅 정보 수집 범위
+
+<table class="table align-middle pre-table">
+  <colgroup>
+    <col style="width: 151px;" />
+    <col style="width: 151px;" />
+    <col style="width: auto;" />
+  </colgroup>
+  <thead>
+    <tr>
+      <th scope="col">수집 및 이용목적</th>
+      <th scope="col">개인정보 수집항목</th>
+      <th scope="col">보존 및 이용기간</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>광고 • 홍보 • 프로모션
+• 이벤트 제공 및 안내</td>
+      <td>성명, 아이디, 이메일주소,
+휴대폰 번호</td>
+      <td><strong>회원탈퇴 시 또는 법령에
+따른 보존기간</strong></td>
+    </tr>
+  </tbody>
+</table></pre>
+                    </el-agree-content>
+                  </el-agree-content-collapse>
+                </el-agree-item>
+              </el-agrees>
             </el-modal-cash-refund-all>
           </el-modal-body>
 
