@@ -12836,6 +12836,19 @@ el-modal-cash-refund-all {
       }
     }
   }
+
+  el-agrees {
+    padding-top: 16px;
+
+    el-agree-content > pre {
+      color: var(--color-natural-20);
+
+      strong {
+        font-weight: 700 !important;
+        color: var(--color-orange-officecon);
+      }
+    }
+  }
 }
 
 el-mypage-cashReward-list {
